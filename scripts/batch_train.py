@@ -84,7 +84,7 @@ def main() -> None:
     if not torch.cuda.is_available():
         parser.error("CUDA GPU is required")
     model_name = config["model"]["name"]
-    if model_name not in ("densenet121", "convnext_tiny", "efficientnet_v2_s", "swin_t") or config["model"]["pretrained"] != "imagenet":
+    if model_name not in ("densenet121", "convnext_tiny", "efficientnet_v2_s", "swin_t", "convnext_small", "efficientnet_v2_m") or config["model"]["pretrained"] != "imagenet":
         parser.error("Training requires a supported ImageNet-pretrained classifier")
     if config["validation"].get("primary_metric") != "macro_auc" or config["validation"].get("metric_mode", MODE) != MODE:
         parser.error("Early stopping requires Study-level Macro-AUC in max mode")
@@ -94,11 +94,11 @@ def main() -> None:
     )
     ema_settings = config["training"].get("ema")
     if ema_settings is not None:
-        if (model_name != "convnext_tiny" or ema_settings.get("enabled") is not True or
+        if (model_name not in ("convnext_tiny", "efficientnet_v2_s") or ema_settings.get("enabled") is not True or
                 float(ema_settings.get("decay", 0)) != 0.999 or
                 ema_settings.get("update_after_step") != 1 or
                 ema_settings.get("use_buffers") is not True):
-            parser.error("Batch EMA is fixed to ConvNeXt only; no BatchNorm buffers")
+            parser.error("Batch EMA fixed to declared ConvNeXt-Tiny / N01 EfficientNetV2-S settings")
     if args.resume and (not args.run_id or args.preflight_steps):
         parser.error("--resume requires --run-id and cannot be combined with --preflight-steps")
     if args.preflight_steps < 0:
@@ -137,6 +137,8 @@ def main() -> None:
     with weight_file.open("rb") as handle:
         weight_sha256 = hashlib.file_digest(handle, "sha256").hexdigest()
     expected_weight_sha256 = config["model"].get("pretrained_sha256")
+    if not expected_weight_sha256:
+        parser.error("Pretrained full SHA-256 must be reviewed and sealed before any GPU training")
     if expected_weight_sha256 is not None and weight_sha256 != expected_weight_sha256:
         parser.error(f"Pretrained ImageNet weight hash mismatch: {weight_file}")
     provenance = {"source": weight_source, "url": weight_url,

@@ -1,8 +1,16 @@
 schema: cxr_batch_v1
-name: phase17_friend_v1
+name: phase17_friend_expanded_v2
+server_architecture:
+  type: single_linux_host
+  gpu_model: NVIDIA RTX 4090
+  gpu_memory_gib: 24
+  authorized_gpu_count_max: 8
+  scheduling: one_independent_task_per_gpu_no_ddp
+expected_test_studies: 1414
+expected_test_images: 2218
 default_tier: base
 bootstrap_draws: 2000
-minimum_free_output_bytes: 20000000000
+minimum_free_output_bytes: 50000000000
 data_sha256: ff458640e9974d63aa3329ee7ae1248260b619223980218e3741aee4c6d6836f
 fold_directory: outputs/analysis/phase17_patient_folds
 fold_hashes: &id001
@@ -14,17 +22,22 @@ e07_reference:
   sha256: ed2bbbfe6138abf4a42d20ebc5a3e1d0a00385f8fe230166c921237d00c7b813
   checkpoint_bytes: 307175113
 ema_policy:
-  backbone: convnext_tiny
+  backbones:
+  - convnext_tiny
+  - efficientnet_v2_s
   decay: 0.999
   first_update: copy after first successful optimizer step
   subsequent_update: after successful optimizer.step only; AMP skipped steps excluded
-  batchnorm: none in ConvNeXt; DenseNet EMA disabled; no BN recalibration
+  buffers: use_buffers=True; floating buffers EMA, integer buffers arithmetic then
+    cast; no BN recalibration
   selection: separate raw/EMA best Val; early stop only raw; no hyperparameter adaptation
 optional_architectures:
-  enabled: false
-  tasks: []
+  enabled: true
+  tasks:
+  - CS17_F01
+  - NM17_F01
   maximum_slots: 2
-  reason: requires separate explicit model approval
+  reason: approved Fold1 pilots; conditional continuation remains disabled
 fixed_fusions:
   E17:
     D5: 0.25
@@ -350,51 +363,21 @@ tasks:
   fold_hashes: *id001
   estimated_cpu_cores: 6
   estimated_host_ram_gib: 12
-- id: D17_SEED43
-  group: C
-  enabled: false
-  backbone: densenet121
-  fold: null
-  seed: 43
-  config: configs/batch17/d17_seed43.yaml
-  config_sha256: 441affbc72f4ff238beeaf96fdea1e7fa75eedf8a9dd7437dd19b155ffcaf471
-  pretrained_sha256: a639ec97d7c33b07ae66f0b5fb7d0192f95a3b11b7576c66c0126c2a727c4395
-  ema: false
-  depends_on:
-  - D17_F01
-  - D17_F02
-  - D17_F03
-  - D17_F04
-  - D17_F05
-  - C17_F01
-  - C17_F02
-  - C17_F03
-  - C17_F04
-  - C17_F05
-  - S17_F01
-  - S17_F02
-  - S17_F03
-  - S17_F04
-  - S17_F05
-  gpu: allocated_pool
-  minimum_vram_gib: 8
-  timeout_hours: 10
-  max_retries: 1
-  output: experiments/D17_SEED43
-  fold_hashes: *id001
-  estimated_cpu_cores: 6
-  estimated_host_ram_gib: 12
-- id: C17_SEED43
-  group: C
-  enabled: false
-  backbone: convnext_tiny
-  fold: null
-  seed: 43
-  config: configs/batch17/c17_seed43.yaml
-  config_sha256: 3817731dcab46f3e020729ee4dfba4707d91147745d95617a1a0c56c1e517b42
-  pretrained_sha256: 983f1562536e84ff750a1576fb08e54de751dbf2e17c0d8a4a13704341fdcd3d
-  ema: false
-  depends_on:
+- id: N17_F01
+  group: N
+  enabled: true
+  backbone: efficientnet_v2_s
+  fold: 1
+  seed: 42
+  config: configs/batch17/n17_fold1.yaml
+  config_sha256: fe5c4990c890504a517cc0d2d0b67d1f6eac6b36d13d508af4ed072d9ceee63f
+  source_config:
+    path: n01_efficientnet_v2_s_384_amp_retry_20261018/config.yaml
+    sha256: 69679fde5b8ad6dabc32fb9f7b7a18149f2963aacf58eb90da8f1b7c3f069081
+  source_config_sha256: b07012c56c9ae67cdfd32ad46194dc6325b72ad25fe019db4a21f0a86c29142f
+  pretrained_sha256: dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74
+  ema: true
+  depends_on: &id002
   - D17_F01
   - D17_F02
   - D17_F03
@@ -414,11 +397,213 @@ tasks:
   minimum_vram_gib: 8
   timeout_hours: 24
   max_retries: 1
-  output: experiments/C17_SEED43
-  fold_hashes: *id001
+  output: experiments/N17_F01
+  fold_hashes:
+    patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+    study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+    image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d
   estimated_cpu_cores: 6
   estimated_host_ram_gib: 12
+- id: N17_F02
+  group: N
+  enabled: true
+  backbone: efficientnet_v2_s
+  fold: 2
+  seed: 42
+  config: configs/batch17/n17_fold2.yaml
+  config_sha256: 8d163ad979e09210d725ccd428efad5edc8d06e0f5493c30f8636548b31e8364
+  source_config:
+    path: n01_efficientnet_v2_s_384_amp_retry_20261018/config.yaml
+    sha256: 69679fde5b8ad6dabc32fb9f7b7a18149f2963aacf58eb90da8f1b7c3f069081
+  source_config_sha256: ac990dc0d83a421cb3335e65e8ebebfa04d7997f9bf022da407e62dfb3ad54e1
+  pretrained_sha256: dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74
+  ema: true
+  depends_on: *id002
+  gpu: allocated_pool
+  minimum_vram_gib: 8
+  timeout_hours: 24
+  max_retries: 1
+  output: experiments/N17_F02
+  fold_hashes:
+    patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+    study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+    image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d
+  estimated_cpu_cores: 6
+  estimated_host_ram_gib: 12
+- id: N17_F03
+  group: N
+  enabled: true
+  backbone: efficientnet_v2_s
+  fold: 3
+  seed: 42
+  config: configs/batch17/n17_fold3.yaml
+  config_sha256: 5c1ef8151c06fdec087d185ffad9b9f50e47868ac2f7252f595dd99f7bec27cd
+  source_config:
+    path: n01_efficientnet_v2_s_384_amp_retry_20261018/config.yaml
+    sha256: 69679fde5b8ad6dabc32fb9f7b7a18149f2963aacf58eb90da8f1b7c3f069081
+  source_config_sha256: b7a24d388133046297de079c7d1a54419f86e3ce7b5d7ff78f3649b349387d29
+  pretrained_sha256: dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74
+  ema: true
+  depends_on: *id002
+  gpu: allocated_pool
+  minimum_vram_gib: 8
+  timeout_hours: 24
+  max_retries: 1
+  output: experiments/N17_F03
+  fold_hashes:
+    patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+    study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+    image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d
+  estimated_cpu_cores: 6
+  estimated_host_ram_gib: 12
+- id: N17_F04
+  group: N
+  enabled: true
+  backbone: efficientnet_v2_s
+  fold: 4
+  seed: 42
+  config: configs/batch17/n17_fold4.yaml
+  config_sha256: c81188b6822efe70221683b97b3a693734b36c901997b4a4cdea0280b2d169fb
+  source_config:
+    path: n01_efficientnet_v2_s_384_amp_retry_20261018/config.yaml
+    sha256: 69679fde5b8ad6dabc32fb9f7b7a18149f2963aacf58eb90da8f1b7c3f069081
+  source_config_sha256: 73760b838f733b8034e3fc9f59768202c9459738df90e68ab75070a13809afe8
+  pretrained_sha256: dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74
+  ema: true
+  depends_on: *id002
+  gpu: allocated_pool
+  minimum_vram_gib: 8
+  timeout_hours: 24
+  max_retries: 1
+  output: experiments/N17_F04
+  fold_hashes:
+    patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+    study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+    image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d
+  estimated_cpu_cores: 6
+  estimated_host_ram_gib: 12
+- id: N17_F05
+  group: N
+  enabled: true
+  backbone: efficientnet_v2_s
+  fold: 5
+  seed: 42
+  config: configs/batch17/n17_fold5.yaml
+  config_sha256: 32fdb54f4180ce2976c7679d08812f39a3ae9a324373dabf15a09b610e33b7f1
+  source_config:
+    path: n01_efficientnet_v2_s_384_amp_retry_20261018/config.yaml
+    sha256: 69679fde5b8ad6dabc32fb9f7b7a18149f2963aacf58eb90da8f1b7c3f069081
+  source_config_sha256: d4d607ef78bba3e4990f44010870aa159adcfe5a71474bf6218e228c3d11d582
+  pretrained_sha256: dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74
+  ema: true
+  depends_on: *id002
+  gpu: allocated_pool
+  minimum_vram_gib: 8
+  timeout_hours: 24
+  max_retries: 1
+  output: experiments/N17_F05
+  fold_hashes:
+    patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+    study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+    image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d
+  estimated_cpu_cores: 6
+  estimated_host_ram_gib: 12
+- id: CS17_F01
+  group: P
+  enabled: true
+  backbone: convnext_small
+  fold: 1
+  seed: 42
+  config: configs/batch17/cs17_fold1.yaml
+  config_sha256: 6d39ca52ff9e636f445e110d572e4d10009288cf0574c99a4d27a226fcadf7cb
+  source_config:
+    path: configs/batch17/c17_fold1.yaml
+    sha256: ff262e478d18b06c2f794168cae18704a71350810f64f1e0efa6831f3e163c51
+  source_config_sha256: b07012c56c9ae67cdfd32ad46194dc6325b72ad25fe019db4a21f0a86c29142f
+  pretrained_sha256: 0c510722adfd92966a2bd72b92f785ca05966bbac03cafe2f7a90b1f54bfab9a
+  ema: false
+  depends_on:
+  - D17_F01
+  - D17_F02
+  - D17_F03
+  - D17_F04
+  - D17_F05
+  - C17_F01
+  - C17_F02
+  - C17_F03
+  - C17_F04
+  - C17_F05
+  - S17_F01
+  - S17_F02
+  - S17_F03
+  - S17_F04
+  - S17_F05
+  - N17_F01
+  - N17_F02
+  - N17_F03
+  - N17_F04
+  - N17_F05
+  gpu: allocated_pool
+  minimum_vram_gib: 8
+  timeout_hours: 30
+  max_retries: 1
+  output: experiments/CS17_F01
+  fold_hashes:
+    patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+    study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+    image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d
+  estimated_cpu_cores: 6
+  estimated_host_ram_gib: 12
+  readiness: PENDING_4090_GPU_PREFLIGHT
+- id: NM17_F01
+  group: P
+  enabled: true
+  backbone: efficientnet_v2_m
+  fold: 1
+  seed: 42
+  config: configs/batch17/nm17_fold1.yaml
+  config_sha256: 7c590ec681ade72bbd5a867f68e3f33db456a49fcf07776bac542796ebef9346
+  source_config:
+    path: configs/batch17/n17_fold1.yaml
+    sha256: fe5c4990c890504a517cc0d2d0b67d1f6eac6b36d13d508af4ed072d9ceee63f
+  source_config_sha256: b07012c56c9ae67cdfd32ad46194dc6325b72ad25fe019db4a21f0a86c29142f
+  pretrained_sha256: dc08266a3779e28992d6a42528a32453f6361d0e4e247b5f20f45e13e7add499
+  ema: false
+  depends_on:
+  - D17_F01
+  - D17_F02
+  - D17_F03
+  - D17_F04
+  - D17_F05
+  - C17_F01
+  - C17_F02
+  - C17_F03
+  - C17_F04
+  - C17_F05
+  - S17_F01
+  - S17_F02
+  - S17_F03
+  - S17_F04
+  - S17_F05
+  - N17_F01
+  - N17_F02
+  - N17_F03
+  - N17_F04
+  - N17_F05
+  gpu: allocated_pool
+  minimum_vram_gib: 8
+  timeout_hours: 30
+  max_retries: 1
+  output: experiments/NM17_F01
+  fold_hashes:
+    patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+    study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+    image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d
+  estimated_cpu_cores: 6
+  estimated_host_ram_gib: 12
+  readiness: PENDING_4090_GPU_PREFLIGHT
 artifacts:
+  .gitignore: 8d3fa14c7c810457f81dcd4afc65193be6d4089b49a1eac7c8d20acf88d6e552
   batch_assets/e07_official_val.csv: ed2bbbfe6138abf4a42d20ebc5a3e1d0a00385f8fe230166c921237d00c7b813
   batch_assets/e07_provenance.json: 8c0bba04ed67718ca459350c4d874d303230815800bbf0180d596f2c3ded5b49
   batch_assets/train_labels.csv: 362946e5ceb566959a3b6f396500986678ba70c249e35fd48d9470d69b4ff8c6
@@ -429,49 +614,69 @@ artifacts:
   configs/batch17/c17_fold4.yaml: 679458048f9d12cf78b359fe993724447a1bd53aaa0b04b0d708d50d20dca8b5
   configs/batch17/c17_fold5.yaml: a09a4572ba6f9139af5c24d5a14e287b66fed7d7312e37d1bff38f879cfdcce7
   configs/batch17/c17_seed43.yaml: 3817731dcab46f3e020729ee4dfba4707d91147745d95617a1a0c56c1e517b42
+  configs/batch17/cs17_fold1.yaml: 6d39ca52ff9e636f445e110d572e4d10009288cf0574c99a4d27a226fcadf7cb
   configs/batch17/d17_fold1.yaml: 0f6b0a8fc08bd3992a6083b3171f62859cef45b62e811f31b27837097bcb7387
   configs/batch17/d17_fold2.yaml: 166ec47c8c352fdaa4326c0cbc1fcd56529cd5e7d75d2a6199c6f2e88d17ef7b
   configs/batch17/d17_fold3.yaml: 5e5484d602e5d338f8d9b33abfdb58d6deea156de6361bcede622cf44248210a
   configs/batch17/d17_fold4.yaml: 1dd05daacb4bc58b073434e498ef58e099eb13000080240fa04030315add439f
   configs/batch17/d17_fold5.yaml: 2cfd1a9c858c4b250a2b02e098de1c8450e67ac7095e57e01a574864846daba1
   configs/batch17/d17_seed43.yaml: 441affbc72f4ff238beeaf96fdea1e7fa75eedf8a9dd7437dd19b155ffcaf471
+  configs/batch17/n17_fold1.yaml: fe5c4990c890504a517cc0d2d0b67d1f6eac6b36d13d508af4ed072d9ceee63f
+  configs/batch17/n17_fold2.yaml: 8d163ad979e09210d725ccd428efad5edc8d06e0f5493c30f8636548b31e8364
+  configs/batch17/n17_fold3.yaml: 5c1ef8151c06fdec087d185ffad9b9f50e47868ac2f7252f595dd99f7bec27cd
+  configs/batch17/n17_fold4.yaml: c81188b6822efe70221683b97b3a693734b36c901997b4a4cdea0280b2d169fb
+  configs/batch17/n17_fold5.yaml: 32fdb54f4180ce2976c7679d08812f39a3ae9a324373dabf15a09b610e33b7f1
+  configs/batch17/nm17_fold1.yaml: 7c590ec681ade72bbd5a867f68e3f33db456a49fcf07776bac542796ebef9346
   configs/batch17/s17_fold1.yaml: 71ac7c8b064e973c930286eebdb297981ea961e894f2cc442f45c3e06a39b16d
   configs/batch17/s17_fold2.yaml: 556fc159343c9ee66ca7a0ee3fb8260d050bbf70baa3c128bbd36f5ef458cc5e
   configs/batch17/s17_fold3.yaml: 830c2c54be44a635a6adf591f8e86d4f108f6df7d88f2c850fb9057671539ea4
   configs/batch17/s17_fold4.yaml: ae0c953a5af6b5e4cff0b9b67bb612159baf8882ba003b44a157491add1d5fb1
   configs/batch17/s17_fold5.yaml: 78deb482e4a592421d805abed8b10ceca7a332b264e45bfbcf995f522d538c0c
-  docs/batch17_costs.json: f3aa24562648bb294b55483573f9d0e6882fc38d0f4c999243520ff4de913ffd
+  configs/friend_server.example.env: e17fe8d21dfea5dddc59bee93f0917cb3a86325e9af80cab1acedbc93fec7d18
+  docs/batch17_costs.json: c12695699860205abcbbbe1a5bb1422e4cabba7d4085bf7bda760b770945e35a
+  docs/expanded_plan.md: 7899255f371e97c1a87d2af121b0971d5c0276bf6323ca12f4bbddba36874782
+  docs/handoff_acceptance.md: 3ae6113d2db6fce04af0c02f100de676af9d305f6634d8309ce2602e71d16cf1
   pyproject.toml: e1c6d17dce5fbb5e095c84ac526d00091538730f1c36908e45cd6d7c0e4808a9
-  README.md: 9cf52362dd7578845dbd0db8f6f1c9664352e2aa4650a5e7ca332f28c0caca53
-  README_friend.md: e7adde1742367306d2f8e05f4ae1d1974c864f98b58ee02699e0bed3ed6c2cc2
-  README_results.md: 1143bfa0669ea20dc72eb35fd255bffbd88f39e33a28089d35fc11f4ba663b5c
+  README.md: bcc4c5cba392a232deb19bf2cf48ac31f90948fa4e847f23feb487f60d98a240
+  README_friend.md: 544871ea242f5c30378fd49f0b40b457c08b4f6ad94e90e1085fd46e897b993d
+  README_results.md: c84b8ec29eba9ebdf2b4589547ec6cc5a5ab73738a9f97f11ee28e775c69be6d
   requirements/cloud.txt: fd8f8ecb3eb410a7820fc7c351322a13002d55c2daf04f0ea5e6c300a8bf739b
   scripts/analyze_validation.py: 427c4a7271e5c551b721c5708de683c70196df4d9d1680aa5f2011f9aebad844
   scripts/audit_git_delivery.py: 83b99d5c625b886b2d33b2516f1d661f63d3c156bab9f98a377af14cceb40d8b
-  scripts/batch_benchmark.py: c4b91c0c425844bde51fb04957e901c4d8a37f34cde55545d79329427f33c344
-  scripts/batch_cost.py: fca3873cae648e340da4bece8b6a00bb405db3f437d2b2ed8b4526ba5940c02a
-  scripts/batch_delivery.py: 66363b3518672ea53ab1f19cd6761a4b03ea8dda79115e05cc954c9b67ed5a47
-  scripts/batch_latency.py: ba1ea2dcb68717ebbf8815f185b67e792587c2edb743a17272044862a136f0bd
+  scripts/batch_benchmark.py: 6a7b1284c37adbe433754d9eae39e630236223557fdd8e4ee8274c83816fb074
+  scripts/batch_cost.py: 482caf855d9f1a67107afe6987825cc71f45e2baf49cd21b6aaa79f214966a19
+  scripts/batch_delivery.py: 4f2c6e2a544f68c5a3aa8023e51e9ddf4107df5e5811a4665bc03c3bedbc12a0
+  scripts/batch_ensemble_latency.py: 5fa3f4bad8fbf1ee13b71dab1a7e15a2bbb527a97ed683dfef18482821c5f31a
+  scripts/batch_latency.py: 4fe8274f818f90c834e387107c86986e6e7ab552aaf2aa7306ee86311f7a38f1
   scripts/batch_oof.py: 82bc9de1067981f13df4e15fa9922b90da76c3d0e3b46cba6a189bc242cd114e
-  scripts/batch_preflight.py: ec04cf427e60a733c570702f688c4150ca92cab7484b2e4e5b3e34e6d48139bd
+  scripts/batch_preflight.py: 6fd94dc008979a6cf4b4bb15a6765e948645ed3a08abe1129a78571dca4e905f
   scripts/batch_protocol_audit.py: 67d64aa91f9f388a2e0290b8d1747012d968280466d680b886cd1e91bf94e534
-  scripts/batch_run.py: f866254bc8bc87bdeaf4b1f53ecf60dab0901ddae55836e3c7c9fc89de417df8
-  scripts/batch_train.py: 948d51a5fd0500add749a2eed21b0faa8ea169e6d818f6360984204499bed059
+  scripts/batch_run.py: 84763ab0cddc1706ce9bfa29f8637fa91003bbc4d39d2c95d17adee04e9e5dde
+  scripts/batch_test_inference.py: cad7a3b50aeeba1c6766a50351434c9d43adf756efb569624c9ae017a256a036
+  scripts/batch_train.py: fda6cbf3004fb479de86a9171155dfe70e87fcb35e7ffe5a3def01fa3e92d170
+  scripts/benchmark_target_latency.py: 49f9218fedf735ace6cc31cb41e7c656af8180fae57f734b416725044ce0aca2
   scripts/cloud_install.sh: 817d2da988fe38805ea62f3bcc93a4d87952570bcabd265c2cdc18ee8b0c6692
   scripts/friend_slurm.sh: f06029276a112d962e6f7cd444b8f45e1351e41f66c4139a1e57e62e61d5d7eb
-  scripts/friend_start.sh: 72eb1f7c15f565664e39ef6b176b0e192a19069e1ba416ce1e14c5bd01c00690
-  scripts/import_friend_results.py: a2cbaf1a83a7250076cec7a6b3229d265143e4780b624e8d6ae03609bcaaa175
-  scripts/protocol_assets.py: 48471c9a3f232a7526066d0288200316e2cc50104be56703cf340ad2c0a4bcae
-  scripts/seal_batch_plan.py: d9f0f46e7b61826e8852725601ff56af8063e20a730c58aba82d1af82df8db7b
+  scripts/friend_start.sh: 832ffd32b5b5fe71aaba9a354b8a59618f47450101fb3f9273b30fe691b88463
+  scripts/import_friend_results.py: caf1ecec7a225027b3b232069397033b2a534f7cf8cc939b56955c5f5de53764
+  scripts/protocol_assets.py: f094fd387a3b4fd8f31378c82a8c9a1a433d8e6d3917ddb27f7259e593b062bc
+  scripts/seal_batch_plan.py: 34db5b7fb8de04fc56794baa00952f4ed4a70d47530e4add340150638bc0d546
+  scripts/validate_batch_artifacts.py: a2bc109cc82f287ea6e0982a5de0edf115650e22b83640a09fce041c53304481
+  scripts/validate_submission.py: d0dd997f19b5db0a07506d7e1c5ecba1582562214d5f1ae3b859325b1bb646b3
   src/cxr/__init__.py: 22b8cd1e4cfe0575ac5d5b064fa02b6c3dfb57e34c8a254f9b8d53edea4cecb0
   src/cxr/batch/__init__.py: 1ce9b459a1f14c747d3816c0bfc4b2d2f3ad09c3f39f67e0a1e1fafe301883c8
-  src/cxr/batch/artifacts.py: 70206e0ddf7509eeb5560fb72ed502eb85834775927e423c931cd30b1e4ed430
+  src/cxr/batch/additional.py: 24201fac813499e1957939ed9c05b9d21ac024e1fa52ba16080e873e5ebdb5da
+  src/cxr/batch/artifacts.py: bb2ab1fe368242d83ab30c7ed368c3922fe8bab9292b03f557c1a9951bbf91de
   src/cxr/batch/backup.py: 229c2336da51f7126de977313ac4e0f0ca33e5f220ce778d8ada299acde18833
-  src/cxr/batch/delivery.py: 20fc1051347c3170dba6aca068cca7d63db8e13f6a32520b69b7464fb01a4d57
-  src/cxr/batch/plan.py: 7f522809e74866a2682a519184fe1a141e667ddcfd81856de45eb8735d4d227b
-  src/cxr/batch/reporting.py: e4ab5939db59fd19050b05e8718723a3f8e1cfd1573e3a0f6c91dfbf5a0116b0
-  src/cxr/batch/results.py: 39860a62e164be600e03146eb1dca9b1e175990a21af626d7199542db5c75849
-  src/cxr/batch/runner.py: eb2023317fa5d6f73a6de3dbaeaeba0db7dc0f36f6d298efc251c3739d0eef73
+  src/cxr/batch/deployment.py: ca265abbc37c04ebc932f49046c9699b4bbc710be27dd1e12aaa782ce1aeda00
+  src/cxr/batch/direct_delivery.py: d42b386ab7220ef9a91f37a39fdd6642cbb924fe83088b078d0703816f777d92
+  src/cxr/batch/host_resources.py: 7d033ce9f0aeb10e8603d38045e9911790db0119d8379bf966a7283419176c40
+  src/cxr/batch/plan.py: 740d2cdf124d8a7c7517570fbe9eb170ba18c98433d2afb933a0e4111496a694
+  src/cxr/batch/reporting.py: 1e2eb53e5a27e0868744f566bb4f497472800c554987d45f0bfb16f6c26ff3d6
+  src/cxr/batch/results.py: a3c0d62175d1edd491a9bedf868ac90bb08d78ed968098aeca4687b921e29d73
+  src/cxr/batch/runner.py: f2641c405ea538366fb965deb129717f450d1f74cbbb368157d20393475cb694
+  src/cxr/batch/submission_reporting.py: 198341666bbfd543446abec958b396aa4c44ca83baff6f508e57e6b9d505f506
+  src/cxr/batch/test_results.py: df7141d999d4f33639f77a423a34bbb7936e62feaa21aec39f08d03cfd370333
   src/cxr/data/__init__.py: f19092845a5a4261305d448673f4fae40a4987bb2f57d4c847ebc15b55ce8d64
   src/cxr/data/archive.py: e9d4f8e86fa8f9d3d44ac04deec60ddce36da787ed79d7429607cd1747ff1f35
   src/cxr/data/audit.py: c5f2fe6ff6fb81f61c687a2662c0f5a0e4ef4c4bd0f56d1811c8efa25217c26f
@@ -495,7 +700,7 @@ artifacts:
   src/cxr/inference/submission.py: 69595165ffe43cb654fb99d70458a66cdc438eca84f64ff383c31607812c7317
   src/cxr/inference/versioned_submission.py: 9fb00a30bea9c767d825604df79b844f0cd897b718ccc3e92b674f9c42476882
   src/cxr/models/__init__.py: ec963a1141019de870f751cf38b8d88899b39dad1aa80d09370c8d3e07f06f32
-  src/cxr/models/factory.py: ea7623cce59df314f73b648f57128c5acfb8fe9da1eabf68282c738b5f241963
+  src/cxr/models/factory.py: a6b7b1c8d69183bbccfb882fc6791ec8337dec4cb17934ce7f5c8227bb1ed7fa
   src/cxr/models/study_pool.py: fdb3bbfd7d56da67a49880009ab0acb482703232bff75a82261e2f418aeeeb0c
   src/cxr/models/study_residual.py: 0e532bcc0be2a8a2623e35639d32c76e364dfdfdfa0c2e116ac43fa0f0c452f4
   src/cxr/utils/__init__.py: 4bab90ca0532c4687e4c4c925d82441fb3cd5b122e7c4c55fabf0a48316711d6
@@ -505,10 +710,13 @@ artifacts:
   src/cxr/utils/labels.py: 52b360484d9644953d2357746d53837c3056664a1cb118b1ffe271802b5f90c9
   src/cxr/utils/training_resume.py: 0d1adfebe5ca69b90ee68b313a38d14285a2214310259aa1008208c4365f2525
   tests/test_archive_dataset.py: 2f405fc7de8a6a2579da56ec5720ba6f0bd14a90bd2377bf833dff78444b456a
-  tests/test_batch17.py: d6fa4b099023245099c4a96de3fb8ad1aec49a90ee889301dfc87e50308b674a
-  tests/test_batch_collaboration.py: 82360c013a343a27081119ad8268237d40df3256e633a5a36f380a1feae40b69
-  tests/test_batch_delivery.py: bde9bca9f8c13700714c73a34208686c03044955e16b9b8a07d0743e95367b90
+  tests/test_batch17.py: 205187947b6efb78391be47bb49a53a2714d9baf2bf186002b1f3e828dcfdb5d
+  tests/test_batch_collaboration.py: 9b13cc5a8444d0d2960f84caa7853e1b90070f76c43f724bbdfa30d9632b6aa3
+  tests/test_batch_delivery.py: 444e5ec0d4e37ee471d2d57d18a7fae78d64e6b4d2d76ddbf62320efc8494af3
   tests/test_batch_queue.py: 79990f6f1ff037f820584bb384d0059632c747759e63bc1a9b8fd5821464d87f
+  tests/test_batch_scheduler.py: fe8d78cfcb2af781f6c68b3cfe3615dd52741b097e4308d2eebdbe74df0d290e
+  tests/test_batch_test_submission.py: 3d58028e6a3a920c98b1766a6932a2534b778d11f6f17e82efb84c10ed0f729a
+  tests/test_deployment_hard_limits.py: c1916fd85d5fd2e2fbcc0b05c536b5c653b227ff2c0db1429daecc7db3098424
   tests/test_early_stopping.py: 94ab780d71d6ec50c11dbbf3adea629b2bc6424f27c17adf26d6c82ac7ee1112
   tests/test_metrics.py: 5d76105e0a869bb222c7cc3ca89e3a4ac847ab2ef9bed1a42b49691ae6bc89c3
   tests/test_patient_folds.py: dd6f654974c038e81b0caef4f1cf820cd7e4e60ca8a8bc2c3d8b4a1db9615250
@@ -527,3 +735,79 @@ deployment_candidates:
     D17_F05: 0.05
     C17_F01: 0.25
     S17_F01: 0.5
+original_A_config_hashes:
+  D17_F01: 0f6b0a8fc08bd3992a6083b3171f62859cef45b62e811f31b27837097bcb7387
+  D17_F02: 166ec47c8c352fdaa4326c0cbc1fcd56529cd5e7d75d2a6199c6f2e88d17ef7b
+  D17_F03: 5e5484d602e5d338f8d9b33abfdb58d6deea156de6361bcede622cf44248210a
+  D17_F04: 1dd05daacb4bc58b073434e498ef58e099eb13000080240fa04030315add439f
+  D17_F05: 2cfd1a9c858c4b250a2b02e098de1c8450e67ac7095e57e01a574864846daba1
+  C17_F01: ff262e478d18b06c2f794168cae18704a71350810f64f1e0efa6831f3e163c51
+  C17_F02: 8b8fc2575b6fa8b2bbc432c0e9ad032eebbf71c3044f47f196386f6e30031800
+  C17_F03: f1748e864ce0cf27a9c02bf30383d488f55233481e1a45068d9b263623334655
+  C17_F04: 679458048f9d12cf78b359fe993724447a1bd53aaa0b04b0d708d50d20dca8b5
+  C17_F05: a09a4572ba6f9139af5c24d5a14e287b66fed7d7312e37d1bff38f879cfdcce7
+  S17_F01: 71ac7c8b064e973c930286eebdb297981ea961e894f2cc442f45c3e06a39b16d
+  S17_F02: 556fc159343c9ee66ca7a0ee3fb8260d050bbf70baa3c128bbd36f5ef458cc5e
+  S17_F03: 830c2c54be44a635a6adf591f8e86d4f108f6df7d88f2c850fb9057671539ea4
+  S17_F04: ae0c953a5af6b5e4cff0b9b67bb612159baf8882ba003b44a157491add1d5fb1
+  S17_F05: 78deb482e4a592421d805abed8b10ceca7a332b264e45bfbcf995f522d538c0c
+optional_seed_tasks:
+  enabled: false
+  reason: Not in the current 22-task budget
+conditional_extension:
+  enabled: false
+  max_additional_tasks: 4
+  candidate_backbones:
+  - convnext_small
+  - efficientnet_v2_m
+  criteria: null
+  friend_gpu_hours: null
+  decision: STOP_AT_22_UNLESS_NEW_REVIEWED_PLAN
+  reserved_slots:
+  - id: PILOT_SELECTED_F02
+    fold: 2
+    backbone: null
+    enabled: false
+  - id: PILOT_SELECTED_F03
+    fold: 3
+    backbone: null
+    enabled: false
+  - id: PILOT_SELECTED_F04
+    fold: 4
+    backbone: null
+    enabled: false
+  - id: PILOT_SELECTED_F05
+    fold: 5
+    backbone: null
+    enabled: false
+resource_authorization:
+  gpu_model: NVIDIA RTX 4090
+  gpu_count: 8
+  gpu_hours: null
+  storage_bytes: null
+  concurrency: at most 8 independent workers; actual authorized IDs and cap in friend_server.local.env
+deployment_protocol:
+  confirmed: false
+  official_source: null
+  sha256: null
+  hardware: null
+  precision: null
+  batch_size: null
+  timing_scope: null
+  statistic: null
+  warmup_samples: null
+  measured_samples: null
+  software_environment: null
+  weight_limit_bytes: 500000000
+  latency_limit_ms_exclusive: 100
+pilot_analysis:
+  split: same Fold1 OOF only
+  reference:
+    D17_F01: 0.25
+    C17_F01: 0.25
+    S17_F01: 0.5
+  marginal_fusion:
+    reference: 0.5
+    pilot: 0.5
+  bootstrap_draws: 2000
+  selection_bias: exploratory single fold, not confirmation

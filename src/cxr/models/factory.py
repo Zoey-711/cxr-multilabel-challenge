@@ -6,12 +6,14 @@ from pathlib import PurePosixPath
 def imagenet_weight_info(name: str) -> tuple[str, str, str]:
     """Return the official torchvision weight enum name, URL, and cache filename."""
     try:
-        from torchvision.models import ConvNeXt_Tiny_Weights, DenseNet121_Weights, EfficientNet_V2_S_Weights, Swin_T_Weights
+        from torchvision.models import ConvNeXt_Small_Weights, EfficientNet_V2_M_Weights, ConvNeXt_Tiny_Weights, DenseNet121_Weights, EfficientNet_V2_S_Weights, Swin_T_Weights
     except ImportError as exc:
         raise RuntimeError("Install torchvision in the Python 3.12 environment") from exc
     weights = {"densenet121": DenseNet121_Weights.IMAGENET1K_V1,
                "convnext_tiny": ConvNeXt_Tiny_Weights.IMAGENET1K_V1,
                "efficientnet_v2_s": EfficientNet_V2_S_Weights.IMAGENET1K_V1,
+               "convnext_small": ConvNeXt_Small_Weights.IMAGENET1K_V1,
+               "efficientnet_v2_m": EfficientNet_V2_M_Weights.IMAGENET1K_V1,
                "swin_t": Swin_T_Weights.IMAGENET1K_V1}.get(name)
     if weights is None:
         raise ValueError(f"Unsupported model: {name}")
@@ -19,30 +21,30 @@ def imagenet_weight_info(name: str) -> tuple[str, str, str]:
 
 
 def create_model(name: str, *, num_classes: int = 10, pretrained: bool = False):
-    if name not in ("densenet121", "convnext_tiny", "efficientnet_v2_s", "swin_t"):
+    if name not in ("densenet121", "convnext_tiny", "efficientnet_v2_s", "swin_t", "convnext_small", "efficientnet_v2_m"):
         raise ValueError(f"Unsupported model: {name}")
     if num_classes != 10:
         raise ValueError("This competition requires 10 output classes")
     try:
         from torch import nn
-        from torchvision.models import (ConvNeXt_Tiny_Weights, DenseNet121_Weights,
+        from torchvision.models import (ConvNeXt_Small_Weights, EfficientNet_V2_M_Weights, ConvNeXt_Tiny_Weights, DenseNet121_Weights,
                                         EfficientNet_V2_S_Weights, Swin_T_Weights,
-                                        convnext_tiny, densenet121, efficientnet_v2_s, swin_t)
+                                        convnext_small, efficientnet_v2_m, convnext_tiny, densenet121, efficientnet_v2_s, swin_t)
     except ImportError as exc:
         raise RuntimeError("Install PyTorch and torchvision in the Python 3.12 environment") from exc
     if name == "densenet121":
         weights = DenseNet121_Weights.IMAGENET1K_V1 if pretrained else None
         model = densenet121(weights=weights)
         model.classifier = nn.Linear(model.classifier.in_features, num_classes)
-    elif name == "convnext_tiny":
-        weights = ConvNeXt_Tiny_Weights.IMAGENET1K_V1 if pretrained else None
-        model = convnext_tiny(weights=weights)
+    elif name in ("convnext_tiny", "convnext_small"):
+        enum, constructor = (ConvNeXt_Tiny_Weights, convnext_tiny) if name == "convnext_tiny" else (ConvNeXt_Small_Weights, convnext_small)
+        model = constructor(weights=enum.IMAGENET1K_V1 if pretrained else None)
         if not isinstance(model.classifier[-1], nn.Linear):
             raise RuntimeError("Unexpected torchvision ConvNeXt-Tiny classifier structure")
         model.classifier[-1] = nn.Linear(model.classifier[-1].in_features, num_classes)
-    elif name == "efficientnet_v2_s":
-        weights = EfficientNet_V2_S_Weights.IMAGENET1K_V1 if pretrained else None
-        model = efficientnet_v2_s(weights=weights)
+    elif name in ("efficientnet_v2_s", "efficientnet_v2_m"):
+        enum, constructor = (EfficientNet_V2_S_Weights, efficientnet_v2_s) if name == "efficientnet_v2_s" else (EfficientNet_V2_M_Weights, efficientnet_v2_m)
+        model = constructor(weights=enum.IMAGENET1K_V1 if pretrained else None)
         if not isinstance(model.classifier[-1], nn.Linear):
             raise RuntimeError("Unexpected torchvision EfficientNetV2-S classifier structure")
         model.classifier[-1] = nn.Linear(model.classifier[-1].in_features, num_classes)

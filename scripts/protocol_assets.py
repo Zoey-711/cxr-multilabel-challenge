@@ -1,44 +1,56 @@
-"""Separately transfer fixed private protocol metadata, never through the code repository."""
-import argparse,hashlib,tarfile
+"""Import immutable private fold/label metadata from an authorized directory."""
+import argparse
+import shutil
 from pathlib import Path
+
 import yaml
-from cxr.batch.plan import ROOT,digest
+
+from cxr.batch.plan import ROOT, digest
+
 
 def expected_assets(plan):
-    assets={k:v for k,v in plan['artifacts'].items() if k.startswith('batch_assets/')}
+    assets = {k:v for k,v in plan['artifacts'].items() if k.startswith('batch_assets/')}
     assets.update({plan['fold_directory']+'/'+name:h for name,h in plan['fold_hashes'].items()})
     return assets
 
-def unpack(path,plan):
-    assets=expected_assets(plan);payload={}
-    with tarfile.open(path,'r:gz') as tar:
-        for item in tar:
-            if item.name not in assets or not item.isfile() or item.name in payload:
-                raise ValueError('Unapproved/duplicate protocol member')
-            data=tar.extractfile(item).read()
-            if hashlib.sha256(data).hexdigest()!=assets[item.name]:raise ValueError('Protocol metadata hash mismatch')
-            payload[item.name]=data
-    if set(payload)!=set(assets):raise ValueError('Protocol attachment incomplete')
-    for name,data in payload.items():
-        target=(ROOT/name).resolve()
-        if ROOT not in target.parents:raise ValueError('Unsafe protocol path')
-        if target.exists() and digest(target)!=assets[name]:raise FileExistsError(target)
-    for name,data in payload.items():
-        target=ROOT/name;target.parent.mkdir(parents=True,exist_ok=True)
-        if not target.exists():target.write_bytes(data)
+
+def import_directory(directory, plan):
+    source_root = Path(directory).resolve()
+    if not source_root.is_dir():
+        raise FileNotFoundError(source_root)
+    assets = expected_assets(plan)
+    for name, expected in assets.items():
+        source = source_root/name
+        target = (ROOT/name).resolve()
+        if not source.is_file() or digest(source) != expected:
+            raise ValueError(f'Private protocol metadata missing or changed: {source}')
+        if ROOT not in target.parents:
+            raise ValueError('Unsafe protocol asset path')
+        if target.exists() and digest(target) != expected:
+            raise FileExistsError(f'Existing protocol asset differs: {target}')
+    for name in assets:
+        target = ROOT/name
+        if not target.exists():
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source_root/name, target)
+    print('Frozen protocol metadata verified; no split regenerated')
+
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--config',required=True,type=Path);p.add_argument('--action',required=True,choices=['pack','import']);p.add_argument('--file',required=True,type=Path)
-    a=p.parse_args();plan=yaml.safe_load(a.config.read_text(encoding='utf-8'))
-    if a.action=='import':unpack(a.file,plan)
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--config',required=True,type=Path)
+    parser.add_argument('--action',required=True,choices=['import','verify'])
+    parser.add_argument('--directory',required=True,type=Path)
+    args=parser.parse_args()
+    plan=yaml.safe_load(args.config.read_text(encoding='utf-8'))
+    if args.action=='import':
+        import_directory(args.directory,plan)
     else:
-        if a.file.exists():raise FileExistsError(a.file)
-        assets=expected_assets(plan)
-        for name,h in assets.items():
-            if digest(ROOT/name)!=h:raise ValueError('Changed protocol metadata')
-        a.file.parent.mkdir(parents=True,exist_ok=True)
-        with tarfile.open(a.file,'w:gz') as tar:
-            for name in assets:tar.add(ROOT/name,arcname=name,recursive=False)
-        print('Private metadata archive SHA256:',digest(a.file))
-    print('Protocol assets verified; no new patient split generated')
-if __name__=='__main__':main()
+        for name, expected in expected_assets(plan).items():
+            if digest(args.directory/name)!=expected:
+                raise ValueError(f'Protocol asset changed: {name}')
+        print('Protocol directory verified')
+
+
+if __name__=='__main__':
+    main()

@@ -52,6 +52,8 @@ def execute(task, batch_root, gpu, attempt):
             raise ValueError('Code commit changed while batch queue was running')
         if (run/'batch_frozen_manifest.json').exists():
             verify_frozen(run)
+            from cxr.batch.submission_reporting import emit_single_submission
+            emit_single_submission(run)
             if os.environ.get('CXR_BACKUP_ROOT'):
                 target=Path(os.environ['CXR_BACKUP_ROOT'])/batch_root.name/task['id']
                 if target.exists():
@@ -109,8 +111,42 @@ def execute(task, batch_root, gpu, attempt):
             rc=run_command(['scripts/batch_latency.py','--config',config,'--run-dir',str(run)],env,
                            logs/'latency.out.log',logs/'latency.err.log',deadline-time.monotonic())
             if rc:raise RuntimeError('Latency measurement failed; see queue_logs')
+        if task['ema'] and not (run/'ema_latency.json').exists():
+            rc=run_command(['scripts/batch_latency.py','--config',config,'--run-dir',str(run),
+                            '--checkpoint-kind','ema'],env,
+                           logs/'ema_latency.out.log',logs/'ema_latency.err.log',deadline-time.monotonic())
+            if rc:raise RuntimeError('EMA latency measurement failed; see queue_logs')
+        stage='test'
+        from cxr.data.archive import archive_path, read_split_rows
+        from cxr.utils.config import load_config
+        try:
+            test_rows=read_split_rows(archive_path(load_config(config)),'test')
+        except (FileNotFoundError,KeyError):
+            write_json(run/'TEST_PENDING.json',{'reason':'Official unlabeled Test data unavailable; training/Val/OOF retained'})
+            return {'state':'test_pending','stage':'test','reason':'Official Test unavailable',
+                    'gpu_hours':(time.monotonic()-start)/3600}
+        if len(test_rows)!=2218:
+            raise ValueError('Official Test image count differs from 2218')
+        if (run/'TEST_PENDING.json').exists():
+            (run/'TEST_PENDING.json').unlink()
+        for kind in (['raw','ema'] if task['ema'] else ['raw']):
+            name='test_predictions.csv' if kind=='raw' else 'ema_test_predictions.csv'
+            target=run/name
+            if target.exists():
+                from cxr.batch.test_results import read_test_probabilities
+                read_test_probabilities(target)
+                continue
+            rc=run_command(['scripts/batch_test_inference.py','--config',config,'--run-dir',str(run),
+                            '--checkpoint-kind',kind],env,logs/(f'test_{kind}.out.log'),
+                           logs/(f'test_{kind}.err.log'),deadline-time.monotonic())
+            if rc:
+                message=(logs/(f'test_{kind}.err.log')).read_text(encoding='utf-8',errors='replace')[-12000:]
+                return {'state':'test_failed','stage':'test','reason':message,
+                        'gpu_hours':(time.monotonic()-start)/3600}
         stage='freeze'
         finalize_task(run,task)
+        from cxr.batch.submission_reporting import emit_single_submission
+        emit_single_submission(run)
         if os.environ.get('CXR_BACKUP_ROOT'):
             from cxr.batch.backup import backup
             target=Path(os.environ['CXR_BACKUP_ROOT'])/batch_root.name/task['id']
@@ -126,7 +162,7 @@ def budget_allows(consumed, reserved, next_hours, budget):
     return consumed + reserved + next_hours <= budget
 
 
-def run_queue(plan, plan_path, batch_root, gpus, budget, resume=False, extended=False, initial_gpu_hours=0):
+def run_queue(plan, plan_path, batch_root, gpus, budget, resume=False, extended=False, initial_gpu_hours=0, max_concurrent=None):
     root=Path(batch_root).resolve()
     tasks=selected_tasks(plan,extended)
     if budget <= 0:
@@ -153,8 +189,12 @@ def run_queue(plan, plan_path, batch_root, gpus, budget, resume=False, extended=
             elif record['state']=='failed' and record.get('stage')=='freeze':
                 # Backup failures may be retried explicitly without retraining frozen weights.
                 record['state']='pending'
+        for record in state['tasks'].values():
+            if resume and record['state'] in ('test_pending','test_failed'):
+                record['state']='pending'
         active={}
-        executor=concurrent.futures.ThreadPoolExecutor(max_workers=len(gpus))
+        maximum=min(len(gpus), max_concurrent or len(gpus))
+        executor=concurrent.futures.ThreadPoolExecutor(max_workers=maximum)
         try:
             while True:
                 for future,(task,gpu) in list(active.items()):
@@ -165,15 +205,22 @@ def run_queue(plan, plan_path, batch_root, gpus, budget, resume=False, extended=
                         state['gpu_hours']+=elapsed
                         record['gpu_hours']=record.get('gpu_hours',0)+elapsed
                         record.update(result)
-                        if result['state']=='failed':
+                        if result['state'] in ('failed','test_failed'):
                             record_failure(root,task,record)
                         if result['state']=='failed' and result.get('retryable') and record['attempts']<=task['max_retries']:
                             record['state']='pending'
                         del active[future]
+                        from cxr.batch.reporting import csv_rows
+                        status_rows=[{'Model_ID':tid,'State':item['state'],'Attempts':item['attempts'],
+                                      'GPU_Hours':item.get('gpu_hours',0),'Stage':item.get('stage',''),
+                                      'Reason':item.get('reason','')} for tid,item in state['tasks'].items()]
+                        temporary=root/'reports/experiment_status.csv.tmp'
+                        csv_rows(temporary,status_rows)
+                        temporary.replace(root/'reports/experiment_status.csv')
                 busy={gpu for _,gpu in active.values()}
                 drain=(root/'STOP').exists()
                 for gpu in gpus:
-                    if gpu in busy or drain:
+                    if gpu in busy or drain or len(active)>=maximum:
                         continue
                     reserved=sum(t['timeout_hours'] for t,_ in active.values())
                     for task in tasks:
@@ -201,6 +248,32 @@ def run_queue(plan, plan_path, batch_root, gpus, budget, resume=False, extended=
         from cxr.batch.reporting import report
         try:
             report(root)
+            # A bounded, predeclared full-ensemble research benchmark. It never
+            # establishes official latency compliance or changes model selection.
+            reserve=0.25
+            if not (root/'STOP').exists() and budget_allows(state['gpu_hours'],0,reserve,budget):
+                bench_env=os.environ.copy();bench_env['CUDA_VISIBLE_DEVICES']=gpus[0]
+                logs=root/'queue_logs';logs.mkdir(exist_ok=True)
+                started=time.monotonic()
+                try:
+                    rc=run_command(['scripts/batch_ensemble_latency.py','--config',str(plan_path),
+                                    '--root',str(root)],bench_env,
+                                   logs/'ensemble_latency.out.log',logs/'ensemble_latency.err.log',reserve*3600)
+                except Exception as exc:
+                    rc=-1
+                    write_json(root/'reports/ENSEMBLE_BENCHMARK_FAILED.json',
+                               {'error':f'{type(exc).__name__}: {exc}',
+                                'scope':'research full-candidate timing; model metrics remain frozen'})
+                finally:
+                    state['gpu_hours']+=(time.monotonic()-started)/3600
+                    write_json(root/'queue_state.json',state)
+                if rc and not (root/'reports/ENSEMBLE_BENCHMARK_FAILED.json').exists():
+                    write_json(root/'reports/ENSEMBLE_BENCHMARK_FAILED.json',
+                               {'exit_code':rc,'scope':'research full-candidate timing; model metrics remain frozen'})
+                report(root)
+            else:
+                write_json(root/'reports/ENSEMBLE_BENCHMARK_SKIPPED.json',
+                           {'reason':'STOP requested or remaining GPU-hour budget <0.25'})
         except Exception as exc:
             write_json(root/'reports/ANALYSIS_FAILED.json',{'state':'failed','reason':f'{type(exc).__name__}: {exc}'})
             write_json(root/'reports/experiment_summary.json',{'state':'analysis_failed','queue':state,'metrics':None})
@@ -208,12 +281,4 @@ def run_queue(plan, plan_path, batch_root, gpus, budget, resume=False, extended=
         return state
     finally:
         lock.unlink()
-        # Partial queues also deliver explicit missing/failed task lists.
-        if (root/'reports/experiment_summary.json').exists():
-            from cxr.batch.delivery import pack
-            package=pack(root)
-            if os.environ.get('CXR_BACKUP_ROOT'):
-                from cxr.batch.backup import backup
-                target=Path(os.environ['CXR_BACKUP_ROOT'])/root.name/'delivery'/package.name
-                target.parent.mkdir(parents=True,exist_ok=True)
-                backup(package,target)
+        # Results stay in direct folders; no archive or automatic deletion.

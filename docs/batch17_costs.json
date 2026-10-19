@@ -22,5 +22,13 @@
     "total_gpu_hours": 4.890792176,
     "fivefold_same_stop_projected_hours": 19.563168704,
     "fivefold_30epoch_projected_hours": 45.145773932307684
+  },
+  "N": {
+    "source": "n01_efficientnet_v2_s_384_amp_retry_20261018",
+    "epochs": 9,
+    "mean_epoch_minutes": 24.294210610185,
+    "total_gpu_hours": 3.64413159152775,
+    "fivefold_same_stop_projected_hours": 14.576526366111,
+    "fivefold_30epoch_projected_hours": 48.58842122037
   }
 }

@@ -134,9 +134,13 @@ def finalize_task(run, task, *, expected_val=(859,228)):
     # A previous failed attempt stays in failure history, never masquerades as current failure.
     if (run/'FAILED.json').exists():
         (run/'FAILED.json').rename(run/'recovered_failure.json')
-    important = ('best_model.pth','resolved_config.yaml','metrics.json','val_predictions.csv','run_manifest.json','checkpoint_resume.pth')
+    important = ('best_model.pth','resolved_config.yaml','metrics.json','val_predictions.csv','test_predictions.csv',
+                 'model_size.json','inference_benchmark.json','deployment_eligibility.json',
+                 'run_manifest.json','checkpoint_resume.pth')
     if task['fold'] is not None:
         important += ('oof_predictions.csv',)
+    if task['ema']:
+        important += ('ema_best_model.pth','ema_val_predictions.csv','ema_oof_predictions.csv','ema_test_predictions.csv')
     checks = {name:digest(run/name) for name in important}
     write_json(run/'DONE.json',{'state':'complete','model_id':task['id'],'verified_sha256':checks,'time_utc':utcnow()})
     files = {p.relative_to(run).as_posix(): {'sha256': digest(p), 'bytes': p.stat().st_size}

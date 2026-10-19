@@ -114,7 +114,7 @@ def main() -> None:
               "estimated_30_epoch_hours": epoch_seconds * 30 / 3600,
               "estimated_10_epoch_yuan": epoch_seconds * 10 / 3600 * YEN_PER_HOUR,
               "estimated_30_epoch_yuan": epoch_seconds * 30 / 3600 * YEN_PER_HOUR,
-              "local_full_train_historical_minutes_per_epoch": LOCAL_MINUTES_PER_EPOCH[config["model"]["name"]],
+              "local_full_train_historical_minutes_per_epoch": LOCAL_MINUTES_PER_EPOCH.get(config["model"]["name"]),
               "estimate_note": "Short cached-GPU plus ZIP-read estimate; validation, startup, checkpoints and early stop vary."}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     if args.output.exists():

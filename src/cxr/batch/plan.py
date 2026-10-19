@@ -26,8 +26,23 @@ def load_plan(path):
     plan = yaml.safe_load(Path(path).read_text(encoding='utf-8'))
     if plan.get('schema') != 'cxr_batch_v1':
         raise ValueError('Unknown batch plan schema')
+    host=plan.get('server_architecture',{})
+    if (host.get('type')!='single_linux_host' or host.get('authorized_gpu_count_max')!=8 or
+            host.get('gpu_memory_gib')!=24 or '4090' not in host.get('gpu_model','')):
+        raise ValueError('Single-host RTX4090 eight-GPU architecture changed')
+    if (plan.get('expected_test_studies'),plan.get('expected_test_images'))!=(1414,2218):
+        raise ValueError('Official unlabeled Test coverage changed')
     tasks = plan['tasks']
+    for tid, expected in plan.get('original_A_config_hashes', {}).items():
+        task = next(t for t in tasks if t['id'] == tid)
+        if task['config_sha256'] != expected:
+            raise ValueError('Original A configuration changed')
     ids = [t['id'] for t in tasks]
+    groups = {g:sum(t['group']==g for t in tasks) for g in ('A','N','P')}
+    if groups!={'A':15,'N':5,'P':2} or len(tasks)!=22:
+        raise ValueError('Reviewed 22-task inventory changed')
+    if plan.get('conditional_extension',{}).get('enabled') is not False or len(plan['conditional_extension']['reserved_slots'])!=4:
+        raise ValueError('Unapproved conditional expansion')
     if len(ids) != len(set(ids)):
         raise ValueError('Duplicate task IDs')
     import re
@@ -36,7 +51,7 @@ def load_plan(path):
             raise ValueError('Unsafe task ID')
         if t['max_retries'] not in (0, 1) or t['timeout_hours'] <= 0:
             raise ValueError('Retry/timeout bound missing')
-        if t['gpu'] != 'allocated_pool' or t['group'] not in ('A', 'C'):
+        if t['gpu'] != 'allocated_pool' or t['group'] not in ('A', 'C', 'N', 'P'):
             raise ValueError('Unapproved GPU or experiment group')
         if t['output']!='experiments/'+t['id']:
             raise ValueError('Task ID and unique output directory differ')
@@ -48,10 +63,18 @@ def load_plan(path):
         cfg = yaml.safe_load(cfg_path.read_text(encoding='utf-8'))
         if cfg['experiment']['seed'] != t['seed'] or cfg['model']['name'] != t['backbone']:
             raise ValueError('Model/seed mismatch')
+        if cfg['model']['pretrained']!='imagenet' or cfg['model']['pretrained_sha256']!=t['pretrained_sha256']:
+            raise ValueError('Unapproved pretrained source/hash')
+        if cfg['data']['input_size']!=384 or cfg['training']['loss']!='bce_with_logits' or cfg['validation']['study_fusion']!='mean_probability':
+            raise ValueError('Resolution/loss/Study protocol changed')
+        if bool(cfg['training'].get('ema',{}).get('enabled'))!=t['ema']:
+            raise ValueError('EMA policy and task declaration differ')
+        if cfg['training']['early_stopping_patience']!=(8 if t['backbone']=='densenet121' else 6):
+            raise ValueError('Early stopping patience differs from frozen protocol')
         if cfg['training']['batch_size'] * cfg['training'].get('gradient_accumulation_steps', 1) != 16:
             raise ValueError('Effective batch must remain 16')
         subset = cfg['data'].get('train_subset')
-        if t['group'] == 'A' and (not subset or subset['fold'] != t['fold']):
+        if t['group'] in ('A','N','P') and (not subset or subset['fold'] != t['fold']):
             raise ValueError('Fold mismatch')
         if t['group'] == 'C' and (t['enabled'] or subset is not None):
             raise ValueError('Optional full-Train seeds must be disabled by default')
@@ -73,6 +96,8 @@ def load_plan(path):
 
 
 def selected_tasks(plan, extended=False):
+    if extended and 'conditional_extension' in plan:
+        raise ValueError('Conditional expansion has no frozen criteria/authorized budget; stop at 22')
     return [t for t in plan['tasks'] if t['enabled'] or (extended and t['group'] == 'C')]
 
 

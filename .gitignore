@@ -1,6 +1,7 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+pytest-cache-files-*/
 .coverage
 .venv/
 .tmp/
@@ -55,3 +56,5 @@ private_transfer/
 .vscode/
 *.sqlite
 *.db
+# Friend-owned paths and authorization; never commit local resource configuration.
+configs/friend_server.local.env

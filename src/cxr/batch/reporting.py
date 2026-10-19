@@ -58,7 +58,7 @@ def report(root, *, draws=None):
             row['state']=state['tasks'].get(tid,{}).get('state','disabled' if not task['enabled'] else 'missing')
         rows.append(row)
     ensemble_tables={}; complete_oof={}; source_maps={}; missing={}
-    for branch in ('D17','C17','S17'):
+    for branch in ('D17','C17','S17','N17'):
         ids=[f'{branch}_F{i:02d}' for i in range(1,6)]
         missing[branch]=[n for n in ids if n not in tables or n not in oofs]
         if missing[branch]:
@@ -76,6 +76,19 @@ def report(root, *, draws=None):
         index=[{'Subject_id':s,'Study_id':st,'model_id':n,'fold':i} for i,n in enumerate(ids,1) for s,st in oofs[n]['keys']]
         csv_rows(root/'oof'/(branch+'_source_index.csv'),index)
         write_json(root/'oof'/(branch+'_status.json'),{'state':'complete','studies':len(index),'patients':len({r['Subject_id'] for r in index})})
+    for branch in ('C17','N17'):
+        ids=[f'{branch}_F{i:02d}_EMA' for i in range(1,6)]
+        if not all(n in tables and n in oofs for n in ids):
+            write_json(root/'oof'/(branch+'_EMA_status.json'),{'state':'incomplete','missing':[n for n in ids if n not in oofs]})
+            continue
+        name=branch[0]+'5_EMA'
+        ensemble_tables[name]=combine([tables[n] for n in ids],[.2]*5)
+        complete_oof[name]=concatenate_oof([oofs[n] for n in ids])
+        if set(complete_oof[name]['keys'])!=label_keys(train_label):raise ValueError('EMA OOF coverage mismatch')
+        files[name]=[p for n in ids for p in files[n]]
+        write_probabilities(root/'validation'/(branch+'_EMA_val_ensemble.csv'),ensemble_tables[name],{'sources':ids,'weights':[.2]*5})
+        write_probabilities(root/'oof'/(branch+'_EMA_oof_all.csv'),complete_oof[name],{'sources':ids,'rule':'unseen corresponding fold only'})
+        csv_rows(root/'oof'/(branch+'_EMA_source_index.csv'),[{'Subject_id':s,'Study_id':st,'model_id':n,'fold':i} for i,n in enumerate(ids,1) for s,st in oofs[n]['keys']])
     e07=root/'validation/E07_val_probabilities.csv'
     ensemble_tables['E07']=read_probabilities(e07,val_label,val_keys)
     candidates=dict(plan.get('deployment_candidates',{}))
@@ -106,7 +119,7 @@ def report(root, *, draws=None):
             fold_boot[str(i)]=bootstrap(fold_tables,[],draws)
     all_val_boot=bootstrap(tables,[(n,n[:-4]) for n in tables if n.endswith('_EMA')],draws) if tables else None
     deployment=[]
-    for name in [n for n in ensemble_tables if n!='E07']:
+    for name in [n for n in {**tables,**ensemble_tables} if n!='E07']:
         dependencies=[]
         for p in files[name]:
             run=p.parent; man=json.loads((run/'run_manifest.json').read_text(encoding='utf-8'))
@@ -117,21 +130,36 @@ def report(root, *, draws=None):
         size=sum(x['bytes'] for x in dependencies)
         latency=[]
         for p in files[name]:
-            f=p.parent/'latency.json'
+            f=p.parent/('ema_latency.json' if p.name.startswith('ema_') else 'latency.json')
             if f.exists():latency.append(json.loads(f.read_text(encoding='utf-8')))
+        full_measurement=root/'deployment/research_benchmarks'/(name+'.json')
+        if full_measurement.exists():latency.append(json.loads(full_measurement.read_text(encoding='utf-8')))
         deployment.append({'candidate':name,'bytes':size,'fits_500MB':size<=500_000_000,
-                           'val_auc':official[name]['all']['macro_auc'],'dependencies':dependencies,
+                           'val_auc':scores(({**tables,**ensemble_tables})[name])['macro_auc'],'dependencies':dependencies,
                            'latency':latency,'latency_note':'Per-model measurements only; summed latency is not measured ensemble end-to-end latency.'})
-    write_json(root/'ensembles/deployment_candidates.json',deployment)
-    csv_rows(root/'ensembles/deployment_candidates.csv',
-             [{k:r[k] for k in ('candidate','bytes','fits_500MB','val_auc')} for r in deployment],
-             ['candidate','bytes','fits_500MB','val_auc'])
-    (root/'ensembles/deployment_report.md').write_text('# 部署预算\n\n仅统计纯推理权重，不含resume。完整15模型不能默认部署。\n\n'+
-        '\n'.join(f'- {r["candidate"]}: {r["bytes"]} bytes; <=500MB: {r["fits_500MB"]}' for r in deployment)+
-        '\n\n延迟设备与单模型实测见 latency 字段；未在官方T4实测，不宣称满足100ms。',encoding='utf-8')
+    provenance=root/'manifests/e07_provenance.json'
+    if provenance.exists():
+        sources=json.loads(provenance.read_text(encoding='utf-8'))
+        deployment.append({'candidate':'E07','val_auc':official['E07']['all']['macro_auc'],
+                           'dependencies':[{'path':'frozen_reference/'+n,'sha256':v['checkpoint_sha256'],
+                                            'bytes':v['checkpoint_bytes']} for n,v in sources.items()],
+                           'latency':[]})
+    from cxr.batch.deployment import export_reports
+    import hashlib
+    for candidate in deployment:
+        # Independent validation uses the same FP16 raw/EMA checkpoint inference pipeline.
+        hashes=sorted(d['sha256'] for d in candidate['dependencies'])
+        recipe=hashlib.sha256(json.dumps({'weights':hashes,'precision':'fp16_amp',
+            'fusion':candidates.get(candidate['candidate'],candidate['candidate']),
+            'study_aggregation':'mean_probability'},sort_keys=True).encode()).hexdigest()
+        candidate.update(inference_recipe_sha256=recipe,accuracy_recipe_sha256=recipe,
+                         accuracy_checkpoint_sha256=hashes)
+    deployment_status=export_reports(root,deployment,plan.get('deployment_protocol',{}))
+    from cxr.batch.additional import analyze
+    analyze(root,tables,oofs,rows,draws)
     result={'tasks':rows,'failures':failures,'official_val':official,'full_oof':oof_metrics,'missing_folds':missing,
             'bootstrap_val':boot,'bootstrap_oof':oof_boot,'fold_oof_bootstrap':fold_boot,'model_val_bootstrap':all_val_boot,
-            'deployment':deployment,'gpu_epoch_hours':sum(r['epoch_hours'] or 0 for r in rows),
+            'deployment':deployment,'deployment_compliance':deployment_status,'gpu_epoch_hours':sum(r['epoch_hours'] or 0 for r in rows),
             'limitations':['官方Val多次用于模型与Epoch选择；置信区间仅为探索性证据，非新独立测试结果。',
                           '预设多个候选相互相关，不把未校正的多个置信区间当作独立显著性证据。',
                           'OOF每名患者只使用对应未见患者的Fold模型，不是每患者五模型平均。',
@@ -144,6 +172,8 @@ def report(root, *, draws=None):
         reference=ensemble_tables['E07']; a=align(reference,ensemble_tables['E17'])-reference['y']; b=reference['p']-reference['y']
         result['error_correlations']['E17_vs_E07']=[float(np.corrcoef(a[:,j],b[:,j])[0,1]) if a[:,j].std() and b[:,j].std() else None for j in range(10)]
     write_json(root/'analysis/statistics.json',result)
+    from cxr.batch.submission_reporting import generate_test_reports
+    generate_test_reports(root, plan, rows, ensemble_tables, deployment, deployment_status)
     perclass=[{'candidate':n,'split':split,'group':g,**r} for split,items in [('official_val',official),('oof',oof_metrics)] for n,groups in items.items() for g,m in groups.items() for r in m['per_class']]
     if perclass:csv_rows(root/'analysis/per_class_metrics.csv',perclass)
     csv_rows(root/'reports/experiment_summary.csv',rows)
@@ -157,9 +187,11 @@ def report(root, *, draws=None):
         if n=='E07':continue
         for j in (0,3,7):
             lines.append(f'- {n}, class {j+1}: ΔAUC={m["all"]["per_class"][j]["auc"]-official["E07"]["all"]["per_class"][j]["auc"]:.6f}')
-    lines+=['','## 候选保留建议','', '保留预先指定且≤500MB的候选供人工复核；不自动更换正式基准，不按最高Val分数自动提交。',
-             '完整15模型仅研究对照；失败/缺失任务不填入估计指标。详见analysis/statistics.json和ensembles/deployment_candidates.json。']
+    lines+=['','## 候选保留建议','', '仅PASS候选可进入部署复核：≤500MB且按官方口径端到端实测<100ms；不自动更换正式基准，不按最高Val分数自动提交。',
+             '完整多折模型仅作研究对照；失败/缺失任务不填入估计指标。详见analysis/statistics.json和ensembles/deployment_candidates.json。']
     (root/'reports/phase17_final_report.md').write_text('\n'.join(lines),encoding='utf-8')
+    from cxr.batch.direct_delivery import write_delivery_manifest
+    write_delivery_manifest(root)
     return result
 
 

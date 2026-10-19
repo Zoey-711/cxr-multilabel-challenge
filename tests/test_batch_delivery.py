@@ -13,7 +13,8 @@ from cxr.batch.plan import write_json,digest
 from cxr.batch.artifacts import write_probabilities,read_probabilities,label_keys,PROB_COLUMNS,record_failure
 from cxr.batch.results import finalize_task,verify_frozen,read_table,scores
 from cxr.batch.reporting import report
-from cxr.batch.delivery import pack,verify_and_extract
+from cxr.batch.direct_delivery import verify_direct_folder
+from cxr.batch.test_results import write_test
 
 
 def write_csv(path,fields,rows):
@@ -23,9 +24,12 @@ def write_csv(path,fields,rows):
 
 
 def fixture_root(root):
-    for d in ('manifests','experiments','validation','oof','analysis','ensembles','reports','delivery'):(root/d).mkdir(parents=True)
-    tasks=[{'id':f'{b}17_F{i:02d}','group':'A','enabled':True,'fold':i,'ema':False,'seed':42,'fold_hashes':{}} for b in 'DCS' for i in range(1,6)]
-    plan={'tasks':tasks,'bootstrap_draws':10,'fold_hashes':{},'data_sha256':'synthetic',
+    for d in ('manifests','experiments','validation','oof','analysis','deployment','reports','test_predictions','submissions'):(root/d).mkdir(parents=True)
+    tasks=[{'id':f'{b}17_F{i:02d}','group':'A','enabled':True,'fold':i,'ema':False,'seed':42,'fold_hashes':{},'expected_test_studies':2} for b in 'DCS' for i in range(1,6)]
+    tasks += [{'id':f'N17_F{i:02d}','group':'N','enabled':True,'fold':i,'ema':True,'seed':42,'fold_hashes':{},'expected_test_studies':2} for i in range(1,6)]
+    tasks += [{'id':b+'_F01','group':'P','enabled':True,'fold':1,'ema':False,'seed':42,'fold_hashes':{},'expected_test_studies':2} for b in ('CS17','NM17')]
+    plan={'tasks':tasks,'bootstrap_draws':10,'fold_hashes':{},'data_sha256':'synthetic','expected_test_studies':2,
+          'fixed_fusions':{'E17':{'D5':.25,'C5':.25,'S5':.5}},
           'deployment_candidates':{'E17_F01':{'D17_F01':.25,'C17_F01':.25,'S17_F01':.5}}}
     (root/'manifests/batch_plan.yaml').write_text(yaml.safe_dump(plan),encoding='utf-8')
     fields=['Subject_id','Study_id','image_count','fold']+[f'Target_{i}' for i in range(1,11)]
@@ -36,7 +40,8 @@ def fixture_root(root):
                            **{f'Target_{i}':j for i in range(1,11)}})
     for name in ('train_labels.csv','val_labels.csv'):write_csv(root/'manifests'/name,fields,labels)
     write_json(root/'manifests/labels_sha256.json',{n:digest(root/'manifests'/n) for n in ('train_labels.csv','val_labels.csv')})
-    write_json(root/'manifests/environment.json',{'git_commit':None,'data':'synthetic','fold_hashes':{}})
+    write_json(root/'manifests/environment.json',{'git_commit':None,'data_sha256':'synthetic',
+               'fold_hashes':{},'code_sha256':{}})
     image_rows=[{**{k:r[k] for k in ('Subject_id','Study_id','fold')},'Dicom_id':'image_'+r['Study_id']} for r in labels]
     write_csv(root/'manifests/image_folds.csv',list(image_rows[0]),image_rows)
     table={'keys':[(r['Subject_id'],r['Study_id']) for r in labels], 'p':np.full((20,10),.5),
@@ -84,25 +89,49 @@ def train_synthetic(run,task,table):
                          **{f'probability_{j}':float(p[i,j-1]) for j in range(1,11)},
                          **{f'target_{j}':int(table['y'][i,j-1]) for j in range(1,11)}})
         write_csv(run/folder/'study_predictions.csv',list(rows[0]),rows)
+    if task['ema']:
+        # Export pipeline fixture; EMA arithmetic is independently tested on real CPU BatchNorm.
+        shutil.copy2(run/'best_model.pt',run/'best_ema_model.pt')
+        shutil.copy2(run/'best_metrics.json',run/'best_ema_metrics.json')
+        for folder in ('validation_analysis','oof_analysis'):
+            shutil.copytree(run/folder,run/('ema_'+folder))
+    for kind in (['raw','ema'] if task['ema'] else ['raw']):
+        source=run/('best_model.pt' if kind=='raw' else 'best_ema_model.pt')
+        target=run/('test_predictions.csv' if kind=='raw' else 'ema_test_predictions.csv')
+        write_test(target,{'keys':[('subject_00001','study_000001'),('subject_00002','study_000002')],
+                           'p':np.full((2,10),.4)},
+                   {'checkpoint_sha256':digest(source),'checkpoint_kind':kind,'no_test_labels':True})
+    write_json(run/'latency.json',{'device':'synthetic CPU','mean_ms':1,'scope':'unit test'})
     finalize_task(run,task,expected_val=(20,10));verify_frozen(run)
+    from cxr.batch.submission_reporting import emit_single_submission
+    emit_single_submission(run,expected_studies=2)
     return model
 
 
-def test_end_to_end_train_resume_export_package_extract_recompute(tmp_path):
+def test_end_to_end_train_resume_export_direct_folder_recompute(tmp_path):
     root=tmp_path/'outputs/phase17_batch';tasks,table=fixture_root(root)
     expected={}
     for task in tasks:
         model=train_synthetic(root/'experiments'/task['id'],task,table)
         expected[task['id']]={k:v.clone() for k,v in model.state_dict().items()}
     before=report(root,draws=10)
-    assert before['missing_folds']=={'D17':[],'C17':[],'S17':[]}
-    package=pack(root,include_resume=True,part_bytes=8192)
-    manifest=json.loads((package/'delivery_manifest.json').read_text())
-    assert manifest['completed_task_count']==15 and manifest['model_count']==15
-    assert any('.part' in n for n in manifest['packages'])
+    assert before['missing_folds']=={'D17':[],'C17':[],'S17':[],'N17':[]}
+    assert (root/'test_predictions/D17_test_5fold.csv').is_file()
+    assert (root/'test_predictions/N17_EMA_test_5fold.csv').is_file()
+    assert (root/'test_predictions/E17_test_probabilities.csv').is_file()
+    from cxr.batch.test_results import validate_submission
+    assert validate_submission(root/'submissions/ensembles/E17_submission.csv',expected_studies=2)['rows']==20
+    assert all((root/'experiments'/t['id']/'model_size.json').is_file() for t in tasks)
+    assert not list(root.rglob('*.tar.gz'))
+    assert not (root/'oof/CS17_oof_all.csv').exists()
+    assert (root/'analysis/backbone_pilot_comparison.csv').exists()
+    assert all(r['status']!='PASS' for r in before['deployment_compliance'])
+    manifest=verify_direct_folder(root)
+    assert manifest['model_count']==22 and manifest['no_archives'] is True
     destination=tmp_path/'independent'
-    verify_and_extract(package,destination)
-    recovered=destination/'phase17_batch'
+    shutil.copytree(root,destination)
+    recovered=destination
+    verify_direct_folder(recovered)
     after=report(recovered,draws=10)
     assert before['official_val']==after['official_val']
     assert before['bootstrap_val']==after['bootstrap_val']
@@ -111,9 +140,8 @@ def test_end_to_end_train_resume_export_package_extract_recompute(tmp_path):
         restored=torch.nn.Linear(2,10)
         restored.load_state_dict(torch.load(recovered/'experiments'/task['id']/'best_model.pth',weights_only=True))
         assert all(torch.equal(v,restored.state_dict()[k]) for k,v in expected[task['id']].items())
-    with pytest.raises(FileExistsError):verify_and_extract(package,destination)
-    with (package/next(iter(manifest['packages']))).open('ab') as f:f.write(b'corruption')
-    with pytest.raises(ValueError):verify_and_extract(package,tmp_path/'corrupt')
+    with (recovered/'reports/experiment_summary.json').open('ab') as f:f.write(b'corruption')
+    with pytest.raises(ValueError):verify_direct_folder(recovered)
 
 
 def test_incomplete_failed_tasks_explicit_and_no_false_oof(tmp_path):
@@ -125,6 +153,24 @@ def test_incomplete_failed_tasks_explicit_and_no_false_oof(tmp_path):
     assert result['tasks'][2]['val_auc'] is None
     assert result['missing_folds']['D17']
     assert not (root/'oof/D17_oof_all.csv').exists()
+    assert not (root/'test_predictions/D17_test_5fold.csv').exists()
+    assert json.loads((root/'test_predictions/D17_test_5fold.status.json').read_text())['state']=='INCOMPLETE'
+    assert not (root/'experiments'/tasks[1]['id']/'DONE.json').exists()
+    from scripts.validate_batch_artifacts import main as validate_artifacts
+    import sys
+    old=sys.argv
+    try:
+        sys.argv=['validate_batch_artifacts.py','--config',str(root/'manifests/batch_plan.yaml'),'--root',str(root)]
+        validate_artifacts()
+    finally:
+        sys.argv=old
+    audit=json.loads((root/'reports/artifact_validation.json').read_text())
+    assert audit[0]=={'id':tasks[0]['id'],'state':'verified'}
+    assert audit[1]=={'id':tasks[1]['id'],'state':'failed'}
+    partial_manifest=verify_direct_folder(root)
+    assert partial_manifest['completed_tasks']==[tasks[0]['id']]
+    assert len(partial_manifest['missing_tasks'])==21
+    assert (root/'experiments'/tasks[0]['id']/'best_model.pth').is_file()
     assert not (root/'experiments'/tasks[1]['id']/'DONE.json').exists()
 
 

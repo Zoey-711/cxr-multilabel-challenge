@@ -12,8 +12,11 @@ def main():
     files.update((ROOT/'scripts').glob('*.sh'))
     files.update((ROOT/'tests').glob('*.py'))
     files.update((ROOT/'configs/batch17').glob('*.yaml'))
+    files.update((ROOT/'docs').glob('*.md'))
     files.update(x for x in (ROOT/'batch_assets').iterdir() if x.is_file())
-    files.update(ROOT/x for x in ('README.md','README_friend.md','README_results.md','requirements/cloud.txt','pyproject.toml','docs/batch17_costs.json'))
+    files.update(ROOT/x for x in ('README.md','README_friend.md','README_results.md','.gitignore',
+                                  'requirements/cloud.txt','pyproject.toml','docs/batch17_costs.json',
+                                  'configs/friend_server.example.env'))
     plan['artifacts']={f.relative_to(ROOT).as_posix():digest(f) for f in sorted(files)}
     for t in plan['tasks']:t['config_sha256']=digest(ROOT/t['config'])
     a.config.write_text(yaml.safe_dump(plan,sort_keys=False,allow_unicode=True),encoding='utf-8',newline='\n')

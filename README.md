@@ -1,67 +1,16 @@
-# Phase17-Batch：胸片多标签分类私有协作交付
+# Phase17 Batch 私有仓库交付
 
-本分支 `friend-gpu-batch` 用于朋友在自己的GPU服务器独立执行已批准的三骨干患者级五折实验。它不控制用户本地训练，也不需要远程登录朋友设备。
+分支 `friend-gpu-batch` 在独立 Git worktree 准备。朋友通过私有仓库克隆代码，在一台 8×RTX 4090 Linux 服务器上运行；不会通过 SSH 访问朋友设备。原本地训练项目不受影响。
 
-- [朋友三步操作、资源预算、停止恢复](README_friend.md)
-- [结果包、校验、导入与离线复算](README_results.md)
-- [冻结任务清单](configs/batch_plan.yaml)
-- [历史成本估计](docs/batch17_costs.json)
+- [朋友三步操作和启动前阻塞](README_friend.md)
+- [22 次任务与最多 4 个关闭的条件槽位](docs/expanded_plan.md)
+- [统一任务配置](configs/batch_plan.yaml)
+- [结果文件夹、校验与离线复算](README_results.md)
 
-## 基础与扩展档
+基础扩展档共 22 次：D17、C17、S17、N17 各 5 折，加 ConvNeXt-Small 与 EfficientNetV2-M 的 Fold 1 Pilot。原 15 次训练配置及患者折 SHA-256 保持冻结。N17 采用 N01 固定 EMA 规则；C17 的 EMA 旁路延续原方案。单折 OOF 只与相同 Fold 的患者及 Study 比较。
 
-基础15次：D17_F01–F05（B01）、C17_F01–F05（M02）、S17_F01–F05（T01）。官方Val选Epoch，当前Fold只生成OOF；训练输入384，原增强/BCE/优化器/学习率不变。ConvNeXt增加预先固定的EMA旁路，普通模型早停规则不变。
+两个 Pilot 的 torchvision 官方 ImageNet 权重已在独立 worktree 下载并计算完整 SHA-256，已写入配置和计划；预检仍会对朋友收到的文件逐字节核对。朋友已确认单机 8×RTX 4090；GPU 小时预算、CPU、内存、磁盘和官方目标硬件计时口径仍待确认。条件 4 次扩展处于关闭状态。
 
-扩展：两个seed43模型默认禁用；新架构0个可执行任务、最多2个未批准占位。任何扩展需用户与资源所有者另行同意。禁止外部训练数据、隐藏测试标签、Phase15 Holdout调参、自动提交排行榜。
+最终部署同时要求推理权重总大小≤500,000,000 字节、完整单图端到端延迟严格<100ms。缺乏官方硬件、精度、批量与计时口径时均标记 `LATENCY_UNVERIFIED`。`PASS` 才可视为部署候选；4090 或本机 4060 的研究测速不能替代目标环境验证。FP16、量化、蒸馏要对实际产物重新验证 AUC、大小和延迟。
 
-## 唯一正式启动入口（获批准后由朋友执行）
-
-先按README_friend设置数据、协议附件、ImageNet权重、输出/备份路径和GPU预算：
-
-```bash
-bash scripts/friend_start.sh --config configs/batch_plan.yaml
-```
-
-该入口自动安装检查、导入冻结协议附件、验证数据/权重哈希、GPU smoke与测速、有限队列、独立验证和OOF、报告、分卷打包。缺少附件、版本错误或预检失败会停止；不会重新划分患者。
-
-## 准备与审计命令（不会训练）
-
-```bash
-python scripts/protocol_assets.py --config configs/batch_plan.yaml --action import --file /authorized/phase17_protocol_assets_v1.tar.gz
-python scripts/batch_run.py --config configs/batch_plan.yaml --action validate
-python scripts/batch_protocol_audit.py --config configs/batch_plan.yaml --output outputs/protocol_audit.json
-python scripts/audit_git_delivery.py --config configs/batch_plan.yaml --output outputs/git_delivery_audit.json
-python scripts/batch_run.py --config configs/batch_plan.yaml --action status --root /authorized/outputs/phase17_batch
-python scripts/batch_run.py --config configs/batch_plan.yaml --action stop --root /authorized/outputs/phase17_batch
-```
-
-`stop`排空当前任务，不立即杀死训练。OOM不改配置，临时I/O最多重试一次。完整恢复含优化器、调度器、scaler、RNG、早停与EMA，恢复边界为完整Epoch。
-
-## 无GPU验收
-
-Linux：
-
-```bash
-CUDA_VISIBLE_DEVICES=-1 OMP_NUM_THREADS=1 python -m pytest tests -q
-```
-
-Windows PowerShell：
-
-```powershell
-$env:CUDA_VISIBLE_DEVICES='-1'
-$env:OMP_NUM_THREADS='1'
-python -m pytest tests -q
-```
-
-明确使用`-1`，不要用空字符串。GPU恢复一致性测试在此会跳过，朋友启动前的真实GPU预检会执行。合成验收覆盖15个微型任务、最佳状态、恢复、Val/OOF、打包、独立解包和无GPU复算，不代表实际模型训练成绩。
-
-## 数据与安全
-
-Git仅保存代码、配置与哈希协议。原始ZIP、患者/标签索引附件、预训练权重、checkpoint、结果和个人凭据均被忽略。通过比赛允许的独立渠道传递附件；协议附件只导入被冻结的文件，不重新划分。
-
-所有代码变更使用朋友自己的分支与Pull Request；不能覆盖用户主训练目录。push前执行敏感信息与大小检查并取得用户批准。仓库URL及远程未预设，不自动push、创建远程仓库、上传Release或配置LFS。
-
-## 开发边界
-
-`scripts/batch_train.py`是隔离的已验证训练入口快照，只扩展声明的EMA和恢复产物一致性。来源SHA记在文件首行。修改后必须重新审核并更新plan代码哈希；禁止运行中改配置。
-
-`scripts/batch_preflight.py`、`batch_benchmark.py`、`batch_latency.py`只在朋友明确启动时使用其授权GPU。统计与交付实现位于`src/cxr/batch/`，结果包包含可复算代码，不依赖原集群的绝对路径。
+目前只完成 CPU 合成流程验收；真实 4090 前反向、吞吐、延迟和 Linux 环境属于朋友获授权后的启动前预检。自动 Test 推理仅使用无标签比赛 Test，输出完整概率及四列提交候选，但不会上传平台。所有结果直接保存在文件夹，不生成压缩包。数据、私有折索引、ImageNet 权重及结果通过赛事允许的独立渠道传递，不进入 Git。

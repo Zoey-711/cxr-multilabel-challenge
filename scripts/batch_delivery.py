@@ -1,27 +1,24 @@
-"""Offline CPU reporting, verified packaging, and portable extraction."""
+"""Recompute metrics or verify direct result folders; archives are not generated."""
 import argparse
 from pathlib import Path
 
-def main():
-    p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--config',required=True,type=Path)
-    p.add_argument('--action',required=True,choices=['pack','extract','recompute'])
-    p.add_argument('--root',required=True,type=Path)
-    p.add_argument('--destination',type=Path)
-    p.add_argument('--include-resume',action='store_true')
-    p.add_argument('--part-bytes',type=int,default=1_000_000_000)
-    a=p.parse_args()
-    if not a.config.is_file():p.error('Config/manifest path missing')
-    if a.action=='pack':
-        from cxr.batch.delivery import pack
-        print(pack(a.root,include_resume=a.include_resume,part_bytes=a.part_bytes))
-    elif a.action=='extract':
-        if not a.destination:p.error('--destination required')
-        from cxr.batch.delivery import verify_and_extract
-        print(verify_and_extract(a.root,a.destination))
-    else:
-        from cxr.batch.reporting import report
-        result=report(a.root)
-        print({k:v['all']['macro_auc'] for k,v in result['official_val'].items()})
 
-if __name__=='__main__':main()
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--config',required=True,type=Path)
+    parser.add_argument('--action',required=True,choices=['recompute','verify'])
+    parser.add_argument('--root',required=True,type=Path)
+    args=parser.parse_args()
+    if not args.config.is_file():
+        parser.error('Batch plan missing')
+    if args.action=='recompute':
+        from cxr.batch.reporting import report
+        result=report(args.root)
+        print({key:value['all']['macro_auc'] for key,value in result['official_val'].items()})
+    else:
+        from cxr.batch.direct_delivery import verify_direct_folder
+        print(verify_direct_folder(args.root))
+
+
+if __name__=='__main__':
+    main()

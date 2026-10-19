@@ -72,7 +72,7 @@ def label_keys(path, fold=None):
 
 def initialize_manifests(root, plan, plan_path):
     root=Path(root)
-    for name in ('manifests','experiments','oof','validation','analysis','ensembles','reports','delivery'):
+    for name in ('manifests','experiments','oof','validation','analysis','deployment','reports','test_predictions','submissions/single_models','submissions/ensembles','submissions/research_only'):
         (root/name).mkdir(parents=True,exist_ok=True)
     manifests=root/'manifests'
     shutil.copy2(plan_path,manifests/'batch_plan.yaml')
@@ -86,6 +86,9 @@ def initialize_manifests(root, plan, plan_path):
     reference=read_table(ROOT/plan['e07_reference']['path'])
     write_probabilities(root/'validation/E07_val_probabilities.csv',reference,
                         {'model_id':'E07','frozen_source_sha256':plan['e07_reference']['sha256']})
+    reference_manifest=ROOT/'batch_assets/e07_provenance.json'
+    if reference_manifest.is_file():
+        shutil.copy2(reference_manifest,manifests/'e07_provenance.json')
     write_json(manifests/'environment.json',{'created_utc':utcnow(),'git_commit':commit(),
                'code_sha256':plan['artifacts'],'data_sha256':plan['data_sha256'],'fold_hashes':plan['fold_hashes'],
                'python':__import__('platform').python_version(),'platform':__import__('platform').platform(),
@@ -153,6 +156,32 @@ def export_task(run, task, result):
     env=json.loads((run/'environment.json').read_text())
     env['torchvision']=torchvision.__version__
     write_json(run/'environment.json',env)
+    from cxr.batch.test_results import read_test_probabilities
+    for kind in kinds:
+        filename='test_predictions.csv' if kind=='raw' else 'ema_test_predictions.csv'
+        read_test_probabilities(run/filename, expected_studies=task.get('expected_test_studies',1414))
+        source=json.loads((run/filename).with_suffix('.provenance.json').read_text(encoding='utf-8'))
+        checkpoint=run/('best_model.pt' if kind=='raw' else 'best_ema_model.pt')
+        if source['checkpoint_sha256']!=digest(checkpoint) or source['csv_sha256']!=digest(run/filename):
+            raise ValueError('Test predictions not bound to best checkpoint')
+    weight_files=[run/'best_model.pth']+([run/'ema_best_model.pth'] if task['ema'] else [])
+    total_bytes=sum(p.stat().st_size for p in weight_files)
+    write_json(run/'model_size.json',{'raw_bytes':weight_files[0].stat().st_size,
+        'ema_bytes':weight_files[1].stat().st_size if task['ema'] else None,
+        'limit_bytes':500_000_000,'inference_requires_one_variant':True})
+    measurement=json.loads((run/'latency.json').read_text(encoding='utf-8'))
+    ema_measurement=json.loads((run/'ema_latency.json').read_text(encoding='utf-8')) if (run/'ema_latency.json').exists() else None
+    write_json(run/'inference_benchmark.json',{'research_single_model':measurement,
+        'ema_research_single_model':ema_measurement,
+        'official_target_hardware_verified':False,'full_deployment_recipe_verified':False})
+    write_json(run/'deployment_eligibility.json',{'model_id':task['id'],
+        'raw_weight_bytes':weight_files[0].stat().st_size,
+        'size_status':'PASS' if weight_files[0].stat().st_size<=500_000_000 else 'SIZE_FAIL',
+        'latency_status':'LATENCY_UNVERIFIED','deployment_status':
+        'SIZE_FAIL' if weight_files[0].stat().st_size>500_000_000 else 'LATENCY_UNVERIFIED',
+        'ema':{'weight_bytes':weight_files[1].stat().st_size,
+               'deployment_status':'SIZE_FAIL' if weight_files[1].stat().st_size>500_000_000 else 'LATENCY_UNVERIFIED'} if task['ema'] else None,
+        'reason':'4090 single-model research timing does not establish official end-to-end target compliance'})
     train_rows=[]
     with (manifests/'image_folds.csv').open(encoding='utf-8-sig',newline='') as f:
         reader=csv.DictReader(f); fields=reader.fieldnames
@@ -167,7 +196,8 @@ def export_task(run, task, result):
         'start_utc':json.loads((run/'batch_timing.json').read_text()).get('start_utc') if (run/'batch_timing.json').exists() else None,
         'state':'complete','files':files,'ema':{'enabled':task['ema'],'decay':.999 if task['ema'] else None,
            'update':'first successful optimizer step copies; then decay each successful optimizer step',
-           'bn':'ConvNeXt LayerNorm only; no BatchNorm; no recalibration'}})
+           'bn':'use_buffers=True: N01-compatible torch AveragedModel EMA of buffers; no recalibration',
+           'frequency':'every successful optimizer update; AMP-skipped updates excluded'}})
 
 
 def record_failure(root, task, record):

@@ -20,10 +20,10 @@ def table(n=40):
 
 def test_plan_fifteen_tasks_fixed_formulas_and_two_disabled_seeds():
     plan=load_plan(ROOT/'configs/batch_plan.yaml')
-    assert len([t for t in plan['tasks'] if t['enabled']])==15
-    assert len([t for t in plan['tasks'] if not t['enabled']])==2
+    assert len([t for t in plan['tasks'] if t['enabled']])==22
+    assert len([t for t in plan['tasks'] if not t['enabled']])==0
     assert plan['fixed_fusions']['E17']=={'D5':.25,'C5':.25,'S5':.5}
-    assert plan['optional_architectures']['tasks']==[]
+    assert plan['optional_architectures']['tasks']==['CS17_F01','NM17_F01']
 
 
 def test_subject_alignment_leading_zeros_and_labels():
@@ -109,6 +109,6 @@ def test_batch_snapshot_only_declared_training_changes():
     text=(ROOT/'scripts/batch_train.py').read_text()
     assert 'best_artifacts' in text and 'restore_rng_state(state, train_loader, val_loader)' in text
     assert 'scaler.load_state_dict' in text and 'scheduler.load_state_dict' in text
-    assert 'model_name != "convnext_tiny"' in text
+    assert 'model_name not in ("convnext_tiny", "efficientnet_v2_s")' in text
     assert 'ema_model.update_parameters(model)' in text
     assert 'float(ema_settings.get("decay", 0)) != 0.999' in text

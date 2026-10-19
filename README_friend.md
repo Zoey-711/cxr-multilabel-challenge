@@ -1,119 +1,57 @@
-# Phase17-Batch：GitHub私有仓库协作
+# Phase 17-Batch：朋友服务器运行说明
 
-**当前仅交付准备，等待用户批准push和朋友批准资源。** 本仓库在独立副本/分支开发，不能覆盖用户正在训练的项目。无需用户或Codex登录朋友服务器。朋友独立克隆、配置并运行；代码变更应另开分支，通过Pull Request审查。所有任务输出至 `$CXR_OUTPUT_ROOT/phase17_batch/`，与原冻结实验隔离。
+本分支只交付代码和冻结协议。运行目标为**一台 Linux 服务器，最多 8 张 NVIDIA RTX 4090（每张 24GB）**，共享文件系统；每张卡同时最多运行一个独立模型任务。没有 DDP、`torchrun` 或跨节点通信。代码仓库不包含约 55GB 比赛 ZIP、冻结患者索引、标签、E07 参考概率、ImageNet 权重、私钥或令牌。请通过比赛允许的独立渠道取得这些文件。用户或 Codex 不登录朋友服务器。
 
-## 朋友只需三步
+## 朋友的三步
 
-1. 克隆私有仓库的 `friend-gpu-batch` 分支，并检出用户指定commit。通过赛事允许的独立渠道取得原ZIP、冻结协议附件和三份合法ImageNet权重。Git仓库不包含这些文件；克隆不等于获得50GB数据。协议附件含患者索引、评估标签和E07参考概率，也不提交Git。
-2. 填写下列环境变量，并经双方同意GPU数量及总GPU小时。路径示例需要换成朋友实际授权位置。
-3. 获得正式启动批准后，只执行下述一条启动命令；安装检查、GPU预检、队列、验证、OOF、报告和打包自动完成。
+1. 克隆用户提供的**私有**仓库 `friend-gpu-batch` 分支，并检出用户确认的固定 commit。将官方 `cxr_first.zip`、冻结协议目录和六种合法 torchvision ImageNet 权重放在授权存储位置。协议目录保留仓库相对路径，例如 `batch_assets/train_labels.csv`、`batch_assets/val_labels.csv`、`batch_assets/e07_official_val.csv`、`outputs/analysis/phase17_patient_folds/*.csv`；脚本逐个核对冻结 SHA-256，绝不重划 Fold。
+2. 复制 `configs/friend_server.example.env` 为 `configs/friend_server.local.env`，一次填好绝对路径、授权 GPU 编号、最多并发数和**朋友明确批准的最大 GPU 小时**。本地配置已被 `.gitignore` 排除。缺少预算或路径会停止。默认写了 `0,1,2,3,4,5,6,7` 与并发 8；实际主机 CPU、可用内存、磁盘和 GPU 必须通过预检，否则降低授权并发再启动。`CXR_DATA_ROOT` 指向官方 ZIP；`CXR_OUTPUT_ROOT` 是结果所在父目录，最终写入其中的 `phase17_batch/`；`CXR_BACKUP_ROOT` 指向独立授权备份目录。
+3. 在仓库根目录执行唯一启动命令：
 
 ```bash
-git clone --branch friend-gpu-batch https://github.com/<仓库所有者>/<私有仓库>.git
-cd <私有仓库>
-git checkout <用户提供的固定commit>
-export CXR_DATA_ROOT=/authorized/data/cxr_first.zip
-export CXR_PROTOCOL_BUNDLE=/authorized/data/phase17_protocol_assets_v1.tar.gz
-export CXR_OUTPUT_ROOT=/authorized/outputs
-export CXR_PRETRAINED_ROOT=/authorized/torch_cache
-export CXR_BACKUP_ROOT=/authorized/backup
-export CXR_GPUS=0
-export CXR_GPU_HOURS=80
-bash scripts/friend_start.sh --config configs/batch_plan.yaml
+bash scripts/friend_start.sh --config configs/friend_server.local.env
 ```
 
-`80` 是示例预算，必须替换为朋友批准的额度。每GPU同时最多一个模型，不把单模型自动改成DDP。预算按占用GPU的任务墙钟小时累计；下一任务须能预留其整个timeout才启动，因此可能提前停止、留下未完成任务。正在运行任务有超时上限。不会自动扩展预算。
+启动入口自动安装所需 Python 包（优先复用兼容的已有 PyTorch/CUDA 环境，不改驱动）、导入并校验冻结协议、核对数据及预训练权重哈希、做少量真实 GPU 步与吞吐预检，然后调度 22 项基础任务。**只有朋友确认资源配置和预算、4090 预检通过，正式队列才可能启动。** 当前朋友服务器预算、CPU、RAM、磁盘尚未实测；其 GPU 真正运行状态标为 `PENDING`。预检本身会占用少量授权 GPU 时间。
 
-## 环境与数据
+## 22 项固定任务
 
-- Python3.12、torch2.10.0、torchvision0.25.0、CUDA12.8；不升级GPU驱动。不兼容时停止并报错。
-- 默认复用镜像框架。确需安装官方cu128 wheel时，由朋友显式 `export CXR_INSTALL_FRAMEWORK=1`；安装脚本不自动作此决定。
-- 预训练目录必须是 `CXR_PRETRAINED_ROOT/hub/checkpoints/{densenet121-a639ec97.pth,convnext_tiny-983f1562.pth,swin_t-704ceda3.pth}`。
-- 原ZIP SHA-256：`ff458640e9974d63aa3329ee7ae1248260b619223980218e3741aee4c6d6836f`。首次完整校验约55.23GB读盘；不重复上传/解压。
-- 数据约55.23GB；输出和备份各需至少20GB空闲；若同一文件系统，预检要求至少45GB空闲（数据已放好之后），包含打包余量。恢复状态和推理权重分别保留，不能只按推理权重估计磁盘。共享网络盘的ZIP随机读取需实测。
-- 三个冻结fold索引和固定标签在交付代码包内。禁止重新生成患者划分。官方Val只选Epoch；OOF标签不参与训练或早停。
+| 组 | ID | 次数 | 来源 |
+|---|---|---:|---|
+| A | `D17_F01`–`D17_F05` | 5 | B01 实际 DenseNet-121 配置 |
+| A | `C17_F01`–`C17_F05` | 5 | M02 实际 ConvNeXt-Tiny 配置 |
+| A | `S17_F01`–`S17_F05` | 5 | T01 实际 Swin-Tiny 配置 |
+| N | `N17_F01`–`N17_F05` | 5 | N01 EfficientNetV2-S，训练中同时维护 EMA |
+| P | `CS17_F01`、`NM17_F01` | 2 | ConvNeXt-Small、EfficientNetV2-M 的 Fold 1 Pilot |
 
-## 计划与预先固定的差异
+三骨干原 15 项配置和冻结患者五折不变。每折只用另外四折训练；官方 Val 仅用于早停和最佳 checkpoint，当前折仅作 OOF；Test 完全无标签，只推理。Pilot 单折 OOF 不冒充完整五折 OOF。额外四折补齐、其他随机种子和蒸馏仍禁用，不会由 22 项结果自动触发。EMA 是训练内附加分支，单独保存其最佳权重和 Val/OOF/Test 概率；早停仍监控原始权重 Study Macro-AUC。
 
-基础档：`D17_F01..F05`、`C17_F01..F05`、`S17_F01..F05`，共15次。分别以B01/M02/T01实际配置为控制，effective batch16，patience8/6/6，最多30Epoch，384保比例Padding、原增强和BCE不变。
+## 自动化与状态
 
-EMA：仅C17在同次训练维护，decay=.999；第一个成功optimizer step直接复制，此后每个成功step更新；AMP跳步不更新。ConvNeXt无BatchNorm，保留buffer同步语义，不做BN重估。原始模型负责早停，普通与EMA各自保存最佳Val；不根据中途结果改EMA。额外成本为EMA参数更新、GPU约一份模型、每轮一次Val和最后额外Val/OOF推理。
+队列动态分配空闲卡，子进程各自设置 `CUDA_VISIBLE_DEVICES`，每卡最多一个任务。配置 `CXR_MAX_CONCURRENT` 控制并发；启动前核对 GPU 型号/显存、CPU 核数、可用内存、输出空间和 ZIP 随机读取速度，资源不足则明确报错，**不静默改训练 batch 或模型参数**。预检还检查 Python3.12、PyTorch2.10.0、torchvision0.25.0、CUDA12.8、固定分割、AMP、真实前反向与断点恢复。失败任务保留 `FAILED.json`、错误日志和最近可恢复 checkpoint；有限重试只用于判定为可恢复的 I/O 类错误。OOM、非有限梯度、哈希错误不会自动改配置重跑。
 
-C组：D17_SEED43和C17_SEED43两个完整Train模型预备，默认关闭，仅A组完成、资源足够且另行批准后使用 `--allow-extended`。D组：最多两个占位，不包含任何未批准架构或可启动任务。不会因资源剩余自动新增模型。
+每个成功模型立即在 `outputs/phase17_batch/experiments/<ID>/` 保存纯 `state_dict` 的 `best_model.pth`、SHA、实际配置、逐 Epoch 历史、日志、Val/OOF/Test Study 概率、逐类指标、环境、模型大小、推理研究测速、部署状态、恢复 checkpoint 和 `DONE.json`；任务状态同步写入 `reports/experiment_status.csv`。Test 缺失或其推理失败时，已经完成的训练/Val/OOF 保留，状态为 `test_pending`/`test_failed`；补齐 Test 后用相同启动命令 `--resume` 路径完成 Test，**不会重训已完成模型**。
 
-固定比较：E07、D5、C5、S5、E17=.25D5+.25C5+.5S5；EMA只做预定C分支替代。部署小候选固定F01三骨干，以及D5+C17_F01+S17_F01，不根据单折成绩挑选“最佳折”。完整15模型预估约1,251,238,365bytes，超过500MB；D5+C1+S1约364,102,553bytes。最终用实际导出纯state_dict字节数复核。
+五折齐全时按 ID 而非 CSV 行号合并完整 OOF、官方 Val 和无标签 Test 概率。固定 E17 公式为 `0.25×D5+0.25×C5+0.5×S5`，不搜索权重。Test 合格时自动写四列、每 Study 全 10 类的候选 CSV 和 manifest，**不会自动上传比赛平台**。若一个 Fold 缺失，对应五折 Test/OOF 标记 `INCOMPLETE`，不生成假完整结果。
 
-## 耗时与预算（不是A100实测）
-
-历史4060记录：B01平均7.35分钟/Epoch（13轮），M02为22.97分钟（11轮），T01为22.57分钟（13轮）。按4/5训练量粗估A组分别6.37、16.84、19.56GPU小时，合计42.78；全部30轮约105.78GPU小时。此缩放低估固定Val/启动成本，另预留15%–25%以及EMA、独立Val/OOF、备份时间。不会保证复现历史早停轮数。
-
-| 场景 | A组按历史轮数的示例墙钟 | 全30轮示例 |
-|---|---:|---:|
-| 1张A100，假设整体速度为4060的2–4倍 | 10.7–21.4小时 | 26.4–52.9小时 |
-| 3张A100，假设同上且充分并行 | 理想3.6–7.1小时，实际受分支长短/I/O限制 | 理想8.8–17.6小时 |
-
-以上只是假设情景，不是A100实测；小micro-batch未必充分利用A100。B组开销必须由实测Val吞吐计算，先预留A组的5%–15%，不能当作测量值。C组本地参考另约5.80GPU小时（全30轮15.16），实际加评估。D组当前0任务、0GPU小时。
-
-自动预检每GPU每骨干2个真实更新步和短测速；`batch_benchmark.py`分别估计ZIP读取与缓存GPU计算。它不是完整训练计时；结果报告包含该限制。以实测速率重新估算，不按本地速度冒充A100性能。具体原始历史数字见 `docs/batch17_costs.json`。
-
-## 运行、停止、恢复与Slurm
-
-朋友可在自己的服务器终端或已有tmux会话执行唯一启动命令；不需要用户远程登录或管理：
+查看和安全停止：
 
 ```bash
-tmux new -s phase17
-bash scripts/friend_start.sh --config configs/batch_plan.yaml
-# Ctrl-b d 分离；tmux attach -t phase17 恢复查看
 source .venv/bin/activate
 python scripts/batch_run.py --config configs/batch_plan.yaml --action status --root "$CXR_OUTPUT_ROOT/phase17_batch"
 python scripts/batch_run.py --config configs/batch_plan.yaml --action stop --root "$CXR_OUTPUT_ROOT/phase17_batch"
 ```
 
-stop为**安全排空**：当前任务完成后不再启动新任务，不会即时杀训练；超时只终止队列自己启动的进程树。恢复前确认原队列已退出，删除该目录的STOP标记，再运行同一启动命令。恢复从最近完整Epoch，不承诺恢复Epoch中间尚未保存的batch。优化器、调度器、scaler、RNG、早停、EMA和最佳产物一起恢复；已完成模型不重训。OOM/数值异常/哈希不符不自动改参数。
+`stop` 只阻止新任务，正在运行的任务按各自超时/完成逻辑结束。再次启动前须确认原队列不在运行并处理其 STOP/lock，不能强行解锁活跃队列。服务器若使用 Slurm 等调度器，请先让管理员确认实际分配的 GPU ID 和 CPU/RAM，修改本地授权配置；不要同时运行两个队列共享一个输出目录。
 
-```bash
-rm -- "$CXR_OUTPUT_ROOT/phase17_batch/STOP"
-bash scripts/friend_start.sh --config configs/batch_plan.yaml
-```
+## 结果直接交付
 
-崩溃遗留queue.lock时，核实其中host/PID已经退出后才移走锁；不能对活跃队列解锁。新环境恢复还需重新预检。故障重试上限1次，仅明确的临时I/O等可恢复错误，配置不变。
+结果一直保存在 `outputs/phase17_batch/{manifests,experiments,oof,validation,test_predictions,analysis,deployment,submissions,reports}`。没有 ZIP/TAR/GZIP 打包；不自动删除服务器文件。`manifests/delivery_manifest.json`、各模型 `batch_frozen_manifest.json` 记录 SHA-256。完成后把整个 `phase17_batch/` 文件夹通过双方同意的大文件传输渠道交给用户，或提供授权下载位置。仓库不接受胸片数据、checkpoint 或提交 CSV。Windows 导入与核验见 [README_results.md](README_results.md)。
 
-Slurm使用朋友已有调度系统和授权资源，不自行安装：
+## 部署硬约束
 
-```bash
-sbatch --partition=<授权分区> --account=<授权账号> --gres=gpu:<授权数量> --cpus-per-task=<授权CPU数> --mem=<授权内存> --time=<授权时限> scripts/friend_slurm.sh --config configs/batch_plan.yaml
-```
+最终全部推理权重压缩前总大小 ≤500,000,000 字节；按照用户更严格的边界，完整单图端到端延迟 **<100ms**。4090 的研究测速不能证明目标评测硬件（可能是 T4）合规；官方硬件、精度、batch、起止范围和统计量尚缺完整原文。因此未经官方同口径实测均为 `LATENCY_UNVERIFIED`，超过大小为 `SIZE_FAIL`，已证实延迟不合规为 `LATENCY_FAIL`，只有准确率、大小和官方时延都核实才为 `PASS`。单模型的 Forward 时间不能代替完整融合测速。FP16、量化和蒸馏后的实际产物都需重新验证 Val AUC、大小和时延。
 
-保留Slurm的CUDA_VISIBLE_DEVICES，禁止选择分配范围外GPU。此版本为单节点多GPU队列；多节点需各自独立输出/任务分配，不可多个调度器共享一个队列目录。
+待官方给出完整目标计时口径并在目标设备运行时，可使用 `python scripts/benchmark_target_latency.py --config configs/batch_plan.yaml --root "$CXR_OUTPUT_ROOT/phase17_batch" --candidate D17_F01 --official-protocol /authorized/official_timing_protocol.json`。脚本仅在设备、精度、批量、计时范围和统计量逐项吻合时输出官方证据；否则仅存研究测速，不标记 `PASS`。该协议文件必须由用户审核并按脚本的规范化 JSON 规则固定 SHA-256，目前尚未具备。
 
-## 自动产物与交付
-
-`phase17_batch/{manifests,experiments,oof,validation,analysis,ensembles,reports,delivery}`。
-
-每模型完成后自动生成要求的 `.pth`纯推理权重、完整配置、训练历史、指标、Val/OOF概率、resume、manifest和DONE；失败有FAILED/error.log。每次任务完成复制到授权备份路径。基础队列停止（包括预算不足或失败）也输出明确缺失表和已完成结果包。
-
-最终只需将 `delivery/latest.json` 指向的整个目录通过双方批准的网盘、对象存储或大文件传输渠道交付，其中有results、models分卷、manifest、README_results和COMPLETE通知。GitHub仅交付代码，不自动使用Release或LFS；如需使用，先确认文件大小、服务限制与费用预算。脚本不会自动发送消息、上传、删除远端文件或生成排行榜提交。
-
-可选手动重新打包（新增版本，不覆盖已有包）：
-
-```bash
-python scripts/batch_delivery.py --config configs/batch_plan.yaml --action pack --root "$CXR_OUTPUT_ROOT/phase17_batch" --include-resume
-```
-
-故障处理：环境错误→检查版本；OOM→任务停止，人工批准新版本配置后才能重跑；哈希错误→修复数据/权重，不重划分；磁盘满→增加授权空间或下载已校验结果，禁止脚本自动删除冻结模型；部分OOF→显示incomplete。正式部署还需朋友GPU真实预检通过，本地合成验收不能替代。
-
-## 独立获取ImageNet预训练权重
-
-以下为torchvision对应的官方ImageNet文件，不是医学预训练；禁止替换来源或追加外部标注训练数据。
-
-| 模型 | 官方文件 | SHA-256 |
-|---|---|---|
-| DenseNet121 | https://download.pytorch.org/models/densenet121-a639ec97.pth | a639ec97d7c33b07ae66f0b5fb7d0192f95a3b11b7576c66c0126c2a727c4395 |
-| ConvNeXtTiny | https://download.pytorch.org/models/convnext_tiny-983f1562.pth | 983f1562536e84ff750a1576fb08e54de751dbf2e17c0d8a4a13704341fdcd3d |
-| SwinTiny | https://download.pytorch.org/models/swin_t-704ceda3.pth | 704ceda373461b0a224fcdddd75cd2a5e9f8064512ed47adbddef7f343fd147b |
-
-可以由朋友从这些官方URL获取，或由用户通过双方批准的大文件渠道传输已有文件。预检必须验证以上哈希。没有自动下载权重、没有向Git提交权重。
-
-## 导入回用户本地
-
-使用 `scripts/import_friend_results.py`，导入至独立 `outputs/phase17_friend_import/<版本>/`，校验固定commit、代码文件哈希、数据/患者划分版本、模型ID、配置和全部文件SHA-256。目标已存在就报错。然后离线复算和融合，不能覆盖用户原始训练目录。命令见README_results.md。
+官方 torchvision 权重文件：DenseNet `densenet121-a639ec97.pth`；ConvNeXt-Tiny `convnext_tiny-983f1562.pth`；Swin-Tiny `swin_t-704ceda3.pth`；EfficientNetV2-S `efficientnet_v2_s-dd5fe13b.pth`；Pilot 分别为 `convnext_small-0c510722.pth`（SHA-256 `0c510722adfd92966a2bd72b92f785ca05966bbac03cafe2f7a90b1f54bfab9a`）和 `efficientnet_v2_m-dc08266a.pth`（SHA-256 `dc08266a3779e28992d6a42528a32453f6361d0e4e247b5f20f45e13e7add499`）。六者完整 SHA 均在计划中固定；朋友需通过官方来源或单独授权传输取得权重，并由预检逐字节核对。权重文件不提交 Git。

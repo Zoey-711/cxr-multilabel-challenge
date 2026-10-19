@@ -1,57 +1,39 @@
-# Phase17 结果包（中文）
+# Phase 17 结果文件夹与本地导入
 
-结果与模型分开交付。`delivery_manifest.json` 是唯一包清单；先校验所有分卷，不凭文件名选择权重。`COMPLETE.txt` 会列出未完成任务。没有收到并校验完关键产物前，不删除远端结果。
+朋友交付的是完整的 `phase17_batch/` **文件夹**，不生成压缩包。请通过双方授权的大文件传输渠道取得，不放入普通 Git 仓库；不需要朋友逐个寻找模型。
 
-## 文件用途
+## 目录
 
-- `results_bundle.tar.gz`：配置、标签索引（不含原图）、Val/OOF概率、统计、日志、代码与报告。
-- `models_bundle.tar.gz`（或 `.part0001` 等分卷）：纯 `state_dict` 推理权重及配置。
-- `resume_bundle.tar.gz`（可选）：`checkpoint_resume.pth`，包含优化器、调度器、scaler、RNG、早停等。不能当作推理权重。
-- `phase17_batch/experiments/D17_F01/best_model.pth`：普通最佳模型；`ema_best_model.pth` 属于独立EMA候选。
-- `phase17_batch/manifests/train_labels.csv`、`val_labels.csv`：固定标签与ID，用于离线复算；不按行序配对。
+```text
+phase17_batch/
+  manifests/       固定划分、标签、环境、计划、delivery_manifest.json
+  experiments/     每模型最佳纯 state_dict、resume、日志、Val/OOF/Test 概率及 SHA
+  oof/             完整五折 OOF 与 Fold 来源索引（仅五折齐全时）
+  validation/      官方 Val 五折与固定 E17 概率
+  test_predictions/  各骨干五折及固定 E17 无标签 Test 概率
+  analysis/        AUC/AP、患者级 Bootstrap、互补性与分组报告
+  deployment/      真实权重大小、研究/官方目标时延证据及资格表
+  submissions/     四列、全十类候选 CSV、独立 manifest 和格式校验表
+  reports/         22 项状态、总报告及简短完成通知
+```
 
-## Windows 下载、校验和解包
+`experiments/<ID>/best_model.pth` 是推理权重；`checkpoint_resume.pth` 含优化器、调度器、AMP scaler、RNG 和早停状态，**仅用于恢复训练**。EMA 文件与原始权重明确分开。Val/OOF/Test 的 CSV 均为一 Study 一行，列是 `Subject_id,Study_id,Prob_1..Prob_10`。Test 没有标签，也没有 Test AUC。
 
-通过双方批准的网盘、对象存储或大文件传输渠道，接收整个delivery版本目录，包含manifest及全部分卷。使用该渠道提供的断点续传功能；脚本负责下载后的完整性校验，不登录朋友设备。不要把原图或大型模型提交Git仓库。不自动启用GitHub Release/LFS。
+## Windows 本地验证与导入
+
+先在本机从已审核代码分支安装项目（不需要 GPU 即可检查/复算统计），再将朋友交付的文件夹放在不覆盖原本地训练的位置。PowerShell 示例：
 
 ```powershell
-Get-FileHash -Algorithm SHA256 .\results_bundle.tar.gz
-# 与delivery_manifest.json对应值比较。下面工具还会校验全部包和解包后的每个文件。
-python scripts/import_friend_results.py --config configs/batch_plan.yaml --bundle D:\received_delivery --version friend_v1 --expected-commit <双方冻结的代码commit>
+$env:PYTHONPATH = (Resolve-Path .\src).Path
+python scripts/import_friend_results.py --config configs/batch_plan.yaml --source 'D:\received\phase17_batch' --version friend_v1 --expected-commit '<朋友运行的固定Git commit>'
+python scripts/batch_delivery.py --config configs/batch_plan.yaml --action verify --root .\outputs\phase17_friend_import\friend_v1
+python scripts/batch_delivery.py --config configs/batch_plan.yaml --action recompute --root .\outputs\phase17_friend_import\friend_v1
 ```
 
-默认导入 `outputs/phase17_friend_import/friend_v1/`，目标必须尚不存在。脚本先核对代码commit、数据与划分版本、模型ID，再按分卷顺序拼接，验证SHA-256，阻止路径穿越、符号链接和不同内容覆盖。空间需容纳解包后的权重及临时拼接包。下文的 `D:\verified_phase17` 请替换为实际导入目录。
+导入脚本先核对代码 commit、数据/折划分版本、实际配置及模型冻结 SHA，再复制到 `outputs/phase17_friend_import/friend_v1/` 并复核；目录已存在时拒绝覆盖。纯 CPU 的 `recompute` 按 Subject_id/Study_id 关联冻结标签，重新计算 Val/OOF、固定融合和 Bootstrap。原图不在结果目录里；统计分析不依赖朋友的绝对路径。若要对测试图像重新推理，仍需合法原始比赛数据和对应权重，并遵守比赛规则。
 
-## 不用GPU复算
+## Submission 与部署
 
-使用本地现有Python环境（需要numpy、PyYAML）。结果包自带评价代码，源集群绝对路径不参与计算：
+候选 CSV 是四列 `Subject_id,Study_id,Predict_class,Probability`，每个 Test Study 对应类别 1–10 共十行，不筛阈值、不加 Gate。脚本 `scripts/validate_submission.py` 通过格式校验才标 `FORMAT_PASS`；它**不会上传比赛平台**。`submissions/submission_candidates.csv` 同时列出 Val Macro-AUC、模型权重字节、完整单图时延证据以及 `SIZE_FAIL`、`LATENCY_FAIL`、`LATENCY_UNVERIFIED`、`ACCURACY_PENDING`、`PASS` 状态。朋友 4090 上的速度是研究参考，缺官方目标设备及完整口径实测时不可称为合规。已知超 500MB 或达到/超过 100ms 的候选只能留作研究。
 
-```powershell
-python -m pip install --no-deps -e D:\verified_phase17\code
-python D:\verified_phase17\code\scripts\batch_delivery.py --config D:\verified_phase17\phase17_batch\manifests\batch_plan.yaml --action recompute --root D:\verified_phase17\phase17_batch
-```
-
-这会重算Study指标、完整OOF、固定融合及患者bootstrap（2000次有效抽样），不读取胸片、不调用GPU、不重新训练。报告目录可重新计算；冻结实验文件不能修改。仅有结果包也能复算，模型大小读取经过校验的manifest。
-
-## 加载最佳推理权重
-
-在安装项目和PyTorch后，使用解包配置中的模型名。权重本身没有原始数据路径或pickle模型对象：
-
-```python
-from pathlib import Path
-import torch, yaml
-from cxr.models.factory import create_model
-run = Path(r'D:\verified_phase17\phase17_batch\experiments\C17_F01')
-config = yaml.safe_load((run/'resolved_config.yaml').read_text(encoding='utf-8'))
-model = create_model(config['model']['name'], pretrained=False)
-model.load_state_dict(torch.load(run/'best_model.pth', map_location='cpu', weights_only=True), strict=True)
-model = model.cuda().eval()
-```
-
-未来测试集推理使用 `.pth` 纯推理权重、对应预处理配置和固定融合公式。必须另行获得用户批准；本批次没有生成排行榜submission。
-
-## 选择500MB候选
-
-查看 `ensembles/deployment_candidates.csv/json`，用真实推理文件大小判定；完整15模型只是研究方案。依赖清单包含路径与SHA-256。保留小量预定义候选，不做权重搜索。普通与EMA分开计算，不混用。
-
-官方Val已反复用于Epoch与模型选择，其差值区间不是新的独立确认；OOF是每患者对应留出Fold的预测，不是该患者全部五折模型的平均。T4端到端延迟仍需在目标设备上测量。
+任何任务缺失、失败或 Test 未完成都必须在状态表与 `manifests/delivery_manifest.json` 中保留原状；不填补不存在的指标。官方 Val 曾多次用于模型选择，Bootstrap 差值属于探索性证据，不是新的独立测试结果。Phase 15 内部 Holdout 不再用于本批任务选择模型。
