@@ -1,0 +1,97 @@
+{
+  "D17-F1": {
+    "source_sha256": "8bb2e3c1aab5a5b8ee28922057f9a9320d7aff2e066ea0a2c4164e8586699501",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required"
+    ]
+  },
+  "D17-F2": {
+    "source_sha256": "2c0ca70d721e390bd51855950956f3bce38ee293e818e6b71b777b865dacfcd9",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required"
+    ]
+  },
+  "D17-F3": {
+    "source_sha256": "979bec6ba4bbb6f02650dc1e03e60dfdfaa50949731fa1bf6d8b2df8f327295d",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required"
+    ]
+  },
+  "D17-F4": {
+    "source_sha256": "b035b48a9feef37bb246ad447068e73aec291500ed0b54284f52132966857195",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required"
+    ]
+  },
+  "D17-F5": {
+    "source_sha256": "9d3b526f39e03bf4041f0b0ab6e2c47a3ba477c0589b77606b0509256b975183",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required"
+    ]
+  },
+  "C17-F1": {
+    "source_sha256": "b07012c56c9ae67cdfd32ad46194dc6325b72ad25fe019db4a21f0a86c29142f",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required",
+      "training.ema: ConvNeXt decay .999; additive observer; raw early stop unchanged"
+    ]
+  },
+  "C17-F2": {
+    "source_sha256": "ac990dc0d83a421cb3335e65e8ebebfa04d7997f9bf022da407e62dfb3ad54e1",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required",
+      "training.ema: ConvNeXt decay .999; additive observer; raw early stop unchanged"
+    ]
+  },
+  "C17-F3": {
+    "source_sha256": "b7a24d388133046297de079c7d1a54419f86e3ce7b5d7ff78f3649b349387d29",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required",
+      "training.ema: ConvNeXt decay .999; additive observer; raw early stop unchanged"
+    ]
+  },
+  "C17-F4": {
+    "source_sha256": "73760b838f733b8034e3fc9f59768202c9459738df90e68ab75070a13809afe8",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required",
+      "training.ema: ConvNeXt decay .999; additive observer; raw early stop unchanged"
+    ]
+  },
+  "C17-F5": {
+    "source_sha256": "d4d607ef78bba3e4990f44010870aa159adcfe5a71474bf6218e228c3d11d582",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required",
+      "training.ema: ConvNeXt decay .999; additive observer; raw early stop unchanged"
+    ]
+  },
+  "S17-F1": {
+    "source_sha256": "73f869953839551b431400d62ca996529862436d845817a6df19edd755bb3e28",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required"
+    ]
+  },
+  "S17-F2": {
+    "source_sha256": "952ce1ba3aa0923c815eec4062d7c4a71911ddb717b12a02ff188e7791e9d92d",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required"
+    ]
+  },
+  "S17-F3": {
+    "source_sha256": "5c761b19424032d0dafd1a092c772cbf643b6e28caefaec1b532c78a9336d749",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required"
+    ]
+  },
+  "S17-F4": {
+    "source_sha256": "dee770d90d14d92c8c84e72ef2f7cfce207045fdc2f50977c9c9e29d568b94c4",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required"
+    ]
+  },
+  "S17-F5": {
+    "source_sha256": "b22fb295dc342d6bebd334fea684151c84262567826668ed331b9cad84ec0c62",
+    "changes": [
+      "data.archive_path: env CXR_DATA_ROOT required"
+    ]
+  }
+}

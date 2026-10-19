@@ -1,0 +1,7 @@
+# Python 3.12; torch 2.10.0 and torchvision 0.25.0 are checked by cloud_install.sh.
+# Install into a venv with --system-site-packages; never replace the CUDA driver here.
+numpy==2.5.2
+Pillow==12.3.0
+PyYAML==6.0.3
+pytest>=8,<10
+setuptools>=69

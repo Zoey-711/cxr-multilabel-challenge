@@ -1,0 +1,26 @@
+{
+  "D": {
+    "source": "b01_densenet121_384_20261016",
+    "epochs": 13,
+    "mean_epoch_minutes": 7.348606792179476,
+    "total_gpu_hours": 1.5921981383055532,
+    "fivefold_same_stop_projected_hours": 6.368792553222212,
+    "fivefold_30epoch_projected_hours": 14.697213584358952
+  },
+  "C": {
+    "source": "m02_convnext_tiny_384_aug_20261016_elevated",
+    "epochs": 11,
+    "mean_epoch_minutes": 22.968501291818196,
+    "total_gpu_hours": 4.210891903500002,
+    "fivefold_same_stop_projected_hours": 16.843567614000012,
+    "fivefold_30epoch_projected_hours": 45.93700258363639
+  },
+  "S": {
+    "source": "t01_swin_tiny_384_20261018",
+    "epochs": 13,
+    "mean_epoch_minutes": 22.572886966153842,
+    "total_gpu_hours": 4.890792176,
+    "fivefold_same_stop_projected_hours": 19.563168704,
+    "fivefold_30epoch_projected_hours": 45.145773932307684
+  }
+}
