@@ -21,7 +21,7 @@ def import_result(bundle,destination,plan,expected_commit):
         if digest(run/'resolved_config.yaml')!=expected[tid]['config_sha256']:
             raise ValueError(f'Unexpected actual training config: {tid}')
         info=json.loads((run/'run_manifest.json').read_text(encoding='utf-8'))
-        if info['model_id']!=tid or info['fold_hashes']!=plan['fold_hashes']:
+        if info['model_id']!=tid or info['fold_hashes']!=plan['fold_hashes'] or info['git_commit']!=expected_commit:
             raise ValueError('Model/fold provenance differs')
     (target/'IMPORT_VERIFIED.json').write_text(json.dumps({'commit':expected_commit,'manifest_sha256':digest(bundle/'delivery_manifest.json'),'completed_tasks':manifest['completed_tasks']},indent=2),encoding='utf-8')
     return target

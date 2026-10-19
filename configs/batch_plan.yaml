@@ -448,7 +448,7 @@ artifacts:
   requirements/cloud.txt: fd8f8ecb3eb410a7820fc7c351322a13002d55c2daf04f0ea5e6c300a8bf739b
   scripts/analyze_validation.py: 427c4a7271e5c551b721c5708de683c70196df4d9d1680aa5f2011f9aebad844
   scripts/audit_git_delivery.py: 83b99d5c625b886b2d33b2516f1d661f63d3c156bab9f98a377af14cceb40d8b
-  scripts/batch_benchmark.py: 89c71cc239f99de6c676ec38de77a6a50169fa977d8fff4ca3d3f4a6205d7b35
+  scripts/batch_benchmark.py: c4b91c0c425844bde51fb04957e901c4d8a37f34cde55545d79329427f33c344
   scripts/batch_cost.py: fca3873cae648e340da4bece8b6a00bb405db3f437d2b2ed8b4526ba5940c02a
   scripts/batch_delivery.py: 66363b3518672ea53ab1f19cd6761a4b03ea8dda79115e05cc954c9b67ed5a47
   scripts/batch_latency.py: ba1ea2dcb68717ebbf8815f185b67e792587c2edb743a17272044862a136f0bd
@@ -460,7 +460,7 @@ artifacts:
   scripts/cloud_install.sh: 817d2da988fe38805ea62f3bcc93a4d87952570bcabd265c2cdc18ee8b0c6692
   scripts/friend_slurm.sh: f06029276a112d962e6f7cd444b8f45e1351e41f66c4139a1e57e62e61d5d7eb
   scripts/friend_start.sh: 72eb1f7c15f565664e39ef6b176b0e192a19069e1ba416ce1e14c5bd01c00690
-  scripts/import_friend_results.py: f788774b77761f1d86076d51bd4097aa74ea5a6f8ed9ce7cf6e71c434ede9402
+  scripts/import_friend_results.py: a2cbaf1a83a7250076cec7a6b3229d265143e4780b624e8d6ae03609bcaaa175
   scripts/protocol_assets.py: 48471c9a3f232a7526066d0288200316e2cc50104be56703cf340ad2c0a4bcae
   scripts/seal_batch_plan.py: d9f0f46e7b61826e8852725601ff56af8063e20a730c58aba82d1af82df8db7b
   src/cxr/__init__.py: 22b8cd1e4cfe0575ac5d5b064fa02b6c3dfb57e34c8a254f9b8d53edea4cecb0
@@ -471,7 +471,7 @@ artifacts:
   src/cxr/batch/plan.py: 7f522809e74866a2682a519184fe1a141e667ddcfd81856de45eb8735d4d227b
   src/cxr/batch/reporting.py: e4ab5939db59fd19050b05e8718723a3f8e1cfd1573e3a0f6c91dfbf5a0116b0
   src/cxr/batch/results.py: 39860a62e164be600e03146eb1dca9b1e175990a21af626d7199542db5c75849
-  src/cxr/batch/runner.py: 053f78f1df06804d6577f321b2431d2103deb32ecacec61e303b4e973d217541
+  src/cxr/batch/runner.py: eb2023317fa5d6f73a6de3dbaeaeba0db7dc0f36f6d298efc251c3739d0eef73
   src/cxr/data/__init__.py: f19092845a5a4261305d448673f4fae40a4987bb2f57d4c847ebc15b55ce8d64
   src/cxr/data/archive.py: e9d4f8e86fa8f9d3d44ac04deec60ddce36da787ed79d7429607cd1747ff1f35
   src/cxr/data/audit.py: c5f2fe6ff6fb81f61c687a2662c0f5a0e4ef4c4bd0f56d1811c8efa25217c26f

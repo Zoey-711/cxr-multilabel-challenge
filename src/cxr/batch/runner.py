@@ -8,7 +8,7 @@ import sys
 import time
 from pathlib import Path
 
-from cxr.batch.plan import ROOT, digest, write_json, retryable, selected_tasks
+from cxr.batch.plan import ROOT, digest, write_json, retryable, selected_tasks, load_plan
 from cxr.batch.results import finalize_task, verify_frozen, summarize
 from cxr.batch.artifacts import initialize_manifests, record_failure, utcnow
 
@@ -45,6 +45,11 @@ def execute(task, batch_root, gpu, attempt):
     config = str(ROOT/task['config'])
     stage = 'train'
     try:
+        load_plan(batch_root/'manifests/batch_plan.yaml')
+        from cxr.batch.artifacts import commit
+        frozen_code=json.loads((batch_root/'manifests/environment.json').read_text(encoding='utf-8'))
+        if commit()!=frozen_code['git_commit']:
+            raise ValueError('Code commit changed while batch queue was running')
         if (run/'batch_frozen_manifest.json').exists():
             verify_frozen(run)
             if os.environ.get('CXR_BACKUP_ROOT'):

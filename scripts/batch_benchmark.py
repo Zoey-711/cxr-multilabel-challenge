@@ -16,7 +16,7 @@ YEN_PER_HOUR = 0.0  # Friend pricing unknown; do not invent monetary cost.
 
 def sample_gpu_util(stop: threading.Event, values: list[int]) -> None:
     while not stop.wait(0.5):
-        result = subprocess.run(["nvidia-smi", "--query-gpu=utilization.gpu", "--format=csv,noheader,nounits"],
+        result = subprocess.run(["nvidia-smi", "--id=" + os.environ.get("CUDA_VISIBLE_DEVICES", "0"), "--query-gpu=utilization.gpu", "--format=csv,noheader,nounits"],
                                 capture_output=True, text=True, check=False)
         try:
             values.append(int(result.stdout.strip().splitlines()[0]))
@@ -100,6 +100,7 @@ def main() -> None:
     epoch_images = len(rows)
     epoch_seconds = epoch_images / read_images_s + epoch_images / compute_images_s
     report = {"model": config["model"]["name"], "fold": config["data"]["train_subset"]["fold"],
+              "gpu_name": torch.cuda.get_device_name(0), "cuda_runtime": torch.version.cuda,
               "read_images": read_count, "read_seconds": read_seconds, "read_images_s": read_images_s,
               "gpu_micro_batch": len(image), "gradient_accumulation": accumulation,
               "effective_batch": len(image) * accumulation, "warmup_steps": args.warmup_steps,
