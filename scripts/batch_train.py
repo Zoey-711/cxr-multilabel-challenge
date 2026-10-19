@@ -20,6 +20,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
+import torch.nn.functional as F
 
 from cxr.data.archive import archive_path, read_split_rows
 from cxr.data.dataset import make_dataloader, study_targets_from_rows
@@ -159,9 +160,33 @@ def main() -> None:
             parser.error("Official validation split differs from the frozen 859-Study protocol")
         if {row["Subject_id"] for row in train_rows} & val_patients:
             parser.error("Official validation patients overlap internal Train")
+    full_expected = config["data"].get("full_train_expected_counts")
+    if full_expected is not None:
+        observed = {"patients": len({r["Subject_id"] for r in train_rows}),
+                    "studies": len({(r["Subject_id"], r["Study_id"]) for r in train_rows}),
+                    "images": len(train_rows)}
+        if subset is not None or observed != full_expected:
+            parser.error(f"Full-Train coverage differs from frozen protocol: {observed}")
+        if {r["Subject_id"] for r in train_rows} & {r["Subject_id"] for r in val_rows}:
+            parser.error("Official Val patients overlap full Train")
     policy = config["data"]["label_encoding"]["unlisted_policy"]
     if policy != "negative":
         parser.error("Study-level Macro-AUC baseline requires complete competition targets")
+    distillation = config["training"].get("distillation")
+    soft_targets = soft_weights = None
+    if distillation is not None:
+        if (subset is not None or full_expected is None or
+                distillation != {"temperature": 1.0, "hard_fraction": 0.5, "soft_fraction": 0.5,
+                  "soft_weighting": "inverse_images_per_study",
+                  "normalization": "separate hard image-label and soft Study-label denominators"}):
+            parser.error("Unreviewed distillation configuration")
+        from cxr.batch.extension import load_soft_studies
+        from cxr.batch.plan import digest
+        teacher = config["data"]["teacher_soft_labels"]
+        labels_path = output_root()/"manifests/train_labels.csv"
+        if digest(labels_path) != teacher["label_sha256"] or teacher["formula"] != {"D17": .25, "C17": .25, "S17": .5}:
+            parser.error("Teacher fixed labels or formula changed")
+        soft_targets, soft_weights = load_soft_studies(teacher["path"], teacher["sha256"], train_rows, labels_path)
     workers = int(config["data"]["num_workers"])
     exact_epoch_resume = True  # Batch seed runs also restore all RNG states.
     batch_size = int(config["training"]["batch_size"])
@@ -175,7 +200,8 @@ def main() -> None:
                                    preprocessing=config["data"].get("preprocessing", "black_pad_v1"),
                                    input_size=int(config["data"]["input_size"]),
                                    sampling=config["data"].get("train_sampling"),
-                                   persistent_workers=False if exact_epoch_resume else None)
+                                   persistent_workers=False if exact_epoch_resume else None,
+                                   study_soft_targets=soft_targets, study_soft_weights=soft_weights)
     val_loader = make_dataloader(data_path, "val", batch_size=batch_size, num_workers=workers,
                                  rows=val_rows, unlisted_policy=policy,
                                  preprocessing=config["data"].get("preprocessing", "black_pad_v1"),
@@ -274,6 +300,10 @@ def main() -> None:
             group_valid = sum(int(batch["valid_mask"].sum().item()) for batch in microbatches)
             if not microbatches or group_valid == 0:
                 raise ValueError("Training accumulation group has no valid labels")
+            group_soft_valid = (sum(float((batch["soft_weight"][:, None] * batch["valid_mask"]).sum())
+                                    for batch in microbatches) if distillation else 0.0)
+            if distillation and group_soft_valid <= 0:
+                raise ValueError("Distillation group has no valid teacher labels")
             optimizer.zero_grad(set_to_none=True)
             for batch in microbatches:
                 if study_sampler is not None:
@@ -286,10 +316,20 @@ def main() -> None:
                     per_label = per_label_loss(logits, targets, config["training"])
                     loss_sum = (per_label * mask).sum()
                     loss = loss_sum / group_valid
+                    if distillation:
+                        teacher = batch["soft_target"].to("cuda", non_blocking=True)
+                        study_weight = batch["soft_weight"].to("cuda", non_blocking=True)
+                        if teacher.shape != logits.shape or not bool(torch.isfinite(teacher).all()):
+                            raise ValueError("Teacher soft targets are not finite aligned ten-class probabilities")
+                        soft_sum = (F.binary_cross_entropy_with_logits(logits.float(), teacher,
+                                    reduction="none") * mask * study_weight[:, None]).sum()
+                        loss = 0.5 * loss + 0.5 * soft_sum / group_soft_valid
                 if not bool(torch.isfinite(loss)):
                     raise FloatingPointError(f"Nonfinite training loss at epoch {epoch}, step {step}")
                 scaler.scale(loss).backward()
-                total_loss += float(loss_sum.detach())
+                total_loss += (float(loss_sum.detach()) if not distillation else
+                               0.5 * float(loss_sum.detach()) +
+                               0.5 * float(soft_sum.detach()) * group_valid / group_soft_valid)
                 total_valid += int(mask.sum().item())
             scaler.unscale_(optimizer)
             gradient_norm = torch.nn.utils.clip_grad_norm_(model.parameters(),

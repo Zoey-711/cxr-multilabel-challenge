@@ -10,12 +10,13 @@ from cxr.batch.plan import load_plan, gpu_tokens, digest, ROOT
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--config',required=True,type=Path)
-    p.add_argument('--action',choices=['validate','run','status','stop','backup','restore','report'],default='validate')
+    p.add_argument('--action',choices=['validate','run','run-extension','status','stop','backup','restore','report'],default='validate')
     p.add_argument('--root',type=Path)
     p.add_argument('--destination',type=Path)
     p.add_argument('--gpus',default='0')
     p.add_argument('--max-concurrent',type=int,default=1)
     p.add_argument('--gpu-hours',type=float)
+    p.add_argument('--gh-gpu-hours',type=float)
     p.add_argument('--receipt',type=Path)
     p.add_argument('--resume',action='store_true')
     p.add_argument('--allow-extended',action='store_true')
@@ -27,7 +28,7 @@ def main():
         return
     if a.root is None or not a.root.is_absolute():
         p.error('--root must be an absolute, independent output directory')
-    if a.action=='run':
+    if a.action in ('run','run-extension'):
         if a.root.name!='phase17_batch':
             p.error('Unified output directory must be named phase17_batch')
         if a.gpu_hours is None or not a.receipt:
@@ -50,8 +51,18 @@ def main():
         for key in ('CXR_DATA_ROOT','CXR_PRETRAINED_ROOT','CXR_BACKUP_ROOT'):
             if receipt['environment'].get(key)!=os.environ.get(key):
                 p.error(f'{key} differs from preflight')
-        from cxr.batch.runner import run_queue
-        run_queue(plan,a.config,a.root,devices,a.gpu_hours,a.resume,a.allow_extended,receipt.get('gpu_hours',0),a.max_concurrent)
+        if a.action=='run':
+            if a.allow_extended:
+                p.error('Use the separate run-extension action after all 22 base tasks')
+            from cxr.batch.runner import run_queue
+            run_queue(plan,a.config,a.root,devices,a.gpu_hours,a.resume,False,receipt.get('gpu_hours',0),a.max_concurrent)
+        else:
+            if not a.allow_extended or a.gh_gpu_hours is None or a.gh_gpu_hours<=0:
+                p.error('G/H requires --allow-extended and a separate positive --gh-gpu-hours cap')
+            from cxr.batch.extension_queue import run_extension_queue
+            run_extension_queue(a.root,plan,devices,total_budget=a.gpu_hours,
+                                gh_budget=a.gh_gpu_hours,max_concurrent=a.max_concurrent,
+                                resume=a.resume)
     elif a.action=='status':
         print((a.root/'queue_state.json').read_text(encoding='utf-8'))
     elif a.action=='stop':

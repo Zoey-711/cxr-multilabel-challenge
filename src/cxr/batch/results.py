@@ -140,7 +140,9 @@ def finalize_task(run, task, *, expected_val=(859,228)):
     if task['fold'] is not None:
         important += ('oof_predictions.csv',)
     if task['ema']:
-        important += ('ema_best_model.pth','ema_val_predictions.csv','ema_oof_predictions.csv','ema_test_predictions.csv')
+        important += ('ema_best_model.pth','ema_val_predictions.csv','ema_test_predictions.csv')
+        if task['fold'] is not None:
+            important += ('ema_oof_predictions.csv',)
     checks = {name:digest(run/name) for name in important}
     write_json(run/'DONE.json',{'state':'complete','model_id':task['id'],'verified_sha256':checks,'time_utc':utcnow()})
     files = {p.relative_to(run).as_posix(): {'sha256': digest(p), 'bytes': p.stat().st_size}

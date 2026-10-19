@@ -30,6 +30,8 @@ def fixture_root(root):
     tasks += [{'id':b+'_F01','group':'P','enabled':True,'fold':1,'ema':False,'seed':42,'fold_hashes':{},'expected_test_studies':2} for b in ('CS17','NM17')]
     plan={'tasks':tasks,'bootstrap_draws':10,'fold_hashes':{},'data_sha256':'synthetic','expected_test_studies':2,
           'fixed_fusions':{'E17':{'D5':.25,'C5':.25,'S5':.5}},
+          'conditional_extension':{'reserved_slots':[{'id':name,'group':name[0]} for name in
+              ('G17_FULL_01','G17_FULL_02','H17_DISTILL_01','H17_DISTILL_02')]},
           'deployment_candidates':{'E17_F01':{'D17_F01':.25,'C17_F01':.25,'S17_F01':.5}}}
     (root/'manifests/batch_plan.yaml').write_text(yaml.safe_dump(plan),encoding='utf-8')
     fields=['Subject_id','Study_id','image_count','fold']+[f'Target_{i}' for i in range(1,11)]
@@ -119,6 +121,19 @@ def test_end_to_end_train_resume_export_direct_folder_recompute(tmp_path):
     assert (root/'test_predictions/D17_test_5fold.csv').is_file()
     assert (root/'test_predictions/N17_EMA_test_5fold.csv').is_file()
     assert (root/'test_predictions/E17_test_probabilities.csv').is_file()
+    with (root/'reports/experiment_summary.csv').open(encoding='utf-8',newline='') as stream:
+        summary=list(csv.DictReader(stream))
+    summary_by_id={row['model_id']:row for row in summary}
+    assert {'D5','C5','S5','N5','E17'} <= set(summary_by_id)
+    assert {'G17_FULL_01','G17_FULL_02','H17_DISTILL_01','H17_DISTILL_02'} <= set(summary_by_id)
+    assert all(summary_by_id[name]['state']=='PENDING' for name in
+               ('G17_FULL_01','G17_FULL_02','H17_DISTILL_01','H17_DISTILL_02'))
+    assert summary_by_id['D17_F01']['val_macro_auc']
+    assert summary_by_id['D17_F01']['oof_macro_auc']
+    assert summary_by_id['D5']['oof_auc_class_1']
+    assert summary_by_id['E17']['val_auc_class_10']
+    assert all(row['test_auc']=='N/A: hidden Test labels unavailable' for row in summary)
+    assert summary_by_id['D17_F01']['test_prediction_status']=='probabilities_saved'
     from cxr.batch.test_results import validate_submission
     assert validate_submission(root/'submissions/ensembles/E17_submission.csv',expected_studies=2)['rows']==20
     assert all((root/'experiments'/t['id']/'model_size.json').is_file() for t in tasks)

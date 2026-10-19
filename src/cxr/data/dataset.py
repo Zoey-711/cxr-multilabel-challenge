@@ -68,7 +68,8 @@ class CXRArchiveDataset(Dataset):
 
     def __init__(self, archive: str | Path, split: str, *, rows: list[dict[str, str]] | None = None,
                  unlisted_policy: str = "negative", augmentation: dict | None = None,
-                 preprocessing: str = "black_pad_v1", input_size: int = 384):
+                 preprocessing: str = "black_pad_v1", input_size: int = 384,
+                 study_soft_targets: dict | None = None, study_soft_weights: dict | None = None):
         if unlisted_policy not in ("negative", "unknown"):
             raise ValueError("unlisted_policy must be 'negative' or 'unknown'")
         self.archive = split_archive_path(archive, split)
@@ -84,6 +85,16 @@ class CXRArchiveDataset(Dataset):
             raise ValueError("Supported image sizes are 384 and 512")
         self.input_size = input_size
         self.rows = read_split_rows(self.archive, split) if rows is None else rows
+        if (study_soft_targets is None) != (study_soft_weights is None):
+            raise ValueError("Teacher targets and Study weights must be supplied together")
+        if study_soft_targets is not None:
+            if split != "train":
+                raise ValueError("Teacher targets are restricted to Train")
+            studies = {(row["Subject_id"], row["Study_id"]) for row in self.rows}
+            if studies != set(study_soft_targets) or studies != set(study_soft_weights):
+                raise ValueError("Teacher targets differ from Train Study IDs")
+        self.study_soft_targets = study_soft_targets
+        self.study_soft_weights = study_soft_weights
         self._zip: zipfile.ZipFile | None = None
         self._members = [image_member(row, split) for row in self.rows]
 
@@ -121,6 +132,10 @@ class CXRArchiveDataset(Dataset):
                 valid[class_id - 1] = True
             item["target"] = target
             item["valid_mask"] = valid
+            if self.study_soft_targets is not None:
+                key = row["Subject_id"], row["Study_id"]
+                item["soft_target"] = torch.as_tensor(self.study_soft_targets[key], dtype=torch.float32)
+                item["soft_weight"] = torch.tensor(self.study_soft_weights[key], dtype=torch.float32)
         return item
 
     def close(self) -> None:
@@ -134,7 +149,9 @@ def make_dataloader(archive: str | Path, split: str, *, batch_size: int = 2,
                     rows: list[dict[str, str]] | None = None,
                     unlisted_policy: str = "negative", augmentation: dict | None = None,
                     preprocessing: str = "black_pad_v1", sampling: str | None = None,
-                    input_size: int = 384, persistent_workers: bool | None = None) -> DataLoader:
+                    input_size: int = 384, persistent_workers: bool | None = None,
+                    study_soft_targets: dict | None = None,
+                    study_soft_weights: dict | None = None) -> DataLoader:
     if shuffle and split != "train":
         raise ValueError("Only training data may be shuffled")
     if sampling and (split != "train" or shuffle):
@@ -143,7 +160,8 @@ def make_dataloader(archive: str | Path, split: str, *, batch_size: int = 2,
         raise ValueError(f"Unsupported training sampling: {sampling}")
     dataset = CXRArchiveDataset(archive, split, rows=rows, unlisted_policy=unlisted_policy,
                                 augmentation=augmentation, preprocessing=preprocessing,
-                                input_size=input_size)
+                                input_size=input_size, study_soft_targets=study_soft_targets,
+                                study_soft_weights=study_soft_weights)
     generator = torch.Generator().manual_seed(seed)
     sampler = StudyBalancedSampler(dataset.rows, seed=seed) if sampling else None
     return DataLoader(dataset, batch_size=batch_size, num_workers=num_workers,

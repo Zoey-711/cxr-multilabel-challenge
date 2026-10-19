@@ -11,20 +11,28 @@ def write_delivery_manifest(root):
     plan=json.loads((root/'reports/experiment_summary.json').read_text(encoding='utf-8'))
     tasks=plan['tasks']
     complete=[r['model_id'] for r in tasks if r['state']=='complete']
+    missing=[r['model_id'] for r in tasks if r['state']!='complete']
+    extension=root/'extension_state.json'
+    if extension.exists():
+        extra=json.loads(extension.read_text(encoding='utf-8'))['tasks']
+        complete.extend(name for name,record in extra.items() if record['state']=='complete')
+        missing.extend(name for name,record in extra.items() if record['state']!='complete')
     files={}
     for relative in ('reports/experiment_summary.json','reports/phase17_final_report.md',
-                     'submissions/submission_candidates.csv','submissions/submission_validation_report.csv'):
+                     'submissions/submission_candidates.csv','submissions/submission_validation_report.csv',
+                     'reports/gh_experiment_summary.json','manifests/extension_selection.json',
+                     'extension_state.json'):
         path=root/relative
         if path.is_file():files[relative]={'bytes':path.stat().st_size,'sha256':digest(path)}
     manifest={'format':'phase17_direct_folder_v1','git_commit':environment['git_commit'],
               'data_sha256':environment['data_sha256'],'fold_hashes':environment['fold_hashes'],
               'code_sha256':environment['code_sha256'],'completed_tasks':complete,
-              'missing_tasks':[r['model_id'] for r in tasks if r['state']!='complete'],
+              'missing_tasks':missing,
               'model_count':len(complete),'important_files':files,
               'no_archives':True,'source_root':'relative paths only'}
     write_json(root/'manifests/delivery_manifest.json',manifest)
     (root/'reports/COMPLETION.txt').write_text(
-        f'Complete models: {len(complete)}/{len(tasks)}\nDirect folder: {root}\n'
+        f'Complete models: {len(complete)}/{len(tasks)+(len(extra) if extension.exists() else 0)}\nDirect folder: {root}\n'
         'Verify manifests/delivery_manifest.json and each experiments/<ID>/batch_frozen_manifest.json.\n',
         encoding='utf-8')
     return manifest

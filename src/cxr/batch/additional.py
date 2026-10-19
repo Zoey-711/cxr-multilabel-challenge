@@ -1,5 +1,6 @@
 """Finite, predeclared extra analyses. Never chooses a backbone or starts training."""
 import itertools
+import json
 import yaml
 import numpy as np
 from cxr.batch.results import scores, combine, bootstrap, align, grouped
@@ -10,10 +11,20 @@ def analyze(root, tables, oofs, rows, draws):
     from cxr.batch.reporting import csv_rows
     folder=root/'analysis'
     plan=yaml.safe_load((root/'manifests/batch_plan.yaml').read_text(encoding='utf-8'))
-    pending=[{'model_id':slot['id'],'group':slot['group'],'state':'PENDING',
-              'best_epoch':None,'val_auc':None,'oof_auc':None,'epoch_hours':None,
-              'weights_bytes':None}
-             for slot in plan.get('conditional_extension', {}).get('reserved_slots', [])]
+    extension_state = (json.loads((root/'extension_state.json').read_text(encoding='utf-8'))
+                       if (root/'extension_state.json').exists() else {})
+    pending=[]
+    for slot in plan.get('conditional_extension', {}).get('reserved_slots', []):
+        run=root/'experiments'/slot['id']
+        record=extension_state.get('tasks', {}).get(slot['id'], {})
+        metric=(json.loads((run/'metrics.json').read_text(encoding='utf-8'))
+                if (run/'DONE.json').is_file() else {})
+        pending.append({'model_id':slot['id'],'group':slot['group'],
+                        'state':record.get('state','PENDING'),
+                        'best_epoch':metric.get('best_epoch'),
+                        'val_auc':metric.get('official_val',{}).get('all',{}).get('macro_auc'),
+                        'oof_auc':'N/A','epoch_hours':record.get('gpu_hours'),
+                        'weights_bytes':metric.get('weights_bytes')})
     csv_rows(folder/'additional_experiments_summary.csv',
              [r for r in rows if r['group'] in ('N','P')]+pending,
              list(rows[0]) if rows else ['model_id','group','state','best_epoch','val_auc','oof_auc','epoch_hours','weights_bytes'])

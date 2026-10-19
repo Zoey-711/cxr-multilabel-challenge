@@ -29,9 +29,15 @@ fi
 python scripts/batch_cost.py --config "$PLAN" --directory "$RECEIPT_DIR"
 ARGS=()
 if [[ -f "$ROOT/queue_state.json" ]]; then ARGS+=(--resume); fi
-if [[ "${CXR_ENABLE_EXTENDED:-0}" == 1 ]]; then
-  echo 'Extended tasks require separate user approval; use explicit batch_run --allow-extended after approval.' >&2; exit 2
-fi
 python scripts/batch_run.py --config "$PLAN" --action run --root "$ROOT" --gpus "$GPUS" \
   --max-concurrent "$CXR_MAX_CONCURRENT" --gpu-hours "$CXR_GPU_HOURS" --receipt "$RECEIPT_DIR/receipt.json" "${ARGS[@]}"
+if [[ "${CXR_ENABLE_GH:-0}" == 1 ]]; then
+  : "${CXR_GH_GPU_HOURS:?G/H requires a separately approved GPU-hour cap}"
+  GH_ARGS=()
+  if [[ -f "$ROOT/extension_state.json" ]]; then GH_ARGS+=(--resume); fi
+  python scripts/batch_run.py --config "$PLAN" --action run-extension --allow-extended \
+    --root "$ROOT" --gpus "$GPUS" --max-concurrent "$CXR_MAX_CONCURRENT" \
+    --gpu-hours "$CXR_GPU_HOURS" --gh-gpu-hours "$CXR_GH_GPU_HOURS" \
+    --receipt "$RECEIPT_DIR/receipt.json" "${GH_ARGS[@]}"
+fi
 echo "Direct result folders: $ROOT"

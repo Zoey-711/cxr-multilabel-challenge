@@ -19,6 +19,19 @@ def import_result(source, destination, plan, expected_commit):
     if manifest['code_sha256']!=plan['artifacts']:
         raise ValueError('Source code artifact hash mismatch')
     expected={task['id']:task for task in plan['tasks']}
+    extension_ids={slot['id'] for slot in plan.get('conditional_extension',{}).get('reserved_slots',[])}
+    completed_extension=set(manifest['completed_tasks']) & extension_ids
+    if completed_extension:
+        selection=source/'manifests/extension_selection.json'
+        if not selection.is_file():
+            raise ValueError('Completed G/H models lack frozen extension selection')
+        chosen=json.loads(selection.read_text(encoding='utf-8'))
+        if chosen['source_fold_hashes']!=plan['fold_hashes']:
+            raise ValueError('G/H fold version mismatch')
+        extension={task['id']:task for task in chosen['tasks']}
+        if not completed_extension<=set(extension):
+            raise ValueError('G/H model missing from frozen selection')
+        expected.update(extension)
     if not set(manifest['completed_tasks'])<=set(expected):
         raise ValueError('Unknown completed model ID')
     for task_id in manifest['completed_tasks']:

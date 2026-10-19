@@ -19,7 +19,7 @@ phase17_batch/
 
 `experiments/<ID>/best_model.pth` 是推理权重；`checkpoint_resume.pth` 含优化器、调度器、AMP scaler、RNG 和早停状态，**仅用于恢复训练**。EMA 文件与原始权重明确分开。Val/OOF/Test 的 CSV 均为一 Study 一行，列是 `Subject_id,Study_id,Prob_1..Prob_10`。Test 没有标签，也没有 Test AUC。
 
-G/H 四个拟新增的全 Train 任务目前在计划中标为 `PENDING`，不会产生权重或预测。`analysis/additional_experiments_summary.csv` 明确列出这四项；如果将来单独实施，其 OOF 指标应记录为 `N/A`，因为全 Train 模型没有未见患者折外预测。当前文件夹中的完整五折 OOF 只来自 D/C/S/N 的各五折模型。
+G/H 四个全 Train 任务默认关闭；若朋友另外授权预算并启用，结果保存于各自的 `experiments/<ID>/`，任务状态另见 `extension_state.json`、`reports/extension_status.csv`、`reports/gh_experiment_summary.csv` 和 `analysis/additional_experiments_summary.csv`。G/H 的 OOF 指标始终为 `N/A`，因为全 Train 模型没有未见患者折外预测。完整五折 OOF 只来自 D/C/S/N 的各五折模型；`analysis/gh_teacher_oof.csv` 是患者隔离的训练软标签，不是学生OOF。若扩展未获授权或因依赖、预检、预算失败，四项应保留 `PENDING` 或 `BLOCKED`，不得填入虚构指标。
 
 ## Windows 本地验证与导入
 

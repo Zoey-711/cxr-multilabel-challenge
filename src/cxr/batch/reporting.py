@@ -13,7 +13,44 @@ from cxr.batch.results import combine, concatenate_oof, grouped, scores, bootstr
 def csv_rows(path, rows, fields=None):
     path.parent.mkdir(parents=True,exist_ok=True)
     with path.open('w',encoding='utf-8',newline='') as f:
-        w=csv.DictWriter(f,fieldnames=fields or list(rows[0])); w.writeheader(); w.writerows(rows)
+        w=csv.DictWriter(f,fieldnames=fields or (list(rows[0]) if rows else [])); w.writeheader(); w.writerows(rows)
+
+
+def _summary_row(candidate, val=None, oof=None, task=None):
+    """Flatten one model/ensemble into the unified summary; never score hidden Test."""
+    val = val or {}
+    oof = oof or {}
+    task = task or {}
+    row = {
+        'model_id': candidate, 'state': task.get('state', 'derived' if val or oof else 'missing'),
+        'best_epoch': task.get('best_epoch'), 'stop_epoch': task.get('stop_epoch'),
+        'epoch_hours': task.get('epoch_hours'), 'weights_bytes': task.get('weights_bytes'),
+        'val_studies': val.get('studies'), 'val_patients': val.get('patients'),
+        'val_macro_auc': val.get('macro_auc'), 'val_macro_ap': val.get('macro_ap'),
+        'val_auc': val.get('macro_auc'),
+        'val_macro_f1_at_0_5': val.get('macro_f1_at_0_5'),
+        'oof_studies': 'N/A' if task.get('oof_not_applicable') else oof.get('studies'),
+        'oof_patients': 'N/A' if task.get('oof_not_applicable') else oof.get('patients'),
+        'oof_macro_auc': 'N/A' if task.get('oof_not_applicable') else oof.get('macro_auc'),
+        'oof_macro_ap': 'N/A' if task.get('oof_not_applicable') else oof.get('macro_ap'),
+        'oof_auc': 'N/A' if task.get('oof_not_applicable') else oof.get('macro_auc'),
+        'oof_macro_f1_at_0_5': 'N/A' if task.get('oof_not_applicable') else oof.get('macro_f1_at_0_5'),
+        'test_auc': 'N/A: hidden Test labels unavailable',
+        'test_prediction_status': task.get('test_prediction_status', 'not_scored'),
+    }
+    for split, metrics in (('val', val), ('oof', oof)):
+        per_class = metrics.get('per_class', [])
+        for class_id in range(1, 11):
+            item = next((x for x in per_class if x.get('class_id') == class_id), {})
+            row[f'{split}_auc_class_{class_id}'] = item.get('auc')
+            row[f'{split}_ap_class_{class_id}'] = item.get('ap')
+            row[f'{split}_positive_studies_class_{class_id}'] = item.get('positive_studies')
+            row[f'{split}_negative_studies_class_{class_id}'] = item.get('negative_studies')
+            row[f'{split}_positive_patients_class_{class_id}'] = item.get('positive_patients')
+            if split == 'oof' and task.get('oof_not_applicable'):
+                for suffix in ('auc', 'ap', 'positive_studies', 'negative_studies', 'positive_patients'):
+                    row[f'oof_{suffix}_class_{class_id}'] = 'N/A'
+    return row
 
 
 def report(root, *, draws=None):
@@ -40,7 +77,8 @@ def report(root, *, draws=None):
             tables[tid]=t; files[tid]=[run/'best_model.pth']
             metric=json.loads((run/'metrics.json').read_text(encoding='utf-8'))
             row.update(state='complete',best_epoch=metric['best_epoch'],val_auc=scores(t)['macro_auc'],
-                       epoch_hours=metric['resources']['epoch_hours'],weights_bytes=metric['weights_bytes'])
+                       stop_epoch=metric.get('stop_epoch'), epoch_hours=metric['resources']['epoch_hours'],
+                       weights_bytes=metric['weights_bytes'])
             if task['fold']:
                 oo=read_probabilities(run/'oof_predictions.csv',train_label,label_keys(train_label,task['fold']))
                 if {s for s,_ in oo['keys']} & training_patients(run/'training_image_index.csv'):
@@ -107,10 +145,12 @@ def report(root, *, draws=None):
         write_probabilities(root/'validation'/(name+'_val_probabilities.csv'),ensemble_tables[name],{'formula':formula,'sources':list(formula)})
     if all(n in complete_oof for n in ('D5','C5','S5')):
         complete_oof['E17']=combine([complete_oof[n] for n in ('D5','C5','S5')],[.25,.25,.5])
-    official={n:grouped(t) for n,t in ensemble_tables.items()}
+    official={n:grouped(t) for n,t in {**tables, **ensemble_tables}.items()}
     pairs=[(n,'E07') for n in ensemble_tables if n!='E07']
     boot=bootstrap(ensemble_tables,pairs,draws) if len(ensemble_tables)>1 else None
     oof_metrics={n:grouped(t) for n,t in complete_oof.items()}
+    fold_oof_metrics={n:grouped(t) for n,t in oofs.items()}
+    all_oof_metrics={**fold_oof_metrics, **oof_metrics}
     oof_boot=bootstrap(complete_oof,[("E17",n) for n in ('D5','C5','S5')],draws) if 'E17' in complete_oof else None
     fold_boot={}
     for i in range(1,6):
@@ -157,7 +197,8 @@ def report(root, *, draws=None):
     deployment_status=export_reports(root,deployment,plan.get('deployment_protocol',{}))
     from cxr.batch.additional import analyze
     analyze(root,tables,oofs,rows,draws)
-    result={'tasks':rows,'failures':failures,'official_val':official,'full_oof':oof_metrics,'missing_folds':missing,
+    result={'tasks':rows,'failures':failures,'official_val':official,'fold_oof':fold_oof_metrics,
+            'full_oof':oof_metrics,'missing_folds':missing,
             'bootstrap_val':boot,'bootstrap_oof':oof_boot,'fold_oof_bootstrap':fold_boot,'model_val_bootstrap':all_val_boot,
             'deployment':deployment,'deployment_compliance':deployment_status,'gpu_epoch_hours':sum(r['epoch_hours'] or 0 for r in rows),
             'limitations':['官方Val多次用于模型与Epoch选择；置信区间仅为探索性证据，非新独立测试结果。',
@@ -174,9 +215,33 @@ def report(root, *, draws=None):
     write_json(root/'analysis/statistics.json',result)
     from cxr.batch.submission_reporting import generate_test_reports
     generate_test_reports(root, plan, rows, ensemble_tables, deployment, deployment_status)
-    perclass=[{'candidate':n,'split':split,'group':g,**r} for split,items in [('official_val',official),('oof',oof_metrics)] for n,groups in items.items() for g,m in groups.items() for r in m['per_class']]
+    perclass=[{'candidate':n,'split':split,'group':g,**r} for split,items in [('official_val',official),('oof',all_oof_metrics)] for n,groups in items.items() for g,m in groups.items() for r in m['per_class']]
     if perclass:csv_rows(root/'analysis/per_class_metrics.csv',perclass)
-    csv_rows(root/'reports/experiment_summary.csv',rows)
+    task_by_id = {r['model_id']: r for r in rows}
+    for reserved in plan.get('conditional_extension', {}).get('reserved_slots', []):
+        task_by_id.setdefault(reserved['id'], {
+            'model_id': reserved['id'], 'state': 'PENDING', 'best_epoch': None,
+            'stop_epoch': None, 'epoch_hours': None, 'weights_bytes': None,
+        })
+    summary = []
+    for candidate in sorted(set(official) | set(all_oof_metrics) | set(task_by_id)):
+        base_id = candidate.removesuffix('_EMA')
+        task = dict(task_by_id.get(base_id, {}))
+        if candidate.endswith('_EMA'):
+            run = root/'experiments'/base_id
+            metric_path = run/'ema_metrics.json'
+            if metric_path.is_file():
+                ema_metric = json.loads(metric_path.read_text(encoding='utf-8'))
+                task.update(best_epoch=ema_metric.get('best_epoch'), stop_epoch=ema_metric.get('stop_epoch'),
+                            epoch_hours=ema_metric.get('resources', {}).get('epoch_hours'),
+                            weights_bytes=ema_metric.get('weights_bytes'))
+        if candidate in tables and base_id in task_by_id:
+            test_file = root/'experiments'/base_id/(
+                'ema_test_predictions.csv' if candidate.endswith('_EMA') else 'test_predictions.csv')
+            task['test_prediction_status'] = 'probabilities_saved' if test_file.is_file() else 'not_available'
+        summary.append(_summary_row(candidate,
+            official.get(candidate, {}).get('all'), all_oof_metrics.get(candidate, {}).get('all'), task))
+    csv_rows(root/'reports/experiment_summary.csv',summary)
     write_json(root/'reports/experiment_summary.json',result)
     lines=['# Phase17 批量最终/阶段报告','',*result['limitations'],'',
            '| Task | State | Best Epoch | Val AUC | OOF AUC |','|---|---|---:|---:|---:|']

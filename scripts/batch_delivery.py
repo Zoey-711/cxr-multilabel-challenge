@@ -14,6 +14,11 @@ def main():
     if args.action=='recompute':
         from cxr.batch.reporting import report
         result=report(args.root)
+        extension=args.root/'extension_state.json'
+        if extension.exists():
+            import json
+            from cxr.batch.extension_queue import extension_report
+            extension_report(args.root,json.loads(extension.read_text(encoding='utf-8')),base_report=False)
         print({key:value['all']['macro_auc'] for key,value in result['official_val'].items()})
     else:
         from cxr.batch.direct_delivery import verify_direct_folder

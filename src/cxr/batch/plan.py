@@ -45,9 +45,9 @@ def load_plan(path):
     slots = extension.get('reserved_slots', [])
     if (extension.get('enabled') is not False or extension.get('max_additional_tasks') != 4 or
             [slot.get('id') for slot in slots] != ['G17_FULL_01', 'G17_FULL_02', 'H17_DISTILL_01', 'H17_DISTILL_02'] or
-            any(slot.get('enabled') is not False or slot.get('implementation_status') != 'PENDING'
+            any(slot.get('enabled') is not False or slot.get('implementation_status') != 'CPU_VERIFIED_GPU_PENDING'
                 for slot in slots)):
-        raise ValueError('G/H extension is not implemented and must stay PENDING')
+        raise ValueError('G/H extension may run only by explicit opt-in after its reviewed configuration')
     required = {f'{prefix}_F{fold:02d}' for prefix in ('D17', 'C17', 'S17', 'N17') for fold in range(1, 6)}
     if any(set(slot.get('depends_on', [])) != required for slot in slots):
         raise ValueError('G/H tasks must await all 20 five-fold models')
@@ -107,7 +107,7 @@ def load_plan(path):
 
 def selected_tasks(plan, extended=False):
     if extended and 'conditional_extension' in plan:
-        raise ValueError('G/H extension is PENDING: selection, distillation and GPU budget gates are not validated; stop at 22')
+        raise ValueError('Use run-extension with separate G/H GPU-hour authorization after the 22-task queue')
     return [t for t in plan['tasks'] if t['enabled'] or (extended and t['group'] == 'C')]
 
 

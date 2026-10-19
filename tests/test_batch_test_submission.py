@@ -29,7 +29,9 @@ def test_test_mean_and_full_ten_submission(tmp_path):
         rows=list(csv.DictReader(f))
     assert [r['Predict_class'] for r in rows[:10]]==[str(i) for i in range(1,11)]
     assert rows[0]['Subject_id']=='subject_00001'
-    assert json.loads(submission.with_suffix('.manifest.json').read_text())['hidden_test_labels_used'] is False
+    manifest=json.loads(submission.with_suffix('.manifest.json').read_text())
+    assert manifest['hidden_test_labels_used'] is False
+    assert manifest['test_auc'] is None
     with pytest.raises(FileExistsError):
         write_submission(submission,fused,{},2)
 

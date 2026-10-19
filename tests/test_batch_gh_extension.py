@@ -22,9 +22,9 @@ def test_reviewed_extension_is_declared_but_not_executable():
     assert len(selected_tasks(plan)) == 22
     slots = plan['conditional_extension']['reserved_slots']
     assert [s['group'] for s in slots] == ['G', 'G', 'H', 'H']
-    assert all(s['implementation_status'] == 'PENDING' and not s['enabled'] for s in slots)
+    assert all(s['implementation_status'] == 'CPU_VERIFIED_GPU_PENDING' and not s['enabled'] for s in slots)
     assert all(s['fold'] is None for s in slots)
-    with pytest.raises(ValueError, match='PENDING'):
+    with pytest.raises(ValueError, match='run-extension'):
         selected_tasks(plan, extended=True)
 
 
