@@ -1,5 +1,6 @@
 """Finite, predeclared extra analyses. Never chooses a backbone or starts training."""
 import itertools
+import yaml
 import numpy as np
 from cxr.batch.results import scores, combine, bootstrap, align, grouped
 from cxr.batch.plan import write_json
@@ -8,8 +9,14 @@ from cxr.batch.plan import write_json
 def analyze(root, tables, oofs, rows, draws):
     from cxr.batch.reporting import csv_rows
     folder=root/'analysis'
+    plan=yaml.safe_load((root/'manifests/batch_plan.yaml').read_text(encoding='utf-8'))
+    pending=[{'model_id':slot['id'],'group':slot['group'],'state':'PENDING',
+              'best_epoch':None,'val_auc':None,'oof_auc':None,'epoch_hours':None,
+              'weights_bytes':None}
+             for slot in plan.get('conditional_extension', {}).get('reserved_slots', [])]
     csv_rows(folder/'additional_experiments_summary.csv',
-             [r for r in rows if r['group'] in ('N','P')], list(rows[0]) if rows else ['model_id','state'])
+             [r for r in rows if r['group'] in ('N','P')]+pending,
+             list(rows[0]) if rows else ['model_id','group','state','best_epoch','val_auc','oof_auc','epoch_hours','weights_bytes'])
     ema=[]
     for n in tables:
         if n.endswith('_EMA'):
@@ -37,7 +44,7 @@ def analyze(root, tables, oofs, rows, draws):
             pilots.append({'model_id':pilot,'studies':len(t['keys']),
                            'patients':len({s for s,_ in t['keys']}),'oof_auc':scores(t)['macro_auc'],
                            'reference_auc':scores(reference)['macro_auc'],'fixed_fusion_auc':scores(fusion)['macro_auc'],
-                           'conditional_extension':'DISABLED_NO_FROZEN_CRITERIA_OR_AUTHORIZED_BUDGET'})
+                           'conditional_extension':'G/H_PENDING_IMPLEMENTATION_AND_AUTHORIZED_BUDGET'})
     csv_rows(folder/'backbone_pilot_comparison.csv',pilots,
              ['model_id','studies','patients','oof_auc','reference_auc','fixed_fusion_auc','conditional_extension'])
     correlations=[]

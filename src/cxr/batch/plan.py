@@ -41,8 +41,18 @@ def load_plan(path):
     groups = {g:sum(t['group']==g for t in tasks) for g in ('A','N','P')}
     if groups!={'A':15,'N':5,'P':2} or len(tasks)!=22:
         raise ValueError('Reviewed 22-task inventory changed')
-    if plan.get('conditional_extension',{}).get('enabled') is not False or len(plan['conditional_extension']['reserved_slots'])!=4:
-        raise ValueError('Unapproved conditional expansion')
+    extension = plan.get('conditional_extension', {})
+    slots = extension.get('reserved_slots', [])
+    if (extension.get('enabled') is not False or extension.get('max_additional_tasks') != 4 or
+            [slot.get('id') for slot in slots] != ['G17_FULL_01', 'G17_FULL_02', 'H17_DISTILL_01', 'H17_DISTILL_02'] or
+            any(slot.get('enabled') is not False or slot.get('implementation_status') != 'PENDING'
+                for slot in slots)):
+        raise ValueError('G/H extension is not implemented and must stay PENDING')
+    required = {f'{prefix}_F{fold:02d}' for prefix in ('D17', 'C17', 'S17', 'N17') for fold in range(1, 6)}
+    if any(set(slot.get('depends_on', [])) != required for slot in slots):
+        raise ValueError('G/H tasks must await all 20 five-fold models')
+    if any(slot.get('fold') is not None for slot in slots):
+        raise ValueError('G/H full-Train tasks cannot claim an OOF fold')
     if len(ids) != len(set(ids)):
         raise ValueError('Duplicate task IDs')
     import re
@@ -97,7 +107,7 @@ def load_plan(path):
 
 def selected_tasks(plan, extended=False):
     if extended and 'conditional_extension' in plan:
-        raise ValueError('Conditional expansion has no frozen criteria/authorized budget; stop at 22')
+        raise ValueError('G/H extension is PENDING: selection, distillation and GPU budget gates are not validated; stop at 22')
     return [t for t in plan['tasks'] if t['enabled'] or (extended and t['group'] == 'C')]
 
 

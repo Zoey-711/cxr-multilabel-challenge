@@ -14,10 +14,12 @@ phase17_batch/
   analysis/        AUC/AP、患者级 Bootstrap、互补性与分组报告
   deployment/      真实权重大小、研究/官方目标时延证据及资格表
   submissions/     四列、全十类候选 CSV、独立 manifest 和格式校验表
-  reports/         22 项状态、总报告及简短完成通知
+  reports/         22 项可执行任务状态、总报告及简短完成通知
 ```
 
 `experiments/<ID>/best_model.pth` 是推理权重；`checkpoint_resume.pth` 含优化器、调度器、AMP scaler、RNG 和早停状态，**仅用于恢复训练**。EMA 文件与原始权重明确分开。Val/OOF/Test 的 CSV 均为一 Study 一行，列是 `Subject_id,Study_id,Prob_1..Prob_10`。Test 没有标签，也没有 Test AUC。
+
+G/H 四个拟新增的全 Train 任务目前在计划中标为 `PENDING`，不会产生权重或预测。`analysis/additional_experiments_summary.csv` 明确列出这四项；如果将来单独实施，其 OOF 指标应记录为 `N/A`，因为全 Train 模型没有未见患者折外预测。当前文件夹中的完整五折 OOF 只来自 D/C/S/N 的各五折模型。
 
 ## Windows 本地验证与导入
 

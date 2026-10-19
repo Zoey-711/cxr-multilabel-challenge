@@ -26,14 +26,18 @@
 | N17_F05 | efficientnet_v2_s | 5 | True | P0 |
 | CS17_F01 | convnext_small | 1 | False | P2 |
 | NM17_F01 | efficientnet_v2_m | 1 | False | P2 |
-| PILOT_SELECTED_F02（禁用） | 尚未选择 | 2 | 否 | 条件扩展 |
-| PILOT_SELECTED_F03（禁用） | 尚未选择 | 3 | 否 | 条件扩展 |
-| PILOT_SELECTED_F04（禁用） | 尚未选择 | 4 | 否 | 条件扩展 |
-| PILOT_SELECTED_F05（禁用） | 尚未选择 | 5 | 否 | 条件扩展 |
+| G17_FULL_01（PENDING） | 待预定规则从完整 OOF 中选择 | N/A | 否 | G组全 Train |
+| G17_FULL_02（PENDING） | 待预定规则从完整 OOF 中选择 | N/A | 否 | G组全 Train |
+| H17_DISTILL_01（PENDING） | 待冻结学生和蒸馏参数 | N/A | 否 | H组知识蒸馏 |
+| H17_DISTILL_02（PENDING） | 待冻结学生和蒸馏参数 | N/A | 否 | H组知识蒸馏 |
 
 ## 选择与资源限制
 
-尚无冻结的扩展阈值及朋友授权GPU小时，故条件槽位不是可执行任务，22次之后停止。两个Pilot在相同Fold1、相同患者/Study上与D/C/S及固定0.25/0.25/0.5融合比较；边际融合固定0.5参考+0.5Pilot，报告患者Bootstrap及类别退化，不以单折证明稳定优越。
+新增 G/H 四项替代旧的 Pilot Fold2–5 占位计划。它们都必须等待 D/C/S/N 各五折共20项训练、完整 OOF 与评价完成；两个 Pilot 仍是基础档的一部分，22项须优先执行。G组只可依照**训练前冻结**的完整 OOF 和部署筛选规则确定两个骨干，不能按隐藏 Test 或重复使用的官方 Val 追逐分数。H组教师必须使用每位患者所属 Fold 的未见患者模型 OOF；`cxr.batch.extension.verify_teacher_sources` 会逐 Study 核查 ID、来源模型、所属折和各模型训练患者清单。仅这一核查并不构成完整蒸馏实现。
+
+目前 G组选择阈值、训练轮次和两个骨干尚未冻结；H组教师融合公式、温度、真实标签/软标签损失权重、学生模型与训练恢复路径尚未实现并验证；朋友新增 GPU 小时也尚未授权。因此四项均为 `PENDING`、不可运行，`--allow-extended` 明确报错，22项之后停止。未来必须用独立端到端测试、人工确认计划与授权预算后才可启用。G/H 均为全 Train 训练，没有独立 OOF，输出须写 `N/A`，不能伪造。
+
+两个Pilot在相同Fold1、相同患者/Study上与D/C/S及固定0.25/0.25/0.5融合比较；边际融合固定0.5参考+0.5Pilot，报告患者Bootstrap及类别退化，不以单折证明稳定优越。G/H 完成后才可以新增其 Val/Test 概率、全十类 Submission 候选；严格保留≤500MB与目标设备端到端<100ms双约束。未在目标设备实测则为 `LATENCY_UNVERIFIED`。
 
 ## P1轻量学生方案（设计，不执行）
 

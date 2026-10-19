@@ -24,7 +24,15 @@ bash scripts/friend_start.sh --config configs/friend_server.local.env
 | N | `N17_F01`–`N17_F05` | 5 | N01 EfficientNetV2-S，训练中同时维护 EMA |
 | P | `CS17_F01`、`NM17_F01` | 2 | ConvNeXt-Small、EfficientNetV2-M 的 Fold 1 Pilot |
 
-三骨干原 15 项配置和冻结患者五折不变。每折只用另外四折训练；官方 Val 仅用于早停和最佳 checkpoint，当前折仅作 OOF；Test 完全无标签，只推理。Pilot 单折 OOF 不冒充完整五折 OOF。额外四折补齐、其他随机种子和蒸馏仍禁用，不会由 22 项结果自动触发。EMA 是训练内附加分支，单独保存其最佳权重和 Val/OOF/Test 概率；早停仍监控原始权重 Study Macro-AUC。
+三骨干原 15 项配置和冻结患者五折不变。每折只用另外四折训练；官方 Val 仅用于早停和最佳 checkpoint，当前折仅作 OOF；Test 完全无标签，只推理。Pilot 单折 OOF 不冒充完整五折 OOF。EMA 是训练内附加分支，单独保存其最佳权重和 Val/OOF/Test 概率；早停仍监控原始权重 Study Macro-AUC。
+
+## 新增 G/H 四项：PENDING，当前启动命令仍只执行 22 项
+
+原来预留的「Pilot 所选骨干 Fold 2–5」四个槽位已由本次计划替换为 `G17_FULL_01`、`G17_FULL_02`、`H17_DISTILL_01`、`H17_DISTILL_02`，总任务上限 26。四项都依赖 D/C/S/N 四骨干完整五折（20 项）及完整 OOF；基础 Pilot 仍按原计划执行。G 组拟在完整训练集从头重训两个预先按 OOF 和部署条件筛选的骨干；H 组拟用严格患者隔离的五折 OOF 作教师软标签，训练两个学生。G/H 使用官方 Val 选择最佳 Epoch、无标签 Test 只推理；它们**没有独立 OOF，必须记录 N/A**，不能把训练集预测冒充 OOF。
+
+目前缺少经过审定并验证的 G 组骨干选择与训练轮次冻结、H 组教师融合公式/温度/损失权重及蒸馏训练和断点恢复实现，也没有朋友对新增 GPU 小时的授权。`batch_plan.yaml` 明确将四项设为 `PENDING`、`enabled: false`，队列和 `--allow-extended` 均拒绝启动它们；不能把这份版本称为可无人值守运行 26 项。`analysis/additional_experiments_summary.csv` 会把四项标为 `PENDING`，已有的 22 项和自动 Val/OOF/Test/Submission 生成流程继续可用。未来 G/H 完成实现、端到端测试和另行确认预算后，需要新代码 commit、新预检回执及明确启动批准。
+
+G/H 如在未来启用，仍沿用独立 `experiments/<ID>/`、`validation/`、`test_predictions/`、`submissions/`、`analysis/`、`deployment/` 等直接目录；不压缩打包。每项成功后立即保存最佳推理权重及 SHA、完整配置与训练历史、Val/Test 十类 Study 概率、指标、日志、显存与延迟、恢复 checkpoint、manifest 和 DONE；OOF 字段必须为 `N/A`。不能生成隐藏 Test AUC；Submission 只有格式校验通过才能列为格式合格，部署仍须同时满足全部权重 ≤500MB 与目标口径端到端 <100ms。4090 测速不能作为官方 T4 合规证据，缺失目标硬件实测记 `LATENCY_UNVERIFIED`。
 
 ## 自动化与状态
 

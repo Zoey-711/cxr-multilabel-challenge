@@ -634,12 +634,12 @@ artifacts:
   configs/batch17/s17_fold5.yaml: 78deb482e4a592421d805abed8b10ceca7a332b264e45bfbcf995f522d538c0c
   configs/friend_server.example.env: e17fe8d21dfea5dddc59bee93f0917cb3a86325e9af80cab1acedbc93fec7d18
   docs/batch17_costs.json: c12695699860205abcbbbe1a5bb1422e4cabba7d4085bf7bda760b770945e35a
-  docs/expanded_plan.md: 7899255f371e97c1a87d2af121b0971d5c0276bf6323ca12f4bbddba36874782
-  docs/handoff_acceptance.md: 3ae6113d2db6fce04af0c02f100de676af9d305f6634d8309ce2602e71d16cf1
+  docs/expanded_plan.md: 71ded36570afd3bdb822133d4222b8bc56b0dc6f4da3fdb6857bf468cfcae60c
+  docs/handoff_acceptance.md: d62558e92ad2a61bbeb1b5b554d00267d06423b2b1ad38b84ee682a44170ab99
   pyproject.toml: e1c6d17dce5fbb5e095c84ac526d00091538730f1c36908e45cd6d7c0e4808a9
   README.md: bcc4c5cba392a232deb19bf2cf48ac31f90948fa4e847f23feb487f60d98a240
-  README_friend.md: 544871ea242f5c30378fd49f0b40b457c08b4f6ad94e90e1085fd46e897b993d
-  README_results.md: c84b8ec29eba9ebdf2b4589547ec6cc5a5ab73738a9f97f11ee28e775c69be6d
+  README_friend.md: 109f75991caf3e438615dd45219475d6226b965a4cbc462d5eba39c8a54fca67
+  README_results.md: 2e3a0b113626831e7d79490dff5670ca70e533d8171da28ef8d78c2eae50d552
   requirements/cloud.txt: fd8f8ecb3eb410a7820fc7c351322a13002d55c2daf04f0ea5e6c300a8bf739b
   scripts/analyze_validation.py: 427c4a7271e5c551b721c5708de683c70196df4d9d1680aa5f2011f9aebad844
   scripts/audit_git_delivery.py: 83b99d5c625b886b2d33b2516f1d661f63d3c156bab9f98a377af14cceb40d8b
@@ -665,13 +665,14 @@ artifacts:
   scripts/validate_submission.py: d0dd997f19b5db0a07506d7e1c5ecba1582562214d5f1ae3b859325b1bb646b3
   src/cxr/__init__.py: 22b8cd1e4cfe0575ac5d5b064fa02b6c3dfb57e34c8a254f9b8d53edea4cecb0
   src/cxr/batch/__init__.py: 1ce9b459a1f14c747d3816c0bfc4b2d2f3ad09c3f39f67e0a1e1fafe301883c8
-  src/cxr/batch/additional.py: 24201fac813499e1957939ed9c05b9d21ac024e1fa52ba16080e873e5ebdb5da
+  src/cxr/batch/additional.py: cf30f5966832d0a26024e12d889a73aeffc25a524121d7c54cb0445a64083627
   src/cxr/batch/artifacts.py: bb2ab1fe368242d83ab30c7ed368c3922fe8bab9292b03f557c1a9951bbf91de
   src/cxr/batch/backup.py: 229c2336da51f7126de977313ac4e0f0ca33e5f220ce778d8ada299acde18833
   src/cxr/batch/deployment.py: ca265abbc37c04ebc932f49046c9699b4bbc710be27dd1e12aaa782ce1aeda00
   src/cxr/batch/direct_delivery.py: d42b386ab7220ef9a91f37a39fdd6642cbb924fe83088b078d0703816f777d92
+  src/cxr/batch/extension.py: ae1a918e7fa9d1076a43a4cae1a5b76100c9befedf5d12e51bbc7a4ca716b9d7
   src/cxr/batch/host_resources.py: 7d033ce9f0aeb10e8603d38045e9911790db0119d8379bf966a7283419176c40
-  src/cxr/batch/plan.py: 740d2cdf124d8a7c7517570fbe9eb170ba18c98433d2afb933a0e4111496a694
+  src/cxr/batch/plan.py: f293b923eae3bb48a7b0dc5a35211434b281c3f641bf640061ba001214f21991
   src/cxr/batch/reporting.py: 1e2eb53e5a27e0868744f566bb4f497472800c554987d45f0bfb16f6c26ff3d6
   src/cxr/batch/results.py: a3c0d62175d1edd491a9bedf868ac90bb08d78ed968098aeca4687b921e29d73
   src/cxr/batch/runner.py: f2641c405ea538366fb965deb129717f450d1f74cbbb368157d20393475cb694
@@ -713,6 +714,7 @@ artifacts:
   tests/test_batch17.py: 205187947b6efb78391be47bb49a53a2714d9baf2bf186002b1f3e828dcfdb5d
   tests/test_batch_collaboration.py: 9b13cc5a8444d0d2960f84caa7853e1b90070f76c43f724bbdfa30d9632b6aa3
   tests/test_batch_delivery.py: 444e5ec0d4e37ee471d2d57d18a7fae78d64e6b4d2d76ddbf62320efc8494af3
+  tests/test_batch_gh_extension.py: bff6c2b8b4c88ee0ee1becede113e19c1a09923d0e832ceb940dee584977fa77
   tests/test_batch_queue.py: 79990f6f1ff037f820584bb384d0059632c747759e63bc1a9b8fd5821464d87f
   tests/test_batch_scheduler.py: fe8d78cfcb2af781f6c68b3cfe3615dd52741b097e4308d2eebdbe74df0d290e
   tests/test_batch_test_submission.py: 3d58028e6a3a920c98b1766a6932a2534b778d11f6f17e82efb84c10ed0f729a
@@ -757,29 +759,159 @@ optional_seed_tasks:
 conditional_extension:
   enabled: false
   max_additional_tasks: 4
-  candidate_backbones:
-  - convnext_small
-  - efficientnet_v2_m
+  groups:
+    G: full_official_train_retraining
+    H: leakage_checked_oof_teacher_distillation
   criteria: null
   friend_gpu_hours: null
-  decision: STOP_AT_22_UNLESS_NEW_REVIEWED_PLAN
+  decision: STOP_AT_22_GH_PENDING_IMPLEMENTATION_AND_TESTS
+  selection_policy:
+    source: complete five_fold_train_oof_only
+    eligible_backbones:
+    - D17
+    - C17
+    - S17
+    - N17
+    require_complete_five_fold_oof: true
+    require_deployment_size_and_target_latency_verification: true
+    number_of_full_train_backbones: 2
+    tie_break:
+    - D17
+    - C17
+    - S17
+    - N17
+    status: PENDING
+  teacher_policy:
+    source: complete five_fold_oof_predictions
+    require_exact_subject_study_and_fold_join: true
+    require_source_fold_model_unseen_patient: true
+    require_all_18513_train_studies_once: true
+    no_validation_or_test_labels: true
+    temperature: null
+    soft_loss_weight: null
+    status: PENDING
+  artifact_policy:
+    full_train_oof: N/A
+    distilled_student_oof: N/A
+    val_and_unlabeled_test: required_after_training
+    submission: only_after_format_and_deployment_checks
   reserved_slots:
-  - id: PILOT_SELECTED_F02
-    fold: 2
+  - id: G17_FULL_01
+    group: G
+    fold: null
     backbone: null
     enabled: false
-  - id: PILOT_SELECTED_F03
-    fold: 3
+    implementation_status: PENDING
+    depends_on:
+    - D17_F01
+    - D17_F02
+    - D17_F03
+    - D17_F04
+    - D17_F05
+    - C17_F01
+    - C17_F02
+    - C17_F03
+    - C17_F04
+    - C17_F05
+    - S17_F01
+    - S17_F02
+    - S17_F03
+    - S17_F04
+    - S17_F05
+    - N17_F01
+    - N17_F02
+    - N17_F03
+    - N17_F04
+    - N17_F05
+    output: experiments/G17_FULL_01
+    timeout_hours: null
+  - id: G17_FULL_02
+    group: G
+    fold: null
     backbone: null
     enabled: false
-  - id: PILOT_SELECTED_F04
-    fold: 4
+    implementation_status: PENDING
+    depends_on:
+    - D17_F01
+    - D17_F02
+    - D17_F03
+    - D17_F04
+    - D17_F05
+    - C17_F01
+    - C17_F02
+    - C17_F03
+    - C17_F04
+    - C17_F05
+    - S17_F01
+    - S17_F02
+    - S17_F03
+    - S17_F04
+    - S17_F05
+    - N17_F01
+    - N17_F02
+    - N17_F03
+    - N17_F04
+    - N17_F05
+    output: experiments/G17_FULL_02
+    timeout_hours: null
+  - id: H17_DISTILL_01
+    group: H
+    fold: null
     backbone: null
     enabled: false
-  - id: PILOT_SELECTED_F05
-    fold: 5
+    implementation_status: PENDING
+    depends_on:
+    - D17_F01
+    - D17_F02
+    - D17_F03
+    - D17_F04
+    - D17_F05
+    - C17_F01
+    - C17_F02
+    - C17_F03
+    - C17_F04
+    - C17_F05
+    - S17_F01
+    - S17_F02
+    - S17_F03
+    - S17_F04
+    - S17_F05
+    - N17_F01
+    - N17_F02
+    - N17_F03
+    - N17_F04
+    - N17_F05
+    output: experiments/H17_DISTILL_01
+    timeout_hours: null
+  - id: H17_DISTILL_02
+    group: H
+    fold: null
     backbone: null
     enabled: false
+    implementation_status: PENDING
+    depends_on:
+    - D17_F01
+    - D17_F02
+    - D17_F03
+    - D17_F04
+    - D17_F05
+    - C17_F01
+    - C17_F02
+    - C17_F03
+    - C17_F04
+    - C17_F05
+    - S17_F01
+    - S17_F02
+    - S17_F03
+    - S17_F04
+    - S17_F05
+    - N17_F01
+    - N17_F02
+    - N17_F03
+    - N17_F04
+    - N17_F05
+    output: experiments/H17_DISTILL_02
+    timeout_hours: null
 resource_authorization:
   gpu_model: NVIDIA RTX 4090
   gpu_count: 8
