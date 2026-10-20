@@ -5,7 +5,7 @@
 ## 朋友的三步
 
 1. 克隆用户提供的**私有**仓库 `friend-gpu-batch` 分支，并检出用户确认的固定 commit。将官方 `cxr_first.zip`、冻结协议目录和六种合法 torchvision ImageNet 权重放在授权存储位置。协议目录保留仓库相对路径，例如 `batch_assets/train_labels.csv`、`batch_assets/val_labels.csv`、`batch_assets/e07_official_val.csv`、`outputs/analysis/phase17_patient_folds/*.csv`；脚本逐个核对冻结 SHA-256，绝不重划 Fold。
-2. 复制 `configs/friend_server.example.env` 为 `configs/friend_server.local.env`，填写绝对路径、授权 GPU 编号、并发数、单独批准的预检 GPU 小时 `CXR_PREFLIGHT_GPU_HOURS` 和正式训练 GPU 小时 `CXR_GPU_HOURS`。本地配置已被 `.gitignore` 排除。默认示例为 `0,1,2,3,4,5,6,7` 与并发 8；CPU、内存、磁盘、GPU 必须实测通过。`CXR_DATA_ROOT` 指向官方 ZIP；`CXR_OUTPUT_ROOT` 是结果父目录；`CXR_BACKUP_ROOT` 指向独立授权备份目录。
+2. 复制 `configs/friend_server.example.env` 为 `configs/friend_server.local.env`，填写绝对路径、授权 GPU 编号、并发数、预检 GPU 小时 `CXR_PREFLIGHT_GPU_HOURS`、覆盖全部26项的总预算 `CXR_GPU_HOURS`，以及其中为G/H四项预留的子预算 `CXR_GH_GPU_HOURS`。三项预算都须由朋友明确授权；总预算必须大于G/H子预算。本地配置已被 `.gitignore` 排除。默认示例为 `0,1,2,3,4,5,6,7` 与并发 8；CPU、内存、磁盘、GPU 必须实测通过。`CXR_DATA_ROOT` 指向官方 ZIP；`CXR_OUTPUT_ROOT` 是结果父目录；`CXR_BACKUP_ROOT` 指向独立授权备份目录。
 3. 先在仓库根目录运行独立远程预检；确认其 `receipt.json` 状态为 `passed` 后，运行正式队列启动命令：
 
 ```bash
@@ -13,7 +13,7 @@ bash scripts/friend_remote_preflight.sh --config configs/friend_server.local.env
 bash scripts/friend_start.sh --config configs/friend_server.local.env
 ```
 
-预检入口安装所需 Python 包、导入并核对冻结协议、检查数据与权重哈希、运行单卡真实短训练与 Val/Test 推理、执行本地跳过的三项 CUDA 测试，并以 1→2→4→授权并发数逐级检查 GPU 绑定。任何失败都会保留日志及 `failed` 凭证；使用新的预检目录排查后重试，不能拿失败记录启动正式训练。正式入口不会自行执行或跳过预检；只有预检通过且训练预算为正数时才调度 22 项任务。远程 4090 实机检查仍为 `PENDING`，预检本身也需要朋友授权 GPU 时间。
+预检入口安装所需 Python 包、导入并核对冻结协议、检查数据与权重哈希、运行单卡真实短训练与 Val/Test 推理、执行本地跳过的三项 CUDA 测试，并以 1→2→4→授权并发数逐级检查 GPU 绑定。任何失败都会保留日志及 `failed` 凭证；排查后将本地忽略配置中的 `CXR_PREFLIGHT_VERSION` 从 `v1` 改为 `v2` 等新版本，再重新运行预检，不能覆盖失败记录或拿它启动正式训练。正式入口读取同一版本的通过凭证，不会自行执行或跳过预检。通过后的一条 `friend_start.sh` 命令先运行22项，再按依赖和剩余预算自动预检并运行G/H四项；G/H逐项短时真实训练预检失败的任务保持 `BLOCKED`，不会改变超参数偷跑。远程4090实机检查仍为 `PENDING`，预检本身也需要朋友授权GPU时间。
 
 ## 22 项固定任务
 
@@ -27,13 +27,13 @@ bash scripts/friend_start.sh --config configs/friend_server.local.env
 
 三骨干原 15 项配置和冻结患者五折不变。每折只用另外四折训练；官方 Val 仅用于早停和最佳 checkpoint，当前折仅作 OOF；Test 完全无标签，只推理。Pilot 单折 OOF 不冒充完整五折 OOF。EMA 是训练内附加分支，单独保存其最佳权重和 Val/OOF/Test 概率；早停仍监控原始权重 Study Macro-AUC。
 
-## G/H 四项：默认关闭的受预算约束扩展
+## G/H 四项：自动依赖、独立预算与运行时安全锁
 
-原来预留的「Pilot 所选骨干 Fold 2–5」四个槽位已由 `G17_FULL_01`、`G17_FULL_02`、`H17_DISTILL_01`、`H17_DISTILL_02` 替代，总任务上限 26。原22项先完成；四骨干五折 OOF 与任务产物核验通过后才可进入扩展阶段。G组使用完整官方Train重训两个骨干；H组使用同患者从未参加教师训练的折外概率作软标签。两组都以官方Val选择最佳权重；Test只推理。它们**没有独立OOF，必须记录N/A**。
+原来预留的「Pilot 所选骨干 Fold 2–5」四个槽位已由 `G17_FULL_01`、`G17_FULL_02`、`H17_DISTILL_01`、`H17_DISTILL_02` 替代，总任务上限 26。原22项队列先结束；G/H依赖四骨干共20个五折模型的完整OOF及产物核验，两个Pilot失败不阻断G/H。G组使用完整官方Train重训两个骨干；H组使用同患者从未参加教师训练的折外概率作软标签。两组都以官方Val选择最佳权重；Test只推理。它们**没有独立OOF，必须记录N/A**。
 
 G组选拔在运行前固定：候选D/C/S/N的完整五折Train OOF必须齐全且患者隔离；五份原始推理权重分别≤500,000,000字节、4090单模型研究测速p95均<100ms；合格者按完整OOF Macro-AUC降序取前二，完全相同分数按D、C、S、N顺序。4090研究测速**不能证明**官方目标设备合规。每个全Train任务的Epoch上限是相应骨干五折原始最佳Epoch的中位数（五个值，整数）；其余配置继承对应Fold1冻结训练协议。H组学生固定为DenseNet-121和EfficientNetV2-S，教师固定 `0.25×D17_OOF+0.25×C17_OOF+0.50×S17_OOF`。蒸馏采用温度1.0、真实标签BCE与软标签BCE各占0.5；硬标签保持原图像级训练权重，软标签每张图像权重为该Study图像数的倒数，以免多图Study因重复教师概率放大。每个任务保留原骨干学习率、增强、采样、种子与patience，并重新从合法ImageNet权重初始化。配置、教师文件与选择依据在 `manifests/extension_configs/` 和 `extension_selection.json` 冻结。
 
-**本次发布入口只运行22项。** G/H 四项保持 `PENDING`，`friend_start.sh` 不执行扩展队列。本地尚无朋友授权的 G/H 预算，也未在真实4090验证四项训练。以后若另行批准，需单独审计扩展入口、预检与预算；没有授权绝不会自动启动。官方Val反复用于选择最佳Epoch，其结果不是新的独立患者泛化证据。
+**默认计划为22+4项。** 必需的20个五折模型完成且OOF来源、患者隔离核验成功后，G/H四项自动取得从OOF冻结的运行配置并逐项做真实4090短步AMP预检。`CXR_GPU_HOURS` 为整个流程上限，基础队列预留 `CXR_GH_GPU_HOURS` 给扩展阶段；缺少朋友授权预算、关键依赖或GPU预检失败时，相关任务为 `BLOCKED`，已完成结果保留。G/H的本地CPU验收不等于4090实机验收。官方Val反复用于选择最佳Epoch，其结果不是新的独立患者泛化证据。
 
 G/H 沿用独立 `experiments/<ID>/`、`validation/`、`test_predictions/`、`submissions/`、`analysis/`、`deployment/` 等直接目录；不压缩打包。每项成功后立即保存最佳推理权重及SHA、完整配置与训练历史、Val/Test十类Study概率、指标、日志、显存与延迟、恢复checkpoint、manifest和DONE。预先固定的`G17_PAIR`及`H17_PAIR`仅用两模型各0.5作研究性精简融合。完整OOF字段为`N/A`，不能生成隐藏Test AUC。Submission通过格式校验才可标`FORMAT_PASS`；真正部署还须全部权重≤500MB、目标设备完整端到端≤100ms。4090测速不能作为官方T4证据，缺失目标硬件实测记`LATENCY_UNVERIFIED`，不能宣称可提交合规。
 
@@ -41,7 +41,7 @@ G/H 沿用独立 `experiments/<ID>/`、`validation/`、`test_predictions/`、`su
 
 队列动态分配空闲卡，子进程各自设置 `CUDA_VISIBLE_DEVICES`，每卡最多一个任务。配置 `CXR_MAX_CONCURRENT` 控制并发；启动前核对 GPU 型号/显存、CPU 核数、可用内存、输出空间和 ZIP 随机读取速度，资源不足则明确报错，**不静默改训练 batch 或模型参数**。预检还检查 Python3.12、PyTorch2.10.0、torchvision0.25.0、CUDA12.8、固定分割、AMP、真实前反向与断点恢复。失败任务保留 `FAILED.json`、错误日志和最近可恢复 checkpoint；有限重试只用于判定为可恢复的 I/O 类错误。OOM、非有限梯度、哈希错误不会自动改配置重跑。
 
-每个成功模型立即在 `outputs/phase17_batch/experiments/<ID>/` 保存纯 `state_dict` 的 `best_model.pth`、SHA、实际配置、逐 Epoch 历史、日志、Val/OOF/Test Study 概率、逐类指标、环境、模型大小、推理研究测速、部署状态、恢复 checkpoint 和 `DONE.json`；任务状态同步写入 `reports/experiment_status.csv`。Test 缺失或其推理失败时，已经完成的训练/Val/OOF 保留，状态为 `test_pending`/`test_failed`；补齐 Test 后用相同启动命令 `--resume` 路径完成 Test，**不会重训已完成模型**。
+每个成功模型立即在 `outputs/phase17_batch/experiments/<ID>/` 保存纯 `state_dict` 的 `best_model.pth`、SHA、实际配置、逐 Epoch 历史、日志、Val/OOF/Test Study 概率、逐类指标、环境、模型大小、推理研究测速、部署状态、恢复 checkpoint 和 `DONE.json`；全Train G/H的OOF为`N/A`。任务状态写入 `reports/experiment_status.csv` 与 `reports/extension_status.csv`。Test 缺失或其推理失败时，已完成的训练和Val/适用OOF保留，状态为 `test_pending`/`test_failed`；补齐 Test 后重复同一启动命令会走恢复路径，**不会重训已完成模型**。
 
 完成后 `reports/experiment_summary.csv` 汇总每个Epoch历史对应的最佳Epoch、每个模型（含EMA）的官方Val Macro-AUC/Macro-AP/Macro-F1、各Fold OOF指标、完整五折OOF指标及可用的固定融合Val指标；类别1–10的AUC/AP和支持数同时写入 `analysis/per_class_metrics.csv`，并在总表提供逐类AUC/AP列。G/H全Train模型的OOF字段为`N/A`。Test只保存无标签概率与submission格式候选；`test_auc`固定为`N/A: hidden Test labels unavailable`，不会计算或伪造隐藏Test AUC。
 

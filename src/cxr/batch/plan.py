@@ -43,11 +43,13 @@ def load_plan(path):
         raise ValueError('Reviewed 22-task inventory changed')
     extension = plan.get('conditional_extension', {})
     slots = extension.get('reserved_slots', [])
-    if (extension.get('enabled') is not False or extension.get('max_additional_tasks') != 4 or
+    if (extension.get('enabled') is not True or extension.get('max_additional_tasks') != 4 or
+            extension.get('criteria') != 'PREDECLARED_OOF_RANK_AND_UNSEEN_PATIENT_TEACHER' or
+            extension.get('decision') != 'BASE_22_THEN_AUTOMATIC_BUDGETED_GH_WITH_GPU_PREFLIGHT' or
             [slot.get('id') for slot in slots] != ['G17_FULL_01', 'G17_FULL_02', 'H17_DISTILL_01', 'H17_DISTILL_02'] or
-            any(slot.get('enabled') is not False or slot.get('implementation_status') != 'CPU_VERIFIED_GPU_PENDING'
+            any(slot.get('enabled') is not True or slot.get('implementation_status') != 'CPU_VERIFIED_GPU_PENDING'
                 for slot in slots)):
-        raise ValueError('G/H extension may run only by explicit opt-in after its reviewed configuration')
+        raise ValueError('Reviewed G/H extension inventory changed; remote GPU preflight still required')
     required = {f'{prefix}_F{fold:02d}' for prefix in ('D17', 'C17', 'S17', 'N17') for fold in range(1, 6)}
     if any(set(slot.get('depends_on', [])) != required for slot in slots):
         raise ValueError('G/H tasks must await all 20 five-fold models')
@@ -107,7 +109,7 @@ def load_plan(path):
 
 def selected_tasks(plan, extended=False):
     if extended and 'conditional_extension' in plan:
-        raise ValueError('Use run-extension with separate G/H GPU-hour authorization after the 22-task queue')
+        raise ValueError('Use run-all with a separate G/H GPU-hour subbudget after REMOTE_PREFLIGHT')
     return [t for t in plan['tasks'] if t['enabled'] or (extended and t['group'] == 'C')]
 
 

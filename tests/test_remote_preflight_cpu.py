@@ -64,5 +64,6 @@ def test_documented_entry_points_exist_and_base_start_is_fail_closed():
     start = (ROOT/'scripts/friend_start.sh').read_text(encoding='utf-8')
     assert 'REMOTE_PREFLIGHT receipt missing' in start
     assert 'scripts/batch_preflight.py' not in start
-    assert 'run-extension' not in start
+    assert '--action run-all' in start
+    assert '--gh-gpu-hours "$CXR_GH_GPU_HOURS"' in start
     assert '--action clear-stop' in readme

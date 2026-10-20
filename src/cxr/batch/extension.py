@@ -193,9 +193,10 @@ def blended_bce(logits, hard, mask, soft, per_image_study_weight,
 
 
 def prepare_extension(root, plan):
-    """Freeze four runtime configs only after all 22 base DONE markers exist."""
+    """Freeze four runtime configs only after all 20 required fold DONE markers exist."""
     root = Path(root).resolve()
-    for task in plan['tasks']:
+    required = set(plan['conditional_extension']['reserved_slots'][0]['depends_on'])
+    for task in (task for task in plan['tasks'] if task['id'] in required):
         if not (root/'experiments'/task['id']/'DONE.json').is_file():
             raise ValueError(f'Base task incomplete: {task["id"]}')
         from cxr.batch.results import verify_frozen

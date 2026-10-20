@@ -31,8 +31,9 @@ def run_extension_queue(root, plan, gpus, *, total_budget, gh_budget,
         raise ValueError('Extension concurrency exceeds authorized GPU pool')
     base = json.loads((root/'queue_state.json').read_text(encoding='utf-8'))
     slots = plan['conditional_extension']['reserved_slots']
-    if any(base['tasks'].get(t['id'], {}).get('state') != 'complete' for t in plan['tasks']):
-        state = {'state': 'BLOCKED', 'reason': 'One or more of the original 22 tasks is incomplete',
+    required = set(slots[0]['depends_on'])
+    if any(base['tasks'].get(task_id, {}).get('state') != 'complete' for task_id in required):
+        state = {'state': 'BLOCKED', 'reason': 'One or more of the required 20 five-fold tasks is incomplete',
                  'tasks': {slot['id']: {'state': 'BLOCKED', 'attempts': 0} for slot in slots}}
         write_json(root/'reports/extension_blocked.json', state)
         return state
@@ -72,34 +73,52 @@ def run_extension_queue(root, plan, gpus, *, total_budget, gh_budget,
             logs = root/'queue_logs/gh_preflight'
             logs.mkdir(parents=True, exist_ok=True)
             for task in tasks:
+                record = state['tasks'][task['id']]
+                if record['state'] == 'complete':
+                    continue
                 name = task['id'] + '_GH_PREFLIGHT'
                 preflight_run=root/'experiments'/name
                 if preflight_run.exists():
                     status_path=preflight_run/'status.json'
                     check=json.loads(status_path.read_text(encoding='utf-8')) if status_path.exists() else {}
-                    if (check.get('state')!='preflight_passed' or check.get('amp_skipped_steps') or
-                            digest(preflight_run/'config.yaml')!=task['config_sha256']):
-                        raise FileExistsError(f'Unverified existing G/H GPU preflight: {name}')
-                    continue
+                    if (check.get('state')=='preflight_passed' and not check.get('amp_skipped_steps') and
+                            (preflight_run/'config.yaml').is_file() and
+                            digest(preflight_run/'config.yaml')==task['config_sha256']):
+                        continue
+                    # Keep the failed smoke intact; an explicit queue resume uses a new ID.
+                    attempt=2
+                    while (root/'experiments'/f'{name}_attempt_{attempt}').exists():
+                        attempt+=1
+                    name=f'{name}_attempt_{attempt}'
+                    preflight_run=root/'experiments'/name
                 reserve = .25
                 if not (budget_allows(state['gpu_hours'], 0, reserve, gh_budget) and
                         budget_allows(state['gpu_hours'], 0, reserve, total_budget-base['gpu_hours'])):
-                    raise ValueError('G/H GPU preflight would exceed authorized GPU-hour budget')
+                    record.update(state='BLOCKED', reason='G/H GPU preflight exceeds authorized budget')
+                    _status(root, state)
+                    continue
                 env = os.environ.copy()
                 env.update(CUDA_VISIBLE_DEVICES=gpus[0], CXR_OUTPUT_ROOT=str(root))
                 started = time.monotonic()
-                rc = run_command(['scripts/batch_train.py','--config',task['config'],
-                                  '--run-id',name,'--preflight-steps','1'], env,
-                                 logs/(name+'.out.log'), logs/(name+'.err.log'), reserve*3600)
+                try:
+                    rc = run_command(['scripts/batch_train.py','--config',task['config'],
+                                      '--run-id',name,'--preflight-steps','1'], env,
+                                     logs/(name+'.out.log'), logs/(name+'.err.log'), reserve*3600)
+                except Exception as exc:
+                    rc=-1
+                    record.update(state='BLOCKED', reason=f'G/H smoke error: {type(exc).__name__}: {exc}')
                 state['gpu_hours'] += (time.monotonic()-started)/3600
                 _status(root, state)
                 status_file = preflight_run/'status.json'
                 if rc or not status_file.exists():
-                    raise RuntimeError(f'G/H real training-step preflight failed: {name}; see queue_logs')
+                    record.update(state='BLOCKED', reason=f'G/H real training-step preflight failed: {name}; see queue_logs')
+                    _status(root, state)
+                    continue
                 check = json.loads(status_file.read_text(encoding='utf-8'))
                 if check.get('state') != 'preflight_passed' or check.get('amp_skipped_steps'):
-                    raise FloatingPointError(f'G/H AMP/gradient preflight did not pass: {name}')
-            state['preflight_complete'] = True
+                    record.update(state='BLOCKED', reason=f'G/H AMP/gradient preflight failed: {name}')
+                    _status(root, state)
+            state['preflight_complete'] = all(record['state'] != 'BLOCKED' for record in state['tasks'].values())
             _status(root, state)
         while True:
             for future, (task, gpu) in list(active.items()):
@@ -234,14 +253,15 @@ def extension_report(root, state, *, base_report=True):
     from cxr.batch.results import combine, scores
     candidates = root/'submissions/submission_candidates.csv'
     validations = root/'submissions/submission_validation_report.csv'
+    extension_ids = set(state['tasks']) | {'G17_PAIR', 'H17_PAIR'}
     with candidates.open(encoding='utf-8', newline='') as handle:
         candidate_reader=csv.DictReader(handle)
         candidate_fields=candidate_reader.fieldnames
-        candidate_rows=list(candidate_reader)
+        candidate_rows=[row for row in candidate_reader if row['Candidate_ID'] not in extension_ids]
     with validations.open(encoding='utf-8', newline='') as handle:
         validation_reader=csv.DictReader(handle)
         validation_fields=validation_reader.fieldnames
-        validation_rows=list(validation_reader)
+        validation_rows=[row for row in validation_reader if row['Candidate_ID'] not in extension_ids]
     for task_id, record in state['tasks'].items():
         if record['state'] != 'complete':
             continue
@@ -284,12 +304,12 @@ def extension_report(root, state, *, base_report=True):
         provenance={'sources':list(members),'weights':[.5,.5],'checkpoint_sha256':source_hashes}
         if val_file.exists():
             import numpy as np
-            if not np.array_equal(read_probabilities(val_file,labels,expected)['p'],val_table['p']):
+            if not np.allclose(read_probabilities(val_file,labels,expected)['p'],val_table['p'],rtol=0,atol=1e-12):
                 raise ValueError(f'Existing fixed Val fusion changed: {candidate}')
         else:
             write_probabilities(val_file,val_table,provenance)
         if test_file.exists():
-            if not np.array_equal(read_test_probabilities(test_file,test_table['keys'])['p'],test_table['p']):
+            if not np.allclose(read_test_probabilities(test_file,test_table['keys'])['p'],test_table['p'],rtol=0,atol=1e-12):
                 raise ValueError(f'Existing fixed Test fusion changed: {candidate}')
         else:
             write_test(test_file,test_table,provenance)

@@ -54,8 +54,8 @@ def test_original_configs_and_conditional_fail_closed():
     assert len(p['tasks'])==22
     assert len([t for t in p['tasks'] if t['group']=='N' and t['ema']])==5
     assert len([t for t in p['tasks'] if t['group']=='P' and t['fold']==1])==2
-    assert p['conditional_extension']['enabled'] is False
-    assert p['conditional_extension']['criteria'] is None
+    assert p['conditional_extension']['enabled'] is True
+    assert p['conditional_extension']['criteria'] == 'PREDECLARED_OOF_RANK_AND_UNSEEN_PATIENT_TEACHER'
     assert len(p['conditional_extension']['reserved_slots'])==4
 
 

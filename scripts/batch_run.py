@@ -30,7 +30,7 @@ def validate_remote_receipt(receipt, plan_sha256, devices, max_concurrent, envir
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--config',required=True,type=Path)
-    p.add_argument('--action',choices=['validate','run','run-extension','status','stop','clear-stop','backup','restore','report'],default='validate')
+    p.add_argument('--action',choices=['validate','run','run-all','run-extension','status','stop','clear-stop','backup','restore','report'],default='validate')
     p.add_argument('--root',type=Path)
     p.add_argument('--destination',type=Path)
     p.add_argument('--gpus',default='0')
@@ -44,11 +44,14 @@ def main():
     if a.action=='validate':
         print(json.dumps({'valid':True,'base_tasks':len([t for t in plan['tasks'] if t['enabled']]),
                           'conditional_slots':plan.get('conditional_extension',{}).get('max_additional_tasks',0),
-                          'conditional_enabled':False,'formal_run_requires_preflight':True}))
+                          'conditional_enabled':plan['conditional_extension']['enabled'],
+                          'default_tasks':len([t for t in plan['tasks'] if t['enabled']])+(
+                              4 if plan['conditional_extension']['enabled'] else 0),
+                          'formal_run_requires_preflight':True}))
         return
     if a.root is None or not a.root.is_absolute():
         p.error('--root must be an absolute, independent output directory')
-    if a.action in ('run','run-extension'):
+    if a.action in ('run','run-all','run-extension'):
         if a.root.name!='phase17_batch':
             p.error('Unified output directory must be named phase17_batch')
         if a.gpu_hours is None or not a.receipt:
@@ -67,7 +70,14 @@ def main():
                                     os.environ, __import__('socket').gethostname())
         except ValueError as error:
             p.error(str(error))
-        if a.action=='run':
+        if a.action=='run-all':
+            if a.gh_gpu_hours is None or a.gh_gpu_hours<=0:
+                p.error('26-task run requires a separately approved positive --gh-gpu-hours subbudget')
+            from cxr.batch.orchestrator import run_all
+            run_all(plan,a.config,a.root,devices,total_budget=a.gpu_hours,
+                    gh_budget=a.gh_gpu_hours,max_concurrent=a.max_concurrent,
+                    preflight_gpu_hours=receipt.get('gpu_hours',0))
+        elif a.action=='run':
             if a.allow_extended:
                 p.error('Use the separate run-extension action after all 22 base tasks')
             from cxr.batch.runner import run_queue
@@ -80,15 +90,18 @@ def main():
                                 gh_budget=a.gh_gpu_hours,max_concurrent=a.max_concurrent,
                                 resume=a.resume)
     elif a.action=='status':
-        print((a.root/'queue_state.json').read_text(encoding='utf-8'))
+        base=json.loads((a.root/'queue_state.json').read_text(encoding='utf-8'))
+        extension_file=a.root/'extension_state.json'
+        extension=json.loads(extension_file.read_text(encoding='utf-8')) if extension_file.is_file() else None
+        print(json.dumps({'base':base,'extension':extension},ensure_ascii=False,indent=2))
     elif a.action=='stop':
         if not (a.root/'queue_state.json').exists():
             p.error('No existing queue at --root')
         (a.root/'STOP').touch(exist_ok=True)
         print('Drain requested: active tasks finish; no new tasks start. Remove STOP explicitly before resume.')
     elif a.action=='clear-stop':
-        if (a.root/'queue.lock').exists():
-            p.error('Queue lock exists; confirm the former queue process has exited before clearing STOP')
+        if (a.root/'queue.lock').exists() or (a.root/'extension.lock').exists():
+            p.error('Queue lock exists; confirm both base and extension processes exited before clearing STOP')
         if not (a.root/'queue_state.json').exists():
             p.error('No queue state to resume')
         (a.root/'STOP').unlink(missing_ok=True)

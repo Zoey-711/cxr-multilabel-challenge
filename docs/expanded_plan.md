@@ -26,18 +26,18 @@
 | N17_F05 | efficientnet_v2_s | 5 | True | P0 |
 | CS17_F01 | convnext_small | 1 | False | P2 |
 | NM17_F01 | efficientnet_v2_m | 1 | False | P2 |
-| G17_FULL_01（默认关闭） | 五折OOF规则所选第1骨干 | N/A | 继承原骨干 | G组全 Train |
-| G17_FULL_02（默认关闭） | 五折OOF规则所选第2骨干 | N/A | 继承原骨干 | G组全 Train |
-| H17_DISTILL_01（默认关闭） | densenet121 | N/A | 否 | H组知识蒸馏 |
-| H17_DISTILL_02（默认关闭） | efficientnet_v2_s | N/A | 继承N17配置 | H组知识蒸馏 |
+| G17_FULL_01（依赖后自动） | 五折OOF规则所选第1骨干 | N/A | 继承原骨干 | G组全 Train |
+| G17_FULL_02（依赖后自动） | 五折OOF规则所选第2骨干 | N/A | 继承原骨干 | G组全 Train |
+| H17_DISTILL_01（依赖后自动） | densenet121 | N/A | 否 | H组知识蒸馏 |
+| H17_DISTILL_02（依赖后自动） | efficientnet_v2_s | N/A | 继承N17配置 | H组知识蒸馏 |
 
 ## 选择与资源限制
 
-新增 G/H 四项替代旧的 Pilot Fold2–5 占位计划。它们须等待原22项及D/C/S/N完整五折OOF产物核验；两个Pilot仍在基础档。G组只用完整OOF筛选：每骨干五份推理权重各≤500,000,000字节且4090单模型研究p95均<100ms；合格者按OOF Study Macro-AUC降序，平分按D、C、S、N；取前二。全Train Epoch上限取对应骨干五折原始最佳Epoch中位数，其他训练超参数沿用其Fold1配置。4090研究测速不能证明官方硬件合规。
+新增 G/H 四项替代旧的 Pilot Fold2–5 占位计划。它们须等待D/C/S/N共20个必需折模型及完整五折OOF产物核验；两个Pilot仍在基础档，但其失败不阻断G/H。G组只用完整OOF筛选：每骨干五份推理权重各≤500,000,000字节且4090单模型研究p95均<100ms；合格者按OOF Study Macro-AUC降序，平分按D、C、S、N；取前二。全Train Epoch上限取对应骨干五折原始最佳Epoch中位数，其他训练超参数沿用其Fold1配置。4090研究测速不能证明官方硬件合规。
 
 H组教师固定 `0.25×D17_OOF+0.25×C17_OOF+0.50×S17_OOF`；`verify_teacher_sources` 逐Study检查ID、来源折和教师训练患者清单。学生为DenseNet-121、EfficientNetV2-S，固定温度1.0、真实标签BCE与教师软标签BCE各0.5；软标签每图乘以该Study图像数倒数，硬标签维持原图像级权重。H组Epoch上限也取对应骨干五折最佳Epoch中位数。G/H均无独立OOF，输出`N/A`。官方Val用于Epoch选择及重复实验比较，存在选择偏差。真实4090 G/H训练预检仍待朋友服务器验证。
 
-默认只执行22项。用户确认、朋友另外授权正数G/H GPU小时预算后，才在忽略的环境配置中设置`CXR_ENABLE_GH=1`、`CXR_GH_GPU_HOURS`，同一入口再执行四项；`CXR_GPU_HOURS`控制两阶段合计。依赖、选择、教师隔离、额外预算或真实GPU预检失败均阻止扩展启动，绝不补齐不存在的指标。四项各自保存Val/Test概率、完整配置、SHA、恢复checkpoint、研究性4090延迟及全十类Submission候选；固定`G17_PAIR`、`H17_PAIR`等权精简融合不得依据隐藏Test调权。
+默认计划执行22+4项。朋友在忽略的环境配置中明确填写覆盖26项的`CXR_GPU_HOURS`、G/H子预算`CXR_GH_GPU_HOURS`与独立预检预算；强制REMOTE_PREFLIGHT通过后，同一条`friend_start.sh`命令先执行22项，再按依赖和剩余预算自动执行四项。依赖、选择、教师隔离、额外预算或真实GPU短步预检失败均阻止受影响扩展任务启动，绝不补齐不存在的指标。四项各自保存Val/Test概率、完整配置、SHA、恢复checkpoint、研究性4090延迟及全十类Submission候选；固定`G17_PAIR`、`H17_PAIR`等权精简融合不得依据隐藏Test调权。
 
 两个Pilot在相同Fold1、相同患者/Study上与D/C/S及固定0.25/0.25/0.5融合比较；边际融合固定0.5参考+0.5Pilot，报告患者Bootstrap及类别退化，不以单折证明稳定优越。G/H 完成后才可以新增其 Val/Test 概率、全十类 Submission 候选；严格保留≤500MB与目标设备端到端≤100ms双约束。未在目标设备实测则为 `LATENCY_UNVERIFIED`。
 

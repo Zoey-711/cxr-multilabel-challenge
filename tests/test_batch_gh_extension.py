@@ -17,14 +17,15 @@ def _csv(path, fields, rows):
         writer.writerows(rows)
 
 
-def test_reviewed_extension_is_declared_but_not_executable():
+def test_reviewed_extension_requires_run_all_and_remote_gpu_preflight():
     plan = load_plan('configs/batch_plan.yaml')
     assert len(selected_tasks(plan)) == 22
     slots = plan['conditional_extension']['reserved_slots']
     assert [s['group'] for s in slots] == ['G', 'G', 'H', 'H']
-    assert all(s['implementation_status'] == 'CPU_VERIFIED_GPU_PENDING' and not s['enabled'] for s in slots)
+    assert all(s['implementation_status'] == 'CPU_VERIFIED_GPU_PENDING' and s['enabled'] for s in slots)
+    assert plan['conditional_extension']['enabled'] is True
     assert all(s['fold'] is None for s in slots)
-    with pytest.raises(ValueError, match='run-extension'):
+    with pytest.raises(ValueError, match='run-all'):
         selected_tasks(plan, extended=True)
 
 

@@ -131,14 +131,16 @@ def test_extension_queue_blocks_incomplete_and_runs_once_with_budget(tmp_path, m
     root = tmp_path/'batch'; root.mkdir()
     base_tasks = [{'id': f'B{i:02d}'} for i in range(22)]
     plan = {'tasks': base_tasks, 'conditional_extension': {'reserved_slots':
-            [{'id': name} for name in ('G17_FULL_01','G17_FULL_02','H17_DISTILL_01','H17_DISTILL_02')]}}
+            [{'id': name, 'depends_on': [task['id'] for task in base_tasks[:20]]} for name in
+             ('G17_FULL_01','G17_FULL_02','H17_DISTILL_01','H17_DISTILL_02')]}}
     state = {'gpu_hours': 1., 'tasks': {t['id']: {'state': 'complete'} for t in base_tasks}}
-    state['tasks']['B21']['state'] = 'failed'
+    state['tasks']['B19']['state'] = 'failed'
     (root/'queue_state.json').write_text(json.dumps(state), encoding='utf-8')
     blocked = run_extension_queue(root, plan, ['0'], total_budget=100, gh_budget=30,
                                   max_concurrent=1, gpu_preflight=False)
     assert all(value['state'] == 'BLOCKED' for value in blocked['tasks'].values())
-    state['tasks']['B21']['state'] = 'complete'
+    state['tasks']['B19']['state'] = 'complete'
+    state['tasks']['B21']['state'] = 'failed'  # Unrelated Pilot failure must not block G/H.
     (root/'queue_state.json').write_text(json.dumps(state), encoding='utf-8')
     manifest = root/'manifests/extension_selection.json'; manifest.parent.mkdir()
     manifest.write_text('{}', encoding='utf-8')
@@ -238,6 +240,7 @@ def test_gh_val_test_submission_and_partial_delivery(tmp_path, monkeypatch):
     monkeypatch.setattr('cxr.batch.direct_delivery.write_delivery_manifest',lambda *_:None)
     monkeypatch.setattr('cxr.batch.results.bootstrap',lambda *a,**k:{'valid_draws':10,'invalid_draws':0})
     extension_report(root,state)
+    extension_report(root,state,base_report=False)
     with (root/'submissions/submission_candidates.csv').open(encoding='utf-8',newline='') as stream:
         candidates=list(csv.DictReader(stream))
     assert len(candidates)==6

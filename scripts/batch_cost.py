@@ -30,7 +30,10 @@ def estimate(plan,directory):
             'caveats':['Microbenchmark only; cached compute + separate ZIP read, no measured full-epoch claim.',
                        'Add independent Val/OOF, checkpoint I/O, EMA Val per epoch, and packing overhead.',
                        'Actual early stopping and shared-storage contention unknown. No automatic budget increase.'],
-            'conditional_max_tasks':4,'conditional_enabled':False,'EMA_extra_training_tasks':0,
+            'conditional_max_tasks':4,'conditional_enabled':plan['conditional_extension']['enabled'],
+            'default_training_tasks':26,'GH_gpu_hours_estimate':None,
+            'GH_estimate_reason':'G/H backbone and median epochs freeze only after complete five-fold OOF',
+            'EMA_extra_training_tasks':0,
             'wall_clock_hours':None,'reason':'Requires actual friend-authorized GPU model/count and measured rates'}
 
 def main():
