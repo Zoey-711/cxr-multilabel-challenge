@@ -39,11 +39,11 @@ H组教师固定 `0.25×D17_OOF+0.25×C17_OOF+0.50×S17_OOF`；`verify_teacher_s
 
 默认只执行22项。用户确认、朋友另外授权正数G/H GPU小时预算后，才在忽略的环境配置中设置`CXR_ENABLE_GH=1`、`CXR_GH_GPU_HOURS`，同一入口再执行四项；`CXR_GPU_HOURS`控制两阶段合计。依赖、选择、教师隔离、额外预算或真实GPU预检失败均阻止扩展启动，绝不补齐不存在的指标。四项各自保存Val/Test概率、完整配置、SHA、恢复checkpoint、研究性4090延迟及全十类Submission候选；固定`G17_PAIR`、`H17_PAIR`等权精简融合不得依据隐藏Test调权。
 
-两个Pilot在相同Fold1、相同患者/Study上与D/C/S及固定0.25/0.25/0.5融合比较；边际融合固定0.5参考+0.5Pilot，报告患者Bootstrap及类别退化，不以单折证明稳定优越。G/H 完成后才可以新增其 Val/Test 概率、全十类 Submission 候选；严格保留≤500MB与目标设备端到端<100ms双约束。未在目标设备实测则为 `LATENCY_UNVERIFIED`。
+两个Pilot在相同Fold1、相同患者/Study上与D/C/S及固定0.25/0.25/0.5融合比较；边际融合固定0.5参考+0.5Pilot，报告患者Bootstrap及类别退化，不以单折证明稳定优越。G/H 完成后才可以新增其 Val/Test 概率、全十类 Submission 候选；严格保留≤500MB与目标设备端到端≤100ms双约束。未在目标设备实测则为 `LATENCY_UNVERIFIED`。
 
 ## H组学生与部署解释
 
-DenseNet-121和EfficientNetV2-S均重新从已核验的ImageNet权重初始化。蒸馏后的学生必须单独计算官方Val AUC、真实文件大小与完整推理时间，不能继承教师集成AUC。固定`G17_PAIR`与`H17_PAIR`的权重各0.5，只有在官方目标设备测得完整流水线<100ms且全部权重≤500MB时才可标PASS；4090研究测速不足以证明T4合规。
+DenseNet-121和EfficientNetV2-S均重新从已核验的ImageNet权重初始化。蒸馏后的学生必须单独计算官方Val AUC、真实文件大小与完整推理时间，不能继承教师集成AUC。固定`G17_PAIR`与`H17_PAIR`的权重各0.5，只有在官方目标设备测得完整流水线≤100ms且全部权重≤500MB时才可标PASS；4090研究测速不足以证明T4合规。
 
 ## 预计成本
 
@@ -53,4 +53,4 @@ G/H 四项训练预算在原22项完成后用朋友4090的实测五折训练记�
 
 ## 硬约束
 
-压缩前全部推理权重≤500MB，官方端到端<100ms。只有PASS可部署；完整15/20/22模型均是研究候选，未测速为LATENCY_UNVERIFIED。官方原文≤100ms与用户先前严格<100ms有边界差异，当前采用更严格门槛。
+压缩前全部推理权重≤500MB，官方端到端≤100ms；80ms 是内部安全目标。只有PASS可部署；完整15/20/22模型均是研究候选，未在目标设备测速为LATENCY_UNVERIFIED。

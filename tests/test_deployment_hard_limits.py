@@ -14,12 +14,16 @@ def evidence():
     return c,p,m
 
 
-def test_strict_latency_and_inclusive_size():
+def test_inclusive_official_latency_and_size_with_internal_target():
     c,p,m=evidence()
     assert assess(c,p,m)['status']=='PASS'
-    for latency in (100.,100.001):
+    for latency, target in ((80., True), (80.001, False), (100., False)):
         m['latency_ms']=latency
-        assert assess(c,p,m)['status']=='LATENCY_FAIL'
+        result=assess(c,p,m)
+        assert result['status']=='PASS'
+        assert result['internal_80ms_target_met'] is target
+    m['latency_ms']=100.001
+    assert assess(c,p,m)['status']=='LATENCY_FAIL'
     c['dependencies'][0]['bytes']+=1
     assert assess(c,p,m)['status']=='SIZE_FAIL'
 

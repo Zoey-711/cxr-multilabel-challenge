@@ -16,7 +16,7 @@ PLAN=configs/batch_plan.yaml
 : "${CXR_MAX_CONCURRENT:?Set authorized maximum concurrent tasks}"
 GPUS="$CXR_GPUS"
 if [[ ! -x .venv/bin/python ]]; then
-  bash scripts/cloud_install.sh --config configs/batch17/d17_fold1.yaml
+  echo 'Run scripts/friend_remote_preflight.sh first; its setup creates .venv.' >&2; exit 2
 fi
 source .venv/bin/activate
 python scripts/protocol_assets.py --config "$PLAN" --action import --directory "$CXR_PROTOCOL_DIR"
@@ -24,20 +24,11 @@ python scripts/batch_run.py --config "$PLAN" --action validate
 ROOT="$CXR_OUTPUT_ROOT/phase17_batch"
 RECEIPT_DIR="$CXR_OUTPUT_ROOT/phase17_batch_preflight"
 if [[ ! -f "$RECEIPT_DIR/receipt.json" ]]; then
-  python scripts/batch_preflight.py --config "$PLAN" --output "$RECEIPT_DIR" --gpus "$GPUS" --max-concurrent "$CXR_MAX_CONCURRENT" --gpu-smoke --benchmark --budget-hours "$CXR_GPU_HOURS"
+  echo 'REMOTE_PREFLIGHT receipt missing; run scripts/friend_remote_preflight.sh first.' >&2; exit 2
 fi
 python scripts/batch_cost.py --config "$PLAN" --directory "$RECEIPT_DIR"
 ARGS=()
 if [[ -f "$ROOT/queue_state.json" ]]; then ARGS+=(--resume); fi
 python scripts/batch_run.py --config "$PLAN" --action run --root "$ROOT" --gpus "$GPUS" \
   --max-concurrent "$CXR_MAX_CONCURRENT" --gpu-hours "$CXR_GPU_HOURS" --receipt "$RECEIPT_DIR/receipt.json" "${ARGS[@]}"
-if [[ "${CXR_ENABLE_GH:-0}" == 1 ]]; then
-  : "${CXR_GH_GPU_HOURS:?G/H requires a separately approved GPU-hour cap}"
-  GH_ARGS=()
-  if [[ -f "$ROOT/extension_state.json" ]]; then GH_ARGS+=(--resume); fi
-  python scripts/batch_run.py --config "$PLAN" --action run-extension --allow-extended \
-    --root "$ROOT" --gpus "$GPUS" --max-concurrent "$CXR_MAX_CONCURRENT" \
-    --gpu-hours "$CXR_GPU_HOURS" --gh-gpu-hours "$CXR_GH_GPU_HOURS" \
-    --receipt "$RECEIPT_DIR/receipt.json" "${GH_ARGS[@]}"
-fi
 echo "Direct result folders: $ROOT"

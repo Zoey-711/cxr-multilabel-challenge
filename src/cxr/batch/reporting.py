@@ -252,7 +252,7 @@ def report(root, *, draws=None):
         if n=='E07':continue
         for j in (0,3,7):
             lines.append(f'- {n}, class {j+1}: ΔAUC={m["all"]["per_class"][j]["auc"]-official["E07"]["all"]["per_class"][j]["auc"]:.6f}')
-    lines+=['','## 候选保留建议','', '仅PASS候选可进入部署复核：≤500MB且按官方口径端到端实测<100ms；不自动更换正式基准，不按最高Val分数自动提交。',
+    lines+=['','## 候选保留建议','', '仅PASS候选可进入部署复核：≤500MB且按官方口径端到端实测≤100ms；80ms 是内部安全目标；不自动更换正式基准，不按最高Val分数自动提交。',
              '完整多折模型仅作研究对照；失败/缺失任务不填入估计指标。详见analysis/statistics.json和ensembles/deployment_candidates.json。']
     (root/'reports/phase17_final_report.md').write_text('\n'.join(lines),encoding='utf-8')
     from cxr.batch.direct_delivery import write_delivery_manifest

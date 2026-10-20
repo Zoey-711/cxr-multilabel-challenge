@@ -4,7 +4,7 @@ from pathlib import Path
 from cxr.batch.plan import load_plan,write_json,ROOT
 
 def estimate(plan,directory):
-    reports=[json.loads(p.read_text(encoding='utf-8')) for p in Path(directory).glob('benchmark_*.json')]
+    reports=[json.loads(p.read_text(encoding='utf-8')) for p in Path(directory).rglob('benchmark_*.json')]
     history=json.loads((ROOT/'docs/batch17_costs.json').read_text(encoding='utf-8'))
     models={'D':'densenet121','C':'convnext_tiny','S':'swin_t','N':'efficientnet_v2_s'}
     bounds={}

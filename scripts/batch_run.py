@@ -7,10 +7,30 @@ from pathlib import Path
 from cxr.batch.plan import load_plan, gpu_tokens, digest, ROOT
 
 
+def validate_remote_receipt(receipt, plan_sha256, devices, max_concurrent, environment, host):
+    if receipt.get('host') != host:
+        raise ValueError('REMOTE_PREFLIGHT belongs to a different host')
+    if (receipt.get('kind') != 'REMOTE_PREFLIGHT' or receipt.get('plan_sha256') != plan_sha256
+            or receipt.get('state') != 'passed' or len(receipt.get('cuda_tests', [])) != 3
+            or receipt.get('real_data_smoke') != 'passed'
+            or 'val' not in receipt.get('real_inference', {})
+            or not set(devices) <= set(receipt.get('gpus', []))):
+        raise ValueError('REMOTE_PREFLIGHT does not cover the plan, data, CUDA tests and GPU pool')
+    stages = {stage.get('concurrent_gpus') for stage in receipt.get('stages', [])
+              if stage.get('state') == 'passed'}
+    if not set((1, min(2, max_concurrent), min(4, max_concurrent), max_concurrent)) <= stages:
+        raise ValueError('Staged GPU concurrency checks are incomplete')
+    if max_concurrent > receipt.get('max_concurrent', 0):
+        raise ValueError('Concurrency exceeds measured host-resource preflight')
+    for key in ('CXR_DATA_ROOT', 'CXR_PRETRAINED_ROOT', 'CXR_BACKUP_ROOT', 'CXR_OUTPUT_ROOT'):
+        if receipt.get('environment', {}).get(key) != environment.get(key):
+            raise ValueError(f'{key} differs from REMOTE_PREFLIGHT')
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--config',required=True,type=Path)
-    p.add_argument('--action',choices=['validate','run','run-extension','status','stop','backup','restore','report'],default='validate')
+    p.add_argument('--action',choices=['validate','run','run-extension','status','stop','clear-stop','backup','restore','report'],default='validate')
     p.add_argument('--root',type=Path)
     p.add_argument('--destination',type=Path)
     p.add_argument('--gpus',default='0')
@@ -42,15 +62,11 @@ def main():
         if a.root.resolve()==Path(backup_root).resolve() or a.root.resolve() in Path(backup_root).resolve().parents:
             p.error('Backup must be outside the run directory')
         receipt=json.loads(a.receipt.read_text())
-        if receipt.get('host')!=__import__('socket').gethostname():
-            p.error('Preflight receipt belongs to a different host; rerun preflight')
-        if receipt['plan_sha256']!=digest(a.config) or receipt['state']!='passed' or not set(devices)<=set(receipt['gpus']):
-            p.error('Preflight receipt does not cover this plan/GPU pool')
-        if a.max_concurrent>receipt.get('max_concurrent',0):
-            p.error('Concurrency exceeds measured host-resource preflight')
-        for key in ('CXR_DATA_ROOT','CXR_PRETRAINED_ROOT','CXR_BACKUP_ROOT'):
-            if receipt['environment'].get(key)!=os.environ.get(key):
-                p.error(f'{key} differs from preflight')
+        try:
+            validate_remote_receipt(receipt, digest(a.config), devices, a.max_concurrent,
+                                    os.environ, __import__('socket').gethostname())
+        except ValueError as error:
+            p.error(str(error))
         if a.action=='run':
             if a.allow_extended:
                 p.error('Use the separate run-extension action after all 22 base tasks')
@@ -70,6 +86,13 @@ def main():
             p.error('No existing queue at --root')
         (a.root/'STOP').touch(exist_ok=True)
         print('Drain requested: active tasks finish; no new tasks start. Remove STOP explicitly before resume.')
+    elif a.action=='clear-stop':
+        if (a.root/'queue.lock').exists():
+            p.error('Queue lock exists; confirm the former queue process has exited before clearing STOP')
+        if not (a.root/'queue_state.json').exists():
+            p.error('No queue state to resume')
+        (a.root/'STOP').unlink(missing_ok=True)
+        print('STOP cleared; rerun the same friend_start.sh command to resume')
     elif a.action=='report':
         from cxr.batch.reporting import report
         report(a.root)

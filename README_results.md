@@ -36,6 +36,6 @@ python scripts/batch_delivery.py --config configs/batch_plan.yaml --action recom
 
 ## Submission 与部署
 
-候选 CSV 是四列 `Subject_id,Study_id,Predict_class,Probability`，每个 Test Study 对应类别 1–10 共十行，不筛阈值、不加 Gate。脚本 `scripts/validate_submission.py` 通过格式校验才标 `FORMAT_PASS`；它**不会上传比赛平台**。`submissions/submission_candidates.csv` 同时列出 Val Macro-AUC、模型权重字节、完整单图时延证据以及 `SIZE_FAIL`、`LATENCY_FAIL`、`LATENCY_UNVERIFIED`、`ACCURACY_PENDING`、`PASS` 状态。朋友 4090 上的速度是研究参考，缺官方目标设备及完整口径实测时不可称为合规。已知超 500MB 或达到/超过 100ms 的候选只能留作研究。
+候选 CSV 是四列 `Subject_id,Study_id,Predict_class,Probability`，每个 Test Study 对应类别 1–10 共十行，不筛阈值、不加 Gate。脚本 `scripts/validate_submission.py` 通过格式校验才标 `FORMAT_PASS`；它**不会上传比赛平台**。`submissions/submission_candidates.csv` 同时列出 Val Macro-AUC、模型权重字节、完整单图时延证据以及 `SIZE_FAIL`、`LATENCY_FAIL`、`LATENCY_UNVERIFIED`、`ACCURACY_PENDING`、`PASS` 状态。朋友 4090 上的速度是研究参考，缺官方目标设备及完整口径实测时不可称为合规。已知超 500MB 或超过 100ms 的候选只能留作研究；80ms 是内部安全目标。
 
 任何任务缺失、失败或 Test 未完成都必须在状态表与 `manifests/delivery_manifest.json` 中保留原状；不填补不存在的指标。官方 Val 曾多次用于模型选择，Bootstrap 差值属于探索性证据，不是新的独立测试结果。Phase 15 内部 Holdout 不再用于本批任务选择模型。

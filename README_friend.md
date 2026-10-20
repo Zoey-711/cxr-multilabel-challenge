@@ -5,14 +5,15 @@
 ## 朋友的三步
 
 1. 克隆用户提供的**私有**仓库 `friend-gpu-batch` 分支，并检出用户确认的固定 commit。将官方 `cxr_first.zip`、冻结协议目录和六种合法 torchvision ImageNet 权重放在授权存储位置。协议目录保留仓库相对路径，例如 `batch_assets/train_labels.csv`、`batch_assets/val_labels.csv`、`batch_assets/e07_official_val.csv`、`outputs/analysis/phase17_patient_folds/*.csv`；脚本逐个核对冻结 SHA-256，绝不重划 Fold。
-2. 复制 `configs/friend_server.example.env` 为 `configs/friend_server.local.env`，一次填好绝对路径、授权 GPU 编号、最多并发数和**朋友明确批准的最大 GPU 小时**。本地配置已被 `.gitignore` 排除。缺少预算或路径会停止。默认写了 `0,1,2,3,4,5,6,7` 与并发 8；实际主机 CPU、可用内存、磁盘和 GPU 必须通过预检，否则降低授权并发再启动。`CXR_DATA_ROOT` 指向官方 ZIP；`CXR_OUTPUT_ROOT` 是结果所在父目录，最终写入其中的 `phase17_batch/`；`CXR_BACKUP_ROOT` 指向独立授权备份目录。
-3. 在仓库根目录执行唯一启动命令：
+2. 复制 `configs/friend_server.example.env` 为 `configs/friend_server.local.env`，填写绝对路径、授权 GPU 编号、并发数、单独批准的预检 GPU 小时 `CXR_PREFLIGHT_GPU_HOURS` 和正式训练 GPU 小时 `CXR_GPU_HOURS`。本地配置已被 `.gitignore` 排除。默认示例为 `0,1,2,3,4,5,6,7` 与并发 8；CPU、内存、磁盘、GPU 必须实测通过。`CXR_DATA_ROOT` 指向官方 ZIP；`CXR_OUTPUT_ROOT` 是结果父目录；`CXR_BACKUP_ROOT` 指向独立授权备份目录。
+3. 先在仓库根目录运行独立远程预检；确认其 `receipt.json` 状态为 `passed` 后，运行正式队列启动命令：
 
 ```bash
+bash scripts/friend_remote_preflight.sh --config configs/friend_server.local.env
 bash scripts/friend_start.sh --config configs/friend_server.local.env
 ```
 
-启动入口自动安装所需 Python 包（优先复用兼容的已有 PyTorch/CUDA 环境，不改驱动）、导入并校验冻结协议、核对数据及预训练权重哈希、做少量真实 GPU 步与吞吐预检，然后调度 22 项基础任务。**只有朋友确认资源配置和预算、4090 预检通过，正式队列才可能启动。** 当前朋友服务器预算、CPU、RAM、磁盘尚未实测；其 GPU 真正运行状态标为 `PENDING`。预检本身会占用少量授权 GPU 时间。
+预检入口安装所需 Python 包、导入并核对冻结协议、检查数据与权重哈希、运行单卡真实短训练与 Val/Test 推理、执行本地跳过的三项 CUDA 测试，并以 1→2→4→授权并发数逐级检查 GPU 绑定。任何失败都会保留日志及 `failed` 凭证；使用新的预检目录排查后重试，不能拿失败记录启动正式训练。正式入口不会自行执行或跳过预检；只有预检通过且训练预算为正数时才调度 22 项任务。远程 4090 实机检查仍为 `PENDING`，预检本身也需要朋友授权 GPU 时间。
 
 ## 22 项固定任务
 
@@ -32,9 +33,9 @@ bash scripts/friend_start.sh --config configs/friend_server.local.env
 
 G组选拔在运行前固定：候选D/C/S/N的完整五折Train OOF必须齐全且患者隔离；五份原始推理权重分别≤500,000,000字节、4090单模型研究测速p95均<100ms；合格者按完整OOF Macro-AUC降序取前二，完全相同分数按D、C、S、N顺序。4090研究测速**不能证明**官方目标设备合规。每个全Train任务的Epoch上限是相应骨干五折原始最佳Epoch的中位数（五个值，整数）；其余配置继承对应Fold1冻结训练协议。H组学生固定为DenseNet-121和EfficientNetV2-S，教师固定 `0.25×D17_OOF+0.25×C17_OOF+0.50×S17_OOF`。蒸馏采用温度1.0、真实标签BCE与软标签BCE各占0.5；硬标签保持原图像级训练权重，软标签每张图像权重为该Study图像数的倒数，以免多图Study因重复教师概率放大。每个任务保留原骨干学习率、增强、采样、种子与patience，并重新从合法ImageNet权重初始化。配置、教师文件与选择依据在 `manifests/extension_configs/` 和 `extension_selection.json` 冻结。
 
-**默认只运行22项。** 当前本地提交不含朋友授权的G/H预算，也未在真实4090验证四项训练。只有本次代码验收完成、用户确认并由朋友额外批准GPU预算后，朋友才可在其本地忽略的配置中填写 `CXR_ENABLE_GH=1` 与正数 `CXR_GH_GPU_HOURS`；`CXR_GPU_HOURS` 仍是含扩展阶段的总上限。相同的一条启动命令会先运行22项，再做四项各1个真实训练Step的GPU预检，最后在剩余总预算与G/H子预算内运行四项。预检/依赖/预算失败明确BLOCKED，绝不自动调整模型参数。没有授权就保留四项PENDING，不会偷跑。官方Val反复用于选择最佳Epoch，其结果不是新的独立患者泛化证据。
+**本次发布入口只运行22项。** G/H 四项保持 `PENDING`，`friend_start.sh` 不执行扩展队列。本地尚无朋友授权的 G/H 预算，也未在真实4090验证四项训练。以后若另行批准，需单独审计扩展入口、预检与预算；没有授权绝不会自动启动。官方Val反复用于选择最佳Epoch，其结果不是新的独立患者泛化证据。
 
-G/H 沿用独立 `experiments/<ID>/`、`validation/`、`test_predictions/`、`submissions/`、`analysis/`、`deployment/` 等直接目录；不压缩打包。每项成功后立即保存最佳推理权重及SHA、完整配置与训练历史、Val/Test十类Study概率、指标、日志、显存与延迟、恢复checkpoint、manifest和DONE。预先固定的`G17_PAIR`及`H17_PAIR`仅用两模型各0.5作研究性精简融合。完整OOF字段为`N/A`，不能生成隐藏Test AUC。Submission通过格式校验才可标`FORMAT_PASS`；真正部署还须全部权重≤500MB、目标设备完整端到端<100ms。4090测速不能作为官方T4证据，缺失目标硬件实测记`LATENCY_UNVERIFIED`，不能宣称可提交合规。
+G/H 沿用独立 `experiments/<ID>/`、`validation/`、`test_predictions/`、`submissions/`、`analysis/`、`deployment/` 等直接目录；不压缩打包。每项成功后立即保存最佳推理权重及SHA、完整配置与训练历史、Val/Test十类Study概率、指标、日志、显存与延迟、恢复checkpoint、manifest和DONE。预先固定的`G17_PAIR`及`H17_PAIR`仅用两模型各0.5作研究性精简融合。完整OOF字段为`N/A`，不能生成隐藏Test AUC。Submission通过格式校验才可标`FORMAT_PASS`；真正部署还须全部权重≤500MB、目标设备完整端到端≤100ms。4090测速不能作为官方T4证据，缺失目标硬件实测记`LATENCY_UNVERIFIED`，不能宣称可提交合规。
 
 ## 自动化与状态
 
@@ -49,12 +50,20 @@ G/H 沿用独立 `experiments/<ID>/`、`validation/`、`test_predictions/`、`su
 查看和安全停止：
 
 ```bash
+source configs/friend_server.local.env
 source .venv/bin/activate
 python scripts/batch_run.py --config configs/batch_plan.yaml --action status --root "$CXR_OUTPUT_ROOT/phase17_batch"
 python scripts/batch_run.py --config configs/batch_plan.yaml --action stop --root "$CXR_OUTPUT_ROOT/phase17_batch"
 ```
 
-`stop` 只阻止新任务，正在运行的任务按各自超时/完成逻辑结束。再次启动前须确认原队列不在运行并处理其 STOP/lock，不能强行解锁活跃队列。服务器若使用 Slurm 等调度器，请先让管理员确认实际分配的 GPU ID 和 CPU/RAM，修改本地授权配置；不要同时运行两个队列共享一个输出目录。
+`stop` 只阻止新任务，正在运行的任务按各自超时/完成逻辑结束。**确认原队列进程已退出且 `queue.lock` 不存在**后，执行下面的恢复命令；如果锁仍在，脚本拒绝清除 STOP，不能强行解锁活跃队列。服务器若使用 Slurm 等调度器，请先让管理员确认实际分配的 GPU ID 和 CPU/RAM；不要同时运行两个队列共享一个输出目录。
+
+```bash
+source configs/friend_server.local.env
+source .venv/bin/activate
+python scripts/batch_run.py --config configs/batch_plan.yaml --action clear-stop --root "$CXR_OUTPUT_ROOT/phase17_batch"
+bash scripts/friend_start.sh --config configs/friend_server.local.env
+```
 
 ## 结果直接交付
 
@@ -62,7 +71,7 @@ python scripts/batch_run.py --config configs/batch_plan.yaml --action stop --roo
 
 ## 部署硬约束
 
-最终全部推理权重压缩前总大小 ≤500,000,000 字节；按照用户更严格的边界，完整单图端到端延迟 **<100ms**。4090 的研究测速不能证明目标评测硬件（可能是 T4）合规；官方硬件、精度、batch、起止范围和统计量尚缺完整原文。因此未经官方同口径实测均为 `LATENCY_UNVERIFIED`，超过大小为 `SIZE_FAIL`，已证实延迟不合规为 `LATENCY_FAIL`，只有准确率、大小和官方时延都核实才为 `PASS`。单模型的 Forward 时间不能代替完整融合测速。FP16、量化和蒸馏后的实际产物都需重新验证 Val AUC、大小和时延。
+最终全部推理权重压缩前总大小 ≤500,000,000 字节；官方单图端到端延迟 **≤100ms**，80ms 是内部安全目标，并非额外的合规门槛。4090 的研究测速不能证明目标评测硬件（可能是 T4）合规；官方硬件、精度、batch、起止范围和统计量尚缺完整原文。因此未经官方同口径实测均为 `LATENCY_UNVERIFIED`，超过大小为 `SIZE_FAIL`，已证实延迟不合规为 `LATENCY_FAIL`，只有准确率、大小和官方时延都核实才为 `PASS`。单模型的 Forward 时间不能代替完整融合测速。FP16、量化和蒸馏后的实际产物都需重新验证 Val AUC、大小和时延。
 
 待官方给出完整目标计时口径并在目标设备运行时，可使用 `python scripts/benchmark_target_latency.py --config configs/batch_plan.yaml --root "$CXR_OUTPUT_ROOT/phase17_batch" --candidate D17_F01 --official-protocol /authorized/official_timing_protocol.json`。脚本仅在设备、精度、批量、计时范围和统计量逐项吻合时输出官方证据；否则仅存研究测速，不标记 `PASS`。该协议文件必须由用户审核并按脚本的规范化 JSON 规则固定 SHA-256，目前尚未具备。
 
