@@ -98,8 +98,6 @@ def test_one_gh_gpu_smoke_failure_does_not_cancel_other_gh_tasks(tmp_path, monke
     fail={'H17_DISTILL_02':True}
     def smoke(command, env, stdout, stderr, timeout):
         name=command[command.index('--run-id')+1]
-        if name.startswith('H17_DISTILL_02') and fail['H17_DISTILL_02']:
-            return 1
         folder=root/'experiments'/name;folder.mkdir(parents=True)
         task=next(task for task in tasks if name.startswith(task['id']))
         (folder/'config.yaml').write_bytes(Path(task['config']).read_bytes())
@@ -107,6 +105,11 @@ def test_one_gh_gpu_smoke_failure_does_not_cancel_other_gh_tasks(tmp_path, monke
             'amp_skipped_steps':0}),encoding='utf-8')
         return 0
     monkeypatch.setattr('cxr.batch.extension_queue.run_command',smoke)
+    def verify(folder, _):
+        if folder.name.startswith('H17_DISTILL_02') and fail['H17_DISTILL_02']:
+            raise ValueError('synthetic missing Test prediction artifact')
+        return {'status': 'passed'}
+    monkeypatch.setattr('cxr.batch.extension_queue.verify_gh_preflight', verify)
     result=run_extension_queue(root,config,['0','1'],total_budget=100,
                                gh_budget=20,max_concurrent=2,pause_seconds=.001)
     assert result['state']=='partial'

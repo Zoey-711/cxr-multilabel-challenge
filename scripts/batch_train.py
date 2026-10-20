@@ -79,7 +79,7 @@ def main() -> None:
     parser.add_argument("--run-id", help="Optional output directory name below outputs/experiments")
     parser.add_argument("--resume", action="store_true", help="Resume last_training.pt in the selected run")
     parser.add_argument("--preflight-steps", type=int, default=0,
-                        help="Only run this many training batches to verify the pipeline; no checkpoint")
+                        help="Run short training; G/H also round-trip a probe checkpoint and infer Val/Test")
     args = parser.parse_args()
     config = load_config(args.config)
     if not torch.cuda.is_available():
@@ -275,7 +275,8 @@ def main() -> None:
                                          **tracker.state_dict(), "config": str(args.config.resolve())})
     print(f"RUN {run_dir} epochs={epochs} batch={batch_size} accumulation={accumulation_steps} train_images={len(train_rows)} val_studies={len(val_targets)}", flush=True)
     if args.preflight_steps:
-        print(f"PREFLIGHT: {args.preflight_steps} optimizer steps; no validation or checkpoint", flush=True)
+        print(f"PREFLIGHT: {args.preflight_steps} optimizer steps; "
+              f"G/H verifies resume and short Val/Test files, no formal checkpoint", flush=True)
 
     if start_epoch > epochs or tracker.stale >= tracker.patience:
         write_json(run_dir / "status.json", {"state": "complete", "epoch": tracker.last_epoch,
@@ -353,6 +354,14 @@ def main() -> None:
             if step == 1 or step % 100 == 0:
                 print(f"epoch={epoch} step={step}/{steps_per_epoch} train_loss={total_loss/total_valid:.5f} elapsed_s={time.perf_counter()-epoch_started:.0f}", flush=True)
             if args.preflight_steps and step >= args.preflight_steps:
+                if name.startswith(("G17_FULL_", "H17_DISTILL_")):
+                    from cxr.batch.gh_preflight import complete_gh_preflight
+                    complete_gh_preflight(
+                        run_dir=run_dir, config_path=args.config, config=config, model=model,
+                        optimizer=optimizer, scheduler=scheduler, scaler=scaler,
+                        train_loader=train_loader, val_loader=val_loader, archive=data_path,
+                        optimizer_steps=optimizer_steps, amp_skipped_steps=amp_skipped_steps,
+                        gradient_norm=gradient_norm)
                 write_json(run_dir / "status.json", {"state": "preflight_passed", "steps": step,
                                                      "train_loss": total_loss / total_valid,
                                                      "gpu_peak_mib": round(torch.cuda.max_memory_allocated() / 2**20),

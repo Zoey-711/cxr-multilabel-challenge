@@ -8,6 +8,7 @@ from pathlib import Path
 
 from cxr.batch.artifacts import record_failure, utcnow
 from cxr.batch.extension import prepare_extension
+from cxr.batch.gh_preflight import verify_gh_preflight
 from cxr.batch.plan import digest, write_json
 from cxr.batch.runner import budget_allows, execute, run_command
 from cxr.batch.reporting import csv_rows
@@ -84,7 +85,12 @@ def run_extension_queue(root, plan, gpus, *, total_budget, gh_budget,
                     if (check.get('state')=='preflight_passed' and not check.get('amp_skipped_steps') and
                             (preflight_run/'config.yaml').is_file() and
                             digest(preflight_run/'config.yaml')==task['config_sha256']):
-                        continue
+                        try:
+                            verify_gh_preflight(preflight_run, task['config_sha256'])
+                        except (OSError, ValueError, KeyError):
+                            pass  # Preserve the failed evidence and start a new smoke attempt.
+                        else:
+                            continue
                     # Keep the failed smoke intact; an explicit queue resume uses a new ID.
                     attempt=2
                     while (root/'experiments'/f'{name}_attempt_{attempt}').exists():
@@ -117,6 +123,12 @@ def run_extension_queue(root, plan, gpus, *, total_budget, gh_budget,
                 check = json.loads(status_file.read_text(encoding='utf-8'))
                 if check.get('state') != 'preflight_passed' or check.get('amp_skipped_steps'):
                     record.update(state='BLOCKED', reason=f'G/H AMP/gradient preflight failed: {name}')
+                    _status(root, state)
+                    continue
+                try:
+                    verify_gh_preflight(preflight_run, task['config_sha256'])
+                except (OSError, ValueError, KeyError) as exc:
+                    record.update(state='BLOCKED', reason=f'G/H checkpoint/Val/Test preflight failed: {name}: {exc}')
                     _status(root, state)
             state['preflight_complete'] = all(record['state'] != 'BLOCKED' for record in state['tasks'].values())
             _status(root, state)
