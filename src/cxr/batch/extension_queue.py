@@ -57,7 +57,11 @@ def run_extension_queue(root, plan, gpus, *, total_budget, gh_budget,
         for record in state['tasks'].values():
             if record['state'] in ('running', 'test_pending', 'test_failed', 'BLOCKED'):
                 if record['state'] == 'running':
-                    state['gpu_hours'] += record.get('reserved_hours', 0)
+                    from datetime import datetime, timezone
+                    started = record.get('reserved_started_utc')
+                    elapsed = ((datetime.now(timezone.utc)-datetime.fromisoformat(started)).total_seconds()/3600
+                               if started else record.get('reserved_hours', 0))
+                    state['gpu_hours'] += min(record.get('reserved_hours', 0), max(0, elapsed))
                 record['state'] = 'pending'
     else:
         if state_file.exists():
@@ -66,7 +70,8 @@ def run_extension_queue(root, plan, gpus, *, total_budget, gh_budget,
                  'tasks': {task['id']: {'state': 'pending', 'attempts': 0} for task in tasks}}
     lock = root/'extension.lock'
     with lock.open('x') as handle:
-        json.dump({'started_utc': utcnow()}, handle)
+        json.dump({'started_utc': utcnow(), 'pid': os.getpid(),
+                   'host': __import__('socket').gethostname()}, handle)
     active = {}
     executor = concurrent.futures.ThreadPoolExecutor(max_workers=max_concurrent)
     try:
@@ -163,7 +168,8 @@ def run_extension_queue(root, plan, gpus, *, total_budget, gh_budget,
                                 and budget_allows(state['gpu_hours'], reserved, task['timeout_hours'], remaining_total)):
                             continue
                         record.update(state='running', attempts=record['attempts'] + 1,
-                                      gpu=gpu, reserved_hours=task['timeout_hours'])
+                                      gpu=gpu, reserved_hours=task['timeout_hours'],
+                                      reserved_started_utc=utcnow())
                         active[executor.submit(execute, task, root, gpu, record['attempts'])] = (task, gpu)
                         break
             state['updated_utc'] = utcnow()

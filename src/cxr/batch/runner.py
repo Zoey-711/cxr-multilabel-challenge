@@ -17,6 +17,9 @@ def run_command(command, env, stdout, stderr, timeout):
     with Path(stdout).open('ab') as out, Path(stderr).open('ab') as err:
         p = subprocess.Popen([sys.executable, '-u', *command], cwd=ROOT, env=env, stdout=out, stderr=err,
                              start_new_session=os.name != 'nt')
+        pidfile = Path(str(stdout) + '.pid.json')
+        write_json(pidfile, {'pid': p.pid, 'host': __import__('socket').gethostname(),
+                             'command': command})
         try:
             return p.wait(timeout=max(1, timeout))
         except subprocess.TimeoutExpired:
@@ -30,6 +33,9 @@ def run_command(command, env, stdout, stderr, timeout):
                     os.killpg(p.pid, signal.SIGKILL)
             p.wait()
             raise TimeoutError('Task timeout: stopped only the task process tree; resume from last epoch')
+        finally:
+            if p.poll() is not None:
+                pidfile.unlink(missing_ok=True)
 
 
 def execute(task, batch_root, gpu, attempt):
@@ -184,7 +190,11 @@ def run_queue(plan, plan_path, batch_root, gpus, budget, resume=False, extended=
         for record in state['tasks'].values():
             if record['state']=='running':
                 # Conservatively account interrupted reservations; never lose budget usage.
-                state['gpu_hours']+=record.get('reserved_hours',0)
+                from datetime import datetime, timezone
+                started = record.get('reserved_started_utc')
+                elapsed = ((datetime.now(timezone.utc) - datetime.fromisoformat(started)).total_seconds()/3600
+                           if started else record.get('reserved_hours', 0))
+                state['gpu_hours'] += min(record.get('reserved_hours', 0), max(0, elapsed))
                 record['state']='pending'
             elif record['state']=='failed' and record.get('stage')=='freeze':
                 # Backup failures may be retried explicitly without retraining frozen weights.
@@ -229,7 +239,8 @@ def run_queue(plan, plan_path, batch_root, gpus, budget, resume=False, extended=
                             continue
                         if not budget_allows(state['gpu_hours'],reserved,task['timeout_hours'],budget):
                             continue
-                        rec.update(state='running',attempts=rec['attempts']+1,gpu=gpu,reserved_hours=task['timeout_hours'])
+                        rec.update(state='running',attempts=rec['attempts']+1,gpu=gpu,
+                                   reserved_hours=task['timeout_hours'], reserved_started_utc=utcnow())
                         active[executor.submit(execute,task,root,gpu,rec['attempts'])]=(task,gpu)
                         break
                 state.update(updated_utc=__import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat(),

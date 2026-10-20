@@ -6,14 +6,13 @@
 
 1. 克隆用户提供的**私有**仓库 `friend-gpu-batch` 分支，并检出用户确认的固定 commit。将官方 `cxr_first.zip`、冻结协议目录和六种合法 torchvision ImageNet 权重放在授权存储位置。协议目录保留仓库相对路径，例如 `batch_assets/train_labels.csv`、`batch_assets/val_labels.csv`、`batch_assets/e07_official_val.csv`、`outputs/analysis/phase17_patient_folds/*.csv`；脚本逐个核对冻结 SHA-256，绝不重划 Fold。
 2. 复制 `configs/friend_server.example.env` 为 `configs/friend_server.local.env`，填写绝对路径、授权 GPU 编号、并发数、预检 GPU 小时 `CXR_PREFLIGHT_GPU_HOURS`、覆盖全部26项的总预算 `CXR_GPU_HOURS`，以及其中为G/H四项预留的子预算 `CXR_GH_GPU_HOURS`。三项预算都须由朋友明确授权；总预算必须大于G/H子预算。本地配置已被 `.gitignore` 排除。默认示例为 `0,1,2,3,4,5,6,7` 与并发 8；CPU、内存、磁盘、GPU 必须实测通过。`CXR_DATA_ROOT` 指向官方 ZIP；`CXR_OUTPUT_ROOT` 是结果父目录；`CXR_BACKUP_ROOT` 指向独立授权备份目录。
-3. 先在仓库根目录运行独立远程预检；确认其 `receipt.json` 状态为 `passed` 后，运行正式队列启动命令：
+3. 在仓库根目录只运行下面一条命令。朋友在配置中填写三项预算，即明确授权预检与最多 26 项正式任务；启动后无需发送预检报告，也无需人工二次批准：
 
 ```bash
-bash scripts/friend_remote_preflight.sh --config configs/friend_server.local.env
-bash scripts/friend_start.sh --config configs/friend_server.local.env
+bash scripts/friend_run_all.sh --config configs/friend_server.local.env
 ```
 
-预检入口安装所需 Python 包、导入并核对冻结协议、检查数据与权重哈希、运行单卡真实短训练与 Val/Test 推理、执行本地跳过的三项 CUDA 测试，并以 1→2→4→授权并发数逐级检查 GPU 绑定。任何失败都会保留日志及 `failed` 凭证；排查后将本地忽略配置中的 `CXR_PREFLIGHT_VERSION` 从 `v1` 改为 `v2` 等新版本，再重新运行预检，不能覆盖失败记录或拿它启动正式训练。正式入口读取同一版本的通过凭证，不会自行执行或跳过预检。通过后的一条 `friend_start.sh` 命令先运行22项，再按依赖和剩余预算自动预检并运行G/H四项；G/H逐项短时真实训练预检失败的任务保持 `BLOCKED`，不会改变超参数偷跑。远程4090实机检查仍为 `PENDING`，预检本身也需要朋友授权GPU时间。
+入口自动安装所需 Python 包、导入并核对冻结协议，然后执行 REMOTE_PREFLIGHT：检查 8 张 4090、数据与权重哈希、真实数据训练和 Val/Test 短推理、此前跳过的三项 CUDA 测试、六条 G/H 训练路径的真实 Train 单步及 checkpoint 恢复与 Val/Test 结果校验，再以 1→2→4→授权并发数逐级检查 GPU 绑定。G/H 初始短测使用**仅限预检的合成软标签**检查蒸馏代码路径，绝不用于正式训练；最终 G/H 配置及真实 OOF 教师在五折完成后再次独立预检。预检全部通过才自动启动先 22 项、后 G/H 4 项。失败保留 `phase17_batch_preflight_<version>/receipt.json`、逐步日志及 `phase17_batch_launcher/failure.json`，不启动训练。修复后将配置中的 `CXR_PREFLIGHT_VERSION` 改为新版本再运行同一命令，旧证据不会被覆盖。中断后重运行同一命令会核验并复用已通过的凭证、已完成任务与可恢复断点；只会清理同主机已确认死亡的队列锁，绝不接管仍在运行的任务。远程 4090 实机结果目前仍为 `PENDING`。
 
 ### G/H 远程短测门禁
 
@@ -66,7 +65,7 @@ python scripts/batch_run.py --config configs/batch_plan.yaml --action stop --roo
 source configs/friend_server.local.env
 source .venv/bin/activate
 python scripts/batch_run.py --config configs/batch_plan.yaml --action clear-stop --root "$CXR_OUTPUT_ROOT/phase17_batch"
-bash scripts/friend_start.sh --config configs/friend_server.local.env
+bash scripts/friend_run_all.sh --config configs/friend_server.local.env
 ```
 
 ## 结果直接交付

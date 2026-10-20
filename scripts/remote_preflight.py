@@ -36,6 +36,16 @@ def run_checked(command, *, env, log, timeout):
                        timeout=timeout, check=True)
 
 
+def check_gpu_inventory():
+    output = subprocess.run(['nvidia-smi', '--query-gpu=name', '--format=csv,noheader'],
+                            check=True, capture_output=True, text=True).stdout
+    names = [line.strip() for line in output.splitlines() if line.strip()]
+    count = sum('4090' in name for name in names)
+    if len(names) != 8 or count != 8:
+        raise RuntimeError(f'Expected eight visible RTX 4090 devices; found {names}')
+    return {'visible_gpus': names, 'rtx_4090_count': count}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--config', required=True, type=Path)
@@ -66,6 +76,8 @@ def main():
             raise TimeoutError('Approved preflight GPU-hour budget exhausted')
         return max(1, int(left * 3600 / n))
     try:
+        report['gpu_inventory'] = check_gpu_inventory()
+        write_json(receipt_path, report)
         # Existing preflight checks ZIP/SHA, all fold splits, resources, 4090 memory,
         # real-data forward/backward, checkpoint resume, and per-backbone benchmarks.
         started = time.monotonic()
@@ -93,6 +105,9 @@ def main():
                     log=args.output/'real_inference.log', timeout=remaining())
         spent += (time.monotonic()-started)/3600
         report['real_inference'] = json.loads((args.output/'real_inference.json').read_text(encoding='utf-8'))
+        if any(report['real_inference'].get(split, {}).get('real_images') != 2
+               for split in ('val', 'test')):
+            raise RuntimeError('Real Val and unlabeled Test short inference are both mandatory')
         write_json(receipt_path, report)
         # These are precisely the three CUDA tests skipped by the local CPU run.
         test_env = os.environ.copy()
@@ -107,6 +122,17 @@ def main():
                     log=args.output/'cuda_tests.log', timeout=remaining())
         spent += (time.monotonic()-started)/3600
         report['cuda_tests'] = require_three_cuda_tests(xml)
+        write_json(receipt_path, report)
+        started = time.monotonic()
+        route_root = args.output/'gh_route_probe'
+        run_checked([sys.executable, 'scripts/remote_gh_route_probe.py', '--config',
+                     str(args.config), '--output', str(route_root), '--gpu', devices[0],
+                     '--timeout-seconds', str(max(1, remaining()-10))], env=os.environ.copy(),
+                    log=args.output/'gh_route_probe.log', timeout=remaining())
+        spent += (time.monotonic()-started)/3600
+        report['gh_route_probe'] = json.loads((route_root/'route_report.json').read_text(encoding='utf-8'))
+        if report['gh_route_probe'].get('state') != 'passed' or len(report['gh_route_probe'].get('runs', [])) != 6:
+            raise RuntimeError('G/H route short training, checkpoint, Val/Test probe incomplete')
         write_json(receipt_path, report)
         # Concurrent probes are intentionally short. Never start eight full loaders here.
         for count in stage_sizes(args.max_concurrent):

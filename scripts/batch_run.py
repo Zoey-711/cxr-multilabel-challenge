@@ -13,7 +13,11 @@ def validate_remote_receipt(receipt, plan_sha256, devices, max_concurrent, envir
     if (receipt.get('kind') != 'REMOTE_PREFLIGHT' or receipt.get('plan_sha256') != plan_sha256
             or receipt.get('state') != 'passed' or len(receipt.get('cuda_tests', [])) != 3
             or receipt.get('real_data_smoke') != 'passed'
-            or 'val' not in receipt.get('real_inference', {})
+            or any(receipt.get('real_inference', {}).get(split, {}).get('real_images') != 2
+                   for split in ('val', 'test'))
+            or receipt.get('gh_route_probe', {}).get('state') != 'passed'
+            or len(receipt.get('gh_route_probe', {}).get('runs', [])) != 6
+            or receipt.get('gpu_inventory', {}).get('rtx_4090_count') != 8
             or not set(devices) <= set(receipt.get('gpus', []))):
         raise ValueError('REMOTE_PREFLIGHT does not cover the plan, data, CUDA tests and GPU pool')
     stages = {stage.get('concurrent_gpus') for stage in receipt.get('stages', [])
@@ -105,7 +109,7 @@ def main():
         if not (a.root/'queue_state.json').exists():
             p.error('No queue state to resume')
         (a.root/'STOP').unlink(missing_ok=True)
-        print('STOP cleared; rerun the same friend_start.sh command to resume')
+        print('STOP cleared; rerun friend_run_all.sh with the same config to resume')
     elif a.action=='report':
         from cxr.batch.reporting import report
         report(a.root)
