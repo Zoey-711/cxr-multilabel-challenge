@@ -7,3 +7,4 @@
 *.txt text eol=lf
 *.toml text eol=lf
 *.csv -text
+batch_assets/e07_provenance.json -text

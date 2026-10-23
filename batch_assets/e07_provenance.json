@@ -1,0 +1,27 @@
+{
+  "b01_densenet121_384_20261016": {
+    "probability_sha256": "acbccddb4a5e6ebf21fd71811dbd07c23a6cae0b6b208069cf32841c4dbf9689",
+    "checkpoint_sha256": "aed81971bc066db8b84486dd27e4b15088af0917cfdd1a9aeed2c0a57ca125e1",
+    "checkpoint_bytes": 28463720
+  },
+  "b02_densenet121_wd1e3_20261016_elevated": {
+    "probability_sha256": "f163404deb35e1f44d7fd7c9cca440374d307cd8594aa00f6b7aa79582048df8",
+    "checkpoint_sha256": "c320179fce8cd72b4c95570a5cbb87ab85ef4366d9f059046d6bc64cd922c4b4",
+    "checkpoint_bytes": 28463720
+  },
+  "b03_densenet121_lr3e5_20261016": {
+    "probability_sha256": "10b9921ed380fb00e4626a68c2fadacd15bf66cd144b227964193100313a8c83",
+    "checkpoint_sha256": "22de342d0b8f68016f5d8f69e413d50454a3e4675e1cce07e59fa896af0044fb",
+    "checkpoint_bytes": 28463720
+  },
+  "m02_convnext_tiny_384_aug_20261016_elevated": {
+    "probability_sha256": "602fce6da39097dd3d736dde0fe6e4c76222220a151f06eb87931c9b773daf89",
+    "checkpoint_sha256": "e583e2c3b64b6185ac4090f37e67bbe8362f9e67ead2fb27e793861e95638bd2",
+    "checkpoint_bytes": 111378631
+  },
+  "t01_swin_tiny_384_20261018": {
+    "probability_sha256": "ff6c21140c2ba1d2025eb9bc651353c290cde2600edbeccda907d2a7a1a73b9d",
+    "checkpoint_sha256": "577262238fd75c915ed0fe2e4e90654b08cbc9ceb0405728c8131743f6ec67a9",
+    "checkpoint_bytes": 110405322
+  }
+}
