@@ -604,6 +604,9 @@ tasks:
   readiness: PENDING_4090_GPU_PREFLIGHT
 artifacts:
   .gitignore: 8d3fa14c7c810457f81dcd4afc65193be6d4089b49a1eac7c8d20acf88d6e552
+  README.md: bcc4c5cba392a232deb19bf2cf48ac31f90948fa4e847f23feb487f60d98a240
+  README_friend.md: 03b4cd7744debe6207ee6f1199b8eb98eaf7a2f84aa16ed19bbcc546c35bf6c0
+  README_results.md: 98f4709a93ef15ff929985e5475ab45028cb1340e154337f88222f8c03f8a124
   batch_assets/e07_official_val.csv: ed2bbbfe6138abf4a42d20ebc5a3e1d0a00385f8fe230166c921237d00c7b813
   batch_assets/e07_provenance.json: 8c0bba04ed67718ca459350c4d874d303230815800bbf0180d596f2c3ded5b49
   batch_assets/train_labels.csv: 362946e5ceb566959a3b6f396500986678ba70c249e35fd48d9470d69b4ff8c6
@@ -640,9 +643,6 @@ artifacts:
   docs/handoff_acceptance.md: 83ce26ab9e0b264dd1fdb7a3b4748fcc17d54f4c983014c07be545f967e94092
   docs/phase17_26_acceptance.md: f534d46a151a30befe285028f7bc74c45f68d7bbd10ca1cbb4b530a1a42caa63
   pyproject.toml: e1c6d17dce5fbb5e095c84ac526d00091538730f1c36908e45cd6d7c0e4808a9
-  README.md: bcc4c5cba392a232deb19bf2cf48ac31f90948fa4e847f23feb487f60d98a240
-  README_friend.md: 03b4cd7744debe6207ee6f1199b8eb98eaf7a2f84aa16ed19bbcc546c35bf6c0
-  README_results.md: 98f4709a93ef15ff929985e5475ab45028cb1340e154337f88222f8c03f8a124
   requirements/cloud.txt: fd8f8ecb3eb410a7820fc7c351322a13002d55c2daf04f0ea5e6c300a8bf739b
   scripts/analyze_validation.py: 427c4a7271e5c551b721c5708de683c70196df4d9d1680aa5f2011f9aebad844
   scripts/audit_git_delivery.py: 83b99d5c625b886b2d33b2516f1d661f63d3c156bab9f98a377af14cceb40d8b
@@ -656,7 +656,7 @@ artifacts:
   scripts/batch_protocol_audit.py: 67d64aa91f9f388a2e0290b8d1747012d968280466d680b886cd1e91bf94e534
   scripts/batch_run.py: 9b3639755a2e8e16a1df99219533ee5a184cf0ed34697b8debd60a730c7e1c1c
   scripts/batch_test_inference.py: cad7a3b50aeeba1c6766a50351434c9d43adf756efb569624c9ae017a256a036
-  scripts/batch_train.py: b2fb3ff841808d4c8be04ad34069372ba0cbb5487eb77b221c1341b7565f4569
+  scripts/batch_train.py: 898f52449452c59bff69513f9fa84b1dcce06f7492529f9872b7a2601de71c24
   scripts/benchmark_target_latency.py: 49f9218fedf735ace6cc31cb41e7c656af8180fae57f734b416725044ce0aca2
   scripts/cloud_install.sh: 817d2da988fe38805ea62f3bcc93a4d87952570bcabd265c2cdc18ee8b0c6692
   scripts/friend_one_launch.py: ba64ed416bfd59c6476d3de7af72f2cf64ebed5ffcfa8668fa203cb9596f3daa
@@ -741,6 +741,7 @@ artifacts:
   tests/test_patient_folds.py: dd6f654974c038e81b0caef4f1cf820cd7e4e60ca8a8bc2c3d8b4a1db9615250
   tests/test_remote_preflight_cpu.py: acafce5dec9bad026a2002c4573e4bda489f6bf3fe882c880563d260809cec4d
   tests/test_study.py: 1e692b82d42e3d8b83b30eb72556ce32267a51af6cc6b6d0b92ac80fff6e071f
+  tests/test_training_output_guard.py: dcfa51eea91cb6613771c892ca71bb1b435a23b348628a48d344d5ac99bedfe3
   tests/test_training_resume.py: cc55ebbd68cc04259de80f072265d16b761f99b44ad0a34061baaa491c941797
 deployment_candidates:
   E17_F01:
