@@ -1,542 +1,947 @@
 {
-  "status": "retained_on_server",
+  "status": "uploaded_to_github_release",
+  "release_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/tag/phase17-results-20261024",
+  "release_tag": "phase17-results-20261024",
+  "verified_at": "2026-10-24T14:30:58.123996+08:00",
   "source_root": "/home/zlhll/cxr_results/phase17_batch",
   "files": [
     {
       "path": "experiments/C17_F01/best_ema_model.pt",
-      "bytes": 111379383
+      "asset_name": "experiments--C17_F01--best_ema_model.pt",
+      "bytes": 111379383,
+      "sha256": "14393d7f38fc41b5a3278503340f609d816fe5220179e51103ba9e922ebdbb33",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F01--best_ema_model.pt"
     },
     {
       "path": "experiments/C17_F01/best_model.pt",
-      "bytes": 111378631
+      "asset_name": "experiments--C17_F01--best_model.pt",
+      "bytes": 111378631,
+      "sha256": "502c5622a01b35d153ab554f91e79ee09d6ebebe0fce44052bfa1dd491354735",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F01--best_model.pt"
     },
     {
       "path": "experiments/C17_F01/best_model.pth",
-      "bytes": 111375943
+      "asset_name": "experiments--C17_F01--best_model.pth",
+      "bytes": 111375943,
+      "sha256": "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F01--best_model.pth"
     },
     {
       "path": "experiments/C17_F01/checkpoint_resume.pth",
-      "bytes": 780207215
+      "asset_name": "experiments--C17_F01--checkpoint_resume.pth",
+      "bytes": 780207215,
+      "sha256": "918c74368276548943510911ccda32d6d0599f10e412d3169238aa5ec79d9d48",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F01--checkpoint_resume.pth"
     },
     {
       "path": "experiments/C17_F01/ema_best_model.pth",
-      "bytes": 111376695
+      "asset_name": "experiments--C17_F01--ema_best_model.pth",
+      "bytes": 111376695,
+      "sha256": "67f7835d75806068b37b51b55bba55848dc25929c1c7b742d3e467862e9451f8",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F01--ema_best_model.pth"
     },
     {
       "path": "experiments/C17_F01/last_training.pt",
-      "bytes": 780207215
+      "asset_name": "experiments--C17_F01--last_training.pt",
+      "bytes": 780207215,
+      "sha256": "918c74368276548943510911ccda32d6d0599f10e412d3169238aa5ec79d9d48",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F01--last_training.pt"
     },
     {
       "path": "experiments/C17_F02/best_ema_model.pt",
-      "bytes": 111379383
+      "asset_name": "experiments--C17_F02--best_ema_model.pt",
+      "bytes": 111379383,
+      "sha256": "714b0b42759554ec899627177c18a9861c14d8c208455730bd199ffae22e07d6",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F02--best_ema_model.pt"
     },
     {
       "path": "experiments/C17_F02/best_model.pt",
-      "bytes": 111378631
+      "asset_name": "experiments--C17_F02--best_model.pt",
+      "bytes": 111378631,
+      "sha256": "27b6756427606dcfdc3b98f0df314e75d686ecd4228c476fcf85e90594c04424",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F02--best_model.pt"
     },
     {
       "path": "experiments/C17_F02/best_model.pth",
-      "bytes": 111375943
+      "asset_name": "experiments--C17_F02--best_model.pth",
+      "bytes": 111375943,
+      "sha256": "fd329616180e1bd35d979a72a920a62f925ce08b30bb34e5a33ad873910b3d08",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F02--best_model.pth"
     },
     {
       "path": "experiments/C17_F02/checkpoint_resume.pth",
-      "bytes": 780206511
+      "asset_name": "experiments--C17_F02--checkpoint_resume.pth",
+      "bytes": 780206511,
+      "sha256": "f116bd615b48902fbc0d637b999113706f629bf88ed313896f3fe9987c769ae5",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F02--checkpoint_resume.pth"
     },
     {
       "path": "experiments/C17_F02/ema_best_model.pth",
-      "bytes": 111376695
+      "asset_name": "experiments--C17_F02--ema_best_model.pth",
+      "bytes": 111376695,
+      "sha256": "a0994f36a32c0e5470be806dd3d022c0e19740042863c2544f50c036999a9177",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F02--ema_best_model.pth"
     },
     {
       "path": "experiments/C17_F02/last_training.pt",
-      "bytes": 780206511
+      "asset_name": "experiments--C17_F02--last_training.pt",
+      "bytes": 780206511,
+      "sha256": "f116bd615b48902fbc0d637b999113706f629bf88ed313896f3fe9987c769ae5",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F02--last_training.pt"
     },
     {
       "path": "experiments/C17_F03/best_ema_model.pt",
-      "bytes": 111379383
+      "asset_name": "experiments--C17_F03--best_ema_model.pt",
+      "bytes": 111379383,
+      "sha256": "ffc81f8813d7f9047df1f4bd8f2618267f3faaf5a9a055ea9e98eae8fe097c60",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F03--best_ema_model.pt"
     },
     {
       "path": "experiments/C17_F03/best_model.pt",
-      "bytes": 111378631
+      "asset_name": "experiments--C17_F03--best_model.pt",
+      "bytes": 111378631,
+      "sha256": "f3bd882fcd92d0ce602deb74929576c94f792fef6ce9dc8b74665842e8250399",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F03--best_model.pt"
     },
     {
       "path": "experiments/C17_F03/best_model.pth",
-      "bytes": 111375943
+      "asset_name": "experiments--C17_F03--best_model.pth",
+      "bytes": 111375943,
+      "sha256": "73517af672f1f8cc6ef9c9092d832c2c8d5db171e5561455298cfef44b8e7985",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F03--best_model.pth"
     },
     {
       "path": "experiments/C17_F03/checkpoint_resume.pth",
-      "bytes": 780199279
+      "asset_name": "experiments--C17_F03--checkpoint_resume.pth",
+      "bytes": 780199279,
+      "sha256": "09b256b64c0a8c69b8c904687a8defe553de9afa7a6d5ec14786e0cc6f052087",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F03--checkpoint_resume.pth"
     },
     {
       "path": "experiments/C17_F03/ema_best_model.pth",
-      "bytes": 111376695
+      "asset_name": "experiments--C17_F03--ema_best_model.pth",
+      "bytes": 111376695,
+      "sha256": "831e0c703f7fe951d165eab064b6866a7acaa14beaf635b27d05a4fa922f7ecc",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F03--ema_best_model.pth"
     },
     {
       "path": "experiments/C17_F03/last_training.pt",
-      "bytes": 780199279
+      "asset_name": "experiments--C17_F03--last_training.pt",
+      "bytes": 780199279,
+      "sha256": "09b256b64c0a8c69b8c904687a8defe553de9afa7a6d5ec14786e0cc6f052087",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F03--last_training.pt"
     },
     {
       "path": "experiments/C17_F04/best_ema_model.pt",
-      "bytes": 111379383
+      "asset_name": "experiments--C17_F04--best_ema_model.pt",
+      "bytes": 111379383,
+      "sha256": "4eaf061a7f9e4fad1ec6a6572e1b3f49a67b33b34732f5ea7f77687e484160dc",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F04--best_ema_model.pt"
     },
     {
       "path": "experiments/C17_F04/best_model.pt",
-      "bytes": 111378631
+      "asset_name": "experiments--C17_F04--best_model.pt",
+      "bytes": 111378631,
+      "sha256": "2465b5b3f5885ee36693e2d3e7d8a28956a2e2081cdad405c18a69d40e605059",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F04--best_model.pt"
     },
     {
       "path": "experiments/C17_F04/best_model.pth",
-      "bytes": 111375943
+      "asset_name": "experiments--C17_F04--best_model.pth",
+      "bytes": 111375943,
+      "sha256": "0be8596a36474527a29a242c17df5a5f94a3dbfa495208e112c5560e3df55a73",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F04--best_model.pth"
     },
     {
       "path": "experiments/C17_F04/checkpoint_resume.pth",
-      "bytes": 780214511
+      "asset_name": "experiments--C17_F04--checkpoint_resume.pth",
+      "bytes": 780214511,
+      "sha256": "707edc26912e08bfc3e5b4a09b69a6991b729a418fbcdf319ff8c15254c40395",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F04--checkpoint_resume.pth"
     },
     {
       "path": "experiments/C17_F04/ema_best_model.pth",
-      "bytes": 111376695
+      "asset_name": "experiments--C17_F04--ema_best_model.pth",
+      "bytes": 111376695,
+      "sha256": "73ef0cb545c0a91fa1a3e60dfbbd19c1b112fc108b108c53386f462b855effab",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F04--ema_best_model.pth"
     },
     {
       "path": "experiments/C17_F04/last_training.pt",
-      "bytes": 780214511
+      "asset_name": "experiments--C17_F04--last_training.pt",
+      "bytes": 780214511,
+      "sha256": "707edc26912e08bfc3e5b4a09b69a6991b729a418fbcdf319ff8c15254c40395",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F04--last_training.pt"
     },
     {
       "path": "experiments/C17_F05/best_ema_model.pt",
-      "bytes": 111379383
+      "asset_name": "experiments--C17_F05--best_ema_model.pt",
+      "bytes": 111379383,
+      "sha256": "a0a61e8cfad9c20ba4bd804717827d38e19475e765c5563aea81fc8688b589f0",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F05--best_ema_model.pt"
     },
     {
       "path": "experiments/C17_F05/best_model.pt",
-      "bytes": 111378631
+      "asset_name": "experiments--C17_F05--best_model.pt",
+      "bytes": 111378631,
+      "sha256": "1df6f52d9e4786d159c1561759ea6d4a6d12d04597addbae51b5803c668054dd",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F05--best_model.pt"
     },
     {
       "path": "experiments/C17_F05/best_model.pth",
-      "bytes": 111375943
+      "asset_name": "experiments--C17_F05--best_model.pth",
+      "bytes": 111375943,
+      "sha256": "6115ded995c0f61b075e28b3706b79819e71aec97a9faac9d9b4d8a6b44e9073",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F05--best_model.pth"
     },
     {
       "path": "experiments/C17_F05/checkpoint_resume.pth",
-      "bytes": 780216367
+      "asset_name": "experiments--C17_F05--checkpoint_resume.pth",
+      "bytes": 780216367,
+      "sha256": "56cf49b91501a6d98a4cacab31e7fb11ccffad5cfd0e038423bac5bca9797807",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F05--checkpoint_resume.pth"
     },
     {
       "path": "experiments/C17_F05/ema_best_model.pth",
-      "bytes": 111376695
+      "asset_name": "experiments--C17_F05--ema_best_model.pth",
+      "bytes": 111376695,
+      "sha256": "8bbcf6687e7b0d695c05d54a858081b7a05ca29cb2fe4b51ab2378a2183ac90d",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F05--ema_best_model.pth"
     },
     {
       "path": "experiments/C17_F05/last_training.pt",
-      "bytes": 780216367
+      "asset_name": "experiments--C17_F05--last_training.pt",
+      "bytes": 780216367,
+      "sha256": "56cf49b91501a6d98a4cacab31e7fb11ccffad5cfd0e038423bac5bca9797807",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--C17_F05--last_training.pt"
     },
     {
       "path": "experiments/CS17_F01/best_model.pt",
-      "bytes": 197977065
+      "asset_name": "experiments--CS17_F01--best_model.pt",
+      "bytes": 197977065,
+      "sha256": "82a777d54c7b9b6630052dcaebf4f7afc0cbf0e5820a740f92699de26fa79d94",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--CS17_F01--best_model.pt"
     },
     {
       "path": "experiments/CS17_F01/best_model.pth",
-      "bytes": 197972137
+      "asset_name": "experiments--CS17_F01--best_model.pth",
+      "bytes": 197972137,
+      "sha256": "75d068b0feaafcbae148fe1f2b394983683214213afc6ed6e4a88e7c1007cdb9",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--CS17_F01--best_model.pth"
     },
     {
       "path": "experiments/CS17_F01/checkpoint_resume.pth",
-      "bytes": 890916719
+      "asset_name": "experiments--CS17_F01--checkpoint_resume.pth",
+      "bytes": 890916719,
+      "sha256": "225882ecf04abe198284ee8322f45a44822e46264ee1dd97c5b5e0da6d8e7d19",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--CS17_F01--checkpoint_resume.pth"
     },
     {
       "path": "experiments/CS17_F01/last_training.pt",
-      "bytes": 890916719
+      "asset_name": "experiments--CS17_F01--last_training.pt",
+      "bytes": 890916719,
+      "sha256": "225882ecf04abe198284ee8322f45a44822e46264ee1dd97c5b5e0da6d8e7d19",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--CS17_F01--last_training.pt"
     },
     {
       "path": "experiments/D17_F01/best_model.pt",
-      "bytes": 28463720
+      "asset_name": "experiments--D17_F01--best_model.pt",
+      "bytes": 28463720,
+      "sha256": "a79b8c44da4bb613470ec2eef0bb7aab887a35cce7b90660f6ecba2a6236c2d3",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F01--best_model.pt"
     },
     {
       "path": "experiments/D17_F01/best_model.pth",
-      "bytes": 28453416
+      "asset_name": "experiments--D17_F01--best_model.pth",
+      "bytes": 28453416,
+      "sha256": "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F01--best_model.pth"
     },
     {
       "path": "experiments/D17_F01/checkpoint_resume.pth",
-      "bytes": 127247958
+      "asset_name": "experiments--D17_F01--checkpoint_resume.pth",
+      "bytes": 127247958,
+      "sha256": "84388b8f14736b8d13cfc102826ac7c7cb3aa478258f559a8fb148b29502a07d",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F01--checkpoint_resume.pth"
     },
     {
       "path": "experiments/D17_F01/last_training.pt",
-      "bytes": 127247958
+      "asset_name": "experiments--D17_F01--last_training.pt",
+      "bytes": 127247958,
+      "sha256": "84388b8f14736b8d13cfc102826ac7c7cb3aa478258f559a8fb148b29502a07d",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F01--last_training.pt"
     },
     {
       "path": "experiments/D17_F02/best_model.pt",
-      "bytes": 28463720
+      "asset_name": "experiments--D17_F02--best_model.pt",
+      "bytes": 28463720,
+      "sha256": "dba123b6af2a67a0f8578c8b36a27b4aded80018162cd4d2a95406170a6491f2",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F02--best_model.pt"
     },
     {
       "path": "experiments/D17_F02/best_model.pth",
-      "bytes": 28453416
+      "asset_name": "experiments--D17_F02--best_model.pth",
+      "bytes": 28453416,
+      "sha256": "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F02--best_model.pth"
     },
     {
       "path": "experiments/D17_F02/checkpoint_resume.pth",
-      "bytes": 127240150
+      "asset_name": "experiments--D17_F02--checkpoint_resume.pth",
+      "bytes": 127240150,
+      "sha256": "5b792f09a02d72add1b7adfef7d0f13ac0de8b87558d7857192a3590acbc1cf1",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F02--checkpoint_resume.pth"
     },
     {
       "path": "experiments/D17_F02/last_training.pt",
-      "bytes": 127240150
+      "asset_name": "experiments--D17_F02--last_training.pt",
+      "bytes": 127240150,
+      "sha256": "5b792f09a02d72add1b7adfef7d0f13ac0de8b87558d7857192a3590acbc1cf1",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F02--last_training.pt"
     },
     {
       "path": "experiments/D17_F03/best_model.pt",
-      "bytes": 28463720
+      "asset_name": "experiments--D17_F03--best_model.pt",
+      "bytes": 28463720,
+      "sha256": "fb87a20412ce518aef7ae31ac664597846eb0fc92394173d4af529e16f6798ce",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F03--best_model.pt"
     },
     {
       "path": "experiments/D17_F03/best_model.pth",
-      "bytes": 28453416
+      "asset_name": "experiments--D17_F03--best_model.pth",
+      "bytes": 28453416,
+      "sha256": "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F03--best_model.pth"
     },
     {
       "path": "experiments/D17_F03/checkpoint_resume.pth",
-      "bytes": 127259862
+      "asset_name": "experiments--D17_F03--checkpoint_resume.pth",
+      "bytes": 127259862,
+      "sha256": "739b3771f3628acaa0bf3a1be437808361b318f43ba615b800bf29fd3b99bfbf",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F03--checkpoint_resume.pth"
     },
     {
       "path": "experiments/D17_F03/last_training.pt",
-      "bytes": 127259862
+      "asset_name": "experiments--D17_F03--last_training.pt",
+      "bytes": 127259862,
+      "sha256": "739b3771f3628acaa0bf3a1be437808361b318f43ba615b800bf29fd3b99bfbf",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F03--last_training.pt"
     },
     {
       "path": "experiments/D17_F04/best_model.pt",
-      "bytes": 28463720
+      "asset_name": "experiments--D17_F04--best_model.pt",
+      "bytes": 28463720,
+      "sha256": "ea9d381989e7488096fafa44a2eeaeb318c9bcc737874cbf6a257184ae40ea7d",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F04--best_model.pt"
     },
     {
       "path": "experiments/D17_F04/best_model.pth",
-      "bytes": 28453416
+      "asset_name": "experiments--D17_F04--best_model.pth",
+      "bytes": 28453416,
+      "sha256": "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F04--best_model.pth"
     },
     {
       "path": "experiments/D17_F04/checkpoint_resume.pth",
-      "bytes": 127252118
+      "asset_name": "experiments--D17_F04--checkpoint_resume.pth",
+      "bytes": 127252118,
+      "sha256": "84229f1df527996af92e7957cff55d22be618de5934bde40bb80bfb7133e326d",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F04--checkpoint_resume.pth"
     },
     {
       "path": "experiments/D17_F04/last_training.pt",
-      "bytes": 127252118
+      "asset_name": "experiments--D17_F04--last_training.pt",
+      "bytes": 127252118,
+      "sha256": "84229f1df527996af92e7957cff55d22be618de5934bde40bb80bfb7133e326d",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F04--last_training.pt"
     },
     {
       "path": "experiments/D17_F05/best_model.pt",
-      "bytes": 28463720
+      "asset_name": "experiments--D17_F05--best_model.pt",
+      "bytes": 28463720,
+      "sha256": "c939c804e1416ecd47c9597398c724bfa15d940ed08074615ac587e69ea1305f",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F05--best_model.pt"
     },
     {
       "path": "experiments/D17_F05/best_model.pth",
-      "bytes": 28453416
+      "asset_name": "experiments--D17_F05--best_model.pth",
+      "bytes": 28453416,
+      "sha256": "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F05--best_model.pth"
     },
     {
       "path": "experiments/D17_F05/checkpoint_resume.pth",
-      "bytes": 127251030
+      "asset_name": "experiments--D17_F05--checkpoint_resume.pth",
+      "bytes": 127251030,
+      "sha256": "691af204cd6de454ce27b8899bb021b2358840e1a386ff2a4fb3c6907f64f256",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F05--checkpoint_resume.pth"
     },
     {
       "path": "experiments/D17_F05/last_training.pt",
-      "bytes": 127251030
+      "asset_name": "experiments--D17_F05--last_training.pt",
+      "bytes": 127251030,
+      "sha256": "691af204cd6de454ce27b8899bb021b2358840e1a386ff2a4fb3c6907f64f256",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--D17_F05--last_training.pt"
     },
     {
       "path": "experiments/G17_FULL_01/best_ema_model.pt",
-      "bytes": 81666223
+      "asset_name": "experiments--G17_FULL_01--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "c4616ed84a275e08bfa159638753ed0c97c732558b02633a54e018b3879560c7",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_01--best_ema_model.pt"
     },
     {
       "path": "experiments/G17_FULL_01/best_model.pt",
-      "bytes": 81663071
+      "asset_name": "experiments--G17_FULL_01--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "cb4c38cc1fbba63dacfa25334f00d58470c392d06e06b81bfbd0f57820b696ac",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_01--best_model.pt"
     },
     {
       "path": "experiments/G17_FULL_01/best_model.pth",
-      "bytes": 81651999
+      "asset_name": "experiments--G17_FULL_01--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "2c56df87e1702b8f3357d26228a8ec4fb411bdea67e76c57064f21718673f0c5",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_01--best_model.pth"
     },
     {
       "path": "experiments/G17_FULL_01/checkpoint_resume.pth",
-      "bytes": 570051484
+      "asset_name": "experiments--G17_FULL_01--checkpoint_resume.pth",
+      "bytes": 570051484,
+      "sha256": "0d86943e4bc7d2ff7f13804750b5e434e0af43cba1e77e863a4948419e133a65",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_01--checkpoint_resume.pth"
     },
     {
       "path": "experiments/G17_FULL_01/ema_best_model.pth",
-      "bytes": 81655151
+      "asset_name": "experiments--G17_FULL_01--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "1009b4f0f53f8c864b7c72a42251254cadaba576bd7395fbb735913617964d7a",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_01--ema_best_model.pth"
     },
     {
       "path": "experiments/G17_FULL_01/last_training.pt",
-      "bytes": 570051484
+      "asset_name": "experiments--G17_FULL_01--last_training.pt",
+      "bytes": 570051484,
+      "sha256": "0d86943e4bc7d2ff7f13804750b5e434e0af43cba1e77e863a4948419e133a65",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_01--last_training.pt"
     },
     {
       "path": "experiments/G17_FULL_01_GH_PREFLIGHT/probe_resume.pth",
-      "bytes": 243602349
+      "asset_name": "experiments--G17_FULL_01_GH_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "be9cbd887538f71f24576a08362d67361435f13bfc2960c7c1da9a23bdef0571",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_01_GH_PREFLIGHT--probe_resume.pth"
     },
     {
       "path": "experiments/G17_FULL_02/best_ema_model.pt",
-      "bytes": 111379383
+      "asset_name": "experiments--G17_FULL_02--best_ema_model.pt",
+      "bytes": 111379383,
+      "sha256": "912c92e9f250ee9d8a08d1b5be5a543cbf7ba839328bb55ce82d7689f39c7a5a",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_02--best_ema_model.pt"
     },
     {
       "path": "experiments/G17_FULL_02/best_model.pt",
-      "bytes": 111378631
+      "asset_name": "experiments--G17_FULL_02--best_model.pt",
+      "bytes": 111378631,
+      "sha256": "b8005f21ae238556161e917f4b4cca8bf3ec04635e39a5f494b20ac8173397bf",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_02--best_model.pt"
     },
     {
       "path": "experiments/G17_FULL_02/best_model.pth",
-      "bytes": 111375943
+      "asset_name": "experiments--G17_FULL_02--best_model.pth",
+      "bytes": 111375943,
+      "sha256": "c1abe198cd10da705ba526bf0aa003bc0aa71ca15b01be80cd7db14f977b840b",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_02--best_model.pth"
     },
     {
       "path": "experiments/G17_FULL_02/checkpoint_resume.pth",
-      "bytes": 780197231
+      "asset_name": "experiments--G17_FULL_02--checkpoint_resume.pth",
+      "bytes": 780197231,
+      "sha256": "56e393b0acc87e77237fe2400580cf5461b3a42b7f0e3196e54432916c3b10fb",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_02--checkpoint_resume.pth"
     },
     {
       "path": "experiments/G17_FULL_02/ema_best_model.pth",
-      "bytes": 111376695
+      "asset_name": "experiments--G17_FULL_02--ema_best_model.pth",
+      "bytes": 111376695,
+      "sha256": "ac2243f17c48a2d10b978d4d952fa0edc282c330d770d83c3e69ccf3347b441c",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_02--ema_best_model.pth"
     },
     {
       "path": "experiments/G17_FULL_02/last_training.pt",
-      "bytes": 780197231
+      "asset_name": "experiments--G17_FULL_02--last_training.pt",
+      "bytes": 780197231,
+      "sha256": "56e393b0acc87e77237fe2400580cf5461b3a42b7f0e3196e54432916c3b10fb",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_02--last_training.pt"
     },
     {
       "path": "experiments/G17_FULL_02_GH_PREFLIGHT/probe_resume.pth",
-      "bytes": 334182321
+      "asset_name": "experiments--G17_FULL_02_GH_PREFLIGHT--probe_resume.pth",
+      "bytes": 334182321,
+      "sha256": "b259046ea20bd14658e785f42101afad7df7c737626d91ae51057b09fad2e102",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--G17_FULL_02_GH_PREFLIGHT--probe_resume.pth"
     },
     {
       "path": "experiments/H17_DISTILL_01/best_model.pt",
-      "bytes": 28463720
+      "asset_name": "experiments--H17_DISTILL_01--best_model.pt",
+      "bytes": 28463720,
+      "sha256": "9c29e70d7b6287d5a64e0b094607bf5ce2a222cd4408cd5ca100092ba596302f",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--H17_DISTILL_01--best_model.pt"
     },
     {
       "path": "experiments/H17_DISTILL_01/best_model.pth",
-      "bytes": 28453416
+      "asset_name": "experiments--H17_DISTILL_01--best_model.pth",
+      "bytes": 28453416,
+      "sha256": "e534d5434c4154832e68d2007c381198e47a6c932ef61182821f132adae7149f",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--H17_DISTILL_01--best_model.pth"
     },
     {
       "path": "experiments/H17_DISTILL_01/checkpoint_resume.pth",
-      "bytes": 127252566
+      "asset_name": "experiments--H17_DISTILL_01--checkpoint_resume.pth",
+      "bytes": 127252566,
+      "sha256": "d23d773513759af2364f7c43603b2df565e99a29cc135d80a304b4dd26077ab8",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--H17_DISTILL_01--checkpoint_resume.pth"
     },
     {
       "path": "experiments/H17_DISTILL_01/last_training.pt",
-      "bytes": 127252566
+      "asset_name": "experiments--H17_DISTILL_01--last_training.pt",
+      "bytes": 127252566,
+      "sha256": "d23d773513759af2364f7c43603b2df565e99a29cc135d80a304b4dd26077ab8",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--H17_DISTILL_01--last_training.pt"
     },
     {
       "path": "experiments/H17_DISTILL_01_GH_PREFLIGHT/probe_resume.pth",
-      "bytes": 84516977
+      "asset_name": "experiments--H17_DISTILL_01_GH_PREFLIGHT--probe_resume.pth",
+      "bytes": 84516977,
+      "sha256": "548b1f6b1bad07eb617822263fb30e6382b893a9bfcd56a6936e1110cb3783d1",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--H17_DISTILL_01_GH_PREFLIGHT--probe_resume.pth"
     },
     {
       "path": "experiments/H17_DISTILL_02/best_ema_model.pt",
-      "bytes": 81666223
+      "asset_name": "experiments--H17_DISTILL_02--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "fa741a6be4c39796af47c110f697381c4f5717bbb44d235f857740060ef9f8d2",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--H17_DISTILL_02--best_ema_model.pt"
     },
     {
       "path": "experiments/H17_DISTILL_02/best_model.pt",
-      "bytes": 81663071
+      "asset_name": "experiments--H17_DISTILL_02--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "9b5fc2fb89bf282efc27a61b885ffcab52a17b22aedf331435c4a8010e79bc30",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--H17_DISTILL_02--best_model.pt"
     },
     {
       "path": "experiments/H17_DISTILL_02/best_model.pth",
-      "bytes": 81651999
+      "asset_name": "experiments--H17_DISTILL_02--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "35fb17621d21b1f0825bd3dd8b2090c2e0115593d3ef8b7b0cedc2a380022f69",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--H17_DISTILL_02--best_model.pth"
     },
     {
       "path": "experiments/H17_DISTILL_02/checkpoint_resume.pth",
-      "bytes": 570085724
+      "asset_name": "experiments--H17_DISTILL_02--checkpoint_resume.pth",
+      "bytes": 570085724,
+      "sha256": "d75d253c14ef8ee8229d97a2724100832a856f139e24e00ea2205e3b240ba307",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--H17_DISTILL_02--checkpoint_resume.pth"
     },
     {
       "path": "experiments/H17_DISTILL_02/ema_best_model.pth",
-      "bytes": 81655151
+      "asset_name": "experiments--H17_DISTILL_02--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "9b4a78564290ca45edba94a4228b655df34013c42ac01b370a5bb7ef346aa626",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--H17_DISTILL_02--ema_best_model.pth"
     },
     {
       "path": "experiments/H17_DISTILL_02/last_training.pt",
-      "bytes": 570085724
+      "asset_name": "experiments--H17_DISTILL_02--last_training.pt",
+      "bytes": 570085724,
+      "sha256": "d75d253c14ef8ee8229d97a2724100832a856f139e24e00ea2205e3b240ba307",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--H17_DISTILL_02--last_training.pt"
     },
     {
       "path": "experiments/H17_DISTILL_02_GH_PREFLIGHT/probe_resume.pth",
-      "bytes": 243602349
+      "asset_name": "experiments--H17_DISTILL_02_GH_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "f6184d41be28110fb70e92309c0470fd7b58cdbe808e756c60e68250f399fc10",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--H17_DISTILL_02_GH_PREFLIGHT--probe_resume.pth"
     },
     {
       "path": "experiments/N17_F01/best_ema_model.pt",
-      "bytes": 81666223
+      "asset_name": "experiments--N17_F01--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "fcfaa13631aba5d8742901f479d9f0fa7c2e7c87a6d8e7896618329572afab86",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F01--best_ema_model.pt"
     },
     {
       "path": "experiments/N17_F01/best_model.pt",
-      "bytes": 81663071
+      "asset_name": "experiments--N17_F01--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "a6be5327a001e824eb752a731108ab8e52b347cfe4748ab91009d4b62dd2d502",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F01--best_model.pt"
     },
     {
       "path": "experiments/N17_F01/best_model.pth",
-      "bytes": 81651999
+      "asset_name": "experiments--N17_F01--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "014166b240b05b70d1959214d6add0ff9611b986a8b1bb0d97e0fdb813e90e3d",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F01--best_model.pth"
     },
     {
       "path": "experiments/N17_F01/checkpoint_resume.pth",
-      "bytes": 570003100
+      "asset_name": "experiments--N17_F01--checkpoint_resume.pth",
+      "bytes": 570003100,
+      "sha256": "b0439ac9419d781c7d3d0407e080b20d37c9da45d3f9cd7ff2c1377e4d8d9d51",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F01--checkpoint_resume.pth"
     },
     {
       "path": "experiments/N17_F01/ema_best_model.pth",
-      "bytes": 81655151
+      "asset_name": "experiments--N17_F01--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "04ce77da9c788d64c6b74831e37ff0d8bf4d05565f4ad0415da2f7b609dd610a",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F01--ema_best_model.pth"
     },
     {
       "path": "experiments/N17_F01/last_training.pt",
-      "bytes": 570003100
+      "asset_name": "experiments--N17_F01--last_training.pt",
+      "bytes": 570003100,
+      "sha256": "b0439ac9419d781c7d3d0407e080b20d37c9da45d3f9cd7ff2c1377e4d8d9d51",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F01--last_training.pt"
     },
     {
       "path": "experiments/N17_F02/best_ema_model.pt",
-      "bytes": 81666223
+      "asset_name": "experiments--N17_F02--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "4e6c6d37c398090e8dcbf901a7b799040553090757623aa126d1f0719edd7d64",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F02--best_ema_model.pt"
     },
     {
       "path": "experiments/N17_F02/best_model.pt",
-      "bytes": 81663071
+      "asset_name": "experiments--N17_F02--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "76cd84220805b92dc9d82bd29561faaec6c3a1a05a9c33b1ea5e8acb4020bab3",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F02--best_model.pt"
     },
     {
       "path": "experiments/N17_F02/best_model.pth",
-      "bytes": 81651999
+      "asset_name": "experiments--N17_F02--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "413ca1deda6be6a2a99e0bcde4f97839a46046dfe3605d4726f8cee563c2d6c5",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F02--best_model.pth"
     },
     {
       "path": "experiments/N17_F02/checkpoint_resume.pth",
-      "bytes": 570058076
+      "asset_name": "experiments--N17_F02--checkpoint_resume.pth",
+      "bytes": 570058076,
+      "sha256": "b18f97fe8deb73738283c9b6879000d4f6ebc81c1faac36611ba6285de2c256d",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F02--checkpoint_resume.pth"
     },
     {
       "path": "experiments/N17_F02/ema_best_model.pth",
-      "bytes": 81655151
+      "asset_name": "experiments--N17_F02--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "559b2a2a5aba930a53839b9027ba35f7590dd54ee049b1328b03eafab4082719",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F02--ema_best_model.pth"
     },
     {
       "path": "experiments/N17_F02/last_training.pt",
-      "bytes": 570058076
+      "asset_name": "experiments--N17_F02--last_training.pt",
+      "bytes": 570058076,
+      "sha256": "b18f97fe8deb73738283c9b6879000d4f6ebc81c1faac36611ba6285de2c256d",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F02--last_training.pt"
     },
     {
       "path": "experiments/N17_F03/best_ema_model.pt",
-      "bytes": 81666223
+      "asset_name": "experiments--N17_F03--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "19855ffea7951c8d833f5c9754f2c97e443ccb753496d236e804e0eda4fdc871",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F03--best_ema_model.pt"
     },
     {
       "path": "experiments/N17_F03/best_model.pt",
-      "bytes": 81663071
+      "asset_name": "experiments--N17_F03--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "d8b135499476bc1d4feec5323a11e66ad6b6c66829fcb944445d122e2a48f57c",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F03--best_model.pt"
     },
     {
       "path": "experiments/N17_F03/best_model.pth",
-      "bytes": 81651999
+      "asset_name": "experiments--N17_F03--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "4f7287f22352476d450bb6bafbba21553be42356ed5da75d2d90d74bee3ae8b5",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F03--best_model.pth"
     },
     {
       "path": "experiments/N17_F03/checkpoint_resume.pth",
-      "bytes": 570033948
+      "asset_name": "experiments--N17_F03--checkpoint_resume.pth",
+      "bytes": 570033948,
+      "sha256": "e7d9d7178f6d3fcd2e8cc355dd23f31f5253e78383971088b6e1febf01ce76ae",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F03--checkpoint_resume.pth"
     },
     {
       "path": "experiments/N17_F03/ema_best_model.pth",
-      "bytes": 81655151
+      "asset_name": "experiments--N17_F03--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "58db9e8cb9d41096eb01f310ac3adf403e57b1f471789ce5a1ac24be9348bb36",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F03--ema_best_model.pth"
     },
     {
       "path": "experiments/N17_F03/last_training.pt",
-      "bytes": 570033948
+      "asset_name": "experiments--N17_F03--last_training.pt",
+      "bytes": 570033948,
+      "sha256": "e7d9d7178f6d3fcd2e8cc355dd23f31f5253e78383971088b6e1febf01ce76ae",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F03--last_training.pt"
     },
     {
       "path": "experiments/N17_F04/best_ema_model.pt",
-      "bytes": 81666223
+      "asset_name": "experiments--N17_F04--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "adc4dc46c763835748713dd242c1e9a97a0e0f379be737d6b5349596845d9c64",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F04--best_ema_model.pt"
     },
     {
       "path": "experiments/N17_F04/best_model.pt",
-      "bytes": 81663071
+      "asset_name": "experiments--N17_F04--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "b00a0a4388c40af742136593f05c0c8769b75c3c2c5aa6ae15da52b44c9b1e31",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F04--best_model.pt"
     },
     {
       "path": "experiments/N17_F04/best_model.pth",
-      "bytes": 81651999
+      "asset_name": "experiments--N17_F04--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "78bdd0eed36b1e06f5fe858262f046d635fd8023243d76c6fbc18f26f5f7a814",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F04--best_model.pth"
     },
     {
       "path": "experiments/N17_F04/checkpoint_resume.pth",
-      "bytes": 570007964
+      "asset_name": "experiments--N17_F04--checkpoint_resume.pth",
+      "bytes": 570007964,
+      "sha256": "e2fb47511927371800cb47029199ead61b569f46be01e24bc072f6ef24935f8b",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F04--checkpoint_resume.pth"
     },
     {
       "path": "experiments/N17_F04/ema_best_model.pth",
-      "bytes": 81655151
+      "asset_name": "experiments--N17_F04--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "7b1620d2d8f76ec4d0551833448514aa829bffad99bf582d50d0292a09f48af7",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F04--ema_best_model.pth"
     },
     {
       "path": "experiments/N17_F04/last_training.pt",
-      "bytes": 570007964
+      "asset_name": "experiments--N17_F04--last_training.pt",
+      "bytes": 570007964,
+      "sha256": "e2fb47511927371800cb47029199ead61b569f46be01e24bc072f6ef24935f8b",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F04--last_training.pt"
     },
     {
       "path": "experiments/N17_F05/best_ema_model.pt",
-      "bytes": 81666223
+      "asset_name": "experiments--N17_F05--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "f5c0bcc796359679173dc387f521bc8b4e043768e370778d1381cebc50971778",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F05--best_ema_model.pt"
     },
     {
       "path": "experiments/N17_F05/best_model.pt",
-      "bytes": 81663071
+      "asset_name": "experiments--N17_F05--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "2e9d4770aea69d8545e055464446037bb7fbb99216450caaa58929222404f8df",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F05--best_model.pt"
     },
     {
       "path": "experiments/N17_F05/best_model.pth",
-      "bytes": 81651999
+      "asset_name": "experiments--N17_F05--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "7e9c964124d6e0f35b9ae24d4d63d67c248c042f6a0fa4df72dc0d1068d73016",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F05--best_model.pth"
     },
     {
       "path": "experiments/N17_F05/checkpoint_resume.pth",
-      "bytes": 569971036
+      "asset_name": "experiments--N17_F05--checkpoint_resume.pth",
+      "bytes": 569971036,
+      "sha256": "e25283c5598ed2b3cbea8b27087b292865fb495830b13ebbdcfa827051420e9c",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F05--checkpoint_resume.pth"
     },
     {
       "path": "experiments/N17_F05/ema_best_model.pth",
-      "bytes": 81655151
+      "asset_name": "experiments--N17_F05--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "bee8f121fda1cebb85c23a11a544e3ac99fb8b4665f10c2c4aa784fca9fb32c3",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F05--ema_best_model.pth"
     },
     {
       "path": "experiments/N17_F05/last_training.pt",
-      "bytes": 569971036
+      "asset_name": "experiments--N17_F05--last_training.pt",
+      "bytes": 569971036,
+      "sha256": "e25283c5598ed2b3cbea8b27087b292865fb495830b13ebbdcfa827051420e9c",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--N17_F05--last_training.pt"
     },
     {
       "path": "experiments/NM17_F01/best_model.pt",
-      "bytes": 213062057
+      "asset_name": "experiments--NM17_F01--best_model.pt",
+      "bytes": 213062057,
+      "sha256": "1562b909579df731b66792a1307eeb83d9794ff509eed8790c1079cca191cb99",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--NM17_F01--best_model.pt"
     },
     {
       "path": "experiments/NM17_F01/best_model.pth",
-      "bytes": 213046249
+      "asset_name": "experiments--NM17_F01--best_model.pth",
+      "bytes": 213046249,
+      "sha256": "b6953a62eaf604a1b804a840b733bf47c62dae266a8d597db421478470a4f7b0",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--NM17_F01--best_model.pth"
     },
     {
       "path": "experiments/NM17_F01/checkpoint_resume.pth",
-      "bytes": 956343030
+      "asset_name": "experiments--NM17_F01--checkpoint_resume.pth",
+      "bytes": 956343030,
+      "sha256": "69856bc362455adbe5be006234ba3c6e8fa2d53e40e5e587e41f821c0cc316ae",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--NM17_F01--checkpoint_resume.pth"
     },
     {
       "path": "experiments/NM17_F01/last_training.pt",
-      "bytes": 956343030
+      "asset_name": "experiments--NM17_F01--last_training.pt",
+      "bytes": 956343030,
+      "sha256": "69856bc362455adbe5be006234ba3c6e8fa2d53e40e5e587e41f821c0cc316ae",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--NM17_F01--last_training.pt"
     },
     {
       "path": "experiments/S17_F01/best_model.pt",
-      "bytes": 110405322
+      "asset_name": "experiments--S17_F01--best_model.pt",
+      "bytes": 110405322,
+      "sha256": "d8690ddd3fb85e5ca67c008ef8430cd1b45f5c281d6143126ba995856647f279",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F01--best_model.pt"
     },
     {
       "path": "experiments/S17_F01/best_model.pth",
-      "bytes": 110402570
+      "asset_name": "experiments--S17_F01--best_model.pth",
+      "bytes": 110402570,
+      "sha256": "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F01--best_model.pth"
     },
     {
       "path": "experiments/S17_F01/checkpoint_resume.pth",
-      "bytes": 496304691
+      "asset_name": "experiments--S17_F01--checkpoint_resume.pth",
+      "bytes": 496304691,
+      "sha256": "6778784405ee465d1e51414ff9f003d99df6028ca4da984757332519ce40ce37",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F01--checkpoint_resume.pth"
     },
     {
       "path": "experiments/S17_F01/last_training.pt",
-      "bytes": 496304691
+      "asset_name": "experiments--S17_F01--last_training.pt",
+      "bytes": 496304691,
+      "sha256": "6778784405ee465d1e51414ff9f003d99df6028ca4da984757332519ce40ce37",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F01--last_training.pt"
     },
     {
       "path": "experiments/S17_F02/best_model.pt",
-      "bytes": 110405322
+      "asset_name": "experiments--S17_F02--best_model.pt",
+      "bytes": 110405322,
+      "sha256": "d68d2f914b779e6e89b7069effe647fce8342076d462f144b2e03ad2bfe87dbc",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F02--best_model.pt"
     },
     {
       "path": "experiments/S17_F02/best_model.pth",
-      "bytes": 110402570
+      "asset_name": "experiments--S17_F02--best_model.pth",
+      "bytes": 110402570,
+      "sha256": "3fb7a9a1da671d5aab0d68ee0b57d3d1cb5d9431958015f4dbff19506e69ef88",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F02--best_model.pth"
     },
     {
       "path": "experiments/S17_F02/checkpoint_resume.pth",
-      "bytes": 496308275
+      "asset_name": "experiments--S17_F02--checkpoint_resume.pth",
+      "bytes": 496308275,
+      "sha256": "12b1bae315f7659823dd1f8bc9cd49b379af60d53beac42ce22f2e4b22e571e4",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F02--checkpoint_resume.pth"
     },
     {
       "path": "experiments/S17_F02/last_training.pt",
-      "bytes": 496308275
+      "asset_name": "experiments--S17_F02--last_training.pt",
+      "bytes": 496308275,
+      "sha256": "12b1bae315f7659823dd1f8bc9cd49b379af60d53beac42ce22f2e4b22e571e4",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F02--last_training.pt"
     },
     {
       "path": "experiments/S17_F03/best_model.pt",
-      "bytes": 110405322
+      "asset_name": "experiments--S17_F03--best_model.pt",
+      "bytes": 110405322,
+      "sha256": "41c20b3252b78f29d7180c3da14f8412746c80e0243e77c68fae4a4b4349079f",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F03--best_model.pt"
     },
     {
       "path": "experiments/S17_F03/best_model.pth",
-      "bytes": 110402570
+      "asset_name": "experiments--S17_F03--best_model.pth",
+      "bytes": 110402570,
+      "sha256": "67840823d7c712f30112fac22e87a2ac24a37d31e170f211bf5a80988a3857ba",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F03--best_model.pth"
     },
     {
       "path": "experiments/S17_F03/checkpoint_resume.pth",
-      "bytes": 496304179
+      "asset_name": "experiments--S17_F03--checkpoint_resume.pth",
+      "bytes": 496304179,
+      "sha256": "7c742f50076875cecd3d65c6e7fa9e757f58fda4dfec78eca202ab74fedeeea5",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F03--checkpoint_resume.pth"
     },
     {
       "path": "experiments/S17_F03/last_training.pt",
-      "bytes": 496304179
+      "asset_name": "experiments--S17_F03--last_training.pt",
+      "bytes": 496304179,
+      "sha256": "7c742f50076875cecd3d65c6e7fa9e757f58fda4dfec78eca202ab74fedeeea5",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F03--last_training.pt"
     },
     {
       "path": "experiments/S17_F04/best_model.pt",
-      "bytes": 110405322
+      "asset_name": "experiments--S17_F04--best_model.pt",
+      "bytes": 110405322,
+      "sha256": "4cf84ba48b0be73c131c2a22b188e9e03a7bdf87df97d5f4f2a4ed3480f6346f",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F04--best_model.pt"
     },
     {
       "path": "experiments/S17_F04/best_model.pth",
-      "bytes": 110402570
+      "asset_name": "experiments--S17_F04--best_model.pth",
+      "bytes": 110402570,
+      "sha256": "efd1ca2cec491f7302d4fe31d5fbe4df9f762a88ed12db3f1998134f3945015b",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F04--best_model.pth"
     },
     {
       "path": "experiments/S17_F04/checkpoint_resume.pth",
-      "bytes": 496318003
+      "asset_name": "experiments--S17_F04--checkpoint_resume.pth",
+      "bytes": 496318003,
+      "sha256": "ab1b1e7299abfc77366f5bdcbf421692c5f3e0de48b3a4c66657976b960e24a2",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F04--checkpoint_resume.pth"
     },
     {
       "path": "experiments/S17_F04/last_training.pt",
-      "bytes": 496318003
+      "asset_name": "experiments--S17_F04--last_training.pt",
+      "bytes": 496318003,
+      "sha256": "ab1b1e7299abfc77366f5bdcbf421692c5f3e0de48b3a4c66657976b960e24a2",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F04--last_training.pt"
     },
     {
       "path": "experiments/S17_F05/best_model.pt",
-      "bytes": 110405322
+      "asset_name": "experiments--S17_F05--best_model.pt",
+      "bytes": 110405322,
+      "sha256": "445752f21fa252d8e34dfcf15a20e34b45bcd3e420217240c1429360e88bf6d2",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F05--best_model.pt"
     },
     {
       "path": "experiments/S17_F05/best_model.pth",
-      "bytes": 110402570
+      "asset_name": "experiments--S17_F05--best_model.pth",
+      "bytes": 110402570,
+      "sha256": "016e1155a7cce2f5a899e352186899969d9bbb84185bf0082b4d73334973f160",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F05--best_model.pth"
     },
     {
       "path": "experiments/S17_F05/checkpoint_resume.pth",
-      "bytes": 496313587
+      "asset_name": "experiments--S17_F05--checkpoint_resume.pth",
+      "bytes": 496313587,
+      "sha256": "75df07b3e715d0cb10291339489fac3b4de75e8a298b7b40836e2b9d462725d1",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F05--checkpoint_resume.pth"
     },
     {
       "path": "experiments/S17_F05/last_training.pt",
-      "bytes": 496313587
+      "asset_name": "experiments--S17_F05--last_training.pt",
+      "bytes": 496313587,
+      "sha256": "75df07b3e715d0cb10291339489fac3b4de75e8a298b7b40836e2b9d462725d1",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/untagged-c57662f5fa9a21633397/experiments--S17_F05--last_training.pt"
     }
   ]
 }

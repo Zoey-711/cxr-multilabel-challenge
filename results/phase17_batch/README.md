@@ -12,6 +12,16 @@
 - [交付验证清单](manifests/delivery_manifest.json)
 - [本次上传文件及 SHA-256](github_upload_manifest.json)
 
-本目录包含报告、指标、Val/OOF/Test 预测、训练日志、配置及产物校验清单。134 个模型权重与恢复文件约 35.66 GB，保留在服务器 `/home/zlhll/cxr_results/phase17_batch/`，未放入普通 Git 历史；文件列表见 [binary_artifacts.json](binary_artifacts.json)。原始胸片数据未包含在本目录中。
+完整结果已交付：本目录包含报告、指标、Val/OOF/Test 预测、训练日志、配置及产物校验清单；全部 134 个模型权重与恢复文件（35,660,552,028 字节）见 [GitHub Release](https://github.com/Zoey-711/cxr-multilabel-challenge/releases/tag/phase17-results-20261024)。每个附件均已核对 GitHub 返回的大小和 SHA-256。文件按原件单独上传，无压缩打包；原始胸片数据未包含在本次结果交付中。
+
+原始相对路径、附件名称和 SHA-256 见 [binary_release_manifest.json](binary_release_manifest.json)，直接下载链接见 [binary_artifacts.json](binary_artifacts.json)。
+
+恢复原始模型目录：在有仓库读取权限的电脑上安装 GitHub CLI 并执行 `gh auth login`，然后在此结果目录运行以下命令（Python 3.9 或更高版本）：
+
+```bash
+python3 download_weights.py --output .
+```
+
+脚本逐个下载、核对 SHA-256，再放回 `experiments/...`；已存在且匹配的文件会跳过，内容不符的现有文件不会被覆盖。原始服务器结果也仍完整保留。
 
 Test 没有公开标签，因此没有 Test AUC。G/H 全 Train 任务的 OOF 为 N/A；五折 OOF 由 D/C/S/N 的各五折模型提供。具体指标、研究测速和部署资格均以原始报告为准。
