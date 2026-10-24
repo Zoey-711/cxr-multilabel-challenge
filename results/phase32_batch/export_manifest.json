@@ -1,5 +1,14 @@
 {
   "sha256": {
+    "experiments/P32_NM_LR/oof_predictions.csv": "9b60b64f711a6dcdc1569084225f72bd289ba1453c83ad1b71d0107973c6d709",
+    "experiments/P32_NM_LR/best_model.sha256": "e5350fe8b48de11c957051475a6e40ee2ddf1db80ffddcaa369a7d1557eb1ca2",
+    "experiments/P32_NM_LR/model_size.json": "aed9fa09487c85c97b64a67504b96dd339c7ca977f399bd8d59dc026c52d89e2",
+    "experiments/P32_NM_LR/val_predictions.csv": "6b5445efcb765f583fa90bb44eafa071589529781b91c746f69c26b84c6ef583",
+    "experiments/P32_NM_LR/train_history.csv": "1400740e9627aa5955c18cb94296a4991851aa61be7ee79468107690b85ea742",
+    "experiments/P32_NM_LR/run_manifest.json": "fc414a40ef5d8e1db3c410cabfadc31656648ebc95c3220c950dc984693005e0",
+    "experiments/P32_NM_LR/resolved_config.yaml": "3f78fd4f274a134903c69666bca828755525bc4dfe1eb0bef5a2489b3de061a2",
+    "experiments/P32_NM_LR/metrics.json": "70843ffef36862fd6efceddebd65f7d7905bdfa0e066ab5e1d56e1fabf8b2424",
+    "experiments/P32_NM_LR/per_class_metrics.csv": "3beefa1d95112f90835523a57de445a01c29830001ad622f2b2625151b0ba78b",
     "experiments/P32_NS_PHOTO/ema_val_predictions.csv": "4b20675e1315cfed195af50cfce427269003904392bffc86024ed19d608175d3",
     "experiments/P32_NS_PHOTO/oof_predictions.csv": "f9af30b9e776517921cf484822e38bd05d0c933f29090548f00ab11141aa3b64",
     "experiments/P32_NS_PHOTO/ema_best_model.sha256": "3b7eba14313a0a8f63e787bad25039afe22a677d3c2dad022fbbab124eb4eb6a",
@@ -12,8 +21,17 @@
     "experiments/P32_NS_PHOTO/resolved_config.yaml": "ea202e5ee9a7331eb478818808963c917be2d4f6d6b9225b4c65fdf702e1409f",
     "experiments/P32_NS_PHOTO/metrics.json": "432e03058182af84bd870bd21ff3e9f8813c6dcd383cd1d98a2bcd472fe1992b",
     "experiments/P32_NS_PHOTO/per_class_metrics.csv": "7345c2b625224469bb56fdb9274890f34136b3001105d3314a34a1680912d3f8",
-    "reports/experiment_summary.csv": "dabe6d9f4e07dbac0406e40d5433b26429303f895d7c712b825473986316f40e",
-    "reports/experiment_summary.json": "645efb840d1ba1760d05e1b7a4d85ddf2bf67665b5905dbee5f602dc156251ee"
+    "experiments/P32_CS_LR/oof_predictions.csv": "118be33d92ad446ec8120d4fbd350b839949c9430fea3a3196a7f9d4c5a1e2a1",
+    "experiments/P32_CS_LR/best_model.sha256": "67edbcd53303c34df5c1394818e04d3c7a7315383727f5926ddfdcfeeed665da",
+    "experiments/P32_CS_LR/model_size.json": "5f0b1181761f878f009ef74db1ddbba462f1d0c9e34263eb9ab64e0e7f790574",
+    "experiments/P32_CS_LR/val_predictions.csv": "f809a0cac5efc7fec364e8b91e434aacc51ae1b9fcc96002c9d0fbecfd874b97",
+    "experiments/P32_CS_LR/train_history.csv": "f5452bb18ccdea9c3af68c535a3ab43b14c3a5a20e258bb27416c8e90b590b21",
+    "experiments/P32_CS_LR/run_manifest.json": "df5c67796c29783d6b30082f50107c67c6dd7da3d2867a97824faad21363f13b",
+    "experiments/P32_CS_LR/resolved_config.yaml": "2b3da92c4023922856155117a908ee051ec88c63a8a3428f76d3ca03d68626e5",
+    "experiments/P32_CS_LR/metrics.json": "90f93faa4051b779b3d1f8383802847e98ba4c2227b6340a3a1cc01df16ea23e",
+    "experiments/P32_CS_LR/per_class_metrics.csv": "92092c7f848637e92fb5e851f94b59168933f31cdf9edf90ed2e8017f0c500c1",
+    "reports/experiment_summary.csv": "605be13b59ff95dc0bcdf139726574702d553a131e2a57cd98408d6b2df63056",
+    "reports/experiment_summary.json": "e8bb7de73774301bc15066f2908f11209a98f805e410ffe1dc7970023c91d97b"
   },
   "weights": "NOT_UPLOADED",
   "raw_images": "EXCLUDED"

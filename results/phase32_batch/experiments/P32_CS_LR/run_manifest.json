@@ -1,0 +1,26 @@
+{
+  "model_id": "P32_CS_LR",
+  "commit": "01fa68bdac65ce56d04a1fc99e8f5996ab09aa20",
+  "config_sha256": "2b3da92c4023922856155117a908ee051ec88c63a8a3428f76d3ca03d68626e5",
+  "fold_hashes": {
+    "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+    "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+    "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+  },
+  "source_results_commit": "cbfc5997438f371086cd1fbe232890590cd67ffb",
+  "completed": "2026-10-24T22:07:50.942126+00:00",
+  "kind": "single_fold_pilot",
+  "training_pretrained": {
+    "source": "torchvision ConvNeXt_Small_Weights.IMAGENET1K_V1",
+    "url": "https://download.pytorch.org/models/convnext_small-0c510722.pth",
+    "sha256": "0c510722adfd92966a2bd72b92f785ca05966bbac03cafe2f7a90b1f54bfab9a",
+    "size_bytes": 201014929,
+    "external_labeled_data_used_for_additional_training": false
+  },
+  "limitations": [
+    "Official Val repeatedly used for model selection.",
+    "Fold1 comparisons exploratory; no multiplicity correction.",
+    "4090 timing cannot prove T4 <=100ms."
+  ],
+  "state": "DONE"
+}
