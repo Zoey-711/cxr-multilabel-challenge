@@ -1,0 +1,7 @@
+# Use an existing compatible CUDA image. No driver installation.
+torch==2.10.0
+torchvision==0.25.0
+numpy>=1.26
+Pillow>=10
+PyYAML>=6
+pytest>=8

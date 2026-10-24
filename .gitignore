@@ -58,3 +58,4 @@ private_transfer/
 *.db
 # Friend-owned paths and authorization; never commit local resource configuration.
 configs/friend_server.local.env
+configs/phase32_server.local.*
