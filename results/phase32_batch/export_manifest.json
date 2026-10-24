@@ -1,7 +1,19 @@
 {
   "sha256": {
-    "reports/experiment_summary.csv": "bf8b24b5c3e8a80560f5b534b5b5503643d8441cf3dca1fde5732174787abd65",
-    "reports/experiment_summary.json": "93da88d4c6fff4c57cea602bc343d9661735c71b3675dd920f0cc0f939fb1427"
+    "experiments/P32_NS_PHOTO/ema_val_predictions.csv": "4b20675e1315cfed195af50cfce427269003904392bffc86024ed19d608175d3",
+    "experiments/P32_NS_PHOTO/oof_predictions.csv": "f9af30b9e776517921cf484822e38bd05d0c933f29090548f00ab11141aa3b64",
+    "experiments/P32_NS_PHOTO/ema_best_model.sha256": "3b7eba14313a0a8f63e787bad25039afe22a677d3c2dad022fbbab124eb4eb6a",
+    "experiments/P32_NS_PHOTO/best_model.sha256": "33724331f0083a7e5a4f126a512bee8cf18f1c386795014cc3ed017652d30bc3",
+    "experiments/P32_NS_PHOTO/ema_oof_predictions.csv": "24f36091fb9eb143b3343b537affbbafe94365811f122e92e7b0e35b347563e8",
+    "experiments/P32_NS_PHOTO/model_size.json": "dc3fde0c6f235503e4ad5161a34dbacd6596ee9f91cc7f8f23276ae81d529510",
+    "experiments/P32_NS_PHOTO/val_predictions.csv": "454070bbe4dc9df6bdf296650d52a4c617226bbb2b3d9d4c8ef8a97b18189a79",
+    "experiments/P32_NS_PHOTO/train_history.csv": "8232ae5e25e5e5182cac091382edc2219eaa4869fa66b2898ce285d012ef2bc0",
+    "experiments/P32_NS_PHOTO/run_manifest.json": "afe5e01599ed8a80c9ddd33ff35ebfac9924649a576cc54c394d9a682b446684",
+    "experiments/P32_NS_PHOTO/resolved_config.yaml": "ea202e5ee9a7331eb478818808963c917be2d4f6d6b9225b4c65fdf702e1409f",
+    "experiments/P32_NS_PHOTO/metrics.json": "432e03058182af84bd870bd21ff3e9f8813c6dcd383cd1d98a2bcd472fe1992b",
+    "experiments/P32_NS_PHOTO/per_class_metrics.csv": "7345c2b625224469bb56fdb9274890f34136b3001105d3314a34a1680912d3f8",
+    "reports/experiment_summary.csv": "dabe6d9f4e07dbac0406e40d5433b26429303f895d7c712b825473986316f40e",
+    "reports/experiment_summary.json": "645efb840d1ba1760d05e1b7a4d85ddf2bf67665b5905dbee5f602dc156251ee"
   },
   "weights": "NOT_UPLOADED",
   "raw_images": "EXCLUDED"
