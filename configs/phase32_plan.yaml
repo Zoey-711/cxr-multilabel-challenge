@@ -217,7 +217,7 @@ code_hashes:
   src/cxr/phase32/protocol.py: 36b1d1a5d7b58fd8e5bfdfa8f9842e74972752347ee1952c6683e4aca5a85786
   src/cxr/phase32/queue.py: 97639292d068bdd55a62c39387f3d662c8d6362a6190bfc39503c6c2fa9284ae
   src/cxr/phase32/results.py: 7fa0efb416bfc453022b7c4972771346c685e155d1cc220c0c928c27658beaba
-  src/cxr/phase32/train.py: c3c8f2f5c58db55cc16febc3cc1a4b7551dfa1495d649ea57e5fac7ccdf5992f
+  src/cxr/phase32/train.py: 9c07cace89e2e6dee8b5bed506ec1c7ede02946ed3564ca13c11455e5f7bc806
   src/cxr/phase32/upload.py: 646814ea8d748eb81ff442ae3d33a6c95c9638ef726a64b2c7ef5d107b45ec06
   src/cxr/utils/__init__.py: 4bab90ca0532c4687e4c4c925d82441fb3cd5b122e7c4c55fabf0a48316711d6
   src/cxr/utils/checkpoint.py: 262c4bba69210abe24c2e0373cc66d9603646442a002778339f016fd66806956

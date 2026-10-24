@@ -109,7 +109,7 @@ def main() -> None:
     if not re.fullmatch(r"[A-Za-z0-9_.-]+", name):
         parser.error("Run ID must contain only letters, digits, underscore, dot, or dash")
     run_dir = output_root() / "experiments" / name
-    allowed_preexisting = {"train_stdout.log", "train_stderr.log"}
+    allowed_preexisting = {"train_stdout.log", "train_stderr.log", "train_stdout.log.pid.json"}
     if run_dir.exists() and not args.resume and any(item.name not in allowed_preexisting for item in run_dir.iterdir()):
         parser.error(f"Experiment directory already exists: {run_dir}")
     if args.resume:
