@@ -42,6 +42,8 @@ N01与N17参数相同，但人群、训练平台和代码来源不同，不能�
 
 ## 一次配置与启动
 
+在正式启动前，可先运行 `python scripts/e08_tune_run.py --config configs/e08_tune_server.local.yaml --action preflight`，它只执行真实Fold1短测并保存凭据，不启动正式长训练。请等Phase32结束后再运行；两套入口共用主机GPU锁。资源隔离与顺序见[朋友服务器交付说明](../friend_server_phase32_e08.md)。
+
 使用发布消息中的完整commit，在独立克隆目录checkout `friend-gpu-batch`。复用朋友既有Python3.12/3.13、torch2.10.0/torchvision0.25.0 CUDA环境；依赖同 `requirements-phase32.txt`，不自动改驱动或下载权重。已有环境中安装本仓库可用 `python -m pip install -e . --no-deps`。
 
 复制 `configs/e08_tune_server.example.yaml` 为 `configs/e08_tune_server.local.yaml`，填写授权绝对路径和GPU资源：

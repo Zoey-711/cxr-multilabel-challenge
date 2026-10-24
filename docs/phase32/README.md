@@ -40,6 +40,8 @@
 
 ## 唯一推荐启动命令
 
+朋友服务器可先执行 `python scripts/phase32_run.py --config configs/phase32_server.local.yaml --action preflight`，单独完成真实数据和CUDA短测而不进入正式长训练。随后运行下方原命令；有效的预检凭据会复用。与E08-Tune入口共享主机GPU锁，运行期间另一队列不能同时启动。两批操作顺序见[朋友服务器交付说明](../friend_server_phase32_e08.md)。
+
 在新克隆的根目录、已激活环境中运行：
 
 ```bash

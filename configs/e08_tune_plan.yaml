@@ -435,11 +435,11 @@ code_hashes:
   configs/e08_tune/ET_LR_LOW_F05.yaml: e60a77405536631cf71a6d524b196884e08dc5804470e7362f62db94f8af8e8f
   docs/e08_tune/source_audit.json: e556f66cf48543dbb17645a2fa9c0bede45bf793821d4d39f9bbbaff21470b3a
   docs/phase32/history_inventory.json: 314749f903efc9cc5477dc84118c90374ff7de3b482350f0e0aacdc363cddfef
-  scripts/e08_tune_run.py: 4072536d686b0c9c88f5e372e97f7d8a6e018c5067f79bf1ac62818043ee57b0
+  scripts/e08_tune_run.py: 00c09256c8c89c320ca2a40fcbb14ef859d05dcc80aaf1ce90e18506dd0ef93c
   scripts/e08_tune_train.py: e20e7f7067ab028b6158c2f0833c5edb30c3f217316797a1ae2b5664d93ebc16
   scripts/phase32_latency.py: 7723f267a505b609fcac2b47ef224515562498c98e5145c1f02f76241b725e22
   scripts/phase32_oof.py: 0f1d8118f97247b88c60b1ddde64f89c0818ad4df9970592b74a21dbd1be567f
-  scripts/phase32_run.py: 6fefb579d0322699fc4b81dc172b2d186384921faa55d4dbe89b5f94a81fa3d6
+  scripts/phase32_run.py: 6b41ba61bf07a9ce019a055790fbefcc6d0c7b712c27c5ea6b7e1ab6a540b85e
   scripts/phase32_train.py: ec6f92d88c114c96bff0014f1cf469572f100d318d80433b8082a059ce4ee43c
   scripts/phase32_validation.py: 85041687e8921ad8f767592a9fac2a9327013aa9558313e3c5ce5686d490153d
   src/cxr/__init__.py: 22b8cd1e4cfe0575ac5d5b064fa02b6c3dfb57e34c8a254f9b8d53edea4cecb0
@@ -513,6 +513,7 @@ code_hashes:
   src/cxr/utils/config.py: bb20074a8fa60cf733b32bd997a789d469e9a4be61892cbcebf8e655e221c7f3
   src/cxr/utils/labels.py: 52b360484d9644953d2357746d53837c3056664a1cb118b1ffe271802b5f90c9
   src/cxr/utils/training_resume.py: 0d1adfebe5ca69b90ee68b313a38d14285a2214310259aa1008208c4365f2525
+  src/cxr/batch/host_gpu_lock.py: 2ff493c11f18ba428af57def9ee147c9b8265790b4f9cfb9b78989a558394ac8
 selection:
   min_delta: 0.002
   bootstrap_valid_draws: 2000

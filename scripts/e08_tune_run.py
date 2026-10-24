@@ -22,7 +22,7 @@ def stage(plan,tasks,cfg,output,cap):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--config',required=True,type=Path)
-    p.add_argument('--action',choices=['run','validate','status','stop','resume'],default='run');args=p.parse_args()
+    p.add_argument('--action',choices=['run','validate','preflight','status','stop','resume'],default='run');args=p.parse_args()
     plan=load_plan();cfg=server_config(args.config);root=Path(cfg['output_root'])
     os.environ['PYTHONPATH']=str(Path(__file__).resolve().parents[1]/'src')+os.pathsep+os.environ.get('PYTHONPATH','')
     if args.action=='validate':print('Five new pilots; baseline reused; at most eight conditional additional folds.');return
@@ -33,32 +33,41 @@ def main():
     if args.action=='stop':
         for path in [root,root/'pilot',root/'expansion']:path.mkdir(parents=True,exist_ok=True);(path/'STOP').touch()
         print('Drain requested; running tasks finish safely');return
-    root.mkdir(parents=True,exist_ok=True);guard=lock(root)
-    try:
-        if args.action=='resume':
-            for path in [root,root/'pilot',root/'expansion']:(path/'STOP').unlink(missing_ok=True)
-        if (root/'STOP').exists():raise RuntimeError('STOP set; use --action resume')
-        pilots=[t for t in plan['tasks'] if t['fold']==1]
-        pilot_state=stage(plan,pilots,cfg,root/'pilot',cfg['gpu_hours'])
-        if (root/'STOP').exists():return
-        selected=select_pilots(root,plan)
-        if selected is None:return
-        remaining=min(cfg['extension_gpu_hours'],cfg['gpu_hours']-pilot_state['gpu_hours'])
-        extension=[t for t in plan['tasks'] if t['variant'] in selected and t['fold']!=1]
-        if extension and remaining>0:
-            stage(plan,extension,cfg,root/'expansion',remaining)
-        elif extension:
-            write_json(root/'reports/extension_status.json',{'state':'BLOCKED','reason':'No authorized remaining extension GPU budget'})
-        else:write_json(root/'reports/extension_status.json',{'state':'NOT_SELECTED','reason':'No pilot satisfied frozen evidence rules'})
-        complete_folds(root,plan,selected,cfg['baseline_results_root'])
-        if cfg.get('upload',{}).get('enabled'):
-            try:
-                from cxr.e08_tune.upload import upload
-                upload(root,cfg['upload'])
-            except Exception as e:write_json(root/'reports/UPLOAD_FAILED.json',{'reason':str(e)})
-    except Exception as e:
-        write_json(root/'reports/LAUNCH_FAILED.json',{'error':f'{type(e).__name__}: {e}'})
-        raise
-    finally:guard.unlink(missing_ok=True)
+    from cxr.batch.host_gpu_lock import host_gpu_lock
+    with host_gpu_lock():
+        root.mkdir(parents=True,exist_ok=True);guard=lock(root)
+        try:
+            if args.action=='resume':
+                for path in [root,root/'pilot',root/'expansion']:(path/'STOP').unlink(missing_ok=True)
+            if (root/'STOP').exists():raise RuntimeError('STOP set; use --action resume')
+            pilots=[t for t in plan['tasks'] if t['fold']==1]
+            if args.action=='preflight':
+                pilot_plan=copy.deepcopy(plan);pilot_plan['tasks']=pilots
+                pilot_cfg={**cfg,'output_root':str(root/'pilot')}
+                identity=prepare(pilot_cfg,pilot_plan)
+                hours=preflight(pilot_cfg,pilot_plan,identity)
+                print(f"Pilot REMOTE_PREFLIGHT passed; GPU-hours used: {hours:.4f}; receipt: {root/'pilot/preflight/REMOTE_PREFLIGHT.json'}")
+                return
+            pilot_state=stage(plan,pilots,cfg,root/'pilot',cfg['gpu_hours'])
+            if (root/'STOP').exists():return
+            selected=select_pilots(root,plan)
+            if selected is None:return
+            remaining=min(cfg['extension_gpu_hours'],cfg['gpu_hours']-pilot_state['gpu_hours'])
+            extension=[t for t in plan['tasks'] if t['variant'] in selected and t['fold']!=1]
+            if extension and remaining>0:
+                stage(plan,extension,cfg,root/'expansion',remaining)
+            elif extension:
+                write_json(root/'reports/extension_status.json',{'state':'BLOCKED','reason':'No authorized remaining extension GPU budget'})
+            else:write_json(root/'reports/extension_status.json',{'state':'NOT_SELECTED','reason':'No pilot satisfied frozen evidence rules'})
+            complete_folds(root,plan,selected,cfg['baseline_results_root'])
+            if cfg.get('upload',{}).get('enabled'):
+                try:
+                    from cxr.e08_tune.upload import upload
+                    upload(root,cfg['upload'])
+                except Exception as e:write_json(root/'reports/UPLOAD_FAILED.json',{'reason':str(e)})
+        except Exception as e:
+            write_json(root/'reports/LAUNCH_FAILED.json',{'error':f'{type(e).__name__}: {e}'})
+            raise
+        finally:guard.unlink(missing_ok=True)
 
 if __name__=='__main__':main()
