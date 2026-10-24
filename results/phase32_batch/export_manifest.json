@@ -66,8 +66,20 @@
     "experiments/P32_CS_LR/resolved_config.yaml": "2b3da92c4023922856155117a908ee051ec88c63a8a3428f76d3ca03d68626e5",
     "experiments/P32_CS_LR/metrics.json": "90f93faa4051b779b3d1f8383802847e98ba4c2227b6340a3a1cc01df16ea23e",
     "experiments/P32_CS_LR/per_class_metrics.csv": "92092c7f848637e92fb5e851f94b59168933f31cdf9edf90ed2e8017f0c500c1",
-    "reports/experiment_summary.csv": "bc4143cef3cf988bfe40d7470f4b01e474c19a396b3fabd51167625df8f56cce",
-    "reports/experiment_summary.json": "38a8075c09abc35960adec6710f1462c1e00e29761207eca64f13211edfbfc17"
+    "experiments/P32_NS_448/ema_val_predictions.csv": "02995dacd2942efdd95575bd2c97a25afc49146934f57377e4e4c2983d705828",
+    "experiments/P32_NS_448/oof_predictions.csv": "b9ebb16c1e8cab4f5d07542bbe5501c24fff663dd22d9b01fb9a38dc4ab75d27",
+    "experiments/P32_NS_448/ema_best_model.sha256": "6defb69961f3c33c8ee3f8da5797baa2c5fb6753f83e57196ab9f2032a7935ad",
+    "experiments/P32_NS_448/best_model.sha256": "7c2fb2dd62d9328a7eb76e44161f93136caba05b906b4caae9e6f2020084fdff",
+    "experiments/P32_NS_448/ema_oof_predictions.csv": "4ac28d9851cfae6267a88f0c38cb9cf13c70554b9a1f7fa234dc61bda5e97fb9",
+    "experiments/P32_NS_448/model_size.json": "dc3fde0c6f235503e4ad5161a34dbacd6596ee9f91cc7f8f23276ae81d529510",
+    "experiments/P32_NS_448/val_predictions.csv": "728989dd9bef5e866d59dafdf24f9158b96057b81ffd75af6dd7aea541a048a6",
+    "experiments/P32_NS_448/train_history.csv": "768746b73b02735c3573c413283caba5b25e43b390f178ea167d6b1d34e29cea",
+    "experiments/P32_NS_448/run_manifest.json": "6fb1c2548e9da1cb8ed87faa6f47e7ce0647a35c375ca77ace00559b316a5f8d",
+    "experiments/P32_NS_448/resolved_config.yaml": "76d4999f8621a4185435be0e9adca670a9d78d8c76cd6222a34c5a0b63776d3e",
+    "experiments/P32_NS_448/metrics.json": "f57aa22cd76ec07f19e43257b4df8c57cbd7c6dd53c7c5af05cc55968a7a070c",
+    "experiments/P32_NS_448/per_class_metrics.csv": "5ca675e2cac9183a9d1d4daac5e2e984579704b78dce69ebbb69b8683c8ad207",
+    "reports/experiment_summary.csv": "48835557ba886d204d7621175d8388af3358685bfa8d23099835d59cbff0200f",
+    "reports/experiment_summary.json": "65a34a4b4873b03f62bcbfcf04f2afd5755376cfe6bd3a5486cfddef5d744ec2"
   },
   "weights": "NOT_UPLOADED",
   "raw_images": "EXCLUDED"
