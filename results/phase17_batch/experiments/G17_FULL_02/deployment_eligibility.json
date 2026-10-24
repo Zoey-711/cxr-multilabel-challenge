@@ -1,0 +1,12 @@
+{
+  "model_id": "G17_FULL_02",
+  "raw_weight_bytes": 111375943,
+  "size_status": "PASS",
+  "latency_status": "LATENCY_UNVERIFIED",
+  "deployment_status": "LATENCY_UNVERIFIED",
+  "ema": {
+    "weight_bytes": 111376695,
+    "deployment_status": "LATENCY_UNVERIFIED"
+  },
+  "reason": "4090 single-model research timing does not establish official end-to-end target compliance"
+}

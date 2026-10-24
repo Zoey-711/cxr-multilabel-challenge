@@ -1,0 +1,121 @@
+{
+  "epoch": 8,
+  "train_loss": 0.2615721054851627,
+  "val": {
+    "study_count": 859,
+    "macro_auc": 0.7936587523836403,
+    "macro_f1": 0.28157946252829485,
+    "threshold": 0.5,
+    "per_class": [
+      {
+        "class_id": 1,
+        "class_name": "Enlarged Cardiomediastinum",
+        "positive_studies": 24,
+        "negative_studies": 835,
+        "auc": 0.7280189620758483,
+        "f1": 0.0
+      },
+      {
+        "class_id": 2,
+        "class_name": "Pneumothorax",
+        "positive_studies": 37,
+        "negative_studies": 822,
+        "auc": 0.8421286249753404,
+        "f1": 0.16326530612244897
+      },
+      {
+        "class_id": 3,
+        "class_name": "Consolidation",
+        "positive_studies": 46,
+        "negative_studies": 813,
+        "auc": 0.7559094069201562,
+        "f1": 0.0
+      },
+      {
+        "class_id": 4,
+        "class_name": "Pneumonia",
+        "positive_studies": 68,
+        "negative_studies": 791,
+        "auc": 0.7110786792593143,
+        "f1": 0.0
+      },
+      {
+        "class_id": 5,
+        "class_name": "Edema",
+        "positive_studies": 115,
+        "negative_studies": 744,
+        "auc": 0.8639434315100514,
+        "f1": 0.48412698412698413
+      },
+      {
+        "class_id": 6,
+        "class_name": "Cardiomegaly",
+        "positive_studies": 177,
+        "negative_studies": 682,
+        "auc": 0.752145567208443,
+        "f1": 0.28044280442804426
+      },
+      {
+        "class_id": 7,
+        "class_name": "Atelectasis",
+        "positive_studies": 193,
+        "negative_studies": 666,
+        "auc": 0.7817065770433647,
+        "f1": 0.32209737827715357
+      },
+      {
+        "class_id": 8,
+        "class_name": "Lung Opacity",
+        "positive_studies": 214,
+        "negative_studies": 645,
+        "auc": 0.7292508874882272,
+        "f1": 0.1469387755102041
+      },
+      {
+        "class_id": 9,
+        "class_name": "Pleural Effusion",
+        "positive_studies": 260,
+        "negative_studies": 599,
+        "auc": 0.9050597149094645,
+        "f1": 0.7004048582995951
+      },
+      {
+        "class_id": 10,
+        "class_name": "No Finding",
+        "positive_studies": 306,
+        "negative_studies": 553,
+        "auc": 0.8673456724461936,
+        "f1": 0.7185185185185186
+      }
+    ]
+  },
+  "elapsed_seconds": 829.2629581717774,
+  "learning_rates": [
+    8.909847211996913e-05,
+    0.00026729541635990735
+  ],
+  "optimizer_steps": 1521,
+  "amp_skipped_steps": 0,
+  "amp_skip_step_indices": [],
+  "gpu_peak_allocated_mib": 2218,
+  "gpu_peak_reserved_mib": 2340,
+  "study_sampling": null,
+  "ema_val": null,
+  "ema_best_auc": -1.0,
+  "ema_best_epoch": 0,
+  "ema_updates": 0,
+  "ema_best_checkpoint_saved": false,
+  "best_auc": 0.7936587523836403,
+  "best_epoch": 8,
+  "patience_reference_auc": 0.7936587523836403,
+  "stale": 0,
+  "last_epoch": 8,
+  "early_stopping_patience": 6,
+  "early_stopping_min_delta": 0.0,
+  "early_stopping_monitor": "study_level_macro_auc",
+  "early_stopping_mode": "max",
+  "best_checkpoint_saved": true,
+  "patience_reset": true,
+  "stop_epoch": null,
+  "stop_reason": null
+}

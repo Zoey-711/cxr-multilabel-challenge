@@ -1,0 +1,84 @@
+RUN /home/zlhll/cxr_results/phase17_batch/experiments/H17_DISTILL_01 epochs=4 batch=16 accumulation=1 train_images=30344 val_studies=859
+epoch=1 step=1/1897 train_loss=0.70201 elapsed_s=2
+epoch=1 step=100/1897 train_loss=0.68897 elapsed_s=20
+epoch=1 step=200/1897 train_loss=0.63218 elapsed_s=39
+epoch=1 step=300/1897 train_loss=0.57039 elapsed_s=57
+epoch=1 step=400/1897 train_loss=0.52097 elapsed_s=77
+epoch=1 step=500/1897 train_loss=0.48462 elapsed_s=95
+epoch=1 step=600/1897 train_loss=0.45983 elapsed_s=114
+epoch=1 step=700/1897 train_loss=0.44261 elapsed_s=133
+epoch=1 step=800/1897 train_loss=0.42778 elapsed_s=151
+epoch=1 step=900/1897 train_loss=0.41588 elapsed_s=170
+epoch=1 step=1000/1897 train_loss=0.40641 elapsed_s=189
+epoch=1 step=1100/1897 train_loss=0.39821 elapsed_s=207
+epoch=1 step=1200/1897 train_loss=0.39116 elapsed_s=226
+epoch=1 step=1300/1897 train_loss=0.38496 elapsed_s=245
+epoch=1 step=1400/1897 train_loss=0.37970 elapsed_s=264
+epoch=1 step=1500/1897 train_loss=0.37538 elapsed_s=283
+epoch=1 step=1600/1897 train_loss=0.37101 elapsed_s=301
+epoch=1 step=1700/1897 train_loss=0.36737 elapsed_s=320
+epoch=1 step=1800/1897 train_loss=0.36383 elapsed_s=339
+EPOCH_DONE epoch=1 loss=0.36125 macro_auc=0.77759 macro_f1=0.21359 best_auc=0.77759 best_epoch=1 patience=8 stale=0 seconds=375
+epoch=2 step=1/1897 train_loss=0.26643 elapsed_s=1
+epoch=2 step=100/1897 train_loss=0.29646 elapsed_s=20
+epoch=2 step=200/1897 train_loss=0.29680 elapsed_s=39
+epoch=2 step=300/1897 train_loss=0.29937 elapsed_s=57
+epoch=2 step=400/1897 train_loss=0.30041 elapsed_s=76
+epoch=2 step=500/1897 train_loss=0.30049 elapsed_s=94
+epoch=2 step=600/1897 train_loss=0.30112 elapsed_s=113
+epoch=2 step=700/1897 train_loss=0.30018 elapsed_s=131
+epoch=2 step=800/1897 train_loss=0.29985 elapsed_s=150
+epoch=2 step=900/1897 train_loss=0.29907 elapsed_s=168
+epoch=2 step=1000/1897 train_loss=0.29916 elapsed_s=187
+epoch=2 step=1100/1897 train_loss=0.29983 elapsed_s=206
+epoch=2 step=1200/1897 train_loss=0.30020 elapsed_s=225
+epoch=2 step=1300/1897 train_loss=0.30008 elapsed_s=244
+epoch=2 step=1400/1897 train_loss=0.30015 elapsed_s=262
+epoch=2 step=1500/1897 train_loss=0.30041 elapsed_s=281
+epoch=2 step=1600/1897 train_loss=0.30020 elapsed_s=299
+epoch=2 step=1700/1897 train_loss=0.30043 elapsed_s=317
+epoch=2 step=1800/1897 train_loss=0.30038 elapsed_s=336
+EPOCH_DONE epoch=2 loss=0.30038 macro_auc=0.79161 macro_f1=0.24366 best_auc=0.79161 best_epoch=2 patience=8 stale=0 seconds=370
+epoch=3 step=1/1897 train_loss=0.28018 elapsed_s=1
+epoch=3 step=100/1897 train_loss=0.29470 elapsed_s=19
+epoch=3 step=200/1897 train_loss=0.29547 elapsed_s=38
+epoch=3 step=300/1897 train_loss=0.29303 elapsed_s=57
+epoch=3 step=400/1897 train_loss=0.29365 elapsed_s=76
+epoch=3 step=500/1897 train_loss=0.29466 elapsed_s=94
+epoch=3 step=600/1897 train_loss=0.29548 elapsed_s=112
+epoch=3 step=700/1897 train_loss=0.29460 elapsed_s=131
+epoch=3 step=800/1897 train_loss=0.29401 elapsed_s=149
+epoch=3 step=900/1897 train_loss=0.29342 elapsed_s=168
+epoch=3 step=1000/1897 train_loss=0.29322 elapsed_s=186
+epoch=3 step=1100/1897 train_loss=0.29265 elapsed_s=205
+epoch=3 step=1200/1897 train_loss=0.29269 elapsed_s=223
+epoch=3 step=1300/1897 train_loss=0.29252 elapsed_s=242
+epoch=3 step=1400/1897 train_loss=0.29264 elapsed_s=260
+epoch=3 step=1500/1897 train_loss=0.29253 elapsed_s=279
+epoch=3 step=1600/1897 train_loss=0.29209 elapsed_s=298
+epoch=3 step=1700/1897 train_loss=0.29196 elapsed_s=316
+epoch=3 step=1800/1897 train_loss=0.29173 elapsed_s=334
+EPOCH_DONE epoch=3 loss=0.29212 macro_auc=0.79917 macro_f1=0.25069 best_auc=0.79917 best_epoch=3 patience=8 stale=0 seconds=369
+epoch=4 step=1/1897 train_loss=0.28660 elapsed_s=1
+epoch=4 step=100/1897 train_loss=0.26990 elapsed_s=19
+epoch=4 step=200/1897 train_loss=0.27545 elapsed_s=38
+epoch=4 step=300/1897 train_loss=0.27819 elapsed_s=56
+epoch=4 step=400/1897 train_loss=0.27903 elapsed_s=75
+epoch=4 step=500/1897 train_loss=0.27775 elapsed_s=93
+epoch=4 step=600/1897 train_loss=0.27901 elapsed_s=112
+epoch=4 step=700/1897 train_loss=0.27880 elapsed_s=130
+epoch=4 step=800/1897 train_loss=0.27812 elapsed_s=149
+epoch=4 step=900/1897 train_loss=0.27774 elapsed_s=167
+epoch=4 step=1000/1897 train_loss=0.27728 elapsed_s=185
+epoch=4 step=1100/1897 train_loss=0.27733 elapsed_s=204
+epoch=4 step=1200/1897 train_loss=0.27698 elapsed_s=222
+epoch=4 step=1300/1897 train_loss=0.27673 elapsed_s=240
+epoch=4 step=1400/1897 train_loss=0.27700 elapsed_s=259
+epoch=4 step=1500/1897 train_loss=0.27710 elapsed_s=277
+epoch=4 step=1600/1897 train_loss=0.27661 elapsed_s=296
+epoch=4 step=1700/1897 train_loss=0.27661 elapsed_s=314
+epoch=4 step=1800/1897 train_loss=0.27657 elapsed_s=333
+EPOCH_DONE epoch=4 loss=0.27634 macro_auc=0.80386 macro_f1=0.28299 best_auc=0.80386 best_epoch=4 patience=8 stale=0 seconds=367
+STOP epoch=4 reason=max_epochs_reached best_epoch=4 patience=8
+
+--- STDERR (preserved separately; merged by stream, not timestamp) ---

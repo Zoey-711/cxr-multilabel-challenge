@@ -1,0 +1,6 @@
+{
+  "raw_bytes": 81651999,
+  "ema_bytes": 81655151,
+  "limit_bytes": 500000000,
+  "inference_requires_one_variant": true
+}

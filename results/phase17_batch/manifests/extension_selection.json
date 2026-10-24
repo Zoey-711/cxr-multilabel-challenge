@@ -1,0 +1,218 @@
+{
+  "selection": {
+    "selected": [
+      "N17",
+      "C17"
+    ],
+    "ranking": [
+      {
+        "branch": "D17",
+        "oof_macro_auc": 0.7857590601822685,
+        "maximum_fold_weight_bytes": 28453416,
+        "maximum_4090_p95_ms": 121.76713617518544,
+        "eligible_research_screen": false,
+        "official_target_latency_status": "LATENCY_UNVERIFIED",
+        "priority": 0,
+        "oof_sha256": "4a4322f3288e1c4d99cd5431ffc420a0cd2f2229edd7fc68981aa0dce98e2b1d",
+        "source_index_sha256": "87068a21aef515259349ccc0a223b079d0dbe5d56746f22936a7f8ef6d0abf43"
+      },
+      {
+        "branch": "C17",
+        "oof_macro_auc": 0.7935902967353652,
+        "maximum_fold_weight_bytes": 111375943,
+        "maximum_4090_p95_ms": 66.3444078527391,
+        "eligible_research_screen": true,
+        "official_target_latency_status": "LATENCY_UNVERIFIED",
+        "priority": 1,
+        "oof_sha256": "1f9af9e7bc32c9df9ede0c5538e0ccd387d6796de72d4254b1cedc1ecfffd676",
+        "source_index_sha256": "329f8cb10a7b35f6b571dc220fa49877baa84292ed78c43012a64d10784e2f2b"
+      },
+      {
+        "branch": "S17",
+        "oof_macro_auc": 0.7907642745734639,
+        "maximum_fold_weight_bytes": 110402570,
+        "maximum_4090_p95_ms": 68.10218058526516,
+        "eligible_research_screen": true,
+        "official_target_latency_status": "LATENCY_UNVERIFIED",
+        "priority": 2,
+        "oof_sha256": "62cfd8f7e06050b2b6e4fef7da98bd1558b5c706bee44c250d22eee43b221701",
+        "source_index_sha256": "91ab4564dc9595d27747169042e58919d9efeae6d70e3ef9c412de5d86cec2c3"
+      },
+      {
+        "branch": "N17",
+        "oof_macro_auc": 0.7956058279339825,
+        "maximum_fold_weight_bytes": 81651999,
+        "maximum_4090_p95_ms": 70.59417800046504,
+        "eligible_research_screen": true,
+        "official_target_latency_status": "LATENCY_UNVERIFIED",
+        "priority": 3,
+        "oof_sha256": "0b402c6c4e78f0dd88e589c75f25a754a70d11009d57d7f68262aebd62a49157",
+        "source_index_sha256": "61cc890f4544cd1895a28c5af44cee50bac7a8891dd3f963be87fd2f797d0dcc"
+      }
+    ],
+    "rule": "size <=500000000 bytes and single-4090 p95 <100ms research screen; rank by complete five-fold Train OOF Macro-AUC descending; exact ties D,C,S,N",
+    "deployment_note": "4090 timing is never official target-hardware compliance"
+  },
+  "teacher": {
+    "path": "/home/zlhll/cxr_results/phase17_batch/analysis/gh_teacher_oof.csv",
+    "sha256": "13ded125b51b087fe82b2f63b3bbbaee9a115dea31434d6b66fd547bf390a324",
+    "source": {
+      "D17": {
+        "probabilities_sha256": "4a4322f3288e1c4d99cd5431ffc420a0cd2f2229edd7fc68981aa0dce98e2b1d",
+        "source_index_sha256": "87068a21aef515259349ccc0a223b079d0dbe5d56746f22936a7f8ef6d0abf43",
+        "studies": 18513,
+        "patients": 11055
+      },
+      "C17": {
+        "probabilities_sha256": "1f9af9e7bc32c9df9ede0c5538e0ccd387d6796de72d4254b1cedc1ecfffd676",
+        "source_index_sha256": "329f8cb10a7b35f6b571dc220fa49877baa84292ed78c43012a64d10784e2f2b",
+        "studies": 18513,
+        "patients": 11055
+      },
+      "S17": {
+        "probabilities_sha256": "62cfd8f7e06050b2b6e4fef7da98bd1558b5c706bee44c250d22eee43b221701",
+        "source_index_sha256": "91ab4564dc9595d27747169042e58919d9efeae6d70e3ef9c412de5d86cec2c3",
+        "studies": 18513,
+        "patients": 11055
+      }
+    },
+    "formula": {
+      "D17": 0.25,
+      "C17": 0.25,
+      "S17": 0.5
+    },
+    "studies": 18513
+  },
+  "tasks": [
+    {
+      "id": "G17_FULL_01",
+      "group": "full_train",
+      "enabled": true,
+      "backbone": "efficientnet_v2_s",
+      "fold": null,
+      "seed": 42,
+      "config": "/home/zlhll/cxr_results/phase17_batch/manifests/extension_configs/G17_FULL_01.yaml",
+      "config_sha256": "1ad655e17687baad9fed17d21afe65088fe2dcfbad497e73dba409d75f6e27ae",
+      "source_config": "configs/batch17/n17_fold1.yaml",
+      "source_config_sha256": "fe5c4990c890504a517cc0d2d0b67d1f6eac6b36d13d508af4ed072d9ceee63f",
+      "pretrained_sha256": "dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74",
+      "ema": true,
+      "gpu": "allocated_pool",
+      "minimum_vram_gib": 8,
+      "timeout_hours": 24,
+      "estimated_gpu_hours": {
+        "gpu_hours_train_only": 1.16,
+        "basis": "median measured 4090 fold GPU-hours per Epoch x 30344/fold train images x median-best Epoch; H includes provisional 15% loss overhead; Val/Test/latency inference excluded"
+      },
+      "max_retries": 1,
+      "output": "experiments/G17_FULL_01",
+      "fold_hashes": {
+        "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+        "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+        "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+      },
+      "oof_status": "N/A",
+      "estimated_cpu_cores": 6,
+      "estimated_host_ram_gib": 12
+    },
+    {
+      "id": "G17_FULL_02",
+      "group": "full_train",
+      "enabled": true,
+      "backbone": "convnext_tiny",
+      "fold": null,
+      "seed": 42,
+      "config": "/home/zlhll/cxr_results/phase17_batch/manifests/extension_configs/G17_FULL_02.yaml",
+      "config_sha256": "a87f8c7eb98628d643800fd2db6002b92b29d34f0699303b326ce1e369714943",
+      "source_config": "configs/batch17/c17_fold1.yaml",
+      "source_config_sha256": "ff262e478d18b06c2f794168cae18704a71350810f64f1e0efa6831f3e163c51",
+      "pretrained_sha256": "983f1562536e84ff750a1576fb08e54de751dbf2e17c0d8a4a13704341fdcd3d",
+      "ema": true,
+      "gpu": "allocated_pool",
+      "minimum_vram_gib": 8,
+      "timeout_hours": 20,
+      "estimated_gpu_hours": {
+        "gpu_hours_train_only": 1.174,
+        "basis": "median measured 4090 fold GPU-hours per Epoch x 30344/fold train images x median-best Epoch; H includes provisional 15% loss overhead; Val/Test/latency inference excluded"
+      },
+      "max_retries": 1,
+      "output": "experiments/G17_FULL_02",
+      "fold_hashes": {
+        "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+        "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+        "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+      },
+      "oof_status": "N/A",
+      "estimated_cpu_cores": 6,
+      "estimated_host_ram_gib": 12
+    },
+    {
+      "id": "H17_DISTILL_01",
+      "group": "distillation",
+      "enabled": true,
+      "backbone": "densenet121",
+      "fold": null,
+      "seed": 42,
+      "config": "/home/zlhll/cxr_results/phase17_batch/manifests/extension_configs/H17_DISTILL_01.yaml",
+      "config_sha256": "12aff78a1351ffbe49d04d5de0b7a7e2cbdbd4d3a6ab1a296e953db691e3afba",
+      "source_config": "configs/batch17/d17_fold1.yaml",
+      "source_config_sha256": "0f6b0a8fc08bd3992a6083b3171f62859cef45b62e811f31b27837097bcb7387",
+      "pretrained_sha256": "a639ec97d7c33b07ae66f0b5fb7d0192f95a3b11b7576c66c0126c2a727c4395",
+      "ema": false,
+      "gpu": "allocated_pool",
+      "minimum_vram_gib": 8,
+      "timeout_hours": 8,
+      "estimated_gpu_hours": {
+        "gpu_hours_train_only": 0.481,
+        "basis": "median measured 4090 fold GPU-hours per Epoch x 30344/fold train images x median-best Epoch; H includes provisional 15% loss overhead; Val/Test/latency inference excluded"
+      },
+      "max_retries": 1,
+      "output": "experiments/H17_DISTILL_01",
+      "fold_hashes": {
+        "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+        "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+        "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+      },
+      "oof_status": "N/A",
+      "estimated_cpu_cores": 6,
+      "estimated_host_ram_gib": 12
+    },
+    {
+      "id": "H17_DISTILL_02",
+      "group": "distillation",
+      "enabled": true,
+      "backbone": "efficientnet_v2_s",
+      "fold": null,
+      "seed": 42,
+      "config": "/home/zlhll/cxr_results/phase17_batch/manifests/extension_configs/H17_DISTILL_02.yaml",
+      "config_sha256": "5c2bce4c1294c5d62bd096dacdc12871d3351f0fe2a737b95d98c62acf975717",
+      "source_config": "configs/batch17/n17_fold1.yaml",
+      "source_config_sha256": "fe5c4990c890504a517cc0d2d0b67d1f6eac6b36d13d508af4ed072d9ceee63f",
+      "pretrained_sha256": "dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74",
+      "ema": true,
+      "gpu": "allocated_pool",
+      "minimum_vram_gib": 8,
+      "timeout_hours": 24,
+      "estimated_gpu_hours": {
+        "gpu_hours_train_only": 1.334,
+        "basis": "median measured 4090 fold GPU-hours per Epoch x 30344/fold train images x median-best Epoch; H includes provisional 15% loss overhead; Val/Test/latency inference excluded"
+      },
+      "max_retries": 1,
+      "output": "experiments/H17_DISTILL_02",
+      "fold_hashes": {
+        "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+        "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+        "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+      },
+      "oof_status": "N/A",
+      "estimated_cpu_cores": 6,
+      "estimated_host_ram_gib": 12
+    }
+  ],
+  "source_fold_hashes": {
+    "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+    "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+    "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+  },
+  "full_train_oof": "N/A"
+}

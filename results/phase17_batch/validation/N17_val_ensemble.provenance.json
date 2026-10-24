@@ -1,0 +1,40 @@
+{
+  "sources": [
+    "N17_F01",
+    "N17_F02",
+    "N17_F03",
+    "N17_F04",
+    "N17_F05"
+  ],
+  "weights": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "source_hashes": {
+    "N17_F01": "055930c1a03f5fe45dba2f73034cfa688331418598daed76bdd536eeccc04acc",
+    "N17_F02": "164e29523d6f6cd6f5dc8939416394dcb1c1801c01bba60a6c245599fdd433c7",
+    "N17_F03": "5a815178af9ed9c86cf94f0eddf9dc647c2931ac05fbae060bced8e75b3f785a",
+    "N17_F04": "459c4b0b8054752f91b2b0e8cc6249e10ca71e54299fa9d5815d605095ee1ec2",
+    "N17_F05": "b4fcd86fae98f95cc1ff19d073ab6c1c8ee600f0783b2352ebb5b0bf1d097564"
+  },
+  "csv_sha256": "cecb1146001c93fb1b76e826c2bcc5fd87a9e1c956e6b07bc50b2b7b6bd47846",
+  "rows": 859,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

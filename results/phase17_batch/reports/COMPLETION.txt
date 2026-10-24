@@ -1,0 +1,3 @@
+Complete models: 26/26
+Direct folder: /home/zlhll/cxr_results/phase17_batch
+Verify manifests/delivery_manifest.json and each experiments/<ID>/batch_frozen_manifest.json.

@@ -1,0 +1,41 @@
+{
+  "state": "complete",
+  "selection_sha256": "63daa3577d901caefc68fea984f7f4501fa934ace3781cd62329c93eebeb660a",
+  "gpu_hours": 4.025554545651087,
+  "tasks": {
+    "G17_FULL_01": {
+      "state": "complete",
+      "attempts": 1,
+      "gpu": "0",
+      "reserved_hours": 24,
+      "reserved_started_utc": "2026-10-24T02:36:56.670227+00:00",
+      "gpu_hours": 1.1888513828128473
+    },
+    "G17_FULL_02": {
+      "state": "complete",
+      "attempts": 1,
+      "gpu": "1",
+      "reserved_hours": 20,
+      "reserved_started_utc": "2026-10-24T02:36:56.670688+00:00",
+      "gpu_hours": 1.1972980634001498
+    },
+    "H17_DISTILL_01": {
+      "state": "complete",
+      "attempts": 1,
+      "gpu": "2",
+      "reserved_hours": 8,
+      "reserved_started_utc": "2026-10-24T02:36:56.670869+00:00",
+      "gpu_hours": 0.42929041266105034
+    },
+    "H17_DISTILL_02": {
+      "state": "complete",
+      "attempts": 1,
+      "gpu": "3",
+      "reserved_hours": 24,
+      "reserved_started_utc": "2026-10-24T02:36:56.671065+00:00",
+      "gpu_hours": 1.1969985093479045
+    }
+  },
+  "preflight_complete": true,
+  "updated_utc": "2026-10-24T03:48:46.987094+00:00"
+}

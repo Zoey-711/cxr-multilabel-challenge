@@ -1,0 +1,23 @@
+{
+  "candidate": "NM17_F01",
+  "device": "NVIDIA GeForce RTX 4090",
+  "cuda_runtime": "12.8",
+  "precision": "fp16_amp",
+  "batch_size": 1,
+  "warmup": 3,
+  "measured_samples": 20,
+  "model_count": 1,
+  "checkpoint_sha256": [
+    "b6953a62eaf604a1b804a840b733bf47c62dae266a8d597db421478470a4f7b0"
+  ],
+  "fusion_model_weights": {
+    "NM17_F01": 1.0
+  },
+  "scope": "ZIP read/decode, deterministic preprocessing, host-to-device, ALL sequential model forwards, sigmoid, CPU transfer, probability reduction, synchronize",
+  "mean_ms": 57.96496206894517,
+  "p50_ms": 60.261666774749756,
+  "p95_ms": 64.55913591198623,
+  "max_ms": 67.17032380402088,
+  "official_compliance": false,
+  "reason": "Official target hardware and timing scope/statistic have not been fully specified"
+}

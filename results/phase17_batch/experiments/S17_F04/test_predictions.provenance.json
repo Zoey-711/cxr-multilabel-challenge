@@ -1,0 +1,28 @@
+{
+  "model_id": "S17_F04",
+  "checkpoint_kind": "raw",
+  "checkpoint_sha256": "4cf84ba48b0be73c131c2a22b188e9e03a7bdf87df97d5f4f2a4ed3480f6346f",
+  "config_sha256": "ae0c953a5af6b5e4cff0b9b67bb612159baf8882ba003b44a157491add1d5fb1",
+  "input_images": 2218,
+  "expected_test_studies": 1414,
+  "preprocessing": "black_pad_v1",
+  "input_size": 384,
+  "no_test_labels": true,
+  "csv_sha256": "de942a5ca9bafeca49f8b84e0d9ddc0a825356221bd286215c0750bf831eb69c",
+  "rows": 1414,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

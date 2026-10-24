@@ -1,0 +1,542 @@
+{
+  "status": "retained_on_server",
+  "source_root": "/home/zlhll/cxr_results/phase17_batch",
+  "files": [
+    {
+      "path": "experiments/C17_F01/best_ema_model.pt",
+      "bytes": 111379383
+    },
+    {
+      "path": "experiments/C17_F01/best_model.pt",
+      "bytes": 111378631
+    },
+    {
+      "path": "experiments/C17_F01/best_model.pth",
+      "bytes": 111375943
+    },
+    {
+      "path": "experiments/C17_F01/checkpoint_resume.pth",
+      "bytes": 780207215
+    },
+    {
+      "path": "experiments/C17_F01/ema_best_model.pth",
+      "bytes": 111376695
+    },
+    {
+      "path": "experiments/C17_F01/last_training.pt",
+      "bytes": 780207215
+    },
+    {
+      "path": "experiments/C17_F02/best_ema_model.pt",
+      "bytes": 111379383
+    },
+    {
+      "path": "experiments/C17_F02/best_model.pt",
+      "bytes": 111378631
+    },
+    {
+      "path": "experiments/C17_F02/best_model.pth",
+      "bytes": 111375943
+    },
+    {
+      "path": "experiments/C17_F02/checkpoint_resume.pth",
+      "bytes": 780206511
+    },
+    {
+      "path": "experiments/C17_F02/ema_best_model.pth",
+      "bytes": 111376695
+    },
+    {
+      "path": "experiments/C17_F02/last_training.pt",
+      "bytes": 780206511
+    },
+    {
+      "path": "experiments/C17_F03/best_ema_model.pt",
+      "bytes": 111379383
+    },
+    {
+      "path": "experiments/C17_F03/best_model.pt",
+      "bytes": 111378631
+    },
+    {
+      "path": "experiments/C17_F03/best_model.pth",
+      "bytes": 111375943
+    },
+    {
+      "path": "experiments/C17_F03/checkpoint_resume.pth",
+      "bytes": 780199279
+    },
+    {
+      "path": "experiments/C17_F03/ema_best_model.pth",
+      "bytes": 111376695
+    },
+    {
+      "path": "experiments/C17_F03/last_training.pt",
+      "bytes": 780199279
+    },
+    {
+      "path": "experiments/C17_F04/best_ema_model.pt",
+      "bytes": 111379383
+    },
+    {
+      "path": "experiments/C17_F04/best_model.pt",
+      "bytes": 111378631
+    },
+    {
+      "path": "experiments/C17_F04/best_model.pth",
+      "bytes": 111375943
+    },
+    {
+      "path": "experiments/C17_F04/checkpoint_resume.pth",
+      "bytes": 780214511
+    },
+    {
+      "path": "experiments/C17_F04/ema_best_model.pth",
+      "bytes": 111376695
+    },
+    {
+      "path": "experiments/C17_F04/last_training.pt",
+      "bytes": 780214511
+    },
+    {
+      "path": "experiments/C17_F05/best_ema_model.pt",
+      "bytes": 111379383
+    },
+    {
+      "path": "experiments/C17_F05/best_model.pt",
+      "bytes": 111378631
+    },
+    {
+      "path": "experiments/C17_F05/best_model.pth",
+      "bytes": 111375943
+    },
+    {
+      "path": "experiments/C17_F05/checkpoint_resume.pth",
+      "bytes": 780216367
+    },
+    {
+      "path": "experiments/C17_F05/ema_best_model.pth",
+      "bytes": 111376695
+    },
+    {
+      "path": "experiments/C17_F05/last_training.pt",
+      "bytes": 780216367
+    },
+    {
+      "path": "experiments/CS17_F01/best_model.pt",
+      "bytes": 197977065
+    },
+    {
+      "path": "experiments/CS17_F01/best_model.pth",
+      "bytes": 197972137
+    },
+    {
+      "path": "experiments/CS17_F01/checkpoint_resume.pth",
+      "bytes": 890916719
+    },
+    {
+      "path": "experiments/CS17_F01/last_training.pt",
+      "bytes": 890916719
+    },
+    {
+      "path": "experiments/D17_F01/best_model.pt",
+      "bytes": 28463720
+    },
+    {
+      "path": "experiments/D17_F01/best_model.pth",
+      "bytes": 28453416
+    },
+    {
+      "path": "experiments/D17_F01/checkpoint_resume.pth",
+      "bytes": 127247958
+    },
+    {
+      "path": "experiments/D17_F01/last_training.pt",
+      "bytes": 127247958
+    },
+    {
+      "path": "experiments/D17_F02/best_model.pt",
+      "bytes": 28463720
+    },
+    {
+      "path": "experiments/D17_F02/best_model.pth",
+      "bytes": 28453416
+    },
+    {
+      "path": "experiments/D17_F02/checkpoint_resume.pth",
+      "bytes": 127240150
+    },
+    {
+      "path": "experiments/D17_F02/last_training.pt",
+      "bytes": 127240150
+    },
+    {
+      "path": "experiments/D17_F03/best_model.pt",
+      "bytes": 28463720
+    },
+    {
+      "path": "experiments/D17_F03/best_model.pth",
+      "bytes": 28453416
+    },
+    {
+      "path": "experiments/D17_F03/checkpoint_resume.pth",
+      "bytes": 127259862
+    },
+    {
+      "path": "experiments/D17_F03/last_training.pt",
+      "bytes": 127259862
+    },
+    {
+      "path": "experiments/D17_F04/best_model.pt",
+      "bytes": 28463720
+    },
+    {
+      "path": "experiments/D17_F04/best_model.pth",
+      "bytes": 28453416
+    },
+    {
+      "path": "experiments/D17_F04/checkpoint_resume.pth",
+      "bytes": 127252118
+    },
+    {
+      "path": "experiments/D17_F04/last_training.pt",
+      "bytes": 127252118
+    },
+    {
+      "path": "experiments/D17_F05/best_model.pt",
+      "bytes": 28463720
+    },
+    {
+      "path": "experiments/D17_F05/best_model.pth",
+      "bytes": 28453416
+    },
+    {
+      "path": "experiments/D17_F05/checkpoint_resume.pth",
+      "bytes": 127251030
+    },
+    {
+      "path": "experiments/D17_F05/last_training.pt",
+      "bytes": 127251030
+    },
+    {
+      "path": "experiments/G17_FULL_01/best_ema_model.pt",
+      "bytes": 81666223
+    },
+    {
+      "path": "experiments/G17_FULL_01/best_model.pt",
+      "bytes": 81663071
+    },
+    {
+      "path": "experiments/G17_FULL_01/best_model.pth",
+      "bytes": 81651999
+    },
+    {
+      "path": "experiments/G17_FULL_01/checkpoint_resume.pth",
+      "bytes": 570051484
+    },
+    {
+      "path": "experiments/G17_FULL_01/ema_best_model.pth",
+      "bytes": 81655151
+    },
+    {
+      "path": "experiments/G17_FULL_01/last_training.pt",
+      "bytes": 570051484
+    },
+    {
+      "path": "experiments/G17_FULL_01_GH_PREFLIGHT/probe_resume.pth",
+      "bytes": 243602349
+    },
+    {
+      "path": "experiments/G17_FULL_02/best_ema_model.pt",
+      "bytes": 111379383
+    },
+    {
+      "path": "experiments/G17_FULL_02/best_model.pt",
+      "bytes": 111378631
+    },
+    {
+      "path": "experiments/G17_FULL_02/best_model.pth",
+      "bytes": 111375943
+    },
+    {
+      "path": "experiments/G17_FULL_02/checkpoint_resume.pth",
+      "bytes": 780197231
+    },
+    {
+      "path": "experiments/G17_FULL_02/ema_best_model.pth",
+      "bytes": 111376695
+    },
+    {
+      "path": "experiments/G17_FULL_02/last_training.pt",
+      "bytes": 780197231
+    },
+    {
+      "path": "experiments/G17_FULL_02_GH_PREFLIGHT/probe_resume.pth",
+      "bytes": 334182321
+    },
+    {
+      "path": "experiments/H17_DISTILL_01/best_model.pt",
+      "bytes": 28463720
+    },
+    {
+      "path": "experiments/H17_DISTILL_01/best_model.pth",
+      "bytes": 28453416
+    },
+    {
+      "path": "experiments/H17_DISTILL_01/checkpoint_resume.pth",
+      "bytes": 127252566
+    },
+    {
+      "path": "experiments/H17_DISTILL_01/last_training.pt",
+      "bytes": 127252566
+    },
+    {
+      "path": "experiments/H17_DISTILL_01_GH_PREFLIGHT/probe_resume.pth",
+      "bytes": 84516977
+    },
+    {
+      "path": "experiments/H17_DISTILL_02/best_ema_model.pt",
+      "bytes": 81666223
+    },
+    {
+      "path": "experiments/H17_DISTILL_02/best_model.pt",
+      "bytes": 81663071
+    },
+    {
+      "path": "experiments/H17_DISTILL_02/best_model.pth",
+      "bytes": 81651999
+    },
+    {
+      "path": "experiments/H17_DISTILL_02/checkpoint_resume.pth",
+      "bytes": 570085724
+    },
+    {
+      "path": "experiments/H17_DISTILL_02/ema_best_model.pth",
+      "bytes": 81655151
+    },
+    {
+      "path": "experiments/H17_DISTILL_02/last_training.pt",
+      "bytes": 570085724
+    },
+    {
+      "path": "experiments/H17_DISTILL_02_GH_PREFLIGHT/probe_resume.pth",
+      "bytes": 243602349
+    },
+    {
+      "path": "experiments/N17_F01/best_ema_model.pt",
+      "bytes": 81666223
+    },
+    {
+      "path": "experiments/N17_F01/best_model.pt",
+      "bytes": 81663071
+    },
+    {
+      "path": "experiments/N17_F01/best_model.pth",
+      "bytes": 81651999
+    },
+    {
+      "path": "experiments/N17_F01/checkpoint_resume.pth",
+      "bytes": 570003100
+    },
+    {
+      "path": "experiments/N17_F01/ema_best_model.pth",
+      "bytes": 81655151
+    },
+    {
+      "path": "experiments/N17_F01/last_training.pt",
+      "bytes": 570003100
+    },
+    {
+      "path": "experiments/N17_F02/best_ema_model.pt",
+      "bytes": 81666223
+    },
+    {
+      "path": "experiments/N17_F02/best_model.pt",
+      "bytes": 81663071
+    },
+    {
+      "path": "experiments/N17_F02/best_model.pth",
+      "bytes": 81651999
+    },
+    {
+      "path": "experiments/N17_F02/checkpoint_resume.pth",
+      "bytes": 570058076
+    },
+    {
+      "path": "experiments/N17_F02/ema_best_model.pth",
+      "bytes": 81655151
+    },
+    {
+      "path": "experiments/N17_F02/last_training.pt",
+      "bytes": 570058076
+    },
+    {
+      "path": "experiments/N17_F03/best_ema_model.pt",
+      "bytes": 81666223
+    },
+    {
+      "path": "experiments/N17_F03/best_model.pt",
+      "bytes": 81663071
+    },
+    {
+      "path": "experiments/N17_F03/best_model.pth",
+      "bytes": 81651999
+    },
+    {
+      "path": "experiments/N17_F03/checkpoint_resume.pth",
+      "bytes": 570033948
+    },
+    {
+      "path": "experiments/N17_F03/ema_best_model.pth",
+      "bytes": 81655151
+    },
+    {
+      "path": "experiments/N17_F03/last_training.pt",
+      "bytes": 570033948
+    },
+    {
+      "path": "experiments/N17_F04/best_ema_model.pt",
+      "bytes": 81666223
+    },
+    {
+      "path": "experiments/N17_F04/best_model.pt",
+      "bytes": 81663071
+    },
+    {
+      "path": "experiments/N17_F04/best_model.pth",
+      "bytes": 81651999
+    },
+    {
+      "path": "experiments/N17_F04/checkpoint_resume.pth",
+      "bytes": 570007964
+    },
+    {
+      "path": "experiments/N17_F04/ema_best_model.pth",
+      "bytes": 81655151
+    },
+    {
+      "path": "experiments/N17_F04/last_training.pt",
+      "bytes": 570007964
+    },
+    {
+      "path": "experiments/N17_F05/best_ema_model.pt",
+      "bytes": 81666223
+    },
+    {
+      "path": "experiments/N17_F05/best_model.pt",
+      "bytes": 81663071
+    },
+    {
+      "path": "experiments/N17_F05/best_model.pth",
+      "bytes": 81651999
+    },
+    {
+      "path": "experiments/N17_F05/checkpoint_resume.pth",
+      "bytes": 569971036
+    },
+    {
+      "path": "experiments/N17_F05/ema_best_model.pth",
+      "bytes": 81655151
+    },
+    {
+      "path": "experiments/N17_F05/last_training.pt",
+      "bytes": 569971036
+    },
+    {
+      "path": "experiments/NM17_F01/best_model.pt",
+      "bytes": 213062057
+    },
+    {
+      "path": "experiments/NM17_F01/best_model.pth",
+      "bytes": 213046249
+    },
+    {
+      "path": "experiments/NM17_F01/checkpoint_resume.pth",
+      "bytes": 956343030
+    },
+    {
+      "path": "experiments/NM17_F01/last_training.pt",
+      "bytes": 956343030
+    },
+    {
+      "path": "experiments/S17_F01/best_model.pt",
+      "bytes": 110405322
+    },
+    {
+      "path": "experiments/S17_F01/best_model.pth",
+      "bytes": 110402570
+    },
+    {
+      "path": "experiments/S17_F01/checkpoint_resume.pth",
+      "bytes": 496304691
+    },
+    {
+      "path": "experiments/S17_F01/last_training.pt",
+      "bytes": 496304691
+    },
+    {
+      "path": "experiments/S17_F02/best_model.pt",
+      "bytes": 110405322
+    },
+    {
+      "path": "experiments/S17_F02/best_model.pth",
+      "bytes": 110402570
+    },
+    {
+      "path": "experiments/S17_F02/checkpoint_resume.pth",
+      "bytes": 496308275
+    },
+    {
+      "path": "experiments/S17_F02/last_training.pt",
+      "bytes": 496308275
+    },
+    {
+      "path": "experiments/S17_F03/best_model.pt",
+      "bytes": 110405322
+    },
+    {
+      "path": "experiments/S17_F03/best_model.pth",
+      "bytes": 110402570
+    },
+    {
+      "path": "experiments/S17_F03/checkpoint_resume.pth",
+      "bytes": 496304179
+    },
+    {
+      "path": "experiments/S17_F03/last_training.pt",
+      "bytes": 496304179
+    },
+    {
+      "path": "experiments/S17_F04/best_model.pt",
+      "bytes": 110405322
+    },
+    {
+      "path": "experiments/S17_F04/best_model.pth",
+      "bytes": 110402570
+    },
+    {
+      "path": "experiments/S17_F04/checkpoint_resume.pth",
+      "bytes": 496318003
+    },
+    {
+      "path": "experiments/S17_F04/last_training.pt",
+      "bytes": 496318003
+    },
+    {
+      "path": "experiments/S17_F05/best_model.pt",
+      "bytes": 110405322
+    },
+    {
+      "path": "experiments/S17_F05/best_model.pth",
+      "bytes": 110402570
+    },
+    {
+      "path": "experiments/S17_F05/checkpoint_resume.pth",
+      "bytes": 496313587
+    },
+    {
+      "path": "experiments/S17_F05/last_training.pt",
+      "bytes": 496313587
+    }
+  ]
+}

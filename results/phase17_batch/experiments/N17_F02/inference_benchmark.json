@@ -1,0 +1,24 @@
+{
+  "research_single_model": {
+    "device": "NVIDIA GeForce RTX 4090",
+    "batch": 1,
+    "samples": 20,
+    "warmup": 3,
+    "mean_ms": 60.97632450982928,
+    "p50_ms": 63.11807222664356,
+    "p95_ms": 69.69448025338352,
+    "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+  },
+  "ema_research_single_model": {
+    "device": "NVIDIA GeForce RTX 4090",
+    "batch": 1,
+    "samples": 20,
+    "warmup": 3,
+    "mean_ms": 61.09102130867541,
+    "p50_ms": 63.394283410161734,
+    "p95_ms": 68.53328249417245,
+    "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+  },
+  "official_target_hardware_verified": false,
+  "full_deployment_recipe_verified": false
+}

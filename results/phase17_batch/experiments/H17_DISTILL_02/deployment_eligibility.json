@@ -1,0 +1,12 @@
+{
+  "model_id": "H17_DISTILL_02",
+  "raw_weight_bytes": 81651999,
+  "size_status": "PASS",
+  "latency_status": "LATENCY_UNVERIFIED",
+  "deployment_status": "LATENCY_UNVERIFIED",
+  "ema": {
+    "weight_bytes": 81655151,
+    "deployment_status": "LATENCY_UNVERIFIED"
+  },
+  "reason": "4090 single-model research timing does not establish official end-to-end target compliance"
+}

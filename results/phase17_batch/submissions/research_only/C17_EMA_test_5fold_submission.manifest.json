@@ -1,0 +1,36 @@
+{
+  "candidate_id": "C17_EMA_test_5fold",
+  "source_model_ids": [
+    "C17_F01",
+    "C17_F02",
+    "C17_F03",
+    "C17_F04",
+    "C17_F05"
+  ],
+  "checkpoint_sha256": [
+    "67f7835d75806068b37b51b55bba55848dc25929c1c7b742d3e467862e9451f8",
+    "a0994f36a32c0e5470be806dd3d022c0e19740042863c2544f50c036999a9177",
+    "831e0c703f7fe951d165eab064b6866a7acaa14beaf635b27d05a4fa922f7ecc",
+    "73ef0cb545c0a91fa1a3e60dfbbd19c1b112fc108b108c53386f462b855effab",
+    "8bbcf6687e7b0d695c05d54a858081b7a05ca29cb2fe4b51ab2378a2183ac90d"
+  ],
+  "fusion_formula": "five fold equal mean",
+  "val_macro_auc": 0.8055846465702867,
+  "weight_size_bytes": 556883475,
+  "research_4090_latency_ms": null,
+  "research_benchmark_gpu": null,
+  "official_target_latency_ms": null,
+  "size_status": "SIZE_FAIL",
+  "latency_status": "LATENCY_UNVERIFIED",
+  "deployment_status": "SIZE_FAIL",
+  "test_probability_sha256": "0fc44a7daacaed4e94bf470babd0661e1bb5ef270192548f5f3c58a3cac5dff8",
+  "format": {
+    "status": "FORMAT_PASS",
+    "study_count": 1414,
+    "rows": 14140,
+    "classes_per_study": 10,
+    "sha256": "fabe817797cc6ea22ce7ce182b61192fa22f5740d6c2652b38947cd7e75cecd1"
+  },
+  "test_auc": null,
+  "hidden_test_labels_used": false
+}

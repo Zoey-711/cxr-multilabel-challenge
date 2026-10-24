@@ -1,0 +1,27 @@
+{
+  "candidate": "E17_F01",
+  "device": "NVIDIA GeForce RTX 4090",
+  "cuda_runtime": "12.8",
+  "precision": "fp16_amp",
+  "batch_size": 1,
+  "warmup": 3,
+  "measured_samples": 20,
+  "model_count": 3,
+  "checkpoint_sha256": [
+    "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+    "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+    "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c"
+  ],
+  "fusion_model_weights": {
+    "D17_F01": 0.25,
+    "C17_F01": 0.25,
+    "S17_F01": 0.5
+  },
+  "scope": "ZIP read/decode, deterministic preprocessing, host-to-device, ALL sequential model forwards, sigmoid, CPU transfer, probability reduction, synchronize",
+  "mean_ms": 63.402907364070415,
+  "p50_ms": 65.97542343661189,
+  "p95_ms": 70.4211313277483,
+  "max_ms": 72.99382612109184,
+  "official_compliance": false,
+  "reason": "Official target hardware and timing scope/statistic have not been fully specified"
+}

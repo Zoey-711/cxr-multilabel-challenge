@@ -1,0 +1,27 @@
+{
+  "sources": [
+    "C17_F01",
+    "C17_F02",
+    "C17_F03",
+    "C17_F04",
+    "C17_F05"
+  ],
+  "rule": "concatenate unseen fold only",
+  "csv_sha256": "1f9af9e7bc32c9df9ede0c5538e0ccd387d6796de72d4254b1cedc1ecfffd676",
+  "rows": 18513,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

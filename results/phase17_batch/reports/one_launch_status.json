@@ -1,0 +1,498 @@
+{
+  "generated_utc": "2026-10-24T04:00:33.392902+00:00",
+  "tasks": {
+    "D17_F01": "complete",
+    "D17_F02": "complete",
+    "D17_F03": "complete",
+    "D17_F04": "complete",
+    "D17_F05": "complete",
+    "C17_F01": "complete",
+    "C17_F02": "complete",
+    "C17_F03": "complete",
+    "C17_F04": "complete",
+    "C17_F05": "complete",
+    "S17_F01": "complete",
+    "S17_F02": "complete",
+    "S17_F03": "complete",
+    "S17_F04": "complete",
+    "S17_F05": "complete",
+    "N17_F01": "complete",
+    "N17_F02": "complete",
+    "N17_F03": "complete",
+    "N17_F04": "complete",
+    "N17_F05": "complete",
+    "CS17_F01": "complete",
+    "NM17_F01": "complete",
+    "G17_FULL_01": "complete",
+    "G17_FULL_02": "complete",
+    "H17_DISTILL_01": "complete",
+    "H17_DISTILL_02": "complete"
+  },
+  "complete_count": 26,
+  "failed_or_blocked": {},
+  "model_file_inventory": {
+    "D17_F01": {
+      "done_sha256": "d68924a2615d88e18985473c362593ee669b6134e55f93897096b3ed50bc2208",
+      "verified_sha256": {
+        "best_model.pth": "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c",
+        "resolved_config.yaml": "0f6b0a8fc08bd3992a6083b3171f62859cef45b62e811f31b27837097bcb7387",
+        "metrics.json": "a76319d3d0f96911e08d603e5969d2f5d36a1ac33c86c5daf11c7192103a6885",
+        "val_predictions.csv": "45840348578e1c6aa9f97a32840014ac63ad0e1670632c5e9a249c37465e4308",
+        "test_predictions.csv": "51ea56218d01be1d7994658792aed1960fa8798d58561d4971dde293651b10c9",
+        "model_size.json": "f564f48427ed332b848e955767d95f772c1c5cd9fecdb1da4e33ac3ce36a2eec",
+        "inference_benchmark.json": "d15fed3d2d4d06db36316f9df79a2865bd73c72c98e19eee1cbcbc60e909e5ba",
+        "deployment_eligibility.json": "fd10c0a3c521a9852ab35ef0545ccdb0dc35c660d83c5d0cc5a8f180916e0b18",
+        "run_manifest.json": "fb1633990f22dede22c1252936260140e9a7225bca75fc91c1ba2d4dd8bbd7b5",
+        "checkpoint_resume.pth": "84388b8f14736b8d13cfc102826ac7c7cb3aa478258f559a8fb148b29502a07d",
+        "oof_predictions.csv": "06706bfdd86c7d040584ff901acaad41728b1a79df3f9da5b605240a297c85ff"
+      }
+    },
+    "D17_F02": {
+      "done_sha256": "bd3d7448905c3220da324b52f25c2ef9db75f1823932c1e7750f80489daea9fd",
+      "verified_sha256": {
+        "best_model.pth": "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+        "resolved_config.yaml": "166ec47c8c352fdaa4326c0cbc1fcd56529cd5e7d75d2a6199c6f2e88d17ef7b",
+        "metrics.json": "4c36f72e2f25e6c4a694e00e5d72608ac169114197ee97f95170a0357b537f62",
+        "val_predictions.csv": "8dff7290a3002507f5fb8f3e6740cebee4a72a97469a7a6095fe48cc5b0d6664",
+        "test_predictions.csv": "eca711c32ccf8a1abcec46d69153eb595e755fa0f03aa313c2acf644e407e4de",
+        "model_size.json": "f564f48427ed332b848e955767d95f772c1c5cd9fecdb1da4e33ac3ce36a2eec",
+        "inference_benchmark.json": "8e67a2932b8391f253561441fe6f7307b276ee967f54db4f8d634920acddc0e0",
+        "deployment_eligibility.json": "8c102c64178b9b986358e16fbf8022781c2df5a4ba4b3393c8fb60b096371ab7",
+        "run_manifest.json": "292edd850aa4b3123e913af265617dcefc9f20840a2a55865848f23405c70a91",
+        "checkpoint_resume.pth": "5b792f09a02d72add1b7adfef7d0f13ac0de8b87558d7857192a3590acbc1cf1",
+        "oof_predictions.csv": "45873cac232083eb3f68bf174d9da608aaea32a03ef8a5a878512f0a24b2674a"
+      }
+    },
+    "D17_F03": {
+      "done_sha256": "ea1acd345cec54ecf4e244ae50ca23d253c7e5edbaa1f13f902c31d4f77c4bfc",
+      "verified_sha256": {
+        "best_model.pth": "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+        "resolved_config.yaml": "5e5484d602e5d338f8d9b33abfdb58d6deea156de6361bcede622cf44248210a",
+        "metrics.json": "78f62f8e129897d16e3e7e59ec0b9cedf9f9d53f879a00d30d9a4012c0ce2526",
+        "val_predictions.csv": "195fd1fb9288ae4b0abfb6c47a8af88eb604ec1f23b91830d899e20d922c9903",
+        "test_predictions.csv": "b4fafdb54f6521e2961d5d529045220d526bd5206df1436f1c8882852d69fbfb",
+        "model_size.json": "f564f48427ed332b848e955767d95f772c1c5cd9fecdb1da4e33ac3ce36a2eec",
+        "inference_benchmark.json": "893a056dd504a881e85603dc98f5f4c488f653d5cc7be6d94011e401a59e9e96",
+        "deployment_eligibility.json": "6f32653c15cf7c41bf50eb0ff0a735bd52965793c662cb35d99a8a240bac73c1",
+        "run_manifest.json": "0a3e928d09ba9e0bbb59907cdb53e8261d6825c0fd5e9a82ae06d0b32ed60cbb",
+        "checkpoint_resume.pth": "739b3771f3628acaa0bf3a1be437808361b318f43ba615b800bf29fd3b99bfbf",
+        "oof_predictions.csv": "6a307c4019e24660847a1ec81c30ee2ad58a0d89e70526c8377d13af9fb6e678"
+      }
+    },
+    "D17_F04": {
+      "done_sha256": "b8c49a5f892c363a669a175c74a893861513072c3731bbc8431f66392586e990",
+      "verified_sha256": {
+        "best_model.pth": "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+        "resolved_config.yaml": "1dd05daacb4bc58b073434e498ef58e099eb13000080240fa04030315add439f",
+        "metrics.json": "0ce59a1ca8c81b751f2082950342df045aad5708d41e44fd0653fe6b151a8d15",
+        "val_predictions.csv": "d8a46d37067a61d528fc3024bcbdb2948721b0212fef0f9acf43944540106b76",
+        "test_predictions.csv": "9ff3fac6c6c857b5fce3617e2286d49189712c91b4ce11765d47bf6d98d653cf",
+        "model_size.json": "f564f48427ed332b848e955767d95f772c1c5cd9fecdb1da4e33ac3ce36a2eec",
+        "inference_benchmark.json": "9494ee2999a760ec8c10ab208b604ba2a52ce5e035fa846d4ed4041553988500",
+        "deployment_eligibility.json": "232d5783b0bde59ac10b1f022d42865c28264233c51e8a4f657ed53482d1116f",
+        "run_manifest.json": "334af6fe0c59c54db2f28436296884c36e58b71e4caaa34505e141313194ae1e",
+        "checkpoint_resume.pth": "84229f1df527996af92e7957cff55d22be618de5934bde40bb80bfb7133e326d",
+        "oof_predictions.csv": "b658852e8bac06163b3dbe3063041ce1a65885a4845199686848be105209efb1"
+      }
+    },
+    "D17_F05": {
+      "done_sha256": "39efe227443d2996ed44b8bfc7b0cf78615eb3572e4863a66a5eb61610a5e2e9",
+      "verified_sha256": {
+        "best_model.pth": "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9",
+        "resolved_config.yaml": "2cfd1a9c858c4b250a2b02e098de1c8450e67ac7095e57e01a574864846daba1",
+        "metrics.json": "aced74181da7c302dffd460644bc225f32ae71b371eb6f29911bbfbe0dd59d5a",
+        "val_predictions.csv": "6cacbf24b613f58fe36921ae411415216e712cd71610454210e092ef0fc33d5d",
+        "test_predictions.csv": "67e38b35355adac8191bab19cb30e299b7cea8fef571c52a4f3bc9a4fe5a9578",
+        "model_size.json": "f564f48427ed332b848e955767d95f772c1c5cd9fecdb1da4e33ac3ce36a2eec",
+        "inference_benchmark.json": "ea168cb03642b3f27ffafb9b6741ecf00a13a76eafb29eb9906f6fb875cabf82",
+        "deployment_eligibility.json": "2dc402b46d4b3da36e77d72da226a07e02cd961cbf66de1485d66d3e1b20599b",
+        "run_manifest.json": "b403ddb261721f4d0e0208156521e6d36c552fb47931e06f2cc08ae7a4e81746",
+        "checkpoint_resume.pth": "691af204cd6de454ce27b8899bb021b2358840e1a386ff2a4fb3c6907f64f256",
+        "oof_predictions.csv": "9abbea3dbe091863741a00ac7f34f0e1201850148f8cb586ada234cf5a750bb5"
+      }
+    },
+    "C17_F01": {
+      "done_sha256": "b5f91662b2fe4c39a21419395c859c142f82f944ddbe830d5f0bec6acf3a4795",
+      "verified_sha256": {
+        "best_model.pth": "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+        "resolved_config.yaml": "ff262e478d18b06c2f794168cae18704a71350810f64f1e0efa6831f3e163c51",
+        "metrics.json": "d66bb67434f2dcd76f3808f22550b16d50b5e16272a73e82391b50da0fb77181",
+        "val_predictions.csv": "f6dd74fe5cfa836322fbb230b0f3cf72bab1de70cba17ead7ec6ef255033e9c9",
+        "test_predictions.csv": "24b34d961866d63399c6c62c0c983c74af0e77c18d220f51633c15de2d24d5a9",
+        "model_size.json": "b967a39672333a797b7eeb30896790cd22b74a042755a20f2667eac84189a8c8",
+        "inference_benchmark.json": "91d9bfe60ae054668d70c8ec2161f197782338605e8926a720141ced2fbc8028",
+        "deployment_eligibility.json": "bf398b14a3172324ea98d3962d3e7f4aafaa944efa9b30e50727f05017b13483",
+        "run_manifest.json": "d1f686e70b8155672ad7af8e14bff2c051fe7876cf56c6ed7dba95a958e9031a",
+        "checkpoint_resume.pth": "918c74368276548943510911ccda32d6d0599f10e412d3169238aa5ec79d9d48",
+        "oof_predictions.csv": "35da02a5bbf6be33251726e5bc87da2ca47f93a6e86096f7855f2fc781010a92",
+        "ema_best_model.pth": "67f7835d75806068b37b51b55bba55848dc25929c1c7b742d3e467862e9451f8",
+        "ema_val_predictions.csv": "e149cf4ad270ad516417b427ccebe5e8209a338efc5b964937ff035d74a927ab",
+        "ema_test_predictions.csv": "6ecd4dab5f8f043f28f725425916971641f44e0580184037de2300ccd887fb78",
+        "ema_oof_predictions.csv": "767f193ca71a894419eb17841ba8fe3edc9dbed1d89b20c831505f56df1158a6"
+      }
+    },
+    "C17_F02": {
+      "done_sha256": "c95974d4364f54c4c4d34405e0ead6b5e0703c7e7fd98a458479fce89fcd1d7c",
+      "verified_sha256": {
+        "best_model.pth": "fd329616180e1bd35d979a72a920a62f925ce08b30bb34e5a33ad873910b3d08",
+        "resolved_config.yaml": "8b8fc2575b6fa8b2bbc432c0e9ad032eebbf71c3044f47f196386f6e30031800",
+        "metrics.json": "0f544eef3f97b51bd0ac4873b43645c403c939e49e921c75a0aaed893e845567",
+        "val_predictions.csv": "3ad8a70487ce665409cd249bd5fb0f2b1ac6840290802aca395146ca1894f53d",
+        "test_predictions.csv": "8624f8a5aad25f9dac9002cac9df42bbce463c2359c1c79802f0dde9eb5d7033",
+        "model_size.json": "b967a39672333a797b7eeb30896790cd22b74a042755a20f2667eac84189a8c8",
+        "inference_benchmark.json": "5caef5bf5cac22f78218877995160c84640360fadc6d1cc33ebe370366a57590",
+        "deployment_eligibility.json": "576eb899e5df28337f78bc0c38789b94f3021759a1b859e232d59c3bf4c110e1",
+        "run_manifest.json": "b51f00b72ea0f88691678c545f1a3ed02b6313f337ed83e74dca45abcc0e0dd5",
+        "checkpoint_resume.pth": "f116bd615b48902fbc0d637b999113706f629bf88ed313896f3fe9987c769ae5",
+        "oof_predictions.csv": "73c10f7d95644acd90b20e99404af850bd12708d03060319167595db93eba2d4",
+        "ema_best_model.pth": "a0994f36a32c0e5470be806dd3d022c0e19740042863c2544f50c036999a9177",
+        "ema_val_predictions.csv": "4759b2f2ef4aaea1ae4aacb2317eec92b37316c0d257f372d75581baf513549f",
+        "ema_test_predictions.csv": "7393cdd91dbbd7c639d5e2ad6d1c7c41410a2385aff5a43d016e80d3c2442c6b",
+        "ema_oof_predictions.csv": "a08a5d3ac523058d626b7948a41a817b6caa8a195814381b8314d6930d627937"
+      }
+    },
+    "C17_F03": {
+      "done_sha256": "d752f77273ebbe7a58f288342735b104cf24918f6e96e3687a4d6d9fec6ec6b8",
+      "verified_sha256": {
+        "best_model.pth": "73517af672f1f8cc6ef9c9092d832c2c8d5db171e5561455298cfef44b8e7985",
+        "resolved_config.yaml": "f1748e864ce0cf27a9c02bf30383d488f55233481e1a45068d9b263623334655",
+        "metrics.json": "af9a34b580c5eb6ad2fff0764cca5ddfffab6b026af38d8b60aa4757a4e60d08",
+        "val_predictions.csv": "e478890a6741fd02669187645c5e819aeefe7ea18ffb644bc659b6c3e79857ee",
+        "test_predictions.csv": "25f58f91b15e794a11064ac003bf107ab288b664bf28690112f87e43bbe0dabf",
+        "model_size.json": "b967a39672333a797b7eeb30896790cd22b74a042755a20f2667eac84189a8c8",
+        "inference_benchmark.json": "8aa94ac389e525cd485dc63eaeb09739ec44e2a0e3b25aa07175082b333541b9",
+        "deployment_eligibility.json": "1608144a7911570879389d32a925963244f3c301117455ab879344883c327c8f",
+        "run_manifest.json": "157ec302d6acab32423df48839805ef05d0a75dd8984aa33d369fdb499a2abe6",
+        "checkpoint_resume.pth": "09b256b64c0a8c69b8c904687a8defe553de9afa7a6d5ec14786e0cc6f052087",
+        "oof_predictions.csv": "6383018b5d2c2fc8716259ee3bd44757af07511b900da12f809b2f050ca9499e",
+        "ema_best_model.pth": "831e0c703f7fe951d165eab064b6866a7acaa14beaf635b27d05a4fa922f7ecc",
+        "ema_val_predictions.csv": "c16e5fa7f9cc3ff5614aa0a0d89794e7bc94782cfe2413cf03c3c849a44bd50d",
+        "ema_test_predictions.csv": "7a8b89d129e7c937086860da2d371c6f846ba890e6ecda7448807d163b4e9b57",
+        "ema_oof_predictions.csv": "d806af360cc1856e66065fe04ee931b7d5539643c013985e3d48b9c69bcdc834"
+      }
+    },
+    "C17_F04": {
+      "done_sha256": "9260b7caccae6c2b5a6f143fa49dd6fc9119d08bf6371f35e4b27a9650e4330f",
+      "verified_sha256": {
+        "best_model.pth": "0be8596a36474527a29a242c17df5a5f94a3dbfa495208e112c5560e3df55a73",
+        "resolved_config.yaml": "679458048f9d12cf78b359fe993724447a1bd53aaa0b04b0d708d50d20dca8b5",
+        "metrics.json": "ba697036de309f8d2b2ac4c72021b8b0f923660cd65d026c9afbceb61d7c0df3",
+        "val_predictions.csv": "cf6fde32c6ae4fd1bc268902813141a0b40a3a79da968873255c3581a0fca3b5",
+        "test_predictions.csv": "0ae6640f3d24848a527c7d017bc2816d5a0e8293657dfb1578606c1b59466fe4",
+        "model_size.json": "b967a39672333a797b7eeb30896790cd22b74a042755a20f2667eac84189a8c8",
+        "inference_benchmark.json": "319db5a00da927d754db02c6f475b62cb93f390482ded60bb58493306daf2910",
+        "deployment_eligibility.json": "e34105a598c1e13448ee968629693221056c5ace932fe37784162947e34cca53",
+        "run_manifest.json": "56df8e84792a429841a0561b2c94f5a4d1102b634b4f79f7f49fafa136099703",
+        "checkpoint_resume.pth": "707edc26912e08bfc3e5b4a09b69a6991b729a418fbcdf319ff8c15254c40395",
+        "oof_predictions.csv": "76c8871468fa23fd2f646a6f62d0febfee41447a271c965342f0d5f53ffcce2c",
+        "ema_best_model.pth": "73ef0cb545c0a91fa1a3e60dfbbd19c1b112fc108b108c53386f462b855effab",
+        "ema_val_predictions.csv": "786f4cb7aeff35aa6591c39ec5af260797766d0e2ecabb517b607aac3ad6b620",
+        "ema_test_predictions.csv": "cf6e7c65dd1cb5c636103563c4751789c4e4214920be6af52d58fc55b42e3eae",
+        "ema_oof_predictions.csv": "84052de501651561739e03a1fcc9e924621b6b1cdde1fd670ad066a0ad44393e"
+      }
+    },
+    "C17_F05": {
+      "done_sha256": "8756d55cb72ce07567ffa6303eeb5fb9971c8b29a3ef34e4648e9591beb6bea9",
+      "verified_sha256": {
+        "best_model.pth": "6115ded995c0f61b075e28b3706b79819e71aec97a9faac9d9b4d8a6b44e9073",
+        "resolved_config.yaml": "a09a4572ba6f9139af5c24d5a14e287b66fed7d7312e37d1bff38f879cfdcce7",
+        "metrics.json": "2bf78ccaa24e4f628d2c5b32eea483ee64f5332d1ad9a28a829af59e4a56173d",
+        "val_predictions.csv": "21d81fa2be55c171a2a65bff4c2594d221a053f3eb6e8dfb1ff93ce2ab9ab3a2",
+        "test_predictions.csv": "c7ab76e37f3c360744b4d2ced6f5c1a8c557a4fa35d3376ed7329fe120ab6069",
+        "model_size.json": "b967a39672333a797b7eeb30896790cd22b74a042755a20f2667eac84189a8c8",
+        "inference_benchmark.json": "08d28119eb688a1bbd7a69d39db053969e0f5f29be6f3e1ae1bd96ab89dc8339",
+        "deployment_eligibility.json": "b2c4394b9f60412c6e36ed3200b344ed6e5c427d5bb59708e9c5a821964f564d",
+        "run_manifest.json": "8821ae7bab371452a76e40f7ea55ed71cf6adb8ffb2cb02ed8a4cdd3d3bad8a9",
+        "checkpoint_resume.pth": "56cf49b91501a6d98a4cacab31e7fb11ccffad5cfd0e038423bac5bca9797807",
+        "oof_predictions.csv": "7e56a859c4e76eeed5eb1ae1509dda452f4fa9c49683366b85a3d9da12e794fb",
+        "ema_best_model.pth": "8bbcf6687e7b0d695c05d54a858081b7a05ca29cb2fe4b51ab2378a2183ac90d",
+        "ema_val_predictions.csv": "cf289cc3f040aa6381e63853219b2e5c15808e50d847169358ca1002810e8126",
+        "ema_test_predictions.csv": "89eea2d5d622e09f7791cd55905e9312d02ceaee5e0e4106fa364588bb2f029c",
+        "ema_oof_predictions.csv": "4ea47a8ffee31c25731618a57c67673daab9fd2ebb6b11f3e6013e1e07d3f611"
+      }
+    },
+    "S17_F01": {
+      "done_sha256": "1ed9c0c136f9f2ce60511174b5fded1d673566437f7e2c3708edc6931755c4fb",
+      "verified_sha256": {
+        "best_model.pth": "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+        "resolved_config.yaml": "71ac7c8b064e973c930286eebdb297981ea961e894f2cc442f45c3e06a39b16d",
+        "metrics.json": "1fff066e23aa72439f7401779bd92d5f287e0c3c43268755dac5db5166a67595",
+        "val_predictions.csv": "682d3dc6b3a91e2d2326b36b807fca5428d58ce884237bcf53a2b5aa2ccfaf44",
+        "test_predictions.csv": "e8ee4c0e7eb7146a0b7441b62d79c478ca70c232df8e549c8b9480b36ee5e318",
+        "model_size.json": "775d0d7e3e2735317a857fda4753eb676d8733b71f31feff9d1edfcef43df792",
+        "inference_benchmark.json": "c1688ce00d7c1afee81bfac849187754d0c241232eb474cc8ad1a1527e86d7ea",
+        "deployment_eligibility.json": "fd3b96ce2e99d694eb607185f3ea65277fc0cfdaa9ea9461fd9f4b32562bed1f",
+        "run_manifest.json": "f3f3d869dde0d8f5fb4340aec23bcaeab1baf0a4f36007c4bfa7a5a24b3475e5",
+        "checkpoint_resume.pth": "6778784405ee465d1e51414ff9f003d99df6028ca4da984757332519ce40ce37",
+        "oof_predictions.csv": "b7ea31919953077e643ff125aeca3c0dee0f66aa3b7c44e9e4191845833bf9e7"
+      }
+    },
+    "S17_F02": {
+      "done_sha256": "dbac27e25bef5e4a984f98aa81f0f71582724803c6aeddf1d2995c53d596dd85",
+      "verified_sha256": {
+        "best_model.pth": "3fb7a9a1da671d5aab0d68ee0b57d3d1cb5d9431958015f4dbff19506e69ef88",
+        "resolved_config.yaml": "556fc159343c9ee66ca7a0ee3fb8260d050bbf70baa3c128bbd36f5ef458cc5e",
+        "metrics.json": "10e5eb6f78bb8369f018b07a7a9789d71890ae0633ff02ab92f53b3aa6fec4e2",
+        "val_predictions.csv": "9ea1892bbd3b43e7e5721643f907fec3d7a6d63725780bd40409afde0cba488d",
+        "test_predictions.csv": "d4b3d06f3e8d6ed7295fa043b3db548c9e35fdb7c4ffaa418a6b25b0e720ce31",
+        "model_size.json": "775d0d7e3e2735317a857fda4753eb676d8733b71f31feff9d1edfcef43df792",
+        "inference_benchmark.json": "179c95199aafad7e9ed3e3d184196143ef3a9da71528840dcc0460508cc03e72",
+        "deployment_eligibility.json": "cbe566c8d5ef1dcde1fdc24de50c186fcb2e679ca31b8f20a06c5b665a2ce568",
+        "run_manifest.json": "024f1e02757471d0a47914a035ad745d9c22003bae66491b5be937b27f191ee6",
+        "checkpoint_resume.pth": "12b1bae315f7659823dd1f8bc9cd49b379af60d53beac42ce22f2e4b22e571e4",
+        "oof_predictions.csv": "64eeb56ee1a13a5d89bf9a3834f2824c8d0702e9ebea3e8b26fc27a7cbf018dc"
+      }
+    },
+    "S17_F03": {
+      "done_sha256": "7fb4e1b2585df0b9ac34213353dab7c88070ced00e3b60a910d71e275ce234e3",
+      "verified_sha256": {
+        "best_model.pth": "67840823d7c712f30112fac22e87a2ac24a37d31e170f211bf5a80988a3857ba",
+        "resolved_config.yaml": "830c2c54be44a635a6adf591f8e86d4f108f6df7d88f2c850fb9057671539ea4",
+        "metrics.json": "bed632393925a50ac34bfd399a660bb32aaefb2ca1a4eb0a399189f57d091c3d",
+        "val_predictions.csv": "268ce6985cd4cc20f304b226eaa61fe757c2c6f99df55faa45124442d95260c0",
+        "test_predictions.csv": "b2cde69151db1120ee7631af651a07069239b596dcaad2bcca71a529cc370d04",
+        "model_size.json": "775d0d7e3e2735317a857fda4753eb676d8733b71f31feff9d1edfcef43df792",
+        "inference_benchmark.json": "bd9e388f2ee00d297b73ddadeec5b4a69fd8669ca0431123d3d5768f19646174",
+        "deployment_eligibility.json": "72a1f1b58649b67d101ef4fb679aa3b6024be9c55ff389841b33b3769af78151",
+        "run_manifest.json": "97c82a84a418faa39b8b8f3350b26bdbfca28b54974ceb17e1f0e59038b09bbb",
+        "checkpoint_resume.pth": "7c742f50076875cecd3d65c6e7fa9e757f58fda4dfec78eca202ab74fedeeea5",
+        "oof_predictions.csv": "fa1217507c03239eca8d36d6bed9131ab57432072f8686ab609942c0eb19f64d"
+      }
+    },
+    "S17_F04": {
+      "done_sha256": "0e8aefdd9506d1bbba59d5f192829ce490997f7a7bcef8357d2d48ff6cd2f5d6",
+      "verified_sha256": {
+        "best_model.pth": "efd1ca2cec491f7302d4fe31d5fbe4df9f762a88ed12db3f1998134f3945015b",
+        "resolved_config.yaml": "ae0c953a5af6b5e4cff0b9b67bb612159baf8882ba003b44a157491add1d5fb1",
+        "metrics.json": "db70f4e43dcb0aa6ff7022b276348710605e96b9a1e9bd1c6fff957a578cfc8b",
+        "val_predictions.csv": "04b7cdcb70d6d93638ce5b103034bb5840ed256d9fd5b46e8d5df224d1bbd9a8",
+        "test_predictions.csv": "de942a5ca9bafeca49f8b84e0d9ddc0a825356221bd286215c0750bf831eb69c",
+        "model_size.json": "775d0d7e3e2735317a857fda4753eb676d8733b71f31feff9d1edfcef43df792",
+        "inference_benchmark.json": "ed0fb2ea27821757e995fe1d151bffb70abdf9b93319869d80493ad45b249017",
+        "deployment_eligibility.json": "2fbae02cb34c80f9bd212cd026e7e978148fcae72de955dbe50012a4975ad390",
+        "run_manifest.json": "58ca0252a1d2486345e449363aa605885b814bc9c28f76d2709ceb92a7def729",
+        "checkpoint_resume.pth": "ab1b1e7299abfc77366f5bdcbf421692c5f3e0de48b3a4c66657976b960e24a2",
+        "oof_predictions.csv": "7048a9c9e44ecafb010dd889ef79114d6359b2b52307de79f970b7172371d556"
+      }
+    },
+    "S17_F05": {
+      "done_sha256": "8959a35052a94cb50274637987cd042053899519ae52530dcfb8cec0d636c58f",
+      "verified_sha256": {
+        "best_model.pth": "016e1155a7cce2f5a899e352186899969d9bbb84185bf0082b4d73334973f160",
+        "resolved_config.yaml": "78deb482e4a592421d805abed8b10ceca7a332b264e45bfbcf995f522d538c0c",
+        "metrics.json": "9c7987514216025691cd6f3dd68051449167fcb4dc10a09f16fdc14b627ba2e3",
+        "val_predictions.csv": "b2d19ad2df53e3484381021cfec164c955b02988c4e747d09297627676e00a2c",
+        "test_predictions.csv": "a9f2072232fa48f71e2a8e60cfc783357a21fc280648c0ed352089a2e809de89",
+        "model_size.json": "775d0d7e3e2735317a857fda4753eb676d8733b71f31feff9d1edfcef43df792",
+        "inference_benchmark.json": "99a54bf88aec1c1da38f078d1d02395b2e767084314084fa1d2a4abb233ae0aa",
+        "deployment_eligibility.json": "fe0ce5b30480d5dc41e2fd212b20b3e8b85092a596d538794e5d2e91cbd81e04",
+        "run_manifest.json": "2a98bfd2f351331988202cb2a5859f44e44de759256bbc66cf6be24e713f0e0c",
+        "checkpoint_resume.pth": "75df07b3e715d0cb10291339489fac3b4de75e8a298b7b40836e2b9d462725d1",
+        "oof_predictions.csv": "2283ff1ab37bcf71a3e070fa611466f0c5a5c82274ec569d1b7de8d5cf2addbf"
+      }
+    },
+    "N17_F01": {
+      "done_sha256": "8ecbb0d30e8220bc45040dfec898ea5a77ec838dfc13c031742f1f8689106a45",
+      "verified_sha256": {
+        "best_model.pth": "014166b240b05b70d1959214d6add0ff9611b986a8b1bb0d97e0fdb813e90e3d",
+        "resolved_config.yaml": "fe5c4990c890504a517cc0d2d0b67d1f6eac6b36d13d508af4ed072d9ceee63f",
+        "metrics.json": "0741e668b31eeffe7cfbcca2088eb3a2305b8eb511478540b3f4b042fce7c3ec",
+        "val_predictions.csv": "055930c1a03f5fe45dba2f73034cfa688331418598daed76bdd536eeccc04acc",
+        "test_predictions.csv": "e3b6148dd10834b06b0ac21610d59ba918a8ae9e93b59131218bcde481a15abb",
+        "model_size.json": "94f0bc9cff034e02cdfeba6ae9c7d1fb1f4b2eec97a1997b25eb6dc59f989f9f",
+        "inference_benchmark.json": "d0da554494a458fbf1d6011bc197d3d7ff54c65de55317684b319983642bbf53",
+        "deployment_eligibility.json": "a1aea2a4d52d60bea297b12d7b2bdce5ecc46efe2b378140466bfbfb56862528",
+        "run_manifest.json": "e457e00ca5db116ccb71ed43f0ed49c858166bae222df8677670ff989263239c",
+        "checkpoint_resume.pth": "b0439ac9419d781c7d3d0407e080b20d37c9da45d3f9cd7ff2c1377e4d8d9d51",
+        "oof_predictions.csv": "69c25681bd9030870dea96faffb83e8a4ee8d62358b4195c0d5ccd1d3129ae97",
+        "ema_best_model.pth": "04ce77da9c788d64c6b74831e37ff0d8bf4d05565f4ad0415da2f7b609dd610a",
+        "ema_val_predictions.csv": "49fe3e600e9cabe37c26751611741f50cbf9b2e86b56756167a0e3b61f9a3680",
+        "ema_test_predictions.csv": "c2576e8b8719529d26fa4beede55728b973823067874c17addb778ea8c121438",
+        "ema_oof_predictions.csv": "9cbcd5e17385a033d22fab743a630c7cbe77a0387c59b3789cd3ac113f836680"
+      }
+    },
+    "N17_F02": {
+      "done_sha256": "8e6cc6f2dd6d50df4d66315e75858c4f32e3025618b94e2da327811a1b0871db",
+      "verified_sha256": {
+        "best_model.pth": "413ca1deda6be6a2a99e0bcde4f97839a46046dfe3605d4726f8cee563c2d6c5",
+        "resolved_config.yaml": "8d163ad979e09210d725ccd428efad5edc8d06e0f5493c30f8636548b31e8364",
+        "metrics.json": "fa737a74548135f7d316cc3fb3346590e652b4d25fd39d33a2d9bf5ab42d069c",
+        "val_predictions.csv": "164e29523d6f6cd6f5dc8939416394dcb1c1801c01bba60a6c245599fdd433c7",
+        "test_predictions.csv": "6d2695062e08dafa38bb46895047db19ae36db1626564f1f80ffdd5e71fb80aa",
+        "model_size.json": "94f0bc9cff034e02cdfeba6ae9c7d1fb1f4b2eec97a1997b25eb6dc59f989f9f",
+        "inference_benchmark.json": "a060ecefd9b64efe443227baafbef21fda88b9d86b16801e92338d71adcc795c",
+        "deployment_eligibility.json": "aada5e6cb946a599fdebda1d55933247d0de54c08298e65188b020c933b1e719",
+        "run_manifest.json": "1569529abda36efa1b6939f6da5a1b8408001eed897fcd7cefcb30b6f5f7692e",
+        "checkpoint_resume.pth": "b18f97fe8deb73738283c9b6879000d4f6ebc81c1faac36611ba6285de2c256d",
+        "oof_predictions.csv": "14b93281c1fab28981d0356ea6662df819dd7768ab3887831465b89a7a435839",
+        "ema_best_model.pth": "559b2a2a5aba930a53839b9027ba35f7590dd54ee049b1328b03eafab4082719",
+        "ema_val_predictions.csv": "7ba8eb2bedaf3d16f852b2563e0eccd8fc175794c972d60d16646cec4be064c2",
+        "ema_test_predictions.csv": "f75f8ac52a333007b7384afd268b0442c4dbf35dfaed5fe3d2a6098fe19e3bf6",
+        "ema_oof_predictions.csv": "c0492ca650b5a85dbeddc317ec054971b97cf8a1c8e7e76e8b8bb5ed789703a2"
+      }
+    },
+    "N17_F03": {
+      "done_sha256": "2dd64b69c008cdc895610afe4997e52f229d3271121c73fc1d8cf9657820b3d2",
+      "verified_sha256": {
+        "best_model.pth": "4f7287f22352476d450bb6bafbba21553be42356ed5da75d2d90d74bee3ae8b5",
+        "resolved_config.yaml": "5c1ef8151c06fdec087d185ffad9b9f50e47868ac2f7252f595dd99f7bec27cd",
+        "metrics.json": "92d80038982ac56d573722c6fc578cf07a2091744db4036904a7d9ab83f4c160",
+        "val_predictions.csv": "5a815178af9ed9c86cf94f0eddf9dc647c2931ac05fbae060bced8e75b3f785a",
+        "test_predictions.csv": "bb852a0839fab1cab0f3efa1393d1cbb7c0c418a916c8d9b679d9903b430b0be",
+        "model_size.json": "94f0bc9cff034e02cdfeba6ae9c7d1fb1f4b2eec97a1997b25eb6dc59f989f9f",
+        "inference_benchmark.json": "3a441a7b9ce4168b467210af31ed85c24a2b40a3a77f09d70739f4156793029b",
+        "deployment_eligibility.json": "9b6a9bef0b0aba103707b678520152a077f054dacc6596cb79f167b77b673bb1",
+        "run_manifest.json": "3a8c90d41a7b59dd0e34c1cc759e3bb85816bbd5412cae1bf26dcda927843bec",
+        "checkpoint_resume.pth": "e7d9d7178f6d3fcd2e8cc355dd23f31f5253e78383971088b6e1febf01ce76ae",
+        "oof_predictions.csv": "1eaa6453457232a2122ca8e32736d6b92fd5553927fd565cfe278923fec31a0c",
+        "ema_best_model.pth": "58db9e8cb9d41096eb01f310ac3adf403e57b1f471789ce5a1ac24be9348bb36",
+        "ema_val_predictions.csv": "530c0a6696c142d9ef21eebab5f9e7fa99ba7723810025ef2636c44899a61af2",
+        "ema_test_predictions.csv": "509cad8eee07d20252791c4770ceff9a5ed42dfd4ce7d0de91e2943006737433",
+        "ema_oof_predictions.csv": "1485ab2731851188c9e290278227a4045e6bc1b40be5bd45ff91b6cba16c8b58"
+      }
+    },
+    "N17_F04": {
+      "done_sha256": "4d903796e616a2d0a0dc860c9e26563c37576361cf5beaa8ce1e68964c6833f6",
+      "verified_sha256": {
+        "best_model.pth": "78bdd0eed36b1e06f5fe858262f046d635fd8023243d76c6fbc18f26f5f7a814",
+        "resolved_config.yaml": "c81188b6822efe70221683b97b3a693734b36c901997b4a4cdea0280b2d169fb",
+        "metrics.json": "fa61d408119190ff10c0698ae407f551081e86911156cba1e195fc72d8da70d7",
+        "val_predictions.csv": "459c4b0b8054752f91b2b0e8cc6249e10ca71e54299fa9d5815d605095ee1ec2",
+        "test_predictions.csv": "9a9e8dd670f1b01af8092a8ff0568c9dcdafda0d4ecb8d20d6acc31f52965ca4",
+        "model_size.json": "94f0bc9cff034e02cdfeba6ae9c7d1fb1f4b2eec97a1997b25eb6dc59f989f9f",
+        "inference_benchmark.json": "4281f7838e31f27040d411c4750d064f5bb908ab0e5263ae3478d7ae7e22d696",
+        "deployment_eligibility.json": "b8690d2efce4829e0bf4b3d28a1cfc8266fdecaac5fb90351085865f16d75a92",
+        "run_manifest.json": "71d420da3f7f49dcf48f0658a68b5c247c5b59a74bf31077946f3d9074b79082",
+        "checkpoint_resume.pth": "e2fb47511927371800cb47029199ead61b569f46be01e24bc072f6ef24935f8b",
+        "oof_predictions.csv": "4b870d523b4749a15ba94b7b833134c92a196554e3bcd208ccd8253acfd5c3a9",
+        "ema_best_model.pth": "7b1620d2d8f76ec4d0551833448514aa829bffad99bf582d50d0292a09f48af7",
+        "ema_val_predictions.csv": "18f7dc36e0d9a49c775aa229cf83b627ed39a9c45192e0030056907136e497f7",
+        "ema_test_predictions.csv": "0f81bd3e32c68174279ae2d4cb0c86c62410f38831add99294307da73deaeb06",
+        "ema_oof_predictions.csv": "5f6658645c32db74b543e895407aa6189a8e27f0e9216fc192456b413ccccd68"
+      }
+    },
+    "N17_F05": {
+      "done_sha256": "659e2347b5cc8fc9ffe3010064bde957740b8fd2824da851436e616e02345e0f",
+      "verified_sha256": {
+        "best_model.pth": "7e9c964124d6e0f35b9ae24d4d63d67c248c042f6a0fa4df72dc0d1068d73016",
+        "resolved_config.yaml": "32fdb54f4180ce2976c7679d08812f39a3ae9a324373dabf15a09b610e33b7f1",
+        "metrics.json": "a8525f7be75ba7b9e4cc4d2dee4fa6fcc77243cf16bea50777e5cc19311f86e9",
+        "val_predictions.csv": "b4fcd86fae98f95cc1ff19d073ab6c1c8ee600f0783b2352ebb5b0bf1d097564",
+        "test_predictions.csv": "4c28056f4d455a5b0e1f3e70113225429774c8d072ff559545c08694794a1271",
+        "model_size.json": "94f0bc9cff034e02cdfeba6ae9c7d1fb1f4b2eec97a1997b25eb6dc59f989f9f",
+        "inference_benchmark.json": "252934d910445048529886d4a6ce6eb93850b512c87ff911b938a4dbb0c68ad9",
+        "deployment_eligibility.json": "d608a0838f0240dfad5c43be955510143f4532c2ff8b354e1bfaf3935202838d",
+        "run_manifest.json": "5b29c277806451716c11437172a15ca64f507cec5b5fe0d5bbfdbc4717b83880",
+        "checkpoint_resume.pth": "e25283c5598ed2b3cbea8b27087b292865fb495830b13ebbdcfa827051420e9c",
+        "oof_predictions.csv": "9b4c91b8b223e74c46a26fd33703c86b83351f92462fd76bb2722eece5f3ea62",
+        "ema_best_model.pth": "bee8f121fda1cebb85c23a11a544e3ac99fb8b4665f10c2c4aa784fca9fb32c3",
+        "ema_val_predictions.csv": "133602cd797c0e9f9d244db8a473da95efad91cc74718e2f592b5a2dd53efa7c",
+        "ema_test_predictions.csv": "16b8e5d65882e8b39483ae962b4e59079d6d9ca523b3aa222fe981450fa0570f",
+        "ema_oof_predictions.csv": "4806d74f5d3207ef4c2b4f5d704e1c29c4491aba8eb6111678394eca7db2bd92"
+      }
+    },
+    "CS17_F01": {
+      "done_sha256": "a635b2e47cc914190a65215cac7a8defeb748f06f6395e74352564defab17663",
+      "verified_sha256": {
+        "best_model.pth": "75d068b0feaafcbae148fe1f2b394983683214213afc6ed6e4a88e7c1007cdb9",
+        "resolved_config.yaml": "6d39ca52ff9e636f445e110d572e4d10009288cf0574c99a4d27a226fcadf7cb",
+        "metrics.json": "56e91f664df7b1d2e43557c287e30b83a9825abdcda6f27a37f1e77c2fb98793",
+        "val_predictions.csv": "5f9c123de0e47518699c3ec5749802e0c54adce5b0b9204c4d277c23c0b15dc5",
+        "test_predictions.csv": "e3c021193c1736111e7bf45845617f63af8b44f27e7620da3b8008c480dfa54f",
+        "model_size.json": "b8a6964799767821cacd04c77f59588f688798e596341d102c9a70fa1447c2a4",
+        "inference_benchmark.json": "f236edc3bd96375dba5f9197e337f96a939f9ac0688e42fe3caaec364a2bb393",
+        "deployment_eligibility.json": "a290d37330955654da65f495753945520747a0d00d58e0afe71bcad58db79e05",
+        "run_manifest.json": "9b161cf199e3e58e8fe506a46f6fc893537f0f57fd8fe2440ebb1ff884897c08",
+        "checkpoint_resume.pth": "225882ecf04abe198284ee8322f45a44822e46264ee1dd97c5b5e0da6d8e7d19",
+        "oof_predictions.csv": "6ba954765df32463b2d2e65dc73b62ce258cae782b88eddd228a4648c157c760"
+      }
+    },
+    "NM17_F01": {
+      "done_sha256": "2afeb81914c807284c3aa25e2ca6746db07e7639dc60529799d10adbb860d16c",
+      "verified_sha256": {
+        "best_model.pth": "b6953a62eaf604a1b804a840b733bf47c62dae266a8d597db421478470a4f7b0",
+        "resolved_config.yaml": "7c590ec681ade72bbd5a867f68e3f33db456a49fcf07776bac542796ebef9346",
+        "metrics.json": "a9f8aa0f01348e2e51cd1e5bdd58bdf17a65406df8c3a156bd53f905c93b9399",
+        "val_predictions.csv": "43cce11a61a50ad4014d8e185432a0282230583b9f7c18bd87ff3eed804ae803",
+        "test_predictions.csv": "d249ab1ee5dfba3fddf04e0f62bf7ae8f1aab7072e2cf27076ebaca318b220cc",
+        "model_size.json": "914a82aacb13e758710cd5eb21b224f5d9263c7e87a461b0ae50dd88fe750625",
+        "inference_benchmark.json": "938d942bf937c4ad9581c6461b560bd79bcc1fdbf63dd8eeee0b933d47bde70b",
+        "deployment_eligibility.json": "adf2a8c5cc3bea815f2ec3e1eb46884677aa3c95e3f7e40786089cf6bba27ee3",
+        "run_manifest.json": "d6927269dd2ea24e7c80f91d1b9ef4968d1a1471fc21698bdb5c82ccebb37684",
+        "checkpoint_resume.pth": "69856bc362455adbe5be006234ba3c6e8fa2d53e40e5e587e41f821c0cc316ae",
+        "oof_predictions.csv": "d19708a7017f926435d0691ff4c2cefbe11ea5eabeb2e7e1dfe2c0c7917df3aa"
+      }
+    },
+    "G17_FULL_01": {
+      "done_sha256": "62498a7bcf1b347250a5abf2f0e2a08000f5ab55c6c22f9c0207caea8f61a852",
+      "verified_sha256": {
+        "best_model.pth": "2c56df87e1702b8f3357d26228a8ec4fb411bdea67e76c57064f21718673f0c5",
+        "resolved_config.yaml": "1ad655e17687baad9fed17d21afe65088fe2dcfbad497e73dba409d75f6e27ae",
+        "metrics.json": "0fffdf95e94f781a0678cc484c83bda78f01835e1588c71bbc33fed92fef0e07",
+        "val_predictions.csv": "94b8f4f7c47972fa2cb24569bf3a64567c01c7da0d6141f47a30fff9a72adaeb",
+        "test_predictions.csv": "42eee9cca47ceb00979299cd0947caf75273dfd4c75ef7c6c3e601d171ed4953",
+        "model_size.json": "94f0bc9cff034e02cdfeba6ae9c7d1fb1f4b2eec97a1997b25eb6dc59f989f9f",
+        "inference_benchmark.json": "d0ccd11ac04929619c9bf5fa3e9a880a7601c5cad1bb62fe7a27ced97bee5bdf",
+        "deployment_eligibility.json": "e1b406729da7ee3022c6d77930479029d42ae57a8eaa386e0565b10f5bd04866",
+        "run_manifest.json": "8888f847b2080efb71d0295dfdc9ee536cafdcf4341f9905ccf44148366de008",
+        "checkpoint_resume.pth": "0d86943e4bc7d2ff7f13804750b5e434e0af43cba1e77e863a4948419e133a65",
+        "ema_best_model.pth": "1009b4f0f53f8c864b7c72a42251254cadaba576bd7395fbb735913617964d7a",
+        "ema_val_predictions.csv": "ed47ca366db75c898647d5ae371d3b78985ad1d459b6fe0f8e657d648655add8",
+        "ema_test_predictions.csv": "b85a030801092ef3335093de72997340c4d315f8a7ad8e4543bc2fbca5996de7"
+      }
+    },
+    "G17_FULL_02": {
+      "done_sha256": "27c54fb8fb6cc089dc3816082b66083c601ba37531cd9fe1e09e15f3ee691e34",
+      "verified_sha256": {
+        "best_model.pth": "c1abe198cd10da705ba526bf0aa003bc0aa71ca15b01be80cd7db14f977b840b",
+        "resolved_config.yaml": "a87f8c7eb98628d643800fd2db6002b92b29d34f0699303b326ce1e369714943",
+        "metrics.json": "a6c644abf709dbdd15a6828983271acbee85f2712203c82fd168de9725e1ea33",
+        "val_predictions.csv": "b735830b0d4102af5762024c5924b2ebf0647f89b09463587ac367975ab7f7ee",
+        "test_predictions.csv": "596dbc1391227a461cfd4ca5cd4c18e4aac0f1e16bf05b5842ca79a115edae29",
+        "model_size.json": "b967a39672333a797b7eeb30896790cd22b74a042755a20f2667eac84189a8c8",
+        "inference_benchmark.json": "8120022a367cfbe34c894061107f7307f3b0647be840d236575bc164e77c6c87",
+        "deployment_eligibility.json": "34a467e3727580d39ee0db60934e013578877b210b85d4a96abceb9377fbceb0",
+        "run_manifest.json": "d2b09b63384b6271841c4a7003e7db74ad2790af5ee03cc0e2cfc92a231de6ec",
+        "checkpoint_resume.pth": "56e393b0acc87e77237fe2400580cf5461b3a42b7f0e3196e54432916c3b10fb",
+        "ema_best_model.pth": "ac2243f17c48a2d10b978d4d952fa0edc282c330d770d83c3e69ccf3347b441c",
+        "ema_val_predictions.csv": "29d7aa2096cd392cce6fc190ec20cac3b67b80fae8688e8453f2852672024c15",
+        "ema_test_predictions.csv": "b30ad34bfb75ae017e907c57bfa56934850645c18dd93e032e0fa43d5c6fc350"
+      }
+    },
+    "H17_DISTILL_01": {
+      "done_sha256": "c929e495cb78c581cbded4fadcc1bab1f1234610c3b4df8ee88e5be87b241cf3",
+      "verified_sha256": {
+        "best_model.pth": "e534d5434c4154832e68d2007c381198e47a6c932ef61182821f132adae7149f",
+        "resolved_config.yaml": "12aff78a1351ffbe49d04d5de0b7a7e2cbdbd4d3a6ab1a296e953db691e3afba",
+        "metrics.json": "bb6fdef231f4cd0a70a6b9a076d691d4c6a5028a3cbeed116dd7bc2d3ba1528e",
+        "val_predictions.csv": "c7c61a038ec950741c4449f7a3050e8bcf093df12ff346bf9e2ccc8728840d8c",
+        "test_predictions.csv": "f64069eca1cac738ce59bc103974c74932d61e42f9f8cef25cd7001340019053",
+        "model_size.json": "f564f48427ed332b848e955767d95f772c1c5cd9fecdb1da4e33ac3ce36a2eec",
+        "inference_benchmark.json": "5479eaae11d40c5701031be589c3418c5d171285ee74448e3613fdbf3c97d16a",
+        "deployment_eligibility.json": "ef2213970160151160c16b171bd9fc4e22c7423b23d531b13ad8edd82d446bb6",
+        "run_manifest.json": "4c013445c8cd18d083e91a49021b1d660801648dd7125ce5728cc2eac3b2c6f5",
+        "checkpoint_resume.pth": "d23d773513759af2364f7c43603b2df565e99a29cc135d80a304b4dd26077ab8"
+      }
+    },
+    "H17_DISTILL_02": {
+      "done_sha256": "ae73c0f8798a77a85afd2cb5827ecbec2aef92fef0042bbe31cc9e85ed5a9e96",
+      "verified_sha256": {
+        "best_model.pth": "35fb17621d21b1f0825bd3dd8b2090c2e0115593d3ef8b7b0cedc2a380022f69",
+        "resolved_config.yaml": "5c2bce4c1294c5d62bd096dacdc12871d3351f0fe2a737b95d98c62acf975717",
+        "metrics.json": "9d8151cf9b106f5e8669e2a6e1ba16aedce0b7c3d8fe8d6b93d037eb92c51cce",
+        "val_predictions.csv": "59c7b5e301e7ed94d6372138d10039bb1717186dac4a2c7c8d59e85e75e36d4e",
+        "test_predictions.csv": "027ff51016e5cccedee0332ab3070fc91c188ca94d534977d545099e628cefc0",
+        "model_size.json": "94f0bc9cff034e02cdfeba6ae9c7d1fb1f4b2eec97a1997b25eb6dc59f989f9f",
+        "inference_benchmark.json": "5f897e45fea8adf220aa2da14badf9bcbfd646fc57853aecf8008199af40f9d0",
+        "deployment_eligibility.json": "172efb26fa6b08cc600817366bf978a022d7ee8afe90055d4ccc993935f2da8b",
+        "run_manifest.json": "56643ce18500dea7488a2221a4861dc7fabe01a42fb5429149ad53525cb98042",
+        "checkpoint_resume.pth": "d75d253c14ef8ee8229d97a2724100832a856f139e24e00ea2205e3b240ba307",
+        "ema_best_model.pth": "9b4a78564290ca45edba94a4228b655df34013c42ac01b370a5bb7ef346aa626",
+        "ema_val_predictions.csv": "8913b66aa0a3087a282445955bf4b59496c1fec1810b2b8bd2afd2ce2ec4cbc9",
+        "ema_test_predictions.csv": "965050f8565f2b8afb6413856d3617bd38bd5355ce927f18e006f47d1e18386d"
+      }
+    }
+  },
+  "delivery_root": "/home/zlhll/cxr_results/phase17_batch",
+  "archives_created": false
+}

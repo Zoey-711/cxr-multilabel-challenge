@@ -1,0 +1,42 @@
+[
+  {
+    "model_id": "G17_FULL_01",
+    "state": "complete",
+    "best_epoch": 4,
+    "val_macro_auc": 0.7999635125689042,
+    "oof_macro_auc": "N/A",
+    "gpu_hours": 1.1888513828128473,
+    "weight_bytes": 81651999,
+    "reason": ""
+  },
+  {
+    "model_id": "G17_FULL_02",
+    "state": "complete",
+    "best_epoch": 3,
+    "val_macro_auc": 0.799038383484008,
+    "oof_macro_auc": "N/A",
+    "gpu_hours": 1.1972980634001498,
+    "weight_bytes": 111375943,
+    "reason": ""
+  },
+  {
+    "model_id": "H17_DISTILL_01",
+    "state": "complete",
+    "best_epoch": 4,
+    "val_macro_auc": 0.8038634083563043,
+    "oof_macro_auc": "N/A",
+    "gpu_hours": 0.42929041266105034,
+    "weight_bytes": 28453416,
+    "reason": ""
+  },
+  {
+    "model_id": "H17_DISTILL_02",
+    "state": "complete",
+    "best_epoch": 4,
+    "val_macro_auc": 0.8086139109408185,
+    "oof_macro_auc": "N/A",
+    "gpu_hours": 1.1969985093479045,
+    "weight_bytes": 81651999,
+    "reason": ""
+  }
+]

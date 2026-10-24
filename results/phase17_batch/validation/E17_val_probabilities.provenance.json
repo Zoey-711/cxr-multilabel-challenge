@@ -1,0 +1,29 @@
+{
+  "formula": {
+    "D5": 0.25,
+    "C5": 0.25,
+    "S5": 0.5
+  },
+  "sources": [
+    "D5",
+    "C5",
+    "S5"
+  ],
+  "csv_sha256": "2e90e22747d5c3cbba03b179a752b7ac189b6db7ace805b08b949d21cb741871",
+  "rows": 859,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

@@ -1,0 +1,28 @@
+{
+  "candidate_id": "H17_DISTILL_01",
+  "source_model_ids": [
+    "H17_DISTILL_01"
+  ],
+  "checkpoint_sha256": [
+    "e534d5434c4154832e68d2007c381198e47a6c932ef61182821f132adae7149f"
+  ],
+  "fusion_formula": "single model",
+  "val_macro_auc": 0.8038634083563043,
+  "weight_size_bytes": 28453416,
+  "official_target_latency_ms": null,
+  "research_4090_latency_ms": 58.748470386490226,
+  "research_benchmark_gpu": "NVIDIA GeForce RTX 4090",
+  "size_status": "PASS",
+  "latency_status": "LATENCY_UNVERIFIED",
+  "deployment_status": "LATENCY_UNVERIFIED",
+  "test_probability_sha256": "f64069eca1cac738ce59bc103974c74932d61e42f9f8cef25cd7001340019053",
+  "format": {
+    "status": "FORMAT_PASS",
+    "study_count": 1414,
+    "rows": 14140,
+    "classes_per_study": 10,
+    "sha256": "a9def79997db44de18b2a90be55e4b4a9ee754c24788c5e7f8d1df815b403ea3"
+  },
+  "test_auc": null,
+  "hidden_test_labels_used": false
+}

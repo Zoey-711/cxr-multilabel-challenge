@@ -1,0 +1,7 @@
+{
+  "best_epoch": 5,
+  "macro_auc": 0.8062132644957121,
+  "macro_f1": 0.35181276783272314,
+  "zero_predicted_class_studies": 96,
+  "best_model_bytes": 81666223
+}

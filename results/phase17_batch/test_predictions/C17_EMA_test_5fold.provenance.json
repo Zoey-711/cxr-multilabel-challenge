@@ -1,0 +1,35 @@
+{
+  "sources": [
+    "C17_F01_EMA",
+    "C17_F02_EMA",
+    "C17_F03_EMA",
+    "C17_F04_EMA",
+    "C17_F05_EMA"
+  ],
+  "source_sha256": {
+    "C17_F01_EMA": "6ecd4dab5f8f043f28f725425916971641f44e0580184037de2300ccd887fb78",
+    "C17_F02_EMA": "7393cdd91dbbd7c639d5e2ad6d1c7c41410a2385aff5a43d016e80d3c2442c6b",
+    "C17_F03_EMA": "7a8b89d129e7c937086860da2d371c6f846ba890e6ecda7448807d163b4e9b57",
+    "C17_F04_EMA": "cf6e7c65dd1cb5c636103563c4751789c4e4214920be6af52d58fc55b42e3eae",
+    "C17_F05_EMA": "89eea2d5d622e09f7791cd55905e9312d02ceaee5e0e4106fa364588bb2f029c"
+  },
+  "formula": "equal weight 0.2 per fold",
+  "no_test_labels": true,
+  "csv_sha256": "0fc44a7daacaed4e94bf470babd0661e1bb5ef270192548f5f3c58a3cac5dff8",
+  "rows": 1414,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

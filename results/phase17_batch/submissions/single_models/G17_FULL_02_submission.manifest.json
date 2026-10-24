@@ -1,0 +1,28 @@
+{
+  "candidate_id": "G17_FULL_02",
+  "source_model_ids": [
+    "G17_FULL_02"
+  ],
+  "checkpoint_sha256": [
+    "c1abe198cd10da705ba526bf0aa003bc0aa71ca15b01be80cd7db14f977b840b"
+  ],
+  "fusion_formula": "single model",
+  "val_macro_auc": 0.799038383484008,
+  "weight_size_bytes": 111375943,
+  "official_target_latency_ms": null,
+  "research_4090_latency_ms": 54.23717750236392,
+  "research_benchmark_gpu": "NVIDIA GeForce RTX 4090",
+  "size_status": "PASS",
+  "latency_status": "LATENCY_UNVERIFIED",
+  "deployment_status": "LATENCY_UNVERIFIED",
+  "test_probability_sha256": "596dbc1391227a461cfd4ca5cd4c18e4aac0f1e16bf05b5842ca79a115edae29",
+  "format": {
+    "status": "FORMAT_PASS",
+    "study_count": 1414,
+    "rows": 14140,
+    "classes_per_study": 10,
+    "sha256": "e51382cd1b72644c285435f94eb6f2edbdc24f0e0eae70ccdb329f46d1507897"
+  },
+  "test_auc": null,
+  "hidden_test_labels_used": false
+}

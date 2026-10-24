@@ -1,0 +1,11 @@
+{
+  "state": "COMPLETE",
+  "sources": [
+    "S17_F01",
+    "S17_F02",
+    "S17_F03",
+    "S17_F04",
+    "S17_F05"
+  ],
+  "sha256": "4ecb8deec9afa9df9388a03c7cc6b03999df524c8602b4985343e1d0ec35c4e8"
+}

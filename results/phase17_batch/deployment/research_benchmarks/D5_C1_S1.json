@@ -1,0 +1,35 @@
+{
+  "candidate": "D5_C1_S1",
+  "device": "NVIDIA GeForce RTX 4090",
+  "cuda_runtime": "12.8",
+  "precision": "fp16_amp",
+  "batch_size": 1,
+  "warmup": 3,
+  "measured_samples": 20,
+  "model_count": 7,
+  "checkpoint_sha256": [
+    "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+    "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+    "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+    "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+    "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9",
+    "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+    "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c"
+  ],
+  "fusion_model_weights": {
+    "D17_F01": 0.05,
+    "D17_F02": 0.05,
+    "D17_F03": 0.05,
+    "D17_F04": 0.05,
+    "D17_F05": 0.05,
+    "C17_F01": 0.25,
+    "S17_F01": 0.5
+  },
+  "scope": "ZIP read/decode, deterministic preprocessing, host-to-device, ALL sequential model forwards, sigmoid, CPU transfer, probability reduction, synchronize",
+  "mean_ms": 87.42759390734136,
+  "p50_ms": 90.37230769172311,
+  "p95_ms": 94.60570537485182,
+  "max_ms": 97.56943862885237,
+  "official_compliance": false,
+  "reason": "Official target hardware and timing scope/statistic have not been fully specified"
+}

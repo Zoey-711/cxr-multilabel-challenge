@@ -1,0 +1,343 @@
+{
+  "best_epoch": 4,
+  "stop_epoch": 4,
+  "kind": "ema",
+  "official_val": {
+    "all": {
+      "studies": 859,
+      "patients": 228,
+      "macro_auc": 0.800022476115738,
+      "macro_ap": 0.43063344892743166,
+      "macro_f1_at_0_5": 0.31895236030323265,
+      "per_class": [
+        {
+          "class_id": 1,
+          "positive_studies": 24,
+          "negative_studies": 835,
+          "positive_patients": 16,
+          "negative_patients": 227,
+          "auc": 0.6854790419161677,
+          "ap": 0.08471600926264607,
+          "f1": 0.0
+        },
+        {
+          "class_id": 2,
+          "positive_studies": 37,
+          "negative_studies": 822,
+          "positive_patients": 13,
+          "negative_patients": 227,
+          "auc": 0.8377885184454528,
+          "ap": 0.3095438068509153,
+          "f1": 0.22641509433962265
+        },
+        {
+          "class_id": 3,
+          "positive_studies": 46,
+          "negative_studies": 813,
+          "positive_patients": 24,
+          "negative_patients": 226,
+          "auc": 0.7693192149312797,
+          "ap": 0.21012294159747402,
+          "f1": 0.0
+        },
+        {
+          "class_id": 4,
+          "positive_studies": 68,
+          "negative_studies": 791,
+          "positive_patients": 37,
+          "negative_patients": 223,
+          "auc": 0.7347921469472745,
+          "ap": 0.21984273127970658,
+          "f1": 0.0
+        },
+        {
+          "class_id": 5,
+          "positive_studies": 115,
+          "negative_studies": 744,
+          "positive_patients": 34,
+          "negative_patients": 221,
+          "auc": 0.8843618513323983,
+          "ap": 0.46737616651467756,
+          "f1": 0.46511627906976744
+        },
+        {
+          "class_id": 6,
+          "positive_studies": 177,
+          "negative_studies": 682,
+          "positive_patients": 66,
+          "negative_patients": 211,
+          "auc": 0.7704160246533128,
+          "ap": 0.42789437680603154,
+          "f1": 0.29770992366412213
+        },
+        {
+          "class_id": 7,
+          "positive_studies": 193,
+          "negative_studies": 666,
+          "positive_patients": 64,
+          "negative_patients": 218,
+          "auc": 0.7975734802159673,
+          "ap": 0.5065884998274609,
+          "f1": 0.4
+        },
+        {
+          "class_id": 8,
+          "positive_studies": 214,
+          "negative_studies": 645,
+          "positive_patients": 72,
+          "negative_patients": 213,
+          "auc": 0.7294718539447946,
+          "ap": 0.45038622956875995,
+          "f1": 0.31683168316831684
+        },
+        {
+          "class_id": 9,
+          "positive_studies": 260,
+          "negative_studies": 599,
+          "positive_patients": 52,
+          "negative_patients": 217,
+          "auc": 0.9093906510851419,
+          "ap": 0.7929091463772968,
+          "f1": 0.7173489278752436
+        },
+        {
+          "class_id": 10,
+          "positive_studies": 306,
+          "negative_studies": 553,
+          "positive_patients": 166,
+          "negative_patients": 123,
+          "auc": 0.881631977685589,
+          "ap": 0.8369545811893485,
+          "f1": 0.7661016949152543
+        }
+      ]
+    },
+    "single_image": {
+      "studies": 391,
+      "patients": 94,
+      "macro_auc": 0.7281496245891977,
+      "macro_ap": 0.4191218286716921,
+      "macro_f1_at_0_5": 0.31347337615815835,
+      "per_class": [
+        {
+          "class_id": 1,
+          "positive_studies": 15,
+          "negative_studies": 376,
+          "positive_patients": 11,
+          "negative_patients": 92,
+          "auc": 0.5593971631205674,
+          "ap": 0.08544813873558187,
+          "f1": 0.0
+        },
+        {
+          "class_id": 2,
+          "positive_studies": 18,
+          "negative_studies": 373,
+          "positive_patients": 10,
+          "negative_patients": 90,
+          "auc": 0.8310991957104558,
+          "ap": 0.3536430446333244,
+          "f1": 0.3448275862068966
+        },
+        {
+          "class_id": 3,
+          "positive_studies": 31,
+          "negative_studies": 360,
+          "positive_patients": 16,
+          "negative_patients": 93,
+          "auc": 0.7258512544802868,
+          "ap": 0.2622463307007153,
+          "f1": 0.0
+        },
+        {
+          "class_id": 4,
+          "positive_studies": 37,
+          "negative_studies": 354,
+          "positive_patients": 19,
+          "negative_patients": 90,
+          "auc": 0.6794167048404337,
+          "ap": 0.27682269712003116,
+          "f1": 0.0
+        },
+        {
+          "class_id": 5,
+          "positive_studies": 78,
+          "negative_studies": 313,
+          "positive_patients": 26,
+          "negative_patients": 87,
+          "auc": 0.8107438355042189,
+          "ap": 0.47670053095035003,
+          "f1": 0.46357615894039733
+        },
+        {
+          "class_id": 6,
+          "positive_studies": 113,
+          "negative_studies": 278,
+          "positive_patients": 44,
+          "negative_patients": 83,
+          "auc": 0.6416725027058,
+          "ap": 0.41493958680334797,
+          "f1": 0.2988505747126437
+        },
+        {
+          "class_id": 7,
+          "positive_studies": 106,
+          "negative_studies": 285,
+          "positive_patients": 42,
+          "negative_patients": 85,
+          "auc": 0.7448030453492221,
+          "ap": 0.520164430386697,
+          "f1": 0.45989304812834225
+        },
+        {
+          "class_id": 8,
+          "positive_studies": 137,
+          "negative_studies": 254,
+          "positive_patients": 44,
+          "negative_patients": 81,
+          "auc": 0.6785591125926778,
+          "ap": 0.4825387130267069,
+          "f1": 0.3886255924170616
+        },
+        {
+          "class_id": 9,
+          "positive_studies": 162,
+          "negative_studies": 229,
+          "positive_patients": 41,
+          "negative_patients": 79,
+          "auc": 0.8376327564828293,
+          "ap": 0.7675869239583183,
+          "f1": 0.6833855799373041
+        },
+        {
+          "class_id": 10,
+          "positive_studies": 75,
+          "negative_studies": 316,
+          "positive_patients": 43,
+          "negative_patients": 77,
+          "auc": 0.7723206751054852,
+          "ap": 0.5511278904018488,
+          "f1": 0.49557522123893805
+        }
+      ]
+    },
+    "multi_image": {
+      "studies": 468,
+      "patients": 198,
+      "macro_auc": 0.8415148183344243,
+      "macro_ap": 0.43444819969993026,
+      "macro_f1_at_0_5": 0.29081810931280117,
+      "per_class": [
+        {
+          "class_id": 1,
+          "positive_studies": 9,
+          "negative_studies": 459,
+          "positive_patients": 8,
+          "negative_patients": 198,
+          "auc": 0.7797143548777535,
+          "ap": 0.12813219421884395,
+          "f1": 0.0
+        },
+        {
+          "class_id": 2,
+          "positive_studies": 19,
+          "negative_studies": 449,
+          "positive_patients": 8,
+          "negative_patients": 198,
+          "auc": 0.8564060485288946,
+          "ap": 0.32483164967088674,
+          "f1": 0.08333333333333333
+        },
+        {
+          "class_id": 3,
+          "positive_studies": 15,
+          "negative_studies": 453,
+          "positive_patients": 15,
+          "negative_patients": 195,
+          "auc": 0.7961736571008095,
+          "ap": 0.14461753595526244,
+          "f1": 0.0
+        },
+        {
+          "class_id": 4,
+          "positive_studies": 31,
+          "negative_studies": 437,
+          "positive_patients": 25,
+          "negative_patients": 193,
+          "auc": 0.7847493910090795,
+          "ap": 0.2049486504148797,
+          "f1": 0.0
+        },
+        {
+          "class_id": 5,
+          "positive_studies": 37,
+          "negative_studies": 431,
+          "positive_patients": 21,
+          "negative_patients": 192,
+          "auc": 0.9398005894525616,
+          "ap": 0.47973312419127856,
+          "f1": 0.46875
+        },
+        {
+          "class_id": 6,
+          "positive_studies": 64,
+          "negative_studies": 404,
+          "positive_patients": 39,
+          "negative_patients": 184,
+          "auc": 0.851871905940594,
+          "ap": 0.47839960909163803,
+          "f1": 0.29545454545454547
+        },
+        {
+          "class_id": 7,
+          "positive_studies": 87,
+          "negative_studies": 381,
+          "positive_patients": 42,
+          "negative_patients": 184,
+          "auc": 0.8476031013364709,
+          "ap": 0.512584614140236,
+          "f1": 0.3050847457627119
+        },
+        {
+          "class_id": 8,
+          "positive_studies": 77,
+          "negative_studies": 391,
+          "positive_patients": 49,
+          "negative_patients": 184,
+          "auc": 0.7086225794665693,
+          "ap": 0.3510118067413079,
+          "f1": 0.15217391304347827
+        },
+        {
+          "class_id": 9,
+          "positive_studies": 98,
+          "negative_studies": 370,
+          "positive_patients": 39,
+          "negative_patients": 186,
+          "auc": 0.9503033645890788,
+          "ap": 0.8219546362634538,
+          "f1": 0.7731958762886598
+        },
+        {
+          "class_id": 10,
+          "positive_studies": 231,
+          "negative_studies": 237,
+          "positive_patients": 141,
+          "negative_patients": 95,
+          "auc": 0.8999031910424315,
+          "ap": 0.898268176311516,
+          "f1": 0.8301886792452831
+        }
+      ]
+    }
+  },
+  "resources": {
+    "epoch_hours": 1.1556888346288663,
+    "peak_allocated_mib": 2044,
+    "peak_reserved_mib": 2172,
+    "optimizer_steps": 7585,
+    "amp_skips": 3
+  },
+  "weights_bytes": 111376695,
+  "checkpoint_sha256": "ac2243f17c48a2d10b978d4d952fa0edc282c330d770d83c3e69ccf3347b441c"
+}

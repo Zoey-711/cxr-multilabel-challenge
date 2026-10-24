@@ -1,0 +1,16 @@
+{
+  "state": "complete",
+  "epoch": 12,
+  "best_auc": 0.7867543168530073,
+  "best_epoch": 4,
+  "patience_reference_auc": 0.7867543168530073,
+  "stale": 8,
+  "last_epoch": 12,
+  "early_stopping_patience": 8,
+  "early_stopping_min_delta": 0.0,
+  "early_stopping_monitor": "study_level_macro_auc",
+  "early_stopping_mode": "max",
+  "stop_epoch": 12,
+  "stop_reason": "patience_exhausted",
+  "best_model": "best_model.pt"
+}

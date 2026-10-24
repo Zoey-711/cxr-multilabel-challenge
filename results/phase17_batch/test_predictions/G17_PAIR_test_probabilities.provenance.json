@@ -1,0 +1,31 @@
+{
+  "sources": [
+    "G17_FULL_01",
+    "G17_FULL_02"
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "checkpoint_sha256": {
+    "G17_FULL_01": "2c56df87e1702b8f3357d26228a8ec4fb411bdea67e76c57064f21718673f0c5",
+    "G17_FULL_02": "c1abe198cd10da705ba526bf0aa003bc0aa71ca15b01be80cd7db14f977b840b"
+  },
+  "csv_sha256": "9038c156959fcab49855fd99e1ff38983f9b6560ffec1db94ba1f20bbe7c6538",
+  "rows": 1414,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

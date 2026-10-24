@@ -1,0 +1,11 @@
+{
+  "state": "COMPLETE",
+  "sources": [
+    "C17_F01_EMA",
+    "C17_F02_EMA",
+    "C17_F03_EMA",
+    "C17_F04_EMA",
+    "C17_F05_EMA"
+  ],
+  "sha256": "0fc44a7daacaed4e94bf470babd0661e1bb5ef270192548f5f3c58a3cac5dff8"
+}

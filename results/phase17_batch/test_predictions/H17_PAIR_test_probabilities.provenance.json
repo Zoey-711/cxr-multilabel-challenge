@@ -1,0 +1,31 @@
+{
+  "sources": [
+    "H17_DISTILL_01",
+    "H17_DISTILL_02"
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "checkpoint_sha256": {
+    "H17_DISTILL_01": "e534d5434c4154832e68d2007c381198e47a6c932ef61182821f132adae7149f",
+    "H17_DISTILL_02": "35fb17621d21b1f0825bd3dd8b2090c2e0115593d3ef8b7b0cedc2a380022f69"
+  },
+  "csv_sha256": "5b767eadaf5765d0e42f09ccac4075a140fbe81dd39ba1725a932080bd1ddae1",
+  "rows": 1414,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

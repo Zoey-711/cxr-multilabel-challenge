@@ -1,0 +1,177 @@
+{
+  "model_id": "S17_F02",
+  "git_commit": "8b7944d744f91e753b912367adeb354e8b7e21d5",
+  "code_manifest": "../../manifests/environment.json",
+  "config_sha256": "556fc159343c9ee66ca7a0ee3fb8260d050bbf70baa3c128bbd36f5ef458cc5e",
+  "fold_hashes": {
+    "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+    "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+    "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+  },
+  "training_image_index_sha256": "0820675c8c7811fc5b3f27afdf2eaf7516b2e87dff88b12b35cb96132f96f61c",
+  "seed": 42,
+  "pretrained": {
+    "source": "torchvision Swin_T_Weights.IMAGENET1K_V1",
+    "url": "https://download.pytorch.org/models/swin_t-704ceda3.pth",
+    "sha256": "704ceda373461b0a224fcdddd75cd2a5e9f8064512ed47adbddef7f343fd147b",
+    "size_bytes": 113445839,
+    "external_labeled_data_used_for_additional_training": false
+  },
+  "device": {
+    "python": "3.12.15",
+    "torch": "2.10.0+cu128",
+    "cuda_runtime": "12.8",
+    "cudnn_version": 91002,
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_memory_mib": 48508,
+    "torchvision": "0.25.0+cu128"
+  },
+  "end_utc": "2026-10-23T19:37:20.465387+00:00",
+  "start_utc": "2026-10-23T15:55:34.155485+00:00",
+  "state": "complete",
+  "files": {
+    "test_predictions.csv": {
+      "sha256": "d4b3d06f3e8d6ed7295fa043b3db548c9e35fdb7c4ffaa418a6b25b0e720ce31",
+      "bytes": 279712
+    },
+    "best_model.pth": {
+      "sha256": "3fb7a9a1da671d5aab0d68ee0b57d3d1cb5d9431958015f4dbff19506e69ef88",
+      "bytes": 110402570
+    },
+    "deployment_eligibility.json": {
+      "sha256": "cbe566c8d5ef1dcde1fdc24de50c186fcb2e679ca31b8f20a06c5b665a2ce568",
+      "bytes": 293
+    },
+    "oof_predictions.csv": {
+      "sha256": "64eeb56ee1a13a5d89bf9a3834f2824c8d0702e9ebea3e8b26fc27a7cbf018dc",
+      "bytes": 766221
+    },
+    "status.json": {
+      "sha256": "7b936764986eb0011fc8f43ed455928e11aee8845437f6627a85341e17fbae24",
+      "bytes": 420
+    },
+    "inference_benchmark.json": {
+      "sha256": "179c95199aafad7e9ed3e3d184196143ef3a9da71528840dcc0460508cc03e72",
+      "bytes": 507
+    },
+    "checkpoint_resume.pth": {
+      "sha256": "12b1bae315f7659823dd1f8bc9cd49b379af60d53beac42ce22f2e4b22e571e4",
+      "bytes": 496308275
+    },
+    "best_model.sha256": {
+      "sha256": "d8100fd95c859b80ff13f140677f6323a65f03680f1f023b6589d6d393a43496",
+      "bytes": 81
+    },
+    "val_predictions.provenance.json": {
+      "sha256": "1f8a340da2229e0f30824e340106633d82d6cb48d72606ad13a465ef050e5e28",
+      "bytes": 888
+    },
+    "environment.json": {
+      "sha256": "769ce4766f065c239cd88c0d40aaa0feee5170d7f931acb4bce42740169aeb4e",
+      "bytes": 200
+    },
+    "last_training.pt": {
+      "sha256": "12b1bae315f7659823dd1f8bc9cd49b379af60d53beac42ce22f2e4b22e571e4",
+      "bytes": 496308275
+    },
+    "seed.txt": {
+      "sha256": "084c799cd551dd1d8d5c5f9a5d593b2e931f5e36122ee5c793c1d08a19839cc0",
+      "bytes": 3
+    },
+    "oof_analysis.done.json": {
+      "sha256": "efb2de5d4eb7486a8b80f4629fd4ca3434ee72fdeee01b340d08d3d225cd67c7",
+      "bytes": 318
+    },
+    "best_model.pt": {
+      "sha256": "d68d2f914b779e6e89b7069effe647fce8342076d462f144b2e03ad2bfe87dbc",
+      "bytes": 110405322
+    },
+    "batch_timing.json": {
+      "sha256": "64f361cb0edead873fb78f87832214cab0178d9ee3f2e19695312f240fb60d78",
+      "bytes": 53
+    },
+    "train_stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "best_metrics.json": {
+      "sha256": "7b720f9d953ad6d38e65592f0311d3c7c0e1a3fd5c051882220f64182767cbc6",
+      "bytes": 3092
+    },
+    "latency.json": {
+      "sha256": "c2f9a2cc0df2e6e5de5e12bd648d899026024ac8f5b3bdcdd5a2a520cfbf41fb",
+      "bytes": 331
+    },
+    "batch_metrics.json": {
+      "sha256": "5086127b05fc569e511e0af246966fc482ca7b4a947f4ce89a5e7e6e4275cc4d",
+      "bytes": 23634
+    },
+    "test_predictions.provenance.json": {
+      "sha256": "9a68c3dc9c9656a04b5451c3b8b38b5d9ac224bf6022e71c4d3f3f2e5b75813f",
+      "bytes": 728
+    },
+    "train_stdout.log": {
+      "sha256": "3f5b9e253a23d51a219a9d2bf00d24552db68765ed0e510cc79f19c1f44085b9",
+      "bytes": 16465
+    },
+    "pretrained_source.json": {
+      "sha256": "10760a7e3f657a2bc2277b902cea43889560f9a17b96ff55661c8e4ed135aff1",
+      "bytes": 296
+    },
+    "model_size.json": {
+      "sha256": "775d0d7e3e2735317a857fda4753eb676d8733b71f31feff9d1edfcef43df792",
+      "bytes": 119
+    },
+    "oof_predictions.provenance.json": {
+      "sha256": "aa8ea7e234251c97b85135a2a5eacfc5daf3faecfdc851f6276f75619cd0f5dc",
+      "bytes": 889
+    },
+    "val_predictions.csv": {
+      "sha256": "9ea1892bbd3b43e7e5721643f907fec3d7a6d63725780bd40409afde0cba488d",
+      "bytes": 175708
+    },
+    "training_image_index.csv": {
+      "sha256": "0820675c8c7811fc5b3f27afdf2eaf7516b2e87dff88b12b35cb96132f96f61c",
+      "bytes": 2348808
+    },
+    "train_history.csv": {
+      "sha256": "f11099c8a48d275df469f205aae8d92a485b395678ce4c7e39699948e700cd82",
+      "bytes": 2202
+    },
+    "validation_analysis.done.json": {
+      "sha256": "69c133b0ffb60e0b4a3f892e7a42d476a84c521e824573bb2221ac18357b251f",
+      "bytes": 450
+    },
+    "train.log": {
+      "sha256": "501d4e438279a45a31af990c0a76ba46ffdb4bb89b1e4de15f2a811f060703dc",
+      "bytes": 16537
+    },
+    "resolved_config.yaml": {
+      "sha256": "556fc159343c9ee66ca7a0ee3fb8260d050bbf70baa3c128bbd36f5ef458cc5e",
+      "bytes": 2013
+    },
+    "config.yaml": {
+      "sha256": "556fc159343c9ee66ca7a0ee3fb8260d050bbf70baa3c128bbd36f5ef458cc5e",
+      "bytes": 2013
+    },
+    "metrics.jsonl": {
+      "sha256": "33ddd3aa85cb64b4dcedd34b7785227061b42d9c69ba43a0a120bc148d623599",
+      "bytes": 38031
+    },
+    "metrics.json": {
+      "sha256": "10e5eb6f78bb8369f018b07a7a9789d71890ae0633ff02ab92f53b3aa6fec4e2",
+      "bytes": 19286
+    },
+    "per_class_metrics.csv": {
+      "sha256": "602df547288ebd171dcb893e3a6d7ad74056d978cbabf6d5c22e37e879cc8e70",
+      "bytes": 5799
+    }
+  },
+  "ema": {
+    "enabled": false,
+    "decay": null,
+    "update": "first successful optimizer step copies; then decay each successful optimizer step",
+    "bn": "use_buffers=True: N01-compatible torch AveragedModel EMA of buffers; no recalibration",
+    "frequency": "every successful optimizer update; AMP-skipped updates excluded"
+  }
+}

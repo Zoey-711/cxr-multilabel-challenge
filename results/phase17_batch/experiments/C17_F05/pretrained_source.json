@@ -1,0 +1,7 @@
+{
+  "source": "torchvision ConvNeXt_Tiny_Weights.IMAGENET1K_V1",
+  "url": "https://download.pytorch.org/models/convnext_tiny-983f1562.pth",
+  "sha256": "983f1562536e84ff750a1576fb08e54de751dbf2e17c0d8a4a13704341fdcd3d",
+  "size_bytes": 114419221,
+  "external_labeled_data_used_for_additional_training": false
+}

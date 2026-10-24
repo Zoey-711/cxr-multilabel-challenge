@@ -1,0 +1,3 @@
+RUN /home/zlhll/cxr_results/phase17_batch/experiments/H17_DISTILL_01_GH_PREFLIGHT epochs=4 batch=16 accumulation=1 train_images=30344 val_studies=859
+PREFLIGHT: 1 optimizer steps; G/H verifies resume and short Val/Test files, no formal checkpoint
+epoch=1 step=1/1897 train_loss=0.70201 elapsed_s=2

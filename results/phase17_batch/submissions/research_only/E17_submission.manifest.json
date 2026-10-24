@@ -1,0 +1,60 @@
+{
+  "candidate_id": "E17",
+  "source_model_ids": [
+    "S17_F02",
+    "C17_F03",
+    "D17_F04",
+    "S17_F01",
+    "C17_F05",
+    "S17_F03",
+    "S17_F04",
+    "C17_F02",
+    "C17_F04",
+    "S17_F05",
+    "C17_F01",
+    "D17_F03",
+    "D17_F02",
+    "D17_F01",
+    "D17_F05"
+  ],
+  "checkpoint_sha256": [
+    "3fb7a9a1da671d5aab0d68ee0b57d3d1cb5d9431958015f4dbff19506e69ef88",
+    "73517af672f1f8cc6ef9c9092d832c2c8d5db171e5561455298cfef44b8e7985",
+    "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+    "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+    "6115ded995c0f61b075e28b3706b79819e71aec97a9faac9d9b4d8a6b44e9073",
+    "67840823d7c712f30112fac22e87a2ac24a37d31e170f211bf5a80988a3857ba",
+    "efd1ca2cec491f7302d4fe31d5fbe4df9f762a88ed12db3f1998134f3945015b",
+    "fd329616180e1bd35d979a72a920a62f925ce08b30bb34e5a33ad873910b3d08",
+    "0be8596a36474527a29a242c17df5a5f94a3dbfa495208e112c5560e3df55a73",
+    "016e1155a7cce2f5a899e352186899969d9bbb84185bf0082b4d73334973f160",
+    "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+    "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+    "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+    "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c",
+    "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9"
+  ],
+  "fusion_formula": {
+    "D5": 0.25,
+    "C5": 0.25,
+    "S5": 0.5
+  },
+  "val_macro_auc": 0.8095184036861143,
+  "weight_size_bytes": 1251159645,
+  "research_4090_latency_ms": null,
+  "research_benchmark_gpu": null,
+  "official_target_latency_ms": null,
+  "size_status": "SIZE_FAIL",
+  "latency_status": "LATENCY_UNVERIFIED",
+  "deployment_status": "SIZE_FAIL",
+  "test_probability_sha256": "aed21eb86c2b0da300fd17e2e75c19198513f66a5c2c40a758fcbc307c3946d6",
+  "format": {
+    "status": "FORMAT_PASS",
+    "study_count": 1414,
+    "rows": 14140,
+    "classes_per_study": 10,
+    "sha256": "8d59a91af64ac3993cbbb3970c1cc50f2fbdf76159013df7c5a5118abf5bd0d6"
+  },
+  "test_auc": null,
+  "hidden_test_labels_used": false
+}

@@ -1,0 +1,45 @@
+{
+  "formula": {
+    "D17": 0.25,
+    "C17": 0.25,
+    "S17": 0.5
+  },
+  "source": {
+    "D17": {
+      "probabilities_sha256": "4a4322f3288e1c4d99cd5431ffc420a0cd2f2229edd7fc68981aa0dce98e2b1d",
+      "source_index_sha256": "87068a21aef515259349ccc0a223b079d0dbe5d56746f22936a7f8ef6d0abf43",
+      "studies": 18513,
+      "patients": 11055
+    },
+    "C17": {
+      "probabilities_sha256": "1f9af9e7bc32c9df9ede0c5538e0ccd387d6796de72d4254b1cedc1ecfffd676",
+      "source_index_sha256": "329f8cb10a7b35f6b571dc220fa49877baa84292ed78c43012a64d10784e2f2b",
+      "studies": 18513,
+      "patients": 11055
+    },
+    "S17": {
+      "probabilities_sha256": "62cfd8f7e06050b2b6e4fef7da98bd1558b5c706bee44c250d22eee43b221701",
+      "source_index_sha256": "91ab4564dc9595d27747169042e58919d9efeae6d70e3ef9c412de5d86cec2c3",
+      "studies": 18513,
+      "patients": 11055
+    }
+  },
+  "role": "training soft targets; unseen patient folds only",
+  "csv_sha256": "13ded125b51b087fe82b2f63b3bbbaee9a115dea31434d6b66fd547bf390a324",
+  "rows": 18513,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

@@ -1,0 +1,30 @@
+{
+  "formula": {
+    "D17_test_5fold": 0.25,
+    "C17_test_5fold": 0.25,
+    "S17_test_5fold": 0.5
+  },
+  "source_sha256": {
+    "D17_test_5fold": "d6529084aae211332a27cbc0c5315180f72ec9bf29d37e002942cefd97cf4e89",
+    "C17_test_5fold": "4cd7cc0306657fa1ba4f85a646fcdbd489abf2a14d3a2e615036a10e18a08896",
+    "S17_test_5fold": "4ecb8deec9afa9df9388a03c7cc6b03999df524c8602b4985343e1d0ec35c4e8"
+  },
+  "no_test_labels": true,
+  "csv_sha256": "aed21eb86c2b0da300fd17e2e75c19198513f66a5c2c40a758fcbc307c3946d6",
+  "rows": 1414,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

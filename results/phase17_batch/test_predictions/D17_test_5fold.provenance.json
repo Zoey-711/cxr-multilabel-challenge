@@ -1,0 +1,35 @@
+{
+  "sources": [
+    "D17_F01",
+    "D17_F02",
+    "D17_F03",
+    "D17_F04",
+    "D17_F05"
+  ],
+  "source_sha256": {
+    "D17_F01": "51ea56218d01be1d7994658792aed1960fa8798d58561d4971dde293651b10c9",
+    "D17_F02": "eca711c32ccf8a1abcec46d69153eb595e755fa0f03aa313c2acf644e407e4de",
+    "D17_F03": "b4fafdb54f6521e2961d5d529045220d526bd5206df1436f1c8882852d69fbfb",
+    "D17_F04": "9ff3fac6c6c857b5fce3617e2286d49189712c91b4ce11765d47bf6d98d653cf",
+    "D17_F05": "67e38b35355adac8191bab19cb30e299b7cea8fef571c52a4f3bc9a4fe5a9578"
+  },
+  "formula": "equal weight 0.2 per fold",
+  "no_test_labels": true,
+  "csv_sha256": "d6529084aae211332a27cbc0c5315180f72ec9bf29d37e002942cefd97cf4e89",
+  "rows": 1414,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

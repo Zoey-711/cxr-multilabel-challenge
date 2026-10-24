@@ -1,0 +1,24 @@
+# Batch status
+
+- D17_F01: complete, attempts=1
+- D17_F02: complete, attempts=1
+- D17_F03: complete, attempts=1
+- D17_F04: complete, attempts=1
+- D17_F05: complete, attempts=1
+- C17_F01: complete, attempts=1
+- C17_F02: complete, attempts=1
+- C17_F03: complete, attempts=1
+- C17_F04: complete, attempts=1
+- C17_F05: complete, attempts=1
+- S17_F01: complete, attempts=1
+- S17_F02: complete, attempts=1
+- S17_F03: complete, attempts=1
+- S17_F04: complete, attempts=1
+- S17_F05: complete, attempts=1
+- N17_F01: complete, attempts=1
+- N17_F02: complete, attempts=1
+- N17_F03: complete, attempts=1
+- N17_F04: complete, attempts=1
+- N17_F05: complete, attempts=1
+- CS17_F01: complete, attempts=1
+- NM17_F01: complete, attempts=1

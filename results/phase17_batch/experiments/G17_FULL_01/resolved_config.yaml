@@ -1,0 +1,78 @@
+experiment:
+  name: g17_full_01
+  seed: 42
+data:
+  archive_path: null
+  train_manifest: null
+  val_manifest: null
+  test_manifest: null
+  image_root: null
+  columns:
+    subject_id: Subject_id
+    study_id: Study_id
+    image_path: Dicom_id
+    labels:
+    - Predict_class
+  label_encoding:
+    positive: semicolon_delimited_class_ids_1_to_10
+    unlisted_policy: negative
+    negative: unlisted_in_complete_competition_annotation
+    uncertain: no_code_observed
+    missing: blank_Predict_class_is_error
+  input_size: 384
+  num_workers: 4
+  train_augmentation:
+    enabled: true
+    name: conservative_cxr_v1
+    affine_probability: 0.5
+    rotation_degrees: 3.0
+    translation_fraction: 0.02
+    photometric_probability: 0.5
+    brightness_contrast_fraction: 0.05
+  full_train_expected_counts:
+    patients: 11055
+    studies: 18513
+    images: 30344
+model:
+  name: efficientnet_v2_s
+  pretrained: imagenet
+  pretrained_sha256: dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74
+  num_classes: 10
+training:
+  batch_size: 8
+  gradient_accumulation_steps: 2
+  epochs: 4
+  optimizer: adamw
+  backbone_lr: 0.0001
+  classifier_lr: 0.0003
+  weight_decay: 0.0001
+  loss: bce_with_logits
+  scheduler: cosine
+  warmup_epochs: 2
+  precision: fp16_amp
+  grad_clip_norm: 1.0
+  early_stopping_patience: 6
+  ema:
+    enabled: true
+    decay: 0.999
+    update_after_step: 1
+    use_buffers: true
+  epoch_selection:
+    epochs: 4
+    fold_best_epochs:
+    - 4
+    - 3
+    - 4
+    - 4
+    - 5
+    rule: median of five raw best epochs; five values imply exact integer
+validation:
+  study_fusion: mean_probability
+  primary_metric: macro_auc
+  auxiliary_metric: macro_f1
+  f1_threshold: 0.5
+inference:
+  batch_size: 16
+  submission_filename: submission.csv
+  submission_mode: threshold
+  threshold: 0.5

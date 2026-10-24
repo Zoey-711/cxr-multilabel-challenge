@@ -1,0 +1,22 @@
+{
+  "state": "complete",
+  "model_id": "C17_F01",
+  "verified_sha256": {
+    "best_model.pth": "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+    "resolved_config.yaml": "ff262e478d18b06c2f794168cae18704a71350810f64f1e0efa6831f3e163c51",
+    "metrics.json": "d66bb67434f2dcd76f3808f22550b16d50b5e16272a73e82391b50da0fb77181",
+    "val_predictions.csv": "f6dd74fe5cfa836322fbb230b0f3cf72bab1de70cba17ead7ec6ef255033e9c9",
+    "test_predictions.csv": "24b34d961866d63399c6c62c0c983c74af0e77c18d220f51633c15de2d24d5a9",
+    "model_size.json": "b967a39672333a797b7eeb30896790cd22b74a042755a20f2667eac84189a8c8",
+    "inference_benchmark.json": "91d9bfe60ae054668d70c8ec2161f197782338605e8926a720141ced2fbc8028",
+    "deployment_eligibility.json": "bf398b14a3172324ea98d3962d3e7f4aafaa944efa9b30e50727f05017b13483",
+    "run_manifest.json": "d1f686e70b8155672ad7af8e14bff2c051fe7876cf56c6ed7dba95a958e9031a",
+    "checkpoint_resume.pth": "918c74368276548943510911ccda32d6d0599f10e412d3169238aa5ec79d9d48",
+    "oof_predictions.csv": "35da02a5bbf6be33251726e5bc87da2ca47f93a6e86096f7855f2fc781010a92",
+    "ema_best_model.pth": "67f7835d75806068b37b51b55bba55848dc25929c1c7b742d3e467862e9451f8",
+    "ema_val_predictions.csv": "e149cf4ad270ad516417b427ccebe5e8209a338efc5b964937ff035d74a927ab",
+    "ema_test_predictions.csv": "6ecd4dab5f8f043f28f725425916971641f44e0580184037de2300ccd887fb78",
+    "ema_oof_predictions.csv": "767f193ca71a894419eb17841ba8fe3edc9dbed1d89b20c831505f56df1158a6"
+  },
+  "time_utc": "2026-10-23T17:19:25.990313+00:00"
+}

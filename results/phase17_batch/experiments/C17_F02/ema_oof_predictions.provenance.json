@@ -1,0 +1,29 @@
+{
+  "model_id": "C17_F02",
+  "kind": "ema",
+  "checkpoint_sha256": "a0994f36a32c0e5470be806dd3d022c0e19740042863c2544f50c036999a9177",
+  "fold": 2,
+  "fold_hashes": {
+    "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+    "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+    "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+  },
+  "config_sha256": "8b8fc2575b6fa8b2bbc432c0e9ad032eebbf71c3044f47f196386f6e30031800",
+  "csv_sha256": "a08a5d3ac523058d626b7948a41a817b6caa8a195814381b8314d6930d627937",
+  "rows": 3731,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

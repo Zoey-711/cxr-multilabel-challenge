@@ -1,0 +1,28 @@
+{
+  "model_id": "H17_DISTILL_01",
+  "checkpoint_kind": "raw",
+  "checkpoint_sha256": "9c29e70d7b6287d5a64e0b094607bf5ce2a222cd4408cd5ca100092ba596302f",
+  "config_sha256": "12aff78a1351ffbe49d04d5de0b7a7e2cbdbd4d3a6ab1a296e953db691e3afba",
+  "input_images": 2218,
+  "expected_test_studies": 1414,
+  "preprocessing": "black_pad_v1",
+  "input_size": 384,
+  "no_test_labels": true,
+  "csv_sha256": "f64069eca1cac738ce59bc103974c74932d61e42f9f8cef25cd7001340019053",
+  "rows": 1414,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

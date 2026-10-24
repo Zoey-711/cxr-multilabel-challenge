@@ -1,0 +1,9 @@
+{
+  "model_id": "D17_F03",
+  "raw_weight_bytes": 28453416,
+  "size_status": "PASS",
+  "latency_status": "LATENCY_UNVERIFIED",
+  "deployment_status": "LATENCY_UNVERIFIED",
+  "ema": null,
+  "reason": "4090 single-model research timing does not establish official end-to-end target compliance"
+}

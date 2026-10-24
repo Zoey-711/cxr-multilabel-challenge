@@ -1,0 +1,2824 @@
+[
+  {
+    "candidate": "D17_F01",
+    "bytes": 28453416,
+    "fits_500MB": true,
+    "val_auc": 0.7928679871543578,
+    "dependencies": [
+      {
+        "path": "experiments/D17_F01/best_model.pth",
+        "sha256": "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c",
+        "bytes": 28453416
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.41552731767297,
+        "p50_ms": 63.039631582796574,
+        "p95_ms": 68.4517698828131,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "502d01ee4647284f33a38fe318fb4bf891637bcec39d3b7c045ae2022cbd1d3f",
+    "accuracy_recipe_sha256": "502d01ee4647284f33a38fe318fb4bf891637bcec39d3b7c045ae2022cbd1d3f",
+    "accuracy_checkpoint_sha256": [
+      "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "D17_F02",
+    "bytes": 28453416,
+    "fits_500MB": true,
+    "val_auc": 0.7860855370179363,
+    "dependencies": [
+      {
+        "path": "experiments/D17_F02/best_model.pth",
+        "sha256": "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+        "bytes": 28453416
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 59.992611687630415,
+        "p50_ms": 63.00067715346813,
+        "p95_ms": 66.61794143728912,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "399a5bd6125929f1d591ad222c3dc89d84ddd2bb405f0ae4478ccc59dca0a7d0",
+    "accuracy_recipe_sha256": "399a5bd6125929f1d591ad222c3dc89d84ddd2bb405f0ae4478ccc59dca0a7d0",
+    "accuracy_checkpoint_sha256": [
+      "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "D17_F03",
+    "bytes": 28453416,
+    "fits_500MB": true,
+    "val_auc": 0.7906780052852256,
+    "dependencies": [
+      {
+        "path": "experiments/D17_F03/best_model.pth",
+        "sha256": "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+        "bytes": 28453416
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.85990075953305,
+        "p50_ms": 63.046157360076904,
+        "p95_ms": 68.95916350185871,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "00e5b7abd6d78d5101c1cf5fcef67dd2cc8ac1a44b3a949e13aeaafe7faf5da3",
+    "accuracy_recipe_sha256": "00e5b7abd6d78d5101c1cf5fcef67dd2cc8ac1a44b3a949e13aeaafe7faf5da3",
+    "accuracy_checkpoint_sha256": [
+      "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "D17_F04",
+    "bytes": 28453416,
+    "fits_500MB": true,
+    "val_auc": 0.7867543168530073,
+    "dependencies": [
+      {
+        "path": "experiments/D17_F04/best_model.pth",
+        "sha256": "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+        "bytes": 28453416
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 62.765770545229316,
+        "p50_ms": 62.93176673352718,
+        "p95_ms": 71.7258749064058,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "70ad46f930f3608210b42e2fa0ed17b315bcdf3c9c90d986e7b4c83b92bbf898",
+    "accuracy_recipe_sha256": "70ad46f930f3608210b42e2fa0ed17b315bcdf3c9c90d986e7b4c83b92bbf898",
+    "accuracy_checkpoint_sha256": [
+      "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "D17_F05",
+    "bytes": 28453416,
+    "fits_500MB": true,
+    "val_auc": 0.7838912703497345,
+    "dependencies": [
+      {
+        "path": "experiments/D17_F05/best_model.pth",
+        "sha256": "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9",
+        "bytes": 28453416
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 77.47288253158331,
+        "p50_ms": 66.1635622382164,
+        "p95_ms": 121.76713617518544,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "4dd0588920c8313c4d4b5a14675a1e21c71d90470be747445ed88c592302eba6",
+    "accuracy_recipe_sha256": "4dd0588920c8313c4d4b5a14675a1e21c71d90470be747445ed88c592302eba6",
+    "accuracy_checkpoint_sha256": [
+      "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "C17_F01",
+    "bytes": 111375943,
+    "fits_500MB": true,
+    "val_auc": 0.79851360476905,
+    "dependencies": [
+      {
+        "path": "experiments/C17_F01/best_model.pth",
+        "sha256": "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+        "bytes": 111375943
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.249174918979406,
+        "p50_ms": 60.28761761263013,
+        "p95_ms": 65.18245171755552,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "c61dc7f977fa85dc055c12924c8a7ce9ec5c016ff585c4b3d844c1870923d19a",
+    "accuracy_recipe_sha256": "c61dc7f977fa85dc055c12924c8a7ce9ec5c016ff585c4b3d844c1870923d19a",
+    "accuracy_checkpoint_sha256": [
+      "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "C17_F01_EMA",
+    "bytes": 111376695,
+    "fits_500MB": true,
+    "val_auc": 0.8014411749651481,
+    "dependencies": [
+      {
+        "path": "experiments/C17_F01/ema_best_model.pth",
+        "sha256": "67f7835d75806068b37b51b55bba55848dc25929c1c7b742d3e467862e9451f8",
+        "bytes": 111376695
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.748733669519424,
+        "p50_ms": 59.0881104581058,
+        "p95_ms": 66.77496791817248,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "ea7b7e8bec4f81a4df467fcbe2e8271108396ceb4d4e9cc53336ac6fabd5987f",
+    "accuracy_recipe_sha256": "ea7b7e8bec4f81a4df467fcbe2e8271108396ceb4d4e9cc53336ac6fabd5987f",
+    "accuracy_checkpoint_sha256": [
+      "67f7835d75806068b37b51b55bba55848dc25929c1c7b742d3e467862e9451f8"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "C17_F02",
+    "bytes": 111375943,
+    "fits_500MB": true,
+    "val_auc": 0.7962416310163156,
+    "dependencies": [
+      {
+        "path": "experiments/C17_F02/best_model.pth",
+        "sha256": "fd329616180e1bd35d979a72a920a62f925ce08b30bb34e5a33ad873910b3d08",
+        "bytes": 111375943
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.29195086658001,
+        "p50_ms": 59.27419429644942,
+        "p95_ms": 62.97787115909159,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "bb14fa86b411d24fdbcc115551be052eacf98a6364d162ed194a74801bdd7f6d",
+    "accuracy_recipe_sha256": "bb14fa86b411d24fdbcc115551be052eacf98a6364d162ed194a74801bdd7f6d",
+    "accuracy_checkpoint_sha256": [
+      "fd329616180e1bd35d979a72a920a62f925ce08b30bb34e5a33ad873910b3d08"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "C17_F02_EMA",
+    "bytes": 111376695,
+    "fits_500MB": true,
+    "val_auc": 0.7962223136613068,
+    "dependencies": [
+      {
+        "path": "experiments/C17_F02/ema_best_model.pth",
+        "sha256": "a0994f36a32c0e5470be806dd3d022c0e19740042863c2544f50c036999a9177",
+        "bytes": 111376695
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.76899473182857,
+        "p50_ms": 58.706491719931364,
+        "p95_ms": 67.68976100720465,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "759767bbf00500b6f91d3a3fe2c2dd26b67d9bc5bfea6e28aa04b8561576d4be",
+    "accuracy_recipe_sha256": "759767bbf00500b6f91d3a3fe2c2dd26b67d9bc5bfea6e28aa04b8561576d4be",
+    "accuracy_checkpoint_sha256": [
+      "a0994f36a32c0e5470be806dd3d022c0e19740042863c2544f50c036999a9177"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "C17_F03",
+    "bytes": 111375943,
+    "fits_500MB": true,
+    "val_auc": 0.793322956898345,
+    "dependencies": [
+      {
+        "path": "experiments/C17_F03/best_model.pth",
+        "sha256": "73517af672f1f8cc6ef9c9092d832c2c8d5db171e5561455298cfef44b8e7985",
+        "bytes": 111375943
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 58.01545814611018,
+        "p50_ms": 61.2637591548264,
+        "p95_ms": 66.3444078527391,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "078483cf9385eeb5af87b184526cd182421f1b353e521e1fa2adfaee2de8d394",
+    "accuracy_recipe_sha256": "078483cf9385eeb5af87b184526cd182421f1b353e521e1fa2adfaee2de8d394",
+    "accuracy_checkpoint_sha256": [
+      "73517af672f1f8cc6ef9c9092d832c2c8d5db171e5561455298cfef44b8e7985"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "C17_F03_EMA",
+    "bytes": 111376695,
+    "fits_500MB": true,
+    "val_auc": 0.8013734676309238,
+    "dependencies": [
+      {
+        "path": "experiments/C17_F03/ema_best_model.pth",
+        "sha256": "831e0c703f7fe951d165eab064b6866a7acaa14beaf635b27d05a4fa922f7ecc",
+        "bytes": 111376695
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.563521176576614,
+        "p50_ms": 59.539946261793375,
+        "p95_ms": 62.954373098909855,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "97f8500195caea57b70a814253c0730d50010e67f1fd93d86e486f84e69392ee",
+    "accuracy_recipe_sha256": "97f8500195caea57b70a814253c0730d50010e67f1fd93d86e486f84e69392ee",
+    "accuracy_checkpoint_sha256": [
+      "831e0c703f7fe951d165eab064b6866a7acaa14beaf635b27d05a4fa922f7ecc"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "C17_F04",
+    "bytes": 111375943,
+    "fits_500MB": true,
+    "val_auc": 0.795451268451911,
+    "dependencies": [
+      {
+        "path": "experiments/C17_F04/best_model.pth",
+        "sha256": "0be8596a36474527a29a242c17df5a5f94a3dbfa495208e112c5560e3df55a73",
+        "bytes": 111375943
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.50187497958541,
+        "p50_ms": 59.97880268841982,
+        "p95_ms": 62.97898730263114,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "13fbaae9ca00f7ae84f90af43483cbab0aa4d0c24c3169b4691fc0935c6b11e6",
+    "accuracy_recipe_sha256": "13fbaae9ca00f7ae84f90af43483cbab0aa4d0c24c3169b4691fc0935c6b11e6",
+    "accuracy_checkpoint_sha256": [
+      "0be8596a36474527a29a242c17df5a5f94a3dbfa495208e112c5560e3df55a73"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "C17_F04_EMA",
+    "bytes": 111376695,
+    "fits_500MB": true,
+    "val_auc": 0.8048921087833968,
+    "dependencies": [
+      {
+        "path": "experiments/C17_F04/ema_best_model.pth",
+        "sha256": "73ef0cb545c0a91fa1a3e60dfbbd19c1b112fc108b108c53386f462b855effab",
+        "bytes": 111376695
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.35612348653376,
+        "p50_ms": 59.27537474781275,
+        "p95_ms": 66.18306818418205,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "e10e567b726772cbdd9134290a964f45c3d4744faf8dce8db674f763fa8042e3",
+    "accuracy_recipe_sha256": "e10e567b726772cbdd9134290a964f45c3d4744faf8dce8db674f763fa8042e3",
+    "accuracy_checkpoint_sha256": [
+      "73ef0cb545c0a91fa1a3e60dfbbd19c1b112fc108b108c53386f462b855effab"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "C17_F05",
+    "bytes": 111375943,
+    "fits_500MB": true,
+    "val_auc": 0.7962861829287519,
+    "dependencies": [
+      {
+        "path": "experiments/C17_F05/best_model.pth",
+        "sha256": "6115ded995c0f61b075e28b3706b79819e71aec97a9faac9d9b4d8a6b44e9073",
+        "bytes": 111375943
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.067822152748704,
+        "p50_ms": 59.1663527302444,
+        "p95_ms": 65.15014851465821,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "9fcceb4671524cd996035d51bd2d353f9bb405d640354715ca70bda1d424863c",
+    "accuracy_recipe_sha256": "9fcceb4671524cd996035d51bd2d353f9bb405d640354715ca70bda1d424863c",
+    "accuracy_checkpoint_sha256": [
+      "6115ded995c0f61b075e28b3706b79819e71aec97a9faac9d9b4d8a6b44e9073"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "C17_F05_EMA",
+    "bytes": 111376695,
+    "fits_500MB": true,
+    "val_auc": 0.8048614816266848,
+    "dependencies": [
+      {
+        "path": "experiments/C17_F05/ema_best_model.pth",
+        "sha256": "8bbcf6687e7b0d695c05d54a858081b7a05ca29cb2fe4b51ab2378a2183ac90d",
+        "bytes": 111376695
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.51346035301685,
+        "p50_ms": 58.98502981290221,
+        "p95_ms": 64.63259244337678,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "66ab5f383eddc34ae5583e20317c6dc9c38bb77961227af66ae44dc02449ac2c",
+    "accuracy_recipe_sha256": "66ab5f383eddc34ae5583e20317c6dc9c38bb77961227af66ae44dc02449ac2c",
+    "accuracy_checkpoint_sha256": [
+      "8bbcf6687e7b0d695c05d54a858081b7a05ca29cb2fe4b51ab2378a2183ac90d"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "S17_F01",
+    "bytes": 110402570,
+    "fits_500MB": true,
+    "val_auc": 0.7936587523836403,
+    "dependencies": [
+      {
+        "path": "experiments/S17_F01/best_model.pth",
+        "sha256": "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+        "bytes": 110402570
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.08024234324694,
+        "p50_ms": 63.10155475512147,
+        "p95_ms": 67.69181182608008,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "3d962386fbb12ee08efd993db7a80707c065df0993e8978290509014e26f98be",
+    "accuracy_recipe_sha256": "3d962386fbb12ee08efd993db7a80707c065df0993e8978290509014e26f98be",
+    "accuracy_checkpoint_sha256": [
+      "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "S17_F02",
+    "bytes": 110402570,
+    "fits_500MB": true,
+    "val_auc": 0.7884032449411037,
+    "dependencies": [
+      {
+        "path": "experiments/S17_F02/best_model.pth",
+        "sha256": "3fb7a9a1da671d5aab0d68ee0b57d3d1cb5d9431958015f4dbff19506e69ef88",
+        "bytes": 110402570
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 58.677276177331805,
+        "p50_ms": 60.95696799457073,
+        "p95_ms": 67.42438660003245,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "2dd9c87c5e5ee6b09ad7419fc84c40db371b2b23766eac6af697d338a5226370",
+    "accuracy_recipe_sha256": "2dd9c87c5e5ee6b09ad7419fc84c40db371b2b23766eac6af697d338a5226370",
+    "accuracy_checkpoint_sha256": [
+      "3fb7a9a1da671d5aab0d68ee0b57d3d1cb5d9431958015f4dbff19506e69ef88"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "S17_F03",
+    "bytes": 110402570,
+    "fits_500MB": true,
+    "val_auc": 0.7910111741636758,
+    "dependencies": [
+      {
+        "path": "experiments/S17_F03/best_model.pth",
+        "sha256": "67840823d7c712f30112fac22e87a2ac24a37d31e170f211bf5a80988a3857ba",
+        "bytes": 110402570
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.824164282530546,
+        "p50_ms": 62.970791943371296,
+        "p95_ms": 68.10218058526516,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "7fc95642677d4be5f50a26b8fd49f9df7c3ca8dcfbbd6d39a01dd1f42a3ffbaf",
+    "accuracy_recipe_sha256": "7fc95642677d4be5f50a26b8fd49f9df7c3ca8dcfbbd6d39a01dd1f42a3ffbaf",
+    "accuracy_checkpoint_sha256": [
+      "67840823d7c712f30112fac22e87a2ac24a37d31e170f211bf5a80988a3857ba"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "S17_F04",
+    "bytes": 110402570,
+    "fits_500MB": true,
+    "val_auc": 0.7913265903317861,
+    "dependencies": [
+      {
+        "path": "experiments/S17_F04/best_model.pth",
+        "sha256": "efd1ca2cec491f7302d4fe31d5fbe4df9f762a88ed12db3f1998134f3945015b",
+        "bytes": 110402570
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.559206964448094,
+        "p50_ms": 59.09170117229223,
+        "p95_ms": 63.788492837920785,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "e92bd082980237c4679899f7e2aa6814e6c15d30cdc5e006b2c08e27cb5a9328",
+    "accuracy_recipe_sha256": "e92bd082980237c4679899f7e2aa6814e6c15d30cdc5e006b2c08e27cb5a9328",
+    "accuracy_checkpoint_sha256": [
+      "efd1ca2cec491f7302d4fe31d5fbe4df9f762a88ed12db3f1998134f3945015b"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "S17_F05",
+    "bytes": 110402570,
+    "fits_500MB": true,
+    "val_auc": 0.7921720096222811,
+    "dependencies": [
+      {
+        "path": "experiments/S17_F05/best_model.pth",
+        "sha256": "016e1155a7cce2f5a899e352186899969d9bbb84185bf0082b4d73334973f160",
+        "bytes": 110402570
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.374290470033884,
+        "p50_ms": 59.890573378652334,
+        "p95_ms": 65.13553033582866,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "370d5aa92fa06ea1ce59b1b3b84f631c5948ce27d79f0ad66dcd48c128eea19a",
+    "accuracy_recipe_sha256": "370d5aa92fa06ea1ce59b1b3b84f631c5948ce27d79f0ad66dcd48c128eea19a",
+    "accuracy_checkpoint_sha256": [
+      "016e1155a7cce2f5a899e352186899969d9bbb84185bf0082b4d73334973f160"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "N17_F01",
+    "bytes": 81651999,
+    "fits_500MB": true,
+    "val_auc": 0.7978133380747834,
+    "dependencies": [
+      {
+        "path": "experiments/N17_F01/best_model.pth",
+        "sha256": "014166b240b05b70d1959214d6add0ff9611b986a8b1bb0d97e0fdb813e90e3d",
+        "bytes": 81651999
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.6329713948071,
+        "p50_ms": 63.00212722271681,
+        "p95_ms": 70.24221629835665,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "candidate": "N17_F01",
+        "device": "NVIDIA GeForce RTX 4090",
+        "cuda_runtime": "12.8",
+        "precision": "fp16_amp",
+        "batch_size": 1,
+        "warmup": 3,
+        "measured_samples": 20,
+        "model_count": 1,
+        "checkpoint_sha256": [
+          "014166b240b05b70d1959214d6add0ff9611b986a8b1bb0d97e0fdb813e90e3d"
+        ],
+        "fusion_model_weights": {
+          "N17_F01": 1.0
+        },
+        "scope": "ZIP read/decode, deterministic preprocessing, host-to-device, ALL sequential model forwards, sigmoid, CPU transfer, probability reduction, synchronize",
+        "mean_ms": 57.70601611584425,
+        "p50_ms": 59.775874484330416,
+        "p95_ms": 67.50361286103725,
+        "max_ms": 68.39092448353767,
+        "official_compliance": false,
+        "reason": "Official target hardware and timing scope/statistic have not been fully specified"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "b5f7a2284f8dce6dd5c324d6e35068c83def103739eb0b647b734736f6346fe5",
+    "accuracy_recipe_sha256": "b5f7a2284f8dce6dd5c324d6e35068c83def103739eb0b647b734736f6346fe5",
+    "accuracy_checkpoint_sha256": [
+      "014166b240b05b70d1959214d6add0ff9611b986a8b1bb0d97e0fdb813e90e3d"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "N17_F01_EMA",
+    "bytes": 81655151,
+    "fits_500MB": true,
+    "val_auc": 0.799543845209598,
+    "dependencies": [
+      {
+        "path": "experiments/N17_F01/ema_best_model.pth",
+        "sha256": "04ce77da9c788d64c6b74831e37ff0d8bf4d05565f4ad0415da2f7b609dd610a",
+        "bytes": 81655151
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.18431191332638,
+        "p50_ms": 62.595394905656576,
+        "p95_ms": 69.4223128259182,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "fdf8003dff436629b56cc5740c459a6fe2abb7f17cda49e62f2b5fb5328c1169",
+    "accuracy_recipe_sha256": "fdf8003dff436629b56cc5740c459a6fe2abb7f17cda49e62f2b5fb5328c1169",
+    "accuracy_checkpoint_sha256": [
+      "04ce77da9c788d64c6b74831e37ff0d8bf4d05565f4ad0415da2f7b609dd610a"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "N17_F02",
+    "bytes": 81651999,
+    "fits_500MB": true,
+    "val_auc": 0.7907992209003293,
+    "dependencies": [
+      {
+        "path": "experiments/N17_F02/best_model.pth",
+        "sha256": "413ca1deda6be6a2a99e0bcde4f97839a46046dfe3605d4726f8cee563c2d6c5",
+        "bytes": 81651999
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.97632450982928,
+        "p50_ms": 63.11807222664356,
+        "p95_ms": 69.69448025338352,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "48aedac6d0058fa8258173ad0c887f9e90218c2718a986834cb4b32cc9c811a0",
+    "accuracy_recipe_sha256": "48aedac6d0058fa8258173ad0c887f9e90218c2718a986834cb4b32cc9c811a0",
+    "accuracy_checkpoint_sha256": [
+      "413ca1deda6be6a2a99e0bcde4f97839a46046dfe3605d4726f8cee563c2d6c5"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "N17_F02_EMA",
+    "bytes": 81655151,
+    "fits_500MB": true,
+    "val_auc": 0.7996848020987948,
+    "dependencies": [
+      {
+        "path": "experiments/N17_F02/ema_best_model.pth",
+        "sha256": "559b2a2a5aba930a53839b9027ba35f7590dd54ee049b1328b03eafab4082719",
+        "bytes": 81655151
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 61.09102130867541,
+        "p50_ms": 63.394283410161734,
+        "p95_ms": 68.53328249417245,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "6fc2519c93d4a34b0117a83973b73052ac2006b15e0962a267ec8c7bdf2e5cf0",
+    "accuracy_recipe_sha256": "6fc2519c93d4a34b0117a83973b73052ac2006b15e0962a267ec8c7bdf2e5cf0",
+    "accuracy_checkpoint_sha256": [
+      "559b2a2a5aba930a53839b9027ba35f7590dd54ee049b1328b03eafab4082719"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "N17_F03",
+    "bytes": 81651999,
+    "fits_500MB": true,
+    "val_auc": 0.793192612324499,
+    "dependencies": [
+      {
+        "path": "experiments/N17_F03/best_model.pth",
+        "sha256": "4f7287f22352476d450bb6bafbba21553be42356ed5da75d2d90d74bee3ae8b5",
+        "bytes": 81651999
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 61.29002161324024,
+        "p50_ms": 63.68181901052594,
+        "p95_ms": 70.59417800046504,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "835ae322928da99112151fe737cf4c0be3f42de29a344bea29e81775d8d0c14c",
+    "accuracy_recipe_sha256": "835ae322928da99112151fe737cf4c0be3f42de29a344bea29e81775d8d0c14c",
+    "accuracy_checkpoint_sha256": [
+      "4f7287f22352476d450bb6bafbba21553be42356ed5da75d2d90d74bee3ae8b5"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "N17_F03_EMA",
+    "bytes": 81655151,
+    "fits_500MB": true,
+    "val_auc": 0.7998760267272985,
+    "dependencies": [
+      {
+        "path": "experiments/N17_F03/ema_best_model.pth",
+        "sha256": "58db9e8cb9d41096eb01f310ac3adf403e57b1f471789ce5a1ac24be9348bb36",
+        "bytes": 81655151
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.428205132484436,
+        "p50_ms": 63.48766293376684,
+        "p95_ms": 69.2048323340714,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "ffd17adbb40bad27a47644cdcd4d908b177507b94cd4215b20cb2941b8999c5b",
+    "accuracy_recipe_sha256": "ffd17adbb40bad27a47644cdcd4d908b177507b94cd4215b20cb2941b8999c5b",
+    "accuracy_checkpoint_sha256": [
+      "58db9e8cb9d41096eb01f310ac3adf403e57b1f471789ce5a1ac24be9348bb36"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "N17_F04",
+    "bytes": 81651999,
+    "fits_500MB": true,
+    "val_auc": 0.7897567459268228,
+    "dependencies": [
+      {
+        "path": "experiments/N17_F04/best_model.pth",
+        "sha256": "78bdd0eed36b1e06f5fe858262f046d635fd8023243d76c6fbc18f26f5f7a814",
+        "bytes": 81651999
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.904946411028504,
+        "p50_ms": 63.03285947069526,
+        "p95_ms": 69.33538457378745,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "c1dcd9dff45d943a87fe9ec3249349bd0f9f830037464fea02d8e640c455e75d",
+    "accuracy_recipe_sha256": "c1dcd9dff45d943a87fe9ec3249349bd0f9f830037464fea02d8e640c455e75d",
+    "accuracy_checkpoint_sha256": [
+      "78bdd0eed36b1e06f5fe858262f046d635fd8023243d76c6fbc18f26f5f7a814"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "N17_F04_EMA",
+    "bytes": 81655151,
+    "fits_500MB": true,
+    "val_auc": 0.7993790071686423,
+    "dependencies": [
+      {
+        "path": "experiments/N17_F04/ema_best_model.pth",
+        "sha256": "7b1620d2d8f76ec4d0551833448514aa829bffad99bf582d50d0292a09f48af7",
+        "bytes": 81655151
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 61.101578176021576,
+        "p50_ms": 63.76165896654129,
+        "p95_ms": 69.50396690517664,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "1e88b3a4b7346407e6b7c9d21d57417819c133d7181920e179ac9c80cc44e93e",
+    "accuracy_recipe_sha256": "1e88b3a4b7346407e6b7c9d21d57417819c133d7181920e179ac9c80cc44e93e",
+    "accuracy_checkpoint_sha256": [
+      "7b1620d2d8f76ec4d0551833448514aa829bffad99bf582d50d0292a09f48af7"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "N17_F05",
+    "bytes": 81651999,
+    "fits_500MB": true,
+    "val_auc": 0.794115981344434,
+    "dependencies": [
+      {
+        "path": "experiments/N17_F05/best_model.pth",
+        "sha256": "7e9c964124d6e0f35b9ae24d4d63d67c248c042f6a0fa4df72dc0d1068d73016",
+        "bytes": 81651999
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.93077903799713,
+        "p50_ms": 60.581086203455925,
+        "p95_ms": 65.95374974422157,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "5b8e9952f5b56c6ef9c2de11e58d77350552093cca5052cfd10337aff999e47d",
+    "accuracy_recipe_sha256": "5b8e9952f5b56c6ef9c2de11e58d77350552093cca5052cfd10337aff999e47d",
+    "accuracy_checkpoint_sha256": [
+      "7e9c964124d6e0f35b9ae24d4d63d67c248c042f6a0fa4df72dc0d1068d73016"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "N17_F05_EMA",
+    "bytes": 81655151,
+    "fits_500MB": true,
+    "val_auc": 0.8062132644957121,
+    "dependencies": [
+      {
+        "path": "experiments/N17_F05/ema_best_model.pth",
+        "sha256": "bee8f121fda1cebb85c23a11a544e3ac99fb8b4665f10c2c4aa784fca9fb32c3",
+        "bytes": 81655151
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 58.29422143287957,
+        "p50_ms": 60.24695746600628,
+        "p95_ms": 69.05825566500425,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "3513594fc6f8071bf56ae0038c1f622f08d19e17b3c569f3d2537ac6d1ce58ba",
+    "accuracy_recipe_sha256": "3513594fc6f8071bf56ae0038c1f622f08d19e17b3c569f3d2537ac6d1ce58ba",
+    "accuracy_checkpoint_sha256": [
+      "bee8f121fda1cebb85c23a11a544e3ac99fb8b4665f10c2c4aa784fca9fb32c3"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "CS17_F01",
+    "bytes": 197972137,
+    "fits_500MB": true,
+    "val_auc": 0.8032184143942432,
+    "dependencies": [
+      {
+        "path": "experiments/CS17_F01/best_model.pth",
+        "sha256": "75d068b0feaafcbae148fe1f2b394983683214213afc6ed6e4a88e7c1007cdb9",
+        "bytes": 197972137
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 55.11775566264987,
+        "p50_ms": 57.60433617979288,
+        "p95_ms": 62.518656672909856,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "candidate": "CS17_F01",
+        "device": "NVIDIA GeForce RTX 4090",
+        "cuda_runtime": "12.8",
+        "precision": "fp16_amp",
+        "batch_size": 1,
+        "warmup": 3,
+        "measured_samples": 20,
+        "model_count": 1,
+        "checkpoint_sha256": [
+          "75d068b0feaafcbae148fe1f2b394983683214213afc6ed6e4a88e7c1007cdb9"
+        ],
+        "fusion_model_weights": {
+          "CS17_F01": 1.0
+        },
+        "scope": "ZIP read/decode, deterministic preprocessing, host-to-device, ALL sequential model forwards, sigmoid, CPU transfer, probability reduction, synchronize",
+        "mean_ms": 55.71926115080714,
+        "p50_ms": 58.53951536118984,
+        "p95_ms": 62.26989263668656,
+        "max_ms": 65.494230017066,
+        "official_compliance": false,
+        "reason": "Official target hardware and timing scope/statistic have not been fully specified"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "cf5314c082e89d8a1594524200ce45cdf224b30980cfbbe59da0b88b788e8814",
+    "accuracy_recipe_sha256": "cf5314c082e89d8a1594524200ce45cdf224b30980cfbbe59da0b88b788e8814",
+    "accuracy_checkpoint_sha256": [
+      "75d068b0feaafcbae148fe1f2b394983683214213afc6ed6e4a88e7c1007cdb9"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "NM17_F01",
+    "bytes": 213046249,
+    "fits_500MB": true,
+    "val_auc": 0.7991211803496285,
+    "dependencies": [
+      {
+        "path": "experiments/NM17_F01/best_model.pth",
+        "sha256": "b6953a62eaf604a1b804a840b733bf47c62dae266a8d597db421478470a4f7b0",
+        "bytes": 213046249
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 61.036510253325105,
+        "p50_ms": 63.8300240971148,
+        "p95_ms": 67.83744073472917,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "candidate": "NM17_F01",
+        "device": "NVIDIA GeForce RTX 4090",
+        "cuda_runtime": "12.8",
+        "precision": "fp16_amp",
+        "batch_size": 1,
+        "warmup": 3,
+        "measured_samples": 20,
+        "model_count": 1,
+        "checkpoint_sha256": [
+          "b6953a62eaf604a1b804a840b733bf47c62dae266a8d597db421478470a4f7b0"
+        ],
+        "fusion_model_weights": {
+          "NM17_F01": 1.0
+        },
+        "scope": "ZIP read/decode, deterministic preprocessing, host-to-device, ALL sequential model forwards, sigmoid, CPU transfer, probability reduction, synchronize",
+        "mean_ms": 57.96496206894517,
+        "p50_ms": 60.261666774749756,
+        "p95_ms": 64.55913591198623,
+        "max_ms": 67.17032380402088,
+        "official_compliance": false,
+        "reason": "Official target hardware and timing scope/statistic have not been fully specified"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "25478e8b397fcdb8fe0ef9d15d7239d2be32cf17aba56044fac08e306cda4d93",
+    "accuracy_recipe_sha256": "25478e8b397fcdb8fe0ef9d15d7239d2be32cf17aba56044fac08e306cda4d93",
+    "accuracy_checkpoint_sha256": [
+      "b6953a62eaf604a1b804a840b733bf47c62dae266a8d597db421478470a4f7b0"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "D5",
+    "bytes": 142267080,
+    "fits_500MB": true,
+    "val_auc": 0.8014670417374115,
+    "dependencies": [
+      {
+        "path": "experiments/D17_F01/best_model.pth",
+        "sha256": "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/D17_F02/best_model.pth",
+        "sha256": "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/D17_F03/best_model.pth",
+        "sha256": "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/D17_F04/best_model.pth",
+        "sha256": "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/D17_F05/best_model.pth",
+        "sha256": "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9",
+        "bytes": 28453416
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.41552731767297,
+        "p50_ms": 63.039631582796574,
+        "p95_ms": 68.4517698828131,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 59.992611687630415,
+        "p50_ms": 63.00067715346813,
+        "p95_ms": 66.61794143728912,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.85990075953305,
+        "p50_ms": 63.046157360076904,
+        "p95_ms": 68.95916350185871,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 62.765770545229316,
+        "p50_ms": 62.93176673352718,
+        "p95_ms": 71.7258749064058,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 77.47288253158331,
+        "p50_ms": 66.1635622382164,
+        "p95_ms": 121.76713617518544,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "aa7629526375cb9ab485b5278db78e7baf1070cf59ad7e774560dabc53306321",
+    "accuracy_recipe_sha256": "aa7629526375cb9ab485b5278db78e7baf1070cf59ad7e774560dabc53306321",
+    "accuracy_checkpoint_sha256": [
+      "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+      "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+      "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9",
+      "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+      "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "C5",
+    "bytes": 556879715,
+    "fits_500MB": false,
+    "val_auc": 0.8070773648147807,
+    "dependencies": [
+      {
+        "path": "experiments/C17_F01/best_model.pth",
+        "sha256": "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+        "bytes": 111375943
+      },
+      {
+        "path": "experiments/C17_F02/best_model.pth",
+        "sha256": "fd329616180e1bd35d979a72a920a62f925ce08b30bb34e5a33ad873910b3d08",
+        "bytes": 111375943
+      },
+      {
+        "path": "experiments/C17_F03/best_model.pth",
+        "sha256": "73517af672f1f8cc6ef9c9092d832c2c8d5db171e5561455298cfef44b8e7985",
+        "bytes": 111375943
+      },
+      {
+        "path": "experiments/C17_F04/best_model.pth",
+        "sha256": "0be8596a36474527a29a242c17df5a5f94a3dbfa495208e112c5560e3df55a73",
+        "bytes": 111375943
+      },
+      {
+        "path": "experiments/C17_F05/best_model.pth",
+        "sha256": "6115ded995c0f61b075e28b3706b79819e71aec97a9faac9d9b4d8a6b44e9073",
+        "bytes": 111375943
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.249174918979406,
+        "p50_ms": 60.28761761263013,
+        "p95_ms": 65.18245171755552,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.29195086658001,
+        "p50_ms": 59.27419429644942,
+        "p95_ms": 62.97787115909159,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 58.01545814611018,
+        "p50_ms": 61.2637591548264,
+        "p95_ms": 66.3444078527391,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.50187497958541,
+        "p50_ms": 59.97880268841982,
+        "p95_ms": 62.97898730263114,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.067822152748704,
+        "p50_ms": 59.1663527302444,
+        "p95_ms": 65.15014851465821,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "ee37d491dd09ea59897927707910f20662d0887a0c428b8e4fb72191a9f88653",
+    "accuracy_recipe_sha256": "ee37d491dd09ea59897927707910f20662d0887a0c428b8e4fb72191a9f88653",
+    "accuracy_checkpoint_sha256": [
+      "0be8596a36474527a29a242c17df5a5f94a3dbfa495208e112c5560e3df55a73",
+      "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+      "6115ded995c0f61b075e28b3706b79819e71aec97a9faac9d9b4d8a6b44e9073",
+      "73517af672f1f8cc6ef9c9092d832c2c8d5db171e5561455298cfef44b8e7985",
+      "fd329616180e1bd35d979a72a920a62f925ce08b30bb34e5a33ad873910b3d08"
+    ],
+    "status": "SIZE_FAIL",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Total inference weights exceed 500,000,000 bytes"
+    ]
+  },
+  {
+    "candidate": "S5",
+    "bytes": 552012850,
+    "fits_500MB": false,
+    "val_auc": 0.8052858688859548,
+    "dependencies": [
+      {
+        "path": "experiments/S17_F01/best_model.pth",
+        "sha256": "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/S17_F02/best_model.pth",
+        "sha256": "3fb7a9a1da671d5aab0d68ee0b57d3d1cb5d9431958015f4dbff19506e69ef88",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/S17_F03/best_model.pth",
+        "sha256": "67840823d7c712f30112fac22e87a2ac24a37d31e170f211bf5a80988a3857ba",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/S17_F04/best_model.pth",
+        "sha256": "efd1ca2cec491f7302d4fe31d5fbe4df9f762a88ed12db3f1998134f3945015b",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/S17_F05/best_model.pth",
+        "sha256": "016e1155a7cce2f5a899e352186899969d9bbb84185bf0082b4d73334973f160",
+        "bytes": 110402570
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.08024234324694,
+        "p50_ms": 63.10155475512147,
+        "p95_ms": 67.69181182608008,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 58.677276177331805,
+        "p50_ms": 60.95696799457073,
+        "p95_ms": 67.42438660003245,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.824164282530546,
+        "p50_ms": 62.970791943371296,
+        "p95_ms": 68.10218058526516,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.559206964448094,
+        "p50_ms": 59.09170117229223,
+        "p95_ms": 63.788492837920785,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.374290470033884,
+        "p50_ms": 59.890573378652334,
+        "p95_ms": 65.13553033582866,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "96818c900780442871328bc3dbd9331d387537b3f5208435491a8641cde4c3ac",
+    "accuracy_recipe_sha256": "96818c900780442871328bc3dbd9331d387537b3f5208435491a8641cde4c3ac",
+    "accuracy_checkpoint_sha256": [
+      "016e1155a7cce2f5a899e352186899969d9bbb84185bf0082b4d73334973f160",
+      "3fb7a9a1da671d5aab0d68ee0b57d3d1cb5d9431958015f4dbff19506e69ef88",
+      "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+      "67840823d7c712f30112fac22e87a2ac24a37d31e170f211bf5a80988a3857ba",
+      "efd1ca2cec491f7302d4fe31d5fbe4df9f762a88ed12db3f1998134f3945015b"
+    ],
+    "status": "SIZE_FAIL",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Total inference weights exceed 500,000,000 bytes"
+    ]
+  },
+  {
+    "candidate": "N5",
+    "bytes": 408259995,
+    "fits_500MB": true,
+    "val_auc": 0.8079916851065854,
+    "dependencies": [
+      {
+        "path": "experiments/N17_F01/best_model.pth",
+        "sha256": "014166b240b05b70d1959214d6add0ff9611b986a8b1bb0d97e0fdb813e90e3d",
+        "bytes": 81651999
+      },
+      {
+        "path": "experiments/N17_F02/best_model.pth",
+        "sha256": "413ca1deda6be6a2a99e0bcde4f97839a46046dfe3605d4726f8cee563c2d6c5",
+        "bytes": 81651999
+      },
+      {
+        "path": "experiments/N17_F03/best_model.pth",
+        "sha256": "4f7287f22352476d450bb6bafbba21553be42356ed5da75d2d90d74bee3ae8b5",
+        "bytes": 81651999
+      },
+      {
+        "path": "experiments/N17_F04/best_model.pth",
+        "sha256": "78bdd0eed36b1e06f5fe858262f046d635fd8023243d76c6fbc18f26f5f7a814",
+        "bytes": 81651999
+      },
+      {
+        "path": "experiments/N17_F05/best_model.pth",
+        "sha256": "7e9c964124d6e0f35b9ae24d4d63d67c248c042f6a0fa4df72dc0d1068d73016",
+        "bytes": 81651999
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.6329713948071,
+        "p50_ms": 63.00212722271681,
+        "p95_ms": 70.24221629835665,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.97632450982928,
+        "p50_ms": 63.11807222664356,
+        "p95_ms": 69.69448025338352,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 61.29002161324024,
+        "p50_ms": 63.68181901052594,
+        "p95_ms": 70.59417800046504,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.904946411028504,
+        "p50_ms": 63.03285947069526,
+        "p95_ms": 69.33538457378745,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.93077903799713,
+        "p50_ms": 60.581086203455925,
+        "p95_ms": 65.95374974422157,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "bc7d836b44ff0cbfdbbb6517d0d7639c14c5bb2e2fcb3a5c7f160042c69176bd",
+    "accuracy_recipe_sha256": "bc7d836b44ff0cbfdbbb6517d0d7639c14c5bb2e2fcb3a5c7f160042c69176bd",
+    "accuracy_checkpoint_sha256": [
+      "014166b240b05b70d1959214d6add0ff9611b986a8b1bb0d97e0fdb813e90e3d",
+      "413ca1deda6be6a2a99e0bcde4f97839a46046dfe3605d4726f8cee563c2d6c5",
+      "4f7287f22352476d450bb6bafbba21553be42356ed5da75d2d90d74bee3ae8b5",
+      "78bdd0eed36b1e06f5fe858262f046d635fd8023243d76c6fbc18f26f5f7a814",
+      "7e9c964124d6e0f35b9ae24d4d63d67c248c042f6a0fa4df72dc0d1068d73016"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "C5_EMA",
+    "bytes": 556883475,
+    "fits_500MB": false,
+    "val_auc": 0.8055846465702867,
+    "dependencies": [
+      {
+        "path": "experiments/C17_F01/ema_best_model.pth",
+        "sha256": "67f7835d75806068b37b51b55bba55848dc25929c1c7b742d3e467862e9451f8",
+        "bytes": 111376695
+      },
+      {
+        "path": "experiments/C17_F02/ema_best_model.pth",
+        "sha256": "a0994f36a32c0e5470be806dd3d022c0e19740042863c2544f50c036999a9177",
+        "bytes": 111376695
+      },
+      {
+        "path": "experiments/C17_F03/ema_best_model.pth",
+        "sha256": "831e0c703f7fe951d165eab064b6866a7acaa14beaf635b27d05a4fa922f7ecc",
+        "bytes": 111376695
+      },
+      {
+        "path": "experiments/C17_F04/ema_best_model.pth",
+        "sha256": "73ef0cb545c0a91fa1a3e60dfbbd19c1b112fc108b108c53386f462b855effab",
+        "bytes": 111376695
+      },
+      {
+        "path": "experiments/C17_F05/ema_best_model.pth",
+        "sha256": "8bbcf6687e7b0d695c05d54a858081b7a05ca29cb2fe4b51ab2378a2183ac90d",
+        "bytes": 111376695
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.748733669519424,
+        "p50_ms": 59.0881104581058,
+        "p95_ms": 66.77496791817248,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.76899473182857,
+        "p50_ms": 58.706491719931364,
+        "p95_ms": 67.68976100720465,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.563521176576614,
+        "p50_ms": 59.539946261793375,
+        "p95_ms": 62.954373098909855,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.35612348653376,
+        "p50_ms": 59.27537474781275,
+        "p95_ms": 66.18306818418205,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.51346035301685,
+        "p50_ms": 58.98502981290221,
+        "p95_ms": 64.63259244337678,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "51e37316b7cd033d04d573aaffe3320b4cf49da37c8607dde2b52039add9cea6",
+    "accuracy_recipe_sha256": "51e37316b7cd033d04d573aaffe3320b4cf49da37c8607dde2b52039add9cea6",
+    "accuracy_checkpoint_sha256": [
+      "67f7835d75806068b37b51b55bba55848dc25929c1c7b742d3e467862e9451f8",
+      "73ef0cb545c0a91fa1a3e60dfbbd19c1b112fc108b108c53386f462b855effab",
+      "831e0c703f7fe951d165eab064b6866a7acaa14beaf635b27d05a4fa922f7ecc",
+      "8bbcf6687e7b0d695c05d54a858081b7a05ca29cb2fe4b51ab2378a2183ac90d",
+      "a0994f36a32c0e5470be806dd3d022c0e19740042863c2544f50c036999a9177"
+    ],
+    "status": "SIZE_FAIL",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Total inference weights exceed 500,000,000 bytes"
+    ]
+  },
+  {
+    "candidate": "N5_EMA",
+    "bytes": 408275755,
+    "fits_500MB": true,
+    "val_auc": 0.8068362456177208,
+    "dependencies": [
+      {
+        "path": "experiments/N17_F01/ema_best_model.pth",
+        "sha256": "04ce77da9c788d64c6b74831e37ff0d8bf4d05565f4ad0415da2f7b609dd610a",
+        "bytes": 81655151
+      },
+      {
+        "path": "experiments/N17_F02/ema_best_model.pth",
+        "sha256": "559b2a2a5aba930a53839b9027ba35f7590dd54ee049b1328b03eafab4082719",
+        "bytes": 81655151
+      },
+      {
+        "path": "experiments/N17_F03/ema_best_model.pth",
+        "sha256": "58db9e8cb9d41096eb01f310ac3adf403e57b1f471789ce5a1ac24be9348bb36",
+        "bytes": 81655151
+      },
+      {
+        "path": "experiments/N17_F04/ema_best_model.pth",
+        "sha256": "7b1620d2d8f76ec4d0551833448514aa829bffad99bf582d50d0292a09f48af7",
+        "bytes": 81655151
+      },
+      {
+        "path": "experiments/N17_F05/ema_best_model.pth",
+        "sha256": "bee8f121fda1cebb85c23a11a544e3ac99fb8b4665f10c2c4aa784fca9fb32c3",
+        "bytes": 81655151
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.18431191332638,
+        "p50_ms": 62.595394905656576,
+        "p95_ms": 69.4223128259182,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 61.09102130867541,
+        "p50_ms": 63.394283410161734,
+        "p95_ms": 68.53328249417245,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.428205132484436,
+        "p50_ms": 63.48766293376684,
+        "p95_ms": 69.2048323340714,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 61.101578176021576,
+        "p50_ms": 63.76165896654129,
+        "p95_ms": 69.50396690517664,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 58.29422143287957,
+        "p50_ms": 60.24695746600628,
+        "p95_ms": 69.05825566500425,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "f601678199958ed504094c54d38efe03a50293b4412a16d3d38835c7564f0688",
+    "accuracy_recipe_sha256": "f601678199958ed504094c54d38efe03a50293b4412a16d3d38835c7564f0688",
+    "accuracy_checkpoint_sha256": [
+      "04ce77da9c788d64c6b74831e37ff0d8bf4d05565f4ad0415da2f7b609dd610a",
+      "559b2a2a5aba930a53839b9027ba35f7590dd54ee049b1328b03eafab4082719",
+      "58db9e8cb9d41096eb01f310ac3adf403e57b1f471789ce5a1ac24be9348bb36",
+      "7b1620d2d8f76ec4d0551833448514aa829bffad99bf582d50d0292a09f48af7",
+      "bee8f121fda1cebb85c23a11a544e3ac99fb8b4665f10c2c4aa784fca9fb32c3"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "E17_F01",
+    "bytes": 250231929,
+    "fits_500MB": true,
+    "val_auc": 0.8041460605808133,
+    "dependencies": [
+      {
+        "path": "experiments/S17_F01/best_model.pth",
+        "sha256": "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/D17_F01/best_model.pth",
+        "sha256": "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/C17_F01/best_model.pth",
+        "sha256": "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+        "bytes": 111375943
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.08024234324694,
+        "p50_ms": 63.10155475512147,
+        "p95_ms": 67.69181182608008,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.41552731767297,
+        "p50_ms": 63.039631582796574,
+        "p95_ms": 68.4517698828131,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.249174918979406,
+        "p50_ms": 60.28761761263013,
+        "p95_ms": 65.18245171755552,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "candidate": "E17_F01",
+        "device": "NVIDIA GeForce RTX 4090",
+        "cuda_runtime": "12.8",
+        "precision": "fp16_amp",
+        "batch_size": 1,
+        "warmup": 3,
+        "measured_samples": 20,
+        "model_count": 3,
+        "checkpoint_sha256": [
+          "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+          "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+          "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c"
+        ],
+        "fusion_model_weights": {
+          "D17_F01": 0.25,
+          "C17_F01": 0.25,
+          "S17_F01": 0.5
+        },
+        "scope": "ZIP read/decode, deterministic preprocessing, host-to-device, ALL sequential model forwards, sigmoid, CPU transfer, probability reduction, synchronize",
+        "mean_ms": 63.402907364070415,
+        "p50_ms": 65.97542343661189,
+        "p95_ms": 70.4211313277483,
+        "max_ms": 72.99382612109184,
+        "official_compliance": false,
+        "reason": "Official target hardware and timing scope/statistic have not been fully specified"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "766c8c9259fc48378f56bed3d84a8f84fab5a29c711273a238592c93f659118b",
+    "accuracy_recipe_sha256": "766c8c9259fc48378f56bed3d84a8f84fab5a29c711273a238592c93f659118b",
+    "accuracy_checkpoint_sha256": [
+      "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+      "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+      "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "D5_C1_S1",
+    "bytes": 364045593,
+    "fits_500MB": true,
+    "val_auc": 0.805504386532272,
+    "dependencies": [
+      {
+        "path": "experiments/D17_F04/best_model.pth",
+        "sha256": "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/S17_F01/best_model.pth",
+        "sha256": "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/C17_F01/best_model.pth",
+        "sha256": "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+        "bytes": 111375943
+      },
+      {
+        "path": "experiments/D17_F03/best_model.pth",
+        "sha256": "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/D17_F02/best_model.pth",
+        "sha256": "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/D17_F01/best_model.pth",
+        "sha256": "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/D17_F05/best_model.pth",
+        "sha256": "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9",
+        "bytes": 28453416
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 62.765770545229316,
+        "p50_ms": 62.93176673352718,
+        "p95_ms": 71.7258749064058,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.08024234324694,
+        "p50_ms": 63.10155475512147,
+        "p95_ms": 67.69181182608008,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.249174918979406,
+        "p50_ms": 60.28761761263013,
+        "p95_ms": 65.18245171755552,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.85990075953305,
+        "p50_ms": 63.046157360076904,
+        "p95_ms": 68.95916350185871,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 59.992611687630415,
+        "p50_ms": 63.00067715346813,
+        "p95_ms": 66.61794143728912,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.41552731767297,
+        "p50_ms": 63.039631582796574,
+        "p95_ms": 68.4517698828131,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 77.47288253158331,
+        "p50_ms": 66.1635622382164,
+        "p95_ms": 121.76713617518544,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "candidate": "D5_C1_S1",
+        "device": "NVIDIA GeForce RTX 4090",
+        "cuda_runtime": "12.8",
+        "precision": "fp16_amp",
+        "batch_size": 1,
+        "warmup": 3,
+        "measured_samples": 20,
+        "model_count": 7,
+        "checkpoint_sha256": [
+          "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+          "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+          "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+          "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+          "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9",
+          "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+          "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c"
+        ],
+        "fusion_model_weights": {
+          "D17_F01": 0.05,
+          "D17_F02": 0.05,
+          "D17_F03": 0.05,
+          "D17_F04": 0.05,
+          "D17_F05": 0.05,
+          "C17_F01": 0.25,
+          "S17_F01": 0.5
+        },
+        "scope": "ZIP read/decode, deterministic preprocessing, host-to-device, ALL sequential model forwards, sigmoid, CPU transfer, probability reduction, synchronize",
+        "mean_ms": 87.42759390734136,
+        "p50_ms": 90.37230769172311,
+        "p95_ms": 94.60570537485182,
+        "max_ms": 97.56943862885237,
+        "official_compliance": false,
+        "reason": "Official target hardware and timing scope/statistic have not been fully specified"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "9083f8986fbf54286eba8137ee297e70f2c76b025b6ef204ddc6f7e0f4b10f8a",
+    "accuracy_recipe_sha256": "9083f8986fbf54286eba8137ee297e70f2c76b025b6ef204ddc6f7e0f4b10f8a",
+    "accuracy_checkpoint_sha256": [
+      "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+      "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+      "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+      "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+      "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9",
+      "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+      "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c"
+    ],
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  },
+  {
+    "candidate": "E17",
+    "bytes": 1251159645,
+    "fits_500MB": false,
+    "val_auc": 0.8095184036861143,
+    "dependencies": [
+      {
+        "path": "experiments/S17_F02/best_model.pth",
+        "sha256": "3fb7a9a1da671d5aab0d68ee0b57d3d1cb5d9431958015f4dbff19506e69ef88",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/C17_F03/best_model.pth",
+        "sha256": "73517af672f1f8cc6ef9c9092d832c2c8d5db171e5561455298cfef44b8e7985",
+        "bytes": 111375943
+      },
+      {
+        "path": "experiments/D17_F04/best_model.pth",
+        "sha256": "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/S17_F01/best_model.pth",
+        "sha256": "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/C17_F05/best_model.pth",
+        "sha256": "6115ded995c0f61b075e28b3706b79819e71aec97a9faac9d9b4d8a6b44e9073",
+        "bytes": 111375943
+      },
+      {
+        "path": "experiments/S17_F03/best_model.pth",
+        "sha256": "67840823d7c712f30112fac22e87a2ac24a37d31e170f211bf5a80988a3857ba",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/S17_F04/best_model.pth",
+        "sha256": "efd1ca2cec491f7302d4fe31d5fbe4df9f762a88ed12db3f1998134f3945015b",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/C17_F02/best_model.pth",
+        "sha256": "fd329616180e1bd35d979a72a920a62f925ce08b30bb34e5a33ad873910b3d08",
+        "bytes": 111375943
+      },
+      {
+        "path": "experiments/C17_F04/best_model.pth",
+        "sha256": "0be8596a36474527a29a242c17df5a5f94a3dbfa495208e112c5560e3df55a73",
+        "bytes": 111375943
+      },
+      {
+        "path": "experiments/S17_F05/best_model.pth",
+        "sha256": "016e1155a7cce2f5a899e352186899969d9bbb84185bf0082b4d73334973f160",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/C17_F01/best_model.pth",
+        "sha256": "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+        "bytes": 111375943
+      },
+      {
+        "path": "experiments/D17_F03/best_model.pth",
+        "sha256": "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/D17_F02/best_model.pth",
+        "sha256": "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/D17_F01/best_model.pth",
+        "sha256": "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/D17_F05/best_model.pth",
+        "sha256": "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9",
+        "bytes": 28453416
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 58.677276177331805,
+        "p50_ms": 60.95696799457073,
+        "p95_ms": 67.42438660003245,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 58.01545814611018,
+        "p50_ms": 61.2637591548264,
+        "p95_ms": 66.3444078527391,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 62.765770545229316,
+        "p50_ms": 62.93176673352718,
+        "p95_ms": 71.7258749064058,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.08024234324694,
+        "p50_ms": 63.10155475512147,
+        "p95_ms": 67.69181182608008,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.067822152748704,
+        "p50_ms": 59.1663527302444,
+        "p95_ms": 65.15014851465821,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.824164282530546,
+        "p50_ms": 62.970791943371296,
+        "p95_ms": 68.10218058526516,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.559206964448094,
+        "p50_ms": 59.09170117229223,
+        "p95_ms": 63.788492837920785,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.29195086658001,
+        "p50_ms": 59.27419429644942,
+        "p95_ms": 62.97787115909159,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.50187497958541,
+        "p50_ms": 59.97880268841982,
+        "p95_ms": 62.97898730263114,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.374290470033884,
+        "p50_ms": 59.890573378652334,
+        "p95_ms": 65.13553033582866,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.249174918979406,
+        "p50_ms": 60.28761761263013,
+        "p95_ms": 65.18245171755552,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.85990075953305,
+        "p50_ms": 63.046157360076904,
+        "p95_ms": 68.95916350185871,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 59.992611687630415,
+        "p50_ms": 63.00067715346813,
+        "p95_ms": 66.61794143728912,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.41552731767297,
+        "p50_ms": 63.039631582796574,
+        "p95_ms": 68.4517698828131,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 77.47288253158331,
+        "p50_ms": 66.1635622382164,
+        "p95_ms": 121.76713617518544,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "b802fb57663c3e64b5d069b9b8d49682fc0971b2dee1691fde3fa17cdc33b752",
+    "accuracy_recipe_sha256": "b802fb57663c3e64b5d069b9b8d49682fc0971b2dee1691fde3fa17cdc33b752",
+    "accuracy_checkpoint_sha256": [
+      "016e1155a7cce2f5a899e352186899969d9bbb84185bf0082b4d73334973f160",
+      "0be8596a36474527a29a242c17df5a5f94a3dbfa495208e112c5560e3df55a73",
+      "0cf0c61b8b6475530f90c81a263bf8441304d1b2d9a13bd34b68d590e9fbf5a9",
+      "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+      "3fb7a9a1da671d5aab0d68ee0b57d3d1cb5d9431958015f4dbff19506e69ef88",
+      "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+      "6115ded995c0f61b075e28b3706b79819e71aec97a9faac9d9b4d8a6b44e9073",
+      "67840823d7c712f30112fac22e87a2ac24a37d31e170f211bf5a80988a3857ba",
+      "73517af672f1f8cc6ef9c9092d832c2c8d5db171e5561455298cfef44b8e7985",
+      "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+      "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9",
+      "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+      "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c",
+      "efd1ca2cec491f7302d4fe31d5fbe4df9f762a88ed12db3f1998134f3945015b",
+      "fd329616180e1bd35d979a72a920a62f925ce08b30bb34e5a33ad873910b3d08"
+    ],
+    "status": "SIZE_FAIL",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Total inference weights exceed 500,000,000 bytes"
+    ]
+  },
+  {
+    "candidate": "E17_EMA_C",
+    "bytes": 1251163405,
+    "fits_500MB": false,
+    "val_auc": 0.8088958126292523,
+    "dependencies": [
+      {
+        "path": "experiments/C17_F02/ema_best_model.pth",
+        "sha256": "a0994f36a32c0e5470be806dd3d022c0e19740042863c2544f50c036999a9177",
+        "bytes": 111376695
+      },
+      {
+        "path": "experiments/C17_F01/ema_best_model.pth",
+        "sha256": "67f7835d75806068b37b51b55bba55848dc25929c1c7b742d3e467862e9451f8",
+        "bytes": 111376695
+      },
+      {
+        "path": "experiments/S17_F02/best_model.pth",
+        "sha256": "3fb7a9a1da671d5aab0d68ee0b57d3d1cb5d9431958015f4dbff19506e69ef88",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/S17_F04/best_model.pth",
+        "sha256": "efd1ca2cec491f7302d4fe31d5fbe4df9f762a88ed12db3f1998134f3945015b",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/D17_F04/best_model.pth",
+        "sha256": "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/S17_F01/best_model.pth",
+        "sha256": "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/S17_F03/best_model.pth",
+        "sha256": "67840823d7c712f30112fac22e87a2ac24a37d31e170f211bf5a80988a3857ba",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/C17_F05/ema_best_model.pth",
+        "sha256": "8bbcf6687e7b0d695c05d54a858081b7a05ca29cb2fe4b51ab2378a2183ac90d",
+        "bytes": 111376695
+      },
+      {
+        "path": "experiments/S17_F05/best_model.pth",
+        "sha256": "016e1155a7cce2f5a899e352186899969d9bbb84185bf0082b4d73334973f160",
+        "bytes": 110402570
+      },
+      {
+        "path": "experiments/D17_F03/best_model.pth",
+        "sha256": "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/C17_F03/ema_best_model.pth",
+        "sha256": "831e0c703f7fe951d165eab064b6866a7acaa14beaf635b27d05a4fa922f7ecc",
+        "bytes": 111376695
+      },
+      {
+        "path": "experiments/C17_F04/ema_best_model.pth",
+        "sha256": "73ef0cb545c0a91fa1a3e60dfbbd19c1b112fc108b108c53386f462b855effab",
+        "bytes": 111376695
+      },
+      {
+        "path": "experiments/D17_F02/best_model.pth",
+        "sha256": "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/D17_F01/best_model.pth",
+        "sha256": "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c",
+        "bytes": 28453416
+      },
+      {
+        "path": "experiments/D17_F05/best_model.pth",
+        "sha256": "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9",
+        "bytes": 28453416
+      }
+    ],
+    "latency": [
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.76899473182857,
+        "p50_ms": 58.706491719931364,
+        "p95_ms": 67.68976100720465,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.748733669519424,
+        "p50_ms": 59.0881104581058,
+        "p95_ms": 66.77496791817248,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 58.677276177331805,
+        "p50_ms": 60.95696799457073,
+        "p95_ms": 67.42438660003245,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.559206964448094,
+        "p50_ms": 59.09170117229223,
+        "p95_ms": 63.788492837920785,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 62.765770545229316,
+        "p50_ms": 62.93176673352718,
+        "p95_ms": 71.7258749064058,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.08024234324694,
+        "p50_ms": 63.10155475512147,
+        "p95_ms": 67.69181182608008,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.824164282530546,
+        "p50_ms": 62.970791943371296,
+        "p95_ms": 68.10218058526516,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.51346035301685,
+        "p50_ms": 58.98502981290221,
+        "p95_ms": 64.63259244337678,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.374290470033884,
+        "p50_ms": 59.890573378652334,
+        "p95_ms": 65.13553033582866,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.85990075953305,
+        "p50_ms": 63.046157360076904,
+        "p95_ms": 68.95916350185871,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 56.563521176576614,
+        "p50_ms": 59.539946261793375,
+        "p95_ms": 62.954373098909855,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 57.35612348653376,
+        "p50_ms": 59.27537474781275,
+        "p95_ms": 66.18306818418205,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 59.992611687630415,
+        "p50_ms": 63.00067715346813,
+        "p95_ms": 66.61794143728912,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 60.41552731767297,
+        "p50_ms": 63.039631582796574,
+        "p95_ms": 68.4517698828131,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      },
+      {
+        "device": "NVIDIA GeForce RTX 4090",
+        "batch": 1,
+        "samples": 20,
+        "warmup": 3,
+        "mean_ms": 77.47288253158331,
+        "p50_ms": 66.1635622382164,
+        "p95_ms": 121.76713617518544,
+        "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+      }
+    ],
+    "latency_note": "Per-model measurements only; summed latency is not measured ensemble end-to-end latency.",
+    "inference_recipe_sha256": "fc35d91b0ff3f02e92deefb9c1f9808f2e379de930aa9fdda1992bc5a653bff1",
+    "accuracy_recipe_sha256": "fc35d91b0ff3f02e92deefb9c1f9808f2e379de930aa9fdda1992bc5a653bff1",
+    "accuracy_checkpoint_sha256": [
+      "016e1155a7cce2f5a899e352186899969d9bbb84185bf0082b4d73334973f160",
+      "17143ea5b6a5708b6dc9adec48a85f1f575ca07552b593e0ac9f56870d281a67",
+      "3fb7a9a1da671d5aab0d68ee0b57d3d1cb5d9431958015f4dbff19506e69ef88",
+      "56eb4e7ecfa71c5b1c41f81e0e2ee583766f91c8d38ec07b30ca984bb573ee78",
+      "67840823d7c712f30112fac22e87a2ac24a37d31e170f211bf5a80988a3857ba",
+      "67f7835d75806068b37b51b55bba55848dc25929c1c7b742d3e467862e9451f8",
+      "73ef0cb545c0a91fa1a3e60dfbbd19c1b112fc108b108c53386f462b855effab",
+      "7d44a6a0f2517ed174cf4efeb2c5327e63953e505a45eaf910c1b74ee49f9e90",
+      "831e0c703f7fe951d165eab064b6866a7acaa14beaf635b27d05a4fa922f7ecc",
+      "8bbcf6687e7b0d695c05d54a858081b7a05ca29cb2fe4b51ab2378a2183ac90d",
+      "a0994f36a32c0e5470be806dd3d022c0e19740042863c2544f50c036999a9177",
+      "b729450cf92b3df595c0f8dac750c12e0a59fc8b3c8c3b9f212c3b25fd25c9a9",
+      "d6735be2091b21ccf6f31f203e9977a5c55a00007efda126ecb012350b3c4c5e",
+      "da660d50230c7bbba39e8da2dd3bdf6a33967b27517c1b445f7e66423d17759c",
+      "efd1ca2cec491f7302d4fe31d5fbe4df9f762a88ed12db3f1998134f3945015b"
+    ],
+    "status": "SIZE_FAIL",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Total inference weights exceed 500,000,000 bytes"
+    ]
+  },
+  {
+    "candidate": "E07",
+    "val_auc": 0.8115196660242932,
+    "dependencies": [
+      {
+        "path": "frozen_reference/b01_densenet121_384_20261016",
+        "sha256": "aed81971bc066db8b84486dd27e4b15088af0917cfdd1a9aeed2c0a57ca125e1",
+        "bytes": 28463720
+      },
+      {
+        "path": "frozen_reference/b02_densenet121_wd1e3_20261016_elevated",
+        "sha256": "c320179fce8cd72b4c95570a5cbb87ab85ef4366d9f059046d6bc64cd922c4b4",
+        "bytes": 28463720
+      },
+      {
+        "path": "frozen_reference/b03_densenet121_lr3e5_20261016",
+        "sha256": "22de342d0b8f68016f5d8f69e413d50454a3e4675e1cce07e59fa896af0044fb",
+        "bytes": 28463720
+      },
+      {
+        "path": "frozen_reference/m02_convnext_tiny_384_aug_20261016_elevated",
+        "sha256": "e583e2c3b64b6185ac4090f37e67bbe8362f9e67ead2fb27e793861e95638bd2",
+        "bytes": 111378631
+      },
+      {
+        "path": "frozen_reference/t01_swin_tiny_384_20261018",
+        "sha256": "577262238fd75c915ed0fe2e4e90654b08cbc9ceb0405728c8131743f6ec67a9",
+        "bytes": 110405322
+      }
+    ],
+    "latency": [],
+    "inference_recipe_sha256": "d65408ecf6ad189a7f8a005d423662001bf2864d587f4670dfac69d5ebaea6aa",
+    "accuracy_recipe_sha256": "d65408ecf6ad189a7f8a005d423662001bf2864d587f4670dfac69d5ebaea6aa",
+    "accuracy_checkpoint_sha256": [
+      "22de342d0b8f68016f5d8f69e413d50454a3e4675e1cce07e59fa896af0044fb",
+      "577262238fd75c915ed0fe2e4e90654b08cbc9ceb0405728c8131743f6ec67a9",
+      "aed81971bc066db8b84486dd27e4b15088af0917cfdd1a9aeed2c0a57ca125e1",
+      "c320179fce8cd72b4c95570a5cbb87ab85ef4366d9f059046d6bc64cd922c4b4",
+      "e583e2c3b64b6185ac4090f37e67bbe8362f9e67ead2fb27e793861e95638bd2"
+    ],
+    "bytes": 307175113,
+    "status": "LATENCY_UNVERIFIED",
+    "eligible": false,
+    "latency_ms": null,
+    "measurement_scope": null,
+    "hardware": null,
+    "internal_80ms_target_met": null,
+    "reasons": [
+      "Official protocol/hardware or full-ensemble timing evidence is missing or mismatched"
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "candidate_id": "H17_PAIR",
+  "source_model_ids": [
+    "H17_DISTILL_01",
+    "H17_DISTILL_02"
+  ],
+  "checkpoint_sha256": [
+    "e534d5434c4154832e68d2007c381198e47a6c932ef61182821f132adae7149f",
+    "35fb17621d21b1f0825bd3dd8b2090c2e0115593d3ef8b7b0cedc2a380022f69"
+  ],
+  "fusion_formula": {
+    "H17_DISTILL_01": 0.5,
+    "H17_DISTILL_02": 0.5
+  },
+  "val_macro_auc": 0.8088738906608732,
+  "weight_size_bytes": 110105415,
+  "research_4090_latency_ms": null,
+  "official_target_latency_ms": null,
+  "size_status": "PASS",
+  "latency_status": "LATENCY_UNVERIFIED",
+  "deployment_status": "LATENCY_UNVERIFIED",
+  "test_probability_sha256": "5b767eadaf5765d0e42f09ccac4075a140fbe81dd39ba1725a932080bd1ddae1",
+  "format": {
+    "status": "FORMAT_PASS",
+    "study_count": 1414,
+    "rows": 14140,
+    "classes_per_study": 10,
+    "sha256": "5d4f5765639a3f8d3afb02e9385f50187949172b15dbbb456feb9141a4659991"
+  },
+  "test_auc": null,
+  "hidden_test_labels_used": false
+}

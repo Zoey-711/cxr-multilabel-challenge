@@ -1,0 +1,21 @@
+{
+  "model_id": "E07",
+  "frozen_source_sha256": "ed2bbbfe6138abf4a42d20ebc5a3e1d0a00385f8fe230166c921237d00c7b813",
+  "csv_sha256": "f864eaf9ae7b65a89e2af6260aaeb224b5ab0d51446788cbe8951b35aff71995",
+  "rows": 859,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}
