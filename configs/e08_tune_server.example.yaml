@@ -1,0 +1,18 @@
+data_root: /AUTHORIZED/data/cxr_first.zip
+pretrained_root: /AUTHORIZED/imagenet
+protocol_root: /AUTHORIZED/phase17_patient_folds
+baseline_results_root: /AUTHORIZED/phase17_batch
+output_root: /AUTHORIZED/outputs/e08_tuning
+gpu_ids: [0, 1, 2, 3, 4, 5, 6, 7]
+max_concurrent: 8
+# Total cap includes preflight, pilots and expansion. Must be explicitly authorized.
+gpu_hours: null
+# 0 explicitly disables expansion. Positive sub-cap must fit in total cap.
+extension_gpu_hours: null
+minimum_free_disk_gib: 120
+minimum_free_memory_gib_per_worker: 8
+upload:
+  enabled: false
+  repository: Zoey-711/cxr-multilabel-challenge
+  branch: results/e08-tune
+  checkout: /AUTHORIZED/e08_tune_results_upload

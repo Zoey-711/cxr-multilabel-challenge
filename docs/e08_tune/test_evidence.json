@@ -1,0 +1,269 @@
+{
+  "date": "2026-10-24",
+  "mode": "CPU synthetic; CUDA_VISIBLE_DEVICES=-1",
+  "tests": 64,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 11.698,
+  "cases": [
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_DECAY_LOW_F01]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_DECAY_HIGH_F01]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LR_LOW_F01]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LR_HIGH_F01]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LONG_F01]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_DECAY_LOW_F02]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_DECAY_HIGH_F02]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LR_LOW_F02]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LR_HIGH_F02]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LONG_F02]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_DECAY_LOW_F03]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_DECAY_HIGH_F03]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LR_LOW_F03]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LR_HIGH_F03]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LONG_F03]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_DECAY_LOW_F04]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_DECAY_HIGH_F04]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LR_LOW_F04]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LR_HIGH_F04]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LONG_F04]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_DECAY_LOW_F05]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_DECAY_HIGH_F05]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LR_LOW_F05]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LR_HIGH_F05]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_frozen_templates_cpu_loss[ET_LONG_F05]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_ema_buffer_and_checkpoint_next_update[0.998]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_ema_buffer_and_checkpoint_next_update[0.999]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_ema_buffer_and_checkpoint_next_update[0.9995]"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_selection_max_two_stable_and_ema_only"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_dependency_incomplete_blocks_expansion"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_expansion_selection_is_frozen"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_authorization_and_local_platform_guard"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_pilot_queue_resume_and_budget"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_no_change_to_phase32_seal"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_five_fold_incomplete_is_not_full"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_full_oof_alignment_and_bootstrap_pipeline"
+    },
+    {
+      "class": "tests.test_e08_tune",
+      "name": "test_raw_ema_export_independent_and_portable"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_all_pilot_configs_and_cpu_loss[P32_CS_LR]"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_all_pilot_configs_and_cpu_loss[P32_NM_LR]"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_all_pilot_configs_and_cpu_loss[P32_NS_448]"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_all_pilot_configs_and_cpu_loss[P32_NS_512]"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_all_pilot_configs_and_cpu_loss[P32_NS_ASL]"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_all_pilot_configs_and_cpu_loss[P32_NS_POS]"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_all_pilot_configs_and_cpu_loss[P32_NS_PHOTO]"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_all_pilot_configs_and_cpu_loss[P32_NS_MIXUP]"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_study_support_not_image_weighted"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_mixup_resume_rng_and_gradient"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_budget_required"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_complete_export_relocation_and_tamper"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_queue_failure_retry_budget_resume"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_small_export_excludes_images_weights"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_preflight_windows_fail_closed"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_no_phase17_entry_mutation"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_isolated_preprocessing[384]"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_isolated_preprocessing[448]"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_isolated_preprocessing[512]"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_preflight_identity_roundtrip"
+    },
+    {
+      "class": "tests.test_phase32",
+      "name": "test_cpu_optimizer_checkpoint_next_step"
+    },
+    {
+      "class": "tests.test_early_stopping",
+      "name": "test_model_defaults_and_strict_macro_auc_improvement"
+    },
+    {
+      "class": "tests.test_early_stopping",
+      "name": "test_min_delta_controls_patience_but_best_checkpoint_remains_global_max"
+    },
+    {
+      "class": "tests.test_metrics",
+      "name": "test_binary_auc_ties_and_order"
+    },
+    {
+      "class": "tests.test_metrics",
+      "name": "test_study_metrics_fuse_images_before_scoring"
+    },
+    {
+      "class": "tests.test_patient_folds",
+      "name": "test_folds_are_reproducible_and_keep_whole_patients"
+    },
+    {
+      "class": "tests.test_patient_folds",
+      "name": "test_frozen_fold_selection_rejects_tampering"
+    }
+  ],
+  "remote_cuda": "PENDING",
+  "formal_local_training": "NOT_STARTED"
+}

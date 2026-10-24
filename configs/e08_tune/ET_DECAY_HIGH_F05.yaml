@@ -1,0 +1,86 @@
+experiment:
+  name: et_decay_high_f05
+  seed: 42
+data:
+  archive_path: null
+  train_manifest: null
+  val_manifest: null
+  test_manifest: null
+  image_root: null
+  columns:
+    subject_id: Subject_id
+    study_id: Study_id
+    image_path: Dicom_id
+    labels:
+    - Predict_class
+  label_encoding:
+    positive: semicolon_delimited_class_ids_1_to_10
+    unlisted_policy: negative
+    negative: unlisted_in_complete_competition_annotation
+    uncertain: no_code_observed
+    missing: blank_Predict_class_is_error
+  input_size: 384
+  num_workers: 4
+  train_augmentation:
+    enabled: true
+    name: conservative_cxr_v1
+    affine_probability: 0.5
+    rotation_degrees: 3.0
+    translation_fraction: 0.02
+    photometric_probability: 0.5
+    brightness_contrast_fraction: 0.05
+  train_subset:
+    kind: patient_fold_v1
+    directory: outputs/analysis/phase17_patient_folds
+    fold: 5
+    sha256:
+      patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+      study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+      image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d
+    expected_counts:
+      train:
+        patients: 8844
+        studies: 14811
+        images: 24292
+      oof:
+        patients: 2211
+        studies: 3702
+        images: 6052
+model:
+  name: efficientnet_v2_s
+  pretrained: imagenet
+  pretrained_sha256: dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74
+  num_classes: 10
+training:
+  batch_size: 8
+  gradient_accumulation_steps: 2
+  epochs: 30
+  optimizer: adamw
+  backbone_lr: 0.0001
+  classifier_lr: 0.0003
+  weight_decay: 0.0001
+  loss: bce_with_logits
+  scheduler: cosine
+  warmup_epochs: 2
+  precision: fp16_amp
+  grad_clip_norm: 1.0
+  early_stopping_patience: 6
+  ema:
+    enabled: true
+    decay: 0.9995
+    update_after_step: 1
+    use_buffers: true
+validation:
+  study_fusion: mean_probability
+  primary_metric: macro_auc
+  auxiliary_metric: macro_f1
+  f1_threshold: 0.5
+inference:
+  batch_size: 16
+  submission_filename: submission.csv
+  submission_mode: threshold
+  threshold: 0.5
+e08_tune:
+  variant: DECAY_HIGH
+  baseline_id: N17_F05
+  factor: ema.decay

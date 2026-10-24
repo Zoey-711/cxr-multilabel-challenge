@@ -1,3 +1,7 @@
+# E08组成模型专项调参
+
+新增专项请阅读 [E08调参运行说明](docs/e08_tune/README.md)：复用N17基准，5个新Pilot，最多2项条件补齐五折；独立输出与预算，不影响下面的Phase32或Phase17任务。
+
 # Phase32 新增8项Pilot
 
 本次新增实验请阅读 [Phase32运行说明](docs/phase32/README.md)。使用独立克隆、独立输出及明确GPU预算；原Phase17说明保留如下。
