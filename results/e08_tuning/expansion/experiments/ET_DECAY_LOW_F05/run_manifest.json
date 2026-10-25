@@ -1,0 +1,26 @@
+{
+  "model_id": "ET_DECAY_LOW_F05",
+  "commit": "01fa68bdac65ce56d04a1fc99e8f5996ab09aa20",
+  "config_sha256": "4e1ab12cdfa812e6109653ccc27d0b0b128d412c61270245fd5e122b81b7c343",
+  "fold_hashes": {
+    "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+    "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+    "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+  },
+  "source_results_commit": "cbfc5997438f371086cd1fbe232890590cd67ffb",
+  "completed": "2026-10-25T03:20:43.860615+00:00",
+  "kind": "single_fold_pilot",
+  "training_pretrained": {
+    "source": "torchvision EfficientNet_V2_S_Weights.IMAGENET1K_V1",
+    "url": "https://download.pytorch.org/models/efficientnet_v2_s-dd5fe13b.pth",
+    "sha256": "dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74",
+    "size_bytes": 86721253,
+    "external_labeled_data_used_for_additional_training": false
+  },
+  "limitations": [
+    "Official Val repeatedly used for model selection.",
+    "single-fold comparisons exploratory; no multiplicity correction.",
+    "4090 timing cannot prove T4 <=100ms."
+  ],
+  "state": "DONE"
+}
