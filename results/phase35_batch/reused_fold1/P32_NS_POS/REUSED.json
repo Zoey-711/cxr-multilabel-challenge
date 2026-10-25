@@ -1,0 +1,28 @@
+{
+  "state": "REUSED",
+  "variant": "POS",
+  "source_commit": "9fd6afc68b904ac4cf7f319053f09023507ca5ee",
+  "source_id": "P32_NS_POS",
+  "sha256": {
+    "config.yaml": "54d6a131ec9d8d3bd219707dd598cd0e2b9b016417fa134ed89cb0cb09f97bea",
+    "resolved_config.yaml": "cd86884c8329940f9fcc59440e2073ec88d4aafebf633a8cd5536e678010e221",
+    "run_manifest.json": "0508d3f1e64dd4666bd72db9c302508db3ceaad3cb6d9fd701d8832b9db6e938",
+    "metrics.json": "2f4b762437b6a82dc8eb92d5e8c4d8d8884279016d6d229c92670da53ff58cc4",
+    "train_history.csv": "1e9ced7dbd4817bdef536a4694bbd45ca4fb12fe8d338aa98c72e784653ba11c",
+    "best_model.pth": "87d1570c1fa550acd878d31f61eb120c3afcfda7ea113270573a1652160ae9f8",
+    "ema_best_model.pth": "1e67f70def640eb89d71d37e0054466d90fbef47459b0d03ac081818fe5b5807",
+    "best_model.sha256": "a4085e63779d4601afb496322ef288a92d030521a047eed8c96ce2cf6606bacf",
+    "ema_best_model.sha256": "2a9f882caf52e4dd15c2da6732ba80aa8b96009b4f65eb35b68610af6afb302c",
+    "model_size.json": "dc3fde0c6f235503e4ad5161a34dbacd6596ee9f91cc7f8f23276ae81d529510",
+    "latency.json": "716a8867dbf541111c5e39d967f4fb16f8cc08ec8e4f3f287a96157864cada0d",
+    "ema_latency.json": "5279486bf29b4ce0316dc87bfd6a71ae57fe9b05462d128be4b918c0a6f3003b",
+    "val_predictions.csv": "5f5cbd57bee7f646625dcd07a605879245fddfc157d268cb5e84906af2d88c86",
+    "oof_predictions.csv": "ab770ffeb1c2f986f1a2bc61c4231aeb3f39fd9a69ffe3dd793953601b8b0f51",
+    "ema_val_predictions.csv": "ff2ee4ef46a6eb004b7918bbf4b29c9345bccfba0d92f4ef0753fb56a295ae11",
+    "ema_oof_predictions.csv": "4d9a1bee877e9a718f84fd82af9cf6cf4904deb924e5603dd0e489f5af1d0844",
+    "validation_analysis/study_predictions.csv": "7f4de83d979934b0542a3fe7e1ffc3a9fe02ccfcef348d6a177e6ec1b1b6ea00",
+    "oof_analysis/study_predictions.csv": "236467d4f84cf5d181688c3d078b8d67cddda0f215419d83d83b2e776ffff6ae",
+    "ema_validation_analysis/study_predictions.csv": "e8810502c98840adc43bc34070cf220130cbf32788c441602401151a24d3a20e",
+    "ema_oof_analysis/study_predictions.csv": "8b41095d62e052f512c468f258e7aedfde2bd82fd559f76a8d382024f9aa8339"
+  }
+}

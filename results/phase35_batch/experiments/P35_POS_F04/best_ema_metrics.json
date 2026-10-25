@@ -1,0 +1,208 @@
+{
+  "epoch": 4,
+  "train_loss": 0.4413020257396696,
+  "val": {
+    "study_count": 859,
+    "macro_auc": 0.7869858632891311,
+    "macro_f1": 0.4365532022604742,
+    "threshold": 0.5,
+    "per_class": [
+      {
+        "class_id": 1,
+        "class_name": "Enlarged Cardiomediastinum",
+        "positive_studies": 24,
+        "negative_studies": 835,
+        "auc": 0.677245508982036,
+        "f1": 0.17142857142857143
+      },
+      {
+        "class_id": 2,
+        "class_name": "Pneumothorax",
+        "positive_studies": 37,
+        "negative_studies": 822,
+        "auc": 0.7850003287959493,
+        "f1": 0.27350427350427353
+      },
+      {
+        "class_id": 3,
+        "class_name": "Consolidation",
+        "positive_studies": 46,
+        "negative_studies": 813,
+        "auc": 0.7904567089149153,
+        "f1": 0.2542372881355932
+      },
+      {
+        "class_id": 4,
+        "class_name": "Pneumonia",
+        "positive_studies": 68,
+        "negative_studies": 791,
+        "auc": 0.7193519000520562,
+        "f1": 0.23357664233576642
+      },
+      {
+        "class_id": 5,
+        "class_name": "Edema",
+        "positive_studies": 115,
+        "negative_studies": 744,
+        "auc": 0.8717917251051893,
+        "f1": 0.544891640866873
+      },
+      {
+        "class_id": 6,
+        "class_name": "Cardiomegaly",
+        "positive_studies": 177,
+        "negative_studies": 682,
+        "auc": 0.7632586112629852,
+        "f1": 0.45691382765531063
+      },
+      {
+        "class_id": 7,
+        "class_name": "Atelectasis",
+        "positive_studies": 193,
+        "negative_studies": 666,
+        "auc": 0.7843205900200719,
+        "f1": 0.5053533190578159
+      },
+      {
+        "class_id": 8,
+        "class_name": "Lung Opacity",
+        "positive_studies": 214,
+        "negative_studies": 645,
+        "auc": 0.7137941027312903,
+        "f1": 0.4700854700854701
+      },
+      {
+        "class_id": 9,
+        "class_name": "Pleural Effusion",
+        "positive_studies": 260,
+        "negative_studies": 599,
+        "auc": 0.8985167587003982,
+        "f1": 0.7251655629139073
+      },
+      {
+        "class_id": 10,
+        "class_name": "No Finding",
+        "positive_studies": 306,
+        "negative_studies": 553,
+        "auc": 0.8661223983264191,
+        "f1": 0.7303754266211604
+      }
+    ]
+  },
+  "elapsed_seconds": 848.7146687544882,
+  "learning_rates": [
+    9.874803871051033e-05,
+    0.00029624411613153096
+  ],
+  "optimizer_steps": 1519,
+  "amp_skipped_steps": 0,
+  "amp_skip_step_indices": [],
+  "gpu_peak_allocated_mib": 2221,
+  "gpu_peak_reserved_mib": 2346,
+  "study_sampling": null,
+  "ema_val": {
+    "study_count": 859,
+    "macro_auc": 0.7958710398909357,
+    "macro_f1": 0.4300428652048055,
+    "threshold": 0.5,
+    "per_class": [
+      {
+        "class_id": 1,
+        "class_name": "Enlarged Cardiomediastinum",
+        "positive_studies": 24,
+        "negative_studies": 835,
+        "auc": 0.681561876247505,
+        "f1": 0.10810810810810811
+      },
+      {
+        "class_id": 2,
+        "class_name": "Pneumothorax",
+        "positive_studies": 37,
+        "negative_studies": 822,
+        "auc": 0.8244558427040178,
+        "f1": 0.2916666666666667
+      },
+      {
+        "class_id": 3,
+        "class_name": "Consolidation",
+        "positive_studies": 46,
+        "negative_studies": 813,
+        "auc": 0.7832370715011497,
+        "f1": 0.205607476635514
+      },
+      {
+        "class_id": 4,
+        "class_name": "Pneumonia",
+        "positive_studies": 68,
+        "negative_studies": 791,
+        "auc": 0.7237394957983193,
+        "f1": 0.19298245614035087
+      },
+      {
+        "class_id": 5,
+        "class_name": "Edema",
+        "positive_studies": 115,
+        "negative_studies": 744,
+        "auc": 0.8821820944366526,
+        "f1": 0.5569620253164557
+      },
+      {
+        "class_id": 6,
+        "class_name": "Cardiomegaly",
+        "positive_studies": 177,
+        "negative_studies": 682,
+        "auc": 0.7768320161704525,
+        "f1": 0.49696969696969695
+      },
+      {
+        "class_id": 7,
+        "class_name": "Atelectasis",
+        "positive_studies": 193,
+        "negative_studies": 666,
+        "auc": 0.7808002302820956,
+        "f1": 0.4978723404255319
+      },
+      {
+        "class_id": 8,
+        "class_name": "Lung Opacity",
+        "positive_studies": 214,
+        "negative_studies": 645,
+        "auc": 0.7233825979859451,
+        "f1": 0.4655581947743468
+      },
+      {
+        "class_id": 9,
+        "class_name": "Pleural Effusion",
+        "positive_studies": 260,
+        "negative_studies": 599,
+        "auc": 0.9090984974958264,
+        "f1": 0.7339130434782609
+      },
+      {
+        "class_id": 10,
+        "class_name": "No Finding",
+        "positive_studies": 306,
+        "negative_studies": 553,
+        "auc": 0.8734206762873926,
+        "f1": 0.750788643533123
+      }
+    ]
+  },
+  "ema_best_auc": 0.7958710398909357,
+  "ema_best_epoch": 4,
+  "ema_updates": 6074,
+  "ema_best_checkpoint_saved": true,
+  "best_auc": 0.787248953726203,
+  "best_epoch": 3,
+  "patience_reference_auc": 0.787248953726203,
+  "stale": 1,
+  "last_epoch": 4,
+  "early_stopping_patience": 6,
+  "early_stopping_min_delta": 0.0,
+  "early_stopping_monitor": "study_level_macro_auc",
+  "early_stopping_mode": "max",
+  "best_checkpoint_saved": false,
+  "patience_reset": false,
+  "stop_epoch": null,
+  "stop_reason": null
+}

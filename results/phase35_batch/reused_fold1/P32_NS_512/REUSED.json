@@ -1,0 +1,28 @@
+{
+  "state": "REUSED",
+  "variant": "RES512",
+  "source_commit": "9fd6afc68b904ac4cf7f319053f09023507ca5ee",
+  "source_id": "P32_NS_512",
+  "sha256": {
+    "config.yaml": "80e7660700b06daf6d2fdb73607818ad1e62a4bd788d969c84c12da8bcf84525",
+    "resolved_config.yaml": "80e7660700b06daf6d2fdb73607818ad1e62a4bd788d969c84c12da8bcf84525",
+    "run_manifest.json": "368c55a4f4db4b4e515d8ec8f9640962b714931310f4bfce54a701ae23fb77bb",
+    "metrics.json": "74c68389de1c0cf100c75c4bb0a5bd1be4b62ca1ab6b91363375805157b3d7f9",
+    "train_history.csv": "b766e75aeb74762dbcd9ecb62047eccfb0f56b48b67dc5f54eb5a05552403b7f",
+    "best_model.pth": "6b3fc7eca0fb156f7faaeda1231b530fd26501eee11cbcb2120acfaad25863f9",
+    "ema_best_model.pth": "5a4b1eed3daed0caaecfbe3cefcf82357a8fda38eebe0a2faea4776785065642",
+    "best_model.sha256": "56c008c055120f5833630e597f697ce800631bac7185de4c7301d39c4add4893",
+    "ema_best_model.sha256": "2ad1ef0387c592eac21e337177f1b749fb2b6ec57a432806c99f6a50b0a21834",
+    "model_size.json": "dc3fde0c6f235503e4ad5161a34dbacd6596ee9f91cc7f8f23276ae81d529510",
+    "latency.json": "f046d6e24b84263af46a25a72dcf1ecdabc05cc3da319bf98f7d6dfca96841c1",
+    "ema_latency.json": "4d21481165c8dbf64a42531f60210fe761c44694408e78afba0ee9b06fbae12a",
+    "val_predictions.csv": "6d894f157f55fa1463b7d9092e58ca4e29580c386f2fc69817066de63e0bda23",
+    "oof_predictions.csv": "0d42e2dfd4356751e5a0b7676fdabc2a43fcd9340ffce4c0adbf70f62bf208a9",
+    "ema_val_predictions.csv": "ff291c288120166a5a79429e6d88fc0e337429e5989ae5099e869b62cca6dbcb",
+    "ema_oof_predictions.csv": "5835998a0fd186c630c505f0734fd4a58da386276e6bd8b7a0b77e793d711a66",
+    "validation_analysis/study_predictions.csv": "d86eb147bb9def79a48ddef5bb0b4a1b72b6d2ef0453e76834880467f0aa8975",
+    "oof_analysis/study_predictions.csv": "a6e9e21c59d38d93120d84bda18da5ecd7fd299624354557fd4a4661554e2f59",
+    "ema_validation_analysis/study_predictions.csv": "0eb0e5c8e64b047477f0081f743bf491f87675de3421225212da1d67fe8cde2d",
+    "ema_oof_analysis/study_predictions.csv": "ac4dc3781fac8c0fb78476f67e6bbb47f441b462f6cc7f8ef4d8f1d04b842d33"
+  }
+}

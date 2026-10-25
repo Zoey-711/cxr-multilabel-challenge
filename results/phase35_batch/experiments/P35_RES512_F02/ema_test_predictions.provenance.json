@@ -1,0 +1,28 @@
+{
+  "model_id": "P35_RES512_F02",
+  "checkpoint_kind": "ema",
+  "checkpoint_sha256": "e65f037f74cf29fa164ec0596a72716722636f43acbcc5015389c7bf48e194d9",
+  "config_sha256": "d4a409940094f19fb524612605d71b7542425dc801b36b949642c960422cfb36",
+  "input_images": 2218,
+  "expected_test_studies": 1414,
+  "preprocessing": "black_pad_v1",
+  "input_size": 512,
+  "no_test_labels": true,
+  "csv_sha256": "ae7a1f199165f656c4e3178f036fa4f455d41ec0b2ad8b2ea47cecdeab9ef337",
+  "rows": 1414,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

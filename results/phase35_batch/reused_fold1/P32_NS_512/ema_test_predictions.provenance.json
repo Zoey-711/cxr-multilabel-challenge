@@ -1,0 +1,28 @@
+{
+  "model_id": "P32_NS_512",
+  "checkpoint_kind": "ema",
+  "checkpoint_sha256": "5a4b1eed3daed0caaecfbe3cefcf82357a8fda38eebe0a2faea4776785065642",
+  "config_sha256": "80e7660700b06daf6d2fdb73607818ad1e62a4bd788d969c84c12da8bcf84525",
+  "input_images": 2218,
+  "expected_test_studies": 1414,
+  "preprocessing": "black_pad_v1",
+  "input_size": 512,
+  "no_test_labels": true,
+  "csv_sha256": "e15fdbd56be9843e38516c998fcad8f14b4a09870dd4c78f439a9e75070ede6d",
+  "rows": 1414,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

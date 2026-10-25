@@ -1,0 +1,28 @@
+{
+  "model_id": "P35_POS_F05",
+  "checkpoint_kind": "ema",
+  "checkpoint_sha256": "ee3b7f17592439843625ace33df05e0aa8943ac1fcbfc0954cb37578fb0854f9",
+  "config_sha256": "91948617c72c3ed2c6c5d13af0fde4ca13bbd5b1e2a917ab4ed92c929fc764dc",
+  "input_images": 2218,
+  "expected_test_studies": 1414,
+  "preprocessing": "black_pad_v1",
+  "input_size": 384,
+  "no_test_labels": true,
+  "csv_sha256": "56a121d064315c7b68b51ee753f490400682d9dc358bd6eefa730de45341f2dc",
+  "rows": 1414,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

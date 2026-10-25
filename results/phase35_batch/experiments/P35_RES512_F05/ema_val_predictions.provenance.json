@@ -1,0 +1,29 @@
+{
+  "model_id": "P35_RES512_F05",
+  "kind": "ema",
+  "checkpoint_sha256": "58db49903a9ce38eca860a7a6389c28c38c6f0fc1583e4fca9c9f0c2b5d722a8",
+  "fold_hashes": {
+    "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+    "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+    "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+  },
+  "config_sha256": "229cef11d4048407d6f5b5186340416e40e7fa6087c8482a94907f7e71111701",
+  "fold": 5,
+  "csv_sha256": "c1429f2ec026ad01dcd9ea12d7d7cfb6e62fd25defb9532b74022064c36e9a89",
+  "rows": 859,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

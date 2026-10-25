@@ -1,0 +1,61 @@
+{
+  "commit": "046ab1bb240139f4243b564202efc0203af32cad",
+  "state": {
+    "plan_fingerprint": "23463ed4d55d44da2b245a20f00c3aed34ef310a0063aaee3cb8731ef620c2d4",
+    "gpu_hours": 19.022615249160832,
+    "tasks": {
+      "P35_POS_F02": {
+        "state": "DONE",
+        "attempts": 1,
+        "gpu": 0,
+        "reserved_hours": 12
+      },
+      "P35_POS_F03": {
+        "state": "DONE",
+        "attempts": 1,
+        "gpu": 1,
+        "reserved_hours": 12
+      },
+      "P35_POS_F04": {
+        "state": "DONE",
+        "attempts": 1,
+        "gpu": 2,
+        "reserved_hours": 12
+      },
+      "P35_POS_F05": {
+        "state": "DONE",
+        "attempts": 1,
+        "gpu": 3,
+        "reserved_hours": 12
+      },
+      "P35_RES512_F02": {
+        "state": "DONE",
+        "attempts": 1,
+        "gpu": 4,
+        "reserved_hours": 12
+      },
+      "P35_RES512_F03": {
+        "state": "DONE",
+        "attempts": 1,
+        "gpu": 5,
+        "reserved_hours": 12
+      },
+      "P35_RES512_F04": {
+        "state": "DONE",
+        "attempts": 1,
+        "gpu": 6,
+        "reserved_hours": 12
+      },
+      "P35_RES512_F05": {
+        "state": "DONE",
+        "attempts": 1,
+        "gpu": 7,
+        "reserved_hours": 12
+      }
+    }
+  },
+  "files": {
+    "reports/experiment_summary.csv": "207eda906233f28cad10730a952603957ba1833b8c8565d21e694c54d98a4e02",
+    "reports/experiment_status.csv": "adce20392599a2ac7b1be6e718d961f9aef8977a7a0f112d3e2dfe5f38845c76"
+  }
+}
