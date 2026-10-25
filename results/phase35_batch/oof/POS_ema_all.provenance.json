@@ -1,0 +1,21 @@
+{
+  "fold1_source_commit": "9fd6afc68b904ac4cf7f319053f09023507ca5ee",
+  "formula": "concatenate corresponding held-out fold only",
+  "csv_sha256": "419a0bc50d4bf3a93073e76290316fb14fb72168e5f78702e3080dd29a666067",
+  "rows": 18513,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

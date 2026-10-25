@@ -1,0 +1,18 @@
+{
+  "raw": {
+    "mean_ms_384": 60.437829198781394,
+    "mean_ms_512": 60.335643410993114,
+    "delta_ms_512_minus_384": -0.10218578778827947,
+    "conv_linear_macs_384": 8364349952.0,
+    "conv_linear_macs_512": 14867095040.0,
+    "limitation": "Same fixed Val input images and timing code; concurrent server load may differ. Not controlled T4 measurement."
+  },
+  "ema": {
+    "mean_ms_384": 59.850450411128506,
+    "mean_ms_512": 60.82894021334747,
+    "delta_ms_512_minus_384": 0.9784898022189665,
+    "conv_linear_macs_384": 8364349952.0,
+    "conv_linear_macs_512": 14867095040.0,
+    "limitation": "Same fixed Val input images and timing code; concurrent server load may differ. Not controlled T4 measurement."
+  }
+}

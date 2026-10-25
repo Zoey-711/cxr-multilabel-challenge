@@ -1,61 +1,46 @@
 {
-  "commit": "046ab1bb240139f4243b564202efc0203af32cad",
-  "state": {
-    "plan_fingerprint": "23463ed4d55d44da2b245a20f00c3aed34ef310a0063aaee3cb8731ef620c2d4",
-    "gpu_hours": 19.022615249160832,
-    "tasks": {
-      "P35_POS_F02": {
-        "state": "DONE",
-        "attempts": 1,
-        "gpu": 0,
-        "reserved_hours": 12
-      },
-      "P35_POS_F03": {
-        "state": "DONE",
-        "attempts": 1,
-        "gpu": 1,
-        "reserved_hours": 12
-      },
-      "P35_POS_F04": {
-        "state": "DONE",
-        "attempts": 1,
-        "gpu": 2,
-        "reserved_hours": 12
-      },
-      "P35_POS_F05": {
-        "state": "DONE",
-        "attempts": 1,
-        "gpu": 3,
-        "reserved_hours": 12
-      },
-      "P35_RES512_F02": {
-        "state": "DONE",
-        "attempts": 1,
-        "gpu": 4,
-        "reserved_hours": 12
-      },
-      "P35_RES512_F03": {
-        "state": "DONE",
-        "attempts": 1,
-        "gpu": 5,
-        "reserved_hours": 12
-      },
-      "P35_RES512_F04": {
-        "state": "DONE",
-        "attempts": 1,
-        "gpu": 6,
-        "reserved_hours": 12
-      },
-      "P35_RES512_F05": {
-        "state": "DONE",
-        "attempts": 1,
-        "gpu": 7,
-        "reserved_hours": 12
-      }
-    }
-  },
+  "training_tasks": 8,
+  "reused_fold1": 2,
+  "complete_variants": [
+    "POS_raw",
+    "POS_ema",
+    "RES512_raw",
+    "RES512_ema"
+  ],
   "files": {
+    "reports/five_fold_analysis.json": "459f2d24a598fc8a14ba544a5059f84b6796740272dff248fb90401bacddf89a",
     "reports/experiment_summary.csv": "207eda906233f28cad10730a952603957ba1833b8c8565d21e694c54d98a4e02",
-    "reports/experiment_status.csv": "adce20392599a2ac7b1be6e718d961f9aef8977a7a0f112d3e2dfe5f38845c76"
+    "reports/experiment_status.csv": "adce20392599a2ac7b1be6e718d961f9aef8977a7a0f112d3e2dfe5f38845c76",
+    "reports/host_resources.json": "a2e735582740991befc1854a595b4672e7602b8fbd3e8f6c9aebd5728a7f31ea",
+    "reports/phase35_report.md": "3adc82ec3e0afc3388bdf0d5c713b7e93168ec3c2021f70290ec6817a52d6e88",
+    "reports/five_fold_summary.csv": "0f4baf82f089afc011d0bc31029234dc677f5303a842bd8f1e15389e2d636c57",
+    "reports/experiment_summary.json": "3c62f61b86a9efe587d8577ea83dbad9bbe3c2bbc2dcce4927fb7de23cf4c884",
+    "analysis/per_class_metrics.csv": "0a56fc43c0aa089a0c9397c15118e4acd27f085565adf9f553858e111d32c36a",
+    "deployment/resolution_comparison.json": "2d1d3259492ef3ecf59afb808d6dee63be2ef72ed22abe01e68efbe55b264171",
+    "deployment/cost_comparison.csv": "8d71fbbdbf1c5d38a1d6e39a5db30a96ffa03145c43ceea70cf2c01863bbab90",
+    "oof/POS_ema_all.provenance.json": "d0b2bf38173c655e02a4e39c216290d4dd2fd5801aa57c58853015f8715d44df",
+    "oof/RES512_raw_all.csv": "79825ab03f3fd7debd328700b860077ed7fa9ad225535bda6d281a55f8908b62",
+    "oof/POS_raw_all.provenance.json": "699d65bf45da4075e5e4eb649a54ed3b77146eb010895d05bf33b5e239c37b60",
+    "oof/RES512_ema_all.csv": "edfd42b0735a38691601725b220de364fee48339c70b18cb21d56f888495eaa4",
+    "oof/RES512_ema_all.provenance.json": "6d7ad55342ec4c89026719448dd7caf1c76dc7b8a0d0952a794bc98dabd7b187",
+    "oof/POS_raw_all.csv": "97429fefaab103a51d1e233ef354ece11e22172b5bdd9ec41d0118309862eb08",
+    "oof/RES512_raw_all.provenance.json": "ebdbae9f2829d7151cca99042bc13c253bb90f234d4e7b6d4de55f4e316f575c",
+    "oof/POS_ema_all.csv": "419a0bc50d4bf3a93073e76290316fb14fb72168e5f78702e3080dd29a666067",
+    "validation/RES512_ema_fivefold.csv": "1f0f4ee1f6cbcba48cc801ed987b1d35b66e42aecea269e029745432bde86dcf",
+    "validation/POS_ema_fivefold.provenance.json": "a3066622f93643787a9461415a9472440da414a32d616ba3e286e0a1769113fc",
+    "validation/RES512_raw_fivefold.csv": "3aff04b3cb6026dd365fc86301b15df5722faa70e6e6b04f839593ba3fc23455",
+    "validation/POS_ema_fivefold.csv": "3c36118753647bc330a46f8c2e2c339b1abac9573a16c2b2412f6b78e4fc3af6",
+    "validation/POS_raw_fivefold.provenance.json": "9d744836b6b3bfed3a10fb77c830e80bfbca3fdd6b6f49474876c0919471c9a8",
+    "validation/POS_raw_fivefold.csv": "bf794866874daa47bb6fc46c44b59c8b15e2257cc3491ac2ab205bc4ad6b0358",
+    "validation/RES512_ema_fivefold.provenance.json": "c379ef10e6d1c93bb6157d9a0e9cf416e74c5f23254ba4bb8a4a7811879011e7",
+    "validation/RES512_raw_fivefold.provenance.json": "1fa31899bd52692c14f74f4926c586aebf4b1a456f7e3e09a1c13c14681a3efa",
+    "test_predictions/RES512_ema_fivefold.csv": "adfc99ee9246a60575be7bf7669de1c00c03ebc337415a4d1d57c4ba6e00b326",
+    "test_predictions/POS_ema_fivefold.provenance.json": "a402467670529b60574f62fcd760ea92c72022c044fd3174e5120f2c41418707",
+    "test_predictions/RES512_raw_fivefold.csv": "5191f144faa8c6abd2cb76de458dc4caa80187c8c2be62d171573971e2c367fc",
+    "test_predictions/POS_ema_fivefold.csv": "e475a7cf8aa3eae9cd51053686127a792fab95d964875aae7e99bdca3059fd49",
+    "test_predictions/POS_raw_fivefold.provenance.json": "ec0521b2aa278faf1062251dd3858c47c4a9519ad07cd671d33e8b958c012578",
+    "test_predictions/POS_raw_fivefold.csv": "2f4d48b39eeda0d08b2f5edaab39d7a411d365d8ae53bfd2f7d96f23de853bc8",
+    "test_predictions/RES512_ema_fivefold.provenance.json": "8dfa3effa92825f77b4f77371771507416058ba243de7b824bc63fb262d0b82c",
+    "test_predictions/RES512_raw_fivefold.provenance.json": "aa80f9b3f163864b69a011d3021c06c214733d1d0cf218742b9ad015ac196786"
   }
 }

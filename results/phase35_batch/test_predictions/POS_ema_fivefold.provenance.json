@@ -1,0 +1,21 @@
+{
+  "formula": "equal five-fold Study Mean probability average",
+  "test_auc": null,
+  "csv_sha256": "e475a7cf8aa3eae9cd51053686127a792fab95d964875aae7e99bdca3059fd49",
+  "rows": 1414,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

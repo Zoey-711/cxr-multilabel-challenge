@@ -1,0 +1,20 @@
+{
+  "formula": "equal mean of five Study-level probability matrices",
+  "csv_sha256": "3c36118753647bc330a46f8c2e2c339b1abac9573a16c2b2412f6b78e4fc3af6",
+  "rows": 859,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}
