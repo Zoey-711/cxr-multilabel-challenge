@@ -1,0 +1,10 @@
+{
+  "raw": {
+    "bytes": 81651999,
+    "status": "LATENCY_UNVERIFIED"
+  },
+  "ema": {
+    "bytes": 81655151,
+    "status": "LATENCY_UNVERIFIED"
+  }
+}
