@@ -1,5 +1,17 @@
 {
   "sha256": {
+    "experiments/ET_LR_LOW_F01/ema_val_predictions.csv": "998e3894ef518a7d94fa243fa76637a2c9bc61d340df402b27d76bd973bdaecd",
+    "experiments/ET_LR_LOW_F01/oof_predictions.csv": "5262ceaf35f273dd3b2d09c191bb3dc3eb4b291c8d784e251b65815451499855",
+    "experiments/ET_LR_LOW_F01/ema_best_model.sha256": "2c200f78e2e022df40bcfec56925c38cb35495c9bfd5a3244af7da3419a33ce6",
+    "experiments/ET_LR_LOW_F01/best_model.sha256": "12925896028eb1c6ee4c08a493195039c648c6dd604484533763a76df25cbadb",
+    "experiments/ET_LR_LOW_F01/ema_oof_predictions.csv": "9913b1d6f193b453823a0887256e96ed9a118b997cd26b2595567172fe64b2c2",
+    "experiments/ET_LR_LOW_F01/model_size.json": "dc3fde0c6f235503e4ad5161a34dbacd6596ee9f91cc7f8f23276ae81d529510",
+    "experiments/ET_LR_LOW_F01/val_predictions.csv": "638884700ded2c08799fc608d748cc5086e55a310e1e06f615ebd19a8bf5378c",
+    "experiments/ET_LR_LOW_F01/train_history.csv": "8a5e01ad07bd512271649323132e9ac4a501346c6f075fa4717c21170d7c53e9",
+    "experiments/ET_LR_LOW_F01/run_manifest.json": "1355bda4abcb3b26c1ff49d1c055b444c1199fb0319822e4f519c26206075eb8",
+    "experiments/ET_LR_LOW_F01/resolved_config.yaml": "85b007c30b65bd4642c0cd9df93a32a57b4b3fdd756a1febf2bd31c80ff68ba9",
+    "experiments/ET_LR_LOW_F01/metrics.json": "32b88d8f5a9299fb463eae1e6e130cda85bac9347aea3fa0d38f66a399298bd5",
+    "experiments/ET_LR_LOW_F01/per_class_metrics.csv": "2913726a89488a58d5ce7edce63e7d94507e2376b6f0824825cb9acaba9bc1bc",
     "experiments/ET_LONG_F01/ema_val_predictions.csv": "27a7f299e883c89ed980ac38e1eea86bf659c07c551a38298bba7152fa7caa3a",
     "experiments/ET_LONG_F01/oof_predictions.csv": "4095943a16e7471e87582074b2e9c803642e14626b4de8c0fcbbaaea998134ad",
     "experiments/ET_LONG_F01/ema_best_model.sha256": "b69fd2a7d27402bcea2b373286942d69de1f545105f80f641a649281bcf2c0ab",
@@ -48,8 +60,8 @@
     "experiments/ET_DECAY_HIGH_F01/resolved_config.yaml": "5beaa6e5076b5ccdbf212b808d3d3cbf0fc19f39d25d028dfc77671da4f9aa62",
     "experiments/ET_DECAY_HIGH_F01/metrics.json": "0d31c8ffa5354156cff2c4d827d72ed97de323ceae6225b2a720d19a00067a4c",
     "experiments/ET_DECAY_HIGH_F01/per_class_metrics.csv": "73c9df28986ffcf3527ded45ce37ba2ea8c91826825bd4068c5a4e33655e03cc",
-    "reports/experiment_summary.csv": "ede72602feb4fc166579ddf3bce812717e73b17e934a245fc4a4a14e1915eb8b",
-    "reports/experiment_summary.json": "8f622331ae45eef84b6646096d7d23eac621ee789ffee245c151ea520b7e570a"
+    "reports/experiment_summary.csv": "03f12950a3ef1c28ad567a19c767feee153d8bccd06f31b8364e362bbd7ce536",
+    "reports/experiment_summary.json": "037ec31b61097d8c684428a57b17bf316eb2a42ed77e46dcfd13517f8d21248c"
   },
   "weights": "NOT_UPLOADED",
   "raw_images": "EXCLUDED"
