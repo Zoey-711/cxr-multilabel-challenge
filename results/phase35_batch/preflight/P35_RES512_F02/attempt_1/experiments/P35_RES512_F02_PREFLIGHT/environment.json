@@ -1,0 +1,8 @@
+{
+  "python": "3.12.15",
+  "torch": "2.10.0+cu128",
+  "cuda_runtime": "12.8",
+  "cudnn_version": 91002,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_memory_mib": 48508
+}

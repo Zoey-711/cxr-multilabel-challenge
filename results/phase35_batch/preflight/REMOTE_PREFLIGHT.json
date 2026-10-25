@@ -1,0 +1,116 @@
+{
+  "identity": {
+    "host": "iZuf6ijiuo4o0wtocep289Z",
+    "code_commit": "046ab1bb240139f4243b564202efc0203af32cad",
+    "devices": {
+      "0": [
+        "GPU-6adacb4b-6ea4-b8b7-99c5-24cbd04254fa",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "1": [
+        "GPU-c7a374ac-da96-b103-b4bb-2c5d1fe6f533",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "2": [
+        "GPU-9e2b94d1-ca52-6986-4897-a9c4de81f640",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "3": [
+        "GPU-f980f30b-a43a-b237-1185-2ed12da65c10",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "4": [
+        "GPU-8da485ec-12cc-2ab2-8afb-812b1261f5d1",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "5": [
+        "GPU-f8b7b25b-f1cf-62c1-bacd-dd96d8c66f1e",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "6": [
+        "GPU-f6af08dc-1ef2-f69f-7e8b-7390ff879fda",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "7": [
+        "GPU-0cb27197-7d44-39ae-c9ee-623b9b9bb8b7",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ]
+    },
+    "data_identity": "075b3b34f220eff3ea3364adc59c74e93c7d113d9caa2977fc8a4fd325bee2c9",
+    "plan": "23463ed4d55d44da2b245a20f00c3aed34ef310a0063aaee3cb8731ef620c2d4",
+    "environment": "cuda-bindings==12.9.4\ncuda-pathfinder==1.6.0\n-e git+ssh://git@github.com/Zoey-711/cxr-multilabel-challenge.git@8b7944d744f91e753b912367adeb354e8b7e21d5#egg=cxr_multilabel_challenge\nfilelock==3.32.3\nfsspec==2026.7.0\niniconfig==2.3.1\nJinja2==3.1.6\nMarkupSafe==3.0.3\nmpmath==1.3.0\nnetworkx==3.6.1\nnumpy==2.5.2\nnvidia-cublas-cu12==12.8.4.1\nnvidia-cuda-cupti-cu12==12.8.90\nnvidia-cuda-nvrtc-cu12==12.8.93\nnvidia-cuda-runtime-cu12==12.8.90\nnvidia-cudnn-cu12==9.10.2.21\nnvidia-cufft-cu12==11.3.3.83\nnvidia-cufile-cu12==1.13.1.3\nnvidia-curand-cu12==10.3.9.90\nnvidia-cusolver-cu12==11.7.3.90\nnvidia-cusparse-cu12==12.5.8.93\nnvidia-cusparselt-cu12==0.7.1\nnvidia-nccl-cu12==2.27.5\nnvidia-nvjitlink-cu12==12.8.93\nnvidia-nvshmem-cu12==3.4.5\nnvidia-nvtx-cu12==12.8.90\npackaging==26.3\npillow==12.3.0\npluggy==1.7.0\nPygments==2.21.0\npytest==9.1.1\nPyYAML==6.0.3\nsetuptools==78.1.0\nsympy==1.14.0\ntorch==2.10.0+cu128\ntorchvision==0.25.0+cu128\ntriton==3.6.0\ntyping_extensions==4.16.0\n"
+  },
+  "gpu_hours": 0.0650342069260983,
+  "probes": [
+    {
+      "task": "P35_POS_F02",
+      "gpu": 0,
+      "path": "preflight/P35_POS_F02/attempt_1/experiments/P35_POS_F02_PREFLIGHT",
+      "config_sha256": "2eabf428acefa17d4c7f2a829fa78a56353c413a8910300c25ff393df24ad5b8"
+    },
+    {
+      "task": "P35_POS_F03",
+      "gpu": 1,
+      "path": "preflight/P35_POS_F03/attempt_1/experiments/P35_POS_F03_PREFLIGHT",
+      "config_sha256": "baa7dc394809b417e0cf96f409807f5f55e9ff513e120ccbdf956fedacd71d2a"
+    },
+    {
+      "task": "P35_POS_F04",
+      "gpu": 2,
+      "path": "preflight/P35_POS_F04/attempt_1/experiments/P35_POS_F04_PREFLIGHT",
+      "config_sha256": "05d1f1487fa704d715ad0aa4f9209fa13f50a3e5fbcf3b9058cd2ae401ed417e"
+    },
+    {
+      "task": "P35_POS_F05",
+      "gpu": 3,
+      "path": "preflight/P35_POS_F05/attempt_1/experiments/P35_POS_F05_PREFLIGHT",
+      "config_sha256": "91948617c72c3ed2c6c5d13af0fde4ca13bbd5b1e2a917ab4ed92c929fc764dc"
+    },
+    {
+      "task": "P35_RES512_F02",
+      "gpu": 4,
+      "path": "preflight/P35_RES512_F02/attempt_1/experiments/P35_RES512_F02_PREFLIGHT",
+      "config_sha256": "d4a409940094f19fb524612605d71b7542425dc801b36b949642c960422cfb36"
+    },
+    {
+      "task": "P35_RES512_F03",
+      "gpu": 5,
+      "path": "preflight/P35_RES512_F03/attempt_1/experiments/P35_RES512_F03_PREFLIGHT",
+      "config_sha256": "961d5ba20bc28de7af2f7607caa24c2fb9373461beab150688f0ba688d3570f3"
+    },
+    {
+      "task": "P35_RES512_F04",
+      "gpu": 6,
+      "path": "preflight/P35_RES512_F04/attempt_1/experiments/P35_RES512_F04_PREFLIGHT",
+      "config_sha256": "1fb82fe2549aa756000425f56816c911f05c413ef8c2ae7a2bbd8cb0826803f3"
+    },
+    {
+      "task": "P35_RES512_F05",
+      "gpu": 7,
+      "path": "preflight/P35_RES512_F05/attempt_1/experiments/P35_RES512_F05_PREFLIGHT",
+      "config_sha256": "229cef11d4048407d6f5b5186340416e40e7fa6087c8482a94907f7e71111701"
+    }
+  ],
+  "attempts": {
+    "P35_POS_F02": 1,
+    "P35_POS_F03": 1,
+    "P35_POS_F04": 1,
+    "P35_POS_F05": 1,
+    "P35_RES512_F02": 1,
+    "P35_RES512_F03": 1,
+    "P35_RES512_F04": 1,
+    "P35_RES512_F05": 1
+  },
+  "reused_test_done": [
+    "P32_NS_POS",
+    "P32_NS_512"
+  ]
+}
