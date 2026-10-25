@@ -60,3 +60,4 @@ private_transfer/
 configs/friend_server.local.env
 configs/phase32_server.local.*
 configs/e08_tune_server.local.*
+configs/phase35_server.local.*

@@ -1,0 +1,21 @@
+data_root: /AUTHORIZED/data/cxr_first.zip
+pretrained_root: /AUTHORIZED/imagenet
+protocol_root: /AUTHORIZED/phase17_patient_folds
+baseline_results_root: /AUTHORIZED/phase17_batch
+# Original completed Phase32 server output; must include the two raw and EMA weights.
+phase32_results_root: /AUTHORIZED/outputs/phase32_batch
+output_root: /AUTHORIZED/outputs/phase35_batch
+gpu_ids: [0, 1, 2, 3, 4, 5, 6, 7]
+max_concurrent: 8
+# Explicit friend authorization required. Includes preflight and Fold1 Test inference.
+# Each task reserves 12h until completion; eight concurrent tasks require >96h available cap.
+# This conservative reservation is NOT an estimated actual training cost.
+gpu_hours: null
+minimum_free_disk_gib: 40
+minimum_free_memory_gib_per_worker: 8
+upload:
+  enabled: false
+  repository: Zoey-711/cxr-multilabel-challenge
+  branch: results/phase35-fivefold
+  checkout: /AUTHORIZED/phase35_results_upload
+  release_tag: phase35-fivefold-v1

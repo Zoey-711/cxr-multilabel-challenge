@@ -1,0 +1,366 @@
+schema: phase35_v1
+source_results_commit: cbfc5997438f371086cd1fbe232890590cd67ffb
+pilot_results_commit: 9fd6afc68b904ac4cf7f319053f09023507ca5ee
+max_tasks: 8
+tasks:
+- id: P35_POS_F02
+  variant: POS
+  fold: 2
+  baseline_id: N17_F02
+  backbone: efficientnet_v2_s
+  ema: true
+  config: configs/phase35/P35_POS_F02.yaml
+  config_sha256: 2eabf428acefa17d4c7f2a829fa78a56353c413a8910300c25ff393df24ad5b8
+  expected_counts:
+    train:
+      patients: 8844
+      studies: 14782
+      images: 24214
+    oof:
+      patients: 2211
+      studies: 3731
+      images: 6130
+  timeout_hours: 12
+  max_retries: 1
+  max_allowed_vram_gib: 22
+  depends_on:
+  - P32_NS_POS
+- id: P35_POS_F03
+  variant: POS
+  fold: 3
+  baseline_id: N17_F03
+  backbone: efficientnet_v2_s
+  ema: true
+  config: configs/phase35/P35_POS_F03.yaml
+  config_sha256: baa7dc394809b417e0cf96f409807f5f55e9ff513e120ccbdf956fedacd71d2a
+  expected_counts:
+    train:
+      patients: 8844
+      studies: 14812
+      images: 24245
+    oof:
+      patients: 2211
+      studies: 3701
+      images: 6099
+  timeout_hours: 12
+  max_retries: 1
+  max_allowed_vram_gib: 22
+  depends_on:
+  - P32_NS_POS
+- id: P35_POS_F04
+  variant: POS
+  fold: 4
+  baseline_id: N17_F04
+  backbone: efficientnet_v2_s
+  ema: true
+  config: configs/phase35/P35_POS_F04.yaml
+  config_sha256: 05d1f1487fa704d715ad0aa4f9209fa13f50a3e5fbcf3b9058cd2ae401ed417e
+  expected_counts:
+    train:
+      patients: 8844
+      studies: 14821
+      images: 24293
+    oof:
+      patients: 2211
+      studies: 3692
+      images: 6051
+  timeout_hours: 12
+  max_retries: 1
+  max_allowed_vram_gib: 22
+  depends_on:
+  - P32_NS_POS
+- id: P35_POS_F05
+  variant: POS
+  fold: 5
+  baseline_id: N17_F05
+  backbone: efficientnet_v2_s
+  ema: true
+  config: configs/phase35/P35_POS_F05.yaml
+  config_sha256: 91948617c72c3ed2c6c5d13af0fde4ca13bbd5b1e2a917ab4ed92c929fc764dc
+  expected_counts:
+    train:
+      patients: 8844
+      studies: 14811
+      images: 24292
+    oof:
+      patients: 2211
+      studies: 3702
+      images: 6052
+  timeout_hours: 12
+  max_retries: 1
+  max_allowed_vram_gib: 22
+  depends_on:
+  - P32_NS_POS
+- id: P35_RES512_F02
+  variant: RES512
+  fold: 2
+  baseline_id: N17_F02
+  backbone: efficientnet_v2_s
+  ema: true
+  config: configs/phase35/P35_RES512_F02.yaml
+  config_sha256: d4a409940094f19fb524612605d71b7542425dc801b36b949642c960422cfb36
+  expected_counts:
+    train:
+      patients: 8844
+      studies: 14782
+      images: 24214
+    oof:
+      patients: 2211
+      studies: 3731
+      images: 6130
+  timeout_hours: 12
+  max_retries: 1
+  max_allowed_vram_gib: 22
+  depends_on:
+  - P32_NS_512
+- id: P35_RES512_F03
+  variant: RES512
+  fold: 3
+  baseline_id: N17_F03
+  backbone: efficientnet_v2_s
+  ema: true
+  config: configs/phase35/P35_RES512_F03.yaml
+  config_sha256: 961d5ba20bc28de7af2f7607caa24c2fb9373461beab150688f0ba688d3570f3
+  expected_counts:
+    train:
+      patients: 8844
+      studies: 14812
+      images: 24245
+    oof:
+      patients: 2211
+      studies: 3701
+      images: 6099
+  timeout_hours: 12
+  max_retries: 1
+  max_allowed_vram_gib: 22
+  depends_on:
+  - P32_NS_512
+- id: P35_RES512_F04
+  variant: RES512
+  fold: 4
+  baseline_id: N17_F04
+  backbone: efficientnet_v2_s
+  ema: true
+  config: configs/phase35/P35_RES512_F04.yaml
+  config_sha256: 1fb82fe2549aa756000425f56816c911f05c413ef8c2ae7a2bbd8cb0826803f3
+  expected_counts:
+    train:
+      patients: 8844
+      studies: 14821
+      images: 24293
+    oof:
+      patients: 2211
+      studies: 3692
+      images: 6051
+  timeout_hours: 12
+  max_retries: 1
+  max_allowed_vram_gib: 22
+  depends_on:
+  - P32_NS_512
+- id: P35_RES512_F05
+  variant: RES512
+  fold: 5
+  baseline_id: N17_F05
+  backbone: efficientnet_v2_s
+  ema: true
+  config: configs/phase35/P35_RES512_F05.yaml
+  config_sha256: 229cef11d4048407d6f5b5186340416e40e7fa6087c8482a94907f7e71111701
+  expected_counts:
+    train:
+      patients: 8844
+      studies: 14811
+      images: 24292
+    oof:
+      patients: 2211
+      studies: 3702
+      images: 6052
+  timeout_hours: 12
+  max_retries: 1
+  max_allowed_vram_gib: 22
+  depends_on:
+  - P32_NS_512
+reused_fold1:
+  POS:
+    id: P32_NS_POS
+    config: configs/phase35/source_P32_NS_POS.yaml
+    config_sha256: 54d6a131ec9d8d3bd219707dd598cd0e2b9b016417fa134ed89cb0cb09f97bea
+    sha256:
+      config.yaml: 54d6a131ec9d8d3bd219707dd598cd0e2b9b016417fa134ed89cb0cb09f97bea
+      resolved_config.yaml: cd86884c8329940f9fcc59440e2073ec88d4aafebf633a8cd5536e678010e221
+      run_manifest.json: 0508d3f1e64dd4666bd72db9c302508db3ceaad3cb6d9fd701d8832b9db6e938
+      metrics.json: 2f4b762437b6a82dc8eb92d5e8c4d8d8884279016d6d229c92670da53ff58cc4
+      train_history.csv: 1e9ced7dbd4817bdef536a4694bbd45ca4fb12fe8d338aa98c72e784653ba11c
+      best_model.pth: 87d1570c1fa550acd878d31f61eb120c3afcfda7ea113270573a1652160ae9f8
+      ema_best_model.pth: 1e67f70def640eb89d71d37e0054466d90fbef47459b0d03ac081818fe5b5807
+      best_model.sha256: a4085e63779d4601afb496322ef288a92d030521a047eed8c96ce2cf6606bacf
+      ema_best_model.sha256: 2a9f882caf52e4dd15c2da6732ba80aa8b96009b4f65eb35b68610af6afb302c
+      model_size.json: dc3fde0c6f235503e4ad5161a34dbacd6596ee9f91cc7f8f23276ae81d529510
+      latency.json: 716a8867dbf541111c5e39d967f4fb16f8cc08ec8e4f3f287a96157864cada0d
+      ema_latency.json: 5279486bf29b4ce0316dc87bfd6a71ae57fe9b05462d128be4b918c0a6f3003b
+      val_predictions.csv: 5f5cbd57bee7f646625dcd07a605879245fddfc157d268cb5e84906af2d88c86
+      oof_predictions.csv: ab770ffeb1c2f986f1a2bc61c4231aeb3f39fd9a69ffe3dd793953601b8b0f51
+      ema_val_predictions.csv: ff2ee4ef46a6eb004b7918bbf4b29c9345bccfba0d92f4ef0753fb56a295ae11
+      ema_oof_predictions.csv: 4d9a1bee877e9a718f84fd82af9cf6cf4904deb924e5603dd0e489f5af1d0844
+      validation_analysis/study_predictions.csv: 7f4de83d979934b0542a3fe7e1ffc3a9fe02ccfcef348d6a177e6ec1b1b6ea00
+      oof_analysis/study_predictions.csv: 236467d4f84cf5d181688c3d078b8d67cddda0f215419d83d83b2e776ffff6ae
+      ema_validation_analysis/study_predictions.csv: e8810502c98840adc43bc34070cf220130cbf32788c441602401151a24d3a20e
+      ema_oof_analysis/study_predictions.csv: 8b41095d62e052f512c468f258e7aedfde2bd82fd559f76a8d382024f9aa8339
+    weights_bytes:
+      best_model.pth: 81651999
+      ema_best_model.pth: 81655151
+  RES512:
+    id: P32_NS_512
+    config: configs/phase35/source_P32_NS_512.yaml
+    config_sha256: 80e7660700b06daf6d2fdb73607818ad1e62a4bd788d969c84c12da8bcf84525
+    sha256:
+      config.yaml: 80e7660700b06daf6d2fdb73607818ad1e62a4bd788d969c84c12da8bcf84525
+      resolved_config.yaml: 80e7660700b06daf6d2fdb73607818ad1e62a4bd788d969c84c12da8bcf84525
+      run_manifest.json: 368c55a4f4db4b4e515d8ec8f9640962b714931310f4bfce54a701ae23fb77bb
+      metrics.json: 74c68389de1c0cf100c75c4bb0a5bd1be4b62ca1ab6b91363375805157b3d7f9
+      train_history.csv: b766e75aeb74762dbcd9ecb62047eccfb0f56b48b67dc5f54eb5a05552403b7f
+      best_model.pth: 6b3fc7eca0fb156f7faaeda1231b530fd26501eee11cbcb2120acfaad25863f9
+      ema_best_model.pth: 5a4b1eed3daed0caaecfbe3cefcf82357a8fda38eebe0a2faea4776785065642
+      best_model.sha256: 56c008c055120f5833630e597f697ce800631bac7185de4c7301d39c4add4893
+      ema_best_model.sha256: 2ad1ef0387c592eac21e337177f1b749fb2b6ec57a432806c99f6a50b0a21834
+      model_size.json: dc3fde0c6f235503e4ad5161a34dbacd6596ee9f91cc7f8f23276ae81d529510
+      latency.json: f046d6e24b84263af46a25a72dcf1ecdabc05cc3da319bf98f7d6dfca96841c1
+      ema_latency.json: 4d21481165c8dbf64a42531f60210fe761c44694408e78afba0ee9b06fbae12a
+      val_predictions.csv: 6d894f157f55fa1463b7d9092e58ca4e29580c386f2fc69817066de63e0bda23
+      oof_predictions.csv: 0d42e2dfd4356751e5a0b7676fdabc2a43fcd9340ffce4c0adbf70f62bf208a9
+      ema_val_predictions.csv: ff291c288120166a5a79429e6d88fc0e337429e5989ae5099e869b62cca6dbcb
+      ema_oof_predictions.csv: 5835998a0fd186c630c505f0734fd4a58da386276e6bd8b7a0b77e793d711a66
+      validation_analysis/study_predictions.csv: d86eb147bb9def79a48ddef5bb0b4a1b72b6d2ef0453e76834880467f0aa8975
+      oof_analysis/study_predictions.csv: a6e9e21c59d38d93120d84bda18da5ecd7fd299624354557fd4a4661554e2f59
+      ema_validation_analysis/study_predictions.csv: 0eb0e5c8e64b047477f0081f743bf491f87675de3421225212da1d67fe8cde2d
+      ema_oof_analysis/study_predictions.csv: ac4dc3781fac8c0fb78476f67e6bbb47f441b462f6cc7f8ef4d8f1d04b842d33
+    weights_bytes:
+      best_model.pth: 81651999
+      ema_best_model.pth: 81655151
+selection:
+  bootstrap_valid_draws: 2000
+  bootstrap_seed: 42
+  min_delta: 0.002
+  max_class_regression: 0.02
+preflight_timeout_hours_per_task: 0.25
+code_hashes:
+  scripts/analyze_validation.py: 427c4a7271e5c551b721c5708de683c70196df4d9d1680aa5f2011f9aebad844
+  scripts/audit_git_delivery.py: 83b99d5c625b886b2d33b2516f1d661f63d3c156bab9f98a377af14cceb40d8b
+  scripts/batch_benchmark.py: 6a7b1284c37adbe433754d9eae39e630236223557fdd8e4ee8274c83816fb074
+  scripts/batch_cost.py: c17a6e20cab74e960498e035b598cb2c87a926a89ecf1ae0aeff87ebc5bf28f3
+  scripts/batch_delivery.py: 09d30b107ac73c10a10ac1a376718d12dfd51cd83c6f9974a204aafaf2a4cb76
+  scripts/batch_ensemble_latency.py: 5fa3f4bad8fbf1ee13b71dab1a7e15a2bbb527a97ed683dfef18482821c5f31a
+  scripts/batch_latency.py: 4fe8274f818f90c834e387107c86986e6e7ab552aaf2aa7306ee86311f7a38f1
+  scripts/batch_oof.py: 82bc9de1067981f13df4e15fa9922b90da76c3d0e3b46cba6a189bc242cd114e
+  scripts/batch_preflight.py: 6fd94dc008979a6cf4b4bb15a6765e948645ed3a08abe1129a78571dca4e905f
+  scripts/batch_protocol_audit.py: 67d64aa91f9f388a2e0290b8d1747012d968280466d680b886cd1e91bf94e534
+  scripts/batch_run.py: 9b3639755a2e8e16a1df99219533ee5a184cf0ed34697b8debd60a730c7e1c1c
+  scripts/batch_test_inference.py: cad7a3b50aeeba1c6766a50351434c9d43adf756efb569624c9ae017a256a036
+  scripts/batch_train.py: b2fb3ff841808d4c8be04ad34069372ba0cbb5487eb77b221c1341b7565f4569
+  scripts/benchmark_target_latency.py: 49f9218fedf735ace6cc31cb41e7c656af8180fae57f734b416725044ce0aca2
+  scripts/e08_tune_run.py: 00c09256c8c89c320ca2a40fcbb14ef859d05dcc80aaf1ce90e18506dd0ef93c
+  scripts/e08_tune_train.py: e20e7f7067ab028b6158c2f0833c5edb30c3f217316797a1ae2b5664d93ebc16
+  scripts/friend_one_launch.py: ba64ed416bfd59c6476d3de7af72f2cf64ebed5ffcfa8668fa203cb9596f3daa
+  scripts/import_friend_results.py: 738c6ae5178ce7704437551e4a67ae2b4c551a7f001cb067d7ea1f16fa682670
+  scripts/phase32_latency.py: 7723f267a505b609fcac2b47ef224515562498c98e5145c1f02f76241b725e22
+  scripts/phase32_oof.py: 0f1d8118f97247b88c60b1ddde64f89c0818ad4df9970592b74a21dbd1be567f
+  scripts/phase32_run.py: 6b41ba61bf07a9ce019a055790fbefcc6d0c7b712c27c5ea6b7e1ab6a540b85e
+  scripts/phase32_train.py: ec6f92d88c114c96bff0014f1cf469572f100d318d80433b8082a059ce4ee43c
+  scripts/phase32_validation.py: 85041687e8921ad8f767592a9fac2a9327013aa9558313e3c5ce5686d490153d
+  scripts/phase35_latency.py: 597fb0b5630835ffe9e6f42dad2d38baf7e84e879df04ce09db0dbcf867ea76d
+  scripts/phase35_run.py: 6de83e6fb23f39ec8f96347991614aefab2020b51ab8f54f24826b1a38f72f7a
+  scripts/phase35_test.py: 7a5e396e8376148e76e9778c35088e7a4f4b3b9f15c251459c4b2c7386d9c8b9
+  scripts/phase35_train.py: 947dbd59a1efa1d0d9537eadd960cdc2c6bd98adce3ca9fea4a4ad0ace68797c
+  scripts/protocol_assets.py: f094fd387a3b4fd8f31378c82a8c9a1a433d8e6d3917ddb27f7259e593b062bc
+  scripts/remote_gh_route_probe.py: 109ddf83896ee58599a5b993e6cd21cd59f66b7d274b5d90e9701cff1d06a74d
+  scripts/remote_gpu_probe.py: fe37afba6d66694ace8e7177967ccb36169ee05568c4c4b98f1c901caa80381d
+  scripts/remote_preflight.py: 62c559833a97b0d66c1adf1ba52d4c53a220831e3e3d473e12da01a75901412e
+  scripts/remote_real_inference.py: afd9fde1c4bfb8f08594c2773f709d1d331a8757499569871605c94cc70134b2
+  scripts/seal_batch_plan.py: 34db5b7fb8de04fc56794baa00952f4ed4a70d47530e4add340150638bc0d546
+  scripts/validate_batch_artifacts.py: a2bc109cc82f287ea6e0982a5de0edf115650e22b83640a09fce041c53304481
+  scripts/validate_submission.py: d0dd997f19b5db0a07506d7e1c5ecba1582562214d5f1ae3b859325b1bb646b3
+  src/cxr/__init__.py: 22b8cd1e4cfe0575ac5d5b064fa02b6c3dfb57e34c8a254f9b8d53edea4cecb0
+  src/cxr/batch/__init__.py: 1ce9b459a1f14c747d3816c0bfc4b2d2f3ad09c3f39f67e0a1e1fafe301883c8
+  src/cxr/batch/additional.py: fee0de0dde78e578d162af72a55bb3804ad61138602d0c2745289f391fc6d47f
+  src/cxr/batch/artifacts.py: bb2ab1fe368242d83ab30c7ed368c3922fe8bab9292b03f557c1a9951bbf91de
+  src/cxr/batch/backup.py: 229c2336da51f7126de977313ac4e0f0ca33e5f220ce778d8ada299acde18833
+  src/cxr/batch/deployment.py: 9ae484c23a28d7bae40c1d4742266775248eef8a39620c2bf41472e913ed8cdf
+  src/cxr/batch/direct_delivery.py: ec47f021435c94973f8c6c17972d909be2053a01e5fca1a0aa2351d71cffb061
+  src/cxr/batch/extension.py: 234338ff2e8bf2f858fe173319349229b14f36bf308cddcfb6937d916ff9675d
+  src/cxr/batch/extension_queue.py: 38d86b9f1d8827fcbf7ca9ae8d142802b32b5dbc31fb41d4df25511e4fc3321b
+  src/cxr/batch/gh_preflight.py: d11396a7f680a996fafdfaab4cf12cb69366c259d839ae110d741ac0dfa00445
+  src/cxr/batch/host_gpu_lock.py: 2ff493c11f18ba428af57def9ee147c9b8265790b4f9cfb9b78989a558394ac8
+  src/cxr/batch/host_resources.py: 7d033ce9f0aeb10e8603d38045e9911790db0119d8379bf966a7283419176c40
+  src/cxr/batch/orchestrator.py: 3e262e60f8b7331fd69374147014f942734fbcd417f4e2595e12310ff64e668c
+  src/cxr/batch/plan.py: a10aeab01daa105c98561ebdfe5cf294183094a5ef9a1f076160389c825b17d5
+  src/cxr/batch/reporting.py: 06b97e0b1245feea68a6e9060a08bb5298ccaa6319635d317c7c15a0c91cc480
+  src/cxr/batch/results.py: cd323ad90a17edbcdc38eadf72b51b0c36eefd11ad3288d1a2b952ce2f2be75d
+  src/cxr/batch/runner.py: 7f157897972c71978533aa53ae414a21fdd4351120126e6a0fa9600efe8c1220
+  src/cxr/batch/submission_reporting.py: 198341666bbfd543446abec958b396aa4c44ca83baff6f508e57e6b9d505f506
+  src/cxr/batch/test_results.py: df7141d999d4f33639f77a423a34bbb7936e62feaa21aec39f08d03cfd370333
+  src/cxr/data/__init__.py: f19092845a5a4261305d448673f4fae40a4987bb2f57d4c847ebc15b55ce8d64
+  src/cxr/data/archive.py: e9d4f8e86fa8f9d3d44ac04deec60ddce36da787ed79d7429607cd1747ff1f35
+  src/cxr/data/audit.py: c5f2fe6ff6fb81f61c687a2662c0f5a0e4ef4c4bd0f56d1811c8efa25217c26f
+  src/cxr/data/dataset.py: ecf377680edb67c4594c390b6499c48ac2438d0a6c58fe18dd639c9ca543e733
+  src/cxr/data/internal_split.py: f498d60474190d0614ff6b58d5a8d2a2f45a1d4a3e3205404ab536fe9f307eef
+  src/cxr/data/patient_folds.py: bb92dea6cf5d0dc8b470d42d36853b3bde7e5143d271bcf0f670e0835499ad06
+  src/cxr/data/phase2_audit.py: 2ed0975ff00f98380c78dabeac66f79cd10d006983d5f830a7b946215f6e8850
+  src/cxr/data/sampling.py: 07f46103b75009f4c3c8ab5c62ac3c1063f8fa8f9c0da7100b26903e48659e36
+  src/cxr/e08_tune/__init__.py: 5f4295deb0a99e59266a98e8b0706399817cf4ca3c3a175351b908118a3df086
+  src/cxr/e08_tune/execution.py: cb0a08c7b04d84f4bb339bc375e613a9d334f034dadd5e3e7187bb7ff2aec919
+  src/cxr/e08_tune/preflight.py: 55b449ee04c36ae6a256bfe6bdd893b58a484eebfbac2bb2191cb139f2a1a683
+  src/cxr/e08_tune/protocol.py: df325d9b8f0abe831a49c2b4a399a1ce171cc954e8033cf0c78d2a31c059bacc
+  src/cxr/e08_tune/queue.py: d60760cc467963146852efdbd7cb5e830f58ca6cbe05312002f10c9aa93fb97d
+  src/cxr/e08_tune/results.py: 76fed2c648cfd85b1788768e79b2567660cc0065e0c066e3f55cef11bbcaf3c4
+  src/cxr/e08_tune/selection.py: 9280fefea3e8b277de74c2cd41d5a903c201df3ab4a7fb2231dc83f1402469bd
+  src/cxr/e08_tune/train.py: d65a9f321951ad2123c0ee46b9a54a91db2bd61aa4fa1c15c1c6097a18879170
+  src/cxr/e08_tune/upload.py: 754235c8ada975366d4cc69201dad8cb99fcf1709985d74bd1ae43dd0eeb65a6
+  src/cxr/engine/__init__.py: a90de1450f5d04b4735c1b8bf5ea9a054ac64ebaaaefebdd42fee6f7dc6361a8
+  src/cxr/engine/analysis.py: 8b2bf7195544705dd7671156f0f4adb6ffb97934b9ea43db9c677db8b149ef74
+  src/cxr/engine/average_precision.py: da4e8e039d05b34b394642c2b0901cb17166bdc0997cf39a8c53ab07213dac68
+  src/cxr/engine/b01_analysis.py: 98bd61e4f357101416ba04ae578cb8a93bbfb92a57e1ff1423622c9513bd2a11
+  src/cxr/engine/early_stopping.py: f99f96f7f840040b75205fd79ac80d5a7863dc1e7a0a0572fbb753ad28506b5e
+  src/cxr/engine/losses.py: 5562e0091dd279eae225a2cdf6897e50c6504a3bd446d93c07b1022b37d116f3
+  src/cxr/engine/metrics.py: 30a88fad0b9ae20cacb86c00d878425c83f03a09f0c936f91a4eb28c2ab03f51
+  src/cxr/engine/train.py: a32f185761766e86b316d10f0f1c7763efaacfd67a864f058b8af773fb8b13af
+  src/cxr/engine/validate.py: dfb89105c7418a0f4d785b378abf94f02138089e7c24b4ec164f80609506a0a8
+  src/cxr/inference/__init__.py: 71cf3954203c7c769f3f417d8c16289070c75ae5477e7ef66f4bb29a4107ad41
+  src/cxr/inference/aggregate.py: 0b32eb95bca25dc1369905bcc212e35b76a83d2a894140d183ce436d4eeb5beb
+  src/cxr/inference/predict.py: 65e1aaf12f58ada26482337f8baaa3ada60b8b1ccc54a7d09e1591bdb2cf6ee0
+  src/cxr/inference/submission.py: 69595165ffe43cb654fb99d70458a66cdc438eca84f64ff383c31607812c7317
+  src/cxr/inference/versioned_submission.py: 9fb00a30bea9c767d825604df79b844f0cd897b718ccc3e92b674f9c42476882
+  src/cxr/models/__init__.py: ec963a1141019de870f751cf38b8d88899b39dad1aa80d09370c8d3e07f06f32
+  src/cxr/models/factory.py: a6b7b1c8d69183bbccfb882fc6791ec8337dec4cb17934ce7f5c8227bb1ed7fa
+  src/cxr/models/study_pool.py: fdb3bbfd7d56da67a49880009ab0acb482703232bff75a82261e2f418aeeeb0c
+  src/cxr/models/study_residual.py: 0e532bcc0be2a8a2623e35639d32c76e364dfdfdfa0c2e116ac43fa0f0c452f4
+  src/cxr/phase32/__init__.py: 93934157761cfef60f7245980ff649171eeaa1aa5c20edb621f25a6abb048fbe
+  src/cxr/phase32/config.py: 5a74393776abb64f109964ce0c8fd41d8a17a95a49ae80e5699eede0c249ebd4
+  src/cxr/phase32/dataset.py: abf0b410321b671a6cbaba268946ca64dffe6aa64821dfd29860804ed5f79111
+  src/cxr/phase32/execution.py: 8e75d41ddcaefb2866bf01d3cd56faff56225d591ce441824abd6a1675c28098
+  src/cxr/phase32/methods.py: 8c3cd31e1fd6e30ae7acc8bdd73477f697957476c9c1b94e290941c4527aa5c4
+  src/cxr/phase32/preflight.py: 7a410eb3f0cf0ccb1b97bd1276cd9649a285536e7ad72a1a3669890eb94e6712
+  src/cxr/phase32/probe.py: 51a04cd7f9b2ba860dbfaa27e003553a00e6a4a8f2399caf80793a5dcb6eb64f
+  src/cxr/phase32/protocol.py: 36b1d1a5d7b58fd8e5bfdfa8f9842e74972752347ee1952c6683e4aca5a85786
+  src/cxr/phase32/queue.py: 97639292d068bdd55a62c39387f3d662c8d6362a6190bfc39503c6c2fa9284ae
+  src/cxr/phase32/results.py: 7fa0efb416bfc453022b7c4972771346c685e155d1cc220c0c928c27658beaba
+  src/cxr/phase32/train.py: c3c8f2f5c58db55cc16febc3cc1a4b7551dfa1495d649ea57e5fac7ccdf5992f
+  src/cxr/phase32/upload.py: 646814ea8d748eb81ff442ae3d33a6c95c9638ef726a64b2c7ef5d107b45ec06
+  src/cxr/phase35/__init__.py: 7eeefbde8f2a7574cddafe9e0ddbf6d9bf40394657a1461786e5e21d5f1bd499
+  src/cxr/phase35/analysis.py: 39834ea2438e36c560b2fd047cd85dce86f46357f6bd8a3f1675f9ea8ce58b60
+  src/cxr/phase35/execution.py: 8700504c5a876d8254f01b3f3e7346df55c3a5a747f44cbf97b6dfff5f46b9bd
+  src/cxr/phase35/preflight.py: 50c9f300ee3ce525b1184b65daeaf9bcc936f410c5b622181509c296e2bb55fb
+  src/cxr/phase35/protocol.py: f4e4a83c6b609f915bf66e4f30cddbf300797a2f78e4f3ff902b5c11c6397a78
+  src/cxr/phase35/queue.py: 192e66c382021a7c9e4bd4ec8f3d915cc500a772655d230e18e6ae9ef74ea87d
+  src/cxr/phase35/results.py: ac1efff1f2a1a8cc8be8d267d72e3a9499cb059babf0463e9106a721ee3a9eb7
+  src/cxr/phase35/test_stage.py: 2b03fedad8d8dd79c9bcb8225b2fa04edff2d85fe8a5bc9ecb8174e2eb0599b7
+  src/cxr/phase35/train.py: 9c07cace89e2e6dee8b5bed506ec1c7ede02946ed3564ca13c11455e5f7bc806
+  src/cxr/phase35/upload.py: d700cb89d6764e87e9041ebe55f0c43efa4195d8404c6c891a4adf811a71a7da
+  src/cxr/utils/__init__.py: 4bab90ca0532c4687e4c4c925d82441fb3cd5b122e7c4c55fabf0a48316711d6
+  src/cxr/utils/checkpoint.py: 262c4bba69210abe24c2e0373cc66d9603646442a002778339f016fd66806956
+  src/cxr/utils/cloud_paths.py: 6ae786d5182bf2d7941dbc7de420ec5ef1466bf63fccbb7fbfd084fc645ca0ab
+  src/cxr/utils/config.py: bb20074a8fa60cf733b32bd997a789d469e9a4be61892cbcebf8e655e221c7f3
+  src/cxr/utils/labels.py: 52b360484d9644953d2357746d53837c3056664a1cb118b1ffe271802b5f90c9
+  src/cxr/utils/training_resume.py: 0d1adfebe5ca69b90ee68b313a38d14285a2214310259aa1008208c4365f2525
+fold_hashes:
+  patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+  study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+  image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d

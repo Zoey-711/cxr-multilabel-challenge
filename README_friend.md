@@ -1,3 +1,7 @@
+# Phase35：复用两个Fold1，新增8项Fold2–5训练
+
+最新交付见[Phase35一键运行说明](docs/phase35/README.md)。入口为`python scripts/phase35_run.py --config configs/phase35_server.local.yaml`；先复制并填写`configs/phase35_server.example.yaml`，明确GPU预算并完成自动远程预检。新输出`phase35_batch`、新结果分支`results/phase35-fivefold`与历史批次分离。
+
 # 朋友服务器运行 Phase32 与 E08-Tune
 
 请先阅读 [两批实验的顺序、预检与资源隔离说明](docs/friend_server_phase32_e08.md)。两套GPU队列应依次执行；共有的主机锁会拒绝同时启动。
