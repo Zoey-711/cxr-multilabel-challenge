@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "config_sha256": "80e7660700b06daf6d2fdb73607818ad1e62a4bd788d969c84c12da8bcf84525",
+  "checkpoint_sha256": "8be80bc90f855f7f2ea6576c303ea9591a286e552f634b48731b5a70f3ef9e7b",
+  "optimizer_steps": 1,
+  "amp_skipped_steps": 0,
+  "checkpoint_restored": true,
+  "optimizer_restored": true,
+  "scheduler_restored": true,
+  "scaler_restored": true,
+  "rng_restored": true,
+  "val": {
+    "real_images": 2,
+    "studies": 1,
+    "sha256": "506a99f923c56502e0b1648bc320e5a9bee4c08b2a2be0db8037e59b0d5fb82a"
+  },
+  "test": {
+    "real_images": 2,
+    "studies": 1,
+    "sha256": "1ef0611832a368398ae528ce3e2139209a2675e38b464d0c22dba91696453e22"
+  }
+}

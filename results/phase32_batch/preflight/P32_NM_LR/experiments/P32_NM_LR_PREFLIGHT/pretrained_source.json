@@ -1,0 +1,7 @@
+{
+  "source": "torchvision EfficientNet_V2_M_Weights.IMAGENET1K_V1",
+  "url": "https://download.pytorch.org/models/efficientnet_v2_m-dc08266a.pth",
+  "sha256": "dc08266a3779e28992d6a42528a32453f6361d0e4e247b5f20f45e13e7add499",
+  "size_bytes": 218114489,
+  "external_labeled_data_used_for_additional_training": false
+}

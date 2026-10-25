@@ -1,0 +1,54 @@
+{
+  "plan_fingerprint": "24ade5ddf89d381d5564f3bfcba525a513b5048c1db93f4a6448ee2771902c75",
+  "gpu_hours": 19.00721229533251,
+  "tasks": {
+    "P32_CS_LR": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 0,
+      "reserved_hours": 12
+    },
+    "P32_NM_LR": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 1,
+      "reserved_hours": 12
+    },
+    "P32_NS_448": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 2,
+      "reserved_hours": 12
+    },
+    "P32_NS_512": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 3,
+      "reserved_hours": 12
+    },
+    "P32_NS_ASL": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 4,
+      "reserved_hours": 12
+    },
+    "P32_NS_POS": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 5,
+      "reserved_hours": 12
+    },
+    "P32_NS_PHOTO": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 6,
+      "reserved_hours": 12
+    },
+    "P32_NS_MIXUP": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 7,
+      "reserved_hours": 12
+    }
+  }
+}

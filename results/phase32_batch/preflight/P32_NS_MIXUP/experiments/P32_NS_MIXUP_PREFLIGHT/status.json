@@ -1,0 +1,12 @@
+{
+  "state": "preflight_passed",
+  "steps": 1,
+  "train_loss": 0.6848929405212403,
+  "gpu_peak_mib": 2065,
+  "gpu_peak_reserved_mib": 2380,
+  "optimizer_steps": 1,
+  "amp_skipped_steps": 0,
+  "amp_skip_step_indices": [],
+  "ema_updates": 1,
+  "gradient_norm_before_clipping": 1.0692946910858154
+}
