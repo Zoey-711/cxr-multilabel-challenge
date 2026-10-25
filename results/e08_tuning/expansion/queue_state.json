@@ -1,0 +1,30 @@
+{
+  "plan_fingerprint": "262537c1c2134e1f798710729024a6b34fc1abf51afa7af6abc7a986b1dcf0dd",
+  "gpu_hours": 9.615427217418329,
+  "tasks": {
+    "ET_DECAY_LOW_F02": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 0,
+      "reserved_hours": 12
+    },
+    "ET_DECAY_LOW_F03": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 1,
+      "reserved_hours": 12
+    },
+    "ET_DECAY_LOW_F04": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 2,
+      "reserved_hours": 12
+    },
+    "ET_DECAY_LOW_F05": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 3,
+      "reserved_hours": 12
+    }
+  }
+}

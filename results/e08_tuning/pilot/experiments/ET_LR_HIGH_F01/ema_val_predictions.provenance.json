@@ -1,0 +1,29 @@
+{
+  "model_id": "ET_LR_HIGH_F01",
+  "kind": "ema",
+  "checkpoint_sha256": "2fcf4c290ebce888bfe4e0395b54351a56b5dc1565448da61630dbccf1929747",
+  "fold_hashes": {
+    "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+    "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+    "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+  },
+  "config_sha256": "6bdd28975db7682e58e13f1cb16ee25cc931ac9b733c1cced0f70610450239b3",
+  "fold": 1,
+  "csv_sha256": "d55715735006956e4664e6bcdad06e26158d3e442ad0867a993e6cb83dc81aee",
+  "rows": 859,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

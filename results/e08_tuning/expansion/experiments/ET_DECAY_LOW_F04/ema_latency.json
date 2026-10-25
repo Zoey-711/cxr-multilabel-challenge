@@ -1,0 +1,10 @@
+{
+  "device": "NVIDIA GeForce RTX 4090",
+  "batch": 1,
+  "samples": 20,
+  "warmup": 3,
+  "mean_ms": 61.423728382214904,
+  "p50_ms": 63.80336079746485,
+  "p95_ms": 69.98876733705401,
+  "scope": "ZIP read/decode + deterministic preprocessing + transfer + raw model + sigmoid + CPU transfer; no T4 claim; not whole ensemble latency"
+}

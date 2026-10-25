@@ -1,0 +1,43 @@
+{
+  "commit": "01fa68bdac65ce56d04a1fc99e8f5996ab09aa20",
+  "state": {
+    "plan_fingerprint": "98ef9ffd60d6c1e032d41275a8ed5e081b7ce7d10dc0e1fa42ab062a4a52592d",
+    "gpu_hours": 12.15826002939863,
+    "tasks": {
+      "ET_DECAY_LOW_F01": {
+        "state": "DONE",
+        "attempts": 1,
+        "gpu": 0,
+        "reserved_hours": 12
+      },
+      "ET_DECAY_HIGH_F01": {
+        "state": "DONE",
+        "attempts": 1,
+        "gpu": 1,
+        "reserved_hours": 12
+      },
+      "ET_LR_LOW_F01": {
+        "state": "DONE",
+        "attempts": 1,
+        "gpu": 2,
+        "reserved_hours": 12
+      },
+      "ET_LR_HIGH_F01": {
+        "state": "DONE",
+        "attempts": 1,
+        "gpu": 3,
+        "reserved_hours": 12
+      },
+      "ET_LONG_F01": {
+        "state": "DONE",
+        "attempts": 1,
+        "gpu": 4,
+        "reserved_hours": 12
+      }
+    }
+  },
+  "files": {
+    "reports/experiment_summary.csv": "03f12950a3ef1c28ad567a19c767feee153d8bccd06f31b8364e362bbd7ce536",
+    "reports/experiment_status.csv": "24cf092404a7cea7877799d087e0b2f84bd78419d7a4232c44009062cf0d9b37"
+  }
+}

@@ -1,0 +1,596 @@
+{
+  "repository": "Zoey-711/cxr-multilabel-challenge",
+  "release_tag": "phase32-e08-results-20261025",
+  "file_count": 98,
+  "bytes": 21003866154,
+  "files": [
+    {
+      "path": "phase32_batch/experiments/P32_CS_LR/best_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_CS_LR--best_model.pt",
+      "bytes": 197977065,
+      "sha256": "e7875cfc552f669f8c3a749115e020ab9637f316d0b66dd3d3ca6554597732f9"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_CS_LR/best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_CS_LR--best_model.pth",
+      "bytes": 197972137,
+      "sha256": "ba979d019148d8871eefc7caf393dd0d49c3b186c24f05a8ef0d38cfbb1ac151"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_CS_LR/last_training.pt",
+      "asset_name": "phase32_batch--experiments--P32_CS_LR--last_training.pt",
+      "bytes": 890905455,
+      "sha256": "44d1c73613a6337565c90d852549478649c776a41c55aa169ead225c63ba3277"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NM_LR/best_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_NM_LR--best_model.pt",
+      "bytes": 213062057,
+      "sha256": "5da6c17d534179070e206cd99ac2e3dfa7095696e6f29b633d1d250c16e60600"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NM_LR/best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_NM_LR--best_model.pth",
+      "bytes": 213046249,
+      "sha256": "cfdd8307c33386489d791702e27254b965cfd123edf2fe1ad3f99c210afa556c"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NM_LR/last_training.pt",
+      "asset_name": "phase32_batch--experiments--P32_NM_LR--last_training.pt",
+      "bytes": 956513078,
+      "sha256": "d1324d94d2fd5159429e1c01f521ab666451dfadc276cbb7e95d902959896cb2"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_448/best_ema_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_448--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "8c32268ae3141ab4ad9565c4a9375aeef75bd5cf566b6302ce8f4a1e17b0410a"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_448/best_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_448--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "22970e64cbae78c4b7fe0e07b63853bbc16973c714e47439364ffd4df0c1340e"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_448/best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_NS_448--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "21c4eb2b4d35730c4570a73b3fd02232f9b8b09a7c11765a62317d1ed29ce88a"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_448/ema_best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_NS_448--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "82c76ae6569dc17748954d3a279b6bf550e81608c78677c1713fe6b410919041"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_448/last_training.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_448--last_training.pt",
+      "bytes": 570006620,
+      "sha256": "b9e77d4703903674a7ca01bbe90d3b63c8cc9ad02db05389799fa9f599895284"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_512/best_ema_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_512--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "078f9037b8aea3bf3752fc86262bbd0eb826ff873c63561d4896de1704a64631"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_512/best_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_512--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "e068a2f389690a0da8c1a2d0880e4c36b7db48990f374820e1caccf0a4d6e6b6"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_512/best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_NS_512--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "6b3fc7eca0fb156f7faaeda1231b530fd26501eee11cbcb2120acfaad25863f9"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_512/ema_best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_NS_512--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "5a4b1eed3daed0caaecfbe3cefcf82357a8fda38eebe0a2faea4776785065642"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_512/last_training.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_512--last_training.pt",
+      "bytes": 570043932,
+      "sha256": "4ada2c9826a0df1b1e187ecf8e09cb7f4797710084e9081087ab05647aef7406"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_ASL/best_ema_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_ASL--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "e1e7f54be5d59c773897346c0ca93643bfe36a80aef82b6b4625cb32d9c43a59"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_ASL/best_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_ASL--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "93dfe8ad746f221d112ded967385683d4937025c6344bf614d1ae59e6c2d66a0"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_ASL/best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_NS_ASL--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "de2aae9cfefd02df5b637b7d9efaf17c0302e20c1b94779fd2be8a33967cd138"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_ASL/ema_best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_NS_ASL--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "274f8059a4430615d1daed1058970ace897249800a2296da2c45afee335a5d9d"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_ASL/last_training.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_ASL--last_training.pt",
+      "bytes": 570073948,
+      "sha256": "d27a40271e541a84e169e7301d881daebc484cff7e99dc97387568a8f7cb972e"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_MIXUP/best_ema_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_MIXUP--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "b10cee38afa25cd51f071fdaf083e543b02a52d146f31c394d3b9cd6ac1fb981"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_MIXUP/best_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_MIXUP--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "3a94637f550ffa009110df85fb2f1f5af207b7bc3075dbe22528a41e6870dd53"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_MIXUP/best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_NS_MIXUP--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "f85a07e61d23fcbb89a82b735bd558007391486d05781bd220ddf3f06ecc949c"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_MIXUP/ema_best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_NS_MIXUP--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "5f3140f7a966b816e3eb0f81c01bbfa4827a32886e51f381ecf1ed9db4280660"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_MIXUP/last_training.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_MIXUP--last_training.pt",
+      "bytes": 569982236,
+      "sha256": "c6366a6440d3a7d34a56e7cabd5d06d82613ffe3fbc52316d79ae82e080d0636"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_PHOTO/best_ema_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_PHOTO--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "498a79c81b15c7552e15d96704683bda4f5b3c706fba7bbe6cd0af35d0089a5d"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_PHOTO/best_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_PHOTO--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "d22c221b4b4e235b7fe286e2b7e1eb7e5f451e22a4ef88f89a12778b8025d9c9"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_PHOTO/best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_NS_PHOTO--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "1140489b1465a3266c29986e76ad4b4e7cab28646a11c8f3261b6ee0bd320f31"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_PHOTO/ema_best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_NS_PHOTO--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "89a596a4af6c7df6a81e7d3b4bf84f0a9e70e898e9695887495e03590daf29af"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_PHOTO/last_training.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_PHOTO--last_training.pt",
+      "bytes": 570021532,
+      "sha256": "2a048acf8ea88df9af514528d6df3b2ea7564825dfca841df96e92e6be3b5218"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_POS/best_ema_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_POS--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "9a4f5720de1ffd5f49219138e0e0c7e9b3e9e4cb4d37e3460927ffa6f6bbda4e"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_POS/best_model.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_POS--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "aa8238c23d4e5965de5c14a90e0cc3f5781a42de5e98b1e4710227a8be0761cf"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_POS/best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_NS_POS--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "87d1570c1fa550acd878d31f61eb120c3afcfda7ea113270573a1652160ae9f8"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_POS/ema_best_model.pth",
+      "asset_name": "phase32_batch--experiments--P32_NS_POS--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "1e67f70def640eb89d71d37e0054466d90fbef47459b0d03ac081818fe5b5807"
+    },
+    {
+      "path": "phase32_batch/experiments/P32_NS_POS/last_training.pt",
+      "asset_name": "phase32_batch--experiments--P32_NS_POS--last_training.pt",
+      "bytes": 569996572,
+      "sha256": "f025d00d8278330e7f99ba7d9f328f984e903e21eb4d662c44e3f3ae9d2f6d1c"
+    },
+    {
+      "path": "phase32_batch/preflight/P32_CS_LR/experiments/P32_CS_LR_PREFLIGHT/probe_resume.pth",
+      "asset_name": "phase32_batch--preflight--P32_CS_LR--experiments--P32_CS_LR_PREFLIGHT--probe_resume.pth",
+      "bytes": 593997445,
+      "sha256": "2d6d6e8d31f6a1e89bf5913af57207dbe03c97a149410ee7c8f3f5bc591e90d1"
+    },
+    {
+      "path": "phase32_batch/preflight/P32_NM_LR/experiments/P32_NM_LR_PREFLIGHT/probe_resume.pth",
+      "asset_name": "phase32_batch--preflight--P32_NM_LR--experiments--P32_NM_LR_PREFLIGHT--probe_resume.pth",
+      "bytes": 636617393,
+      "sha256": "44433a17488cc43cfc5ca15c0f739b38020799f4d2a74e021db53f98b3b34a21"
+    },
+    {
+      "path": "phase32_batch/preflight/P32_NS_448/experiments/P32_NS_448_PREFLIGHT/probe_resume.pth",
+      "asset_name": "phase32_batch--preflight--P32_NS_448--experiments--P32_NS_448_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "3a713a88d6e8383f4b8cf11cb4e0e72cf66245d74e0a7cb8718ac57078162f8c"
+    },
+    {
+      "path": "phase32_batch/preflight/P32_NS_512/experiments/P32_NS_512_PREFLIGHT/probe_resume.pth",
+      "asset_name": "phase32_batch--preflight--P32_NS_512--experiments--P32_NS_512_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "8be80bc90f855f7f2ea6576c303ea9591a286e552f634b48731b5a70f3ef9e7b"
+    },
+    {
+      "path": "phase32_batch/preflight/P32_NS_ASL/experiments/P32_NS_ASL_PREFLIGHT/probe_resume.pth",
+      "asset_name": "phase32_batch--preflight--P32_NS_ASL--experiments--P32_NS_ASL_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "520c01bbf2ba0f7f0ad41aec0e4850b36981939f8b31abc44b811e335e84ba81"
+    },
+    {
+      "path": "phase32_batch/preflight/P32_NS_MIXUP/experiments/P32_NS_MIXUP_PREFLIGHT/probe_resume.pth",
+      "asset_name": "phase32_batch--preflight--P32_NS_MIXUP--experiments--P32_NS_MIXUP_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "7932aa7798614e56957b490289eca74c331cc274ab5cf6de4c6bb431df0db25b"
+    },
+    {
+      "path": "phase32_batch/preflight/P32_NS_PHOTO/experiments/P32_NS_PHOTO_PREFLIGHT/probe_resume.pth",
+      "asset_name": "phase32_batch--preflight--P32_NS_PHOTO--experiments--P32_NS_PHOTO_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "5dc72b5bee7ae34c7f844560bdb0873c9566edfd791ade8784ae7b6075f59855"
+    },
+    {
+      "path": "phase32_batch/preflight/P32_NS_POS/experiments/P32_NS_POS_PREFLIGHT/probe_resume.pth",
+      "asset_name": "phase32_batch--preflight--P32_NS_POS--experiments--P32_NS_POS_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "a6b387884bff22cbc65b82d9dcbe67ed294180974e1e083ff0ec1b564e321ac7"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F02/best_ema_model.pt",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F02--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "866eb6f77f14891a2f5e50cb67ccc53b86ad5734357078e27dd866afc9534b9e"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F02/best_model.pt",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F02--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "76cd84220805b92dc9d82bd29561faaec6c3a1a05a9c33b1ea5e8acb4020bab3"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F02/best_model.pth",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F02--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "413ca1deda6be6a2a99e0bcde4f97839a46046dfe3605d4726f8cee563c2d6c5"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F02/ema_best_model.pth",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F02--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "b2fb7e0d8b221639c0b81573af71287348535d3868324b2a8edc426dd725ec36"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F02/last_training.pt",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F02--last_training.pt",
+      "bytes": 570038364,
+      "sha256": "37f8e609d6e3e35f9b30b181645d2f9a5e1f09194e6a40ba519e70fdb891fb41"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F03/best_ema_model.pt",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F03--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "c3b8c0e24ff75025aa59ddef7080bd33cdf5c924464a5e5904d78bbb6fca83cd"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F03/best_model.pt",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F03--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "d8b135499476bc1d4feec5323a11e66ad6b6c66829fcb944445d122e2a48f57c"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F03/best_model.pth",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F03--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "4f7287f22352476d450bb6bafbba21553be42356ed5da75d2d90d74bee3ae8b5"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F03/ema_best_model.pth",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F03--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "4db034f8460c29edb0fa05b97e29da523dbe96fc4b8eb94122d9291b0506790e"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F03/last_training.pt",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F03--last_training.pt",
+      "bytes": 570008924,
+      "sha256": "02417fd9dcc2f51eedf7d8cf395c18c52f28a598cd4d95431253892f7e11e038"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F04/best_ema_model.pt",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F04--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "70bccf88630c51e0617f18b59250f4e7f990a3f132c4603218d6068c9881cec6"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F04/best_model.pt",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F04--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "b00a0a4388c40af742136593f05c0c8769b75c3c2c5aa6ae15da52b44c9b1e31"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F04/best_model.pth",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F04--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "78bdd0eed36b1e06f5fe858262f046d635fd8023243d76c6fbc18f26f5f7a814"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F04/ema_best_model.pth",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F04--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "eefff8cc080fb175c3b3c74b3e7a81179a9ea316cf4b5aea3081a8fa96c8beb6"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F04/last_training.pt",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F04--last_training.pt",
+      "bytes": 569996444,
+      "sha256": "d855eb4c1f7b9a28a2c0e9e68f41007823afc9932c21c5cc68295e3b7b814a20"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F05/best_ema_model.pt",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F05--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "46b6f0d60bd92240e71b6528c67e09b230568428b0496be54a997018bd1e32f3"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F05/best_model.pt",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F05--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "2e9d4770aea69d8545e055464446037bb7fbb99216450caaa58929222404f8df"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F05/best_model.pth",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F05--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "7e9c964124d6e0f35b9ae24d4d63d67c248c042f6a0fa4df72dc0d1068d73016"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F05/ema_best_model.pth",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F05--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "b655510b96ad5175596ed5fa7c15f2a21cac0eef79bf34d3ea17ca95b5e3b9f2"
+    },
+    {
+      "path": "e08_tuning/expansion/experiments/ET_DECAY_LOW_F05/last_training.pt",
+      "asset_name": "e08_tuning--expansion--experiments--ET_DECAY_LOW_F05--last_training.pt",
+      "bytes": 569952796,
+      "sha256": "3036521c5a2939ae53a66747169dc69a47a0d2992461663a7f00cad7b2f05fa0"
+    },
+    {
+      "path": "e08_tuning/expansion/preflight/ET_DECAY_LOW_F02/experiments/ET_DECAY_LOW_F02_PREFLIGHT/probe_resume.pth",
+      "asset_name": "e08_tuning--expansion--preflight--ET_DECAY_LOW_F02--experiments--ET_DECAY_LOW_F02_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "e65ac4991d3560484e447974f14eff6eae107332495ef485f8b95a01ecd17139"
+    },
+    {
+      "path": "e08_tuning/expansion/preflight/ET_DECAY_LOW_F03/experiments/ET_DECAY_LOW_F03_PREFLIGHT/probe_resume.pth",
+      "asset_name": "e08_tuning--expansion--preflight--ET_DECAY_LOW_F03--experiments--ET_DECAY_LOW_F03_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "5efd7edf83eb3699790c72ab8d40ad89aa4bef960f4f7f9862ddf269554e4943"
+    },
+    {
+      "path": "e08_tuning/expansion/preflight/ET_DECAY_LOW_F04/experiments/ET_DECAY_LOW_F04_PREFLIGHT/probe_resume.pth",
+      "asset_name": "e08_tuning--expansion--preflight--ET_DECAY_LOW_F04--experiments--ET_DECAY_LOW_F04_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "063c5d650ab617c4107eb372a61e57c8570923bb236aae87b4e8d8b5b8ff61cc"
+    },
+    {
+      "path": "e08_tuning/expansion/preflight/ET_DECAY_LOW_F05/experiments/ET_DECAY_LOW_F05_PREFLIGHT/probe_resume.pth",
+      "asset_name": "e08_tuning--expansion--preflight--ET_DECAY_LOW_F05--experiments--ET_DECAY_LOW_F05_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "029c5f30662ee20f86f87205aeb105df2e5c467dc03de511e33908b3be8dab13"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_DECAY_HIGH_F01/best_ema_model.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_DECAY_HIGH_F01--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "2a0dc7083b5fd971981ecef2ade974abc8bf7292ebcf8f94a3ddfb3af2d78f07"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_DECAY_HIGH_F01/best_model.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_DECAY_HIGH_F01--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "a6be5327a001e824eb752a731108ab8e52b347cfe4748ab91009d4b62dd2d502"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_DECAY_HIGH_F01/best_model.pth",
+      "asset_name": "e08_tuning--pilot--experiments--ET_DECAY_HIGH_F01--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "014166b240b05b70d1959214d6add0ff9611b986a8b1bb0d97e0fdb813e90e3d"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_DECAY_HIGH_F01/ema_best_model.pth",
+      "asset_name": "e08_tuning--pilot--experiments--ET_DECAY_HIGH_F01--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "40258811454cb4b11eaeb3bf548c260667bdbd42ed8091f02980430116594891"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_DECAY_HIGH_F01/last_training.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_DECAY_HIGH_F01--last_training.pt",
+      "bytes": 570026908,
+      "sha256": "1dc7cbad777d9eecf926a33b0a8ea914481e22d8f831c1111a180159c0412ef7"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_DECAY_LOW_F01/best_ema_model.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_DECAY_LOW_F01--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "1a6edee830e481b595d42502ee537e60233448ff1efddc49a41819bc5d534410"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_DECAY_LOW_F01/best_model.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_DECAY_LOW_F01--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "a6be5327a001e824eb752a731108ab8e52b347cfe4748ab91009d4b62dd2d502"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_DECAY_LOW_F01/best_model.pth",
+      "asset_name": "e08_tuning--pilot--experiments--ET_DECAY_LOW_F01--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "014166b240b05b70d1959214d6add0ff9611b986a8b1bb0d97e0fdb813e90e3d"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_DECAY_LOW_F01/ema_best_model.pth",
+      "asset_name": "e08_tuning--pilot--experiments--ET_DECAY_LOW_F01--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "48bc5da8e04e070fec7541c8b0625c845bf573c684b6fd1d9172dc6a8cfcffbc"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_DECAY_LOW_F01/last_training.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_DECAY_LOW_F01--last_training.pt",
+      "bytes": 570015644,
+      "sha256": "87da4ac117e89703acba28c4216a2894ac9fc56689c26db7688869e3c68352f8"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LONG_F01/best_ema_model.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LONG_F01--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "1410bbe7dadaeaabcee21f4507c579dfb786b51a916219e0540067d1174b493f"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LONG_F01/best_model.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LONG_F01--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "08ead9e7c0a87881ff94eaad7677e9df2f7731a96573066fd7662b7849b9fff0"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LONG_F01/best_model.pth",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LONG_F01--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "34f48582c856a02fdf9997c760910ae26b2e080704128a6a61c4592c32699e5b"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LONG_F01/ema_best_model.pth",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LONG_F01--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "02e0ab9ff912600cb10f0e08460c180f6eb490b8c58b92d394be910f4d714836"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LONG_F01/last_training.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LONG_F01--last_training.pt",
+      "bytes": 570023580,
+      "sha256": "2f1898c3d02c9c97f074bdc255c6fb110af7037c2fad5493ca5c82eb1f9e4520"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LR_HIGH_F01/best_ema_model.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LR_HIGH_F01--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "0e17b60ce7d38a12187cfe609183891d05af1b4d9158afb5c1d87e6b2cac54e3"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LR_HIGH_F01/best_model.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LR_HIGH_F01--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "59735906e2d80be88baca933afba540bd56e4b4d49aada1f246f3de6870e6e07"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LR_HIGH_F01/best_model.pth",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LR_HIGH_F01--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "81bde62d5d227a695398ebeebcda7d7038afb56bc2a8a9d97dc5b11bc48c2cd0"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LR_HIGH_F01/ema_best_model.pth",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LR_HIGH_F01--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "2fcf4c290ebce888bfe4e0395b54351a56b5dc1565448da61630dbccf1929747"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LR_HIGH_F01/last_training.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LR_HIGH_F01--last_training.pt",
+      "bytes": 569925660,
+      "sha256": "20797b2ddf57bd90bdada6c56d3c428b9d7046c1283037f46c380cd8af8bedb6"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LR_LOW_F01/best_ema_model.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LR_LOW_F01--best_ema_model.pt",
+      "bytes": 81666223,
+      "sha256": "fc19fd553afbc46386a378f92080b35cfdabed20424e0782c7b688e073bfb07a"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LR_LOW_F01/best_model.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LR_LOW_F01--best_model.pt",
+      "bytes": 81663071,
+      "sha256": "bcfdf211f4ef790e931dddaa51850b0e4197e2bd0276d72da4af73b9bd942fbd"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LR_LOW_F01/best_model.pth",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LR_LOW_F01--best_model.pth",
+      "bytes": 81651999,
+      "sha256": "0980ffd6c5726fea6edf61f954ef50c86d5a01c9d9d7081f882a9ff6949c6c31"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LR_LOW_F01/ema_best_model.pth",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LR_LOW_F01--ema_best_model.pth",
+      "bytes": 81655151,
+      "sha256": "3ee24a19d32b4f29dab5f28771ae3c7fe229c66a29c110388dbe2c019fba0cf2"
+    },
+    {
+      "path": "e08_tuning/pilot/experiments/ET_LR_LOW_F01/last_training.pt",
+      "asset_name": "e08_tuning--pilot--experiments--ET_LR_LOW_F01--last_training.pt",
+      "bytes": 570080220,
+      "sha256": "a336f204cfc9bf868d22bbb5bde108ad99d3222de06f64d662ef626f6e8ab813"
+    },
+    {
+      "path": "e08_tuning/pilot/preflight/ET_DECAY_HIGH_F01/experiments/ET_DECAY_HIGH_F01_PREFLIGHT/probe_resume.pth",
+      "asset_name": "e08_tuning--pilot--preflight--ET_DECAY_HIGH_F01--experiments--ET_DECAY_HIGH_F01_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "d0d1c8172a0f522b3ca796ea98c1f036d61b87e7628117f8b677c2daba68739a"
+    },
+    {
+      "path": "e08_tuning/pilot/preflight/ET_DECAY_LOW_F01/experiments/ET_DECAY_LOW_F01_PREFLIGHT/probe_resume.pth",
+      "asset_name": "e08_tuning--pilot--preflight--ET_DECAY_LOW_F01--experiments--ET_DECAY_LOW_F01_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "d0d1c8172a0f522b3ca796ea98c1f036d61b87e7628117f8b677c2daba68739a"
+    },
+    {
+      "path": "e08_tuning/pilot/preflight/ET_LONG_F01/experiments/ET_LONG_F01_PREFLIGHT/probe_resume.pth",
+      "asset_name": "e08_tuning--pilot--preflight--ET_LONG_F01--experiments--ET_LONG_F01_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "d0d1c8172a0f522b3ca796ea98c1f036d61b87e7628117f8b677c2daba68739a"
+    },
+    {
+      "path": "e08_tuning/pilot/preflight/ET_LR_HIGH_F01/experiments/ET_LR_HIGH_F01_PREFLIGHT/probe_resume.pth",
+      "asset_name": "e08_tuning--pilot--preflight--ET_LR_HIGH_F01--experiments--ET_LR_HIGH_F01_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "dfc12def0c64d8557217c11f340f3226987a8cbb2ec13615f14ea55a7d7cad7d"
+    },
+    {
+      "path": "e08_tuning/pilot/preflight/ET_LR_LOW_F01/experiments/ET_LR_LOW_F01_PREFLIGHT/probe_resume.pth",
+      "asset_name": "e08_tuning--pilot--preflight--ET_LR_LOW_F01--experiments--ET_LR_LOW_F01_PREFLIGHT--probe_resume.pth",
+      "bytes": 243602349,
+      "sha256": "e5afa0b4ff735124e990c09d3b88a4b7e8b05ca69776b348fb3365ad9da8509f"
+    }
+  ]
+}

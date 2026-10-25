@@ -1,0 +1,10 @@
+{
+  "available_memory_bytes": 1041124323328,
+  "cpu_count": 128,
+  "free_disk_bytes": 805747802112,
+  "io_probe": {
+    "bytes": 33554432,
+    "seconds": 0.007271928712725639,
+    "scope": "32MiB sequential read, cache may apply"
+  }
+}

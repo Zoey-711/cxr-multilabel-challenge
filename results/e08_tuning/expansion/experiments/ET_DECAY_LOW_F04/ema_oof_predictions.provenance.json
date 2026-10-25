@@ -1,0 +1,29 @@
+{
+  "model_id": "ET_DECAY_LOW_F04",
+  "kind": "ema",
+  "checkpoint_sha256": "eefff8cc080fb175c3b3c74b3e7a81179a9ea316cf4b5aea3081a8fa96c8beb6",
+  "fold_hashes": {
+    "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+    "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+    "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+  },
+  "config_sha256": "3785ff873a3080cecdd110b86044ebd037cd6dbbd9d43fce10b5c0668ea1b1ed",
+  "fold": 4,
+  "csv_sha256": "4a9b17a278f3588df4881931be34864bc7ab7a536fbc5a0a6354984357349f82",
+  "rows": 3692,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

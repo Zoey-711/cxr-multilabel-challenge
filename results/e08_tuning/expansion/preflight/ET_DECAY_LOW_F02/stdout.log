@@ -1,0 +1,3 @@
+RUN /home/zlhll/cxr_results/e08_tuning/expansion/preflight/ET_DECAY_LOW_F02/experiments/ET_DECAY_LOW_F02_PREFLIGHT epochs=30 batch=8 accumulation=2 train_images=24214 val_studies=859
+PREFLIGHT: 1 optimizer steps; G/H verifies resume and short Val/Test files, no formal checkpoint
+epoch=1 step=1/1514 train_loss=0.68446 elapsed_s=6

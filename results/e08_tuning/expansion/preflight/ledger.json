@@ -1,0 +1,77 @@
+{
+  "identity": {
+    "host": "iZuf6ijiuo4o0wtocep289Z",
+    "devices": {
+      "0": [
+        "GPU-6adacb4b-6ea4-b8b7-99c5-24cbd04254fa",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "1": [
+        "GPU-c7a374ac-da96-b103-b4bb-2c5d1fe6f533",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "2": [
+        "GPU-9e2b94d1-ca52-6986-4897-a9c4de81f640",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "3": [
+        "GPU-f980f30b-a43a-b237-1185-2ed12da65c10",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "4": [
+        "GPU-8da485ec-12cc-2ab2-8afb-812b1261f5d1",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "5": [
+        "GPU-f8b7b25b-f1cf-62c1-bacd-dd96d8c66f1e",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "6": [
+        "GPU-f6af08dc-1ef2-f69f-7e8b-7390ff879fda",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ],
+      "7": [
+        "GPU-0cb27197-7d44-39ae-c9ee-623b9b9bb8b7",
+        "NVIDIA GeForce RTX 4090",
+        "49140"
+      ]
+    },
+    "data_identity": "c93661aa527f887aa61269116f261e5a409811406cdb6f4dd2c381a3a846e4fb",
+    "plan": "262537c1c2134e1f798710729024a6b34fc1abf51afa7af6abc7a986b1dcf0dd",
+    "environment": "cuda-bindings==12.9.4\ncuda-pathfinder==1.6.0\n-e git+ssh://git@github.com/Zoey-711/cxr-multilabel-challenge.git@8b7944d744f91e753b912367adeb354e8b7e21d5#egg=cxr_multilabel_challenge\nfilelock==3.32.3\nfsspec==2026.7.0\niniconfig==2.3.1\nJinja2==3.1.6\nMarkupSafe==3.0.3\nmpmath==1.3.0\nnetworkx==3.6.1\nnumpy==2.5.2\nnvidia-cublas-cu12==12.8.4.1\nnvidia-cuda-cupti-cu12==12.8.90\nnvidia-cuda-nvrtc-cu12==12.8.93\nnvidia-cuda-runtime-cu12==12.8.90\nnvidia-cudnn-cu12==9.10.2.21\nnvidia-cufft-cu12==11.3.3.83\nnvidia-cufile-cu12==1.13.1.3\nnvidia-curand-cu12==10.3.9.90\nnvidia-cusolver-cu12==11.7.3.90\nnvidia-cusparse-cu12==12.5.8.93\nnvidia-cusparselt-cu12==0.7.1\nnvidia-nccl-cu12==2.27.5\nnvidia-nvjitlink-cu12==12.8.93\nnvidia-nvshmem-cu12==3.4.5\nnvidia-nvtx-cu12==12.8.90\npackaging==26.3\npillow==12.3.0\npluggy==1.7.0\nPygments==2.21.0\npytest==9.1.1\nPyYAML==6.0.3\nsetuptools==78.1.0\nsympy==1.14.0\ntorch==2.10.0+cu128\ntorchvision==0.25.0+cu128\ntriton==3.6.0\ntyping_extensions==4.16.0\n"
+  },
+  "gpu_hours": 0.014622853283977343,
+  "probes": [
+    {
+      "task": "ET_DECAY_LOW_F02",
+      "gpu": 0,
+      "path": "preflight/ET_DECAY_LOW_F02/experiments/ET_DECAY_LOW_F02_PREFLIGHT",
+      "config_sha256": "26d15e8e6a11b87f0e9407e29e1ea77a8547c308f93aa59d217ab7021a3928cc"
+    },
+    {
+      "task": "ET_DECAY_LOW_F03",
+      "gpu": 1,
+      "path": "preflight/ET_DECAY_LOW_F03/experiments/ET_DECAY_LOW_F03_PREFLIGHT",
+      "config_sha256": "96e8d1b81118bfeb22bfd95e8b8ebeefd186e105d2df4699caac728e3bf40834"
+    },
+    {
+      "task": "ET_DECAY_LOW_F04",
+      "gpu": 2,
+      "path": "preflight/ET_DECAY_LOW_F04/experiments/ET_DECAY_LOW_F04_PREFLIGHT",
+      "config_sha256": "3785ff873a3080cecdd110b86044ebd037cd6dbbd9d43fce10b5c0668ea1b1ed"
+    },
+    {
+      "task": "ET_DECAY_LOW_F05",
+      "gpu": 3,
+      "path": "preflight/ET_DECAY_LOW_F05/experiments/ET_DECAY_LOW_F05_PREFLIGHT",
+      "config_sha256": "4e1ab12cdfa812e6109653ccc27d0b0b128d412c61270245fd5e122b81b7c343"
+    }
+  ]
+}
