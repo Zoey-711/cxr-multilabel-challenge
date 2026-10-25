@@ -1,0 +1,28 @@
+{
+  "selected": [
+    "DECAY_LOW"
+  ],
+  "source_metrics_sha256": {
+    "ET_DECAY_LOW_F01": "e86544cd155b3ef135624b14ee9501bd398210eeae0cc60b011c8934b4b20286",
+    "ET_DECAY_HIGH_F01": "0d31c8ffa5354156cff2c4d827d72ed97de323ceae6225b2a720d19a00067a4c",
+    "ET_LR_LOW_F01": "32b88d8f5a9299fb463eae1e6e130cda85bac9347aea3fa0d38f66a399298bd5",
+    "ET_LR_HIGH_F01": "9b873c60d3237d37f9a3007f8f7c9c06f7c88ee5b4788e4b1a900c676591c54c",
+    "ET_LONG_F01": "287fb120db1dfbb97de962f9dc738079bcc66a55844d51d4175a83827a49bc88"
+  },
+  "rules": {
+    "min_delta": 0.002,
+    "bootstrap_valid_draws": 2000,
+    "bootstrap_seed": 42,
+    "max_class_regression": 0.02,
+    "max_variants": 2,
+    "ci_lower_must_exceed": 0,
+    "comparison": "EMA vs corresponding frozen N17 EMA",
+    "tie_break": [
+      "oof_delta_descending",
+      "ci_lower_descending",
+      "variant_id_ascending"
+    ],
+    "evidence": "exploratory; Fold1 selection introduces optimism, Folds2-5 confirmation reported separately"
+  },
+  "scope": "Exploratory Fold1 selection; no independent confirmation claim"
+}

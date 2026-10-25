@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    "ET_DECAY_LOW_F01",
+    "ET_DECAY_LOW_F02",
+    "ET_DECAY_LOW_F03",
+    "ET_DECAY_LOW_F04",
+    "ET_DECAY_LOW_F05"
+  ],
+  "fold_hashes": {
+    "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+    "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+    "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+  },
+  "scope": "COMPLETE_OOF; patient-held-out models, hyperparameters selected using Fold1",
+  "csv_sha256": "abd3678f3ddfcdfb7f71b8323306d05d314c180bdb29f46b290fdc705ca320a8",
+  "rows": 18513,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

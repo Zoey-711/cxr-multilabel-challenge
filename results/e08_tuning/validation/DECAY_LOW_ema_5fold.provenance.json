@@ -1,0 +1,20 @@
+{
+  "formula": "equal five-fold Study probability mean",
+  "csv_sha256": "8f65f9bd31a79ae32cf20c6e47fdaae01e30c80528365b93917ff067f5e9f8ae",
+  "rows": 859,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}
