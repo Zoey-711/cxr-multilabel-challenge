@@ -1,0 +1,20 @@
+{
+  "sha256": {
+    "experiments/ET_DECAY_LOW_F02/ema_val_predictions.csv": "87cf1162ccf690797f375c7bd0c917b8b86eb721d0a8621df1fc499d7a64d282",
+    "experiments/ET_DECAY_LOW_F02/oof_predictions.csv": "14b93281c1fab28981d0356ea6662df819dd7768ab3887831465b89a7a435839",
+    "experiments/ET_DECAY_LOW_F02/ema_best_model.sha256": "99bbb479e194920f93a60569f78071baf104cb016c6f8c363b6179c57f59887a",
+    "experiments/ET_DECAY_LOW_F02/best_model.sha256": "4004e96df99d2e8dddf0e8f215246e1938fab0aaaf11546fb0f41c0ad9437e9e",
+    "experiments/ET_DECAY_LOW_F02/ema_oof_predictions.csv": "26ed1b844b80ac14cc7bec7307d724df8d130cb81a11094a97533c89070d1c68",
+    "experiments/ET_DECAY_LOW_F02/model_size.json": "dc3fde0c6f235503e4ad5161a34dbacd6596ee9f91cc7f8f23276ae81d529510",
+    "experiments/ET_DECAY_LOW_F02/val_predictions.csv": "164e29523d6f6cd6f5dc8939416394dcb1c1801c01bba60a6c245599fdd433c7",
+    "experiments/ET_DECAY_LOW_F02/train_history.csv": "6e48ff9de48c4343dbeb5cb00e0634cacf6c3e6ae08dc5f21dd8f9eccd1042c9",
+    "experiments/ET_DECAY_LOW_F02/run_manifest.json": "d8788d8e252256e15e5159f4277a92c351931e9f143a6353cffa1bb04980f92d",
+    "experiments/ET_DECAY_LOW_F02/resolved_config.yaml": "26d15e8e6a11b87f0e9407e29e1ea77a8547c308f93aa59d217ab7021a3928cc",
+    "experiments/ET_DECAY_LOW_F02/metrics.json": "d2adda539ed0ec0768d4819b05ae8b5f3c712138f1ce7f445f7a1415db39447b",
+    "experiments/ET_DECAY_LOW_F02/per_class_metrics.csv": "73b10f72305d56c51a0dfba5923e4ab8dfb88871bcd43ca96ff8eea01df883a3",
+    "reports/experiment_summary.csv": "e96284af1032b7cca426139e93ba5cfc6b757ef7420d67ff22f7d2dce7e50efd",
+    "reports/experiment_summary.json": "d57497c4002adafbb0775f13edad49aab7ffd0cbf55262395a9e981dbdb4fc71"
+  },
+  "weights": "NOT_UPLOADED",
+  "raw_images": "EXCLUDED"
+}
