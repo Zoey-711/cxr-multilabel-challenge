@@ -1,0 +1,13 @@
+source_config: configs/f17_densenet121_fold5_384.yaml
+output: outputs/analysis/phase25_local_pilots
+rules: [Mean, Max, HalfMeanHalfMax, ViewBalanced]
+view_groups:
+  frontal: [AP, PA]
+  lateral: [LATERAL, LL]
+unknown_view_policy: whole_study_mean
+backbone_weights: {D17: 0.25, C17: 0.25, S17: 0.50}
+bootstrap: {seed: 42, valid_draws: 2000, max_attempts: 4000}
+primary_analysis: E17_complete_OOF
+mean_reconstruction_atol: 0.0000002
+stability_rule: positive_global_lower_95ci_and_at_least_4_positive_folds_and_nonnegative_multi_image_delta
+interpretation: exploratory_OOF_analysis_with_fixed_trained_models_not_nested_model_selection

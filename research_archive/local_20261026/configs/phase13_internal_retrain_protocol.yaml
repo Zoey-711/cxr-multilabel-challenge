@@ -1,0 +1,42 @@
+source:
+  split_directory: outputs/analysis/phase5_internal_split
+  official_train_only: true
+  original_m02_run: outputs/experiments/m02_convnext_tiny_384_aug_20261016_elevated
+  original_m02_checkpoint_usable_for_holdout_evaluation: false
+  pretrained: torchvision_convnext_tiny_imagenet1k_v1
+  pretrained_sha256: 983f1562536e84ff750a1576fb08e54de751dbf2e17c0d8a4a13704341fdcd3d
+backbone:
+  initialization: original_imagenet_weights
+  train_patients: internal_train_only
+  train_images: 27301
+  selection_patients: official_validation_only
+  input_size: 384
+  preprocessing: black_pad_v1
+  train_augmentation: same_as_frozen_m02
+  sampler: image_shuffle
+  loss: bce_with_logits
+  micro_batch: 8
+  accumulation: 2
+  optimizer: adamw
+  backbone_lr: 0.0001
+  head_lr: 0.0003
+  weight_decay: 0.0001
+  scheduler: cosine_with_2_warmup_epochs
+  seed: 42
+  max_epochs: 30
+  patience: 6
+  checkpoint_selection: official_validation_study_macro_auc_max
+aggregation:
+  shared_new_backbone: true
+  feature_extraction: deterministic_black_pad_v1
+  baseline: mean_image_probability
+  residual_head: v03_m02_multiview_residual.yaml
+  residual_train_patients: internal_train_only
+  residual_selection: official_validation_study_macro_auc_max
+final_holdout:
+  patients: internal_val_only
+  used_for_training: false
+  used_for_early_stopping: false
+  used_for_hyperparameter_selection: false
+  evaluation: paired_patient_bootstrap_and_ten_class_auc_ap
+  evaluate_once_after_all_choices_frozen: true

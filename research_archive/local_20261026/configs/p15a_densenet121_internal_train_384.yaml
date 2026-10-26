@@ -1,0 +1,59 @@
+experiment:
+  name: p15a_densenet121_internal_train_384
+  seed: 42
+data:
+  archive_path: '/AUTHORIZED/cxr_first.zip'
+  train_manifest: null
+  val_manifest: null
+  test_manifest: null
+  image_root: null
+  train_subset:
+    directory: outputs/analysis/phase5_internal_split
+    subset: internal_train
+    sha256:
+      patient_split.csv: dc4827771709dd237ea133e7f2869448c972483dd40d7612d38fe575e4df1e33
+      study_split.csv: 894f6d491e1ee358b0e04a0cfc169e713fcd738bd09ca1b5a5eed09174d11164
+      image_split.csv: 836a0d1565c4d0bd4325ffbf951dffdfa46abd23c85e3c9d7502b10532e1a09f
+    expected_counts: {patients: 9949, studies: 16667, images: 27301}
+    expected_holdout_images: 3043
+  columns:
+    subject_id: Subject_id
+    study_id: Study_id
+    image_path: Dicom_id
+    labels: [Predict_class]
+  label_encoding:
+    positive: semicolon_delimited_class_ids_1_to_10
+    unlisted_policy: negative
+    negative: unlisted_in_complete_competition_annotation
+    uncertain: no_code_observed
+    missing: blank_Predict_class_is_error
+  input_size: 384
+  num_workers: 4
+model:
+  name: densenet121
+  pretrained: imagenet
+  pretrained_sha256: a639ec97d7c33b07ae66f0b5fb7d0192f95a3b11b7576c66c0126c2a727c4395
+  num_classes: 10
+training:
+  batch_size: 16
+  epochs: 30
+  optimizer: adamw
+  backbone_lr: 0.0001
+  classifier_lr: 0.0003
+  weight_decay: 0.0001
+  loss: bce_with_logits
+  scheduler: cosine
+  warmup_epochs: 2
+  precision: fp16_amp
+  grad_clip_norm: 1.0
+  early_stopping_patience: 8
+validation:
+  study_fusion: mean_probability
+  primary_metric: macro_auc
+  auxiliary_metric: macro_f1
+  f1_threshold: 0.5
+inference:
+  batch_size: 16
+  submission_filename: submission.csv
+  submission_mode: threshold
+  threshold: 0.5

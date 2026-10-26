@@ -1,0 +1,37 @@
+architecture: densenet121
+tasks: [AUX-BASE, AUX-01]
+seed: 42
+output_dir: outputs/experiments/phase34_aux_supervision
+archive_path: /AUTHORIZED_DATA/cxr_first.zip
+pretrained_file: .wheels/torch_cache/hub/checkpoints/densenet121-a639ec97.pth
+pretrained_sha256: a639ec97d7c33b07ae66f0b5fb7d0192f95a3b11b7576c66c0126c2a727c4395
+input_size: 384
+augmentation: null
+epochs: 5
+selection: fixed_final_epoch_no_val_early_stopping
+micro_batch: 4
+accumulation: 4
+num_workers: 2
+cpu_threads: 4
+backbone_lr: 0.0001
+head_lr: 0.0003
+weight_decay: 0.0001
+warmup_epochs: 2
+grad_clip: 1.0
+aux_alpha: 0.2
+max_reserved_mib: 6144
+bootstrap_seed: 42
+bootstrap_draws: 2000
+continue_delta: 0.002
+max_class_drop: 0.02
+fold:
+  kind: patient_fold_v1
+  directory: outputs/analysis/phase17_patient_folds
+  fold: 1
+  sha256:
+    patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+    study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+    image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d
+  expected_counts:
+    train: {patients: 8844, studies: 14826, images: 24332}
+    oof: {patients: 2211, studies: 3687, images: 6012}

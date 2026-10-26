@@ -1,0 +1,10 @@
+"""Local workaround for Anaconda's older Visual C++ runtime on Windows."""
+
+import ctypes
+import os
+import sys
+
+if sys.platform == "win32":
+    system32 = os.path.join(os.environ.get("SystemRoot", "C:\\Windows"), "System32")
+    for filename in ("vcruntime140.dll", "vcruntime140_1.dll", "msvcp140.dll"):
+        ctypes.WinDLL(os.path.join(system32, filename))

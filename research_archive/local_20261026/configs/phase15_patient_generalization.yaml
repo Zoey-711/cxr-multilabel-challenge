@@ -1,0 +1,20 @@
+phase: 15
+split_directory: outputs/analysis/phase5_internal_split
+audit_directory: outputs/analysis/phase15_preflight_20261018
+official_validation: official_val_only_for_checkpoint_selection
+internal_holdout: evaluate_once_after_both_best_checkpoints_and_fusion_are_frozen
+bootstrap: {unit: Subject_id, replicates: 2000, seed: 42, invalid_resamples: exclude_and_count}
+fixed_fusion: {p15a_densenet121: 0.5, p15b_convnext_tiny: 0.5, level: study_mean_probability}
+runs:
+  A:
+    control_config: outputs/experiments/b01_densenet121_384_20261016/config.yaml
+    control_config_sha256: 4879c7f4577a03789db823b5a958a7d514a069240bac1053ab3de0aa6af6ba49
+    config: configs/p15a_densenet121_internal_train_384.yaml
+    run_id: p15a_densenet121_internal_train_384
+    pretrained_sha256: a639ec97d7c33b07ae66f0b5fb7d0192f95a3b11b7576c66c0126c2a727c4395
+  B:
+    control_config: outputs/experiments/m02_convnext_tiny_384_aug_20261016_elevated/config.yaml
+    control_config_sha256: 5ed55d92d3dfdf8cba8645f1f4cabd9ec15095a38a917ffb6d33533c6165df0f
+    config: configs/p15b_convnext_tiny_internal_train_384.yaml
+    run_id: p15b_convnext_tiny_internal_train_384
+    pretrained_sha256: 983f1562536e84ff750a1576fb08e54de751dbf2e17c0d8a4a13704341fdcd3d
