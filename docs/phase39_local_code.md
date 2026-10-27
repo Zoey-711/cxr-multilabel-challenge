@@ -8,7 +8,11 @@
 
 这些文件只是**代码与配置**；本地训练产生的checkpoint、概率和日志没有提交。
 Phase39不属于原26项、Phase32、E08-Tune或Phase35任务队列，克隆本分支不会
-自动启动Phase39。当前用户本地实验仍在运行，尚无最终配对Bootstrap结论。
+自动启动Phase39。本地配对实验已经结束：BASE Fold1 OOF Macro-AUC 为
+0.804757，FUSION 为 0.807709，差值 +0.002951；患者 Bootstrap 95% CI
+[+0.000190, +0.005699]。这是历史多次使用的 Fold1 上的探索结果，
+不代表完整五折确认。原始权重和逐 Study 预测未上传本代码分支，结论快照见
+[`experiment_notes/phase39_final_decision.md`](experiment_notes/phase39_final_decision.md)。
 
 源码：`src/cxr/phase39_model.py`、`src/cxr/phase39_run.py`、
 `src/cxr/phase39_support.py`、`scripts/run_phase39.py`；冻结配置：

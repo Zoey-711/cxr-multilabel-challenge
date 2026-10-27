@@ -3,6 +3,7 @@
 *.sh text eol=lf
 *.yaml text eol=lf
 *.md text eol=lf
+docs/experiment_notes/*.md -text -eol
 *.json text eol=lf
 *.txt text eol=lf
 *.toml text eol=lf

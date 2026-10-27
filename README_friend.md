@@ -1,5 +1,7 @@
 # Phase35：复用两个Fold1，新增8项Fold2–5训练
 
+赛事规则原件及当前执行核对见[比赛规则](docs/competition/README.md)；已上传的本地历史实验代码与各批次说明见[实验索引](docs/experiment_history.md)。历史快照中的旧规则摘要不能替代 2026-10-23 官方 PDF。
+
 最新交付见[Phase35一键运行说明](docs/phase35/README.md)。入口为`python scripts/phase35_run.py --config configs/phase35_server.local.yaml`；先复制并填写`configs/phase35_server.example.yaml`，明确GPU预算并完成自动远程预检。新输出`phase35_batch`、新结果分支`results/phase35-fivefold`与历史批次分离。
 
 # 朋友服务器运行 Phase32 与 E08-Tune
