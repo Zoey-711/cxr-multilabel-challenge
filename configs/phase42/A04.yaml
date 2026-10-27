@@ -1,0 +1,15 @@
+candidate:
+  id: A04
+  name: Cross-Scale Attention Lite
+  mechanism: fusion
+  change: Stage4/final ->64; fixed4x4 pooled tokens; 4-head cross attention; concatenate
+    final GAP
+  kind: architecture
+fold: 2
+protocol: phase42_plan.yaml
+seed: 42
+micro_batch: 4
+accumulation: 4
+epochs: 30
+patience: 6
+head_seed: 4201

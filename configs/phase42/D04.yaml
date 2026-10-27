@@ -1,0 +1,14 @@
+candidate:
+  id: D04
+  name: Dilated Spatial Head
+  mechanism: convolution
+  change: Residual depthwise3x3 dilation2 SiLU before GAP
+  kind: architecture
+fold: 2
+protocol: phase42_plan.yaml
+seed: 42
+micro_batch: 4
+accumulation: 4
+epochs: 30
+patience: 6
+head_seed: 4201

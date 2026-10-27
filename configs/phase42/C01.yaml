@@ -1,0 +1,14 @@
+candidate:
+  id: C01
+  name: Class-Specific Attention
+  mechanism: class_aware
+  change: Ten spatial softmax maps; class-specific weighted feature pooling
+  kind: architecture
+fold: 2
+protocol: phase42_plan.yaml
+seed: 42
+micro_batch: 4
+accumulation: 4
+epochs: 30
+patience: 6
+head_seed: 4201

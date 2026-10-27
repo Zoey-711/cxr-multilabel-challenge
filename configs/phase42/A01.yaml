@@ -1,0 +1,14 @@
+candidate:
+  id: A01
+  name: Gated Multi-Stage Fusion
+  mechanism: fusion
+  change: Stage5 GAP ->64; sigmoid gate conditioned on final+mid; concat final1280+64
+  kind: architecture
+fold: 2
+protocol: phase42_plan.yaml
+seed: 42
+micro_batch: 4
+accumulation: 4
+epochs: 30
+patience: 6
+head_seed: 4201

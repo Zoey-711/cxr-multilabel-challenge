@@ -1,0 +1,15 @@
+candidate:
+  id: A02
+  name: FPN-Lite
+  mechanism: fusion
+  change: Stage4 and final maps ->64; bilinear top-down sum; residual depthwise3;
+    GAP
+  kind: architecture
+fold: 2
+protocol: phase42_plan.yaml
+seed: 42
+micro_batch: 4
+accumulation: 4
+epochs: 30
+patience: 6
+head_seed: 4201

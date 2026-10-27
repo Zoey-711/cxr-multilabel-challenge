@@ -1,0 +1,15 @@
+candidate:
+  id: F04
+  name: Low-Rank Spatial Mixing
+  mechanism: spatial
+  change: Residual nonlinear token mixing 144->8->144 per final channel; fixed12x12
+    grid
+  kind: architecture
+fold: 2
+protocol: phase42_plan.yaml
+seed: 42
+micro_batch: 4
+accumulation: 4
+epochs: 30
+patience: 6
+head_seed: 4201

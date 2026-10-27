@@ -1,0 +1,184 @@
+schema: phase42_v1
+pilot_fold: 2
+seed: 42
+baseline_source_commit: 76456056b2c7a8ebc426ad473f7556b025f7ce68
+fold_sha256:
+  patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+  study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+  image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d
+fold_counts:
+  1:
+    patients: 2211
+    studies: 3687
+    images: 6012
+  2:
+    patients: 2211
+    studies: 3731
+    images: 6130
+  3:
+    patients: 2211
+    studies: 3701
+    images: 6099
+  4:
+    patients: 2211
+    studies: 3692
+    images: 6051
+  5:
+    patients: 2211
+    studies: 3702
+    images: 6052
+pretrained_sha256: dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74
+baseline_fold1:
+  model_id: P39_BASE_F1
+  config: configs/phase39/base_config.yaml
+  config_sha256: c2691a1c0c491aa1f8c7fa91d5e424e19562ae5b9ac830ebd3158f9252682a15
+  assets:
+    ema_best.pth: 3bb28b549680c639c069410b7a10a46353f345675d11be61cd00a5ca5179f422
+    oof_predictions.csv: 42d321f95e1ff4180389f15a5c08124d9bf9b2d5aa12cc34094baa727f733890
+    resolved_config.json: 51ad6246173a427022b8b15a2ff38fa2148af7a5c67ce46de9e34c47d52685c8
+    run_manifest.json: f2c35abc8637f8f642b3482e0637a697bf3bdf7ec9f9b938049a50fe33625fa2
+protocol_config: configs/phase39/base_config.yaml
+protocol_sha256: c2691a1c0c491aa1f8c7fa91d5e424e19562ae5b9ac830ebd3158f9252682a15
+candidates:
+- id: A01
+  name: Gated Multi-Stage Fusion
+  mechanism: fusion
+  change: Stage5 GAP ->64; sigmoid gate conditioned on final+mid; concat final1280+64
+  kind: architecture
+- id: A02
+  name: FPN-Lite
+  mechanism: fusion
+  change: Stage4 and final maps ->64; bilinear top-down sum; residual depthwise3;
+    GAP
+  kind: architecture
+- id: A04
+  name: Cross-Scale Attention Lite
+  mechanism: fusion
+  change: Stage4/final ->64; fixed4x4 pooled tokens; 4-head cross attention; concatenate
+    final GAP
+  kind: architecture
+- id: B01
+  name: GeM
+  mechanism: pooling
+  change: Replace final GAP with FP32 GeM; p initialized3, learned clamp[1,6], epsilon1e-6
+  kind: architecture
+- id: B02
+  name: GAP+GMP
+  mechanism: pooling
+  change: Concatenate final average and maximum pooled vectors
+  kind: architecture
+- id: B03
+  name: Spatial Pyramid Pooling
+  mechanism: pooling
+  change: Concatenate final adaptive-average 1x1 and2x2 bins
+  kind: architecture
+- id: B04
+  name: Shared Attention Pooling
+  mechanism: pooling
+  change: One shared spatial softmax map for all classes; original linear classifier
+  kind: architecture
+- id: C01
+  name: Class-Specific Attention
+  mechanism: class_aware
+  change: Ten spatial softmax maps; class-specific weighted feature pooling
+  kind: architecture
+- id: C02
+  name: Label Query Decoder
+  mechanism: class_aware
+  change: Final map ->64; ten learned queries, one four-head cross-attention layer,
+    no FFN
+  kind: architecture
+- id: C03
+  name: Class-Aware GeM
+  mechanism: class_aware
+  change: Ten softplus evidence maps, ten independent learned p initialized3 clamp[1,6],
+    affine logits
+  kind: architecture
+- id: C04
+  name: Low-Rank Label Interaction
+  mechanism: class_aware
+  change: Original logits plus rank4 tanh residual label interaction
+  kind: architecture
+- id: D01
+  name: Large-Kernel Depthwise Head
+  mechanism: convolution
+  change: Residual depthwise7x7 SiLU before original GAP
+  kind: architecture
+- id: D02
+  name: SE Classification Head
+  mechanism: convolution
+  change: Final GAP channel gate with reduction16 (1280->80->1280)
+  kind: architecture
+- id: D03
+  name: ECA Classification Head
+  mechanism: convolution
+  change: Final GAP channel gate with fixed one-dimensional kernel5
+  kind: architecture
+- id: D04
+  name: Dilated Spatial Head
+  mechanism: convolution
+  change: Residual depthwise3x3 dilation2 SiLU before GAP
+  kind: architecture
+- id: E03
+  name: BCE Label Smoothing
+  mechanism: regularization
+  change: Only target changes to0.95*y+0.025; mask unchanged
+  kind: training_strategy
+- id: E04
+  name: Stochastic Depth
+  mechanism: regularization
+  change: Only existing stochastic-depth probabilities scaled1.5 (maximum schedule
+    .2->.3)
+  kind: training_strategy
+- id: F01
+  name: Coordinate Attention
+  mechanism: spatial
+  change: Row/column pooled channel gates, shared reduction to40, no added BatchNorm
+  kind: architecture
+- id: F04
+  name: Low-Rank Spatial Mixing
+  mechanism: spatial
+  change: Residual nonlinear token mixing 144->8->144 per final channel; fixed12x12
+    grid
+  kind: architecture
+omitted:
+  A03: Scalar weighted feature fusion overlaps gated A01/Phase39 fixed fusion; no
+    separate task
+  F03: Multi-pooling duplicates GAP+GMP and spatial-pyramid pool candidates
+  F02: CBAM combines D02 channel and B04 spatial mechanisms; defer until isolated
+    evidence
+  E01: Two stochastic forwards need matched BatchNorm/RNG/compute controls; deferred,
+    not implemented as a nominal single-factor pilot
+  E02: Weak-strong consistency needs paired view and BN controls; defer rather than
+    confound augmentation and objective
+selection:
+  draws: 2000
+  seed: 4202
+  min_delta: 0.002
+  min_ci_lower: 0.0
+  min_class_delta: -0.01
+  holm_alpha: 0.05
+  max_candidates: 4
+  max_mac_ratio: 1.35
+  max_weight_bytes: 500000000
+  tie_break:
+  - descending_delta
+  - ascending_mac_ratio
+  - candidate_id
+confirmation:
+  max_candidates: 4
+  max_new_tasks: 16
+  excluded_selection_fold: 2
+  third_stage_max_recommendations: 2
+  min_delta: 0.001
+  min_ci_lower: 0.0
+  min_class_delta: -0.01
+timeout_hours: 48
+max_retries: 1
+source_sha256:
+  src/cxr/phase39_model.py: fb695f96c47b9af5e9e54900baad23257a9cc40c36df1a761ca8e33ea1c5e24c
+  src/cxr/phase39_run.py: 343d201c5e4ff49a01745ac00a97ae627d12a040850826c1d5b1c49514c7c508
+  src/cxr/data/dataset.py: ecf377680edb67c4594c390b6499c48ac2438d0a6c58fe18dd639c9ca543e733
+  src/cxr/data/patient_folds.py: bb92dea6cf5d0dc8b470d42d36853b3bde7e5143d271bcf0f670e0835499ad06
+  src/cxr/phase41/train.py: 61b8bc0e7a9b2ae16d0649b7820470d5e017343dee48b0bff7696ad817da4d31
+  src/cxr/phase41/protocol.py: 9463da0a64ca4ec917d687de46a977fa222c4f2bcc2827becf89962ceabfb232

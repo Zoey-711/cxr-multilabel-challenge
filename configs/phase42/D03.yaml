@@ -1,0 +1,14 @@
+candidate:
+  id: D03
+  name: ECA Classification Head
+  mechanism: convolution
+  change: Final GAP channel gate with fixed one-dimensional kernel5
+  kind: architecture
+fold: 2
+protocol: phase42_plan.yaml
+seed: 42
+micro_batch: 4
+accumulation: 4
+epochs: 30
+patience: 6
+head_seed: 4201

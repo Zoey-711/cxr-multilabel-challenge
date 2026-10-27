@@ -1,0 +1,14 @@
+candidate:
+  id: C04
+  name: Low-Rank Label Interaction
+  mechanism: class_aware
+  change: Original logits plus rank4 tanh residual label interaction
+  kind: architecture
+fold: 2
+protocol: phase42_plan.yaml
+seed: 42
+micro_batch: 4
+accumulation: 4
+epochs: 30
+patience: 6
+head_seed: 4201

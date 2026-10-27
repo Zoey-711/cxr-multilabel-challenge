@@ -1,3 +1,7 @@
+# Phase42：19项新候选与跨折确认
+
+最新批次见 [Phase42 运行说明](docs/phase42/README.md) 和 [结构/参数/MAC清单](docs/phase42/experiment_catalog.md)。本批复用 Phase41 同条件 BASE，不重复其8项训练。填写 `configs/phase42_server.local.yaml` 后运行 `python scripts/phase42_run.py --config configs/phase42_server.local.yaml`。默认19项Fold2 Pilot；确认阶段需预先授权预算，最多4种机制各补4折。新结果分支为 `results/phase42-pilots`。
+
 # Phase41：Phase39 BASE/FUSION 五折验证
 
 最新交付见 [Phase41 朋友服务器说明](docs/phase41/README.md)。本批只新增 BASE/FUSION 各 Fold2–5 共 8 项，Fold1 从冻结产物按 SHA-256 复用。填写 `configs/phase41_server.local.yaml` 后运行 `python scripts/phase41_run.py --config configs/phase41_server.local.yaml`；入口自动执行远程预检、预算门禁、8 卡独立调度与可恢复训练。结果使用独立的 `phase41_batch` 目录，可选增量上传到私有 `results/phase41-fivefold` 分支。

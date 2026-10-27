@@ -1,0 +1,14 @@
+candidate:
+  id: D01
+  name: Large-Kernel Depthwise Head
+  mechanism: convolution
+  change: Residual depthwise7x7 SiLU before original GAP
+  kind: architecture
+fold: 2
+protocol: phase42_plan.yaml
+seed: 42
+micro_batch: 4
+accumulation: 4
+epochs: 30
+patience: 6
+head_seed: 4201

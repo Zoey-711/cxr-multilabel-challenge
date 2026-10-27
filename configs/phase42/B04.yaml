@@ -1,0 +1,14 @@
+candidate:
+  id: B04
+  name: Shared Attention Pooling
+  mechanism: pooling
+  change: One shared spatial softmax map for all classes; original linear classifier
+  kind: architecture
+fold: 2
+protocol: phase42_plan.yaml
+seed: 42
+micro_batch: 4
+accumulation: 4
+epochs: 30
+patience: 6
+head_seed: 4201
