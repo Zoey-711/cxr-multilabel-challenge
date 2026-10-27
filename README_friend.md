@@ -1,3 +1,7 @@
+# Phase41：Phase39 BASE/FUSION 五折验证
+
+最新交付见 [Phase41 朋友服务器说明](docs/phase41/README.md)。本批只新增 BASE/FUSION 各 Fold2–5 共 8 项，Fold1 从冻结产物按 SHA-256 复用。填写 `configs/phase41_server.local.yaml` 后运行 `python scripts/phase41_run.py --config configs/phase41_server.local.yaml`；入口自动执行远程预检、预算门禁、8 卡独立调度与可恢复训练。结果使用独立的 `phase41_batch` 目录，可选增量上传到私有 `results/phase41-fivefold` 分支。
+
 # Phase35：复用两个Fold1，新增8项Fold2–5训练
 
 赛事规则原件及当前执行核对见[比赛规则](docs/competition/README.md)；已上传的本地历史实验代码与各批次说明见[实验索引](docs/experiment_history.md)。历史快照中的旧规则摘要不能替代 2026-10-23 官方 PDF。

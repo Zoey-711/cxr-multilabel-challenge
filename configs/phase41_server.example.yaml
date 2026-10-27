@@ -1,0 +1,19 @@
+# Copy to configs/phase41_server.local.yaml on the authorized Linux server.
+data_root: /AUTHORIZED/data/cxr_first.zip
+pretrained_root: /AUTHORIZED/imagenet-cache
+protocol_root: /AUTHORIZED/phase17_patient_folds
+fold1_results_root: /AUTHORIZED/local_phase39_multistage_fusion
+output_root: /AUTHORIZED/outputs/phase41_batch
+gpu_ids: [0, 1, 2, 3, 4, 5, 6, 7]
+max_concurrent: 8
+# Friend must authorize the total hours before launch. Timeout reservation is
+# 48 hours per active task; lower budgets start fewer tasks, never overdraw.
+gpu_hours: null
+minimum_free_disk_gib: 30
+minimum_free_memory_gib_per_worker: 6
+upload:
+  enabled: false
+  repository: Zoey-711/cxr-multilabel-challenge
+  branch: results/phase41-fivefold
+  checkout: /AUTHORIZED/phase41_results_upload
+  release_tag: phase41-fivefold-v1

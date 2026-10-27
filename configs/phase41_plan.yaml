@@ -1,0 +1,41 @@
+schema: phase41_v1
+selection_metric: fold_study_macro_auc
+fold_sha256:
+  patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+  study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+  image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d
+pretrained_sha256: dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74
+fold1:
+  BASE:
+    model_id: P39_BASE_F1
+    config: configs/phase39/base_config.yaml
+    config_sha256: c2691a1c0c491aa1f8c7fa91d5e424e19562ae5b9ac830ebd3158f9252682a15
+    assets:
+      ema_best.pth: 3bb28b549680c639c069410b7a10a46353f345675d11be61cd00a5ca5179f422
+      oof_predictions.csv: 42d321f95e1ff4180389f15a5c08124d9bf9b2d5aa12cc34094baa727f733890
+      resolved_config.json: 51ad6246173a427022b8b15a2ff38fa2148af7a5c67ce46de9e34c47d52685c8
+      run_manifest.json: f2c35abc8637f8f642b3482e0637a697bf3bdf7ec9f9b938049a50fe33625fa2
+  FUSION:
+    model_id: P39_FUSION_F1
+    config: configs/phase39/fusion_config.yaml
+    config_sha256: da31e5bba1f1f490dab048b554d212ef25c5e9f4373a8b0f0e49e38f0919c8d6
+    assets:
+      ema_best.pth: e47ba62a181806a543ba39aa2edfed41a08f0170cc780964743123abf778a7bd
+      oof_predictions.csv: e621544ad87d13d845fc08fde8d64bee7251d206a6e37b27e9df769a0ec2b86d
+      resolved_config.json: ae4fdc22908f95c8703156434b5ed49bb54e7ca8863401c32f69c39dfdd51988
+      run_manifest.json: 039f583446e6d0c1ea4a379c713695cc3088b50da72cbcfd007a026e33ca9181
+fold_counts:
+  1: {patients: 2211, studies: 3687, images: 6012}
+  2: {patients: 2211, studies: 3731, images: 6130}
+  3: {patients: 2211, studies: 3701, images: 6099}
+  4: {patients: 2211, studies: 3692, images: 6051}
+  5: {patients: 2211, studies: 3702, images: 6052}
+tasks:
+  - {id: P41_BASE_F02, variant: BASE, fold: 2, seed: 42, timeout_hours: 48, max_retries: 1}
+  - {id: P41_FUSION_F02, variant: FUSION, fold: 2, seed: 42, timeout_hours: 48, max_retries: 1}
+  - {id: P41_BASE_F03, variant: BASE, fold: 3, seed: 42, timeout_hours: 48, max_retries: 1}
+  - {id: P41_FUSION_F03, variant: FUSION, fold: 3, seed: 42, timeout_hours: 48, max_retries: 1}
+  - {id: P41_BASE_F04, variant: BASE, fold: 4, seed: 42, timeout_hours: 48, max_retries: 1}
+  - {id: P41_FUSION_F04, variant: FUSION, fold: 4, seed: 42, timeout_hours: 48, max_retries: 1}
+  - {id: P41_BASE_F05, variant: BASE, fold: 5, seed: 42, timeout_hours: 48, max_retries: 1}
+  - {id: P41_FUSION_F05, variant: FUSION, fold: 5, seed: 42, timeout_hours: 48, max_retries: 1}
