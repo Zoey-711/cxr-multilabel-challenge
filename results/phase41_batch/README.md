@@ -1,7 +1,7 @@
-# phase41 待执行
+# Phase41 五折补齐
 
-配置和 CPU 验收已完成。尚未启动真实 GPU 预检或正式训练：Phase41 等待冻结 Phase39 Fold1 原件及空闲 GPU；Phase42 进一步依赖 Phase41 BASE。
+Phase39 两个冻结 Fold1 所需的 8 个原始文件已从 [已发布原包](https://github.com/Zoey-711/cxr-multilabel-challenge/releases/tag/phase39-fold1-frozen-v1)下载到服务器并逐项核对 SHA-256。本机 CPU 验收通过。
 
-Phase41 包含 8 项训练；Phase42 包含 19 项 Pilot，达到固定门槛后最多补 16 项确认。没有启动额外的全 Train 或学生训练。
+8 张已授权 GPU 当前由其他作业占用。后台流程会在资源空闲后先做真实 CUDA 预检，再运行 8 项 Fold2–5 训练与五折分析。完成后回传报告、预测、日志、权重和恢复检查点。
 
-就绪后按固定顺序自动进行预检、训练、校验与完整结果回传。已有实验结果保留。
+训练代码冻结提交 `76456056b2c7a8ebc426ad473f7556b025f7ce68`。当前目录为等待状态，尚未开始正式训练。
