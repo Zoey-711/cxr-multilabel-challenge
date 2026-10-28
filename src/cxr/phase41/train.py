@@ -176,12 +176,31 @@ def run_task(plan: dict, task: dict, server: dict, identity_hash: str) -> dict:
         emit(f"START epoch={start_epoch} steps={steps} micro=4 accum=4 workers=0")
         for epoch in range(start_epoch, 1 if training_complete else cfg["epochs"] + 1):
             model.train(); started = time.perf_counter(); torch.cuda.reset_peak_memory_stats()
-            iterator = iter(tr); total = 0.; skips = 0; updates = 0
+            iterator = iter(tr); total = 0.; skips = 0; updates = 0; consecutive_skips = 0
             for step in range(1, steps + 1):
                 micro = list(itertools.islice(iterator, cfg["accumulation"]))
-                value, skipped = step_group(cfg, model, ema, micro, optimizer, scheduler, scaler, torch.device("cuda"))
+                diagnostic = {}
+                try:
+                    value, skipped = step_group(cfg, model, ema, micro, optimizer, scheduler,
+                                                scaler, torch.device("cuda"), diagnostic)
+                except Exception:
+                    if diagnostic:
+                        write_json(run / "nonfinite_diagnostic.json", dict(task=task["id"], epoch=epoch,
+                                   step=step, **diagnostic))
+                    optimizer.zero_grad(set_to_none=True)
+                    raise
                 total += value; skips += skipped; updates += not skipped
-                if skips >= 20:
+                consecutive_skips = consecutive_skips + 1 if skipped else 0
+                if skipped:
+                    event = dict(task=task["id"], epoch=epoch, step=step, **diagnostic)
+                    with (run / "amp_events.jsonl").open("a", encoding="utf-8") as events:
+                        events.write(json.dumps(event, sort_keys=True) + "\n"); events.flush()
+                    emit(f"AMP_SKIP {json.dumps(event, sort_keys=True)}")
+                if skips >= 20 or consecutive_skips >= 4:
+                    write_json(run / "nonfinite_diagnostic.json", dict(task=task["id"], epoch=epoch,
+                               step=step, reason="Excessive AMP skips", epoch_skips=skips,
+                               consecutive_skips=consecutive_skips, **diagnostic))
+                    optimizer.zero_grad(set_to_none=True)
                     raise FloatingPointError("Excessive AMP skips")
                 if step == 1 or step % 100 == 0 or step == steps:
                     write_json(run / "status.json", dict(state="RUNNING", task=task["id"], epoch=epoch,

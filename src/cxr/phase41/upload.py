@@ -17,8 +17,9 @@ def upload(root: Path, settings: dict) -> dict:
     if not settings.get("enabled"):
         raise ValueError("Friend has not authorized result upload")
     repo, branch, tag = settings["repository"], settings["branch"], settings["release_tag"]
-    if (repo != "Zoey-711/cxr-multilabel-challenge" or branch != "results/phase41-fivefold" or
-            tag != "phase41-fivefold-v1"):
+    expected = (("results/phase41-fivefold", "phase41-fivefold-v1"),
+                ("results/phase41r-recovery", "phase41r-recovery-v1"))
+    if repo != "Zoey-711/cxr-multilabel-challenge" or (branch, tag) not in expected:
         raise ValueError("Dedicated private Phase41 result branch and Release required")
     root = Path(root).resolve(); checkout = Path(settings["checkout"]).resolve()
     if checkout == root or checkout in root.parents or root in checkout.parents:
@@ -44,7 +45,8 @@ def upload(root: Path, settings: dict) -> dict:
             git("checkout", "--orphan", branch)
     if git("remote", "get-url", "origin") != remote or git("branch", "--show-current") != branch:
         raise ValueError("Upload checkout branch or repository changed")
-    if any(not line[3:].startswith("results/phase41_batch") for line in git("status", "--porcelain").splitlines()):
+    subdir = "results/phase41r_batch" if branch == "results/phase41r-recovery" else "results/phase41_batch"
+    if any(not line[3:].startswith(subdir) for line in git("status", "--porcelain").splitlines()):
         raise ValueError("Unrelated local changes in result checkout")
 
     folders = [p.parent for p in (root / "experiments").glob("*/DONE.json")]
@@ -78,11 +80,11 @@ def upload(root: Path, settings: dict) -> dict:
         binaries.append(dict(model_id=folder.name, asset=name, sha256=sha,
                              bytes=weight.stat().st_size, release_tag=tag))
 
-    target = checkout / "results/phase41_batch"
+    target = checkout / subdir
     sources = []
     for folder in folders:
         sources.extend(p for p in folder.rglob("*") if p.is_file() and p.suffix in
-                       (".json", ".csv", ".yaml", ".sha256", ".log") and not p.name.endswith(".pid.json"))
+                       (".json", ".jsonl", ".csv", ".yaml", ".sha256", ".log") and not p.name.endswith(".pid.json"))
     for name in ("reports", "analysis", "oof", "validation", "test_predictions"):
         sources.extend(p for p in (root / name).rglob("*") if p.is_file() and p.suffix in (".json", ".csv", ".md"))
     hashes = {}
@@ -102,7 +104,7 @@ def upload(root: Path, settings: dict) -> dict:
     write_json(target / "binary_release_manifest.json", dict(repository=repo, release_tag=tag, assets=binaries))
     write_json(target / "export_manifest.json", dict(code_commit=commit(), files=hashes,
                raw_images="EXCLUDED", raw_labels="EXCLUDED", optimizer_checkpoints="EXCLUDED"))
-    git("add", "--", "results/phase41_batch")
+    git("add", "--", subdir)
     if git("diff", "--cached", "--name-only"):
         git("commit", "-m", "Publish verified incremental Phase41 results")
     git("push", "origin", f"HEAD:refs/heads/{branch}")

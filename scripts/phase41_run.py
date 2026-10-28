@@ -11,7 +11,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from cxr.batch.host_gpu_lock import host_gpu_lock
 from cxr.batch.plan import write_json
-from cxr.phase41.protocol import load_plan, server_config, fingerprint
+from cxr.phase41.protocol import load_plan, server_config, fingerprint, digest
 
 
 def main():
@@ -64,6 +64,20 @@ def main():
         if args.action == "preflight":
             print("REMOTE_PREFLIGHT PASS; formal training not started")
             return
+        if cfg.get("recovery_source_root"):
+            diagnosis = root / "diagnostic/P41_FUSION_F02/result.json"
+            if not diagnosis.exists():
+                raise RuntimeError("Phase41-R requires bounded real-data diagnostic before recovery")
+            check = json.loads(diagnosis.read_text(encoding="utf-8"))
+            if (check.get("state") != "PASS" or check.get("steps", 0) < 32 or
+                    check.get("optimizer_updates", 0) < 1 or
+                    check.get("config_sha256") != digest(args.config) or
+                    check.get("training_code_sha256") != digest(ROOT / "src/cxr/phase39_run.py") or
+                    check.get("historical_done_sha256") != identity["historical_base_f02_done_sha256"]):
+                raise ValueError("Phase41-R real-data diagnostic missing or changed")
+            from cxr.phase41.recovery import import_completed_base
+            imported = import_completed_base(Path(cfg["recovery_source_root"]), root, fingerprint(identity))
+            write_json(root / "reports/RECOVERY_IMPORT.json", imported)
         state = run(plan, cfg, args.config.resolve(), fingerprint(identity), receipt["gpu_hours"])
         result = analyze(root, plan, cfg)
         if cfg["upload"].get("enabled"):

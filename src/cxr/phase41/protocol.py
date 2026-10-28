@@ -76,9 +76,14 @@ def server_config(path: Path) -> dict:
     required = ("data_root", "pretrained_root", "protocol_root", "fold1_results_root", "output_root",
                 "gpu_ids", "max_concurrent", "gpu_hours", "minimum_free_disk_gib",
                 "minimum_free_memory_gib_per_worker", "upload")
-    if set(settings) != set(required) or any(not Path(settings[k]).is_absolute() for k in
+    if set(settings) not in (set(required), set(required) | {"recovery_source_root"}) or any(not Path(settings[k]).is_absolute() for k in
                                             ("data_root", "pretrained_root", "protocol_root", "fold1_results_root", "output_root")):
         raise ValueError("Complete absolute server paths and resource limits required")
+    if "recovery_source_root" in settings:
+        source = Path(settings["recovery_source_root"])
+        target = Path(settings["output_root"])
+        if not source.is_absolute() or source.resolve() == target.resolve():
+            raise ValueError("Recovery requires a distinct absolute frozen source directory")
     ids = settings["gpu_ids"]
     if (not isinstance(ids, list) or not ids or len(ids) != len(set(ids)) or len(ids) > 8 or
             any(type(i) is not int or i < 0 for i in ids) or
@@ -91,9 +96,9 @@ def server_config(path: Path) -> dict:
             raise ValueError(f"Invalid {name}")
     if settings["upload"].get("enabled"):
         upload = settings["upload"]
+        expected = ("results/phase41r-recovery", "phase41r-recovery-v1") if "recovery_source_root" in settings else ("results/phase41-fivefold", "phase41-fivefold-v1")
         if (upload.get("repository") != "Zoey-711/cxr-multilabel-challenge" or
-                upload.get("branch") != "results/phase41-fivefold" or
-                upload.get("release_tag") != "phase41-fivefold-v1" or
+                (upload.get("branch"), upload.get("release_tag")) != expected or
                 not Path(upload.get("checkout", "")).is_absolute()):
             raise ValueError("Phase41 upload requires the dedicated private result branch and Release")
     return settings

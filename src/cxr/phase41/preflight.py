@@ -28,6 +28,12 @@ def prepare(plan: dict, cfg: dict) -> dict:
     if platform.system() != "Linux":
         raise RuntimeError("Formal Phase41 preflight requires the friend's authorized Linux server")
     out = Path(cfg["output_root"]); out.mkdir(parents=True, exist_ok=True)
+    recovery_hash = None
+    if cfg.get("recovery_source_root"):
+        old = Path(cfg["recovery_source_root"]).resolve()
+        if old == out.resolve() or old in out.resolve().parents or out.resolve() in old.parents:
+            raise ValueError("Recovery source and output must be independent")
+        recovery_hash = digest(old / "experiments/P41_BASE_F02/DONE.json")
     if out.resolve() == ROOT.resolve() or ROOT.resolve() in out.resolve().parents:
         raise ValueError("Output must be independent of the code checkout")
     if shutil.disk_usage(out).free < cfg["minimum_free_disk_gib"] * 2**30:
@@ -91,9 +97,12 @@ def prepare(plan: dict, cfg: dict) -> dict:
     source_names = ("src/cxr/phase39_model.py", "src/cxr/phase39_run.py", "src/cxr/phase41/protocol.py",
                     "src/cxr/phase41/train.py", "src/cxr/phase41/queue.py", "src/cxr/phase41/preflight.py",
                     "src/cxr/phase41/analysis.py", "src/cxr/phase41/upload.py",
+                    "src/cxr/phase41/recovery.py", "scripts/phase41r_diagnose.py",
+                    "scripts/phase41r_audit_failures.py",
                     "scripts/phase41_worker.py", "scripts/phase41_run.py")
     from cxr.batch.artifacts import commit
     return dict(host=platform.node(), code_commit=commit(), plan_fingerprint=fingerprint(plan),
+                historical_base_f02_done_sha256=recovery_hash,
                 code_sha256={name: digest(ROOT / name) for name in source_names},
                 data_archive_bytes=archive.stat().st_size,
                 fold1_sha256={variant: record["assets"] for variant, record in plan["fold1"].items()},

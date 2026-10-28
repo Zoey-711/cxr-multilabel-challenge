@@ -128,11 +128,11 @@ def optimizer_scheduler(cfg, model, steps):
     return opt,torch.optim.lr_scheduler.LambdaLR(opt,factor)
 
 
-def step_group(cfg,model,ema,micro,opt,sch,scaler,device):
+def step_group(cfg,model,ema,micro,opt,sch,scaler,device,diagnostics=None):
     denominator=sum(int(b['valid_mask'].sum()) for b in micro)
     if denominator<=0: raise ValueError('All labels missing')
     opt.zero_grad(set_to_none=True)
-    loss_sum=0.
+    loss_sum=0.; last_x=last_y=last_logits=None
     for b in micro:
         x=b['image'].to(device,non_blocking=True)
         y=b['target'].to(device,non_blocking=True)
@@ -140,12 +140,46 @@ def step_group(cfg,model,ema,micro,opt,sch,scaler,device):
         with torch.autocast('cuda',dtype=torch.float16,enabled=device.type=='cuda'):
             logits=model(x)
             loss=(F.binary_cross_entropy_with_logits(logits.float(),y,reduction='none')*mask).sum()/denominator
-        if not bool(torch.isfinite(loss)): raise FloatingPointError('Nonfinite train loss')
+        last_x,last_y,last_logits=x,y,logits
+        if not bool(torch.isfinite(loss)):
+            if diagnostics is not None:
+                diagnostics.update(stage='loss', input_finite=bool(torch.isfinite(x).all()),
+                                   target_finite=bool(torch.isfinite(y).all()),
+                                   logits_finite=bool(torch.isfinite(logits).all()),
+                                   loss_finite=False, scaler_before=float(scaler.get_scale()))
+            opt.zero_grad(set_to_none=True)
+            raise FloatingPointError('Nonfinite train loss')
         scaler.scale(loss).backward()
         loss_sum+=float(loss.detach())
     scaler.unscale_(opt)
-    norm=torch.nn.utils.clip_grad_norm_(model.parameters(),1.)
-    if not bool(torch.isfinite(norm)): raise FloatingPointError('Nonfinite gradients')
+    # AMP may overflow an otherwise finite FP32 loss during backward.  Check
+    # *after* unscale, but allow GradScaler to skip the update and back off.
+    # error_if_nonfinite prevents clipping from multiplying gradients by NaN.
+    try:
+        norm=torch.nn.utils.clip_grad_norm_(model.parameters(),1.,error_if_nonfinite=True)
+    except RuntimeError:
+        bad=[name for name,p in model.named_parameters()
+             if p.grad is not None and not bool(torch.isfinite(p.grad).all())]
+        if not bad:
+            raise
+        before=float(scaler.get_scale())
+        if diagnostics is not None:
+            diagnostics.update(stage='gradients', loss_finite=True,
+                               last_input_finite=bool(torch.isfinite(last_x).all()),
+                               last_target_finite=bool(torch.isfinite(last_y).all()),
+                               last_logits_finite=bool(torch.isfinite(last_logits).all()),
+                               nonfinite_parameter_count=len(bad),
+                               nonfinite_parameters=bad[:16], scaler_before=before)
+        if not scaler.is_enabled():
+            opt.zero_grad(set_to_none=True)
+            raise FloatingPointError('Nonfinite gradients without AMP scaler')
+        scaler.step(opt);scaler.update()
+        after=float(scaler.get_scale())
+        opt.zero_grad(set_to_none=True)
+        if diagnostics is not None: diagnostics.update(scaler_after=after, optimizer_skipped=after<before)
+        if after>=before:
+            raise FloatingPointError('Nonfinite gradients without scaler backoff')
+        return loss_sum,True
     before=scaler.get_scale();scaler.step(opt);scaler.update()
     skipped=scaler.get_scale()<before
     if not skipped:
