@@ -1,0 +1,17 @@
+{
+  "task": "P41_BASE_F02",
+  "fold": 2,
+  "variant": "BASE",
+  "identity_sha256": "b975eddc7126a1c04fab074dbb15e258c58b225ec1a216101c7eb096b1311dfb",
+  "config_sha256": "e76750aa5080aef97e3e074389764480a2324a23519bd2b4c2fe32098753bdd0",
+  "fold_sha256": {
+    "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+    "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+    "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+  },
+  "pretrained_sha256": "dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74",
+  "best_epoch": 5,
+  "source_model_kind": "P39_BASE_F1",
+  "test_labels_used": false,
+  "official_val_used_for_training": false
+}

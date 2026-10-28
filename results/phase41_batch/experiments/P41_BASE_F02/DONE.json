@@ -1,0 +1,19 @@
+{
+  "state": "DONE",
+  "identity_sha256": "b975eddc7126a1c04fab074dbb15e258c58b225ec1a216101c7eb096b1311dfb",
+  "sha256": {
+    "test_predictions.csv": "51a13a27fd434326d8b4da488598a804cf3c9cdc2f7ed47d5ddd300edb519de6",
+    "oof_predictions.csv": "6b4fa9f62755189a6e19703b88c1e79d2606279a63cd4655625d9b9037383109",
+    "status.json": "66405a0b505af3d73172e31522c1d224f1f878536c7261889cbbcd6967af5b25",
+    "ema_best.pth": "d7ca4fff74e16406e9087e5591ab710e3e65171e1b80c13fa1791692caee2d18",
+    "raw_at_ema_best.pth": "ea3190f559847553a5c754bb2e19d6f4f4840940d69114428ea18e3754292292",
+    "model_size.json": "26358bb4acf7383073930574fea1e61e79c5946cce06786819afa0957aa82f94",
+    "val_predictions.csv": "c611e5e8cfee84b84abe8932d57575b4c5bf23f5867e50dcc94553cae48c1ee3",
+    "train_history.csv": "e103c1935a08e96397431bcb987526fb6a8bd76bfa04bf2d26098fd049264dda",
+    "run_manifest.json": "f7ec18ae0459403ffb3c0203ef639a669cd584bb02cc7fbe6919ff9a7b540532",
+    "train.log": "94f8c03773cbafe3ebafe59994d95cdb1915f0fe8ccab084ef875168ca074a3a",
+    "resolved_config.yaml": "e76750aa5080aef97e3e074389764480a2324a23519bd2b4c2fe32098753bdd0",
+    "metrics.json": "4b17c62714efd7942bb171d45446a8106bfe3cb2ef691b216e90afb120e15707",
+    "per_class_metrics.csv": "ce6f8b4ef856da273012ca0260ed693b505404a9d769d3ccb42c4ea41e391351"
+  }
+}

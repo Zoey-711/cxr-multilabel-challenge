@@ -1,6 +1,18 @@
 {
   "code_commit": "76456056b2c7a8ebc426ad473f7556b025f7ce68",
   "files": {
+    "experiments/P41_BASE_F02/test_predictions.csv": "51a13a27fd434326d8b4da488598a804cf3c9cdc2f7ed47d5ddd300edb519de6",
+    "experiments/P41_BASE_F02/oof_predictions.csv": "6b4fa9f62755189a6e19703b88c1e79d2606279a63cd4655625d9b9037383109",
+    "experiments/P41_BASE_F02/status.json": "66405a0b505af3d73172e31522c1d224f1f878536c7261889cbbcd6967af5b25",
+    "experiments/P41_BASE_F02/DONE.json": "d3ca935620f50e15004cb1e656ab7302c5294a6a71153061387ecfb75c98b72a",
+    "experiments/P41_BASE_F02/model_size.json": "26358bb4acf7383073930574fea1e61e79c5946cce06786819afa0957aa82f94",
+    "experiments/P41_BASE_F02/val_predictions.csv": "c611e5e8cfee84b84abe8932d57575b4c5bf23f5867e50dcc94553cae48c1ee3",
+    "experiments/P41_BASE_F02/train_history.csv": "e103c1935a08e96397431bcb987526fb6a8bd76bfa04bf2d26098fd049264dda",
+    "experiments/P41_BASE_F02/run_manifest.json": "f7ec18ae0459403ffb3c0203ef639a669cd584bb02cc7fbe6919ff9a7b540532",
+    "experiments/P41_BASE_F02/train.log": "94f8c03773cbafe3ebafe59994d95cdb1915f0fe8ccab084ef875168ca074a3a",
+    "experiments/P41_BASE_F02/resolved_config.yaml": "e76750aa5080aef97e3e074389764480a2324a23519bd2b4c2fe32098753bdd0",
+    "experiments/P41_BASE_F02/metrics.json": "4b17c62714efd7942bb171d45446a8106bfe3cb2ef691b216e90afb120e15707",
+    "experiments/P41_BASE_F02/per_class_metrics.csv": "ce6f8b4ef856da273012ca0260ed693b505404a9d769d3ccb42c4ea41e391351",
     "reused_fold1/P39_BASE_F1/test_predictions.csv": "17bad052f4d7b5c52db4e3750f41c5cf85e63b98ba6b1e8df238b7f27fcc54d0",
     "reused_fold1/P39_BASE_F1/oof_predictions.csv": "42d321f95e1ff4180389f15a5c08124d9bf9b2d5aa12cc34094baa727f733890",
     "reused_fold1/P39_BASE_F1/resolved_config.json": "51ad6246173a427022b8b15a2ff38fa2148af7a5c67ce46de9e34c47d52685c8",
@@ -15,8 +27,8 @@
     "reused_fold1/P39_FUSION_F1/val_predictions.csv": "a4c78e24598bf4ba49b64824fea0b365a12e56350064cc7835852e5d9eb71e17",
     "reused_fold1/P39_FUSION_F1/run_manifest.json": "039f583446e6d0c1ea4a379c713695cc3088b50da72cbcfd007a026e33ca9181",
     "reused_fold1/P39_FUSION_F1/val_metrics.json": "087d88f8e49abafbec71ce6c08a606712a54f8d5fe716ded14caa61f573b5555",
-    "reports/experiment_status.csv": "d8e9c07eefca5d44bb26d12094025ddd6f787eab6ed736a49b02cf6450058de9",
-    "reports/queue_summary.json": "ca131ca74500fd488dea3b0899413a37e028e6942546f0efcef8fac9f0bef802"
+    "reports/experiment_status.csv": "31ab72e70d7427b30a06c32409531d145a0d8ad28f659a78fc96c3773832a4c0",
+    "reports/queue_summary.json": "abcb4e0bffa6b59b61dc9597ae4751dc8d2c26d67b95aeb4ad3f09738b569631"
   },
   "raw_images": "EXCLUDED",
   "raw_labels": "EXCLUDED",
