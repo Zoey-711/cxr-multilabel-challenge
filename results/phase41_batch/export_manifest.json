@@ -1,0 +1,24 @@
+{
+  "code_commit": "76456056b2c7a8ebc426ad473f7556b025f7ce68",
+  "files": {
+    "reused_fold1/P39_BASE_F1/test_predictions.csv": "17bad052f4d7b5c52db4e3750f41c5cf85e63b98ba6b1e8df238b7f27fcc54d0",
+    "reused_fold1/P39_BASE_F1/oof_predictions.csv": "42d321f95e1ff4180389f15a5c08124d9bf9b2d5aa12cc34094baa727f733890",
+    "reused_fold1/P39_BASE_F1/resolved_config.json": "51ad6246173a427022b8b15a2ff38fa2148af7a5c67ce46de9e34c47d52685c8",
+    "reused_fold1/P39_BASE_F1/REUSED.json": "cdd86b738b0afaa0792a0b238e47f3ec097c44a620c221e2b5cec4e3c33f5db6",
+    "reused_fold1/P39_BASE_F1/val_predictions.csv": "acb4689963d48e509f83db8c7a0b87eb663ecb403eb3fee385e93e54acd07de3",
+    "reused_fold1/P39_BASE_F1/run_manifest.json": "f2c35abc8637f8f642b3482e0637a697bf3bdf7ec9f9b938049a50fe33625fa2",
+    "reused_fold1/P39_BASE_F1/val_metrics.json": "552becd5421e829310caf03dadcd129e58f460d8d352664e5cd084aba1729f96",
+    "reused_fold1/P39_FUSION_F1/test_predictions.csv": "8a224f7437affd7b994c4f62c1fbe08e42e7ffc6cd949d55dac016804e7af97d",
+    "reused_fold1/P39_FUSION_F1/oof_predictions.csv": "e621544ad87d13d845fc08fde8d64bee7251d206a6e37b27e9df769a0ec2b86d",
+    "reused_fold1/P39_FUSION_F1/resolved_config.json": "ae4fdc22908f95c8703156434b5ed49bb54e7ca8863401c32f69c39dfdd51988",
+    "reused_fold1/P39_FUSION_F1/REUSED.json": "7ca50ace0549759158be23ec0d631b7351f9d7dddcc810fdefef9c89b68db275",
+    "reused_fold1/P39_FUSION_F1/val_predictions.csv": "a4c78e24598bf4ba49b64824fea0b365a12e56350064cc7835852e5d9eb71e17",
+    "reused_fold1/P39_FUSION_F1/run_manifest.json": "039f583446e6d0c1ea4a379c713695cc3088b50da72cbcfd007a026e33ca9181",
+    "reused_fold1/P39_FUSION_F1/val_metrics.json": "087d88f8e49abafbec71ce6c08a606712a54f8d5fe716ded14caa61f573b5555",
+    "reports/experiment_status.csv": "676959286b4f322d660acf1d150fdbc3c6d9af6e99c23d786b4c966c80087fd3",
+    "reports/queue_summary.json": "1bbb0f8b6ff58501a244e8f1c16579dadf0c68f36c91468a5a3cce0b33626055"
+  },
+  "raw_images": "EXCLUDED",
+  "raw_labels": "EXCLUDED",
+  "optimizer_checkpoints": "EXCLUDED"
+}

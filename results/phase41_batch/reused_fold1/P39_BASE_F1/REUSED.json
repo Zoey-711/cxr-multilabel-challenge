@@ -1,0 +1,20 @@
+{
+  "state": "REUSED",
+  "source_id": "P39_BASE_F1",
+  "source_sha256": {
+    "ema_best.pth": "3bb28b549680c639c069410b7a10a46353f345675d11be61cd00a5ca5179f422",
+    "oof_predictions.csv": "42d321f95e1ff4180389f15a5c08124d9bf9b2d5aa12cc34094baa727f733890",
+    "resolved_config.json": "51ad6246173a427022b8b15a2ff38fa2148af7a5c67ce46de9e34c47d52685c8",
+    "run_manifest.json": "f2c35abc8637f8f642b3482e0637a697bf3bdf7ec9f9b938049a50fe33625fa2"
+  },
+  "sha256": {
+    "test_predictions.csv": "17bad052f4d7b5c52db4e3750f41c5cf85e63b98ba6b1e8df238b7f27fcc54d0",
+    "oof_predictions.csv": "42d321f95e1ff4180389f15a5c08124d9bf9b2d5aa12cc34094baa727f733890",
+    "ema_best.pth": "3bb28b549680c639c069410b7a10a46353f345675d11be61cd00a5ca5179f422",
+    "resolved_config.json": "51ad6246173a427022b8b15a2ff38fa2148af7a5c67ce46de9e34c47d52685c8",
+    "val_predictions.csv": "acb4689963d48e509f83db8c7a0b87eb663ecb403eb3fee385e93e54acd07de3",
+    "run_manifest.json": "f2c35abc8637f8f642b3482e0637a697bf3bdf7ec9f9b938049a50fe33625fa2",
+    "val_metrics.json": "552becd5421e829310caf03dadcd129e58f460d8d352664e5cd084aba1729f96"
+  },
+  "trained_again": false
+}
