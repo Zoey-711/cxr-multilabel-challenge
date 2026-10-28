@@ -66,4 +66,16 @@ P41_BASE_F05,BASE,5,FAILED,6,1,11,5,0.8109963465565977,"exit=1: 7/scripts/phase4
                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 FloatingPointError: Nonfinite gradients
 "
-P41_FUSION_F05,FUSION,5,RUNNING,7,1,11,5,0.8089753665161471,
+P41_FUSION_F05,FUSION,5,FAILED,7,1,11,5,0.8089753665161471,"exit=1: 7/scripts/phase41_worker.py"", line 99, in <module>
+    main()
+  File ""/home/zlhll/cxr-phase41-20261027/scripts/phase41_worker.py"", line 70, in main
+    print(json.dumps(run_task(plan, task, server, args.identity_hash)))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/zlhll/cxr-phase41-20261027/src/cxr/phase41/train.py"", line 182, in run_task
+    value, skipped = step_group(cfg, model, ema, micro, optimizer, scheduler, scaler, torch.device(""cuda""))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/zlhll/cxr-phase41-20261027/src/cxr/phase39_run.py"", line 148, in step_group
+    if not bool(torch.isfinite(norm)): raise FloatingPointError('Nonfinite gradients')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FloatingPointError: Nonfinite gradients
+"
