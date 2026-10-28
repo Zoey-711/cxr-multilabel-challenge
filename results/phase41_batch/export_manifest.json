@@ -28,7 +28,10 @@
     "reused_fold1/P39_FUSION_F1/run_manifest.json": "039f583446e6d0c1ea4a379c713695cc3088b50da72cbcfd007a026e33ca9181",
     "reused_fold1/P39_FUSION_F1/val_metrics.json": "087d88f8e49abafbec71ce6c08a606712a54f8d5fe716ded14caa61f573b5555",
     "reports/experiment_status.csv": "31ab72e70d7427b30a06c32409531d145a0d8ad28f659a78fc96c3773832a4c0",
-    "reports/queue_summary.json": "abcb4e0bffa6b59b61dc9597ae4751dc8d2c26d67b95aeb4ad3f09738b569631"
+    "reports/queue_summary.json": "abcb4e0bffa6b59b61dc9597ae4751dc8d2c26d67b95aeb4ad3f09738b569631",
+    "reports/fivefold_summary.json": "8d6e6d0901eb0802791114d15a57ca5fe1e49031e45b47fa6e1129c8ff143307",
+    "oof/FUSION_partial_oof.csv": "5b23196c0b0ee9b191fe3824d96f1ad706a01341363816cd61459dcd90bc2277",
+    "oof/BASE_partial_oof.csv": "fb4b514160b463c65ba42854130d10c7fe1cb7e23256af7bb99726fac0bb9c86"
   },
   "raw_images": "EXCLUDED",
   "raw_labels": "EXCLUDED",
