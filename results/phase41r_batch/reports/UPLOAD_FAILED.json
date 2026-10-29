@@ -1,0 +1,5 @@
+{
+  "type": "CalledProcessError",
+  "reason": "Command '['git', '-C', '/home/zlhll/cxr_phase41r_results_upload', 'push', 'origin', 'HEAD:refs/heads/results/phase41r-recovery']' returned non-zero exit status 128.",
+  "task": "P41_FUSION_F02"
+}
