@@ -1,0 +1,20 @@
+{
+  "state": "DONE",
+  "identity_sha256": "eb6d8d0bc6fdbb7bb5e51837f2a77df5fa3443fc18320206cefbdbbeba84fdd0",
+  "sha256": {
+    "test_predictions.csv": "75bdcc4a26a01dc460b9381ae0feb468fe22327f53b2fbe7c7a9e5a9911c11f6",
+    "oof_predictions.csv": "6ebebb01af48012ebea2a2c80832e191847179a01ab6387ad65043f22ac62609",
+    "status.json": "cf55640d6b81873e42df0875a8c00b4c458cbf2f744c9efd17ebf0e4f310e723",
+    "ema_best.pth": "0f0847a27328f8310fed73780d32d985e896b60c24d0592e70a16ae6ae450144",
+    "raw_at_ema_best.pth": "740a1eeb4d7ffc9029375dc4f59af600939845246c0078f73844dea601850b26",
+    "amp_events.jsonl": "09ccdcf4615a022c04631caa0d0efd128ed911789fdecdfe4964a4e9afea5bc8",
+    "model_size.json": "26358bb4acf7383073930574fea1e61e79c5946cce06786819afa0957aa82f94",
+    "val_predictions.csv": "b1765ac72114b387fb8275fa4d7075a3e38b6503348de33dbb17e58ae64710eb",
+    "train_history.csv": "7e0737f1ae02f978ad09cb4563767a70ab1e82ac517235ccf5089bdabda65209",
+    "run_manifest.json": "0b42f4fa909804434ed8ad41aff46e0bee0330714a500845bb18083e27813487",
+    "train.log": "e160dba9afa84cb1c512a498a07bec11254b6ad0fdb9d73911856b5e28664134",
+    "resolved_config.yaml": "96c3a051095f7e72b72a9babaa5a528482f1566b584fe6066b05d377073ed063",
+    "metrics.json": "e86b8e81bb3d452ce97d04bff154a4a27ed8b6f60b8a6e0b6eeac70b783334e1",
+    "per_class_metrics.csv": "0ab9af0cc04ff5d35a56e9069e3ccf3fbba1462c56fb6b90d803ec5413b16463"
+  }
+}

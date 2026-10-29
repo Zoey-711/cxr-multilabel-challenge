@@ -1,0 +1,1 @@
+{"epoch": 10, "last_input_finite": true, "last_logits_finite": true, "last_target_finite": true, "loss_finite": true, "nonfinite_parameter_count": 1, "nonfinite_parameters": ["features.0.0.weight"], "optimizer_skipped": true, "scaler_after": 65536.0, "scaler_before": 131072.0, "stage": "gradients", "step": 1516, "task": "P41_BASE_F03"}

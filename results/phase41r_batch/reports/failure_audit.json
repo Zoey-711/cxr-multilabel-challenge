@@ -1,0 +1,133 @@
+{
+  "source_done_sha256": "d3ca935620f50e15004cb1e656ab7302c5294a6a71153061387ecfb75c98b72a",
+  "tasks": [
+    {
+      "task": "P41_BASE_F02",
+      "state": "DONE",
+      "gpu": "0",
+      "reported_epoch": "",
+      "reason": "",
+      "checkpoint_state": "FINITE",
+      "checkpoint_epoch": 11,
+      "checkpoint_sha256": "5ccd797cf990de73a3a70c5f2adfaa8b195c5ae04b2fa74ddf42bc0c4efd9ff3",
+      "log_count": 1,
+      "log_sha256": {
+        "P41_BASE_F02_attempt_1.log": "9ad7c3eb43803e5627cdd01c22d6d9640ba23dab763bca0617cf157e3bf6ebe0"
+      },
+      "last_epoch_line": "P41_BASE_F02 EPOCH_DONE {\"epoch\": 11, \"train_loss\": 0.10986703204558639, \"oof_ema_macro_auc\": 0.7663857433238405, \"best_epoch\": 5, \"best_auc\": 0.8053775203295881, \"early_stopping_stale\": 6, \"optimizer_updates\": 1514, \"ema_updates\": 16654, \"amp_skips\": 0, \"lr_backbone\": 7.660160382576683e-05, \"lr_head\": 0.00022980481147730046, \"seconds\": 3399.242013924755, \"peak_allocated_mib\": 1340.32275390625, \"peak_reserved_mib\": 1476.0}",
+      "recovery_action": "REUSE_FROZEN_DONE"
+    },
+    {
+      "task": "P41_FUSION_F02",
+      "state": "FAILED",
+      "gpu": "1",
+      "reported_epoch": "11",
+      "reason": "Nonfinite gradients",
+      "checkpoint_state": "FINITE",
+      "checkpoint_epoch": 10,
+      "checkpoint_sha256": "1c29bdb2ebb12160bc093929ebe7cd3e7aec794f0cfebe139b533609fb0ed881",
+      "log_count": 1,
+      "log_sha256": {
+        "P41_FUSION_F02_attempt_1.log": "001044dd92aaac572eff43f0b50b622a32a5a3fe43a3fe10ef590e6a60c76ca0"
+      },
+      "last_epoch_line": "P41_FUSION_F02 EPOCH_DONE {\"epoch\": 10, \"train_loss\": 0.12395923798385952, \"oof_ema_macro_auc\": 0.7777497425159983, \"best_epoch\": 5, \"best_auc\": 0.8084532268105097, \"early_stopping_stale\": 5, \"optimizer_updates\": 1514, \"ema_updates\": 15140, \"amp_skips\": 0, \"lr_backbone\": 8.117449009293668e-05, \"lr_head\": 0.00024352347027881003, \"seconds\": 3450.443758980371, \"peak_allocated_mib\": 1340.5341796875, \"peak_reserved_mib\": 1476.0}",
+      "recovery_action": "RESTART_IN_NEW_ROOT"
+    },
+    {
+      "task": "P41_BASE_F03",
+      "state": "FAILED",
+      "gpu": "2",
+      "reported_epoch": "10",
+      "reason": "Nonfinite gradients",
+      "checkpoint_state": "FINITE",
+      "checkpoint_epoch": 9,
+      "checkpoint_sha256": "2c4184f2c7a1b440f56387f2d012384ca712a4404c07da502480c194da0e1b9e",
+      "log_count": 1,
+      "log_sha256": {
+        "P41_BASE_F03_attempt_1.log": "cbc505ec3a55418b6bce493dc3d5f09bd114e7ba4cd61e64edb3b37e81b7f2e1"
+      },
+      "last_epoch_line": "P41_BASE_F03 EPOCH_DONE {\"epoch\": 9, \"train_loss\": 0.1491295073647052, \"oof_ema_macro_auc\": 0.7778069824848666, \"best_epoch\": 4, \"best_auc\": 0.8052469030656846, \"early_stopping_stale\": 5, \"optimizer_updates\": 1516, \"ema_updates\": 13644, \"amp_skips\": 0, \"lr_backbone\": 8.535533905932738e-05, \"lr_head\": 0.00025606601717798207, \"seconds\": 3448.4870930090547, \"peak_allocated_mib\": 1340.32275390625, \"peak_reserved_mib\": 1444.0}",
+      "recovery_action": "RESTART_IN_NEW_ROOT"
+    },
+    {
+      "task": "P41_FUSION_F03",
+      "state": "FAILED",
+      "gpu": "3",
+      "reported_epoch": "10",
+      "reason": "Nonfinite gradients",
+      "checkpoint_state": "FINITE",
+      "checkpoint_epoch": 9,
+      "checkpoint_sha256": "3cca3844fc9b6de742efafa81949c9a85ff49ceca21d02e4474253d3b846a311",
+      "log_count": 1,
+      "log_sha256": {
+        "P41_FUSION_F03_attempt_1.log": "eab1a6d36e65a5299bf96a561f99225eb865a90c3c59950b3f5e66fb37736efb"
+      },
+      "last_epoch_line": "P41_FUSION_F03 EPOCH_DONE {\"epoch\": 9, \"train_loss\": 0.14638565330861786, \"oof_ema_macro_auc\": 0.7811865288513228, \"best_epoch\": 4, \"best_auc\": 0.809009501709571, \"early_stopping_stale\": 5, \"optimizer_updates\": 1516, \"ema_updates\": 13644, \"amp_skips\": 0, \"lr_backbone\": 8.535533905932738e-05, \"lr_head\": 0.00025606601717798207, \"seconds\": 3443.0346815884113, \"peak_allocated_mib\": 1340.5341796875, \"peak_reserved_mib\": 1444.0}",
+      "recovery_action": "RESTART_IN_NEW_ROOT"
+    },
+    {
+      "task": "P41_BASE_F04",
+      "state": "FAILED",
+      "gpu": "4",
+      "reported_epoch": "11",
+      "reason": "Nonfinite gradients",
+      "checkpoint_state": "FINITE",
+      "checkpoint_epoch": 10,
+      "checkpoint_sha256": "0140f95739770e02dc45d5fb2427aacd115710b5124641bfc5c334246aaf34c7",
+      "log_count": 1,
+      "log_sha256": {
+        "P41_BASE_F04_attempt_1.log": "c0c65c0de0111d8a1188504730d9bf34ceebda3ab6cc65084ca33495c7628e24"
+      },
+      "last_epoch_line": "P41_BASE_F04 EPOCH_DONE {\"epoch\": 10, \"train_loss\": 0.12951823549597355, \"oof_ema_macro_auc\": 0.7756695556618098, \"best_epoch\": 5, \"best_auc\": 0.8090716422954285, \"early_stopping_stale\": 5, \"optimizer_updates\": 1519, \"ema_updates\": 15190, \"amp_skips\": 0, \"lr_backbone\": 8.117449009293668e-05, \"lr_head\": 0.00024352347027881003, \"seconds\": 3435.586674477905, \"peak_allocated_mib\": 1340.32275390625, \"peak_reserved_mib\": 1444.0}",
+      "recovery_action": "RESTART_IN_NEW_ROOT"
+    },
+    {
+      "task": "P41_FUSION_F04",
+      "state": "FAILED",
+      "gpu": "5",
+      "reported_epoch": "11",
+      "reason": "Nonfinite gradients",
+      "checkpoint_state": "FINITE",
+      "checkpoint_epoch": 10,
+      "checkpoint_sha256": "7a44ce3e9961a4bbcdd38546a1d475439cf9e1d788166dc37743f3eb5a4be9bb",
+      "log_count": 1,
+      "log_sha256": {
+        "P41_FUSION_F04_attempt_1.log": "f3ef82f54f93487df97e3677e119eaa40968d93eaecb8d7fa4ba20765570ec67"
+      },
+      "last_epoch_line": "P41_FUSION_F04 EPOCH_DONE {\"epoch\": 10, \"train_loss\": 0.1269751056899863, \"oof_ema_macro_auc\": 0.7751877448016392, \"best_epoch\": 5, \"best_auc\": 0.8104979656507572, \"early_stopping_stale\": 5, \"optimizer_updates\": 1519, \"ema_updates\": 15190, \"amp_skips\": 0, \"lr_backbone\": 8.117449009293668e-05, \"lr_head\": 0.00024352347027881003, \"seconds\": 3470.242150137201, \"peak_allocated_mib\": 1340.5341796875, \"peak_reserved_mib\": 1444.0}",
+      "recovery_action": "RESTART_IN_NEW_ROOT"
+    },
+    {
+      "task": "P41_BASE_F05",
+      "state": "FAILED",
+      "gpu": "6",
+      "reported_epoch": "11",
+      "reason": "Nonfinite gradients",
+      "checkpoint_state": "FINITE",
+      "checkpoint_epoch": 10,
+      "checkpoint_sha256": "c6747a501b0504cbadef5b206c202d355acc731dd93e9678c8fe704e89c318eb",
+      "log_count": 1,
+      "log_sha256": {
+        "P41_BASE_F05_attempt_1.log": "4e9f07e56e9c8f278951f6201a05d1a2e6bf311677ac9b4d4a2173f20fee4d2b"
+      },
+      "last_epoch_line": "P41_BASE_F05 EPOCH_DONE {\"epoch\": 10, \"train_loss\": 0.12887423200709985, \"oof_ema_macro_auc\": 0.7809120073479104, \"best_epoch\": 5, \"best_auc\": 0.8109963465565977, \"early_stopping_stale\": 5, \"optimizer_updates\": 1519, \"ema_updates\": 15190, \"amp_skips\": 0, \"lr_backbone\": 8.117449009293668e-05, \"lr_head\": 0.00024352347027881003, \"seconds\": 3472.633087544702, \"peak_allocated_mib\": 1340.32275390625, \"peak_reserved_mib\": 1382.0}",
+      "recovery_action": "RESTART_IN_NEW_ROOT"
+    },
+    {
+      "task": "P41_FUSION_F05",
+      "state": "FAILED",
+      "gpu": "7",
+      "reported_epoch": "11",
+      "reason": "Nonfinite gradients",
+      "checkpoint_state": "FINITE",
+      "checkpoint_epoch": 10,
+      "checkpoint_sha256": "ae5f6e4400c5c92604ede977f84cd9a96392e86f260e3cd23f5126edd1dc3423",
+      "log_count": 1,
+      "log_sha256": {
+        "P41_FUSION_F05_attempt_1.log": "de460d6be10af26d4ae1c407dddb2277cd13804213dc25ee4e63cddb3b3ccaa8"
+      },
+      "last_epoch_line": "P41_FUSION_F05 EPOCH_DONE {\"epoch\": 10, \"train_loss\": 0.1270126316788392, \"oof_ema_macro_auc\": 0.775922767143178, \"best_epoch\": 5, \"best_auc\": 0.8089753665161471, \"early_stopping_stale\": 5, \"optimizer_updates\": 1519, \"ema_updates\": 15190, \"amp_skips\": 0, \"lr_backbone\": 8.117449009293668e-05, \"lr_head\": 0.00024352347027881003, \"seconds\": 3467.9818142950535, \"peak_allocated_mib\": 1340.5341796875, \"peak_reserved_mib\": 1382.0}",
+      "recovery_action": "RESTART_IN_NEW_ROOT"
+    }
+  ]
+}
