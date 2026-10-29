@@ -120,9 +120,17 @@
     "reused_fold1/P39_FUSION_F1/val_metrics.json": "087d88f8e49abafbec71ce6c08a606712a54f8d5fe716ded14caa61f573b5555",
     "reports/experiment_status.csv": "61794918c6b86c97163b6ef7b946cc5a8d91f43383fd192560a53958e2d2587e",
     "reports/queue_summary.json": "0b0129c8d6d4d421ea1fa5af983690d868e3561a4190a90f7afb0467325eb316",
+    "reports/per_class_auc.csv": "f7cb33712790a95786b2b2f85ccf322c3039790d2485b6fd9c19a888c8c082bf",
     "reports/failure_audit.json": "6be587babe9f14ef5fa091de9ea89c17867cf2bd12be76c189eb2762bd3c7557",
     "reports/UPLOAD_FAILED.json": "006a501fa3197a8b16bdbaeb4bf673be2b6736253d34837b453c779de5f4965c",
-    "reports/RECOVERY_IMPORT.json": "fcff5be75eaf7f218819f75a149a59aa935e042cbb0a16315845eda98ab31621"
+    "reports/fivefold_summary.json": "798eab92d8ffb88ec5eacfb0ccec2aefe22205f9c648796b8841c751eb389583",
+    "reports/RECOVERY_IMPORT.json": "fcff5be75eaf7f218819f75a149a59aa935e042cbb0a16315845eda98ab31621",
+    "oof/FUSION_partial_oof.csv": "8a65290faf9fe40cc887d4bea572a2a2a0e8b524da7111851a2434f3308b2499",
+    "oof/FUSION_oof_all.csv": "4dd10e6d919942a753d1a838f7c339d2359f347a9f441771a58b8eed33f7b470",
+    "oof/BASE_partial_oof.csv": "a59e3c63848b17a97929c5910f9dc82d409a91074c6d3f141d587c32759eaf6d",
+    "oof/BASE_oof_all.csv": "9156bf500a6ee652b5411321469e8336afa71ff36f9c3ce413940e777822c29b",
+    "validation/BASE_val_fivefold.csv": "b53f10ca2cf3847a1612405fc1b86c66c6c9c39b56dbed00b48aa42854ecb236",
+    "validation/FUSION_val_fivefold.csv": "8917ab8e8fd8ad60c742e6b1b8a097ea2830618e9c2b31070526206c01509957"
   },
   "raw_images": "EXCLUDED",
   "raw_labels": "EXCLUDED",
