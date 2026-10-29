@@ -1,0 +1,7 @@
+{
+  "state": "DONE",
+  "task": "P41_FUSION_F03",
+  "best_epoch": 4,
+  "oof_macro_auc": 0.809009501709571,
+  "val_macro_auc": 0.8006083980733777
+}

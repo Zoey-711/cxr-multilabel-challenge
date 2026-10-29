@@ -1,10 +1,10 @@
 {
-  "gpu_hours_used": 9.861302882583242,
+  "gpu_hours_used": 19.62353119233209,
   "budget_hours": 500,
   "counts": {
     "PENDING": 0,
-    "RUNNING": 6,
-    "DONE": 2,
+    "RUNNING": 5,
+    "DONE": 3,
     "FAILED": 0,
     "BLOCKED": 0
   }
