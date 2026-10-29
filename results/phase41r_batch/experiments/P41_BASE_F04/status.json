@@ -1,0 +1,7 @@
+{
+  "state": "DONE",
+  "task": "P41_BASE_F04",
+  "best_epoch": 5,
+  "oof_macro_auc": 0.8090716422954285,
+  "val_macro_auc": 0.8050883723384535
+}

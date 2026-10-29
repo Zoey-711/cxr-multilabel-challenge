@@ -31,6 +31,13 @@
       "release_tag": "phase41r-recovery-v1"
     },
     {
+      "model_id": "P41_BASE_F04",
+      "asset": "P41_BASE_F04__ema_best.pth",
+      "sha256": "4ba395ef9c84cf6c431e3d962f93b434db8c4611590c5c5fed8bdefef4c459e7",
+      "bytes": 81664519,
+      "release_tag": "phase41r-recovery-v1"
+    },
+    {
       "model_id": "P41_FUSION_F03",
       "asset": "P41_FUSION_F03__ema_best.pth",
       "sha256": "a9301dbe4ad7e3ef88e7c22afdc0e8f10e1c524c7a4559c70c02f4e5c781a3c5",

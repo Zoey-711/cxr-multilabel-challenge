@@ -1,0 +1,20 @@
+{
+  "state": "DONE",
+  "identity_sha256": "eb6d8d0bc6fdbb7bb5e51837f2a77df5fa3443fc18320206cefbdbbeba84fdd0",
+  "sha256": {
+    "test_predictions.csv": "68b1d881d17107af8e259f5a08110b0c0cc5aaa5eee2cfd97f1b1290b9f6ebe6",
+    "oof_predictions.csv": "98662323484de8d87d05f71f4f1ef0a70790d4b4299f95fb26a8915c48cab450",
+    "status.json": "3e98b48ce45ce5b42e1a0fa7d06510dbca89db2e2d2a7e954e72afde0d69569d",
+    "ema_best.pth": "4ba395ef9c84cf6c431e3d962f93b434db8c4611590c5c5fed8bdefef4c459e7",
+    "raw_at_ema_best.pth": "1951f9059de98d277c7e7622269fdcc0e91bc3439e9992c3420984e7d8be238a",
+    "amp_events.jsonl": "4900c7158c02967014f22966734c4fd39aa332383b3ed9770341d69292e77bee",
+    "model_size.json": "26358bb4acf7383073930574fea1e61e79c5946cce06786819afa0957aa82f94",
+    "val_predictions.csv": "0f625417b68022a1ce57ca38f7bfbe584aa989578d3c0d5a2b6b72e91e5299a9",
+    "train_history.csv": "98a50aebf58921b94d4f3fea96d3aeab220f03e5b97af88d6182243341994c14",
+    "run_manifest.json": "fb6958cb33f8d049d52b467640fdd4dbefbcdefa40f37b2e7f71375fd6eb5ff1",
+    "train.log": "836b9ba4ddf5ec598254b791e2bbd2237da5b4e2dbd2c40a3c6a34e63fa4c36d",
+    "resolved_config.yaml": "4f8b77126730f75fa8eece45e1ffe87c10cf45bcc1453ff33c8b6051d7bb5070",
+    "metrics.json": "dbf6172ff9a501001c026fdae003467922c1d20eebebc0303d5cd58c397ad33d",
+    "per_class_metrics.csv": "754f38d201087c5598eeadf246bf6f12c752935e7c0de6c2fe55fe2ac8c8aad8"
+  }
+}
