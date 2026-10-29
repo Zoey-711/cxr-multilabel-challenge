@@ -1,0 +1,224 @@
+{
+  "repository": "Zoey-711/cxr-multilabel-challenge",
+  "release_tag": "phase41r-recovery-v1",
+  "file_count": 36,
+  "bytes": 8472605980,
+  "files": [
+    {
+      "path": "phase41r_batch/diagnostic/P41_FUSION_F02/probe_before.pt",
+      "asset_name": "phase41r_batch--diagnostic--P41_FUSION_F02--probe_before.pt",
+      "bytes": 163468668,
+      "sha256": "61812110ec0ab2d8296dcb26ade3ee085d2f659fe1071ad161c50d30fd0857c2"
+    },
+    {
+      "path": "phase41r_batch/diagnostic/P41_FUSION_F02/resume.pt",
+      "asset_name": "phase41r_batch--diagnostic--P41_FUSION_F02--resume.pt",
+      "bytes": 325450774,
+      "sha256": "8b4a8aa4e6e24db068705a48f08848c2f742fb63a801d452c162aba617684e13"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_BASE_F02/ema_best.pth",
+      "asset_name": "P41_BASE_F02__ema_best.pth",
+      "bytes": 81664519,
+      "sha256": "d7ca4fff74e16406e9087e5591ab710e3e65171e1b80c13fa1791692caee2d18"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_BASE_F02/historical_last_training.pt",
+      "asset_name": "phase41r_batch--experiments--P41_BASE_F02--historical_last_training.pt",
+      "bytes": 488613461,
+      "sha256": "5ccd797cf990de73a3a70c5f2adfaa8b195c5ae04b2fa74ddf42bc0c4efd9ff3"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_BASE_F02/raw_at_ema_best.pth",
+      "asset_name": "phase41r_batch--experiments--P41_BASE_F02--raw_at_ema_best.pth",
+      "bytes": 81670035,
+      "sha256": "ea3190f559847553a5c754bb2e19d6f4f4840940d69114428ea18e3754292292"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_BASE_F03/ema_best.pth",
+      "asset_name": "P41_BASE_F03__ema_best.pth",
+      "bytes": 81664519,
+      "sha256": "0f0847a27328f8310fed73780d32d985e896b60c24d0592e70a16ae6ae450144"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_BASE_F03/last_training.pt",
+      "asset_name": "phase41r_batch--experiments--P41_BASE_F03--last_training.pt",
+      "bytes": 488613269,
+      "sha256": "994b666a6dc5e4002b72b588ef86a40177a6e8aeaaf443a6c2fbe4fbc6a55d21"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_BASE_F03/raw_at_ema_best.pth",
+      "asset_name": "phase41r_batch--experiments--P41_BASE_F03--raw_at_ema_best.pth",
+      "bytes": 81670035,
+      "sha256": "740a1eeb4d7ffc9029375dc4f59af600939845246c0078f73844dea601850b26"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_BASE_F04/ema_best.pth",
+      "asset_name": "P41_BASE_F04__ema_best.pth",
+      "bytes": 81664519,
+      "sha256": "4ba395ef9c84cf6c431e3d962f93b434db8c4611590c5c5fed8bdefef4c459e7"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_BASE_F04/last_training.pt",
+      "asset_name": "phase41r_batch--experiments--P41_BASE_F04--last_training.pt",
+      "bytes": 488613461,
+      "sha256": "d0ab97a35d7a471c7d1aa6072719f130a404643eb72c905b221a06a7e819f070"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_BASE_F04/raw_at_ema_best.pth",
+      "asset_name": "phase41r_batch--experiments--P41_BASE_F04--raw_at_ema_best.pth",
+      "bytes": 81670035,
+      "sha256": "1951f9059de98d277c7e7622269fdcc0e91bc3439e9992c3420984e7d8be238a"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_BASE_F05/ema_best.pth",
+      "asset_name": "P41_BASE_F05__ema_best.pth",
+      "bytes": 81664519,
+      "sha256": "825ed26d10999d6c23aaa268ffc893b14d848ab92a54a8071872e8ef6a66f9dd"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_BASE_F05/last_training.pt",
+      "asset_name": "phase41r_batch--experiments--P41_BASE_F05--last_training.pt",
+      "bytes": 488613461,
+      "sha256": "008652bd6a7e9f0699a39ea1875932955f41ecd02fc5f0b0a4f3769c06aa06c7"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_BASE_F05/raw_at_ema_best.pth",
+      "asset_name": "phase41r_batch--experiments--P41_BASE_F05--raw_at_ema_best.pth",
+      "bytes": 81670035,
+      "sha256": "8b457516640b3d77d34e7f028bbae94c15b97a29a892d70fa00c9421a76e8852"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_FUSION_F02/ema_best.pth",
+      "asset_name": "P41_FUSION_F02__ema_best.pth",
+      "bytes": 81722317,
+      "sha256": "ab4c61f70c41e35ef4548fbce9c2c7ad940e1b0c2edd76d768e7a49ea41388ef"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_FUSION_F02/last_training.pt",
+      "asset_name": "phase41r_batch--experiments--P41_FUSION_F02--last_training.pt",
+      "bytes": 488934085,
+      "sha256": "ab22f2dfc949e0919ce77df9c17ac49ff338a41397c7a1cea7d968f6d31274bc"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_FUSION_F02/raw_at_ema_best.pth",
+      "asset_name": "phase41r_batch--experiments--P41_FUSION_F02--raw_at_ema_best.pth",
+      "bytes": 81727847,
+      "sha256": "cf7158335ac31925263ee27a87ae56c9e55e61d1c436774f853b8de8a6beac6c"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_FUSION_F03/ema_best.pth",
+      "asset_name": "P41_FUSION_F03__ema_best.pth",
+      "bytes": 81722317,
+      "sha256": "a9301dbe4ad7e3ef88e7c22afdc0e8f10e1c524c7a4559c70c02f4e5c781a3c5"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_FUSION_F03/last_training.pt",
+      "asset_name": "phase41r_batch--experiments--P41_FUSION_F03--last_training.pt",
+      "bytes": 488933957,
+      "sha256": "cbaacc7f3f3bb4ecd998f73a1780e5ce8701270c0014af01980303b5201292f4"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_FUSION_F03/raw_at_ema_best.pth",
+      "asset_name": "phase41r_batch--experiments--P41_FUSION_F03--raw_at_ema_best.pth",
+      "bytes": 81727847,
+      "sha256": "3af1fed852d4bfd6786a192ed39a8556a7215d01f602328438c9ad9bc7ab7720"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_FUSION_F04/ema_best.pth",
+      "asset_name": "P41_FUSION_F04__ema_best.pth",
+      "bytes": 81722317,
+      "sha256": "f52d269061f554df877303660e91009618a0506568d1811c94ae23cdfd1b4fe9"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_FUSION_F04/last_training.pt",
+      "asset_name": "phase41r_batch--experiments--P41_FUSION_F04--last_training.pt",
+      "bytes": 488934085,
+      "sha256": "118f0e6cbcdcf00ecd302d0650ea8588996d63981a75452179cd863b974f15d2"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_FUSION_F04/raw_at_ema_best.pth",
+      "asset_name": "phase41r_batch--experiments--P41_FUSION_F04--raw_at_ema_best.pth",
+      "bytes": 81727847,
+      "sha256": "4dd58311c94f333e8599a4884839775f9b4ddc6ce40e7ae21862c6e95c97cb2c"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_FUSION_F05/ema_best.pth",
+      "asset_name": "P41_FUSION_F05__ema_best.pth",
+      "bytes": 81722317,
+      "sha256": "53d059b46d4817eacb752eae0686326cd2982acce9789246a5baf5007487228b"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_FUSION_F05/last_training.pt",
+      "asset_name": "phase41r_batch--experiments--P41_FUSION_F05--last_training.pt",
+      "bytes": 488934085,
+      "sha256": "ae26cf8035157a16606fe08f46dfcb28d454b3d5c60cfbaef9e9418dd1c6fa45"
+    },
+    {
+      "path": "phase41r_batch/experiments/P41_FUSION_F05/raw_at_ema_best.pth",
+      "asset_name": "phase41r_batch--experiments--P41_FUSION_F05--raw_at_ema_best.pth",
+      "bytes": 81727847,
+      "sha256": "c09b546f26ef49b87a59b1e5289cd90c06076c84eb01a9691320513a6e1be31d"
+    },
+    {
+      "path": "phase41r_batch/preflight/gpu_0/resume.pt",
+      "asset_name": "phase41r_batch--preflight--gpu_0--resume.pt",
+      "bytes": 325269904,
+      "sha256": "cb6299fd02e40a88ca4f99ca8099c38d75c61eaa45e21c69c9b7dcfff27ae74e"
+    },
+    {
+      "path": "phase41r_batch/preflight/gpu_1/resume.pt",
+      "asset_name": "phase41r_batch--preflight--gpu_1--resume.pt",
+      "bytes": 325474842,
+      "sha256": "1575ad8fc9fc63bb1bce4eb33809cb1726a5b62c2f1d24bd6c97ddf64ea285af"
+    },
+    {
+      "path": "phase41r_batch/preflight/gpu_2/resume.pt",
+      "asset_name": "phase41r_batch--preflight--gpu_2--resume.pt",
+      "bytes": 325269904,
+      "sha256": "cbdc4a47565ce3e8788a7933e87b699452d8e05a937013b99ce774c53a8d5657"
+    },
+    {
+      "path": "phase41r_batch/preflight/gpu_3/resume.pt",
+      "asset_name": "phase41r_batch--preflight--gpu_3--resume.pt",
+      "bytes": 325474842,
+      "sha256": "6828c0b12d9d0e1e7584f2607286cce472dd18cd4e00af6e42c76ba9bd6b7720"
+    },
+    {
+      "path": "phase41r_batch/preflight/gpu_4/resume.pt",
+      "asset_name": "phase41r_batch--preflight--gpu_4--resume.pt",
+      "bytes": 325269904,
+      "sha256": "7624ce5ef0eceec6610efbf06b6acfed081d059c4b77967480a78fbb274c3b3b"
+    },
+    {
+      "path": "phase41r_batch/preflight/gpu_5/resume.pt",
+      "asset_name": "phase41r_batch--preflight--gpu_5--resume.pt",
+      "bytes": 325474842,
+      "sha256": "e105a5fed1b25f36c46a98acaafa9cd302f5c012c92f36a92d2e69a3a6fc1665"
+    },
+    {
+      "path": "phase41r_batch/preflight/gpu_6/resume.pt",
+      "asset_name": "phase41r_batch--preflight--gpu_6--resume.pt",
+      "bytes": 325269904,
+      "sha256": "244b2b6099bbbba5280b47e0450ad00bedb2cc3974aa86b4e3eadc3749544895"
+    },
+    {
+      "path": "phase41r_batch/preflight/gpu_7/resume.pt",
+      "asset_name": "phase41r_batch--preflight--gpu_7--resume.pt",
+      "bytes": 325474842,
+      "sha256": "36e20f44c9ef63b27c7a517832ca4ae691ab025ed7dcb2069739bfbded13f4a4"
+    },
+    {
+      "path": "phase41r_batch/reused_fold1/P39_BASE_F1/ema_best.pth",
+      "asset_name": "P39_BASE_F1__ema_best.pth",
+      "bytes": 81660515,
+      "sha256": "3bb28b549680c639c069410b7a10a46353f345675d11be61cd00a5ca5179f422"
+    },
+    {
+      "path": "phase41r_batch/reused_fold1/P39_FUSION_F1/ema_best.pth",
+      "asset_name": "P39_FUSION_F1__ema_best.pth",
+      "bytes": 81718303,
+      "sha256": "e47ba62a181806a543ba39aa2edfed41a08f0170cc780964743123abf778a7bd"
+    }
+  ]
+}

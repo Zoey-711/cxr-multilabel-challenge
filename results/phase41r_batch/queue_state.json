@@ -1,0 +1,61 @@
+{
+  "plan_fingerprint": "4188546c3850a38dc034579fba264d3bca9b422dd56b06235a89d52314144ec2",
+  "identity_sha256": "eb6d8d0bc6fdbb7bb5e51837f2a77df5fa3443fc18320206cefbdbbeba84fdd0",
+  "gpu_hours_used": 73.36542493537456,
+  "budget_hours": 500,
+  "tasks": {
+    "P41_BASE_F02": {
+      "state": "DONE",
+      "attempts": 0
+    },
+    "P41_FUSION_F02": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 0,
+      "started_unix": 1793217585.9972177,
+      "reserved_hours": 48
+    },
+    "P41_BASE_F03": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 1,
+      "started_unix": 1793217585.997711,
+      "reserved_hours": 48
+    },
+    "P41_FUSION_F03": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 2,
+      "started_unix": 1793217585.9981802,
+      "reserved_hours": 48
+    },
+    "P41_BASE_F04": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 3,
+      "started_unix": 1793217585.9986312,
+      "reserved_hours": 48
+    },
+    "P41_FUSION_F04": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 4,
+      "started_unix": 1793217585.9991813,
+      "reserved_hours": 48
+    },
+    "P41_BASE_F05": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 5,
+      "started_unix": 1793217585.9999893,
+      "reserved_hours": 48
+    },
+    "P41_FUSION_F05": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 6,
+      "started_unix": 1793217586.0006132,
+      "reserved_hours": 48
+    }
+  }
+}

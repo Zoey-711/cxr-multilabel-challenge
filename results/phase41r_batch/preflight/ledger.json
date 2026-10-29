@@ -1,0 +1,58 @@
+{
+  "identity_sha256": "eb6d8d0bc6fdbb7bb5e51837f2a77df5fa3443fc18320206cefbdbbeba84fdd0",
+  "gpu_hours": 0.12459378820766386,
+  "probes": [
+    {
+      "gpu": 0,
+      "task": "P41_BASE_F02",
+      "path": "preflight/gpu_0/receipt.json",
+      "sha256": "1e46fe01c6939fc041eb73bcec2b26bf8a0210d1a08a6ab58e326f3e3b9c8383"
+    },
+    {
+      "gpu": 1,
+      "task": "P41_FUSION_F02",
+      "path": "preflight/gpu_1/receipt.json",
+      "sha256": "378caab3e84db4d0bce1c816a364b84dd5152e98d8bcc81ce782ff6eb9dec257"
+    },
+    {
+      "gpu": 2,
+      "task": "P41_BASE_F03",
+      "path": "preflight/gpu_2/receipt.json",
+      "sha256": "7394c599c92e070b06dafad816bd9c63211f0bd9a6c4cc83d2eef2d966453fd4"
+    },
+    {
+      "gpu": 3,
+      "task": "P41_FUSION_F03",
+      "path": "preflight/gpu_3/receipt.json",
+      "sha256": "bccd4d34227665e89316225ff8948c8deeee7ff6b877886e4c4f90ece3fa2555"
+    },
+    {
+      "gpu": 4,
+      "task": "P41_BASE_F04",
+      "path": "preflight/gpu_4/receipt.json",
+      "sha256": "1ac2c61224ac763b51973ce4a696f4290598af3bd0f27cd407c9a7a62e2eee61"
+    },
+    {
+      "gpu": 5,
+      "task": "P41_FUSION_F04",
+      "path": "preflight/gpu_5/receipt.json",
+      "sha256": "3528d409853c7a1bc08e704fb3d3f1bb51a026c923c0a5172bc936571a9ef429"
+    },
+    {
+      "gpu": 6,
+      "task": "P41_BASE_F05",
+      "path": "preflight/gpu_6/receipt.json",
+      "sha256": "529450f18cfd1afdcc34bad01fd9bfc7d024cbddc600cf00c021c47c870466fa"
+    },
+    {
+      "gpu": 7,
+      "task": "P41_FUSION_F05",
+      "path": "preflight/gpu_7/receipt.json",
+      "sha256": "72e543edb0672ec99dd60f1554f7061c1a9b7d9c10d822ff7827fdf7d155591a"
+    }
+  ],
+  "fold1_done": [
+    "BASE",
+    "FUSION"
+  ]
+}

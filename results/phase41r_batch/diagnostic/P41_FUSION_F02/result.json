@@ -1,0 +1,209 @@
+{
+  "state": "PASS",
+  "task": "P41_FUSION_F02",
+  "steps": 32,
+  "optimizer_updates": 32,
+  "amp_skips": 0,
+  "checkpoint_reload": "PASS",
+  "same_batch_replay": {
+    "same_batch_loss_delta": 0.0,
+    "same_skip_decision": true
+  },
+  "events": [
+    {
+      "step": 1,
+      "loss": 0.6798954457044601,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 2,
+      "loss": 0.6857309937477112,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 3,
+      "loss": 0.6779749691486359,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 4,
+      "loss": 0.6844126731157303,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 5,
+      "loss": 0.6776463091373444,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 6,
+      "loss": 0.6865572929382324,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 7,
+      "loss": 0.6794237345457077,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 8,
+      "loss": 0.6820687651634216,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 9,
+      "loss": 0.6866653561592102,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 10,
+      "loss": 0.6826562136411667,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 11,
+      "loss": 0.6846270710229874,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 12,
+      "loss": 0.6812133938074112,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 13,
+      "loss": 0.6893440335988998,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 14,
+      "loss": 0.6831127852201462,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 15,
+      "loss": 0.6788042485713959,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 16,
+      "loss": 0.6825767457485199,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 17,
+      "loss": 0.678689643740654,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 18,
+      "loss": 0.6791747361421585,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 19,
+      "loss": 0.6802696585655212,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 20,
+      "loss": 0.6793979555368423,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 21,
+      "loss": 0.6755222976207733,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 22,
+      "loss": 0.6812250167131424,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 23,
+      "loss": 0.6747575551271439,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 24,
+      "loss": 0.6749765127897263,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 25,
+      "loss": 0.6766846179962158,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 26,
+      "loss": 0.6803799718618393,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 27,
+      "loss": 0.6774210184812546,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 28,
+      "loss": 0.6770995855331421,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 29,
+      "loss": 0.6792280077934265,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 30,
+      "loss": 0.6805917173624039,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 31,
+      "loss": 0.6792710870504379,
+      "skipped": false,
+      "scale": 1024.0
+    },
+    {
+      "step": 32,
+      "loss": 0.6757981032133102,
+      "skipped": false,
+      "scale": 1024.0
+    }
+  ],
+  "config_sha256": "0aa036b9f9c9ac1a3bdb6353fb26b106f9f6e2db3371178e3517fcba900df792",
+  "training_code_sha256": "a2224d9758b371b6f623eb76b3a217215c2c3f29f120105805affe7905002d55",
+  "historical_done_sha256": "d3ca935620f50e15004cb1e656ab7302c5294a6a71153061387ecfb75c98b72a"
+}

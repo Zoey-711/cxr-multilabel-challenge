@@ -1,0 +1,7 @@
+{
+  "task": "P41_BASE_F02",
+  "checkpoint": "experiments/P41_BASE_F02/historical_last_training.pt",
+  "source": "/home/zlhll/cxr_results/phase41_batch/experiments/P41_BASE_F02/last_training.pt",
+  "sha256": "5ccd797cf990de73a3a70c5f2adfaa8b195c5ae04b2fa74ddf42bc0c4efd9ff3",
+  "warning": "Historical identity only; do not resume Phase41-R training from this checkpoint"
+}
