@@ -177,8 +177,8 @@ timeout_hours: 48
 max_retries: 1
 source_sha256:
   src/cxr/phase39_model.py: fb695f96c47b9af5e9e54900baad23257a9cc40c36df1a761ca8e33ea1c5e24c
-  src/cxr/phase39_run.py: 343d201c5e4ff49a01745ac00a97ae627d12a040850826c1d5b1c49514c7c508
+  src/cxr/phase39_run.py: a2224d9758b371b6f623eb76b3a217215c2c3f29f120105805affe7905002d55
   src/cxr/data/dataset.py: ecf377680edb67c4594c390b6499c48ac2438d0a6c58fe18dd639c9ca543e733
   src/cxr/data/patient_folds.py: bb92dea6cf5d0dc8b470d42d36853b3bde7e5143d271bcf0f670e0835499ad06
-  src/cxr/phase41/train.py: 61b8bc0e7a9b2ae16d0649b7820470d5e017343dee48b0bff7696ad817da4d31
-  src/cxr/phase41/protocol.py: 9463da0a64ca4ec917d687de46a977fa222c4f2bcc2827becf89962ceabfb232
+  src/cxr/phase41/train.py: 895b1f447e10bf2b4961f90042c1e554b662cdaa824ee641a058178b5f97726e
+  src/cxr/phase41/protocol.py: d0e2e50294f6f8fa08763c70e2b20ca3933d5180c58552af47535e17be2f0b6b

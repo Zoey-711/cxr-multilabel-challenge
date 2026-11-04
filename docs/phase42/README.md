@@ -1,5 +1,7 @@
 # Phase42：19项候选 Pilot 与最多16项跨折确认
 
+2026-11-04 代码维护说明：Phase41-R 更新了共享训练入口的 AMP 溢出处理。Phase42 现已同步其源文件哈希，并在 Phase42 训练循环记录每次 AMP 跳步、连续跳步及非有限梯度诊断。AMP 跳步不计作优化器或 EMA 更新；达到阈值即失败，保留已有完整 Epoch checkpoint。此改动未调整实验架构、学习率、损失权重、微批量或折划分。新的 CPU 验收为 `tests/test_phase42.py` 35 passed、`tests/test_phase41r_cpu.py tests/test_phase41_cpu.py` 9 passed；旧 `local_acceptance.json` 记录的是初版提交时的验收快照。真实 Linux 4090 预检仍必须在服务器执行，不能由本地 CPU 结果替代。
+
 本批保留17个结构与2个训练策略，详细固定定义、去重原因及CPU计算量在 [实验清单](experiment_catalog.md)。Phase42最初8项未运行；本文件对应扩展版唯一计划。历史数据和模型均不改变，训练只在朋友授权的Linux服务器执行。
 
 ## BASE与启动依赖

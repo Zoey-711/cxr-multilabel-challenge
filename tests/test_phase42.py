@@ -69,6 +69,22 @@ def test_smoothing_does_not_change_mask_or_original_targets(monkeypatch):
     assert torch.equal(seen[0]['valid_mask'],batch['valid_mask'])
 
 
+def test_phase41r_amp_diagnostics_reach_phase42_step(monkeypatch):
+    from cxr.phase42 import methods
+    recorded = []
+    def fake_step(*args):
+        recorded.append(args)
+        args[-1]['optimizer_skipped'] = True
+        return 1.0, True
+    monkeypatch.setattr(methods, 'original_step', fake_step)
+    diagnostic = {}
+    value, skipped = methods.step_group({'label_smoothing': 0.}, None, None,
+                                        [], None, None, None, None, diagnostic)
+    assert (value, skipped) == (1.0, True)
+    assert recorded[0][-1] is diagnostic
+    assert diagnostic['optimizer_skipped'] is True
+
+
 def test_cluster_bootstrap_matches_explicit_duplication():
     from cxr.engine.metrics import binary_auc
     y=np.array([0,1,1,0]);p=np.array([.3,.3,.9,.8]);w=np.array([2,1,3,1])

@@ -15,9 +15,11 @@ def optimizer_scheduler(cfg, model, steps):
     return optimizer,torch.optim.lr_scheduler.LambdaLR(optimizer,factor)
 
 
-def step_group(cfg,model,ema,micro,opt,sch,scaler,device):
+def step_group(cfg,model,ema,micro,opt,sch,scaler,device,diagnostics=None):
     eps=cfg.get('label_smoothing',0.)
     if eps:
         if eps!=.05: raise ValueError('Frozen smoothing is .05')
         micro=[dict(batch,target=(1-eps)*batch['target']+eps*.5) for batch in micro]
-    return original_step(cfg,model,ema,micro,opt,sch,scaler,device)
+    if diagnostics is None:
+        return original_step(cfg,model,ema,micro,opt,sch,scaler,device)
+    return original_step(cfg,model,ema,micro,opt,sch,scaler,device,diagnostics)
