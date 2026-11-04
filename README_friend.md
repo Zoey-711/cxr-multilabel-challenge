@@ -1,3 +1,7 @@
+# 更强教师蒸馏成单模型：两项受控实验
+
+新增 [单模型蒸馏说明](docs/strong_kd/README.md)。`SKD_CONTROL` 使用原E17教师，`SKD_COMPLEMENT` 使用固定E17+N17 EMA教师；两者使用相同EfficientNetV2-S学生和训练配置。入口 `python scripts/strong_kd_run.py --config configs/strong_kd_server.local.yaml` 默认仅CPU来源/互补性审计，正式训练须显式 `--action run`、预算授权及远程CUDA预检。学生为全Train开发实验，OOF为N/A，不能冒充外层患者隔离验证。该队列独立于Phase42，共用GPU资源锁。
+
 # Phase42：19项新候选与跨折确认
 
 最新批次见 [Phase42 运行说明](docs/phase42/README.md) 和 [结构/参数/MAC清单](docs/phase42/experiment_catalog.md)。本批复用 Phase41 同条件 BASE，不重复其8项训练。填写 `configs/phase42_server.local.yaml` 后运行 `python scripts/phase42_run.py --config configs/phase42_server.local.yaml`。默认19项Fold2 Pilot；确认阶段需预先授权预算，最多4种机制各补4折。新结果分支为 `results/phase42-pilots`。

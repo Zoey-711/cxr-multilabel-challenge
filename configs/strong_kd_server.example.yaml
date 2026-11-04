@@ -1,0 +1,14 @@
+# Independent output; this does not extend or change the Phase42 queue.
+teacher_root: /AUTHORIZED/results/phase17_batch
+data_root: /AUTHORIZED/data/cxr_first.zip
+pretrained_root: /AUTHORIZED/imagenet-cache
+output_root: /AUTHORIZED/outputs/strong_teacher_kd
+mode: full_train_development
+gpu_ids: [0]
+max_concurrent: 1
+gpu_hours: null
+preflight_gpu_hours: 1
+minimum_free_disk_gib: 15
+max_vram_gib: 20
+# Explicit authorization needed before --action run. Default audit uses CPU only.
+authorize_training: false
