@@ -2,13 +2,17 @@
 teacher_root: /AUTHORIZED/results/phase17_batch
 data_root: /AUTHORIZED/data/cxr_first.zip
 pretrained_root: /AUTHORIZED/imagenet-cache
-output_root: /AUTHORIZED/outputs/strong_teacher_kd
+output_root: /AUTHORIZED/outputs/strong_teacher_kd_v2
 mode: full_train_development
 gpu_ids: [0]
 max_concurrent: 1
 gpu_hours: null
-preflight_gpu_hours: 1
+preflight_gpu_hours: 2
 minimum_free_disk_gib: 15
 max_vram_gib: 20
 # Explicit authorization needed before --action run. Default audit uses CPU only.
 authorize_training: false
+
+# Optional complete second triplet, fixed seed=2026; choose before first run.
+replicate_seed_enabled: false
+replicate_gpu_hours: 0

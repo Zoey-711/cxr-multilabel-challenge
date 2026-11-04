@@ -157,7 +157,9 @@ class ToyModel(nn.Module):
     def forward(self,x):return self.classifier(torch.relu(self.features(x)))
 
 
-def test_full_training_checkpoint_resume_export_without_retraining(tmp_path,monkeypatch):
+@pytest.mark.parametrize('task', ['STUDENT_BASE','SKD_CONTROL','SKD_COMPLEMENT',
+                                  'STUDENT_BASE_SEED2026','SKD_CONTROL_SEED2026','SKD_COMPLEMENT_SEED2026'])
+def test_full_training_checkpoint_resume_export_without_retraining(tmp_path,monkeypatch,task):
     rows=[dict(Subject_id=f'p{i}',Study_id=f's{i}',Predict_class=';'.join(str(j+1) for j in range(10) if (i+j)%2)) for i in range(8)]
     monkeypatch.setattr(train,'data',lambda *_:(rows,rows,{},{}))
     def loaders(*_):
@@ -165,23 +167,27 @@ def test_full_training_checkpoint_resume_export_without_retraining(tmp_path,monk
     monkeypatch.setattr(train,'loaders',loaders)
     monkeypatch.setattr(train,'create_model',lambda *a,**k:ToyModel())
     cfg=dict(output_root=str(tmp_path),teacher_root=str(tmp_path),pretrained_root=str(tmp_path))
-    (tmp_path/'teachers').mkdir();(tmp_path/'teachers/SKD_CONTROL.csv').write_text('synthetic')
+    (tmp_path/'teachers').mkdir()
+    for name in RECIPES: (tmp_path/'teachers'/f'{name}.csv').write_text('synthetic')
     (tmp_path/'teacher_audit.json').write_text('{}')
     original=train.infer
     monkeypatch.setattr(train,'infer',lambda *a,**k:(_ for _ in ()).throw(RuntimeError('export interrupted')))
     with pytest.raises(RuntimeError,match='export interrupted'):
-        train.run_task(cfg,'SKD_CONTROL','test',torch.device('cpu'))
-    resume=tmp_path/'experiments/SKD_CONTROL/last_training.pt';sha=digest(resume)
+        train.run_task(cfg,task,'test',torch.device('cpu'))
+    resume=tmp_path/'experiments'/task/'last_training.pt';sha=digest(resume)
     monkeypatch.setattr(train,'infer',original)
     monkeypatch.setattr(train,'step_group',lambda *a,**k:pytest.fail('Completed training repeated'))
-    receipt=train.run_task(cfg,'SKD_CONTROL','test',torch.device('cpu'))
+    receipt=train.run_task(cfg,task,'test',torch.device('cpu'))
     assert digest(resume)==sha and 'student_raw.pth' in receipt['sha256']
-    assert len(teachers.rows(tmp_path/'experiments/SKD_CONTROL/train_history.csv'))==4
-    metrics=json.loads((tmp_path/'experiments/SKD_CONTROL/metrics.json').read_text())
+    assert len(teachers.rows(tmp_path/'experiments'/task/'train_history.csv'))==4
+    metrics=json.loads((tmp_path/'experiments'/task/'metrics.json').read_text())
     assert metrics['student_oof']=='N/A' and set(metrics['val'])=={'raw','ema'}
-    assert not (tmp_path/'experiments/SKD_CONTROL/oof_predictions.csv').exists()
+    assert not (tmp_path/'experiments'/task/'oof_predictions.csv').exists()
+    if task.startswith('STUDENT_BASE'):
+        assert json.loads((tmp_path/'experiments'/task/'run_manifest.json').read_text())['teacher_sha256'] is None
+        assert all(float(r['soft_loss'])==0 for r in teachers.rows(tmp_path/'experiments'/task/'train_history.csv'))
     with pytest.raises(ValueError,match='identity'):
-        train.run_task(cfg,'SKD_CONTROL','changed',torch.device('cpu'))
+        train.run_task(cfg,task,'changed',torch.device('cpu'))
 
 
 def test_nonfinite_checkpoint_rejected():
@@ -230,3 +236,64 @@ def test_student_rebuild_gate_requires_paired_macro_ci_and_all_classes():
     assert student_decision(primary)[0]=='STOP_TEACHER_REBUILD'
     primary['complement']['per_class_auc']=[.803]*9
     with pytest.raises(ValueError,match='Ten'):student_decision(primary)
+
+
+def test_base_does_not_consume_soft_probabilities():
+    p=parts(nn.Linear(3,10));q=parts(copy.deepcopy(p[0]))
+    b=batch();bad=copy.deepcopy(b);bad['soft_target'][:]=float('nan')
+    a=step_group(*p[:2],[b],*p[2:],torch.device('cpu'),{},hard_fraction=1.)
+    c=step_group(*q[:2],[bad],*q[2:],torch.device('cpu'),{},hard_fraction=1.)
+    assert a['soft']==c['soft']==0 and a['total']==pytest.approx(a['hard'])
+    for x,y in zip(p[0].parameters(),q[0].parameters()):torch.testing.assert_close(x,y)
+
+
+def test_fixed_triplets_and_explicit_replication_budget():
+    from cxr.strong_kd.protocol import tasks
+    assert len(tasks())==3 and len(tasks({'replicate_seed_enabled':True}))==6
+    for t in tasks({'replicate_seed_enabled':True}):
+        c=training_config(t['id'])
+        assert c['seed']==(2026 if 'SEED2026' in t['id'] else 42)
+        assert c['hard_fraction']==(1. if t['id'].startswith('STUDENT_BASE') else .5)
+    cfg=dict(authorize_training=True,gpu_hours=38,preflight_gpu_hours=2,
+             minimum_free_disk_gib=15,max_vram_gib=20,gpu_ids=[0],max_concurrent=1)
+    authorize(cfg)
+    with pytest.raises(ValueError,match='replicate_gpu_hours'):
+        authorize(dict(cfg,replicate_seed_enabled=True))
+    with pytest.raises(ValueError,match='Six tasks'):
+        authorize(dict(cfg,replicate_seed_enabled=True,replicate_gpu_hours=36))
+    authorize(dict(cfg,replicate_seed_enabled=True,replicate_gpu_hours=36,gpu_hours=74))
+
+
+def test_loader_seed_changes_both_dataloader_streams(monkeypatch):
+    seen=[]
+    monkeypatch.setattr(train,'make_dataloader',lambda *a,**kw:seen.append(kw['seed']))
+    train.loaders({'data_root':'.'},[],[],{}, {},2026)
+    assert seen==[2026,2027]
+
+
+def test_analysis_requires_all_triplet_results_and_writes_reports(tmp_path,monkeypatch):
+    from cxr.strong_kd import analysis
+    from cxr.strong_kd.protocol import tasks
+    rr=[dict(Subject_id=f'p{i//2}',Study_id=f's{i}',image_count=1,**{f'Target_{j}':(i+j)%2 for j in range(1,11)}) for i in range(20)]
+    write_csv(tmp_path/'source/manifests/val_labels.csv',rr)
+    cfg=dict(output_root=str(tmp_path/'out'),teacher_root=str(tmp_path/'source'))
+    original=analysis.paired_bootstrap
+    monkeypatch.setattr(analysis,'paired_bootstrap',lambda *a,**kw:original(*a,draws=40,seed=5417))
+    for name in ('SKD_CONTROL','SKD_COMPLEMENT'):
+        folder=tmp_path/'out/experiments'/name
+        for v in ('raw','ema'):
+            write_probabilities(folder/f'{v}_val_predictions.csv',dict(keys=[(r['Subject_id'],r['Study_id']) for r in rr],p=np.full((20,10),.5)),{})
+        write_json(folder/'DONE.json',dict(sha256={p.name:digest(p) for p in folder.iterdir()}))
+    result=analysis.analyze(cfg)
+    assert result['decision']=='WAIT_FOR_PAIRED_STUDENTS' and result['missing']==['STUDENT_BASE']
+    folder=tmp_path/'out/experiments/STUDENT_BASE'
+    for v in ('raw','ema'):
+        write_probabilities(folder/f'{v}_val_predictions.csv',dict(keys=[(r['Subject_id'],r['Study_id']) for r in rr],p=np.full((20,10),.5)),{})
+    write_json(folder/'DONE.json',dict(sha256={p.name:digest(p) for p in folder.iterdir()}))
+    result=analysis.analyze(cfg)
+    assert result['state']=='COMPLETE_DEVELOPMENT_ONLY' and len(result['comparisons'])==6
+    assert result['decision']=='STOP_TEACHER_REBUILD'
+    assert (tmp_path/'out/reports/final_decision.md').is_file()
+    assert len(teachers.rows(tmp_path/'out/reports/student_per_class.csv'))==60
+    result=analysis.analyze(dict(cfg,replicate_seed_enabled=True))
+    assert len(result['missing'])==3 and result['decision']=='WAIT_FOR_PAIRED_STUDENTS'

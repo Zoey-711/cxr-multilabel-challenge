@@ -16,7 +16,7 @@ from cxr.models.factory import create_model
 from cxr.phase39_run import optimizer_scheduler, infer
 from cxr.phase39_support import seed_all, write_csv, write_json, save_torch
 from cxr.utils.training_resume import capture_rng_state, restore_rng_state
-from cxr.strong_kd.protocol import training_config, digest, PRETRAINED_SHA
+from cxr.strong_kd.protocol import training_config, task_spec, digest, PRETRAINED_SHA
 from cxr.strong_kd.loss import step_group
 
 
@@ -32,7 +32,16 @@ def data(server, task):
     train = read_split_rows(Path(server['data_root']), 'train')
     val = read_split_rows(Path(server['data_root']), 'val')
     counts = Counter((r['Subject_id'], r['Study_id']) for r in train)
-    table = read_probabilities(root/'teachers'/f'{task}.csv', source/'manifests/train_labels.csv', set(counts))
+    from cxr.strong_kd.teachers import rows
+    variant, seed = task_spec(task)
+    if variant == 'STUDENT_BASE':
+        rr = rows(source/'manifests/train_labels.csv')
+        table = dict(keys=[(r['Subject_id'],r['Study_id']) for r in rr],
+                     y=[[int(r[f'Target_{j}']) for j in range(1,11)] for r in rr],
+                     counts=[int(r['image_count']) for r in rr])
+        table['p'] = table['y']  # placeholder only; pure BCE never consumes soft targets
+    else:
+        table = read_probabilities(root/'teachers'/f'{variant}.csv', source/'manifests/train_labels.csv', set(counts))
     if len(train) != 30344 or len(counts) != 18513 or len({k[0] for k in counts}) != 11055:
         raise ValueError('Training data coverage differs from frozen source')
     from cxr.strong_kd.teachers import rows
@@ -53,16 +62,16 @@ def data(server, task):
     return train, val, soft, weights
 
 
-def loaders(server, train, val, soft, weights):
+def loaders(server, train, val, soft, weights, seed=42):
     aug = dict(enabled=True, name='conservative_cxr_v1', affine_probability=.5,
                rotation_degrees=3., translation_fraction=.02, photometric_probability=.5,
                brightness_contrast_fraction=.05)
     tr = make_dataloader(Path(server['data_root']), 'train', rows=train,
-        batch_size=8, num_workers=0, shuffle=True, seed=42, input_size=384,
+        batch_size=8, num_workers=0, shuffle=True, seed=seed, input_size=384,
         preprocessing='black_pad_v1', augmentation=aug,
         study_soft_targets=soft, study_soft_weights=weights)
     ev = make_dataloader(Path(server['data_root']), 'val', rows=val,
-        batch_size=8, num_workers=0, shuffle=False, seed=43, input_size=384,
+        batch_size=8, num_workers=0, shuffle=False, seed=seed+1, input_size=384,
         preprocessing='black_pad_v1')
     return tr, ev
 
@@ -111,7 +120,7 @@ def smoke(server, task, folder, device):
     # Keep the true teacher map but restrict it to the selected real studies.
     train, val = train[:16], val[:8]
     keys = {(r['Subject_id'], r['Study_id']) for r in train}
-    tr, ev = loaders(server, train, val, {k: soft[k] for k in keys}, {k: weights[k] for k in keys})
+    tr, ev = loaders(server, train, val, {k: soft[k] for k in keys}, {k: weights[k] for k in keys}, cfg['seed'])
     os.environ['TORCH_HOME'] = server['pretrained_root']
     if device.type=='cuda' and digest(Path(server['pretrained_root'])/'hub/checkpoints/efficientnet_v2_s-dd5fe13b.pth')!=PRETRAINED_SHA:
         raise ValueError('ImageNet initialization hash changed')
@@ -119,7 +128,7 @@ def smoke(server, task, folder, device):
     if device.type == 'cuda': torch.cuda.reset_peak_memory_stats()
     parts[0].train()
     diagnostic = {}
-    result = step_group(parts[0], parts[1], list(itertools.islice(iter(tr), 2)), *parts[2:], device, diagnostic)
+    result = step_group(parts[0], parts[1], list(itertools.islice(iter(tr), 2)), *parts[2:], device, diagnostic, hard_fraction=cfg['hard_fraction'])
     if result['skipped'] or int(parts[1].n_averaged) != 1:
         raise ValueError('Smoke must perform a real optimizer/EMA update')
     folder.mkdir(parents=True, exist_ok=True)
@@ -127,7 +136,7 @@ def smoke(server, task, folder, device):
     del parts
     parts = build(cfg, device, 1, pretrained=False)
     restore(folder/'resume.pt', cfg, 'smoke', parts, tr, ev)
-    resumed = step_group(parts[0], parts[1], list(itertools.islice(iter(tr), 2)), *parts[2:], device, {})
+    resumed = step_group(parts[0], parts[1], list(itertools.islice(iter(tr), 2)), *parts[2:], device, {}, hard_fraction=cfg['hard_fraction'])
     if resumed['skipped'] or int(parts[1].n_averaged) != 2:
         raise ValueError('Restored optimizer/EMA update failed')
     parts[1].eval()
@@ -149,7 +158,7 @@ def run_task(server, task, identity, device=None):
         raise ValueError('Frozen student config changed')
     write_json(config_path, cfg)
     train, val, soft, weights = data(server, task)
-    tr, ev = loaders(server, train, val, soft, weights)
+    tr, ev = loaders(server, train, val, soft, weights, cfg['seed'])
     os.environ['TORCH_HOME'] = server['pretrained_root']
     if device.type=='cuda' and digest(Path(server['pretrained_root'])/'hub/checkpoints/efficientnet_v2_s-dd5fe13b.pth')!=PRETRAINED_SHA:
         raise ValueError('ImageNet initialization hash changed')
@@ -168,7 +177,7 @@ def run_task(server, task, identity, device=None):
             for step in range(1, steps+1):
                 diagnostic = {}
                 try:
-                    result = step_group(model, ema, list(itertools.islice(iterator, 2)), opt, sch, scaler, device, diagnostic)
+                    result = step_group(model, ema, list(itertools.islice(iterator, 2)), opt, sch, scaler, device, diagnostic, hard_fraction=cfg['hard_fraction'])
                 except Exception:
                     write_json(folder/'nonfinite_diagnostic.json', dict(epoch=ep, step=step, **diagnostic))
                     opt.zero_grad(set_to_none=True)
@@ -205,7 +214,8 @@ def run_task(server, task, identity, device=None):
         limit_bytes=500000000, models_loaded=1, latency_status='T4_UNVERIFIED') for v in ('raw','ema')})
     write_json(folder/'run_manifest.json', dict(task=task, identity_sha256=identity,
         pretrained_sha256=PRETRAINED_SHA, pretrained_source='torchvision EfficientNet_V2_S_Weights.IMAGENET1K_V1',
-        teacher_sha256=digest(Path(server['output_root'])/'teachers'/f'{task}.csv'),
+        teacher_sha256=(digest(Path(server['output_root'])/'teachers'/f'{task_spec(task)[0]}.csv')
+                        if cfg['teacher_formula'] else None),
         source_audit_sha256=digest(Path(server['output_root'])/'teacher_audit.json'),
         training_scope='full_train', student_oof='N/A', val_used_for_checkpoint_selection=False,
         test_accessed=False, protocol=cfg, torch=str(torch.__version__), cuda=torch.version.cuda))

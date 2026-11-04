@@ -1,11 +1,20 @@
 {
-  "date": "2026-11-04",
-  "cpu_tests_passed": 18,
+  "date": "2026-11-05",
+  "cpu_tests_passed": 27,
   "cpu_tests_failed": 0,
+  "seconds": 5.53,
   "command": "python -m pytest tests/test_strong_kd.py tests/test_phase41r_cpu.py -q -p no:cacheprovider",
-  "seconds": 4.61,
   "cuda_real_data": "PENDING_REMOTE_PREFLIGHT",
   "student_training": "NOT_STARTED",
+  "default_tasks": [
+    "STUDENT_BASE",
+    "SKD_CONTROL",
+    "SKD_COMPLEMENT"
+  ],
+  "optional_seed": 2026,
+  "optional_tasks": 3,
+  "student_oof": "N/A",
+  "evaluation": "EXPLORATORY_OFFICIAL_VAL",
   "teacher_source_commit": "cbfc5997438f371086cd1fbe232890590cd67ffb",
   "teacher_oof": {
     "D17": 0.7857590601822685,
@@ -15,32 +24,18 @@
     "SKD_CONTROL": 0.8043439291271147,
     "SKD_COMPLEMENT": 0.8124035272557826
   },
-  "teacher_bootstrap": {
-    "delta": 0.008059598128667855,
-    "ci95": [
-      0.006895410922612357,
-      0.009229817176499991
-    ],
-    "requested": 2000,
-    "valid": 2000,
-    "invalid": 0,
-    "seed": 5417,
-    "patients": 11055,
-    "studies": 18513,
-    "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
-    "centered_one_sided_p": 0.0004997501249375312,
-    "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
-  },
   "sha256": {
-    "src/cxr/strong_kd/loss.py": "78204c67df6d4fb438d4b0b2cb90ad4c7a423546245a457c3a2eb38089099284",
-    "src/cxr/strong_kd/protocol.py": "7006b64c966da4d0975a14088446b459672962ab852b62d1fc07689c3f11477d",
-    "src/cxr/strong_kd/runner.py": "b112899ae9dbc0f96a8198376b8acb7a7831b528fb821c42f49590c4b581d259",
+    "src/cxr/strong_kd/analysis.py": "29bb4a3efefa526bdc547c347f44bb73a2609cb5b00fbcc1071dc1bc9750b3ee",
+    "src/cxr/strong_kd/loss.py": "0f450a8b3a190c098de8d40fbe26cc790f6c787528a01422f6bffa8e8ddc5685",
+    "src/cxr/strong_kd/protocol.py": "ff8b5a4caf10111482d1eda299b534a542d74e313673d210cc658a09f2d0d647",
+    "src/cxr/strong_kd/runner.py": "94ee616700ecbdc313ddb811adca967870a5864e87f743955fbf7b8bd44c1ccb",
     "src/cxr/strong_kd/teachers.py": "0b3db4a27b2880f00b1e2feea7871a5e7d8c7afcf3be5c648cfd03aea5d72099",
-    "src/cxr/strong_kd/train.py": "b9a212882362362717847752d072aa5e484b7959b9d086227f3fe366e57da077",
+    "src/cxr/strong_kd/train.py": "146e393accb28682d0a53855f016b812ab4296a58a81e54a6d9a8c000c8317f0",
     "src/cxr/strong_kd/__init__.py": "2b6ba899fbcd4d5bcc75fa52d4443a2f14720b67d57713bb6a06827abb59ea5d",
     "scripts/strong_kd_run.py": "39678895733ea9c20f2e890779c55f110c060b4957606e41e8fa81708a4104b6",
-    "configs/strong_kd_server.example.yaml": "15435fcb6dbda0ba985a6218cef9bf2cb3f38e9cb42a2a7fae051be8afd772a8",
+    "configs/strong_kd_server.example.yaml": "856c55e894341c37c73103e23424b7c2b835791b5e1633ec8d617bc4f44e33bb",
     "configs/strong_kd_sources.json": "442487cbb4088ea642647e22a77b21db8a31fbac17d257be3d2e0ba293a7973f",
-    "tests/test_strong_kd.py": "6031acdbfd785542800d5f5f5b2108f677c510e7f0113aface19b2cb39647768"
+    "tests/test_strong_kd.py": "a2da4561be62a87f75f9258a4f388bed060a0bf7c7bae2e27afe8195c750734d",
+    "docs/strong_kd/README.md": "79074d8c1e99deb4bc442a93cbe8350852b7470c0f099052fcdabef24c242841"
   }
 }

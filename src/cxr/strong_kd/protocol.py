@@ -47,13 +47,25 @@ def config(path):
     return cfg
 
 
-def training_config(task):
-    if task not in RECIPES:
+def task_spec(task):
+    seed = 2026 if task.endswith('_SEED2026') else 42
+    variant = task.removesuffix('_SEED2026')
+    if variant not in ('STUDENT_BASE', *RECIPES):
         raise ValueError('Unknown paired experiment')
-    return dict(TRAINING, experiment_id=task, teacher_formula=RECIPES[task],
+    return variant, seed
+
+
+def training_config(task):
+    variant, seed = task_spec(task)
+    return dict(TRAINING, experiment_id=task, seed=seed,
+                hard_fraction=1. if variant == 'STUDENT_BASE' else .5,
+                teacher_formula=RECIPES.get(variant),
                 student_oof='N/A', evaluation='official_Val_development_only')
 
 
-def tasks():
+def tasks(cfg=None):
     # Conservative hard reservation, not a measured training-time estimate.
-    return [dict(id=k, variant=k, fold=None, timeout_hours=12, max_retries=1) for k in RECIPES]
+    names = ['STUDENT_BASE', *RECIPES]
+    if (cfg or {}).get('replicate_seed_enabled', False):
+        names += [n+'_SEED2026' for n in names.copy()]
+    return [dict(id=k, variant=k, fold=None, timeout_hours=12, max_retries=1) for k in names]

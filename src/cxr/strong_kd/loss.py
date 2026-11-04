@@ -3,7 +3,8 @@ import torch
 from torch.nn import functional as F
 
 
-def step_group(model, ema, batches, optimizer, scheduler, scaler, device, diagnostic):
+def step_group(model, ema, batches, optimizer, scheduler, scaler, device, diagnostic, hard_fraction=.5):
+    if hard_fraction not in (.5, 1.): raise ValueError('Only frozen BCE/KD losses supported')
     optimizer.zero_grad(set_to_none=True)
     hard_den = sum(float(b['valid_mask'].sum()) for b in batches)
     soft_den = sum(float((b['valid_mask'] * b['soft_weight'][:, None]).sum()) for b in batches)
@@ -11,7 +12,8 @@ def step_group(model, ema, batches, optimizer, scheduler, scaler, device, diagno
         raise ValueError('No valid hard/soft labels in accumulated group')
     hard_value = soft_value = 0.
     for batch in batches:
-        x, y, q = (batch[k].to(device) for k in ('image', 'target', 'soft_target'))
+        x, y = (batch[k].to(device) for k in ('image', 'target'))
+        q = batch['soft_target'].to(device) if hard_fraction < 1 else y
         mask = batch['valid_mask'].to(device).float()
         w = batch['soft_weight'].to(device).float()
         if y.shape != q.shape or y.ndim != 2 or y.shape[1] != 10 or w.shape != (len(y),):
@@ -22,8 +24,8 @@ def step_group(model, ema, batches, optimizer, scheduler, scaler, device, diagno
         with torch.autocast('cuda', dtype=torch.float16, enabled=device.type == 'cuda'):
             logits = model(x)
             hard = (F.binary_cross_entropy_with_logits(logits.float(), y, reduction='none') * mask).sum()/hard_den
-            soft = (F.binary_cross_entropy_with_logits(logits.float(), q, reduction='none') * mask * w[:, None]).sum()/soft_den
-            loss = .5*hard + .5*soft
+            soft = (F.binary_cross_entropy_with_logits(logits.float(), q, reduction='none') * mask * w[:, None]).sum()/soft_den if hard_fraction < 1 else logits.new_zeros(())
+            loss = hard_fraction*hard + (1-hard_fraction)*soft
         if not bool(torch.isfinite(logits).all()) or not bool(torch.isfinite(loss)):
             diagnostic.update(stage='forward', logits_finite=bool(torch.isfinite(logits).all()), loss_finite=bool(torch.isfinite(loss)))
             optimizer.zero_grad(set_to_none=True)
@@ -44,7 +46,7 @@ def step_group(model, ema, batches, optimizer, scheduler, scaler, device, diagno
         diagnostic.update(optimizer_skipped=True, scaler_after=after)
         if after >= before:
             raise FloatingPointError('Nonfinite gradients without scaler backoff')
-        return dict(hard=hard_value, soft=soft_value, total=.5*(hard_value+soft_value), skipped=True)
+        return dict(hard=hard_value, soft=soft_value, total=hard_fraction*hard_value+(1-hard_fraction)*soft_value, skipped=True)
     norm = torch.nn.utils.clip_grad_norm_(model.parameters(), 1., error_if_nonfinite=True)
     scaler.step(optimizer); scaler.update()
     skipped = float(scaler.get_scale()) < before
@@ -53,4 +55,4 @@ def step_group(model, ema, batches, optimizer, scheduler, scaler, device, diagno
     optimizer.zero_grad(set_to_none=True)
     diagnostic.update(optimizer_skipped=skipped, scaler_before=before,
                       scaler_after=float(scaler.get_scale()), gradient_norm=float(norm))
-    return dict(hard=hard_value, soft=soft_value, total=.5*(hard_value+soft_value), skipped=skipped)
+    return dict(hard=hard_value, soft=soft_value, total=hard_fraction*hard_value+(1-hard_fraction)*soft_value, skipped=skipped)

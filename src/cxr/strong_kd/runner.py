@@ -23,6 +23,16 @@ def authorize(cfg):
         v = cfg.get(key)
         if type(v) not in (int,float) or not math.isfinite(v) or v <= 0:
             raise ValueError('Explicit positive budget required: '+key)
+    if type(cfg.get('replicate_seed_enabled', False)) is not bool:
+        raise ValueError('replicate_seed_enabled must be boolean')
+    if cfg.get('replicate_seed_enabled', False):
+        allowance = cfg.get('replicate_gpu_hours', 0)
+        if type(allowance) not in (int,float) or not math.isfinite(allowance) or allowance < 36:
+            raise ValueError('Explicit replicate_gpu_hours >= 36 required for three paired replicas')
+        if cfg['gpu_hours'] < 72 + cfg['preflight_gpu_hours']:
+            raise ValueError('Six tasks require 72 GPU-hour reservations plus preflight')
+    elif cfg['gpu_hours'] < 36 + cfg['preflight_gpu_hours']:
+        raise ValueError('Three tasks require 36 GPU-hour reservations plus preflight')
     ids = cfg.get('gpu_ids', [])
     if not ids or len(ids)>2 or len(set(ids))!=len(ids) or any(type(i)!=int or i<0 for i in ids):
         raise ValueError('Authorize one or two distinct physical GPUs for the paired experiment')
@@ -106,7 +116,7 @@ def preflight(cfg, path):
     state=json.loads(ledger.read_text()) if ledger.exists() else dict(identity=ih,used_gpu_hours=0.,completed=[])
     if state['identity']!=ih or state.get('running'):
         raise ValueError('Interrupted/changed preflight; inspect PID and budget before continuing')
-    for task in RECIPES:
+    for task in [t['id'] for t in tasks(cfg)]:
         if task in state['completed']:continue
         if state['used_gpu_hours']+.25>cfg['preflight_gpu_hours']:raise RuntimeError('Preflight budget exhausted')
         state['running']=task;write_json(ledger,state)
@@ -126,7 +136,7 @@ def preflight(cfg, path):
         if rec['state']!='PASS' or rec['peak_reserved_mib']>cfg['max_vram_gib']*1024:
             raise RuntimeError('CUDA/VRAM check failed')
         state['completed'].append(task);write_json(ledger,state)
-    write_json(marker,dict(state='PASS',identity_sha256=ih,sha256={f'preflight/{t}/receipt.json':digest(folder/t/'receipt.json') for t in RECIPES}))
+    write_json(marker,dict(state='PASS',identity_sha256=ih,sha256={f'preflight/{t}/receipt.json':digest(folder/t/'receipt.json') for t in [x['id'] for x in tasks(cfg)]}))
     return ih
 
 
@@ -142,35 +152,8 @@ def student_decision(primary):
 
 
 def analyze(cfg):
-    from cxr.batch.artifacts import read_probabilities
-    from cxr.phase41.analysis import auc_summary
-    from cxr.phase42.analysis import paired_bootstrap
-    from cxr.strong_kd.teachers import rows
-    root=Path(cfg['output_root']);labels=Path(cfg['teacher_root'])/'manifests/val_labels.csv'
-    truth={(r['Subject_id'],r['Study_id']):[int(r[f'Target_{j}']) for j in range(1,11)] for r in rows(labels)}
-    keys=sorted(truth);report=dict(state='INCOMPLETE',student_oof='N/A',evaluation='EXPLORATORY_OFFICIAL_VAL',comparisons={})
-    if all((root/'experiments'/t/'DONE.json').is_file() for t in RECIPES):
-        for task in RECIPES: verify_receipt(root/'experiments'/task)
-        for version in ('raw','ema'):
-            preds=[]
-            for task in RECIPES:
-                p=read_probabilities(root/'experiments'/task/f'{version}_val_predictions.csv',labels,set(keys))
-                preds.append(dict(zip(p['keys'],p['p'])))
-            report['comparisons'][version]=dict(control=auc_summary(truth,preds[0],keys),
-                complement=auc_summary(truth,preds[1],keys),bootstrap=paired_bootstrap(truth,*preds,keys,draws=2000,seed=5417))
-        report['state']='COMPLETE_DEVELOPMENT_ONLY'
-        primary=report['comparisons']['raw']
-        decision,evidence=student_decision(primary)
-        report['selection_rule']=dict(primary='raw_final_epoch',minimum_macro_delta=.002,
-            minimum_ci_lower=0.,minimum_per_class_delta=-.01,
-            note='Exploratory gate only; official Val has been reused and cannot confirm generalization')
-        report['selection_evidence']=evidence
-        report['decision']=decision
-    else:
-        report['decision']='WAIT_FOR_PAIRED_STUDENTS'
-    report['scope']='No independent student OOF; no automatic expansion or Submission. Raw final epoch is primary; EMA is predeclared secondary.'
-    write_json(root/'reports/student_comparison.json',report)
-    return report
+    from cxr.strong_kd.analysis import analyze as evaluate
+    return evaluate(cfg)
 
 
 def main():
@@ -178,11 +161,13 @@ def main():
     p.add_argument('--config',required=True,type=Path)
     p.add_argument('--action',choices=('audit','preflight','run','resume','status','stop','analyze'),default='audit')
     p.add_argument('--worker',choices=('smoke','train'),help=argparse.SUPPRESS)
-    p.add_argument('--task',choices=tuple(RECIPES),help=argparse.SUPPRESS)
+    p.add_argument('--task',choices=tuple(t['id'] for t in tasks({'replicate_seed_enabled':True})),help=argparse.SUPPRESS)
     p.add_argument('--identity',help=argparse.SUPPRESS)
     args=p.parse_args();cfg=config(args.config);root=Path(cfg['output_root'])
     if args.worker:
         authorize(cfg)
+        if args.task not in {t['id'] for t in tasks(cfg)}:
+            raise ValueError('Worker task is not authorized in this experiment plan')
         if platform.system()!='Linux':raise RuntimeError('Remote worker requires Linux')
         import torch
         torch.set_num_threads(2)
@@ -218,7 +203,7 @@ def main():
             write_json(root/'reports/PREFLIGHT_FAILED.json',dict(reason=str(exc)));raise
         if args.action=='preflight':print('REMOTE_PREFLIGHT PASS');return
         queued=dict(cfg,pilot_gpu_hours=cfg['gpu_hours']-cfg['preflight_gpu_hours'],upload={'enabled':False})
-        queue_run(tasks(),queued,args.config.resolve(),ih,'pilot',executor=execute)
+        queue_run(tasks(cfg),queued,args.config.resolve(),ih,'pilot',executor=execute)
         print(json.dumps(analyze(cfg)))
 
 
