@@ -41,6 +41,9 @@ class Candidate(nn.Module):
         c, m = self.final_channels, self.mid_channels
         old = backbone.classifier[-1]
         self.dropout = backbone.classifier[0]
+        # GeM's backward saves its pooled output; in-place dropout would
+        # overwrite that tensor during training and invalidate autograd.
+        self.dropout.inplace = False
         backbone.classifier = nn.Identity()
         self.classifier = old
         if variant == 'A01':

@@ -14,6 +14,16 @@ from cxr.phase42.analysis import paired_bootstrap,weighted_auc,select
 torch.set_num_threads(2)
 
 
+@pytest.mark.parametrize('variant', ('B01', 'C03'))
+def test_gem_heads_backward_with_training_dropout(variant):
+    model = build_model(variant).train()
+    assert not model.dropout.inplace
+    logits = model(torch.rand(2, 3, 64, 64))
+    nn.functional.binary_cross_entropy_with_logits(logits, torch.rand_like(logits)).backward()
+    assert model.pool.p.grad is not None
+    assert torch.isfinite(model.pool.p.grad).all()
+
+
 @pytest.mark.parametrize('variant',IDS)
 def test_forward_backward_export_ema(variant,tmp_path):
     torch.manual_seed(42)
