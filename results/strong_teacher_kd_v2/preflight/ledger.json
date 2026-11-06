@@ -1,0 +1,12 @@
+{
+  "identity": "84828d46258b914a61598c14a6ce07e3f43f7036f9e81aac78ad25fd679ec7a9",
+  "used_gpu_hours": 0.022437063418328764,
+  "completed": [
+    "STUDENT_BASE",
+    "SKD_CONTROL",
+    "SKD_COMPLEMENT",
+    "STUDENT_BASE_SEED2026",
+    "SKD_CONTROL_SEED2026",
+    "SKD_COMPLEMENT_SEED2026"
+  ]
+}

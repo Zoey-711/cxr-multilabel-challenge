@@ -1,0 +1,152 @@
+{
+  "repository": "Zoey-711/cxr-multilabel-challenge",
+  "release_tag": "strong-teacher-kd-v2",
+  "file_count": 24,
+  "bytes": 4883378370,
+  "files": [
+    {
+      "path": "strong_teacher_kd_v2/experiments/SKD_COMPLEMENT/last_training.pt",
+      "asset_name": "strong_teacher_kd_v2--experiments--SKD_COMPLEMENT--last_training.pt",
+      "bytes": 325292021,
+      "sha256": "33cbeec77f1155ab119aad57442806b7766a0ceb099357471b4775d7750606e5"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/SKD_COMPLEMENT/student_ema.pth",
+      "asset_name": "strong_teacher_kd_v2--experiments--SKD_COMPLEMENT--student_ema.pth",
+      "bytes": 81666883,
+      "sha256": "0e9e019325676a819727869de37f69e3b7caae6341c44ec14b022cdbe01a07aa"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/SKD_COMPLEMENT/student_raw.pth",
+      "asset_name": "strong_teacher_kd_v2--experiments--SKD_COMPLEMENT--student_raw.pth",
+      "bytes": 81666883,
+      "sha256": "789c8da5c58b81919f61df5fe13f210c93eb99d9a47d90c495a5c475c0a1597c"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/SKD_COMPLEMENT_SEED2026/last_training.pt",
+      "asset_name": "strong_teacher_kd_v2--experiments--SKD_COMPLEMENT_SEED2026--last_training.pt",
+      "bytes": 325291957,
+      "sha256": "a2d15b3da11ec414db08830e353dee315302b20a97338846b1fcd2e333665d7e"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/SKD_COMPLEMENT_SEED2026/student_ema.pth",
+      "asset_name": "strong_teacher_kd_v2--experiments--SKD_COMPLEMENT_SEED2026--student_ema.pth",
+      "bytes": 81666883,
+      "sha256": "5d0ea4cd5a07ee8931fe61c6e3a93499c75bed78cfd493d43631dbe37ef344ce"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/SKD_COMPLEMENT_SEED2026/student_raw.pth",
+      "asset_name": "strong_teacher_kd_v2--experiments--SKD_COMPLEMENT_SEED2026--student_raw.pth",
+      "bytes": 81666883,
+      "sha256": "0da081ecc492663a256cd163c8a85ecf040727e51b65a81b1c708997a2ee8399"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/SKD_CONTROL/last_training.pt",
+      "asset_name": "strong_teacher_kd_v2--experiments--SKD_CONTROL--last_training.pt",
+      "bytes": 325291957,
+      "sha256": "732de4aac084420d604f018fc63431c4fa86f9e12b2be48bb238b53ca9faed81"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/SKD_CONTROL/student_ema.pth",
+      "asset_name": "strong_teacher_kd_v2--experiments--SKD_CONTROL--student_ema.pth",
+      "bytes": 81666883,
+      "sha256": "ad2c6038317e4deb445b6d8c1cf1737693db5104b2f5801e1643d0fd70ad4d48"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/SKD_CONTROL/student_raw.pth",
+      "asset_name": "strong_teacher_kd_v2--experiments--SKD_CONTROL--student_raw.pth",
+      "bytes": 81666883,
+      "sha256": "f430b4389bd602bcf7e81a0eea7c0f04eea23c5700ace5f90256787abfa0e62f"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/SKD_CONTROL_SEED2026/last_training.pt",
+      "asset_name": "strong_teacher_kd_v2--experiments--SKD_CONTROL_SEED2026--last_training.pt",
+      "bytes": 325291893,
+      "sha256": "27e7805f9218d353952e82f69deea5b702da4cbb591d43706292261e2fcb5860"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/SKD_CONTROL_SEED2026/student_ema.pth",
+      "asset_name": "strong_teacher_kd_v2--experiments--SKD_CONTROL_SEED2026--student_ema.pth",
+      "bytes": 81666883,
+      "sha256": "89456d712eccf4f4fdeeb57fdf452bdc92617832197a01533ca85ded8c6cc8a3"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/SKD_CONTROL_SEED2026/student_raw.pth",
+      "asset_name": "strong_teacher_kd_v2--experiments--SKD_CONTROL_SEED2026--student_raw.pth",
+      "bytes": 81666883,
+      "sha256": "da8951a612e0eef4a0cc81209e0bb494f17ba2022029a8ed1efd1a4be6c2137f"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/STUDENT_BASE/last_training.pt",
+      "asset_name": "strong_teacher_kd_v2--experiments--STUDENT_BASE--last_training.pt",
+      "bytes": 325291893,
+      "sha256": "704a1a0a7231ceae160b0077e496a98172442eb7241837effdca8f64e021e13c"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/STUDENT_BASE/student_ema.pth",
+      "asset_name": "strong_teacher_kd_v2--experiments--STUDENT_BASE--student_ema.pth",
+      "bytes": 81666883,
+      "sha256": "d0f9e42048c921ab36c1026c4c96fd1fdad48921b855af4efca29584ff6febdf"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/STUDENT_BASE/student_raw.pth",
+      "asset_name": "strong_teacher_kd_v2--experiments--STUDENT_BASE--student_raw.pth",
+      "bytes": 81666883,
+      "sha256": "0bda267316caeee3aa4ff0295fba56417ab9425ca61837f54abddc161b55183e"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/STUDENT_BASE_SEED2026/last_training.pt",
+      "asset_name": "strong_teacher_kd_v2--experiments--STUDENT_BASE_SEED2026--last_training.pt",
+      "bytes": 325291829,
+      "sha256": "ff828b354e96da635078129b34c952c570dd2214153fa34badc3ae86e631e2cd"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/STUDENT_BASE_SEED2026/student_ema.pth",
+      "asset_name": "strong_teacher_kd_v2--experiments--STUDENT_BASE_SEED2026--student_ema.pth",
+      "bytes": 81666883,
+      "sha256": "e4fefd06da63dda2ded11b16a8b2a9a76204d0db505d92a527fc856768baed22"
+    },
+    {
+      "path": "strong_teacher_kd_v2/experiments/STUDENT_BASE_SEED2026/student_raw.pth",
+      "asset_name": "strong_teacher_kd_v2--experiments--STUDENT_BASE_SEED2026--student_raw.pth",
+      "bytes": 81666883,
+      "sha256": "276323e44c9f0e97c6f455e2152da8c244ded5f58634929c48666020d47a014f"
+    },
+    {
+      "path": "strong_teacher_kd_v2/preflight/SKD_COMPLEMENT/resume.pt",
+      "asset_name": "strong_teacher_kd_v2--preflight--SKD_COMPLEMENT--resume.pt",
+      "bytes": 325270800,
+      "sha256": "a3e258215a4e2fbf53ef3e8599a4e53dff330ffb69e000d56b0dc64358773f24"
+    },
+    {
+      "path": "strong_teacher_kd_v2/preflight/SKD_COMPLEMENT_SEED2026/resume.pt",
+      "asset_name": "strong_teacher_kd_v2--preflight--SKD_COMPLEMENT_SEED2026--resume.pt",
+      "bytes": 325270736,
+      "sha256": "3ec74c2ff3155f9d93212e1fe93f231f4584954864149779e7dd8757f2bd1e32"
+    },
+    {
+      "path": "strong_teacher_kd_v2/preflight/SKD_CONTROL/resume.pt",
+      "asset_name": "strong_teacher_kd_v2--preflight--SKD_CONTROL--resume.pt",
+      "bytes": 325270736,
+      "sha256": "458670368988cec35b323c8a6ec78ca2704f25d8a8c65f14214ea7164f20bddc"
+    },
+    {
+      "path": "strong_teacher_kd_v2/preflight/SKD_CONTROL_SEED2026/resume.pt",
+      "asset_name": "strong_teacher_kd_v2--preflight--SKD_CONTROL_SEED2026--resume.pt",
+      "bytes": 325270672,
+      "sha256": "ceb5cb00f7890890734ed085d08fa89a5225158542134767033224220f179981"
+    },
+    {
+      "path": "strong_teacher_kd_v2/preflight/STUDENT_BASE/resume.pt",
+      "asset_name": "strong_teacher_kd_v2--preflight--STUDENT_BASE--resume.pt",
+      "bytes": 325270672,
+      "sha256": "cc38baf961ae5f69ccf6ed7c1ec52bbe2c39966f421203766a749f583c7d33f2"
+    },
+    {
+      "path": "strong_teacher_kd_v2/preflight/STUDENT_BASE_SEED2026/resume.pt",
+      "asset_name": "strong_teacher_kd_v2--preflight--STUDENT_BASE_SEED2026--resume.pt",
+      "bytes": 325270608,
+      "sha256": "da23b934b7b32794de579d3441c5bed131f4b9c175a5f545e6a4515068504693"
+    }
+  ]
+}

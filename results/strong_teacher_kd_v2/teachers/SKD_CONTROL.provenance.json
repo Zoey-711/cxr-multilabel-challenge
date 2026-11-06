@@ -1,0 +1,26 @@
+{
+  "recipe": {
+    "D17": 0.25,
+    "C17": 0.25,
+    "S17": 0.5
+  },
+  "source_commit": "cbfc5997438f371086cd1fbe232890590cd67ffb",
+  "role": "OOF soft training targets",
+  "csv_sha256": "b46cb6fb3217bbac4b81b6d419aa76787f3b7ecce6d32b8c8a89b7617664c13a",
+  "rows": 18513,
+  "columns": [
+    "Subject_id",
+    "Study_id",
+    "Prob_1",
+    "Prob_2",
+    "Prob_3",
+    "Prob_4",
+    "Prob_5",
+    "Prob_6",
+    "Prob_7",
+    "Prob_8",
+    "Prob_9",
+    "Prob_10"
+  ],
+  "aggregation": "Study Mean of image sigmoid probabilities"
+}

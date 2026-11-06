@@ -1,0 +1,44 @@
+{
+  "identity": "84828d46258b914a61598c14a6ce07e3f43f7036f9e81aac78ad25fd679ec7a9",
+  "plan": "c6497d87baae5d62ac5bd98eb0ba3f84e46b06bd71b03c2ae9efa3c8f514aef2",
+  "budget_hours": 72,
+  "gpu_hours_used": 26.835740754674706,
+  "tasks": {
+    "STUDENT_BASE": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 0,
+      "reason": ""
+    },
+    "SKD_CONTROL": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 1,
+      "reason": ""
+    },
+    "SKD_COMPLEMENT": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 0,
+      "reason": ""
+    },
+    "STUDENT_BASE_SEED2026": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 1,
+      "reason": ""
+    },
+    "SKD_CONTROL_SEED2026": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 0,
+      "reason": ""
+    },
+    "SKD_COMPLEMENT_SEED2026": {
+      "state": "DONE",
+      "attempts": 1,
+      "gpu": 1,
+      "reason": ""
+    }
+  }
+}

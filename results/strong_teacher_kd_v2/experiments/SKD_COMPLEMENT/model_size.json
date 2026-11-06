@@ -1,0 +1,14 @@
+{
+  "raw": {
+    "bytes": 81667570,
+    "limit_bytes": 500000000,
+    "models_loaded": 1,
+    "latency_status": "T4_UNVERIFIED"
+  },
+  "ema": {
+    "bytes": 81667570,
+    "limit_bytes": 500000000,
+    "models_loaded": 1,
+    "latency_status": "T4_UNVERIFIED"
+  }
+}

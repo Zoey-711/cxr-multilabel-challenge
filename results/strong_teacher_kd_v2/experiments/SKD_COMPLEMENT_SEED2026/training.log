@@ -1,0 +1,4 @@
+{"epoch": 1, "hard_loss": 0.3662731513561672, "soft_loss": 0.3869986833987829, "total_loss": 0.3766359173774751, "optimizer_updates": 1897, "ema_updates": 1897, "amp_skips": 0, "seconds": 4052.6814494328573, "peak_reserved_mib": 2346.0}
+{"epoch": 2, "hard_loss": 0.28792400625335524, "soft_loss": 0.31404530348891513, "total_loss": 0.3009846548711352, "optimizer_updates": 1897, "ema_updates": 3794, "amp_skips": 0, "seconds": 4048.1603951752186, "peak_reserved_mib": 2346.0}
+{"epoch": 3, "hard_loss": 0.271723274284906, "soft_loss": 0.30807350067697703, "total_loss": 0.28989838748094154, "optimizer_updates": 1897, "ema_updates": 5691, "amp_skips": 0, "seconds": 4054.4987491182983, "peak_reserved_mib": 2346.0}
+{"epoch": 4, "hard_loss": 0.24549797446352592, "soft_loss": 0.305236361962073, "total_loss": 0.27536716821279944, "optimizer_updates": 1897, "ema_updates": 7588, "amp_skips": 0, "seconds": 4024.263176323846, "peak_reserved_mib": 2346.0}

@@ -1,0 +1,19 @@
+{
+  "state": "PASS",
+  "loss": {
+    "hard": 0.680863231420517,
+    "soft": 0.6855842769145966,
+    "total": 0.6832237541675568,
+    "skipped": false
+  },
+  "restored_loss": {
+    "hard": 0.6664177775382996,
+    "soft": 0.6793312132358551,
+    "total": 0.6728744953870773,
+    "skipped": false
+  },
+  "peak_reserved_mib": 2454.0,
+  "optimizer_updates": 2,
+  "validation": "PASS",
+  "device": "cuda"
+}

@@ -1,0 +1,18 @@
+{
+  "identity_sha256": "84828d46258b914a61598c14a6ce07e3f43f7036f9e81aac78ad25fd679ec7a9",
+  "sha256": {
+    "ema_val_predictions.csv": "a5fe66d5e5d86f5c64dda953006037f8dc5fb0c8e123ead4e2f637b25fa4f19d",
+    "training.log": "8b4605eb8326d62f537981aa37e5a01da5fd2df3264ddf89f776c7e24fa184a0",
+    "status.json": "d8c6a1760d5bafabb65de41d609a3a1cb7f566f73cfa69101636d166997e9b23",
+    "student_raw.pth": "789c8da5c58b81919f61df5fe13f210c93eb99d9a47d90c495a5c475c0a1597c",
+    "resolved_config.json": "8438c5391882283d2585fc8c238da39072617668dc5998cc77d7a5b98b323af2",
+    "last_training.pt": "33cbeec77f1155ab119aad57442806b7766a0ceb099357471b4775d7750606e5",
+    "student_ema.pth": "0e9e019325676a819727869de37f69e3b7caae6341c44ec14b022cdbe01a07aa",
+    "model_size.json": "3f3a7dca6727ca3805f9bdd5610c31dc1618907631d545e986db8fddabccaef5",
+    "raw_val_predictions.csv": "8ec237ac540bd13446c0c0ab62f7fb2839a021f878237284e1901187fc26eb08",
+    "train_history.csv": "6b6fb7b3e24393558b8b1fef9d7e0106d6d038fc85ea079cc5dffff5ef460ccb",
+    "run_manifest.json": "8d1271613dd382acf46bb3a44985865593953c5bf7c3e55f918d95f574c4ee67",
+    "metrics.json": "f2cc87a1f56b219bd9e1ad48d1cf9b7d4769261f1e5276f48f4aabb37607e12c",
+    "per_class_metrics.csv": "13a1ca4ac50c1d608537d19f3420b2eebb6fd129bb4482be74454041f0bebdcd"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "state": "PASS",
+  "identity_sha256": "84828d46258b914a61598c14a6ce07e3f43f7036f9e81aac78ad25fd679ec7a9",
+  "sha256": {
+    "preflight/STUDENT_BASE/receipt.json": "87c864bf739bf0d17661c09cf927819ea2acc07e98098494162235807f18a526",
+    "preflight/SKD_CONTROL/receipt.json": "262b835d40e37abe603f744d60daa3dacb065449a4d7ca0fd624a97fe3c086af",
+    "preflight/SKD_COMPLEMENT/receipt.json": "8d6b4ea63a49b6daa71dd5652941be866922bf5073ec821efd3fbd89b8d62ec2",
+    "preflight/STUDENT_BASE_SEED2026/receipt.json": "58f91849d449750dbb88b30078b0eff916d78bb4f7958528561ebc660d46ac94",
+    "preflight/SKD_CONTROL_SEED2026/receipt.json": "b0159f7d325fb64292327c7ab14a06c3ef24f7f1faae82b9dc34203c13728c3d",
+    "preflight/SKD_COMPLEMENT_SEED2026/receipt.json": "95097940b76de95e955fe0bacf37ad345412ccedf8d30a0c79b6c6d91ba52bdd"
+  }
+}

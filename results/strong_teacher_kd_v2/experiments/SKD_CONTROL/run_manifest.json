@@ -1,0 +1,43 @@
+{
+  "task": "SKD_CONTROL",
+  "identity_sha256": "84828d46258b914a61598c14a6ce07e3f43f7036f9e81aac78ad25fd679ec7a9",
+  "pretrained_sha256": "dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74",
+  "pretrained_source": "torchvision EfficientNet_V2_S_Weights.IMAGENET1K_V1",
+  "teacher_sha256": "b46cb6fb3217bbac4b81b6d419aa76787f3b7ecce6d32b8c8a89b7617664c13a",
+  "source_audit_sha256": "81af9a1dd737242b830b97ea34de97cc1d0fde2fc99d830ca072235c4fca9689",
+  "training_scope": "full_train",
+  "student_oof": "N/A",
+  "val_used_for_checkpoint_selection": false,
+  "test_accessed": false,
+  "protocol": {
+    "model": "efficientnet_v2_s",
+    "input_size": 384,
+    "seed": 42,
+    "micro_batch": 8,
+    "accumulation": 2,
+    "epochs": 4,
+    "warmup_epochs": 2,
+    "backbone_lr": 0.0001,
+    "head_lr": 0.0003,
+    "weight_decay": 0.0001,
+    "ema_decay": 0.999,
+    "hard_fraction": 0.5,
+    "temperature": 1.0,
+    "checkpoint_rule": "fixed_final_epoch_raw_and_ema",
+    "soft_weighting": "inverse_images_per_study",
+    "workers": 0,
+    "amp": "fp16",
+    "max_epoch_skips": 20,
+    "max_consecutive_skips": 4,
+    "experiment_id": "SKD_CONTROL",
+    "teacher_formula": {
+      "D17": 0.25,
+      "C17": 0.25,
+      "S17": 0.5
+    },
+    "student_oof": "N/A",
+    "evaluation": "official_Val_development_only"
+  },
+  "torch": "2.10.0+cu128",
+  "cuda": "12.8"
+}
