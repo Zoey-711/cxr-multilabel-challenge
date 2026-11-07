@@ -17,6 +17,13 @@
       "release_tag": "phase42-pilots-v1"
     },
     {
+      "model_id": "P42_C01_F02",
+      "asset": "P42_C01_F02__ema_best.pth",
+      "sha256": "2c525b202ad83c26371d7177d97554581efcd1d30744476cc7e419c713cda64e",
+      "bytes": 81729805,
+      "release_tag": "phase42-pilots-v1"
+    },
+    {
       "model_id": "P42_A04_F02",
       "asset": "P42_A04_F02__ema_best.pth",
       "sha256": "a8c605b32bcbdd8cdac262a3c5025780cb35e4a8c89ea7f737296be71525cbf3",
