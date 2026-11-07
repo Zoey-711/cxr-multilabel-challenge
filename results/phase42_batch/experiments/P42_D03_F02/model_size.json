@@ -1,0 +1,5 @@
+{
+  "inference_weights_and_config_bytes": 81679367,
+  "limit_bytes": 500000000,
+  "latency_status": "T4_UNVERIFIED"
+}
