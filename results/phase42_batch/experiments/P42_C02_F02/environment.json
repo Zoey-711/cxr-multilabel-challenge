@@ -1,0 +1,6 @@
+{
+  "torch": "2.10.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "code_commit": "717a3dd445378ff858951741a2298485220ad4de"
+}
