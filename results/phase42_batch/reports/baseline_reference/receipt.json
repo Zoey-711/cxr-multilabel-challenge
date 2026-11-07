@@ -1,0 +1,9 @@
+{
+  "state": "PASS",
+  "peak_reserved_mib": 176.0,
+  "source_sha256": "d7ca4fff74e16406e9087e5591ab710e3e65171e1b80c13fa1791692caee2d18",
+  "sha256": {
+    "inference_benchmark.json": "a06f409104852bc164d3b72187f51ddf6190445cd25546485d12ea8004187685",
+    "compute_cost.json": "39fe7f14c6bb1020fd0f46d955525c6c31df398c22b8f11c068b4e2da9adc421"
+  }
+}

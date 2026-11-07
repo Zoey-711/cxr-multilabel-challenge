@@ -1,0 +1,13 @@
+{
+  "repository": "Zoey-711/cxr-multilabel-challenge",
+  "release_tag": "phase42-pilots-v1",
+  "assets": [
+    {
+      "model_id": "P42_B03_F02",
+      "asset": "P42_B03_F02__ema_best.pth",
+      "sha256": "4522de8a9b953280f49eec50d303f1601dd938a59fbc2779ce25eea776f33194",
+      "bytes": 81882759,
+      "release_tag": "phase42-pilots-v1"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "receipt_sha256": "f371eeef738a9a072977a214d98d8be885b3e6ac67a45f01f9ab383aa174f208",
+  "declared_source_commit": "76456056b2c7a8ebc426ad473f7556b025f7ce68",
+  "limitation": "Historical Phase41 task manifest stores an opaque identity hash, not its full Git identity; source commit is operator-declared. Config, folds, preflight binding and artifact hashes verified."
+}

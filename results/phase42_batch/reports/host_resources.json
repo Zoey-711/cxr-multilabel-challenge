@@ -1,0 +1,8 @@
+{
+  "cpu": 128,
+  "available_ram_bytes": 1035658936320,
+  "free_disk_bytes": 107668336640,
+  "read_probe_bytes": 33554432,
+  "read_probe_seconds": 0.009254486300051212,
+  "io_scope": "32MiB read; cache may apply; concurrent loaders additionally probed"
+}

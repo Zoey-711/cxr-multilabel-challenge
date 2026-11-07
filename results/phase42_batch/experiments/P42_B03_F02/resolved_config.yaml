@@ -1,0 +1,41 @@
+experiment_id: P42_B03_F02
+architecture: efficientnet_v2_s_B03
+input_size: 384
+seed: 42
+fold: 2
+micro_batch: 4
+accumulation: 4
+epochs: 30
+patience: 6
+ema_decay: 0.999
+ema_use_buffers: true
+backbone_lr: 0.0001
+head_lr: 0.0003
+weight_decay: 0.0001
+warmup_epochs: 2
+augmentation: conservative_cxr_v1
+preprocessing: black_pad_v1
+selection_metric: fold_study_macro_auc
+pretrained_sha256: dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74
+fold_sha256:
+  patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+  study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+  image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d
+variant: B03
+head_seed: 4201
+label_smoothing: 0.0
+candidate_spec:
+  id: B03
+  name: Spatial Pyramid Pooling
+  mechanism: pooling
+  change: Concatenate final adaptive-average 1x1 and2x2 bins
+  kind: architecture
+fold_expected_counts:
+  oof:
+    patients: 2211
+    studies: 3731
+    images: 6130
+  train:
+    patients: 8844
+    studies: 14782
+    images: 24214
