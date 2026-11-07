@@ -2,7 +2,7 @@
   "identity": "a2b70f892d05cc91ba4959d265a82aa1943b54aec66b534344e395bf6aaee9b4",
   "plan": "fef817850adf26ee278842eec01f63973eeb6d5a8be40055d613c83d840be4a4",
   "budget_hours": 1200,
-  "gpu_hours_used": 62.750580834748945,
+  "gpu_hours_used": 73.52130234157097,
   "tasks": {
     "P42_A01_F02": {
       "state": "DONE",
@@ -23,7 +23,7 @@
       "reason": ""
     },
     "P42_B01_F02": {
-      "state": "RUNNING",
+      "state": "DONE",
       "attempts": 1,
       "gpu": 3,
       "reason": ""
@@ -83,8 +83,10 @@
       "reason": ""
     },
     "P42_D03_F02": {
-      "state": "PENDING",
-      "attempts": 0
+      "state": "RUNNING",
+      "attempts": 1,
+      "gpu": 4,
+      "reason": ""
     },
     "P42_D04_F02": {
       "state": "PENDING",
