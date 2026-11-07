@@ -1,0 +1,23 @@
+{
+  "state": "DONE",
+  "identity_sha256": "a2b70f892d05cc91ba4959d265a82aa1943b54aec66b534344e395bf6aaee9b4",
+  "sha256": {
+    "oof_predictions.csv": "b494fc9ac692fec168a42aa67764421daf13c508a1c8e4c0a7cd8a818be6803f",
+    "status.json": "93619782245e9e93210983560fe78564fe6c860c3e969743bf26ca2e775aaa42",
+    "ema_best.pth": "a8c605b32bcbdd8cdac262a3c5025780cb35e4a8c89ea7f737296be71525cbf3",
+    "inference_benchmark.json": "eaab454677963a15482ee4601675474d8aece55148831424d181dcdeae759a61",
+    "raw_at_ema_best.pth": "f435b9711ca6ab34074015a43ef8fd0ef7e14a79dd89b6efe65ec8aee17703b8",
+    "compute_cost.json": "901f642ef49e2e6a76441655662a462d78bc141f78a7ee49bd7798602b987e87",
+    "ema_best.sha256": "1d1d11d7d8c37a8b9508c83587b8e002f1cfe4b0e5ccd1e1aa86fd501e71f08b",
+    "environment.json": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a",
+    "benchmark_last_prediction.csv": "c141cf55927c51bfa7c1f59f0a619e596357e7bf284335555872e354d9ce0fb1",
+    "model_size.json": "49f988b605bd88094a95acfc0ebaf6ae9671a263df9b0b3e9e915fb11a52e343",
+    "val_predictions.csv": "bf5b8e41f6fdbe6b82ec9ded9fe3ba76a91dccb31b85d9e127d34dde89a58956",
+    "train_history.csv": "48a4c1723a67f229cdec975f564509cc4382f453a354556973a8d63d1572bb7f",
+    "run_manifest.json": "b34981a9216bbfc43e1b9a65b50765a58727421e19115e97c8396f41cde307f3",
+    "train.log": "18da1cf895b69e64684711d06040dfea9f536a1c6d41d611d17620fdf7e7c819",
+    "resolved_config.yaml": "4f6d7408f9ec9031a11fe56a3d7bb83dda81909f33acf3ea2b6c1df59fde6fad",
+    "metrics.json": "70572281c641c95268e749f0334453636efeb5a9bfb3fa94e11ae780d8316f97",
+    "per_class_metrics.csv": "0c2302a3fa8be3cee0f79f48d2d420a0bc8e4ef8d049e942af86370bc62ae76e"
+  }
+}
