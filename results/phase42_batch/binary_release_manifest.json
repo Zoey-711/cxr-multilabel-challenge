@@ -50,6 +50,13 @@
       "sha256": "e359a05508f50599d9f79b53a2cfcdd93a9381cbd36413afb77ad0c838386026",
       "bytes": 81678282,
       "release_tag": "phase42-pilots-v1"
+    },
+    {
+      "model_id": "P42_B04_F02",
+      "asset": "P42_B04_F02__ema_best.pth",
+      "sha256": "a27c4e5514b2080384789053aa1a6fafad69bd35b0f6eb362ab9a9fbfedaba2f",
+      "bytes": 81683725,
+      "release_tag": "phase42-pilots-v1"
     }
   ]
 }

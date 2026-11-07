@@ -1,0 +1,8 @@
+{
+  "conv_linear_macs": 8364534272,
+  "attention_macs": 184320,
+  "parameters": 20191579,
+  "input_size": 384,
+  "macs": 8364718592,
+  "scope": "Conv/Linear + attention matmuls; excludes pooling, normalization, activation, decode; not full FLOPs"
+}
