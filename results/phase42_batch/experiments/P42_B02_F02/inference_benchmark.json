@@ -1,0 +1,15 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "batch_size": 1,
+  "precision": "FP16 autocast",
+  "warmup": 5,
+  "images": 100,
+  "repeats": 3,
+  "mean_ms": 56.03840204576651,
+  "p50_ms": 58.30721324309707,
+  "p95_ms": 66.7734048794955,
+  "max_ms": 73.8925114274025,
+  "status": "T4_UNVERIFIED",
+  "timing_scope": "Open archive excluded; ZIP member read through CSV close included; OS cache may apply",
+  "contention": "Other authorized training workers may run; reference only, not a selection input"
+}

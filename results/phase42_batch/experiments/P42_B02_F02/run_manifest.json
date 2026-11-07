@@ -1,0 +1,18 @@
+{
+  "code_commit": "717a3dd445378ff858951741a2298485220ad4de",
+  "task": "P42_B02_F02",
+  "fold": 2,
+  "variant": "B02",
+  "identity_sha256": "a2b70f892d05cc91ba4959d265a82aa1943b54aec66b534344e395bf6aaee9b4",
+  "config_sha256": "407d780b3f5b8ceb9821c1b2380d50fa9866d804a872241cfdb56d645d87c35d",
+  "fold_sha256": {
+    "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+    "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+    "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+  },
+  "pretrained_sha256": "dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74",
+  "best_epoch": 5,
+  "source_model_kind": "B02",
+  "test_labels_used": false,
+  "official_val_used_for_training": false
+}
