@@ -1,0 +1,1 @@
+{"state": "PASS", "task": "P42_C03_F02", "gpu": "NVIDIA GeForce RTX 4090", "loss": 1.079214945435524, "resumed_loss": 1.0653401464223862, "peak_reserved_mib": 1376.0, "resume": "PASS", "oof_val_forward": "PASS", "amp_skips": 0}

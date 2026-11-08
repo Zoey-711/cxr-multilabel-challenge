@@ -1,0 +1,464 @@
+{
+  "repository": "Zoey-711/cxr-multilabel-challenge",
+  "release_tag": "phase42-pilots-v1",
+  "file_count": 76,
+  "bytes": 18611903571,
+  "files": [
+    {
+      "path": "phase42_batch/experiments/P42_A01_F02/ema_best.pth",
+      "asset_name": "P42_A01_F02__ema_best.pth",
+      "bytes": 82067347,
+      "sha256": "510e3ce90e65f065c71608969146ac1e39fcbccc1bf76bf9647918548d6231f6"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A01_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_A01_F02--last_training.pt",
+      "bytes": 491004469,
+      "sha256": "763fbbd9a14fdcd9e16f5d840cf77127594f83ad525b4e7374f21fea0d94dd8e"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A01_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_A01_F02--raw_at_ema_best.pth",
+      "bytes": 82072891,
+      "sha256": "aba23f09b121e8cb6a8a02aabe27d93e82b2dd6e4f63dbb049f27da68da93d43"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A02_F02/ema_best.pth",
+      "asset_name": "P42_A02_F02__ema_best.pth",
+      "bytes": 81994841,
+      "sha256": "949dcd8a10e1cdb0664e35bb4c84a7b4fddaea50e5bd8c9416345abad502ab83"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A02_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_A02_F02--last_training.pt",
+      "bytes": 490569829,
+      "sha256": "6f317fbe054badf216bb7d361f9f305114f48b8bcaee2659b0c2a2df6e52edcf"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A02_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_A02_F02--raw_at_ema_best.pth",
+      "bytes": 82000399,
+      "sha256": "393939ddcb3302789d8225162c667688266ac42d30e6518891dfb0842a3c700e"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A04_F02/ema_best.pth",
+      "asset_name": "P42_A04_F02__ema_best.pth",
+      "bytes": 82110687,
+      "sha256": "a8c605b32bcbdd8cdac262a3c5025780cb35e4a8c89ea7f737296be71525cbf3"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A04_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_A04_F02--last_training.pt",
+      "bytes": 491265429,
+      "sha256": "1f09404949f2363ba6f872006d8337ccad1669846cea0ff46823d5fa7cd86c4b"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A04_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_A04_F02--raw_at_ema_best.pth",
+      "bytes": 82116259,
+      "sha256": "f435b9711ca6ab34074015a43ef8fd0ef7e14a79dd89b6efe65ec8aee17703b8"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B01_F02/ema_best.pth",
+      "asset_name": "P42_B01_F02__ema_best.pth",
+      "bytes": 81678282,
+      "sha256": "e359a05508f50599d9f79b53a2cfcdd93a9381cbd36413afb77ad0c838386026"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B01_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_B01_F02--last_training.pt",
+      "bytes": 488669389,
+      "sha256": "deaec4dd8e085feecb218a7fe480c588a6aa821684b0074ee81f358245a7e163"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B01_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_B01_F02--raw_at_ema_best.pth",
+      "bytes": 81683805,
+      "sha256": "e3186eff5c3900da03c1e3c09dd53c2d8ad603e2f78e12cd9681656906174835"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B02_F02/ema_best.pth",
+      "asset_name": "P42_B02_F02__ema_best.pth",
+      "bytes": 81729159,
+      "sha256": "04c4999215cfc71bd6c13232dec45b7b6af8caa4fe51654ca92d15a410cd4588"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B02_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_B02_F02--last_training.pt",
+      "bytes": 488974421,
+      "sha256": "6c6dacd2d1b6c6f5b06b2048898aee490f5fc2a46a90294184f87499e93abfde"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B02_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_B02_F02--raw_at_ema_best.pth",
+      "bytes": 81734675,
+      "sha256": "94f0147dda41869d64455a4a950a405e43879142909542cfcf8bd021247ec227"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B03_F02/ema_best.pth",
+      "asset_name": "P42_B03_F02__ema_best.pth",
+      "bytes": 81882759,
+      "sha256": "4522de8a9b953280f49eec50d303f1601dd938a59fbc2779ce25eea776f33194"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B03_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_B03_F02--last_training.pt",
+      "bytes": 489895829,
+      "sha256": "5e13f365fcfa559234f69e250da1af11abfb92d6124beb493928c93cc2b88bfc"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B03_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_B03_F02--raw_at_ema_best.pth",
+      "bytes": 81888275,
+      "sha256": "f713153baa142a6380da044b704de88992a26aef63cad3125dc9ab8ef825992b"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B04_F02/ema_best.pth",
+      "asset_name": "P42_B04_F02__ema_best.pth",
+      "bytes": 81683725,
+      "sha256": "a27c4e5514b2080384789053aa1a6fafad69bd35b0f6eb362ab9a9fbfedaba2f"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B04_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_B04_F02--last_training.pt",
+      "bytes": 488702469,
+      "sha256": "59e6392149b583d199dfe3d87e569dde9588bf54d1440104ee13258a79aff05d"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B04_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_B04_F02--raw_at_ema_best.pth",
+      "bytes": 81689255,
+      "sha256": "d4dea6defce561732869d86ac46150c3efc0691e71fee644f94366c8ff85713a"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C01_F02/ema_best.pth",
+      "asset_name": "P42_C01_F02__ema_best.pth",
+      "bytes": 81729805,
+      "sha256": "2c525b202ad83c26371d7177d97554581efcd1d30744476cc7e419c713cda64e"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C01_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_C01_F02--last_training.pt",
+      "bytes": 488978821,
+      "sha256": "040064ca31a3a7a27833db39bbf2fff4d0621b96ac806607361aa73e86b99dc5"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C01_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_C01_F02--raw_at_ema_best.pth",
+      "bytes": 81735335,
+      "sha256": "1acac519d994cc9a5dc790bf23c44468ad40139064099e94b20925e4acdbdbb4"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C02_F02/ema_best.pth",
+      "asset_name": "P42_C02_F02__ema_best.pth",
+      "bytes": 82026655,
+      "sha256": "78807d31eba0a5c18553457a512dd1a8634321875a81f70da39ed7f6a17eec94"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C02_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_C02_F02--last_training.pt",
+      "bytes": 490761557,
+      "sha256": "df60e63e4ab9868de1dbf85678df702c1b745f15d7d6dedb5f37410eee4ded4f"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C02_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_C02_F02--raw_at_ema_best.pth",
+      "bytes": 82032227,
+      "sha256": "3b4751d42729bb5269d7ea62b2998357c48e9c4c32d01e2209cd2fbb5df6e997"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C03_F02/ema_best.pth",
+      "asset_name": "P42_C03_F02__ema_best.pth",
+      "bytes": 81678864,
+      "sha256": "71b8820c7fa27942b4a0ffa5159ee23278271045e822f2bf339f8b55991d4dcb"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C03_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_C03_F02--last_training.pt",
+      "bytes": 488676093,
+      "sha256": "2ea0c4fc5268b9715a58b7a6a549c9e07a8e7dfe4bd5f63eb4910fe31c77e665"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C03_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_C03_F02--raw_at_ema_best.pth",
+      "bytes": 81684401,
+      "sha256": "700338fb5ed9a25b14d72eaa744c877ede7feda21a304826c394807ff1fc7786"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C04_F02/ema_best.pth",
+      "asset_name": "P42_C04_F02__ema_best.pth",
+      "bytes": 81679571,
+      "sha256": "51264447f7872bed2268286f5d305c904b1def86a1daa05a47dc772144961a38"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C04_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_C04_F02--last_training.pt",
+      "bytes": 488677877,
+      "sha256": "bd0bff5f37235475ed186438bd744408016249670c7555f1b4f410100b7df8f2"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C04_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_C04_F02--raw_at_ema_best.pth",
+      "bytes": 81685115,
+      "sha256": "f96fd18b4405b62fec999630192195cdfe9a6fa50c0f405dd58d33017caf972e"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D01_F02/ema_best.pth",
+      "asset_name": "P42_D01_F02__ema_best.pth",
+      "bytes": 81934605,
+      "sha256": "b929fb37230c92dcb780c34b3fc0c783ae7fa7013554744113f9baf6294e0868"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D01_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_D01_F02--last_training.pt",
+      "bytes": 490207621,
+      "sha256": "48faca24cdf2625b40966ace18e61f41b756eeabc72acab6e27a5e95bb12a17e"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D01_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_D01_F02--raw_at_ema_best.pth",
+      "bytes": 81940135,
+      "sha256": "d38a40ba0814cd9d29e1e9e0625bf1e426e2a4fa9a3eaf33eb0e7f573d998171"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D02_F02/ema_best.pth",
+      "asset_name": "P42_D02_F02__ema_best.pth",
+      "bytes": 82504019,
+      "sha256": "1c3e65c21d988ec1264e2f387686f6ec0c3920879e7ee2b9b1cc6d75cf2bf468"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D02_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_D02_F02--last_training.pt",
+      "bytes": 493624437,
+      "sha256": "6b9023aceb921c6f7e5a3d77be9ae01133b8284e478b4165bfe049da45e29cf4"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D02_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_D02_F02--raw_at_ema_best.pth",
+      "bytes": 82509563,
+      "sha256": "40c4bc31fb0116b2cfe5afd80c4145855985610b36459b4fc6ea487500ff0719"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D03_F02/ema_best.pth",
+      "asset_name": "P42_D03_F02__ema_best.pth",
+      "bytes": 81678282,
+      "sha256": "95eeefb78813a676818ca2061e346d9599cc130b1cda90f568690526942f0f02"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D03_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_D03_F02--last_training.pt",
+      "bytes": 488669517,
+      "sha256": "ff0147bf6e47bd4537e97cd5ced424a8c9c29ca8f2059e3d2b97033444d76d6c"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D03_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_D03_F02--raw_at_ema_best.pth",
+      "bytes": 81683805,
+      "sha256": "1607acd1f7e0a02b824488682027a42307d6a578059f91df101548215cf06ee5"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D04_F02/ema_best.pth",
+      "asset_name": "P42_D04_F02__ema_best.pth",
+      "bytes": 81729805,
+      "sha256": "55dc2a0a064a7c0ce4ed11abf573c7a6d0c90da764d9434de23b18926d7f69d9"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D04_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_D04_F02--last_training.pt",
+      "bytes": 488978821,
+      "sha256": "833e31edb0a8135edff36f3a93d099d72dda48f97d8a591e5ee80cde2281e426"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D04_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_D04_F02--raw_at_ema_best.pth",
+      "bytes": 81735335,
+      "sha256": "2a81da31140b626e7fa93fd2bc9fc688a194c185d68c8c8dbe628130246be4a7"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_E03_F02/ema_best.pth",
+      "asset_name": "P42_E03_F02__ema_best.pth",
+      "bytes": 81664519,
+      "sha256": "be0605ffaee39d8f860cacc870ba92c4e7dc4158cda2fb3c48cc29b923654b0b"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_E03_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_E03_F02--last_training.pt",
+      "bytes": 488613269,
+      "sha256": "5d276fe6073643f5c3c3297feb311be6f62d02a9c1e653cc05646344a252b9e4"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_E03_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_E03_F02--raw_at_ema_best.pth",
+      "bytes": 81670035,
+      "sha256": "960b7ca09119677445c934cf73e0ee9848a3a0e180de5d52604515a4fc2464cd"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_E04_F02/ema_best.pth",
+      "asset_name": "P42_E04_F02__ema_best.pth",
+      "bytes": 81664519,
+      "sha256": "d33184cfcc54588ac769e0a5557cf7b8c3b44af6132fa39b63cdb03a7eb7ab5f"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_E04_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_E04_F02--last_training.pt",
+      "bytes": 488613461,
+      "sha256": "88fdb40fbbfea6ced95a53ca6f06ede0adaf4ffa02d14f3d5fa0bc1b5aab4f20"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_E04_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_E04_F02--raw_at_ema_best.pth",
+      "bytes": 81670035,
+      "sha256": "a5b6ae2ff4534e7a675373faefb3aed32a9b17b35952b57d04951d10036515f7"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_F01_F02/ema_best.pth",
+      "asset_name": "P42_F01_F02__ema_best.pth",
+      "bytes": 82304665,
+      "sha256": "1b78c7b3e0e4821252146ecc4fef3a1bd04632ae9c8b98e03f9741a5720d15ec"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_F01_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_F01_F02--last_training.pt",
+      "bytes": 492429093,
+      "sha256": "87d8617f0d9d06510e31010be64410001b2a6b087c7e33cc7fe901f17d15c02f"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_F01_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_F01_F02--raw_at_ema_best.pth",
+      "bytes": 82310223,
+      "sha256": "8c5e1225195b1f096dd7311c800bd754910a24fed6993347b931984b9133519c"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_F04_F02/ema_best.pth",
+      "asset_name": "P42_F04_F02__ema_best.pth",
+      "bytes": 81687821,
+      "sha256": "8d2e87d0174b8070da2a283c492b360bf56c57f63209c236dc1f04607d02706c"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_F04_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_F04_F02--last_training.pt",
+      "bytes": 488726853,
+      "sha256": "0da15b5de9d6641aefee5671d363bc502db86e8eca903f82d8ab25a6b7155e94"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_F04_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_F04_F02--raw_at_ema_best.pth",
+      "bytes": 81693351,
+      "sha256": "3edb387e17116d905eace88103a12127b6155dd4b5a6442b87fd678c1cf7a4ae"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_A01_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_A01_F02--resume.pt",
+      "bytes": 326855140,
+      "sha256": "049e7ca52eb52be8a90cb9d709cba9d2df2c982ea6bc20f8846aaa4f73bdb096"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_A02_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_A02_F02--resume.pt",
+      "bytes": 326565486,
+      "sha256": "0ea250ea4987d9605e94f7a4088b04f45f903ac41cea912f653101c32360c287"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_A04_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_A04_F02--resume.pt",
+      "bytes": 327029368,
+      "sha256": "2d6de3009abcccfe97bf83f34d76e67623defa3eccb6b2e9cd3497df46483fb1"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_B01_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_B01_F02--resume.pt",
+      "bytes": 325298261,
+      "sha256": "a4e01463761c6f06f5558daf7cc316d038d76b4acf3b06108642892f0da9c9e1"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_B02_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_B02_F02--resume.pt",
+      "bytes": 325501584,
+      "sha256": "9bf83b9ff8c3387c44110bf63c216e40878477f012898080d296b0862410801e"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_B03_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_B03_F02--resume.pt",
+      "bytes": 326115984,
+      "sha256": "d9aa1e1cca921a5de981d57d42b6c0a4663feb5ac286df04136b489ec17d0a4c"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_B04_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_B04_F02--resume.pt",
+      "bytes": 325320282,
+      "sha256": "045d64e65c0f4c7fa899628fb4433057a65dad4b0f0a15b4e3fa1a20d7803a21"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_C01_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_C01_F02--resume.pt",
+      "bytes": 325504602,
+      "sha256": "bdd3043b4dbccdf9a9da6477453833ab3989a03fd5dbd2711306e23e07241596"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_C02_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_C02_F02--resume.pt",
+      "bytes": 326693304,
+      "sha256": "34b4a8322d76d1c3c0cabc86a668f9050507b231a7951252e593cba7dce6e217"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_C03_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_C03_F02--resume.pt",
+      "bytes": 325301215,
+      "sha256": "d7024fde29b216a0af3d246157f200e7519b041f7bd4a77239f58fda0535b5bf"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_C04_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_C04_F02--resume.pt",
+      "bytes": 325304036,
+      "sha256": "b0a2723c89a736682023e0af306c7dd8386eb847b016476db39f06d7cf81987a"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_D01_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_D01_F02--resume.pt",
+      "bytes": 326323802,
+      "sha256": "dbdea3c3f9a827a6cb7108010af17a73476d843d124f0584c916b558bd8283fc"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_D02_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_D02_F02--resume.pt",
+      "bytes": 328601700,
+      "sha256": "744bc71c93d460766d28602c5f844325b12277fd08586584ac8811d433b096fd"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_D03_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_D03_F02--resume.pt",
+      "bytes": 325298325,
+      "sha256": "4e4a0c62bc73aa2395f7afd7bd2a3d1265f3160d2668efbcd74d8fde1223065f"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_D04_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_D04_F02--resume.pt",
+      "bytes": 325504602,
+      "sha256": "2c12d6ecd0b2ee6970f15e02a4fe11dcb08bb85c50c630925cc169a0a9a648fd"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_E03_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_E03_F02--resume.pt",
+      "bytes": 325269904,
+      "sha256": "100da6216703540e3a29fe82d7dca72026c3d591cf801ec5bd88dd407071c5dc"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_E04_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_E04_F02--resume.pt",
+      "bytes": 325269904,
+      "sha256": "ff42c76ed5bf49e5c71850cfa80d3108eee596bcb9750451e830df753b6928e4"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_F01_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_F01_F02--resume.pt",
+      "bytes": 327805038,
+      "sha256": "5384ba8d4d341413fd05624a907a3a3e331e9caf35a197a6793bd7a75ab52231"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_F04_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_F04_F02--resume.pt",
+      "bytes": 325336730,
+      "sha256": "9f7b0a5a8b890a648105f258436d0041b5630313e0862a389b94161a98591643"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "code_commit": "717a3dd445378ff858951741a2298485220ad4de",
+  "code_sha256": {
+    "src/cxr/phase42/upload.py": "3b689c9f0dcee2134587157270d5c37ee6c8fa8a50f4c41229f6072c6ddb9664",
+    "src/cxr/phase42/methods.py": "3bb9dc7fb3e7e84394c7f486337042990351155db87571cd89a7eceef3d1c1f6",
+    "src/cxr/phase42/train.py": "ef4a71f752bfd9e5099575814e5bd93afa7eaa049c4c92e964d842f4857b161c",
+    "src/cxr/phase42/protocol.py": "e987e190943cfd2e0bca5845339aa592c50f78754a70b506d1ebd8644489ac4e",
+    "src/cxr/phase42/__init__.py": "cca021380732692c066d27613e92d113f14ff438fcd9404b3733d58d6acfe178",
+    "src/cxr/phase42/models.py": "ac9dd7943f3a6752ee34844b4283faab1064743cf64768b8dfd47646810fd8dc",
+    "src/cxr/phase42/benchmark.py": "09d56ee5d5d1427008175f7903f9b23666185bb073d025d9238f281a58a8f5bb",
+    "src/cxr/phase42/analysis.py": "5e40917a071da498f0805d9a58e684c7c9ff8cfc644ad276a1e2704172bfcf7e",
+    "src/cxr/phase42/queue.py": "c15155325ff6129fd7f15a4c08a636e76780549f0aa34b759f086e762e9ec1d8",
+    "src/cxr/phase42/preflight.py": "b2c807f529d410cdf7c56b39a7b41e4cd0bf069ac4bfe79cba427fd496d286e9",
+    "scripts/phase42_worker.py": "0f89c9d7e9dbbca21383816817222861e36689ebfab45b751687c24e22cf6e90",
+    "scripts/phase42_run.py": "a6761f0ed3373c6dda8a4ab4d221ccd86fdf0be234ee65f1b19f1736c9cb0a76",
+    "configs/phase42/E03.yaml": "45b781b02ded768ac6046611a0300cf48e92973ee8d97b5f97ac65f8745a848f",
+    "configs/phase42/B03.yaml": "993df1e755214185ddf2a107fdb867711ac25ae43bf47584df2edd7711a4dd14",
+    "configs/phase42/A02.yaml": "028bdec020f394a7c8ae036da5f7d2718ebea07f90ec5bf34beeb985b83d35f0",
+    "configs/phase42/B02.yaml": "6d84b30e180182ee02f420ba986bd851ab1a3844d7f5f5b642a940e997918b62",
+    "configs/phase42/B01.yaml": "f74bcc116c340a19f52607529b9dee1e95f3f65bc2dd7e2ec7e8bca82d48f931",
+    "configs/phase42/E04.yaml": "834d3018ee77d54cb341677cd0bcdda7fb011ec28f058187b9160792c132a85f",
+    "configs/phase42/A01.yaml": "1bdc44d54c0c7e3afc5419f75432bfcba1d4bc7a8a5755b1b125f1900832d2fb",
+    "configs/phase42/B04.yaml": "7db7f3d3db4928441918e7a1b19461d92eb1b56345f1f1742d9b3a3825fd8173",
+    "configs/phase42/F01.yaml": "ce2bbe628ef103d26a43168904ca3eb26cb46915950222e33a20fe75a6b3169b",
+    "configs/phase42/C04.yaml": "c5f5951f05de96d560ebbceb7c0a49b66e8e7237cbc4fa8194c0f37c0a4eba61",
+    "configs/phase42/D02.yaml": "8c8575191030000f44e23e07d1d1fb2321e5a88f674d4649bd83a9415ea5ca5e",
+    "configs/phase42/D01.yaml": "e3ab0620920525a34eeffaaad6f2326a7b4e49aab46d708cafbdc7bc70c7a5cf",
+    "configs/phase42/C03.yaml": "0c4b0de2d11949714d416c773b8d7ab3da6e776a178b5d44387106c11c9d0133",
+    "configs/phase42/A04.yaml": "030ab0fd3619fceef909a6e63f6aba83268cdd3d4bc6b26cede2aa1df84ac879",
+    "configs/phase42/C01.yaml": "3d589ace38279d55b2b5156d6896ffd3b62d9852fee67bd191a95fece6cba730",
+    "configs/phase42/D03.yaml": "b59f1d6eefb9535ddb18d14a0bf8dc5231e1522bd314a0b8881d1c501f199b48",
+    "configs/phase42/C02.yaml": "43c3b42cee1e6bdd2afe8412e4a61d8e2d32fd168ce3c3cce084c048224d9be6",
+    "configs/phase42/F04.yaml": "4706af4a28e2522fb0b35e35246b4f5ed3833e1acbaf28d598bf0401a90cd662",
+    "configs/phase42/D04.yaml": "29163ee381c97a2444034d10161e71a07a0a474556509442cbd129c195617bae",
+    "configs/phase42_plan.yaml": "7737351d7171ad3cb9996984d49c5928188d716de61385d1c3dc5721335dd4ee",
+    "docs/phase42/model_costs.json": "a70661bf334ce2e13383ebe4b6f4cc6f4f07cac81af4f6f39b40948682aa1f57"
+  },
+  "host": "iZuf6ijiuo4o0wtocep289Z",
+  "devices": {
+    "0": [
+      "GPU-6adacb4b-6ea4-b8b7-99c5-24cbd04254fa",
+      "NVIDIA GeForce RTX 4090",
+      "49140"
+    ],
+    "1": [
+      "GPU-c7a374ac-da96-b103-b4bb-2c5d1fe6f533",
+      "NVIDIA GeForce RTX 4090",
+      "49140"
+    ],
+    "2": [
+      "GPU-9e2b94d1-ca52-6986-4897-a9c4de81f640",
+      "NVIDIA GeForce RTX 4090",
+      "49140"
+    ],
+    "3": [
+      "GPU-f980f30b-a43a-b237-1185-2ed12da65c10",
+      "NVIDIA GeForce RTX 4090",
+      "49140"
+    ],
+    "4": [
+      "GPU-8da485ec-12cc-2ab2-8afb-812b1261f5d1",
+      "NVIDIA GeForce RTX 4090",
+      "49140"
+    ],
+    "5": [
+      "GPU-f8b7b25b-f1cf-62c1-bacd-dd96d8c66f1e",
+      "NVIDIA GeForce RTX 4090",
+      "49140"
+    ],
+    "6": [
+      "GPU-f6af08dc-1ef2-f69f-7e8b-7390ff879fda",
+      "NVIDIA GeForce RTX 4090",
+      "49140"
+    ],
+    "7": [
+      "GPU-0cb27197-7d44-39ae-c9ee-623b9b9bb8b7",
+      "NVIDIA GeForce RTX 4090",
+      "49140"
+    ]
+  },
+  "plan_sha256": "e4dd3495061b6f0bd029205766283c14d7f6136f03dd45dba0b590cf19f31660",
+  "data_index_sha256": "40ec44663b6a259b62b9588b41224cd70419c2a22d1c72bc19e391f22cd7ec5e",
+  "baseline_receipt_sha256": "f371eeef738a9a072977a214d98d8be885b3e6ac67a45f01f9ab383aa174f208",
+  "baseline_source_commit": "76456056b2c7a8ebc426ad473f7556b025f7ce68",
+  "resource_authorization": {
+    "gpu_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "max_concurrent": 8,
+    "gpu_hours": 2200,
+    "pilot_gpu_hours": 1200,
+    "preflight_gpu_hours": 24,
+    "confirmation": {
+      "enabled": true,
+      "gpu_hours": 900
+    },
+    "max_vram_gib": 20
+  }
+}

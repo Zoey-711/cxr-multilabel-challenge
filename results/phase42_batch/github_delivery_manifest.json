@@ -1,0 +1,2578 @@
+{
+  "status": "complete",
+  "source_commit": "717a3dd445378ff858951741a2298485220ad4de",
+  "source_text_files": [
+    {
+      "path": "analysis/pilot_per_class_auc.csv",
+      "bytes": 13509,
+      "sha256": "85413c2afde351c4d07cde2840cef0efa299408815cd2ceef87ab8c775f5fb6e"
+    },
+    {
+      "path": "experiments/P42_A01_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "c6433a0804dd107838bf05037012282644c3ea3851d42b2acd52b9cac1e8f0ac"
+    },
+    {
+      "path": "experiments/P42_A01_F02/amp_events.jsonl",
+      "bytes": 946,
+      "sha256": "4deb75112bd394d3fb8b0962f47e587309742803e150e78bb87f91fb9c63fb4a"
+    },
+    {
+      "path": "experiments/P42_A01_F02/benchmark_last_prediction.csv",
+      "bytes": 301,
+      "sha256": "fb1829f285ede073d464bdcd64163770821b6f41532222629f3dcc9659c4eef3"
+    },
+    {
+      "path": "experiments/P42_A01_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "4c1fefdc70c3a24f7925bef1ba384f49c5f6da8af313222202da8ef24dce4d93"
+    },
+    {
+      "path": "experiments/P42_A01_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "29b9762169650ac63cbec641bdb4c7b49e6c28bb2b89bbf2670262a2cacf1092"
+    },
+    {
+      "path": "experiments/P42_A01_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_A01_F02/inference_benchmark.json",
+      "bytes": 497,
+      "sha256": "420c94c88534aeb71ae2d8df87739d9d0c6e9b03d0b18c2c3e29b05adece5d03"
+    },
+    {
+      "path": "experiments/P42_A01_F02/metrics.json",
+      "bytes": 4682,
+      "sha256": "bfa6624401e7ae37fea10c64f5ea8dc276f0af745baa7b93a79cce5f4119b42e"
+    },
+    {
+      "path": "experiments/P42_A01_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "8c975837ebc3af3a79959e8e16cd22439be053d8b6a26de35f066de70db38bd7"
+    },
+    {
+      "path": "experiments/P42_A01_F02/oof_predictions.csv",
+      "bytes": 761153,
+      "sha256": "3c55cddb5c32b8731a8cc9464881093a261dae15fc019f3b72322cc408d5f469"
+    },
+    {
+      "path": "experiments/P42_A01_F02/per_class_metrics.csv",
+      "bytes": 1323,
+      "sha256": "316c7ded9a4ec95092534c1f76b215c91840cc87584565c99e9e728db1ed0126"
+    },
+    {
+      "path": "experiments/P42_A01_F02/resolved_config.yaml",
+      "bytes": 1099,
+      "sha256": "ac27d88d6fbeb250223b2088f9d55194b26232ec5e464b2b6d141ee6c464ed94"
+    },
+    {
+      "path": "experiments/P42_A01_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "b186b7dfbb543d43d0e5d77b3f23e837b992201743db3f2bf43e6a0823820f67"
+    },
+    {
+      "path": "experiments/P42_A01_F02/status.json",
+      "bytes": 143,
+      "sha256": "604e6c10a154c53e2fa15409d15abee29d009ccbf35fa6fbc25a11cbf82a8e6f"
+    },
+    {
+      "path": "experiments/P42_A01_F02/train.log",
+      "bytes": 5504,
+      "sha256": "c6a455b0bfa3b02dc97f8992ecd24a2cd2e9a460ce019ed5c7de5add2e52f62e"
+    },
+    {
+      "path": "experiments/P42_A01_F02/train_history.csv",
+      "bytes": 1925,
+      "sha256": "f12ec2ff0ddc828abcd6c733d687d64c94168a877f7750e8a9e05e44170c58c8"
+    },
+    {
+      "path": "experiments/P42_A01_F02/val_predictions.csv",
+      "bytes": 174405,
+      "sha256": "a3b076c1375c9fcb9f4d8d7fbfbc211138934b1307fc8a659cfe38d09e7b37e4"
+    },
+    {
+      "path": "experiments/P42_A02_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "6a5c756ce2a018ea96d175feddd1e364474ef305215384cbf5be514db416b687"
+    },
+    {
+      "path": "experiments/P42_A02_F02/amp_events.jsonl",
+      "bytes": 947,
+      "sha256": "2b4d877c181019359f95ac89b4b1e06aaf1ae6b033502f801b864cc1922dc497"
+    },
+    {
+      "path": "experiments/P42_A02_F02/benchmark_last_prediction.csv",
+      "bytes": 305,
+      "sha256": "15a0ec15d52ac1ce1c6e452aed65dd2a37b48b68653d1ffde53d3e11fe9e6278"
+    },
+    {
+      "path": "experiments/P42_A02_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "9b56334c6481b228f8059ddfc4b4a9b34b1a425cd8b7c90c4d6ce40bad8fcc1c"
+    },
+    {
+      "path": "experiments/P42_A02_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "87c1804f465d8f3f5e8903850488884f22827276378d677fe2b5b4cd39427311"
+    },
+    {
+      "path": "experiments/P42_A02_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_A02_F02/inference_benchmark.json",
+      "bytes": 498,
+      "sha256": "b3e514c9482754578857156588e8e9a419fc1b9dad0e212a8d6f62b249cb6051"
+    },
+    {
+      "path": "experiments/P42_A02_F02/metrics.json",
+      "bytes": 4668,
+      "sha256": "f4094723458cec04ed7a6fb39932bdeee2a8eccdf34ef8469831351ac1f1fb29"
+    },
+    {
+      "path": "experiments/P42_A02_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "0d393274e0921abed1703ea76808262b2962bcc5bb8f7a9b6984aae9e9332ad1"
+    },
+    {
+      "path": "experiments/P42_A02_F02/oof_predictions.csv",
+      "bytes": 757559,
+      "sha256": "c2e434984e8d835eec5296ace77d8518f84c894f0861e4b5981340b0a877a2a7"
+    },
+    {
+      "path": "experiments/P42_A02_F02/per_class_metrics.csv",
+      "bytes": 1311,
+      "sha256": "863eacf81e965beebfac46760a700533a80f8ff74072f56abd9e8e631b09deb1"
+    },
+    {
+      "path": "experiments/P42_A02_F02/resolved_config.yaml",
+      "bytes": 1087,
+      "sha256": "bc0a775085e3201f98e9b6c08dfe7ab2623c49e8973e5d1e25074ca039aea558"
+    },
+    {
+      "path": "experiments/P42_A02_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "3c0cf925a10b153d4c583deae4fba314c9884dddeea6afe3c9b5c52c788106db"
+    },
+    {
+      "path": "experiments/P42_A02_F02/status.json",
+      "bytes": 141,
+      "sha256": "6a78b262f161ee53eb4bc238a51e18905ea2ae3a4783c9dff4d0958f80a872b1"
+    },
+    {
+      "path": "experiments/P42_A02_F02/train.log",
+      "bytes": 5493,
+      "sha256": "4095f63154360f1b04e6eaae19742208b8c2069c0c52f5d659492b8de050eeeb"
+    },
+    {
+      "path": "experiments/P42_A02_F02/train_history.csv",
+      "bytes": 1913,
+      "sha256": "80a656110c430a75b2d4676433907a47c61fa16f4c487cb24d7acd4434c8d8b3"
+    },
+    {
+      "path": "experiments/P42_A02_F02/val_predictions.csv",
+      "bytes": 173423,
+      "sha256": "773318668e6630180a1bf132dcc0ba41a6f235eb3b0ce393a3c621e26e3d5421"
+    },
+    {
+      "path": "experiments/P42_A04_F02/DONE.json",
+      "bytes": 1712,
+      "sha256": "b406d0a82d1120138d08070d51434be7e7265bf935e772d794768f6decff7e4f"
+    },
+    {
+      "path": "experiments/P42_A04_F02/benchmark_last_prediction.csv",
+      "bytes": 302,
+      "sha256": "c141cf55927c51bfa7c1f59f0a619e596357e7bf284335555872e354d9ce0fb1"
+    },
+    {
+      "path": "experiments/P42_A04_F02/compute_cost.json",
+      "bytes": 248,
+      "sha256": "901f642ef49e2e6a76441655662a462d78bc141f78a7ee49bd7798602b987e87"
+    },
+    {
+      "path": "experiments/P42_A04_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "1d1d11d7d8c37a8b9508c83587b8e002f1cfe4b0e5ccd1e1aa86fd501e71f08b"
+    },
+    {
+      "path": "experiments/P42_A04_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_A04_F02/inference_benchmark.json",
+      "bytes": 498,
+      "sha256": "eaab454677963a15482ee4601675474d8aece55148831424d181dcdeae759a61"
+    },
+    {
+      "path": "experiments/P42_A04_F02/metrics.json",
+      "bytes": 4680,
+      "sha256": "70572281c641c95268e749f0334453636efeb5a9bfb3fa94e11ae780d8316f97"
+    },
+    {
+      "path": "experiments/P42_A04_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "49f988b605bd88094a95acfc0ebaf6ae9671a263df9b0b3e9e915fb11a52e343"
+    },
+    {
+      "path": "experiments/P42_A04_F02/oof_predictions.csv",
+      "bytes": 749617,
+      "sha256": "b494fc9ac692fec168a42aa67764421daf13c508a1c8e4c0a7cd8a818be6803f"
+    },
+    {
+      "path": "experiments/P42_A04_F02/per_class_metrics.csv",
+      "bytes": 1322,
+      "sha256": "0c2302a3fa8be3cee0f79f48d2d420a0bc8e4ef8d049e942af86370bc62ae76e"
+    },
+    {
+      "path": "experiments/P42_A04_F02/resolved_config.yaml",
+      "bytes": 1118,
+      "sha256": "4f6d7408f9ec9031a11fe56a3d7bb83dda81909f33acf3ea2b6c1df59fde6fad"
+    },
+    {
+      "path": "experiments/P42_A04_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "b34981a9216bbfc43e1b9a65b50765a58727421e19115e97c8396f41cde307f3"
+    },
+    {
+      "path": "experiments/P42_A04_F02/status.json",
+      "bytes": 143,
+      "sha256": "93619782245e9e93210983560fe78564fe6c860c3e969743bf26ca2e775aaa42"
+    },
+    {
+      "path": "experiments/P42_A04_F02/train.log",
+      "bytes": 4153,
+      "sha256": "18da1cf895b69e64684711d06040dfea9f536a1c6d41d611d17620fdf7e7c819"
+    },
+    {
+      "path": "experiments/P42_A04_F02/train_history.csv",
+      "bytes": 1777,
+      "sha256": "48a4c1723a67f229cdec975f564509cc4382f453a354556973a8d63d1572bb7f"
+    },
+    {
+      "path": "experiments/P42_A04_F02/val_predictions.csv",
+      "bytes": 171885,
+      "sha256": "bf5b8e41f6fdbe6b82ec9ded9fe3ba76a91dccb31b85d9e127d34dde89a58956"
+    },
+    {
+      "path": "experiments/P42_B01_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "3e0d2ad0131a16283e3e1787ef414029d3d8c1d9138ca7af42b5b75f1cee8aa9"
+    },
+    {
+      "path": "experiments/P42_B01_F02/amp_events.jsonl",
+      "bytes": 346,
+      "sha256": "c74b3eb41e91866e576bf3938bb855409ae1c39672ae13e771c8bd88a9165c96"
+    },
+    {
+      "path": "experiments/P42_B01_F02/benchmark_last_prediction.csv",
+      "bytes": 312,
+      "sha256": "e31dea9fcf3c197c84311b55da0a44047d06f481bb50b75913c7cdfa6ac205f2"
+    },
+    {
+      "path": "experiments/P42_B01_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "f06211f347a63d7f5307df25a3a6a9c1c9f5cd9e19a22b5db934304166eedc12"
+    },
+    {
+      "path": "experiments/P42_B01_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "1e52fe96a6c1ac420b1a6e171e81777fd7849b291c0b73b8ce25a5dcf79a49a2"
+    },
+    {
+      "path": "experiments/P42_B01_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_B01_F02/inference_benchmark.json",
+      "bytes": 498,
+      "sha256": "3fe7e7cc8f93a6ef2bac9c1cb3b7606b3abc302bc859002d1b1a8f89bb51b999"
+    },
+    {
+      "path": "experiments/P42_B01_F02/metrics.json",
+      "bytes": 4696,
+      "sha256": "ec3903c79edaee4c6ac0d91640f5470296f848633cb91971b8a3865313d2990f"
+    },
+    {
+      "path": "experiments/P42_B01_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "fcc1ec47f36446b67b9d2066c5424de04c04a69d6f50d1bb8624a8b749f21499"
+    },
+    {
+      "path": "experiments/P42_B01_F02/oof_predictions.csv",
+      "bytes": 763487,
+      "sha256": "ad3444d84d2f8621d3496056f8861650a8ed861bf64cba88d3486095561ef41c"
+    },
+    {
+      "path": "experiments/P42_B01_F02/per_class_metrics.csv",
+      "bytes": 1338,
+      "sha256": "c82d19ca06cbd4eae37e2cfe7bd8eeadc6b57b056d356778a0bbff5574269689"
+    },
+    {
+      "path": "experiments/P42_B01_F02/resolved_config.yaml",
+      "bytes": 1084,
+      "sha256": "68745846f6fe1797cb27c5a399a5b681fe2b5ca941cd91399fff8b904d5dcfd1"
+    },
+    {
+      "path": "experiments/P42_B01_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "ea0ca67902655bfce967095f0126f86ff35eadb59d41409fb7b315499d247254"
+    },
+    {
+      "path": "experiments/P42_B01_F02/status.json",
+      "bytes": 143,
+      "sha256": "45944c591875f5b53103d5f5869a2f5e53ce63b7f1462e7a10518c0aeef21bf9"
+    },
+    {
+      "path": "experiments/P42_B01_F02/train.log",
+      "bytes": 4908,
+      "sha256": "d06c39df63fb604266c77551d4077899c3fe420c7f989cec7922971fb73a25ce"
+    },
+    {
+      "path": "experiments/P42_B01_F02/train_history.csv",
+      "bytes": 1929,
+      "sha256": "2476150ea35fd35906c59cda003f18a0bf3ef54fd3a6b441d5214782d9c47ea6"
+    },
+    {
+      "path": "experiments/P42_B01_F02/val_predictions.csv",
+      "bytes": 175223,
+      "sha256": "7944a7a4fb11171c774e9e02cd32503368c3a3a3c5cb806abe4fb3492cd34921"
+    },
+    {
+      "path": "experiments/P42_B02_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "4b6b9767002dd83613e5b8a1d2341db03bfb3b5070cd869db623e5d8516b43c8"
+    },
+    {
+      "path": "experiments/P42_B02_F02/amp_events.jsonl",
+      "bytes": 346,
+      "sha256": "c2bb3e380fd8099e5fb84a0f40e69924688e4bb2b6da7d538664195e157c94fd"
+    },
+    {
+      "path": "experiments/P42_B02_F02/benchmark_last_prediction.csv",
+      "bytes": 311,
+      "sha256": "8c9c425e738e2d137b0d2d326013661c511542ecb7b8d499e660f6327b719f5b"
+    },
+    {
+      "path": "experiments/P42_B02_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "5bf9d4905c3eda08cf3078c11fee691231dd21a22077f040407c10cc3c37a878"
+    },
+    {
+      "path": "experiments/P42_B02_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "a465e83589c48e33c1d98e25b29431c58fbbe6cdd66c0b524acc450f898c637b"
+    },
+    {
+      "path": "experiments/P42_B02_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_B02_F02/inference_benchmark.json",
+      "bytes": 496,
+      "sha256": "3f95d1fb63fa4dea34698deedfddbf53756d7f9c580a453648db2e7cd4602020"
+    },
+    {
+      "path": "experiments/P42_B02_F02/metrics.json",
+      "bytes": 4695,
+      "sha256": "7e2b82ce0ea78c59f6abc5e8605ebd11a799fb88475c086a1718fccefcd66531"
+    },
+    {
+      "path": "experiments/P42_B02_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "1f673e20da56074c8270e143d91687c490266b5c92049264f084e69b44c434cb"
+    },
+    {
+      "path": "experiments/P42_B02_F02/oof_predictions.csv",
+      "bytes": 762049,
+      "sha256": "808268c667e892a8aacc968aeca39b1c13b28293df89946289fa4e1fd811aeab"
+    },
+    {
+      "path": "experiments/P42_B02_F02/per_class_metrics.csv",
+      "bytes": 1337,
+      "sha256": "1961cb39eef8c6d55089239445dab9924c6873ce906a246762a9ea3f53c4b2f4"
+    },
+    {
+      "path": "experiments/P42_B02_F02/resolved_config.yaml",
+      "bytes": 1060,
+      "sha256": "407d780b3f5b8ceb9821c1b2380d50fa9866d804a872241cfdb56d645d87c35d"
+    },
+    {
+      "path": "experiments/P42_B02_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "c08a7d6d4577e359abddfe6429fb22b87f25a8785751ad1bfff5942f1a5d9418"
+    },
+    {
+      "path": "experiments/P42_B02_F02/status.json",
+      "bytes": 143,
+      "sha256": "1209122c43e3dcad77c346fef7716e28a19394f54d654055b196a1d98a8a03e9"
+    },
+    {
+      "path": "experiments/P42_B02_F02/train.log",
+      "bytes": 4932,
+      "sha256": "5632dd7069f6418263a486cf0c70af587d90a954ffb169fa0e993a16b27e6c40"
+    },
+    {
+      "path": "experiments/P42_B02_F02/train_history.csv",
+      "bytes": 1953,
+      "sha256": "5e21fc7c31fdc2decd8b2ac067fea3a5ac42239a1c4f3edac826969caacbebea"
+    },
+    {
+      "path": "experiments/P42_B02_F02/val_predictions.csv",
+      "bytes": 174664,
+      "sha256": "05fbb722ce0e3cd2a6ab4cc660de45d3a92595397ae1e1edc5b75e2cfa430171"
+    },
+    {
+      "path": "experiments/P42_B03_F02/DONE.json",
+      "bytes": 1712,
+      "sha256": "11bc91702356a9239f7fc9911a74a2f6f6d4690269d765ebfb3a4854082f7864"
+    },
+    {
+      "path": "experiments/P42_B03_F02/benchmark_last_prediction.csv",
+      "bytes": 307,
+      "sha256": "64173c9794b285ceff2f3c6113064eb8b24b1842a06ec54f67cc832774bbfb5b"
+    },
+    {
+      "path": "experiments/P42_B03_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "b8334693b805014d7504805b62a25b0ec15425335eb0a05b7dde006cd9c56bc9"
+    },
+    {
+      "path": "experiments/P42_B03_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "ebf1b1d77e9109257245fb859d8540eeb314a382dd76f33ef9392a1184982f4a"
+    },
+    {
+      "path": "experiments/P42_B03_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_B03_F02/inference_benchmark.json",
+      "bytes": 499,
+      "sha256": "f5297777cf777f85a2740fdad227fb1cc0697834f86ef2be6e4a52e0af3c8d62"
+    },
+    {
+      "path": "experiments/P42_B03_F02/metrics.json",
+      "bytes": 4706,
+      "sha256": "c6b805b1b7b6377b69ac7117d5abfa2e179168c05b9aa35e05b786456bcf90c0"
+    },
+    {
+      "path": "experiments/P42_B03_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "be1780a0c3950d6f593184ec8d5e834ffbe51f890c23157cf6dd7057054a31ce"
+    },
+    {
+      "path": "experiments/P42_B03_F02/oof_predictions.csv",
+      "bytes": 756955,
+      "sha256": "663080567b1b0141c83a92cd003422f813422b21a808113d2da72f5e78c88a3c"
+    },
+    {
+      "path": "experiments/P42_B03_F02/per_class_metrics.csv",
+      "bytes": 1349,
+      "sha256": "b2010c2553ea5eb1adf4ae5c4108c29e75116ea96f6b712f6bc522698eda4309"
+    },
+    {
+      "path": "experiments/P42_B03_F02/resolved_config.yaml",
+      "bytes": 1074,
+      "sha256": "5b49fb6a4eafa14bccb865fea0c080fc308e30a12f00a9689143e08d81f73892"
+    },
+    {
+      "path": "experiments/P42_B03_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "bd9ee817b100f92f9ba585916cd0094422e3c2c83b2226807a4417ac6c791614"
+    },
+    {
+      "path": "experiments/P42_B03_F02/status.json",
+      "bytes": 142,
+      "sha256": "a94225b5c14b130ef75a7751a198439641849300a24fb45abe3e5e7a49d991d5"
+    },
+    {
+      "path": "experiments/P42_B03_F02/train.log",
+      "bytes": 4164,
+      "sha256": "7fab048b538de4a71c6ccc5c858b4c79967f2e7a7575af272f9b4c987a5d014d"
+    },
+    {
+      "path": "experiments/P42_B03_F02/train_history.csv",
+      "bytes": 1788,
+      "sha256": "403a0714831cb5a5a28b3aa34336701b9a33b599cce29cad7cc153680f5280a3"
+    },
+    {
+      "path": "experiments/P42_B03_F02/val_predictions.csv",
+      "bytes": 173296,
+      "sha256": "4bcddc3ac06ab7f96b920327fa9b6dabee519841eda7b1acfbf9c0c4be3f9a81"
+    },
+    {
+      "path": "experiments/P42_B04_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "a01bb3069a2ec9f5cdf3f9471daa0b630b4210212caa8df0a9b2819a4d920f57"
+    },
+    {
+      "path": "experiments/P42_B04_F02/amp_events.jsonl",
+      "bytes": 1291,
+      "sha256": "66e0a3a7391f0eb1afaaa1f2468ba0ab33f5d6fc5d0992e294c2a1fc5148ab50"
+    },
+    {
+      "path": "experiments/P42_B04_F02/benchmark_last_prediction.csv",
+      "bytes": 316,
+      "sha256": "521de27c9c206205cf7096c08304d75c00d090f4b9952fd53d44b8535c170889"
+    },
+    {
+      "path": "experiments/P42_B04_F02/compute_cost.json",
+      "bytes": 248,
+      "sha256": "66d1902ba664c4fec57bb9e7097e194aae6eae463a9463acd3bc08b8e0feb505"
+    },
+    {
+      "path": "experiments/P42_B04_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "66ab6640b523ea97fbc2666735c7a69a6bbcf913d6a4cd135f81be6e92db5f30"
+    },
+    {
+      "path": "experiments/P42_B04_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_B04_F02/inference_benchmark.json",
+      "bytes": 498,
+      "sha256": "818a0d6fc37fb6271f0a7dc3f20009195f254946d5760982531b197227d0e4d9"
+    },
+    {
+      "path": "experiments/P42_B04_F02/metrics.json",
+      "bytes": 4693,
+      "sha256": "9c8819c69ad724ed7cab45c582472b240fbe16413720ca968ca8ac88f23460ac"
+    },
+    {
+      "path": "experiments/P42_B04_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "c424f7b1fb724b9648823ead9fb21ca7fa7940a209244fdaa47229104c3e3905"
+    },
+    {
+      "path": "experiments/P42_B04_F02/oof_predictions.csv",
+      "bytes": 764880,
+      "sha256": "02088d6d10ca779478753c18e0442b613b804e4519367814aaeeccb6fa043ac1"
+    },
+    {
+      "path": "experiments/P42_B04_F02/per_class_metrics.csv",
+      "bytes": 1335,
+      "sha256": "ce561010ba4d80f33f64ed0a2bf1d49a5a6d02ac8590f586746a7468d638ce27"
+    },
+    {
+      "path": "experiments/P42_B04_F02/resolved_config.yaml",
+      "bytes": 1099,
+      "sha256": "35d714375b6bd73a5c624ffafde557a210069b50331fbc22078a0688cb422869"
+    },
+    {
+      "path": "experiments/P42_B04_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "0ea1808d83bdcd76dba988ad60d56153ab090b6cf39cc28b9729b8bf1c183fab"
+    },
+    {
+      "path": "experiments/P42_B04_F02/status.json",
+      "bytes": 143,
+      "sha256": "ba3933f513cae5bab88ea8207f7c6fc29dfb7b84965c032cb6c12c2ed82849ff"
+    },
+    {
+      "path": "experiments/P42_B04_F02/train.log",
+      "bytes": 6285,
+      "sha256": "f384e7f4e3acc70cb13a17aca7433f39f899a38144309e27099aa36c9d4598b1"
+    },
+    {
+      "path": "experiments/P42_B04_F02/train_history.csv",
+      "bytes": 2104,
+      "sha256": "9044c9708712d002c29fc11548de655a1b7713f2856b82167b057be160516b28"
+    },
+    {
+      "path": "experiments/P42_B04_F02/val_predictions.csv",
+      "bytes": 174942,
+      "sha256": "780cdcaaa2e5dc02f327bb4c06a358cf8d2702b016d97fc689bac7a128c2da90"
+    },
+    {
+      "path": "experiments/P42_C01_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "0d1c6abde0aa88b8b7b7cb3c3176db910ba0107a21267bf4ee0cf54995697974"
+    },
+    {
+      "path": "experiments/P42_C01_F02/amp_events.jsonl",
+      "bytes": 948,
+      "sha256": "2f102f6dd452a4bbfd83601dec05180dddf3588e87e879ab9a4468fa8eeb487d"
+    },
+    {
+      "path": "experiments/P42_C01_F02/benchmark_last_prediction.csv",
+      "bytes": 326,
+      "sha256": "7af64b64cd218945a00faf0e3f92c350eb23c9d7f4e9af58fd2925875c48cb4c"
+    },
+    {
+      "path": "experiments/P42_C01_F02/compute_cost.json",
+      "bytes": 249,
+      "sha256": "12f3cfa34cdd2011efb6db6187986f3a42b91f2d4920f5d825abae47ffe6993d"
+    },
+    {
+      "path": "experiments/P42_C01_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "933364f8d3141af4a0c4d6040a9eba9e606b9bec3a1fb676e6507278d23afda1"
+    },
+    {
+      "path": "experiments/P42_C01_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_C01_F02/inference_benchmark.json",
+      "bytes": 499,
+      "sha256": "e54bd2971e17e1d4db831af3e91493e379a67f474ca651e107e5ef36a786bf57"
+    },
+    {
+      "path": "experiments/P42_C01_F02/metrics.json",
+      "bytes": 4728,
+      "sha256": "816eff46daf6a16a1ed19eaac3d0ca2745c1e9a89adbe9885efd9d79fa0bd907"
+    },
+    {
+      "path": "experiments/P42_C01_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "e6afe2e3157ba02228cb45084c8ee609880059f2edd01ff00ff864239da1280d"
+    },
+    {
+      "path": "experiments/P42_C01_F02/oof_predictions.csv",
+      "bytes": 853448,
+      "sha256": "b6d372a4896af7bfb7ef8040632ffa8145e8b81731cc4fa6f1599a88a77e658c"
+    },
+    {
+      "path": "experiments/P42_C01_F02/per_class_metrics.csv",
+      "bytes": 1369,
+      "sha256": "8aafd5a75f5ce42005a6bc8e3619d1d2a5a966f93cf4954978f8821d20dfb643"
+    },
+    {
+      "path": "experiments/P42_C01_F02/resolved_config.yaml",
+      "bytes": 1094,
+      "sha256": "9452ebc8a75f3e2ac0af88a0a9444dd4c73686a216711fcc1a23252ebe32d9c3"
+    },
+    {
+      "path": "experiments/P42_C01_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "0121a953f9aba9ea7e1007e9d1bc419b21c3af7cf8457b15c7ec75a4d967b3b5"
+    },
+    {
+      "path": "experiments/P42_C01_F02/status.json",
+      "bytes": 143,
+      "sha256": "8e3be0d9598143aa5e19196ac94c993060460ded01c56fd078233a24513441b6"
+    },
+    {
+      "path": "experiments/P42_C01_F02/train.log",
+      "bytes": 5530,
+      "sha256": "bdda773919c26a2076d1ab1ead642688a5e1d5f35d8f49bd2928b4225be24021"
+    },
+    {
+      "path": "experiments/P42_C01_F02/train_history.csv",
+      "bytes": 1949,
+      "sha256": "c9c95074db260e69a0562f5c06b0a02ba4469337caf40aec7ba248efb176b2e2"
+    },
+    {
+      "path": "experiments/P42_C01_F02/val_predictions.csv",
+      "bytes": 196204,
+      "sha256": "efbc84479a51565d5c3e35ad3826b9966eeff5b5514e4ab5be9f4f49bae16132"
+    },
+    {
+      "path": "experiments/P42_C02_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "61ee7d8c6d4519790d40299e93af3b79314f7e5aaac8508885934a28700a3f08"
+    },
+    {
+      "path": "experiments/P42_C02_F02/amp_events.jsonl",
+      "bytes": 1286,
+      "sha256": "e5ffb5615ef5ab21bb5bdb994e8ac22d0d39cf4211d3b3ddac92c1f81ca54be2"
+    },
+    {
+      "path": "experiments/P42_C02_F02/benchmark_last_prediction.csv",
+      "bytes": 331,
+      "sha256": "987b53fc45bb3a88f792f0bb868ba5495f696762550c6bb40ee176451e9d15d2"
+    },
+    {
+      "path": "experiments/P42_C02_F02/compute_cost.json",
+      "bytes": 249,
+      "sha256": "f8326c166991ac468af77ce2e3016cbce7cc8fa0ac4b3e45403815b5cd65368f"
+    },
+    {
+      "path": "experiments/P42_C02_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "4fbb6ba069832adc0fdba8ec09dda630e48c3dfe92f3d04d5f7d59bc48083e34"
+    },
+    {
+      "path": "experiments/P42_C02_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_C02_F02/inference_benchmark.json",
+      "bytes": 498,
+      "sha256": "5ffbe81f0931f1da96b46d1eb62a34335922a8dcd6adb67102624d9cd167acd5"
+    },
+    {
+      "path": "experiments/P42_C02_F02/metrics.json",
+      "bytes": 4666,
+      "sha256": "81030774141278fe8eb4594c5c67eeb11bc3a8bd2a3869b00bd09e9f83e6c2fd"
+    },
+    {
+      "path": "experiments/P42_C02_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "33593594ee4bc88c331c60153037b25c2d1519aba30a5a28de5301adbe01e7a8"
+    },
+    {
+      "path": "experiments/P42_C02_F02/oof_predictions.csv",
+      "bytes": 859009,
+      "sha256": "27d415dcfcf32f4b8dfef087b2c6098c89658107fb4e8b7256ae1ad95337746c"
+    },
+    {
+      "path": "experiments/P42_C02_F02/per_class_metrics.csv",
+      "bytes": 1307,
+      "sha256": "e7f002e2d75cc454ec13e06db519b4a7651d15678abac79f66a35eab043b7790"
+    },
+    {
+      "path": "experiments/P42_C02_F02/resolved_config.yaml",
+      "bytes": 1108,
+      "sha256": "54339f9154f08befa2b203209a4288e89aabe2da62d8969c989434841f7e180d"
+    },
+    {
+      "path": "experiments/P42_C02_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "78b8f9dd4cb99c201a49ec4223e5a1610b4304528cf43aa8aaa8fd6e248bc118"
+    },
+    {
+      "path": "experiments/P42_C02_F02/status.json",
+      "bytes": 143,
+      "sha256": "fabbfcaeacdf8ee3ca3f7729ebe4e3d5168d8cf330e9c524cd6bd36d0207b155"
+    },
+    {
+      "path": "experiments/P42_C02_F02/train.log",
+      "bytes": 6299,
+      "sha256": "e9c18b1c181d97331d44854be9fbd21578891a0588329911e136b6c424901758"
+    },
+    {
+      "path": "experiments/P42_C02_F02/train_history.csv",
+      "bytes": 2123,
+      "sha256": "8b3ab28b49849680573cf3b86b68f6952c63e7ddf84c4ee0a9ce93b1060b5b54"
+    },
+    {
+      "path": "experiments/P42_C02_F02/val_predictions.csv",
+      "bytes": 197513,
+      "sha256": "deada5ba3e009d54cf6b17350671e6d713756e67b0b8a627d307e695cc81c0fe"
+    },
+    {
+      "path": "experiments/P42_C03_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "a39a1f643b10f48b2f01cb179ffb9335686d83413883e96f8c2070f0ffc96f78"
+    },
+    {
+      "path": "experiments/P42_C03_F02/amp_events.jsonl",
+      "bytes": 5521,
+      "sha256": "0dbc089b9f38165602672bdbd440c51c3b53560e408b32b95e1433ed141d0326"
+    },
+    {
+      "path": "experiments/P42_C03_F02/benchmark_last_prediction.csv",
+      "bytes": 318,
+      "sha256": "75480fd5f7030cd055ad1dbe57373e2704539222be86f03189b125da98878d86"
+    },
+    {
+      "path": "experiments/P42_C03_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "cdfae1af9ec007aefae82696ab144f84b6661744eb9cfdcdbbacc9d6a090a162"
+    },
+    {
+      "path": "experiments/P42_C03_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "bfbc06359f994b3d7dbab232bdc5be4289a2f9ce39ce4c9f7bf576299e706d24"
+    },
+    {
+      "path": "experiments/P42_C03_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_C03_F02/inference_benchmark.json",
+      "bytes": 498,
+      "sha256": "3b1d9f51fe65235662b0bc9ba20ee8a4139bb63b1dac83c808095f9ff21483c7"
+    },
+    {
+      "path": "experiments/P42_C03_F02/metrics.json",
+      "bytes": 4699,
+      "sha256": "18e12b9a50db051e614a3b0901b78061477d07de0f7aa4a3104a0760ddecc47c"
+    },
+    {
+      "path": "experiments/P42_C03_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "ec42128970ca82fdc3791561ed0f8965b373bd2f67b9f1268474010c108231e4"
+    },
+    {
+      "path": "experiments/P42_C03_F02/oof_predictions.csv",
+      "bytes": 842363,
+      "sha256": "a7446fb2f1b54b775175ff51f56683cf137dff5814147fcbb7c7d7d3c574a2e8"
+    },
+    {
+      "path": "experiments/P42_C03_F02/per_class_metrics.csv",
+      "bytes": 1339,
+      "sha256": "efd2b661c8f1cd0812472e6aedd8ba5673b40ca92c9f38abb2c8a6b3a1bfa157"
+    },
+    {
+      "path": "experiments/P42_C03_F02/resolved_config.yaml",
+      "bytes": 1116,
+      "sha256": "e540c1aa9e31408ae83fd99d2ea6d261af797f6fa9dff777aed687979f4d1e0a"
+    },
+    {
+      "path": "experiments/P42_C03_F02/run_manifest.json",
+      "bytes": 808,
+      "sha256": "e1d26998559c493b2ab8c848f03ac1906e9f423dce6d27610f32bda790742b75"
+    },
+    {
+      "path": "experiments/P42_C03_F02/status.json",
+      "bytes": 144,
+      "sha256": "ad1db86f107cdbca0553f831a674244ddba64cef9a36112ef01f5110620f3794"
+    },
+    {
+      "path": "experiments/P42_C03_F02/train.log",
+      "bytes": 16347,
+      "sha256": "73e9026d389167398d36b23e341f7106df8a72e2d806302bc77f69b19f73e9b3"
+    },
+    {
+      "path": "experiments/P42_C03_F02/train_history.csv",
+      "bytes": 4400,
+      "sha256": "af4e6507abd85d9185098da908002e110100db545b88d29616e80c209d540f6c"
+    },
+    {
+      "path": "experiments/P42_C03_F02/val_predictions.csv",
+      "bytes": 193893,
+      "sha256": "2a3f5e1ed2f9650445c53ba1e8eac70b7c392ea783009926dd13ea3d79003d86"
+    },
+    {
+      "path": "experiments/P42_C04_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "c2707182b3e4adb7b0820c2cd8e48209525e9f67cafc08b06692c21c590ab966"
+    },
+    {
+      "path": "experiments/P42_C04_F02/amp_events.jsonl",
+      "bytes": 948,
+      "sha256": "5d9d5a22498bb7a2dc40272b1b087ee707478b60c755df79575c6be55258b0a2"
+    },
+    {
+      "path": "experiments/P42_C04_F02/benchmark_last_prediction.csv",
+      "bytes": 296,
+      "sha256": "5322f72b34ccaef5b6422d0e62e4eaa6f4038f9299b03f50e1875c74054393ea"
+    },
+    {
+      "path": "experiments/P42_C04_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "e0c0e7c751c0a7bf640bf2a224a793663d24f83908122d71348a51d0cdc424f4"
+    },
+    {
+      "path": "experiments/P42_C04_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "4ec2862e4e8218cb68a6d1691b324afff2d3f0d02c96aceab4c0f00ba274f4c3"
+    },
+    {
+      "path": "experiments/P42_C04_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_C04_F02/inference_benchmark.json",
+      "bytes": 497,
+      "sha256": "b9d9aca8a786a90c22b19a29e784376b3af344ce4924ad4a0ecc7b957138dd9d"
+    },
+    {
+      "path": "experiments/P42_C04_F02/metrics.json",
+      "bytes": 4705,
+      "sha256": "574cfec52ce11e4f9ff6bbcd3b13eb544f26f5f7cbae8982130949ffe4b642fa"
+    },
+    {
+      "path": "experiments/P42_C04_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "87855692ee6878e52486a2a78d1990d0ebb529bc6ae7c88bd3b7ea1870dae635"
+    },
+    {
+      "path": "experiments/P42_C04_F02/oof_predictions.csv",
+      "bytes": 762123,
+      "sha256": "4a23fda492c6e4c7c5b168d38f2741ca2bf95ea0893c1bd281b03f07a7a71ae4"
+    },
+    {
+      "path": "experiments/P42_C04_F02/per_class_metrics.csv",
+      "bytes": 1346,
+      "sha256": "f5643ef22fbaa6759c8d569389610b293e966066f46433b8a8bc7b0cacff6f18"
+    },
+    {
+      "path": "experiments/P42_C04_F02/resolved_config.yaml",
+      "bytes": 1089,
+      "sha256": "e73d0cc6dbddd9d8d11063c80edeadc6b2917c0cfc7cda7e6940a57953160532"
+    },
+    {
+      "path": "experiments/P42_C04_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "41ecf2ec8922d3886f24f8de0ef2482ed0f89003cdd8a5d994a19fdefdef37b8"
+    },
+    {
+      "path": "experiments/P42_C04_F02/status.json",
+      "bytes": 143,
+      "sha256": "623a62c0b106376bab74e7c9b8c6f7826df995c3eb3368026df508df27b1e93d"
+    },
+    {
+      "path": "experiments/P42_C04_F02/train.log",
+      "bytes": 5521,
+      "sha256": "b976623b70f771ff70731a73f2b20e380d47206f8842b6b8a9f11ca5bc456f64"
+    },
+    {
+      "path": "experiments/P42_C04_F02/train_history.csv",
+      "bytes": 1940,
+      "sha256": "7da64936f28e2bd806086b2f0c2b90301477db15200fa6602b75e8754ed62957"
+    },
+    {
+      "path": "experiments/P42_C04_F02/val_predictions.csv",
+      "bytes": 174427,
+      "sha256": "6d45d0a3018b65716317ff7d9141ca26d5b71d2212a77a2e9637c2e23da0650b"
+    },
+    {
+      "path": "experiments/P42_D01_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "ae12a54e6159acbba8b3840a3ba275ef01c2467ac87e5f577d499f03ce67f6f1"
+    },
+    {
+      "path": "experiments/P42_D01_F02/amp_events.jsonl",
+      "bytes": 345,
+      "sha256": "c3606550679bc4e881af6920f4ef4727971f6eb75734ef0c0b52164e9ca96cef"
+    },
+    {
+      "path": "experiments/P42_D01_F02/benchmark_last_prediction.csv",
+      "bytes": 305,
+      "sha256": "bdcd39a7d4004488588c3b75867b6fe6ad8debca04e86320a4a7ecc3f2650c6a"
+    },
+    {
+      "path": "experiments/P42_D01_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "d309faac8783f89eb3773bb6fcadbe9388d205e8748d1fe12d3326fb3f4211ff"
+    },
+    {
+      "path": "experiments/P42_D01_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "04852c3f072779eafaa9fc4d094ae120ef286f158a0e1ac8d7874a4121029aeb"
+    },
+    {
+      "path": "experiments/P42_D01_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_D01_F02/inference_benchmark.json",
+      "bytes": 497,
+      "sha256": "70d59358ed989d567be324b6660534a722464a5e1243934e2b42678a21f39ff9"
+    },
+    {
+      "path": "experiments/P42_D01_F02/metrics.json",
+      "bytes": 4709,
+      "sha256": "65b0b319c89672a5cfa0ee3db1d34efb5bb5d6e329d1f8423a253cd1df1d8cf2"
+    },
+    {
+      "path": "experiments/P42_D01_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "11e5384a49a80233eab31ae5ec286511b9fe6dcd1d928c4dc0ffbd495d9f98c0"
+    },
+    {
+      "path": "experiments/P42_D01_F02/oof_predictions.csv",
+      "bytes": 761759,
+      "sha256": "3123ab7a86bb513c15f19afe3d758c8afcf3eda419cab287a9eb20d659d7216f"
+    },
+    {
+      "path": "experiments/P42_D01_F02/per_class_metrics.csv",
+      "bytes": 1351,
+      "sha256": "845d99078754ee76ffc1e63282e55825517dc5bbf642bce1ca72543040fd3531"
+    },
+    {
+      "path": "experiments/P42_D01_F02/resolved_config.yaml",
+      "bytes": 1078,
+      "sha256": "12b16ba6bc3970081d6c915d5b95e0ab2054eb4cdc996444c1ce1c07c5a04fe8"
+    },
+    {
+      "path": "experiments/P42_D01_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "a435d5dfb3ac12f634a2f4ea61fa06a5d2867d0156b959529d1ad2d4c220191b"
+    },
+    {
+      "path": "experiments/P42_D01_F02/status.json",
+      "bytes": 143,
+      "sha256": "65bbf2460f4ef4976588cb814621d9f7a8ba51f2f976b1e4762c78c1f8dc8312"
+    },
+    {
+      "path": "experiments/P42_D01_F02/train.log",
+      "bytes": 4936,
+      "sha256": "c15bbc184739b96ae682cf065e62b4b19163bf877e76899ef21188ae8400237e"
+    },
+    {
+      "path": "experiments/P42_D01_F02/train_history.csv",
+      "bytes": 1958,
+      "sha256": "be07647b0be01a20947008707cbc9138f92dbfe2a4bc695913798b90d1ddd4fb"
+    },
+    {
+      "path": "experiments/P42_D01_F02/val_predictions.csv",
+      "bytes": 174499,
+      "sha256": "87eb25d41232348bdcca2c24531dfd690e33eb93632b7bd29d58f1cce673a530"
+    },
+    {
+      "path": "experiments/P42_D02_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "34bcb36d81831b25016b1a514903b21217d6358701fa270cb4e28590c5c5460e"
+    },
+    {
+      "path": "experiments/P42_D02_F02/amp_events.jsonl",
+      "bytes": 947,
+      "sha256": "b4dff92c8dd7565f6d0e4232abcf478684af5a8adf212cdfa732eedbf5bb313d"
+    },
+    {
+      "path": "experiments/P42_D02_F02/benchmark_last_prediction.csv",
+      "bytes": 311,
+      "sha256": "e383112ff4c0c5520439966ba6b10e148d1b1c86fe0740910c8af633c5a82354"
+    },
+    {
+      "path": "experiments/P42_D02_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "9eca07b71267c18eb88de3fcfd50618e2ce6500267910db33ca0256187d2adcb"
+    },
+    {
+      "path": "experiments/P42_D02_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "5723864263db64c9bbf7686cf4c25b84cc3f4896a3308aafedf37f28255e98e0"
+    },
+    {
+      "path": "experiments/P42_D02_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_D02_F02/inference_benchmark.json",
+      "bytes": 497,
+      "sha256": "ff699dff914147b51bd1e31e016650ae445ea9f56c71f484dab07b3a0db8d7a1"
+    },
+    {
+      "path": "experiments/P42_D02_F02/metrics.json",
+      "bytes": 4695,
+      "sha256": "46fc6bfda3d4553cbf2cf8b7f3489b9d1c0b238734108c1b5a00e03608006eab"
+    },
+    {
+      "path": "experiments/P42_D02_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "4326e6558e0397cf632c80a625d238a61652e9d8d900c0882b1194a421d93d19"
+    },
+    {
+      "path": "experiments/P42_D02_F02/oof_predictions.csv",
+      "bytes": 762606,
+      "sha256": "e082b39b8b7c12f4fcd3e0f7d7530cf0961a1b0378478ff3fa07eda97bb2c79d"
+    },
+    {
+      "path": "experiments/P42_D02_F02/per_class_metrics.csv",
+      "bytes": 1337,
+      "sha256": "71ba92aa2e9a57c168967ee5f3bd7b2b97be883eb00dd2ac82d1e103bb8ac8af"
+    },
+    {
+      "path": "experiments/P42_D02_F02/resolved_config.yaml",
+      "bytes": 1083,
+      "sha256": "03d9abe0a1dd3cbb151413f271da6ef81eb6bd2e99df78c6c6903365dc0833fa"
+    },
+    {
+      "path": "experiments/P42_D02_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "8b5281861c2c833d39bbe8ec750c3bdf5d8303ad5dc6a16bf43e80d753ede5fa"
+    },
+    {
+      "path": "experiments/P42_D02_F02/status.json",
+      "bytes": 143,
+      "sha256": "b98d9cc1e4fe0ebeb1610c7a7878842c28105e8c4ad079498193176e41cda634"
+    },
+    {
+      "path": "experiments/P42_D02_F02/train.log",
+      "bytes": 5458,
+      "sha256": "3ca587c9fecfbe5536085eb5de6ceedb2c9c1665e0d22a4f794f34a131dd4354"
+    },
+    {
+      "path": "experiments/P42_D02_F02/train_history.csv",
+      "bytes": 1878,
+      "sha256": "416298e720ca2c56e43f12e18fb3cb7470d5006d86202a165b4bb57f8b837800"
+    },
+    {
+      "path": "experiments/P42_D02_F02/val_predictions.csv",
+      "bytes": 174920,
+      "sha256": "556065469e530eeb3ca9f288939a42d56ee556fe4fabc3b5a36a87d28adf8a3e"
+    },
+    {
+      "path": "experiments/P42_D03_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "5639edf5630498a392f91d72ffd280acd7bd98387a2ccbe977bdb5e9917662b9"
+    },
+    {
+      "path": "experiments/P42_D03_F02/amp_events.jsonl",
+      "bytes": 346,
+      "sha256": "16c217b1369bda05dd6f090fdea2b1a433c1dcf2a856204e500a39ff2a11c655"
+    },
+    {
+      "path": "experiments/P42_D03_F02/benchmark_last_prediction.csv",
+      "bytes": 299,
+      "sha256": "bab30546a034f4952a990a115b001467b8a9d1eac345459f74f3996a704daa8a"
+    },
+    {
+      "path": "experiments/P42_D03_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "c6c45112b00854a037c53e4e45f7165acaa648673dfde4a0759e567d3aa58617"
+    },
+    {
+      "path": "experiments/P42_D03_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "fcdc6f3feb4ff8805bb91fc458045b6f8a50bc10833b6f16b95fe1a508a3c675"
+    },
+    {
+      "path": "experiments/P42_D03_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_D03_F02/inference_benchmark.json",
+      "bytes": 499,
+      "sha256": "8195e617e3057194d48b577fbde6ec0e538dd500c41791a280393cb8aa0ee68c"
+    },
+    {
+      "path": "experiments/P42_D03_F02/metrics.json",
+      "bytes": 4638,
+      "sha256": "b092a937d46b40a02f6b3ea6c80fcdc17f650338f4dc5931b5e0a8ef320dece1"
+    },
+    {
+      "path": "experiments/P42_D03_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "743224052b85761f5507903a0e0e55b0998f393156f6fec8c93838c326bc24df"
+    },
+    {
+      "path": "experiments/P42_D03_F02/oof_predictions.csv",
+      "bytes": 759202,
+      "sha256": "9bea713e42c8fe2f175316f6abbd2e7826b65ff641da90ff62b0d74feb99aeeb"
+    },
+    {
+      "path": "experiments/P42_D03_F02/per_class_metrics.csv",
+      "bytes": 1282,
+      "sha256": "4860fe18c953bbdf590bced8ab23b21109e1778b8f1f8d6ad4fff3b1f73b3add"
+    },
+    {
+      "path": "experiments/P42_D03_F02/resolved_config.yaml",
+      "bytes": 1085,
+      "sha256": "53ee80aeeb1d65c0a30659e5378bbb4d35f77dd3b9e0bb42402777de78a70f87"
+    },
+    {
+      "path": "experiments/P42_D03_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "5f3ed222bc83f9b8e8bf8e1d37a6cb1a9cb1a6cec2ac7b360ef122024f6f88dd"
+    },
+    {
+      "path": "experiments/P42_D03_F02/status.json",
+      "bytes": 143,
+      "sha256": "5d1450020a84682a8d1718cf2ec387fc2f0cbd50a1393dc7eaa7853d4cbe1681"
+    },
+    {
+      "path": "experiments/P42_D03_F02/train.log",
+      "bytes": 4937,
+      "sha256": "ab8d2574ae5bf112d502129e89e1c6c85ea3a99ab5022a2207f88bf8da7333ae"
+    },
+    {
+      "path": "experiments/P42_D03_F02/train_history.csv",
+      "bytes": 1958,
+      "sha256": "5101a728ee9c9eb4270222c7057eb013fbf6e95c22fcd44afd1de1b9de8ce979"
+    },
+    {
+      "path": "experiments/P42_D03_F02/val_predictions.csv",
+      "bytes": 174286,
+      "sha256": "fe1f7084ecdd49bac05ff3d5addfca498c2961f56beae272ead82aebf37b0bab"
+    },
+    {
+      "path": "experiments/P42_D04_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "721f74f98c1e270c8fb4d33914ff57364a9f25aac110e40c0d574a49012578f8"
+    },
+    {
+      "path": "experiments/P42_D04_F02/amp_events.jsonl",
+      "bytes": 947,
+      "sha256": "6a972f4f6cce1bbae877b0002ca2a06b35bb9eeb6b892424224d575b4868c3c4"
+    },
+    {
+      "path": "experiments/P42_D04_F02/benchmark_last_prediction.csv",
+      "bytes": 300,
+      "sha256": "098a675cb04ca6738a5f3d1101a6577388bf07e2dd6f2eb8f8d17b4c817c2e2f"
+    },
+    {
+      "path": "experiments/P42_D04_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "57abe1f0d407e893e1bd8c4004a1b278ed3488401c6bb75b7e21ff5694ecc22a"
+    },
+    {
+      "path": "experiments/P42_D04_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "5f1d0c84940168ad1c352efc821bacbd96287574123d2e2ba9f41ae247c805ed"
+    },
+    {
+      "path": "experiments/P42_D04_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_D04_F02/inference_benchmark.json",
+      "bytes": 499,
+      "sha256": "d081bc359322c9478373127583df36256e721643c11a9bbad8845e32915f10ec"
+    },
+    {
+      "path": "experiments/P42_D04_F02/metrics.json",
+      "bytes": 4742,
+      "sha256": "2e9cbec951d437e4dd90f6dd2b2fcabba7fda61bee6249103e9621b2247a32f9"
+    },
+    {
+      "path": "experiments/P42_D04_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "f3f2f4bde3581557d0812971cb1e811ab7b313335621b87243329f00bd3795df"
+    },
+    {
+      "path": "experiments/P42_D04_F02/oof_predictions.csv",
+      "bytes": 761880,
+      "sha256": "8412d1f19abb28b57d421ca6356aa1b4428aa56cbd5acc1543c9e9c0b0d8dc26"
+    },
+    {
+      "path": "experiments/P42_D04_F02/per_class_metrics.csv",
+      "bytes": 1384,
+      "sha256": "596bf357404eabc8c3194ea595a6428a97162970b1bd86df2df5cd48736cf1f1"
+    },
+    {
+      "path": "experiments/P42_D04_F02/resolved_config.yaml",
+      "bytes": 1072,
+      "sha256": "86fb06d91c656d7545f457559e5eb2bf470a9b69d19db9d2b66b48f7d81b2afc"
+    },
+    {
+      "path": "experiments/P42_D04_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "b162ccfa0c490efd3f087b9207a102fa4bb3ecc1f715af34c64fab83d51db8e3"
+    },
+    {
+      "path": "experiments/P42_D04_F02/status.json",
+      "bytes": 143,
+      "sha256": "d8efd270d541a03edec8d88d83eed8c62dc3574805edd29dfe84e877d04f2ca1"
+    },
+    {
+      "path": "experiments/P42_D04_F02/train.log",
+      "bytes": 5534,
+      "sha256": "5836e146d497746a186ab5799b7d0d2c774435995fe60db5742503f5a0ebe46a"
+    },
+    {
+      "path": "experiments/P42_D04_F02/train_history.csv",
+      "bytes": 1954,
+      "sha256": "94c6873913c603aaa09ec4f93e2a5820ba0d6b4b881d59ed307e36899cceadb4"
+    },
+    {
+      "path": "experiments/P42_D04_F02/val_predictions.csv",
+      "bytes": 174646,
+      "sha256": "8be7fbc0d6fe34de934a224b69127b45a749eee2e38d8726eaca997537e31bee"
+    },
+    {
+      "path": "experiments/P42_E03_F02/DONE.json",
+      "bytes": 1712,
+      "sha256": "49a59e6dce0b67cce81437d3f6cfdd986581b649c82a58867f5fb1772665f357"
+    },
+    {
+      "path": "experiments/P42_E03_F02/benchmark_last_prediction.csv",
+      "bytes": 289,
+      "sha256": "82b3d62c8a5a588177b6a6c4e07511ab3ef14637fb166078c296e5ab980787d7"
+    },
+    {
+      "path": "experiments/P42_E03_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "39fe7f14c6bb1020fd0f46d955525c6c31df398c22b8f11c068b4e2da9adc421"
+    },
+    {
+      "path": "experiments/P42_E03_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "23a9d16d86247e71860b04ab2f36d611997b04d15a02abe96509cca40a3ce334"
+    },
+    {
+      "path": "experiments/P42_E03_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_E03_F02/inference_benchmark.json",
+      "bytes": 498,
+      "sha256": "59d49fdbffdbdf7c69f29670854f3f8e2e12539d9de495f348d9ef27e5a90944"
+    },
+    {
+      "path": "experiments/P42_E03_F02/metrics.json",
+      "bytes": 4663,
+      "sha256": "558c66d1ff29a5a201eb0d38fa0fec94e7dd3329c34d0ee52c4e9a01d210bffa"
+    },
+    {
+      "path": "experiments/P42_E03_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "364b94fa147a5d7e5bb34e11f6f3babd3475d4fe1fe3b88788f5e97770d829d9"
+    },
+    {
+      "path": "experiments/P42_E03_F02/oof_predictions.csv",
+      "bytes": 719644,
+      "sha256": "c67e2fc4259eba1ce2693f1a5667461194d5daf12fcd0530b896645d979e2511"
+    },
+    {
+      "path": "experiments/P42_E03_F02/per_class_metrics.csv",
+      "bytes": 1307,
+      "sha256": "af07a3e63baf1ea441d9007be0f0d5bcdc6646ddf11a537ca29383c99ef3ce39"
+    },
+    {
+      "path": "experiments/P42_E03_F02/resolved_config.yaml",
+      "bytes": 1083,
+      "sha256": "1d5001f6f4d799aaa8ceead38b8a322ce385916a0d90589dee195c862daca0de"
+    },
+    {
+      "path": "experiments/P42_E03_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "70224fccfce76491e3ffde45bf0fa55d535931ac945aa494eca4384479f452ee"
+    },
+    {
+      "path": "experiments/P42_E03_F02/status.json",
+      "bytes": 143,
+      "sha256": "1ecce84a762a9030dc645f51c6b92f42d77638878bf11d6f5b695462e8a76385"
+    },
+    {
+      "path": "experiments/P42_E03_F02/train.log",
+      "bytes": 4162,
+      "sha256": "b15489038b41d44ddfb7713e085f8d27c1c15e764b557d950ff2fe894cea8a3e"
+    },
+    {
+      "path": "experiments/P42_E03_F02/train_history.csv",
+      "bytes": 1786,
+      "sha256": "1ff4aae3a3b7670212f20583342240654f54759bfb2944a76558aea259f5b6bd"
+    },
+    {
+      "path": "experiments/P42_E03_F02/val_predictions.csv",
+      "bytes": 165463,
+      "sha256": "351a3f8933caee049572a7f57661804fd832235d5cb6115b58241c20948dd11c"
+    },
+    {
+      "path": "experiments/P42_E04_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "b4071912b6773d38d55e8d69641e3cc90d7f98ae4babcf6c73eaca09b4efefbf"
+    },
+    {
+      "path": "experiments/P42_E04_F02/amp_events.jsonl",
+      "bytes": 337,
+      "sha256": "96ef0bf464f2c87ce99c7963c56da0fd77cc24ff08fc1c0c768dd39bae5912b6"
+    },
+    {
+      "path": "experiments/P42_E04_F02/benchmark_last_prediction.csv",
+      "bytes": 308,
+      "sha256": "0391456e16a7ac690af409f96810a9d34541c3b2ca56e442f6f395228a15523b"
+    },
+    {
+      "path": "experiments/P42_E04_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "39fe7f14c6bb1020fd0f46d955525c6c31df398c22b8f11c068b4e2da9adc421"
+    },
+    {
+      "path": "experiments/P42_E04_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "5f1db4ab4f3add33cc7beab643f13920a1d19d33124f256ea24c9c84a88dfe7a"
+    },
+    {
+      "path": "experiments/P42_E04_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_E04_F02/inference_benchmark.json",
+      "bytes": 498,
+      "sha256": "bbb453a3420de40445d9e0858f390845cf1a83386d1b7d030f6ffab7b8f2229b"
+    },
+    {
+      "path": "experiments/P42_E04_F02/metrics.json",
+      "bytes": 4691,
+      "sha256": "a66f36180654d3be6978010a87431c06279dc21558aedac47cfa2c65154ebcf9"
+    },
+    {
+      "path": "experiments/P42_E04_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "36646ad30b4fdb2392dcc10fa43ef5449ead153c3e8404153496021200bf2f6b"
+    },
+    {
+      "path": "experiments/P42_E04_F02/oof_predictions.csv",
+      "bytes": 754773,
+      "sha256": "f3548f2c74905c1e6aa828d5260196e3e141dc6d5750e20f219784ae92e4f652"
+    },
+    {
+      "path": "experiments/P42_E04_F02/per_class_metrics.csv",
+      "bytes": 1334,
+      "sha256": "6861d6bc6317a089867ad76648e67e169e25fb0ed352ecc14d92bca4eba9a79a"
+    },
+    {
+      "path": "experiments/P42_E04_F02/resolved_config.yaml",
+      "bytes": 1113,
+      "sha256": "ae5de0bf09a8486906df2a5ea5446496a6d7662ae3a5186f60b9aad622ddc22b"
+    },
+    {
+      "path": "experiments/P42_E04_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "8e076a688309b467b2edbfa49fcc0eb55492dfdb7ea4cd601177bd734894a269"
+    },
+    {
+      "path": "experiments/P42_E04_F02/status.json",
+      "bytes": 142,
+      "sha256": "b4d702c3859f1a4584345bc69826c9de68d6be0ccde12630be8219026d34d70a"
+    },
+    {
+      "path": "experiments/P42_E04_F02/train.log",
+      "bytes": 4913,
+      "sha256": "a00fd0809155c2645ea116fe5c85bfe205c16b900e306b11c4eae44fa501b463"
+    },
+    {
+      "path": "experiments/P42_E04_F02/train_history.csv",
+      "bytes": 1943,
+      "sha256": "92a25146d4110da0e8896168247ad0e65625c94c8a92f16b0ed85ab9c91f7ad6"
+    },
+    {
+      "path": "experiments/P42_E04_F02/val_predictions.csv",
+      "bytes": 173449,
+      "sha256": "0f35c676e46dcd18227035c2aad3e5ede09ce8f1ddaff9458a2c5d74ad03b53e"
+    },
+    {
+      "path": "experiments/P42_F01_F02/DONE.json",
+      "bytes": 1804,
+      "sha256": "3bc041cf1500c75c593fee01575e5f8a4c15ef333b0e01dc741daec11bcbff1e"
+    },
+    {
+      "path": "experiments/P42_F01_F02/amp_events.jsonl",
+      "bytes": 947,
+      "sha256": "d37e00cce55a60a0f14af604e87f5af43b9cbcc124ade3f80a4b5be14088f757"
+    },
+    {
+      "path": "experiments/P42_F01_F02/benchmark_last_prediction.csv",
+      "bytes": 306,
+      "sha256": "1dcc2e0930ff6d12066fb48c8035166764b06810f78489dea45748febe0942ed"
+    },
+    {
+      "path": "experiments/P42_F01_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "1dee75b8d7607b3320dc7305a5d753da96da088d575dd168a89f0377b967bb9f"
+    },
+    {
+      "path": "experiments/P42_F01_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "67553ebd084912167fc72e2721be40f38767368774d56c1465c9a32e8fd2ceb3"
+    },
+    {
+      "path": "experiments/P42_F01_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_F01_F02/inference_benchmark.json",
+      "bytes": 500,
+      "sha256": "c58192e0320dc35e5325b7dd11a84f8f85e3b92573f4a63fe74ffb631f2d8a34"
+    },
+    {
+      "path": "experiments/P42_F01_F02/metrics.json",
+      "bytes": 4696,
+      "sha256": "c6593844fbe81654f78296dc04067a3ff8c7acdba1c2119660e91789099c0d94"
+    },
+    {
+      "path": "experiments/P42_F01_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "7c4dc844a82638d411cfcea9bf8df1e09fa279448485a57fcc72f29d761a0ff5"
+    },
+    {
+      "path": "experiments/P42_F01_F02/oof_predictions.csv",
+      "bytes": 766864,
+      "sha256": "715f8be4372d9332b82fb13d76f81d2bd94b1bd4c6b799f8267d473cb89190cb"
+    },
+    {
+      "path": "experiments/P42_F01_F02/per_class_metrics.csv",
+      "bytes": 1340,
+      "sha256": "78aaff862003cc9217f29976472823d4836e581924f53db1525a8ffc07b08206"
+    },
+    {
+      "path": "experiments/P42_F01_F02/resolved_config.yaml",
+      "bytes": 1095,
+      "sha256": "4bb877dc1213d63797f99aca1adb572a301917fe15dc6c9deca170c34205abdc"
+    },
+    {
+      "path": "experiments/P42_F01_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "6597e733860e72f50cdaa4e9375d7a787ad4760dca98080a918ad55c8750e741"
+    },
+    {
+      "path": "experiments/P42_F01_F02/status.json",
+      "bytes": 141,
+      "sha256": "0d747d5050680f7e2600027c0db28a8eac0febca0c3856b753f14cad5f644718"
+    },
+    {
+      "path": "experiments/P42_F01_F02/train.log",
+      "bytes": 5503,
+      "sha256": "ebdf05206c18f2d46630711d8f4ce8d29690bc9281b75937d5740e724a2c59ff"
+    },
+    {
+      "path": "experiments/P42_F01_F02/train_history.csv",
+      "bytes": 1923,
+      "sha256": "206d6ccda78fab24f8e504d10c5947ded06345b92a4ab05aac0f7b5d1b0ff606"
+    },
+    {
+      "path": "experiments/P42_F01_F02/val_predictions.csv",
+      "bytes": 175647,
+      "sha256": "36bd6048f1cd9cb864031f8dc9f68ba50866f8268f9e5a77580262cae59d2df0"
+    },
+    {
+      "path": "experiments/P42_F04_F02/DONE.json",
+      "bytes": 1712,
+      "sha256": "a9ef67f43988d47308e667d05879340c2778249cd7bc6b796bf966530ea38701"
+    },
+    {
+      "path": "experiments/P42_F04_F02/benchmark_last_prediction.csv",
+      "bytes": 301,
+      "sha256": "8350d0dcf0586b4ceacdd9db54f3f583dc6687f79cda754b4b9ee227bc576f2e"
+    },
+    {
+      "path": "experiments/P42_F04_F02/compute_cost.json",
+      "bytes": 243,
+      "sha256": "c9b8886f6ce4c4166bc7bcf8acdc72bdb1aa6fcde45567fa0942edefe5da2d14"
+    },
+    {
+      "path": "experiments/P42_F04_F02/ema_best.sha256",
+      "bytes": 79,
+      "sha256": "6c0739512199b354f10bc69fd0f208265b7921eb7de3f5f3f6de18dc68534307"
+    },
+    {
+      "path": "experiments/P42_F04_F02/environment.json",
+      "bytes": 144,
+      "sha256": "774e9d346fc85675b72a069a528c0f758ffb87275d346c914ce51dd9ae8f6a8a"
+    },
+    {
+      "path": "experiments/P42_F04_F02/inference_benchmark.json",
+      "bytes": 498,
+      "sha256": "b3ee1179082dd0df3730fdbd8b9339f47956a32b1cc518622d500de49941c529"
+    },
+    {
+      "path": "experiments/P42_F04_F02/metrics.json",
+      "bytes": 4681,
+      "sha256": "70d11982de03404f39301819e9aae78b7af4e2e418810fb18aa4ab4ec09fb9d6"
+    },
+    {
+      "path": "experiments/P42_F04_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "9268a67760b50718ef933bdb433325de8f98e24aae90c067a9f54a9816bd4060"
+    },
+    {
+      "path": "experiments/P42_F04_F02/oof_predictions.csv",
+      "bytes": 754397,
+      "sha256": "9eeaf0e656f682e32bd45e9d0bc6489c09f1e2663c48edb44f31ccbdc0ba36e0"
+    },
+    {
+      "path": "experiments/P42_F04_F02/per_class_metrics.csv",
+      "bytes": 1323,
+      "sha256": "e4e8b2b2862822352ce31c06b3e0ea96bafa260cd29c4446ddb554e670a3a7fd"
+    },
+    {
+      "path": "experiments/P42_F04_F02/resolved_config.yaml",
+      "bytes": 1106,
+      "sha256": "da5b262223f45c34a4e3ad22f6d99558f1d5ebc82059786d133ddde080842012"
+    },
+    {
+      "path": "experiments/P42_F04_F02/run_manifest.json",
+      "bytes": 807,
+      "sha256": "434e57d23a73720ea92d42d13637de6c40057c5a3875d63f5fe0eacb8d25790a"
+    },
+    {
+      "path": "experiments/P42_F04_F02/status.json",
+      "bytes": 142,
+      "sha256": "e022407295ca98aec81abdccd410f12c8e6a7f5e51a41d309a1b68648b26ab10"
+    },
+    {
+      "path": "experiments/P42_F04_F02/train.log",
+      "bytes": 4168,
+      "sha256": "d8d838693220ea0a9797a6d224e91b7e541df02608231cc43533a8cd2b56e45d"
+    },
+    {
+      "path": "experiments/P42_F04_F02/train_history.csv",
+      "bytes": 1792,
+      "sha256": "675538473bcb8bbd5200a2f90fa114ff9091486d9dad5d184dbcb438fd179fb9"
+    },
+    {
+      "path": "experiments/P42_F04_F02/val_predictions.csv",
+      "bytes": 173182,
+      "sha256": "ef702c07c2adbe59ba7619e02b0a7c374fd075ac747f53e6c9ad1b93ea3d305e"
+    },
+    {
+      "path": "preflight/P42_A01_F02/probe.log",
+      "bytes": 229,
+      "sha256": "b5a1d2c2730687f9d59763dfeddb806def5a1528c25cedff35875354003a2067"
+    },
+    {
+      "path": "preflight/P42_A01_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "e52c507aaba8080ff898aa82498595be2288399e09b30cf2fea7d337da72a282"
+    },
+    {
+      "path": "preflight/P42_A02_F02/probe.log",
+      "bytes": 229,
+      "sha256": "56dd0ca7b5abaa166de163301e174728599ffb5c09a9afca2926f76a8fd28068"
+    },
+    {
+      "path": "preflight/P42_A02_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "c0789ae99a1bb6fc5a16908bbd43aeaba8d990fc95c2c0626197d8861a3881d3"
+    },
+    {
+      "path": "preflight/P42_A04_F02/probe.log",
+      "bytes": 229,
+      "sha256": "089169316f2c75d1d889ab16ef52029bb5cd96ea782753bde7f18f471bffbd8c"
+    },
+    {
+      "path": "preflight/P42_A04_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "24684009bceeabbd60873941defc1ffee98785fab56f4ddb459b17dd643b572a"
+    },
+    {
+      "path": "preflight/P42_B01_F02/probe.log",
+      "bytes": 229,
+      "sha256": "03330999870a58acd4aeb0c519ba7924f2aebbc3059449258a343cfac33f3d84"
+    },
+    {
+      "path": "preflight/P42_B01_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "11599ae81fdd347a3c03fdd50398c1149e4737ff7cfc2e4fa2d8acf64fb34e42"
+    },
+    {
+      "path": "preflight/P42_B02_F02/probe.log",
+      "bytes": 228,
+      "sha256": "5acadf5552d8076b0b7fd94d0f93e4134fa6eade659c930a95f0e3ebffa036be"
+    },
+    {
+      "path": "preflight/P42_B02_F02/receipt.json",
+      "bytes": 247,
+      "sha256": "d70a2d9be9be204e876dc17ebc3904135a5a3b051e0391ff0171f65bf6559e3e"
+    },
+    {
+      "path": "preflight/P42_B03_F02/probe.log",
+      "bytes": 229,
+      "sha256": "4c7a409496b5f6e3eb05bf6ec6c9c72a26ee1b0d3ae35e25edb1466aeeb61d90"
+    },
+    {
+      "path": "preflight/P42_B03_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "36f7ce121dcb2f5c08961b4c9dc0e0fe43729ed5a934a1947f3597959a556bb4"
+    },
+    {
+      "path": "preflight/P42_B04_F02/probe.log",
+      "bytes": 229,
+      "sha256": "3ef2313ef0b4f5392a00824d77a33ca7da34643f2f9213304aa87fc2f09aa104"
+    },
+    {
+      "path": "preflight/P42_B04_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "e99f65f6809c9ed20d0c9f3e5a96c8b0c7419ca0cf915c44f42878fdbd074cf4"
+    },
+    {
+      "path": "preflight/P42_C01_F02/probe.log",
+      "bytes": 229,
+      "sha256": "1cbe31038f1f5cbb5215b35f0d55292f08c51bb04aaf45dc1e82fb1eb539eb37"
+    },
+    {
+      "path": "preflight/P42_C01_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "ec12d43bd127ff6a3e80acc47fecb7a0cef98a114720615c7f37ba45f6e6ecb4"
+    },
+    {
+      "path": "preflight/P42_C02_F02/probe.log",
+      "bytes": 229,
+      "sha256": "774f923e20c544f7afe0756a59f516a1d2401e0aa8f2a2a33d7e869072231318"
+    },
+    {
+      "path": "preflight/P42_C02_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "ea70f31b16adfe3d0dd5b378a3b9f24c33359a051a7b152b36db7ce3b69be7f5"
+    },
+    {
+      "path": "preflight/P42_C03_F02/probe.log",
+      "bytes": 228,
+      "sha256": "a9bc49506c615ca461d03314a234ed145d07c69adf529f0b1800399ef00d8cac"
+    },
+    {
+      "path": "preflight/P42_C03_F02/receipt.json",
+      "bytes": 247,
+      "sha256": "a013ac909a1fc563425c55d0866ba2a7c888c614074d92709fc1ba05822e1dbf"
+    },
+    {
+      "path": "preflight/P42_C04_F02/probe.log",
+      "bytes": 229,
+      "sha256": "574c2645db552ccf8f36d8a1bc377e54a0b0490cab66f9aa08b35e44cc747990"
+    },
+    {
+      "path": "preflight/P42_C04_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "fa5acc57ca02b57843f7470bdd3a54ccbcd78044f95be7af02aca81264572c8f"
+    },
+    {
+      "path": "preflight/P42_D01_F02/probe.log",
+      "bytes": 229,
+      "sha256": "1fb97107c482468c37b7d415f4b00ee12541f0bfd0136c609c3d378b8f4368c6"
+    },
+    {
+      "path": "preflight/P42_D01_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "3a0de0d21d0eadcfa662abfb8f0e6740e519e9e9e775c6c6e0833e34aedb8a70"
+    },
+    {
+      "path": "preflight/P42_D02_F02/probe.log",
+      "bytes": 229,
+      "sha256": "9cf313c4536227b92ac102e88ac68b62ebad417deba7438b3078f3eaf8d287a0"
+    },
+    {
+      "path": "preflight/P42_D02_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "be3234206678c142f23d91a94fd488fd7b3c974763ef1330aca70f7655427cdd"
+    },
+    {
+      "path": "preflight/P42_D03_F02/probe.log",
+      "bytes": 229,
+      "sha256": "79f9b9b605a99197e6069c70758f89b76d47b48e578555be123b217000ef7128"
+    },
+    {
+      "path": "preflight/P42_D03_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "738e611143e2edd5ddf8e8192845b7dfce382ff3af2127b5123ceb48d7dabd52"
+    },
+    {
+      "path": "preflight/P42_D04_F02/probe.log",
+      "bytes": 229,
+      "sha256": "eb5e08472af0f0ee1a6fdb22910def9920074de6794df3b74e4e140295dc77f7"
+    },
+    {
+      "path": "preflight/P42_D04_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "aa41f473ef55790eda4dbe4a92373001aa7caaa2450fe1ae5103a7379ffdf083"
+    },
+    {
+      "path": "preflight/P42_E03_F02/probe.log",
+      "bytes": 229,
+      "sha256": "482959a1362b656ca104af2587b5ce0475896d9aaff52872b72e3e8f3d47c8af"
+    },
+    {
+      "path": "preflight/P42_E03_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "d949bdcda36a0dfbe5c23da31b2342c4017aadb534881bff63bcd4fbeedd89d0"
+    },
+    {
+      "path": "preflight/P42_E04_F02/probe.log",
+      "bytes": 228,
+      "sha256": "a880d6f834078cca1baa00fbb6b4de8b4004bba22c079cb0ef5bc6c9e28274e4"
+    },
+    {
+      "path": "preflight/P42_E04_F02/receipt.json",
+      "bytes": 247,
+      "sha256": "79279daefba79745df251982e4a7451d74bc209b787b1ec64a8b8a18eb48dd3a"
+    },
+    {
+      "path": "preflight/P42_F01_F02/probe.log",
+      "bytes": 229,
+      "sha256": "5963097e1450ad10bfd15f3bf4603e4f1a3786d94b798a11e1516f91a7f7ebed"
+    },
+    {
+      "path": "preflight/P42_F01_F02/receipt.json",
+      "bytes": 248,
+      "sha256": "c52c92fba9b8a7e0eaf67e1df8f29a5bd82d97fe6f85e682742bf254057791b3"
+    },
+    {
+      "path": "preflight/P42_F04_F02/probe.log",
+      "bytes": 228,
+      "sha256": "fa2e4725bd70df652a5a3ef538c70acf775a1e722f50ec9a0bb542aa55b64437"
+    },
+    {
+      "path": "preflight/P42_F04_F02/receipt.json",
+      "bytes": 247,
+      "sha256": "9919c1b459f665f241982b805f4ea79b9de64257ccfe851a615fc4d19f9b1536"
+    },
+    {
+      "path": "preflight/REMOTE_PREFLIGHT.json",
+      "bytes": 4785,
+      "sha256": "916c2508506b7d98a51b94b7bf155dcc99b8c52b818419491fa1674bdbc4a57d"
+    },
+    {
+      "path": "preflight/identity.json",
+      "bytes": 5069,
+      "sha256": "a5105dc1bcc92b7e832d9c7336c2851a7287d9279043a5b3d99643c806bc4690"
+    },
+    {
+      "path": "preflight/ledger.json",
+      "bytes": 4766,
+      "sha256": "9a3649924ce11424427daad34c4f4bc5b6199b63ff5f70e192a0ae70cd59b954"
+    },
+    {
+      "path": "queue_logs/P42_A01_F02_1.log",
+      "bytes": 5769,
+      "sha256": "0a4a40390d32f2623f2dbaa4d7c158e988963b186958a48937c97d8e9f4ad0e8"
+    },
+    {
+      "path": "queue_logs/P42_A02_F02_1.log",
+      "bytes": 5756,
+      "sha256": "21ab958ff272e0f796e697da44730d8662469c982a0115ec93816a50812b8249"
+    },
+    {
+      "path": "queue_logs/P42_A04_F02_1.log",
+      "bytes": 4394,
+      "sha256": "07ec6f315cd18603a5d4141ab9b8b34d9ca8ca073cb1076450213f3615dc7e20"
+    },
+    {
+      "path": "queue_logs/P42_B01_F02_1.log",
+      "bytes": 5173,
+      "sha256": "b4bc69ea6f1ee5a2e61953ae8b320e4b51725836111edaeca88b24ff33626270"
+    },
+    {
+      "path": "queue_logs/P42_B02_F02_1.log",
+      "bytes": 5197,
+      "sha256": "a3181abc57fab5c3fd05de7346cc6cd6a2cd645951bba5577857398fbcf2490c"
+    },
+    {
+      "path": "queue_logs/P42_B03_F02_1.log",
+      "bytes": 4404,
+      "sha256": "9ef86daa667ef352f694e1d8f1bec36aea4e91ac2d3ee832dfed2a8c565b9c5d"
+    },
+    {
+      "path": "queue_logs/P42_B04_F02_1.log",
+      "bytes": 6574,
+      "sha256": "1e6db2ad3efcf0836774e0b9f4c2d86686198156fd0b7badd4cf0b2e99e68b8c"
+    },
+    {
+      "path": "queue_logs/P42_C01_F02_1.log",
+      "bytes": 5795,
+      "sha256": "9e1208898a12e27cbf95154a54e79e2b3468e6de8a74b2cb0b244c189e2c04ad"
+    },
+    {
+      "path": "queue_logs/P42_C02_F02_1.log",
+      "bytes": 6588,
+      "sha256": "31ef2aad7d72f2fb33e10dabda0813807014ae865879f3e5e0da14b2033d8536"
+    },
+    {
+      "path": "queue_logs/P42_C03_F02_1.log",
+      "bytes": 16889,
+      "sha256": "5d7fa687689046294b41908cd74a3db179d50fbd78bc5dca0636481667ef38df"
+    },
+    {
+      "path": "queue_logs/P42_C04_F02_1.log",
+      "bytes": 5786,
+      "sha256": "9986ef9af9f60126dfea8beced8f4587584f611ed4a22fe720455d8ade4ea115"
+    },
+    {
+      "path": "queue_logs/P42_D01_F02_1.log",
+      "bytes": 5201,
+      "sha256": "3b8f99289bbd2d5b02c13ee16fc250ef669ff64f747a202e7c37a488acf4883b"
+    },
+    {
+      "path": "queue_logs/P42_D02_F02_1.log",
+      "bytes": 5723,
+      "sha256": "43cd3a84d51eae09b1385623dfcdcc2da3b8507c5e041cff9207c6200acd8cd2"
+    },
+    {
+      "path": "queue_logs/P42_D03_F02_1.log",
+      "bytes": 5202,
+      "sha256": "8647274aa0f5cae97a2c1c734e9a361993c1ae182b74ec9a3e3b4cb0ec593999"
+    },
+    {
+      "path": "queue_logs/P42_D04_F02_1.log",
+      "bytes": 5799,
+      "sha256": "b0deb48aec350adbd68ca5d398ab0e9985285d50307ef56d44cd5ab3937631c4"
+    },
+    {
+      "path": "queue_logs/P42_E03_F02_1.log",
+      "bytes": 4403,
+      "sha256": "9d91418468f6616dc0586f4ca5ba20fa101480ec99f9f3f0efbbf517eb72d777"
+    },
+    {
+      "path": "queue_logs/P42_E04_F02_1.log",
+      "bytes": 5177,
+      "sha256": "ad5b5ae48b8a51da57ca9f7265aeaf6370a1a0ebe2a0518df60efb57949ea2cd"
+    },
+    {
+      "path": "queue_logs/P42_F01_F02_1.log",
+      "bytes": 5766,
+      "sha256": "478c91c71cd4873dbc957bb14cd01878e9b384d8c086b4886201f17576427004"
+    },
+    {
+      "path": "queue_logs/P42_F04_F02_1.log",
+      "bytes": 4408,
+      "sha256": "e67655e78a96004375905fe6fe376c277410db3bc9899f43a220c0e3d79791b2"
+    },
+    {
+      "path": "queue_pilot.json",
+      "bytes": 2276,
+      "sha256": "d8862ba4acc4761076808f1b950b523761f651024f1431bb12e14a367baf33b2"
+    },
+    {
+      "path": "reference_baselines/experiments/P41_BASE_F02/DONE.json",
+      "bytes": 1548,
+      "sha256": "96760358f450cd8d35b0d068b938679d234de8aed25232a2ce92ca7c88b7e053"
+    },
+    {
+      "path": "reference_baselines/experiments/P41_BASE_F02/metrics.json",
+      "bytes": 4730,
+      "sha256": "4b17c62714efd7942bb171d45446a8106bfe3cb2ef691b216e90afb120e15707"
+    },
+    {
+      "path": "reference_baselines/experiments/P41_BASE_F02/model_size.json",
+      "bytes": 117,
+      "sha256": "26358bb4acf7383073930574fea1e61e79c5946cce06786819afa0957aa82f94"
+    },
+    {
+      "path": "reference_baselines/experiments/P41_BASE_F02/oof_predictions.csv",
+      "bytes": 758056,
+      "sha256": "6b4fa9f62755189a6e19703b88c1e79d2606279a63cd4655625d9b9037383109"
+    },
+    {
+      "path": "reference_baselines/experiments/P41_BASE_F02/per_class_metrics.csv",
+      "bytes": 1372,
+      "sha256": "ce6f8b4ef856da273012ca0260ed693b505404a9d769d3ccb42c4ea41e391351"
+    },
+    {
+      "path": "reference_baselines/experiments/P41_BASE_F02/resolved_config.yaml",
+      "bytes": 860,
+      "sha256": "e76750aa5080aef97e3e074389764480a2324a23519bd2b4c2fe32098753bdd0"
+    },
+    {
+      "path": "reference_baselines/experiments/P41_BASE_F02/run_manifest.json",
+      "bytes": 756,
+      "sha256": "f7ec18ae0459403ffb3c0203ef639a669cd584bb02cc7fbe6919ff9a7b540532"
+    },
+    {
+      "path": "reference_baselines/experiments/P41_BASE_F02/status.json",
+      "bytes": 144,
+      "sha256": "66405a0b505af3d73172e31522c1d224f1f878536c7261889cbbcd6967af5b25"
+    },
+    {
+      "path": "reference_baselines/experiments/P41_BASE_F02/test_predictions.csv",
+      "bytes": 275758,
+      "sha256": "51a13a27fd434326d8b4da488598a804cf3c9cdc2f7ed47d5ddd300edb519de6"
+    },
+    {
+      "path": "reference_baselines/experiments/P41_BASE_F02/train.log",
+      "bytes": 4581,
+      "sha256": "94f8c03773cbafe3ebafe59994d95cdb1915f0fe8ccab084ef875168ca074a3a"
+    },
+    {
+      "path": "reference_baselines/experiments/P41_BASE_F02/train_history.csv",
+      "bytes": 1957,
+      "sha256": "e103c1935a08e96397431bcb987526fb6a8bd76bfa04bf2d26098fd049264dda"
+    },
+    {
+      "path": "reference_baselines/experiments/P41_BASE_F02/val_predictions.csv",
+      "bytes": 174077,
+      "sha256": "c611e5e8cfee84b84abe8932d57575b4c5bf23f5867e50dcc94553cae48c1ee3"
+    },
+    {
+      "path": "reference_baselines/fold2_provenance.json",
+      "bytes": 372,
+      "sha256": "9e7997eba60151c5d6dbd9df192577380675384af0552ffbbe58b469258a9846"
+    },
+    {
+      "path": "reference_baselines/preflight/REMOTE_PREFLIGHT.json",
+      "bytes": 1724,
+      "sha256": "1a2abace64cf075bd90e5eb01bbac5b54d54815c89f75d256edea4031d595fc3"
+    },
+    {
+      "path": "reports/baseline_reference/benchmark_last_prediction.csv",
+      "bytes": 308,
+      "sha256": "4603f9fb8f3d69606e558c840276c4cb15f7fd0618a71da6792c8ac21397ebb4"
+    },
+    {
+      "path": "reports/baseline_reference/compute_cost.json",
+      "bytes": 243,
+      "sha256": "39fe7f14c6bb1020fd0f46d955525c6c31df398c22b8f11c068b4e2da9adc421"
+    },
+    {
+      "path": "reports/baseline_reference/inference_benchmark.json",
+      "bytes": 499,
+      "sha256": "a06f409104852bc164d3b72187f51ddf6190445cd25546485d12ea8004187685"
+    },
+    {
+      "path": "reports/baseline_reference/probe.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/baseline_reference/receipt.json",
+      "bytes": 349,
+      "sha256": "7afaec6e0f0fea5d73d2beb0d3d90de35b6123d7908958a9737f6a17deab492b"
+    },
+    {
+      "path": "reports/host_resources.json",
+      "bytes": 254,
+      "sha256": "f46ca810dccab4351390727c4c93e2f507dde63a523033ab76c6c0f102f778ca"
+    },
+    {
+      "path": "reports/latency_comparison.csv",
+      "bytes": 3400,
+      "sha256": "3b95fba3a5cb62806734798b8bbf165ef4af7e03b4b164c741d46154534565c4"
+    },
+    {
+      "path": "reports/pilot_analysis.json",
+      "bytes": 26174,
+      "sha256": "5fb6b4637e1456614630f1cf8d435953aa0b0df91472975920223aefc522bb72"
+    },
+    {
+      "path": "reports/pilot_budget.json",
+      "bytes": 74,
+      "sha256": "97aa07f98026e7934af1645b895438f72de018f3332b79667b087ee20ed756a2"
+    },
+    {
+      "path": "reports/pilot_comparison.csv",
+      "bytes": 3222,
+      "sha256": "fa0ad5d4d011c0535c31d663713a3414aa629292bb211cc889a2200ee0b28e95"
+    },
+    {
+      "path": "reports/pilot_status.csv",
+      "bytes": 1032,
+      "sha256": "f693608c522311ac22f764af819072f23f5e1e8e2b04a87447c57a6bd5c4ac37"
+    },
+    {
+      "path": "reports/selection.json",
+      "bytes": 26174,
+      "sha256": "5fb6b4637e1456614630f1cf8d435953aa0b0df91472975920223aefc522bb72"
+    }
+  ],
+  "weights": "GITHUB_RELEASE",
+  "release_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/tag/phase42-pilots-v1",
+  "binary_files": [
+    {
+      "path": "phase42_batch/experiments/P42_A01_F02/ema_best.pth",
+      "asset_name": "P42_A01_F02__ema_best.pth",
+      "bytes": 82067347,
+      "sha256": "510e3ce90e65f065c71608969146ac1e39fcbccc1bf76bf9647918548d6231f6",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_A01_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A01_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_A01_F02--last_training.pt",
+      "bytes": 491004469,
+      "sha256": "763fbbd9a14fdcd9e16f5d840cf77127594f83ad525b4e7374f21fea0d94dd8e",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_A01_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A01_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_A01_F02--raw_at_ema_best.pth",
+      "bytes": 82072891,
+      "sha256": "aba23f09b121e8cb6a8a02aabe27d93e82b2dd6e4f63dbb049f27da68da93d43",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_A01_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A02_F02/ema_best.pth",
+      "asset_name": "P42_A02_F02__ema_best.pth",
+      "bytes": 81994841,
+      "sha256": "949dcd8a10e1cdb0664e35bb4c84a7b4fddaea50e5bd8c9416345abad502ab83",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_A02_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A02_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_A02_F02--last_training.pt",
+      "bytes": 490569829,
+      "sha256": "6f317fbe054badf216bb7d361f9f305114f48b8bcaee2659b0c2a2df6e52edcf",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_A02_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A02_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_A02_F02--raw_at_ema_best.pth",
+      "bytes": 82000399,
+      "sha256": "393939ddcb3302789d8225162c667688266ac42d30e6518891dfb0842a3c700e",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_A02_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A04_F02/ema_best.pth",
+      "asset_name": "P42_A04_F02__ema_best.pth",
+      "bytes": 82110687,
+      "sha256": "a8c605b32bcbdd8cdac262a3c5025780cb35e4a8c89ea7f737296be71525cbf3",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_A04_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A04_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_A04_F02--last_training.pt",
+      "bytes": 491265429,
+      "sha256": "1f09404949f2363ba6f872006d8337ccad1669846cea0ff46823d5fa7cd86c4b",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_A04_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_A04_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_A04_F02--raw_at_ema_best.pth",
+      "bytes": 82116259,
+      "sha256": "f435b9711ca6ab34074015a43ef8fd0ef7e14a79dd89b6efe65ec8aee17703b8",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_A04_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B01_F02/ema_best.pth",
+      "asset_name": "P42_B01_F02__ema_best.pth",
+      "bytes": 81678282,
+      "sha256": "e359a05508f50599d9f79b53a2cfcdd93a9381cbd36413afb77ad0c838386026",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_B01_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B01_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_B01_F02--last_training.pt",
+      "bytes": 488669389,
+      "sha256": "deaec4dd8e085feecb218a7fe480c588a6aa821684b0074ee81f358245a7e163",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_B01_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B01_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_B01_F02--raw_at_ema_best.pth",
+      "bytes": 81683805,
+      "sha256": "e3186eff5c3900da03c1e3c09dd53c2d8ad603e2f78e12cd9681656906174835",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_B01_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B02_F02/ema_best.pth",
+      "asset_name": "P42_B02_F02__ema_best.pth",
+      "bytes": 81729159,
+      "sha256": "04c4999215cfc71bd6c13232dec45b7b6af8caa4fe51654ca92d15a410cd4588",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_B02_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B02_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_B02_F02--last_training.pt",
+      "bytes": 488974421,
+      "sha256": "6c6dacd2d1b6c6f5b06b2048898aee490f5fc2a46a90294184f87499e93abfde",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_B02_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B02_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_B02_F02--raw_at_ema_best.pth",
+      "bytes": 81734675,
+      "sha256": "94f0147dda41869d64455a4a950a405e43879142909542cfcf8bd021247ec227",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_B02_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B03_F02/ema_best.pth",
+      "asset_name": "P42_B03_F02__ema_best.pth",
+      "bytes": 81882759,
+      "sha256": "4522de8a9b953280f49eec50d303f1601dd938a59fbc2779ce25eea776f33194",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_B03_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B03_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_B03_F02--last_training.pt",
+      "bytes": 489895829,
+      "sha256": "5e13f365fcfa559234f69e250da1af11abfb92d6124beb493928c93cc2b88bfc",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_B03_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B03_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_B03_F02--raw_at_ema_best.pth",
+      "bytes": 81888275,
+      "sha256": "f713153baa142a6380da044b704de88992a26aef63cad3125dc9ab8ef825992b",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_B03_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B04_F02/ema_best.pth",
+      "asset_name": "P42_B04_F02__ema_best.pth",
+      "bytes": 81683725,
+      "sha256": "a27c4e5514b2080384789053aa1a6fafad69bd35b0f6eb362ab9a9fbfedaba2f",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_B04_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B04_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_B04_F02--last_training.pt",
+      "bytes": 488702469,
+      "sha256": "59e6392149b583d199dfe3d87e569dde9588bf54d1440104ee13258a79aff05d",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_B04_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_B04_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_B04_F02--raw_at_ema_best.pth",
+      "bytes": 81689255,
+      "sha256": "d4dea6defce561732869d86ac46150c3efc0691e71fee644f94366c8ff85713a",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_B04_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C01_F02/ema_best.pth",
+      "asset_name": "P42_C01_F02__ema_best.pth",
+      "bytes": 81729805,
+      "sha256": "2c525b202ad83c26371d7177d97554581efcd1d30744476cc7e419c713cda64e",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_C01_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C01_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_C01_F02--last_training.pt",
+      "bytes": 488978821,
+      "sha256": "040064ca31a3a7a27833db39bbf2fff4d0621b96ac806607361aa73e86b99dc5",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_C01_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C01_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_C01_F02--raw_at_ema_best.pth",
+      "bytes": 81735335,
+      "sha256": "1acac519d994cc9a5dc790bf23c44468ad40139064099e94b20925e4acdbdbb4",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_C01_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C02_F02/ema_best.pth",
+      "asset_name": "P42_C02_F02__ema_best.pth",
+      "bytes": 82026655,
+      "sha256": "78807d31eba0a5c18553457a512dd1a8634321875a81f70da39ed7f6a17eec94",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_C02_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C02_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_C02_F02--last_training.pt",
+      "bytes": 490761557,
+      "sha256": "df60e63e4ab9868de1dbf85678df702c1b745f15d7d6dedb5f37410eee4ded4f",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_C02_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C02_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_C02_F02--raw_at_ema_best.pth",
+      "bytes": 82032227,
+      "sha256": "3b4751d42729bb5269d7ea62b2998357c48e9c4c32d01e2209cd2fbb5df6e997",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_C02_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C03_F02/ema_best.pth",
+      "asset_name": "P42_C03_F02__ema_best.pth",
+      "bytes": 81678864,
+      "sha256": "71b8820c7fa27942b4a0ffa5159ee23278271045e822f2bf339f8b55991d4dcb",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_C03_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C03_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_C03_F02--last_training.pt",
+      "bytes": 488676093,
+      "sha256": "2ea0c4fc5268b9715a58b7a6a549c9e07a8e7dfe4bd5f63eb4910fe31c77e665",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_C03_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C03_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_C03_F02--raw_at_ema_best.pth",
+      "bytes": 81684401,
+      "sha256": "700338fb5ed9a25b14d72eaa744c877ede7feda21a304826c394807ff1fc7786",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_C03_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C04_F02/ema_best.pth",
+      "asset_name": "P42_C04_F02__ema_best.pth",
+      "bytes": 81679571,
+      "sha256": "51264447f7872bed2268286f5d305c904b1def86a1daa05a47dc772144961a38",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_C04_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C04_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_C04_F02--last_training.pt",
+      "bytes": 488677877,
+      "sha256": "bd0bff5f37235475ed186438bd744408016249670c7555f1b4f410100b7df8f2",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_C04_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_C04_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_C04_F02--raw_at_ema_best.pth",
+      "bytes": 81685115,
+      "sha256": "f96fd18b4405b62fec999630192195cdfe9a6fa50c0f405dd58d33017caf972e",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_C04_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D01_F02/ema_best.pth",
+      "asset_name": "P42_D01_F02__ema_best.pth",
+      "bytes": 81934605,
+      "sha256": "b929fb37230c92dcb780c34b3fc0c783ae7fa7013554744113f9baf6294e0868",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_D01_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D01_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_D01_F02--last_training.pt",
+      "bytes": 490207621,
+      "sha256": "48faca24cdf2625b40966ace18e61f41b756eeabc72acab6e27a5e95bb12a17e",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_D01_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D01_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_D01_F02--raw_at_ema_best.pth",
+      "bytes": 81940135,
+      "sha256": "d38a40ba0814cd9d29e1e9e0625bf1e426e2a4fa9a3eaf33eb0e7f573d998171",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_D01_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D02_F02/ema_best.pth",
+      "asset_name": "P42_D02_F02__ema_best.pth",
+      "bytes": 82504019,
+      "sha256": "1c3e65c21d988ec1264e2f387686f6ec0c3920879e7ee2b9b1cc6d75cf2bf468",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_D02_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D02_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_D02_F02--last_training.pt",
+      "bytes": 493624437,
+      "sha256": "6b9023aceb921c6f7e5a3d77be9ae01133b8284e478b4165bfe049da45e29cf4",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_D02_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D02_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_D02_F02--raw_at_ema_best.pth",
+      "bytes": 82509563,
+      "sha256": "40c4bc31fb0116b2cfe5afd80c4145855985610b36459b4fc6ea487500ff0719",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_D02_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D03_F02/ema_best.pth",
+      "asset_name": "P42_D03_F02__ema_best.pth",
+      "bytes": 81678282,
+      "sha256": "95eeefb78813a676818ca2061e346d9599cc130b1cda90f568690526942f0f02",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_D03_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D03_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_D03_F02--last_training.pt",
+      "bytes": 488669517,
+      "sha256": "ff0147bf6e47bd4537e97cd5ced424a8c9c29ca8f2059e3d2b97033444d76d6c",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_D03_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D03_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_D03_F02--raw_at_ema_best.pth",
+      "bytes": 81683805,
+      "sha256": "1607acd1f7e0a02b824488682027a42307d6a578059f91df101548215cf06ee5",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_D03_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D04_F02/ema_best.pth",
+      "asset_name": "P42_D04_F02__ema_best.pth",
+      "bytes": 81729805,
+      "sha256": "55dc2a0a064a7c0ce4ed11abf573c7a6d0c90da764d9434de23b18926d7f69d9",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_D04_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D04_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_D04_F02--last_training.pt",
+      "bytes": 488978821,
+      "sha256": "833e31edb0a8135edff36f3a93d099d72dda48f97d8a591e5ee80cde2281e426",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_D04_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_D04_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_D04_F02--raw_at_ema_best.pth",
+      "bytes": 81735335,
+      "sha256": "2a81da31140b626e7fa93fd2bc9fc688a194c185d68c8c8dbe628130246be4a7",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_D04_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_E03_F02/ema_best.pth",
+      "asset_name": "P42_E03_F02__ema_best.pth",
+      "bytes": 81664519,
+      "sha256": "be0605ffaee39d8f860cacc870ba92c4e7dc4158cda2fb3c48cc29b923654b0b",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_E03_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_E03_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_E03_F02--last_training.pt",
+      "bytes": 488613269,
+      "sha256": "5d276fe6073643f5c3c3297feb311be6f62d02a9c1e653cc05646344a252b9e4",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_E03_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_E03_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_E03_F02--raw_at_ema_best.pth",
+      "bytes": 81670035,
+      "sha256": "960b7ca09119677445c934cf73e0ee9848a3a0e180de5d52604515a4fc2464cd",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_E03_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_E04_F02/ema_best.pth",
+      "asset_name": "P42_E04_F02__ema_best.pth",
+      "bytes": 81664519,
+      "sha256": "d33184cfcc54588ac769e0a5557cf7b8c3b44af6132fa39b63cdb03a7eb7ab5f",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_E04_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_E04_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_E04_F02--last_training.pt",
+      "bytes": 488613461,
+      "sha256": "88fdb40fbbfea6ced95a53ca6f06ede0adaf4ffa02d14f3d5fa0bc1b5aab4f20",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_E04_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_E04_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_E04_F02--raw_at_ema_best.pth",
+      "bytes": 81670035,
+      "sha256": "a5b6ae2ff4534e7a675373faefb3aed32a9b17b35952b57d04951d10036515f7",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_E04_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_F01_F02/ema_best.pth",
+      "asset_name": "P42_F01_F02__ema_best.pth",
+      "bytes": 82304665,
+      "sha256": "1b78c7b3e0e4821252146ecc4fef3a1bd04632ae9c8b98e03f9741a5720d15ec",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_F01_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_F01_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_F01_F02--last_training.pt",
+      "bytes": 492429093,
+      "sha256": "87d8617f0d9d06510e31010be64410001b2a6b087c7e33cc7fe901f17d15c02f",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_F01_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_F01_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_F01_F02--raw_at_ema_best.pth",
+      "bytes": 82310223,
+      "sha256": "8c5e1225195b1f096dd7311c800bd754910a24fed6993347b931984b9133519c",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_F01_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_F04_F02/ema_best.pth",
+      "asset_name": "P42_F04_F02__ema_best.pth",
+      "bytes": 81687821,
+      "sha256": "8d2e87d0174b8070da2a283c492b360bf56c57f63209c236dc1f04607d02706c",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/P42_F04_F02__ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_F04_F02/last_training.pt",
+      "asset_name": "phase42_batch--experiments--P42_F04_F02--last_training.pt",
+      "bytes": 488726853,
+      "sha256": "0da15b5de9d6641aefee5671d363bc502db86e8eca903f82d8ab25a6b7155e94",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_F04_F02--last_training.pt"
+    },
+    {
+      "path": "phase42_batch/experiments/P42_F04_F02/raw_at_ema_best.pth",
+      "asset_name": "phase42_batch--experiments--P42_F04_F02--raw_at_ema_best.pth",
+      "bytes": 81693351,
+      "sha256": "3edb387e17116d905eace88103a12127b6155dd4b5a6442b87fd678c1cf7a4ae",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--experiments--P42_F04_F02--raw_at_ema_best.pth"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_A01_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_A01_F02--resume.pt",
+      "bytes": 326855140,
+      "sha256": "049e7ca52eb52be8a90cb9d709cba9d2df2c982ea6bc20f8846aaa4f73bdb096",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_A01_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_A02_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_A02_F02--resume.pt",
+      "bytes": 326565486,
+      "sha256": "0ea250ea4987d9605e94f7a4088b04f45f903ac41cea912f653101c32360c287",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_A02_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_A04_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_A04_F02--resume.pt",
+      "bytes": 327029368,
+      "sha256": "2d6de3009abcccfe97bf83f34d76e67623defa3eccb6b2e9cd3497df46483fb1",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_A04_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_B01_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_B01_F02--resume.pt",
+      "bytes": 325298261,
+      "sha256": "a4e01463761c6f06f5558daf7cc316d038d76b4acf3b06108642892f0da9c9e1",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_B01_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_B02_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_B02_F02--resume.pt",
+      "bytes": 325501584,
+      "sha256": "9bf83b9ff8c3387c44110bf63c216e40878477f012898080d296b0862410801e",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_B02_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_B03_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_B03_F02--resume.pt",
+      "bytes": 326115984,
+      "sha256": "d9aa1e1cca921a5de981d57d42b6c0a4663feb5ac286df04136b489ec17d0a4c",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_B03_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_B04_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_B04_F02--resume.pt",
+      "bytes": 325320282,
+      "sha256": "045d64e65c0f4c7fa899628fb4433057a65dad4b0f0a15b4e3fa1a20d7803a21",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_B04_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_C01_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_C01_F02--resume.pt",
+      "bytes": 325504602,
+      "sha256": "bdd3043b4dbccdf9a9da6477453833ab3989a03fd5dbd2711306e23e07241596",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_C01_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_C02_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_C02_F02--resume.pt",
+      "bytes": 326693304,
+      "sha256": "34b4a8322d76d1c3c0cabc86a668f9050507b231a7951252e593cba7dce6e217",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_C02_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_C03_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_C03_F02--resume.pt",
+      "bytes": 325301215,
+      "sha256": "d7024fde29b216a0af3d246157f200e7519b041f7bd4a77239f58fda0535b5bf",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_C03_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_C04_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_C04_F02--resume.pt",
+      "bytes": 325304036,
+      "sha256": "b0a2723c89a736682023e0af306c7dd8386eb847b016476db39f06d7cf81987a",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_C04_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_D01_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_D01_F02--resume.pt",
+      "bytes": 326323802,
+      "sha256": "dbdea3c3f9a827a6cb7108010af17a73476d843d124f0584c916b558bd8283fc",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_D01_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_D02_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_D02_F02--resume.pt",
+      "bytes": 328601700,
+      "sha256": "744bc71c93d460766d28602c5f844325b12277fd08586584ac8811d433b096fd",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_D02_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_D03_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_D03_F02--resume.pt",
+      "bytes": 325298325,
+      "sha256": "4e4a0c62bc73aa2395f7afd7bd2a3d1265f3160d2668efbcd74d8fde1223065f",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_D03_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_D04_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_D04_F02--resume.pt",
+      "bytes": 325504602,
+      "sha256": "2c12d6ecd0b2ee6970f15e02a4fe11dcb08bb85c50c630925cc169a0a9a648fd",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_D04_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_E03_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_E03_F02--resume.pt",
+      "bytes": 325269904,
+      "sha256": "100da6216703540e3a29fe82d7dca72026c3d591cf801ec5bd88dd407071c5dc",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_E03_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_E04_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_E04_F02--resume.pt",
+      "bytes": 325269904,
+      "sha256": "ff42c76ed5bf49e5c71850cfa80d3108eee596bcb9750451e830df753b6928e4",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_E04_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_F01_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_F01_F02--resume.pt",
+      "bytes": 327805038,
+      "sha256": "5384ba8d4d341413fd05624a907a3a3e331e9caf35a197a6793bd7a75ab52231",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_F01_F02--resume.pt"
+    },
+    {
+      "path": "phase42_batch/preflight/P42_F04_F02/resume.pt",
+      "asset_name": "phase42_batch--preflight--P42_F04_F02--resume.pt",
+      "bytes": 325336730,
+      "sha256": "9f7b0a5a8b890a648105f258436d0041b5630313e0862a389b94161a98591643",
+      "download_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/phase42-pilots-v1/phase42_batch--preflight--P42_F04_F02--resume.pt"
+    }
+  ],
+  "verified_at": "2026-11-08T10:38:23.685009+08:00"
+}

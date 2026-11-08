@@ -1,0 +1,147 @@
+{
+  "identity_sha256": "a2b70f892d05cc91ba4959d265a82aa1943b54aec66b534344e395bf6aaee9b4",
+  "used_gpu_hours": 0.0924220114408268,
+  "probes": [
+    {
+      "task": "P42_A01_F02",
+      "gpu": 0,
+      "hours": 0.004189236427967747,
+      "path": "preflight/P42_A01_F02/receipt.json",
+      "sha256": "e52c507aaba8080ff898aa82498595be2288399e09b30cf2fea7d337da72a282"
+    },
+    {
+      "task": "P42_A02_F02",
+      "gpu": 0,
+      "hours": 0.004399242800298251,
+      "path": "preflight/P42_A02_F02/receipt.json",
+      "sha256": "c0789ae99a1bb6fc5a16908bbd43aeaba8d990fc95c2c0626197d8861a3881d3"
+    },
+    {
+      "task": "P42_A04_F02",
+      "gpu": 1,
+      "hours": 0.004315771165355626,
+      "path": "preflight/P42_A04_F02/receipt.json",
+      "sha256": "24684009bceeabbd60873941defc1ffee98785fab56f4ddb459b17dd643b572a"
+    },
+    {
+      "task": "P42_B01_F02",
+      "gpu": 0,
+      "hours": 0.004454856095059465,
+      "path": "preflight/P42_B01_F02/receipt.json",
+      "sha256": "11599ae81fdd347a3c03fdd50398c1149e4737ff7cfc2e4fa2d8acf64fb34e42"
+    },
+    {
+      "task": "P42_B02_F02",
+      "gpu": 1,
+      "hours": 0.004468670391167204,
+      "path": "preflight/P42_B02_F02/receipt.json",
+      "sha256": "d70a2d9be9be204e876dc17ebc3904135a5a3b051e0391ff0171f65bf6559e3e"
+    },
+    {
+      "task": "P42_B03_F02",
+      "gpu": 2,
+      "hours": 0.004510306656981508,
+      "path": "preflight/P42_B03_F02/receipt.json",
+      "sha256": "36f7ce121dcb2f5c08961b4c9dc0e0fe43729ed5a934a1947f3597959a556bb4"
+    },
+    {
+      "task": "P42_B04_F02",
+      "gpu": 3,
+      "hours": 0.004496356811012245,
+      "path": "preflight/P42_B04_F02/receipt.json",
+      "sha256": "e99f65f6809c9ed20d0c9f3e5a96c8b0c7419ca0cf915c44f42878fdbd074cf4"
+    },
+    {
+      "task": "P42_C01_F02",
+      "gpu": 0,
+      "hours": 0.004719932856452134,
+      "path": "preflight/P42_C01_F02/receipt.json",
+      "sha256": "ec12d43bd127ff6a3e80acc47fecb7a0cef98a114720615c7f37ba45f6e6ecb4"
+    },
+    {
+      "task": "P42_C02_F02",
+      "gpu": 1,
+      "hours": 0.004636444891026864,
+      "path": "preflight/P42_C02_F02/receipt.json",
+      "sha256": "ea70f31b16adfe3d0dd5b378a3b9f24c33359a051a7b152b36db7ce3b69be7f5"
+    },
+    {
+      "task": "P42_C03_F02",
+      "gpu": 2,
+      "hours": 0.004761461026759611,
+      "path": "preflight/P42_C03_F02/receipt.json",
+      "sha256": "a013ac909a1fc563425c55d0866ba2a7c888c614074d92709fc1ba05822e1dbf"
+    },
+    {
+      "task": "P42_C04_F02",
+      "gpu": 3,
+      "hours": 0.004747482406544603,
+      "path": "preflight/P42_C04_F02/receipt.json",
+      "sha256": "fa5acc57ca02b57843f7470bdd3a54ccbcd78044f95be7af02aca81264572c8f"
+    },
+    {
+      "task": "P42_D01_F02",
+      "gpu": 4,
+      "hours": 0.004691822023079213,
+      "path": "preflight/P42_D01_F02/receipt.json",
+      "sha256": "3a0de0d21d0eadcfa662abfb8f0e6740e519e9e9e775c6c6e0833e34aedb8a70"
+    },
+    {
+      "task": "P42_D02_F02",
+      "gpu": 5,
+      "hours": 0.004775071139706092,
+      "path": "preflight/P42_D02_F02/receipt.json",
+      "sha256": "be3234206678c142f23d91a94fd488fd7b3c974763ef1330aca70f7655427cdd"
+    },
+    {
+      "task": "P42_D03_F02",
+      "gpu": 6,
+      "hours": 0.004705477663988454,
+      "path": "preflight/P42_D03_F02/receipt.json",
+      "sha256": "738e611143e2edd5ddf8e8192845b7dfce382ff3af2127b5123ceb48d7dabd52"
+    },
+    {
+      "task": "P42_D04_F02",
+      "gpu": 7,
+      "hours": 0.004538501951222618,
+      "path": "preflight/P42_D04_F02/receipt.json",
+      "sha256": "aa41f473ef55790eda4dbe4a92373001aa7caaa2450fe1ae5103a7379ffdf083"
+    },
+    {
+      "task": "P42_E03_F02",
+      "gpu": 0,
+      "hours": 0.004427307446797688,
+      "path": "preflight/P42_E03_F02/receipt.json",
+      "sha256": "d949bdcda36a0dfbe5c23da31b2342c4017aadb534881bff63bcd4fbeedd89d0"
+    },
+    {
+      "task": "P42_E04_F02",
+      "gpu": 1,
+      "hours": 0.004455042589041922,
+      "path": "preflight/P42_E04_F02/receipt.json",
+      "sha256": "79279daefba79745df251982e4a7451d74bc209b787b1ec64a8b8a18eb48dd3a"
+    },
+    {
+      "task": "P42_F01_F02",
+      "gpu": 2,
+      "hours": 0.004468844848581486,
+      "path": "preflight/P42_F01_F02/receipt.json",
+      "sha256": "c52c92fba9b8a7e0eaf67e1df8f29a5bd82d97fe6f85e682742bf254057791b3"
+    },
+    {
+      "task": "P42_F04_F02",
+      "gpu": 3,
+      "hours": 0.004468903107465142,
+      "path": "preflight/P42_F04_F02/receipt.json",
+      "sha256": "9919c1b459f665f241982b805f4ea79b9de64257ccfe851a615fc4d19f9b1536"
+    }
+  ],
+  "baseline_benchmark": {
+    "task": "BASE_REFERENCE",
+    "gpu": 0,
+    "hours": 0.0061912791423189145,
+    "path": "reports/baseline_reference/receipt.json",
+    "sha256": "7afaec6e0f0fea5d73d2beb0d3d90de35b6123d7908958a9737f6a17deab492b"
+  },
+  "state": "PASS"
+}
