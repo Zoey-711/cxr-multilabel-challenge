@@ -1,3 +1,7 @@
+# 新批次：Mixup确认 + 关闭光度增强确认（2026-11-08）
+
+运行说明见 [受控确认实验 README](docs/confirmation/README.md)。默认4次训练：Fold2 BASE/MIXUP、Fold3 BASE/NO_PHOTO；两对各用一张4090，内部早停与外层患者评估隔离，不读取官方Val/Test。填写 `configs/confirmation_server.local.yaml` 后运行 `python scripts/confirmation_run.py --config configs/confirmation_server.local.yaml --action run`。沿用现有主机GPU锁，不能与旧队列抢卡；本地4060训练不受影响。后续确认折不自动启动。
+
 # Strong KD v2: 3 primary tasks + optional 3 paired seed replicas
 
 See [Strong KD v2 instructions](docs/strong_kd/README.md). Tasks: STUDENT_BASE (BCE only), SKD_CONTROL, SKD_COMPLEMENT; optional complete seed2026 triplet. Independent of Phase42. CPU-tested; real Linux 4090 preflight required.

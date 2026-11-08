@@ -1,0 +1,11 @@
+{
+  "local_source_sha256": "da5f5aacc233d8629ecc67ab80f63e6afaddf898348312bc3f3d316c583af7ad",
+  "source_role": "portable copy of running local trainer; original not modified",
+  "changes": [
+    "external paths",
+    "generic pair labels",
+    "NO_PHOTO identity photometry preserves RNG consumption",
+    "remote scheduler and receipt controls"
+  ],
+  "local_gpu_result": "CUDA smoke passed; no Linux4090 tests claimed"
+}

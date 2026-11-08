@@ -1,0 +1,24 @@
+# Copy to confirmation_server.local.yaml. Only Linux friends run GPU commands.
+data_root: /AUTHORIZED/data/cxr_first.zip
+pretrained_root: /AUTHORIZED/imagenet-cache
+protocol_root: /AUTHORIZED/phase17_patient_folds
+# Default holdout_index: committed protocol_assets/confirmation_patient_split.csv
+output_root: /AUTHORIZED/outputs/regularization_confirmation_20261108
+stage: pilot
+pilot_pairs: [MIXUP_F02, NO_PHOTO_F03]
+gpu_ids: [0, 1]
+max_concurrent: 2
+# One pair is BASE then challenger on the same GPU. Two pairs = 4 runs.
+# Includes preflight, both runs and final evaluation. Fill authorized limits.
+pair_gpu_hours: null
+gpu_hours: null
+minimum_free_disk_gib: 30
+minimum_free_memory_gib_per_worker: 8
+max_vram_gib: 20
+# Only for separately authorized confirmation stages; use a NEW output_root.
+pilot_results_root: /AUTHORIZED/outputs/regularization_confirmation_20261108
+upload:
+  enabled: false
+  repository: Zoey-711/cxr-multilabel-challenge
+  branch: results/regularization-confirmation-20261108
+  checkout: /AUTHORIZED/regularization_results_upload

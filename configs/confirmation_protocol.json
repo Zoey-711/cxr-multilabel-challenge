@@ -1,0 +1,28 @@
+{
+  "seed": 42,
+  "micro_batch": 8,
+  "accumulation": 2,
+  "epochs": 30,
+  "patience": 6,
+  "backbone_lr": 0.0001,
+  "head_lr": 0.0003,
+  "weight_decay": 0.0001,
+  "warmup_epochs": 2,
+  "ema_decay": 0.999,
+  "mixup_alpha": 0.2,
+  "input_size": 384,
+  "workers": 0,
+  "amp_init_scale": 1024,
+  "max_consecutive_skips": 3,
+  "max_total_skips": 20,
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20261108,
+  "selection": "inner_validation_ema_study_macro_auc",
+  "pretrained_sha256": "dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74",
+  "holdout_index_sha256": "dc4827771709dd237ea133e7f2869448c972483dd40d7612d38fe575e4df1e33",
+  "fold_sha256": {
+    "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+    "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+    "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+  }
+}

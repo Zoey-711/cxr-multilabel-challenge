@@ -1,0 +1,144 @@
+{
+  "cpu_tests_passed": 16,
+  "cpu_tests_failed": 0,
+  "syntax_check": "PASS",
+  "real_metadata_audit": {
+    "MIXUP_F02": {
+      "state": "PASS",
+      "counts": {
+        "train": {
+          "patients": 7146,
+          "studies": 11914,
+          "images": 19519,
+          "positive_studies": [
+            412,
+            562,
+            605,
+            935,
+            1565,
+            2503,
+            2584,
+            2874,
+            2994,
+            4329
+          ]
+        },
+        "inner": {
+          "patients": 795,
+          "studies": 1365,
+          "images": 2206,
+          "positive_studies": [
+            49,
+            52,
+            70,
+            98,
+            188,
+            309,
+            312,
+            328,
+            377,
+            460
+          ]
+        },
+        "outer": {
+          "patients": 2008,
+          "studies": 3388,
+          "images": 5576,
+          "positive_studies": [
+            115,
+            192,
+            167,
+            257,
+            420,
+            685,
+            711,
+            824,
+            856,
+            1218
+          ]
+        }
+      },
+      "patient_overlap": 0,
+      "excluded_holdout_patients": 1106,
+      "official_val_accessed": false,
+      "test_accessed": false
+    },
+    "NO_PHOTO_F03": {
+      "state": "PASS",
+      "counts": {
+        "train": {
+          "patients": 7161,
+          "studies": 11908,
+          "images": 19518,
+          "positive_studies": [
+            404,
+            589,
+            601,
+            931,
+            1534,
+            2448,
+            2556,
+            2864,
+            2986,
+            4313
+          ]
+        },
+        "inner": {
+          "patients": 796,
+          "studies": 1399,
+          "images": 2282,
+          "positive_studies": [
+            50,
+            53,
+            69,
+            92,
+            193,
+            318,
+            324,
+            341,
+            392,
+            491
+          ]
+        },
+        "outer": {
+          "patients": 1992,
+          "studies": 3360,
+          "images": 5501,
+          "positive_studies": [
+            122,
+            164,
+            172,
+            267,
+            446,
+            731,
+            727,
+            821,
+            849,
+            1203
+          ]
+        }
+      },
+      "patient_overlap": 0,
+      "excluded_holdout_patients": 1106,
+      "official_val_accessed": false,
+      "test_accessed": false
+    }
+  },
+  "cuda_tests_this_delivery": "NOT_RUN_LOCAL_GPU_BUSY",
+  "linux_4090": "PENDING_REMOTE_PREFLIGHT",
+  "local_training_interrupted": false,
+  "source_sha256": {
+    "src/cxr/regularization_confirmation/analysis.py": "44693a60a1b2849a4b85feaa58a502f1f71afbee18a5d1029f38fca3e202a2ba",
+    "src/cxr/regularization_confirmation/core.py": "0c87a352b03fcec6f988a584e0dfd7cffbe9acb204c9485ed16c07cfca2cbe1c",
+    "src/cxr/regularization_confirmation/delivery.py": "b7ac0e9e192213bb4c168d7be67639ffdeade7ee725eb1481e98b0f3ca103098",
+    "src/cxr/regularization_confirmation/runner.py": "9c707a02732d3f197bf731002c9df2524b19dfb63e6e89f8cc1e15203074099f",
+    "src/cxr/regularization_confirmation/support.py": "53a4d254b144ed4d937f4bf15fbde69e5ff864884855857b521ea4c77252dc69",
+    "src/cxr/regularization_confirmation/__init__.py": "56ffc74c10731055487b4fefed36664fa3b4839c53962e56856f641c124c5829",
+    "scripts/confirmation_run.py": "46b409e514651dab968428630634383cb353cd60bcb03fe139a5c5b171119d23",
+    "scripts/confirmation_worker.py": "80819cce9fe40fcc3b5577bf583cf27aa55193a5241227a259bf5b1c5ef002ff",
+    "tests/test_regularization_confirmation.py": "99bf219c55c787940b8cd18b1089dbc5ff500cc102da6e72122da173ef040675",
+    "configs/confirmation_protocol.json": "cff52331845599e6ccf4a2f6c7c03f14707c7274e77b598b79adc1809f379759",
+    "configs/confirmation_server.example.yaml": "a5f593e637adc67067c51833147d54dcb8f914137aebcfd88e86a61bfa644e56",
+    "protocol_assets/confirmation_patient_split.csv": "dc4827771709dd237ea133e7f2869448c972483dd40d7612d38fe575e4df1e33"
+  }
+}

@@ -64,3 +64,4 @@ configs/phase35_server.local.*
 configs/phase41_server.local.*
 configs/phase42_server.local.*
 configs/strong_kd_server.local.*
+configs/confirmation_server.local.*
