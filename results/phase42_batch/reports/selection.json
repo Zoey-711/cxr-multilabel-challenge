@@ -1,0 +1,952 @@
+{
+  "state": "COMPLETE",
+  "selected": [],
+  "pilot_fold": 2,
+  "baseline": {
+    "macro_auc": 0.8053775203295881,
+    "per_class_auc": [
+      0.6769408944972589,
+      0.8532416774964768,
+      0.8133419743846646,
+      0.7218303436006329,
+      0.8688066689054382,
+      0.7892053988300112,
+      0.8015671066846289,
+      0.750822274295083,
+      0.9025063583885434,
+      0.8755125062131427
+    ],
+    "positive_studies": [
+      124,
+      207,
+      187,
+      283,
+      465,
+      759,
+      790,
+      920,
+      942,
+      1339
+    ],
+    "studies": 3731,
+    "patients": 2211
+  },
+  "candidates": {
+    "A01": {
+      "oof": {
+        "macro_auc": 0.8070723817714235,
+        "per_class_auc": [
+          0.6762097892091542,
+          0.8443338158767759,
+          0.8185447121594379,
+          0.7382760938896313,
+          0.8694651311327526,
+          0.7883788437360911,
+          0.8028768308376983,
+          0.7519645260080738,
+          0.9049094524363609,
+          0.8757646224282585
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": 0.0016948614418353936,
+        "ci95": [
+          -0.0017360806769340681,
+          0.0049470826540753965
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.15642178910544727,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "A02": {
+      "oof": {
+        "macro_auc": 0.805507115413913,
+        "per_class_auc": [
+          0.668555541643936,
+          0.8392609408500441,
+          0.8167988978887266,
+          0.7322706664589704,
+          0.8700340424971521,
+          0.7894079923821278,
+          0.8064513491062628,
+          0.7529482390608324,
+          0.9043470747606421,
+          0.8749964094904349
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": 0.00012959508432486277,
+        "ci95": [
+          -0.004040698376519036,
+          0.003980988870012794
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.47176411794102946,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "A04": {
+      "oof": {
+        "macro_auc": 0.8053131056709711,
+        "per_class_auc": [
+          0.6716040494736937,
+          0.8443187363941941,
+          0.8058698289494333,
+          0.7292366958261255,
+          0.8710250281492602,
+          0.7900811615481871,
+          0.8061991314415574,
+          0.7544868374244041,
+          0.9062637263925081,
+          0.8740458611103479
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": -6.441465861695139e-05,
+        "ci95": [
+          -0.0037008839091245056,
+          0.003605704072288013
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.512743628185907,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "B01": {
+      "oof": {
+        "macro_auc": 0.8067857780271428,
+        "per_class_auc": [
+          0.6787865440854253,
+          0.8462523373198002,
+          0.8204172752622494,
+          0.7284562977052298,
+          0.8656407825165109,
+          0.7867640800302161,
+          0.8014907096957463,
+          0.7550007346913523,
+          0.9062730517752864,
+          0.8787759671896114
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": 0.0014082576975547045,
+        "ci95": [
+          -0.0023811345485972553,
+          0.005358264114045321
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.24887556221889057,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "B02": {
+      "oof": {
+        "macro_auc": 0.8079502794278408,
+        "per_class_auc": [
+          0.6833565110850766,
+          0.8480488520401169,
+          0.8126644716987965,
+          0.7293627483131513,
+          0.8713822439075782,
+          0.7825421988626389,
+          0.8033403776378482,
+          0.763511167308555,
+          0.9062762871121688,
+          0.879017936312478
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": 0.0025727590982527193,
+        "ci95": [
+          -0.001296799941615878,
+          0.00668100763119794
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.09345327336331834,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "B03": {
+      "oof": {
+        "macro_auc": 0.7999871745616345,
+        "per_class_auc": [
+          0.6726135113623152,
+          0.8307170431053864,
+          0.792829788389807,
+          0.7253044731211006,
+          0.8685531609479222,
+          0.7826756357536392,
+          0.8042775857690702,
+          0.7456189194623606,
+          0.9042256544705886,
+          0.8730559732341562
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": -0.005390345767953608,
+        "ci95": [
+          -0.009982506744234242,
+          -0.0009369815877424927
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.9895052473763118,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "B04": {
+      "oof": {
+        "macro_auc": 0.8017266982892828,
+        "per_class_auc": [
+          0.6523449028323064,
+          0.8486287266884908,
+          0.8149414239325937,
+          0.7274847712198601,
+          0.8673063627205025,
+          0.7789773059756675,
+          0.8019867521165194,
+          0.7498814826844848,
+          0.9041476257575446,
+          0.8715676289648592
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": -0.0036508220403053127,
+        "ci95": [
+          -0.007991847477360491,
+          0.0009460593554824203
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.9490254872563718,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "C01": {
+      "oof": {
+        "macro_auc": 0.8084855629326423,
+        "per_class_auc": [
+          0.6691334949068567,
+          0.8613085152467278,
+          0.8117855289047694,
+          0.7365738729062989,
+          0.8692728601623768,
+          0.78963075662707,
+          0.8040105191121594,
+          0.7599902556725906,
+          0.906641499552001,
+          0.8765083262355724
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": 0.0031080426030541952,
+        "ci95": [
+          -0.0010230120413429243,
+          0.007333726270358305
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.07396301849075462,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "C02": {
+      "oof": {
+        "macro_auc": 0.7932688232065102,
+        "per_class_auc": [
+          0.6672375399089584,
+          0.8095063799919942,
+          0.7891005057881967,
+          0.7151782566633599,
+          0.8611263654860439,
+          0.7806377308103565,
+          0.7926994607018193,
+          0.745950303930212,
+          0.8996956118935552,
+          0.8715560768906062
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": -0.012108697123077938,
+        "ci95": [
+          -0.017137156961045508,
+          -0.0070946762312670475
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 1.0,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "C03": {
+      "oof": {
+        "macro_auc": 0.7521276150982142,
+        "per_class_auc": [
+          0.5870127082643963,
+          0.7608298102178574,
+          0.7767274055117634,
+          0.7083417026719028,
+          0.7886879481658534,
+          0.7324025112734224,
+          0.7471694377612024,
+          0.7053622801726138,
+          0.8745256425188734,
+          0.8402167044242571
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": -0.05324990523137385,
+        "ci95": [
+          -0.061824123649796,
+          -0.044604278335495615
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 1.0,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "C04": {
+      "oof": {
+        "macro_auc": 0.8074522316574125,
+        "per_class_auc": [
+          0.679696513052577,
+          0.8471146095510701,
+          0.819870293695151,
+          0.7376514679478245,
+          0.8635244849179227,
+          0.7858880956560751,
+          0.8048472275425133,
+          0.75525613660619,
+          0.904820195201196,
+          0.8758532924036058
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": 0.002074711327824441,
+        "ci95": [
+          -0.001457690575170495,
+          0.005651459603044341
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.11644177911044477,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "D01": {
+      "oof": {
+        "macro_auc": 0.8080220990987732,
+        "per_class_auc": [
+          0.6905065866549809,
+          0.855637258933908,
+          0.8116120037179657,
+          0.7349223803628672,
+          0.8674015105123495,
+          0.7864657311011691,
+          0.804378731078295,
+          0.7495997865528282,
+          0.9034642084196407,
+          0.8762327936537275
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": 0.002644578769185113,
+        "ci95": [
+          -0.000352252411817594,
+          0.005859015668073453
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.05297351324337831,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "D02": {
+      "oof": {
+        "macro_auc": 0.8068931867139039,
+        "per_class_auc": [
+          0.6787552429415921,
+          0.84946221081665,
+          0.8141092574932702,
+          0.7362618161396375,
+          0.8670689870875558,
+          0.7884484437091377,
+          0.8042975996281296,
+          0.7505966467139963,
+          0.9058842404076067,
+          0.8740474222014631
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": 0.0015156663843157725,
+        "ci95": [
+          -0.0019024756337609999,
+          0.004928043604800294
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.18990504747626186,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "D03": {
+      "oof": {
+        "macro_auc": 0.8069333606290474,
+        "per_class_auc": [
+          0.6683364336371035,
+          0.8524650841435129,
+          0.8144344286041936,
+          0.7403498110237512,
+          0.8703691997708551,
+          0.7870260773809841,
+          0.8058666431378287,
+          0.7506871297542264,
+          0.9042738038959546,
+          0.8755249949420648
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": 0.0015558402994593212,
+        "ci95": [
+          -0.0018010097223169707,
+          0.00505849148544486
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.1854072963518241,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "D04": {
+      "oof": {
+        "macro_auc": 0.8083355115332969,
+        "per_class_auc": [
+          0.6885547367573803,
+          0.8461762544758646,
+          0.8259957327893193,
+          0.7374531658645765,
+          0.8655723024448703,
+          0.7831643871567214,
+          0.8035428834590835,
+          0.752816961316567,
+          0.9052969316065008,
+          0.8747817594620855
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": 0.0029579912037087652,
+        "ci95": [
+          -0.0006322417738824415,
+          0.006499240150978222
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.05297351324337831,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "E03": {
+      "oof": {
+        "macro_auc": 0.8056369850272926,
+        "per_class_auc": [
+          0.6796372644588926,
+          0.849198319871468,
+          0.8049343018553615,
+          0.7211201454420241,
+          0.8734152460344112,
+          0.7915132807388059,
+          0.806872716160438,
+          0.74791308987982,
+          0.9070282174664038,
+          0.8747372683653003
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": 0.00025946469770454783,
+        "ci95": [
+          -0.003125637076397475,
+          0.0036484297965182627
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.4447776111944028,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "E04": {
+      "oof": {
+        "macro_auc": 0.809085019065374,
+        "per_class_auc": [
+          0.6847695341495479,
+          0.85203737518301,
+          0.815701916925194,
+          0.7346820607839439,
+          0.8713038869025278,
+          0.7945980668053346,
+          0.8055296355756029,
+          0.7521619259740461,
+          0.9041211721206834,
+          0.875944616233849
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": 0.003707498735785908,
+        "ci95": [
+          0.00034241419699406476,
+          0.0071879963045968
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.015992003998001,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "F01": {
+      "oof": {
+        "macro_auc": 0.80363066024646,
+        "per_class_auc": [
+          0.6698925476448125,
+          0.8474751462709811,
+          0.8095787412030275,
+          0.72466601215023,
+          0.8669475008066162,
+          0.7847649648808289,
+          0.8040935873873951,
+          0.7489727854855923,
+          0.9054250128842534,
+          0.8744903037508649
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": -0.0017468600831280767,
+        "ci95": [
+          -0.005320560497192661,
+          0.0017654519933750265
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.8335832083958021,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    },
+    "F04": {
+      "oof": {
+        "macro_auc": 0.8059628882381153,
+        "per_class_auc": [
+          0.6784332883193075,
+          0.8420533868517879,
+          0.8130492449391002,
+          0.7229381707427054,
+          0.8719053921471794,
+          0.7921423403678071,
+          0.8053437003688576,
+          0.7498764558489165,
+          0.9080951173818284,
+          0.8757917854136642
+        ],
+        "positive_studies": [
+          124,
+          207,
+          187,
+          283,
+          465,
+          759,
+          790,
+          920,
+          942,
+          1339
+        ],
+        "studies": 3731,
+        "patients": 2211
+      },
+      "bootstrap": {
+        "delta": 0.0005853679085272567,
+        "ci95": [
+          -0.002810136852672546,
+          0.004190810161609968
+        ],
+        "requested": 2000,
+        "valid": 2000,
+        "invalid": 0,
+        "seed": 4202,
+        "patients": 2211,
+        "studies": 3731,
+        "invalid_policy": "Discard whole draw if any class is undefined; no macro over fewer classes",
+        "centered_one_sided_p": 0.36731634182908546,
+        "p_method": "Approximate centered paired-cluster bootstrap; exploratory, not an independent confirmatory test"
+      }
+    }
+  },
+  "source_receipts": {
+    "P42_A01_F02": "b653b555aa6d88975147c0eedb0602a23186fb3bd6ba8171dd0abb1e11f953bb",
+    "P42_A02_F02": "a2dc187f89e3afc00d0d76218d02d8bbd6cf44d187ecfa0f45342af31866b704",
+    "P42_A04_F02": "f585ab18065c203889931e60dfb5280e647a444be7c2aabacf18b5e419c752c9",
+    "P42_B01_F02": "71f80e1851336410464b354748aad04af1910fe7dfc8d02d1c89928a731b11d4",
+    "P42_B02_F02": "2021fee55f9888f049c2a4606d26c1d5cf008fb1bbc218ad557358ce521b7d58",
+    "P42_B03_F02": "15e88b3e7694a1befd2b37aee4fee54ad4e6d82789df2fec306758bd132e0970",
+    "P42_B04_F02": "b10a7625a912bb32758eb8e0361248a497a230d2a52abad8471a84b47b986154",
+    "P42_C01_F02": "7fc604c1102ada50d4954d06449f51d6f6cc879d97b10cf94f0bd52521127112",
+    "P42_C02_F02": "c441884754ff3e5ceac5b571c7675f5230f31ed34a87de9f3f408bf0f38f2a6c",
+    "P42_C03_F02": "df70fa26a113e2bf440ca84428522215800032462734a3d06bd833316d3c2f68",
+    "P42_C04_F02": "b826eb2dd4167389f26215a70c8a48423ac968b0558c68f7d4e0670c42f365ce",
+    "P42_D01_F02": "72151a054622bde9919e68a314815f4b918f583ba122d80e95de3a25b36912cb",
+    "P42_D02_F02": "f7699dff283ce9812d527435a377f76366e7b6abec36d4175f015be3a3556383",
+    "P42_D03_F02": "9284477ba46baa642721440180ace65c5326d8c9503eca463b5b8da15c6d0dde",
+    "P42_D04_F02": "7b620e39852a72a997fef63b2845bb3016982c4d1d467d932a01e0d492cba7c5",
+    "P42_E03_F02": "a50670b40aac2cde790b20f279900f7e56d97fe5232fe4fc7cf19f82e51a141e",
+    "P42_E04_F02": "ba8ec48526bfb5458e061e5b492cec5f4f45580869c6049cc357695bfa73f7b3",
+    "P42_F01_F02": "b80a7ae09c128d53d8cd2c8e865a270fee0aaa7e5cf54ff980613ddc9b28950c",
+    "P42_F04_F02": "536b3e6d65c0e01ccbbff598ef0b38d3e093d0b80421ea22020a40a8a7ae04da"
+  },
+  "plan_sha256": "e4dd3495061b6f0bd029205766283c14d7f6136f03dd45dba0b590cf19f31660",
+  "limitation": "19 correlated comparisons, repeated epoch selection and previously studied cohort. Approximate Holm bootstrap screening is exploratory. Val/Test/leaderboard excluded from selection."
+}

@@ -1,0 +1,20 @@
+candidate,mean_ms,baseline_mean_ms,delta_ms,device,limitation,status
+A01,54.00924485797683,58.24348841793835,-4.23424355996152,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+A02,54.52570208969215,58.24348841793835,-3.7177863282461985,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+A04,55.06075596126417,58.24348841793835,-3.182732456674181,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+B01,54.702742264295615,58.24348841793835,-3.5407461536427363,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+B02,56.03840204576651,58.24348841793835,-2.2050863721718414,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+B03,54.777775440985955,58.24348841793835,-3.465712976952396,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+B04,54.68454402560989,58.24348841793835,-3.5589443923284634,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+C01,54.583138075346746,58.24348841793835,-3.660350342591606,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+C02,54.35713218835493,58.24348841793835,-3.88635622958342,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+C03,51.79718839315077,58.24348841793835,-6.446300024787583,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+C04,53.451199010014534,58.24348841793835,-4.792289407923818,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+D01,53.809489871685706,58.24348841793835,-4.433998546252646,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+D02,53.2042380515486,58.24348841793835,-5.039250366389751,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+D03,54.13230598283311,58.24348841793835,-4.111182435105242,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+D04,53.6265158560127,58.24348841793835,-4.61697256192565,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+E03,54.49159477216502,58.24348841793835,-3.751893645773329,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+E04,51.97673794192573,58.24348841793835,-6.266750476012625,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+F01,53.683304243410625,58.24348841793835,-4.560184174527727,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
+F04,54.44599084245662,58.24348841793835,-3.797497575481735,NVIDIA GeForce RTX 4090,Same input/protocol; server contention may differ; not a selection criterion,T4_UNVERIFIED
