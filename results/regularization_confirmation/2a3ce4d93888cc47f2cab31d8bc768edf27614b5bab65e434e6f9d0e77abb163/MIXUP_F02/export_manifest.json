@@ -1,0 +1,58 @@
+{
+  "kind": "regularization_confirmation_v1",
+  "task_id": "MIXUP_F02",
+  "code_commit": "bf1e98f531e689cb747eed2d19ebde41c5dd9748",
+  "identity_sha256": "2a3ce4d93888cc47f2cab31d8bc768edf27614b5bab65e434e6f9d0e77abb163",
+  "sha256": {
+    "protocol_manifest.json": "a1837a9b52f175e9258333a5e894924f49cbba59c74b334c1faccc1d5c5c6afe",
+    "bootstrap_comparison.json": "00a2a26890e9ffaa0c0dfe7bd7619ee4be606205ee38692fc372edc95cda02d0",
+    "per_class_comparison.csv": "13db3814c31b8e3d2521ea93ec7a80ceef83d9a136dd766166ef8034a3caad60",
+    "final_decision.md": "b274e1c6ffb94c2469f7f1309ab999a65a76969e3d201bc8d9ce6d724ee8922d",
+    "cpu_smoke_report.json": "4d524941efc26e53de8a1d12e5569d95ff2bfd57c21e04880495ef25edf33d5f",
+    "cuda_smoke_report.json": "97d4a675aa86bf9551f01ad01e42a2c825491f7cb874c3bf550082f8781dd6b7",
+    "runtime_environment.json": "cfd15475a0db79209357ca60ee4e1541c8c3571cab07e67be96820ef7f3d5c60",
+    "BASE/resolved_config.json": "0ad4044aa131efb489cf4a87352b3402db3b29f8c1fb54b6060fbba1349e4d55",
+    "BASE/train_history.csv": "3b9a8b4c8b97c4d81ff10b65b9b4157fd825fcd76790b1cc4d6ad61c79ee8872",
+    "BASE/outer_oof_predictions.csv": "a270f24b45dbf51a3524fd1d832cdef752c858791615152641b99027678681f3",
+    "BASE/outer_metrics.json": "9221afd08083f858ca4435231d7961a900e3be3e074a065873f3feabd81d9f15",
+    "BASE/TRAIN_DONE.json": "643626984b73355d0ae119264b172a22d08fb8d454624579b3e874bf7d42fbe6",
+    "MIXUP/resolved_config.json": "992f8941a666914d9d15fcc14f7e637f02669b597de388bf56b612a077bc837b",
+    "MIXUP/train_history.csv": "f85df5c01b3f7ddf420de2e92f37816c71d4078efc6ee85d9c479d6ff2f39d33",
+    "MIXUP/outer_oof_predictions.csv": "7f7de7c4502c11991bd9658894b8d1bcda78a8dc8c9ce28aef59fc8855aebcb8",
+    "MIXUP/outer_metrics.json": "654bb046cf9c75bfc611030e468c62fc2bac1eb00117b24473705ac071661376",
+    "MIXUP/TRAIN_DONE.json": "503864f570a71751c69dff7aa8ccf43830e2f66c48292039d8766ffaa2deb7a6"
+  },
+  "source_sha256": {
+    "protocol_manifest.json": "a1837a9b52f175e9258333a5e894924f49cbba59c74b334c1faccc1d5c5c6afe",
+    "bootstrap_comparison.json": "00a2a26890e9ffaa0c0dfe7bd7619ee4be606205ee38692fc372edc95cda02d0",
+    "per_class_comparison.csv": "13db3814c31b8e3d2521ea93ec7a80ceef83d9a136dd766166ef8034a3caad60",
+    "final_decision.md": "b274e1c6ffb94c2469f7f1309ab999a65a76969e3d201bc8d9ce6d724ee8922d",
+    "cpu_smoke_report.json": "4d524941efc26e53de8a1d12e5569d95ff2bfd57c21e04880495ef25edf33d5f",
+    "cuda_smoke_report.json": "97d4a675aa86bf9551f01ad01e42a2c825491f7cb874c3bf550082f8781dd6b7",
+    "runtime_environment.json": "cfd15475a0db79209357ca60ee4e1541c8c3571cab07e67be96820ef7f3d5c60",
+    "BASE/resolved_config.json": "f223d28a2d335f149441b3150f6eb055affbd2c669e5135111e77d207e95f427",
+    "BASE/train_history.csv": "3b9a8b4c8b97c4d81ff10b65b9b4157fd825fcd76790b1cc4d6ad61c79ee8872",
+    "BASE/outer_oof_predictions.csv": "a270f24b45dbf51a3524fd1d832cdef752c858791615152641b99027678681f3",
+    "BASE/outer_metrics.json": "9221afd08083f858ca4435231d7961a900e3be3e074a065873f3feabd81d9f15",
+    "BASE/TRAIN_DONE.json": "643626984b73355d0ae119264b172a22d08fb8d454624579b3e874bf7d42fbe6",
+    "MIXUP/resolved_config.json": "781c52c7fca0f642dd9c5e33f1ca13c26dbfd8cd8c81313fe7ef08b8651e5ad1",
+    "MIXUP/train_history.csv": "f85df5c01b3f7ddf420de2e92f37816c71d4078efc6ee85d9c479d6ff2f39d33",
+    "MIXUP/outer_oof_predictions.csv": "7f7de7c4502c11991bd9658894b8d1bcda78a8dc8c9ce28aef59fc8855aebcb8",
+    "MIXUP/outer_metrics.json": "654bb046cf9c75bfc611030e468c62fc2bac1eb00117b24473705ac071661376",
+    "MIXUP/TRAIN_DONE.json": "503864f570a71751c69dff7aa8ccf43830e2f66c48292039d8766ffaa2deb7a6"
+  },
+  "original_weight_hashes": {
+    "MIXUP/ema_best.pth": "de724c81387c357a6ac3a0640d5b3c4e594c9ec889baf051741176015afa89d6",
+    "BASE/ema_best.pth": "0793c0df6e48ce5b916adb2ed6cc4ec541af4e9e54a1b66464e84418820eddb0"
+  },
+  "weights_status": "WEIGHTS_NOT_DOWNLOADED",
+  "redacted_fields": [
+    "archive",
+    "holdout_index",
+    "output",
+    "pretrained_root",
+    "protocol_root"
+  ],
+  "images_included": false,
+  "labels_included": false
+}

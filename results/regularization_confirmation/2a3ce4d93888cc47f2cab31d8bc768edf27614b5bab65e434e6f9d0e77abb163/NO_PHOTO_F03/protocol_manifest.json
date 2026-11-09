@@ -1,0 +1,78 @@
+{
+  "state": "PASS",
+  "config_sha256": "1f5d0d84d264369684df545328700c91e6b22e9c6d6a5c06cf22518a2da04de7",
+  "code_sha256": {
+    "src/cxr/regularization_confirmation/core.py": "0c87a352b03fcec6f988a584e0dfd7cffbe9acb204c9485ed16c07cfca2cbe1c",
+    "scripts/confirmation_run.py": "46b409e514651dab968428630634383cb353cd60bcb03fe139a5c5b171119d23",
+    "src/cxr/regularization_confirmation/support.py": "53a4d254b144ed4d937f4bf15fbde69e5ff864884855857b521ea4c77252dc69",
+    "src/cxr/phase39_run.py": "a2224d9758b371b6f623eb76b3a217215c2c3f29f120105805affe7905002d55",
+    "src/cxr/data/dataset.py": "ecf377680edb67c4594c390b6499c48ac2438d0a6c58fe18dd639c9ca543e733",
+    "src/cxr/models/factory.py": "a6b7b1c8d69183bbccfb882fc6791ec8337dec4cb17934ce7f5c8227bb1ed7fa",
+    "src/cxr/utils/training_resume.py": "0d1adfebe5ca69b90ee68b313a38d14285a2214310259aa1008208c4365f2525"
+  },
+  "pretrained_sha256": "dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74",
+  "fold_sha256": {
+    "patient_folds.csv": "04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c",
+    "study_folds.csv": "d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf",
+    "image_folds.csv": "f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d"
+  },
+  "holdout_index_sha256": "dc4827771709dd237ea133e7f2869448c972483dd40d7612d38fe575e4df1e33",
+  "excluded_holdout_patients": 1106,
+  "counts": {
+    "train": {
+      "patients": 7161,
+      "studies": 11908,
+      "images": 19518,
+      "positive_studies": [
+        404,
+        589,
+        601,
+        931,
+        1534,
+        2448,
+        2556,
+        2864,
+        2986,
+        4313
+      ]
+    },
+    "inner": {
+      "patients": 796,
+      "studies": 1399,
+      "images": 2282,
+      "positive_studies": [
+        50,
+        53,
+        69,
+        92,
+        193,
+        318,
+        324,
+        341,
+        392,
+        491
+      ]
+    },
+    "outer": {
+      "patients": 1992,
+      "studies": 3360,
+      "images": 5501,
+      "positive_studies": [
+        122,
+        164,
+        172,
+        267,
+        446,
+        731,
+        727,
+        821,
+        849,
+        1203
+      ]
+    }
+  },
+  "patient_overlap": 0,
+  "official_val_accessed": false,
+  "test_accessed": false,
+  "selection": "inner_validation_ema_study_macro_auc"
+}

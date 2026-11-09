@@ -1,0 +1,22 @@
+# Fixed regularization confirmation
+
+{
+  "scope": "OUTER_FOLD3_HOLDOUT_EXCLUDED_EXPLORATORY",
+  "challenger": "NO_PHOTO",
+  "base_auc": 0.7998572774795281,
+  "challenger_auc": 0.7997031043988254,
+  "delta": -0.00015417308070264646,
+  "ci95": [
+    -0.002719704430115556,
+    0.002414210852005707
+  ],
+  "valid_bootstraps": 2000,
+  "invalid_bootstraps": 0,
+  "invalid_policy": "discard replicates missing either label for any class; no resampling to reach 2000",
+  "studies": 3360,
+  "patients": 1992,
+  "decision": "COMPLETED_NO_GAIN",
+  "further_training_started": false
+}
+
+No official Val/Test selection. No automatic confirmation-fold launch. Historical folds are not a blind test.

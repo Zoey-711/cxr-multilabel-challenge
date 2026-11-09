@@ -1,0 +1,71 @@
+{
+  "state": "PASS",
+  "config_sha256": "16cde6a9cd7aabc530b5e3e8ab4ac31738f00862dc96542c5bc9b0d06a46d5c1",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "arms": {
+    "BASE": {
+      "state": "PASS",
+      "events": [
+        {
+          "loss": 0.6892089247703552,
+          "skipped": false,
+          "gradient_norm": 1.6374430656433105,
+          "scale_before": 1024.0,
+          "scale_after": 1024.0
+        },
+        {
+          "loss": 0.6884003579616547,
+          "skipped": false,
+          "gradient_norm": 2.0095908641815186,
+          "scale_before": 1024.0,
+          "scale_after": 1024.0
+        },
+        {
+          "loss": 0.6834569871425629,
+          "skipped": false,
+          "gradient_norm": 1.3523627519607544,
+          "scale_before": 1024.0,
+          "scale_after": 1024.0
+        }
+      ],
+      "initial_state_sha256": "a4d9049893225509720c9c061960d5289e9363feb2e3ce153350d789d7e6cf2b",
+      "restore_max_abs_error": 0.0,
+      "ema_updates": 3,
+      "peak_allocated_mib": 2221.671875,
+      "peak_reserved_mib": 2362.0,
+      "seconds": 12.042689433321357
+    },
+    "MIXUP": {
+      "state": "PASS",
+      "events": [
+        {
+          "loss": 0.6846063435077667,
+          "skipped": false,
+          "gradient_norm": 1.3148893117904663,
+          "scale_before": 1024.0,
+          "scale_after": 1024.0
+        },
+        {
+          "loss": 0.6882171630859375,
+          "skipped": false,
+          "gradient_norm": 1.675453543663025,
+          "scale_before": 1024.0,
+          "scale_after": 1024.0
+        },
+        {
+          "loss": 0.6799741685390472,
+          "skipped": false,
+          "gradient_norm": 1.2072935104370117,
+          "scale_before": 1024.0,
+          "scale_after": 1024.0
+        }
+      ],
+      "initial_state_sha256": "a4d9049893225509720c9c061960d5289e9363feb2e3ce153350d789d7e6cf2b",
+      "restore_max_abs_error": 0.0,
+      "ema_updates": 3,
+      "peak_allocated_mib": 2222.109375,
+      "peak_reserved_mib": 2360.0,
+      "seconds": 7.756571309641004
+    }
+  }
+}

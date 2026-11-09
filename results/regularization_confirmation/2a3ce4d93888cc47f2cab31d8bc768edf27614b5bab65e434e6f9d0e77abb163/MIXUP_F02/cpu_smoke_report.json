@@ -1,0 +1,6 @@
+{
+  "state": "PASS",
+  "independent_mixup_rng": true,
+  "convex_labels": true,
+  "rng_restore": true
+}
