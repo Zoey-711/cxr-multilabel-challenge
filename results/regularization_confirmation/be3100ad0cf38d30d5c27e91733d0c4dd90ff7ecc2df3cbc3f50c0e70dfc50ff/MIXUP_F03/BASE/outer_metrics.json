@@ -1,0 +1,88 @@
+{
+  "study_count": 3360,
+  "macro_auc": 0.7998572774795281,
+  "macro_f1": 0.32249132368788136,
+  "threshold": 0.5,
+  "per_class": [
+    {
+      "class_id": 1,
+      "class_name": "Enlarged Cardiomediastinum",
+      "positive_studies": 122,
+      "negative_studies": 3238,
+      "auc": 0.7156930001316336,
+      "f1": 0.0
+    },
+    {
+      "class_id": 2,
+      "class_name": "Pneumothorax",
+      "positive_studies": 164,
+      "negative_studies": 3196,
+      "auc": 0.8319478998137916,
+      "f1": 0.08139534883720931
+    },
+    {
+      "class_id": 3,
+      "class_name": "Consolidation",
+      "positive_studies": 172,
+      "negative_studies": 3188,
+      "auc": 0.77496462023285,
+      "f1": 0.022727272727272728
+    },
+    {
+      "class_id": 4,
+      "class_name": "Pneumonia",
+      "positive_studies": 267,
+      "negative_studies": 3093,
+      "auc": 0.6874651109004143,
+      "f1": 0.0
+    },
+    {
+      "class_id": 5,
+      "class_name": "Edema",
+      "positive_studies": 446,
+      "negative_studies": 2914,
+      "auc": 0.8722900271151177,
+      "f1": 0.4664310954063604
+    },
+    {
+      "class_id": 6,
+      "class_name": "Cardiomegaly",
+      "positive_studies": 731,
+      "negative_studies": 2629,
+      "auc": 0.808347282936457,
+      "f1": 0.44281045751633985
+    },
+    {
+      "class_id": 7,
+      "class_name": "Atelectasis",
+      "positive_studies": 727,
+      "negative_studies": 2633,
+      "auc": 0.7892676331672231,
+      "f1": 0.4279210925644917
+    },
+    {
+      "class_id": 8,
+      "class_name": "Lung Opacity",
+      "positive_studies": 821,
+      "negative_studies": 2539,
+      "auc": 0.7310458671760728,
+      "f1": 0.3289036544850498
+    },
+    {
+      "class_id": 9,
+      "class_name": "Pleural Effusion",
+      "positive_studies": 849,
+      "negative_studies": 2511,
+      "auc": 0.9081124325054566,
+      "f1": 0.7018822100789314
+    },
+    {
+      "class_id": 10,
+      "class_name": "No Finding",
+      "positive_studies": 1203,
+      "negative_studies": 2157,
+      "auc": 0.8794389008162641,
+      "f1": 0.7528421052631579
+    }
+  ]
+}

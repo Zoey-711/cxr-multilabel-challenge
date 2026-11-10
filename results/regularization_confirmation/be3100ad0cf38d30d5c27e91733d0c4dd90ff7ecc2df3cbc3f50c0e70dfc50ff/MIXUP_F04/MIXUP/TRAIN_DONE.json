@@ -1,0 +1,7 @@
+{
+  "state": "TRAIN_DONE",
+  "best_epoch": 4,
+  "inner_auc": 0.7976589409700277,
+  "checkpoint_sha256": "da2ead512f8365e059c555172c110a32b163da66c00f043b7b0cdefc82ce6ff9",
+  "config_sha256": "75ca0a088bac85abbb13b697838aba7d5ec951c25d48169ba0588a51b03d8495"
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "OUTER_FOLD5_HOLDOUT_EXCLUDED_EXPLORATORY",
+  "challenger": "MIXUP",
+  "base_auc": 0.8080563379412048,
+  "challenger_auc": 0.80745182601618,
+  "delta": -0.0006045119250247533,
+  "ci95": [
+    -0.003797156660135054,
+    0.0025339853352753486
+  ],
+  "valid_bootstraps": 2000,
+  "invalid_bootstraps": 0,
+  "invalid_policy": "discard replicates missing either label for any class; no resampling to reach 2000",
+  "studies": 3352,
+  "patients": 1992,
+  "decision": "COMPLETED_NO_GAIN",
+  "further_training_started": false
+}
