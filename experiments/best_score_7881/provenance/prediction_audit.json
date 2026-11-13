@@ -1,0 +1,27 @@
+{
+  "csv_sha256": "8e2d50c806da5e033f2f649f1186e0c9856740cb2ba720cd42fb26c54e02772c",
+  "test_images": 2218,
+  "studies": 1414,
+  "study_image_count_histogram": {
+    "1": 775,
+    "2": 496,
+    "3": 122,
+    "4": 20,
+    "5": 1
+  },
+  "single_image_studies": 775,
+  "multi_image_studies": 639,
+  "formula_max_errors": {
+    "E08_equals_half_E03_half_N01": 0.0,
+    "final_equals_075E08_025S17": 0.0
+  },
+  "image_to_study_mean_max_errors": {
+    "B01": 0.0,
+    "B02": 0.0,
+    "B03": 0.0,
+    "M02": 0.0,
+    "S17_F3": 0.0
+  },
+  "csv_equals_final_matrix": true,
+  "N01_evidence": "Study CSV and generator aggregate_mean_probabilities; original Test image probabilities not found in submission directory, not claimed independently recalculated"
+}

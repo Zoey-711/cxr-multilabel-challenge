@@ -1,0 +1,15 @@
+{
+  "deployment/cost.py": "0aac5f7e38fa98a08c948e05b00a30fbc20982e5d413cd4d1d284fe111471b52",
+  "deployment/predict.py": "c17aeb038a083e15ae307870d9758203624644f8779367e5d2ac94dbd792b9af",
+  "deployment/study_adapter_cpu_test.json": "5e3d01a513f8c9f7f25c58f504099e46c96e5d4c137f7353733f3ba8fe89eb02",
+  "provenance/candidate_manifest.json": "f6eaa9415239a9508bb5f172fcdd3378d2c23fc4094bef838302f42881ec975a",
+  "provenance/e08_manifest.json": "c1fffceeca0e19a34bb4a29395e6206ad62d3d7bdffca9b3e78ed8cf03322a56",
+  "provenance/prediction_audit.json": "2dc463bc6adad64bd05d0e29970db8bb8b54d8e1cd04920fbe7d10d02bf69023",
+  "provenance/s17_f3_best_metrics.json": "ff74fd8c4d36fcbba2105ad72fb1dd3f534fdafc2d1e2e7f835f73409776c8b8",
+  "provenance/s17_f3_config.yaml": "5c761b19424032d0dafd1a092c772cbf643b6e28caefaec1b532c78a9336d749",
+  "provenance/s17_f3_pretrained_source.json": "37d3cd6aae0c90175f2807639982b435827ca404e7295599aa78b8db717b42fc",
+  "README.md": "bc6197f4261a208ee04b42bb0efc42e8b7687952e283a956f13151363b4b8041",
+  "score.json": "7ad88ee2dced99a58bda97711a03c96d8d1e12685abc57ff8aff4ca61f224878",
+  "source/generate_e08_ema_candidate.py": "a447f65d5162cb0ded3017b6ca8e9b26c005047fad2dc86cd828017606e3b667",
+  "source/generate_e08_s17_f3_candidate.py": "d416736d08ceda10b40b72023fcff88c2148c308d541395b6a2d683cab1f3948"
+}
