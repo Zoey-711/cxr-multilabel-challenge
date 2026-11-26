@@ -1,0 +1,11 @@
+{
+  "release_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/tag/best-score-7881-complete-v1-20261126",
+  "asset_url": "https://github.com/Zoey-711/cxr-multilabel-challenge/releases/download/best-score-7881-complete-v1-20261126/best_score_7881_study_v5.zip",
+  "size": 688838396,
+  "server_digest": "sha256:88a92a51fcf19400ef8c8e82bc9f2b6508887202950f67d6957a732905fb0f62",
+  "published": true,
+  "authorization": "User explicitly approved public archives and complete deployment materials",
+  "raw_images_in_zip": 0,
+  "archive_blobs_verified": 3745,
+  "model_inference_not_rerun": true
+}

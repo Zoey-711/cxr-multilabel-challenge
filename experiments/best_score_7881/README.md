@@ -6,11 +6,11 @@
 
 ## 获取完整工程
 
-**当前发布状态：完整ZIP已在本地构建并核验，Release尚未发布。发现当前仓库公开，正在等待用户确认公开发布或指定私有仓库；下列Release下载命令在发布完成前不可用。本地已有ZIP可用--archive验证解压。**
+**已公开发布：** 用户明确授权公开归档和完整部署材料。[下载完整部署Release](https://github.com/Zoey-711/cxr-multilabel-challenge/releases/tag/best-score-7881-complete-v1-20261126)。资产大小688,838,396字节，GitHub服务器SHA-256与release_lock.json匹配。
 
 本目录runtime_source提供完整部署源码供审阅；Release ZIP交付完整权重、T4引擎、配置、运行依赖模块、来源材料、历史submission.csv及Test图像映射。没有原始比赛图片或训练标签。Git源码目录不能代替Release全部文件。
 
-需要仓库访问权限及GitHub CLI登录（不要在脚本中填写Token）。在仓库根目录执行：
+仓库和Release已公开。可使用GitHub CLI下载，或直接从Release网页下载ZIP；不要在脚本中填写Token。在仓库根目录执行：
 
 ```bash
 python experiments/best_score_7881/fetch_deployment.py --destination /workspace/best7881
