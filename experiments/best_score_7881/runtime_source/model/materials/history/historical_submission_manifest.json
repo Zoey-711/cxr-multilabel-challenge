@@ -1,0 +1,62 @@
+{
+  "version": "E08_075_S17_F3_025_20261110",
+  "generated_utc": "2026-11-10T04:51:37.414829+00:00",
+  "formula": "0.75*frozen_E08_EMA_20261020+0.25*local_S17_F3_best_epoch10",
+  "weights": {
+    "E08_EMA": 0.75,
+    "S17_F3": 0.25
+  },
+  "source_files": {
+    "E08_submission_sha256": "9a9846947a544e759cc19c79f6cc8c7fae39508058ee0e3d98d3deb24e8b2a07",
+    "E08_test_probabilities_sha256": "85467d23fea4b464a2d117080d68c119da479640ce0a64018813f4aa99af1615",
+    "E08_val_probabilities_sha256": "abdbe2f71d69307518fcb5a9aad024c5c5566b7fbc1047ebd2e452b63c25c5cd",
+    "S17_checkpoint_sha256": "ce96237beb19f58b1915ac343225cea1916bcadd156c0faac76232905bf44398",
+    "S17_config_sha256": "5c761b19424032d0dafd1a092c772cbf643b6e28caefaec1b532c78a9336d749",
+    "S17_val_probabilities_sha256": "6ac168e3d5a435ccc65b99cbcff878642e0fb4c565f677005cbf52b272e6a4bc",
+    "script_sha256": "d416736d08ceda10b40b72023fcff88c2148c308d541395b6a2d683cab1f3948"
+  },
+  "checkpoint_total_bytes": 388841336,
+  "checkpoint_and_s17_config_bytes": 388843448,
+  "checkpoint_limit_bytes": 500000000,
+  "size_status": "PASS",
+  "val_macro_auc": 0.8145689350883447,
+  "e08_val_macro_auc": 0.8116686461316818,
+  "selection_caution": "Exploratory Val-screened candidate; bootstrap CI crosses zero and multiple-comparison correction did not pass.",
+  "preprocessing": "black_pad_v1",
+  "input_size": 384,
+  "precision": "PyTorch FP16 AMP batch=8 for S17 Test; frozen E08 Study Test probabilities reused",
+  "study_aggregation": "mean_probability",
+  "test_dataloader_workers": 0,
+  "runtime": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "peak_gpu_allocated_bytes": 411948032,
+    "seconds": 173.41201169975102
+  },
+  "test_auc": null,
+  "latency_status": "T4_UNVERIFIED",
+  "upload_status": "generated_not_uploaded",
+  "files": {
+    "s17_f3_test_image_predictions.csv": {
+      "bytes": 456224,
+      "sha256": "39efdef7259944e6c9de6868d701d19467f4e85e32daf02a389b44c36d4d7ca5"
+    },
+    "s17_f3_test_predictions.csv": {
+      "bytes": 282958,
+      "sha256": "2032afb19c7f74776b186968c35d6063e1847e61e723a382a8fe169bbbfc4bcb"
+    },
+    "submission.csv": {
+      "bytes": 689778,
+      "sha256": "8e2d50c806da5e033f2f649f1186e0c9856740cb2ba720cd42fb26c54e02772c"
+    },
+    "submission_validation.json": {
+      "bytes": 842,
+      "sha256": "fb96c3ebeb0b589b9d7968123cf1bd6c152d4d59e0edf7f39027eee2ad9a1445"
+    },
+    "test_predictions.csv": {
+      "bytes": 316597,
+      "sha256": "ab4e5062213edd2b5119e9e93928f7058ed3a76cac4257dfe5114194b8c99ba3"
+    }
+  }
+}

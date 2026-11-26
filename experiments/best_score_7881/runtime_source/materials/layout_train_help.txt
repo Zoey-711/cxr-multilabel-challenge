@@ -1,0 +1,14 @@
+usage: train.py [-h] --config CONFIG [--run-id RUN_ID] [--resume]
+                [--preflight-steps PREFLIGHT_STEPS]
+
+Train a configured ImageNet classifier and validate at Study level.
+
+options:
+  -h, --help            show this help message and exit
+  --config CONFIG
+  --run-id RUN_ID       Optional output directory name below
+                        outputs/experiments
+  --resume              Resume last_training.pt in the selected run
+  --preflight-steps PREFLIGHT_STEPS
+                        Only run this many training batches to verify the
+                        pipeline; no checkpoint

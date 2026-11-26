@@ -1,0 +1,11 @@
+{
+  "cpu_simulation": "PASS",
+  "studies": 100,
+  "timing_records": 300,
+  "all_images_forwarded_each_round": true,
+  "matching_reference": "PASS",
+  "mismatch_count_once_across_rounds": "PASS",
+  "incomplete_study_rejected": "PASS",
+  "gpu_test": "NOT_RUN",
+  "official_sample_layout": "Not yet supplied; recursive filename matching uses packaged metadata"
+}

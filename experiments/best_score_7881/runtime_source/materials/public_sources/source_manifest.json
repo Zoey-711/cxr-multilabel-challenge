@@ -1,0 +1,79 @@
+{
+  "torchvision_v0.23_LICENSE.txt": {
+    "url": "https://raw.githubusercontent.com/pytorch/vision/v0.23.0/LICENSE",
+    "resolved_url": "https://raw.githubusercontent.com/pytorch/vision/v0.23.0/LICENSE",
+    "bytes": 1517,
+    "sha256": "6502f676851cfe25f8af75531dfb32375b7325b73c37e7b43741fa422893e71d",
+    "retrieved_utc": "2026-11-11T05:04:31.172339+00:00"
+  },
+  "torchvision_v0.23_README.md": {
+    "url": "https://raw.githubusercontent.com/pytorch/vision/v0.23.0/README.md",
+    "resolved_url": "https://raw.githubusercontent.com/pytorch/vision/v0.23.0/README.md",
+    "bytes": 5579,
+    "sha256": "0a44075ed6a86d948c11cff399f071cd57acf9b6b82ceab1eb0102a4ed720629",
+    "retrieved_utc": "2026-11-11T05:04:31.215582+00:00"
+  },
+  "torchvision_models_0.23.html": {
+    "url": "https://docs.pytorch.org/vision/0.23/models.html",
+    "resolved_url": "https://docs.pytorch.org/vision/0.23/models.html",
+    "bytes": 185457,
+    "sha256": "e542d23e1096a0890d7179fbab8b2f882af0c77030e4240f20bae446b534198d",
+    "retrieved_utc": "2026-11-11T05:04:31.402821+00:00"
+  },
+  "densenet121_official.html": {
+    "url": "https://docs.pytorch.org/vision/0.23/models/generated/torchvision.models.densenet121.html",
+    "resolved_url": "https://docs.pytorch.org/vision/0.23/models/generated/torchvision.models.densenet121.html",
+    "bytes": 42417,
+    "sha256": "ba37d7db240cf4a0b0af2c8de19c2ce2a32ba12847028b343a634763c552497a",
+    "retrieved_utc": "2026-11-11T05:04:31.358313+00:00"
+  },
+  "convnext_tiny_official.html": {
+    "url": "https://docs.pytorch.org/vision/0.23/models/generated/torchvision.models.convnext_tiny.html",
+    "resolved_url": "https://docs.pytorch.org/vision/0.23/models/generated/torchvision.models.convnext_tiny.html",
+    "bytes": 42799,
+    "sha256": "bae2e5010a3251bc14203091fce57306daa85bd8fec6cfb1c88659058c5d5b1e",
+    "retrieved_utc": "2026-11-11T05:04:31.713282+00:00"
+  },
+  "efficientnet_v2_s_official.html": {
+    "url": "https://docs.pytorch.org/vision/0.23/models/generated/torchvision.models.efficientnet_v2_s.html",
+    "resolved_url": "https://docs.pytorch.org/vision/0.23/models/generated/torchvision.models.efficientnet_v2_s.html",
+    "bytes": 43033,
+    "sha256": "653dfec4fca7b5a45ab5f8b86da9822e1424a27f51bf43063b68328a15a8e6ac",
+    "retrieved_utc": "2026-11-11T05:04:31.776344+00:00"
+  },
+  "swin_t_official.html": {
+    "url": "https://docs.pytorch.org/vision/0.23/models/generated/torchvision.models.swin_t.html",
+    "resolved_url": "https://docs.pytorch.org/vision/0.23/models/generated/torchvision.models.swin_t.html",
+    "bytes": 42495,
+    "sha256": "d2be010947936d50ee408c2062d1264a9a14025199b880dd1b982ed77467c6df",
+    "retrieved_utc": "2026-11-11T05:04:31.809481+00:00"
+  },
+  "densenet_v0.23_source.py": {
+    "url": "https://raw.githubusercontent.com/pytorch/vision/v0.23.0/torchvision/models/densenet.py",
+    "resolved_url": "https://raw.githubusercontent.com/pytorch/vision/v0.23.0/torchvision/models/densenet.py",
+    "bytes": 16812,
+    "sha256": "76a71797b7873088c27ca0458588861c197528e86421f57525dc8e3ad771c59a",
+    "retrieved_utc": "2026-11-11T05:04:31.974428+00:00"
+  },
+  "convnext_v0.23_source.py": {
+    "url": "https://raw.githubusercontent.com/pytorch/vision/v0.23.0/torchvision/models/convnext.py",
+    "resolved_url": "https://raw.githubusercontent.com/pytorch/vision/v0.23.0/torchvision/models/convnext.py",
+    "bytes": 15347,
+    "sha256": "5c00c412bc79e5c650f887dfe0d21aa8028903a3bbeae1a95c3b0fdfbdaf55c2",
+    "retrieved_utc": "2026-11-11T05:04:32.198403+00:00"
+  },
+  "efficientnet_v0.23_source.py": {
+    "url": "https://raw.githubusercontent.com/pytorch/vision/v0.23.0/torchvision/models/efficientnet.py",
+    "resolved_url": "https://raw.githubusercontent.com/pytorch/vision/v0.23.0/torchvision/models/efficientnet.py",
+    "bytes": 43098,
+    "sha256": "82d058e1989ef84e4ef7ce43e4a49dc10f1b95dcd003303c2c052438de823b17",
+    "retrieved_utc": "2026-11-11T05:04:32.208425+00:00"
+  },
+  "swin_transformer_v0.23_source.py": {
+    "url": "https://raw.githubusercontent.com/pytorch/vision/v0.23.0/torchvision/models/swin_transformer.py",
+    "resolved_url": "https://raw.githubusercontent.com/pytorch/vision/v0.23.0/torchvision/models/swin_transformer.py",
+    "bytes": 39331,
+    "sha256": "9ec73f2333108389e152fda346b6f195ebced02e9ced367cef60f405093b40b1",
+    "retrieved_utc": "2026-11-11T05:04:32.291926+00:00"
+  }
+}

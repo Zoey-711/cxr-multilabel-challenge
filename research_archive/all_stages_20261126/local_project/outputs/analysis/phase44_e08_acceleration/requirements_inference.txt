@@ -1,0 +1,15 @@
+# Local measured environment; install into a separate environment. Target T4 must verify compatible CUDA/cuDNN.
+torch==2.10.0
+torchvision==0.25.0
+numpy==2.5.2
+Pillow==12.3.0
+onnx==1.19.1
+onnxruntime-gpu==1.23.2
+protobuf==6.33.0
+flatbuffers==25.9.23
+coloredlogs==15.0.1
+humanfriendly==10.0
+ml_dtypes==0.5.3
+
+# Export-only dependency; not required for an already validated ONNX graph:
+# onnxconverter-common==1.16.0

@@ -1,0 +1,5 @@
+# Install PyTorch and torchvision from a CUDA wheel pair supported by the
+# actual T4 image/driver first; verify CUDA before installing these packages.
+# Local reference pair: torch 2.10.0+cu128, torchvision 0.25.0+cu128.
+numpy==2.5.2
+Pillow==12.3.0

@@ -1,0 +1,21 @@
+source:
+  m02_run: outputs/experiments/m02_convnext_tiny_384_aug_20261016_elevated
+  checkpoint_sha256: e583e2c3b64b6185ac4090f37e67bbe8362f9e67ead2fb27e793861e95638bd2
+  feature_cache: outputs/features/m02_convnext_tiny_384_deterministic
+heads:
+  variants: [v00, v01, v02]
+  feature_dim: 768
+  seed: 42
+  epochs: 30
+  study_batch_size: 128
+  optimizer: adamw
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  scheduler: cosine
+  loss: bce_with_logits
+  fixed_budget: true
+  selection: study_macro_auc
+evaluation:
+  bootstrap_replicates: 2000
+  seed: 42
+  mean_probability_baseline: true

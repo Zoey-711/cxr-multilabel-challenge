@@ -1,0 +1,16 @@
+{
+  "source": "User-provided organizer server specification 2026-11-10",
+  "image": "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete:3.0",
+  "python": "3.12",
+  "torch": "2.10.0",
+  "cuda": "12.8",
+  "cudnn_major": 9,
+  "tensorrt": "10.9.0.34",
+  "onnxruntime_gpu": "1.26.0",
+  "driver_min": "570.117",
+  "gpu": "NVIDIA T4 16GB x1",
+  "cpu_cores": 8,
+  "ram_gb": 32,
+  "ssd_gb_min": 100,
+  "image_digest": "PENDING_TARGET_DOCKER_INSPECT"
+}

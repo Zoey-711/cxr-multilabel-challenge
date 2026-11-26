@@ -1,0 +1,97 @@
+{
+  "epoch": 5,
+  "train_loss": 0.2531948481201968,
+  "val": {
+    "study_count": 859,
+    "macro_auc": 0.7883919646087458,
+    "macro_f1": 0.2825032402033412,
+    "threshold": 0.5,
+    "per_class": [
+      {
+        "class_id": 1,
+        "class_name": "Enlarged Cardiomediastinum",
+        "positive_studies": 24,
+        "negative_studies": 835,
+        "auc": 0.7302395209580839,
+        "f1": 0.0
+      },
+      {
+        "class_id": 2,
+        "class_name": "Pneumothorax",
+        "positive_studies": 37,
+        "negative_studies": 822,
+        "auc": 0.8351581508515815,
+        "f1": 0.20588235294117646
+      },
+      {
+        "class_id": 3,
+        "class_name": "Consolidation",
+        "positive_studies": 46,
+        "negative_studies": 813,
+        "auc": 0.779908016471469,
+        "f1": 0.0
+      },
+      {
+        "class_id": 4,
+        "class_name": "Pneumonia",
+        "positive_studies": 68,
+        "negative_studies": 791,
+        "auc": 0.725673012567859,
+        "f1": 0.0
+      },
+      {
+        "class_id": 5,
+        "class_name": "Edema",
+        "positive_studies": 115,
+        "negative_studies": 744,
+        "auc": 0.8558964469378214,
+        "f1": 0.3894736842105263
+      },
+      {
+        "class_id": 6,
+        "class_name": "Cardiomegaly",
+        "positive_studies": 177,
+        "negative_studies": 682,
+        "auc": 0.7306609009725467,
+        "f1": 0.2689075630252101
+      },
+      {
+        "class_id": 7,
+        "class_name": "Atelectasis",
+        "positive_studies": 193,
+        "negative_studies": 666,
+        "auc": 0.7768636512159828,
+        "f1": 0.28225806451612906
+      },
+      {
+        "class_id": 8,
+        "class_name": "Lung Opacity",
+        "positive_studies": 214,
+        "negative_studies": 645,
+        "auc": 0.6902014054915598,
+        "f1": 0.27702702702702703
+      },
+      {
+        "class_id": 9,
+        "class_name": "Pleural Effusion",
+        "positive_studies": 260,
+        "negative_studies": 599,
+        "auc": 0.893074996789521,
+        "f1": 0.6926229508196722
+      },
+      {
+        "class_id": 10,
+        "class_name": "No Finding",
+        "positive_studies": 306,
+        "negative_studies": 553,
+        "auc": 0.8662435438310345,
+        "f1": 0.7088607594936709
+      }
+    ]
+  },
+  "elapsed_seconds": 441.5382090999992,
+  "learning_rates": [
+    9.719416651541839e-05,
+    0.0002915824995462551
+  ]
+}

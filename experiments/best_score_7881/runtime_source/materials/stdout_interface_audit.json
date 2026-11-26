@@ -1,0 +1,12 @@
+{
+  "exact_three_positional_args": true,
+  "result_files_written": false,
+  "terminal_predictions_flushed_inside_timer": true,
+  "synthetic_300_predictions_and_timings_pass": true,
+  "nan_rejected": true,
+  "cli_help_missing_extra_tests_pass": true,
+  "runtime_and_submission_unchanged": true,
+  "T4_test_of_new_cost": "NOT_RUN",
+  "partial_study": "FAIL_CLOSED",
+  "driver_error": "FAIL_CLOSED_NO_CPU_FALLBACK"
+}

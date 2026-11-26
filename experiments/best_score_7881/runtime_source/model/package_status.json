@@ -1,0 +1,8 @@
+{
+  "status": "BUILT_UNVERIFIED",
+  "remaining": [
+    "full Test historical consistency",
+    "official 100-image test",
+    "declaration sign-off"
+  ]
+}

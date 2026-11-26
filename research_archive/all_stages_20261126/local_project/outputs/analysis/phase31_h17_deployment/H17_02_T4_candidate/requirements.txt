@@ -1,0 +1,7 @@
+# Reproduced locally with Python 3.12.4, torch 2.10.0+cu128,
+# torchvision 0.25.0+cu128. Select a matching CUDA wheel pair for the
+# actual T4 driver/image; do not upgrade the GPU driver blindly.
+torch==2.10.0
+torchvision==0.25.0
+numpy==2.5.2
+Pillow==12.3.0

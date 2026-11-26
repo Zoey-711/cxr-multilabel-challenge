@@ -1,0 +1,14 @@
+{
+  "team": "王卓颖",
+  "template_source": "F:\\计挑赛\\人工智能规则\\模型核验材料与数据申明清单模板 (2).xlsx",
+  "template_sha256": "ad2af8f961faf34485471d21c438adfbcb690590409591dfe9bdd18bae2c2e23",
+  "filled_items": 22,
+  "template_field_differences_vs_prior": [],
+  "scope": "Historical 78.81 six-model package, NOT LR_HIGH",
+  "pending_items": [
+    "F2 official sample consistency",
+    "Study/Gate clarification",
+    "Pretrained weight licence applicability"
+  ],
+  "frozen_runtime_submission_unchanged": true
+}

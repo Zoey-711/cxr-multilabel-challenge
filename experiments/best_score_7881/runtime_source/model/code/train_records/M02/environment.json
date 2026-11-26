@@ -1,0 +1,8 @@
+{
+  "python": "3.12.4",
+  "torch": "2.10.0+cu128",
+  "cuda_runtime": "12.8",
+  "cudnn_version": 91002,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_memory_mib": 8188
+}

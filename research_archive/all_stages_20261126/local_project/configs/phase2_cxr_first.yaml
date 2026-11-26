@@ -1,0 +1,49 @@
+experiment:
+  name: phase2_cxr_first_audit
+  seed: 42
+data:
+  archive_path: 'F:/数据集/cxr_first.zip'
+  train_manifest: null
+  val_manifest: null
+  test_manifest: null
+  image_root: null
+  columns:
+    subject_id: Subject_id
+    study_id: Study_id
+    image_path: Dicom_id
+    labels: [Predict_class]
+  label_encoding:
+    positive: semicolon_delimited_class_ids_1_to_10
+    unlisted_policy: negative
+    negative: unlisted_in_complete_competition_annotation
+    uncertain: no_code_observed
+    missing: blank_Predict_class_is_error
+  input_size: 384
+  num_workers: 4
+model:
+  name: densenet121
+  pretrained: imagenet
+  num_classes: 10
+training:
+  batch_size: 16
+  epochs: 30
+  optimizer: adamw
+  backbone_lr: 0.0001
+  classifier_lr: 0.0003
+  weight_decay: 0.0001
+  loss: bce_with_logits
+  scheduler: cosine
+  warmup_epochs: 2
+  precision: fp16_amp
+  grad_clip_norm: 1.0
+  early_stopping_patience: 8
+validation:
+  study_fusion: mean_probability
+  primary_metric: macro_auc
+  auxiliary_metric: macro_f1
+  f1_threshold: 0.5
+inference:
+  batch_size: 16
+  submission_filename: submission.csv
+  submission_mode: threshold
+  threshold: 0.5

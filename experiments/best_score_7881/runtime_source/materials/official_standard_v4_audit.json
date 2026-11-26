@@ -1,0 +1,16 @@
+{
+  "tests": {
+    "nonzero_sub_1e3_same_gate_rank_pass": true,
+    "over_1e3_fails": true,
+    "ranking_failure_counted_once": true,
+    "gate_crossing_under_tolerance_fails": true,
+    "partial_study_times_all_300": true,
+    "csv_row_order_newline_independent": true
+  },
+  "official_tolerance": 0.001,
+  "strict_zero_repeat_gate_removed": true,
+  "csv_byte_hash_gate_removed": true,
+  "prediction_weights_submission_unchanged": true,
+  "T4_new_cost_test": "NOT_RUN",
+  "not_fully_accepted": "100-image historical consistency remains unverified; partial Study handling is not an official exemption"
+}

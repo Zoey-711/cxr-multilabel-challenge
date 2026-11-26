@@ -1,0 +1,8 @@
+{
+  "runtime_matches_84_46_report": true,
+  "runtime_manifest_sha256": "05a5c732d03a15ecf788211e25649e475a86baceab0ce3426d3fceee43bc2a20",
+  "prediction_code_sha256": "4d9b310ccc2118b856766b5771bc3eea5d4bf469385dff70ffb3f9b2a5853e48",
+  "dependency_policy": "Use organizer image preinstalled frameworks; no installation or upgrades",
+  "new_benchmark_performed": false,
+  "prediction_and_weights_unchanged": true
+}

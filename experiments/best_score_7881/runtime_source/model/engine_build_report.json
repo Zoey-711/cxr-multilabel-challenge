@@ -1,0 +1,113 @@
+{
+  "status": "BUILT_PENDING_PREDICTION_VALIDATION",
+  "environment": {
+    "system": "Linux",
+    "python": "3.12.16",
+    "python_minor": "3.12",
+    "cpu_count": 96,
+    "image_expected": "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete:3.0",
+    "import_errors": [],
+    "torch": "2.10.0+cu128",
+    "torch_base": "2.10.0",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "cuda_devices": 1,
+    "gpu": "Tesla T4",
+    "gpu_memory_bytes": 15637086208,
+    "compute_capability": [
+      7,
+      5
+    ],
+    "torchvision": "0.25.0+cu128",
+    "tensorrt": "10.9.0.34",
+    "tensorrt_base": "10.9.0",
+    "onnxruntime": "1.26.0",
+    "ort_providers": [
+      "TensorrtExecutionProvider",
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "numpy": "2.5.4",
+    "PIL": "13.0.0",
+    "driver": "580.82.07",
+    "host_ram_bytes": 540651106304,
+    "errors": [],
+    "status": "PASS",
+    "note": "Version check does not prove image identity, engine compatibility, accuracy or latency."
+  },
+  "engines": {
+    "B02": {
+      "sha256": "5188b6edd90dc56794531e0a219344a88df396da03fafd5d6825297a1d86b35d",
+      "bytes": 31252580,
+      "source": {
+        "checkpoint_sha256": "c320179fce8cd72b4c95570a5cbb87ab85ef4366d9f059046d6bc64cd922c4b4",
+        "onnx_sha256": "66a4b70831dcbba7dbc35a7efc8415285abf14425b174fc87a14f10d6647c796",
+        "checkpoint_run_id": "b02_densenet121_wd1e3_20261016_elevated",
+        "opset": 17,
+        "input_shape": [
+          1,
+          3,
+          384,
+          384
+        ],
+        "input_name": "image",
+        "output_name": "logits",
+        "source": "Frozen Phase44 FP32 export from exact frozen E08 checkpoint",
+        "build_input_rename": "image -> input (name only; no tensor/value transform)"
+      },
+      "build_seconds": 108.93035584688187,
+      "synthetic_finite": true,
+      "synthetic_reference_tests": [
+        {
+          "input": "zero",
+          "logit_max_abs": 2.6226043701171875e-06,
+          "probability_max_abs": 6.556510925292969e-07
+        },
+        {
+          "input": "fixed_random",
+          "logit_max_abs": 2.384185791015625e-07,
+          "probability_max_abs": 5.960464477539063e-08
+        }
+      ],
+      "real_prediction_consistency": "PENDING"
+    },
+    "M02": {
+      "sha256": "ff7b6bb86085509ec112c0f029634f1158943bdae37c44964fde63ff8d174874",
+      "bytes": 112836164,
+      "source": {
+        "checkpoint_sha256": "e583e2c3b64b6185ac4090f37e67bbe8362f9e67ead2fb27e793861e95638bd2",
+        "onnx_sha256": "bbb0a4a7e76115ac430356e01ea834abe86f74a3a1fa5956478052a099725044",
+        "checkpoint_run_id": "m02_convnext_tiny_384_aug_20261016_elevated",
+        "opset": 17,
+        "input_shape": [
+          1,
+          3,
+          384,
+          384
+        ],
+        "input_name": "image",
+        "output_name": "logits",
+        "source": "Frozen Phase44 FP32 export from exact frozen E08 checkpoint",
+        "build_input_rename": "image -> input (name only; no tensor/value transform)"
+      },
+      "build_seconds": 10.227627508342266,
+      "synthetic_finite": true,
+      "synthetic_reference_tests": [
+        {
+          "input": "zero",
+          "logit_max_abs": 5.7220458984375e-06,
+          "probability_max_abs": 5.21540641784668e-07
+        },
+        {
+          "input": "fixed_random",
+          "logit_max_abs": 2.86102294921875e-06,
+          "probability_max_abs": 5.364418029785156e-07
+        }
+      ],
+      "real_prediction_consistency": "PENDING"
+    }
+  },
+  "precision": "FP32; FP16/INT8/TF32 disabled; no calibration",
+  "image_expected": "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete:3.0",
+  "checkpoint_weights_modified": false
+}

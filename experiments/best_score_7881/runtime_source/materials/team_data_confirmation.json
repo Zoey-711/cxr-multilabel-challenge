@@ -1,0 +1,14 @@
+{
+  "scope": "B01/B02/B03/M02/N01_EMA/S17_F3",
+  "source": "用户在本次会话明确回复“以上全部属实”",
+  "official_train_only": true,
+  "official_val_used_for_selection_not_training": true,
+  "external_medical_data_used": false,
+  "additional_unlabeled_data_used": false,
+  "self_supervised_continued_training_used": false,
+  "knowledge_distillation_used": false,
+  "test_only_fixed_inference_and_audit": true,
+  "official_100_test_and_5_warmup_received": false,
+  "official_gate_and_partial_study_clarification_received": false,
+  "note": "该记录是用户确认的文字声明，不伪造签名或主办方批准。"
+}

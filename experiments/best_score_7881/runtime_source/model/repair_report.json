@@ -1,0 +1,18 @@
+{
+  "preprocessing_function_ast_equal": true,
+  "both_predict_image_function_asts_equal": true,
+  "fusion_formula_unchanged": true,
+  "historical_submission_byte_identical": true,
+  "init_change": "Zero-initialized synthetic CUDA Graph warmup tensor; no image or output transformation",
+  "environment": "Official versions strictly checked; no dependency installs",
+  "old_trt_engines_shipped": false,
+  "test_image_bytes_shipped": false,
+  "numerical_consistency": "PENDING_TARGET_INFERENCE",
+  "known_blockers": [
+    "No local Docker/T4/TensorRT10.9",
+    "Historical Test batch1 ordering unverified",
+    "Official Gate/partial-Study interface",
+    "Pretrained redistribution evidence",
+    "Updated XLSX not provided"
+  ]
+}

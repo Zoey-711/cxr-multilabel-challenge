@@ -1,0 +1,10 @@
+{
+  "output_template_test": "PASS",
+  "cases": [
+    95,
+    100,
+    105
+  ],
+  "not_gpu_measurements": true,
+  "no_prediction_changes": true
+}

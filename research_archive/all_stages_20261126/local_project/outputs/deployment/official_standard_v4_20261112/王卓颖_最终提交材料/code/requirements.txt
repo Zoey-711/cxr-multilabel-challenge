@@ -1,0 +1,5 @@
+# Do NOT pip install/upgrade the official container framework.
+# Base image: crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete:3.0
+# Python 3.12; torch 2.10.0 CUDA12.8/cuDNN9; TensorRT10.9.0.34; ORT GPU1.26.0.
+# No additional dependency installation is performed by this package.
+# check_environment.py reports missing imports and stops.

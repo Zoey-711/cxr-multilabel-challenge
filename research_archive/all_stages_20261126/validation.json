@@ -1,0 +1,13 @@
+{
+  "archive_files": 3745,
+  "deployment_python_syntax_pass": 199,
+  "archive_syntax_issues_preserved": [
+    {
+      "path": "research_archive/all_stages_20261126/local_project/outputs/analysis/phase29_deployment/write_reports.py",
+      "error": "f-string: f-string: unmatched '[' (<unknown>, line 45)"
+    }
+  ],
+  "full_zip_351_files_verified": true,
+  "gpu_not_run": true,
+  "release_status": "PENDING_PUBLIC_OR_PRIVATE_DESTINATION_CONFIRMATION"
+}

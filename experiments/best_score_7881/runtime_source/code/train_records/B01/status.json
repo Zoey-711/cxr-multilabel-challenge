@@ -1,0 +1,6 @@
+{
+  "state": "complete",
+  "epoch": 13,
+  "best_auc": 0.7883919646087458,
+  "best_model": "best_model.pt"
+}

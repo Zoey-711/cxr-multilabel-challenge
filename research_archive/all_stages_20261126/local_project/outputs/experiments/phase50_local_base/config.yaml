@@ -1,0 +1,32 @@
+experiment_id: H50_BASE_F1
+architecture: efficientnet_v2_s
+source_protocol: H17_DISTILL_02
+source_result_commit: cbfc5997438f371086cd1fbe232890590cd67ffb
+outer_validation_fold: 1
+train_folds: [2, 3, 4, 5]
+input_size: 384
+preprocessing: black_pad_v1
+seed: 42
+micro_batch: 2
+accumulation: 8
+effective_batch: 16
+epochs: 4
+early_stopping_patience: 6
+backbone_lr: 0.0001
+head_lr: 0.0003
+weight_decay: 0.0001
+warmup_epochs: 2
+ema_decay: 0.999
+ema_use_buffers: true
+loss: hard_bce_with_logits
+augmentation: conservative_cxr_v1
+precision: fp16_amp
+gradient_clip_norm: 1.0
+max_consecutive_amp_skips: 20
+swa_raw_epochs: [3, 4]
+swa_batchnorm_update: train_fold_only_no_augmentation
+pretrained_sha256: dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74
+fold_sha256:
+  patient_folds.csv: 04ed3b715910bacc016c3b489c193b24267c00c119035ecefef4e1fda025158c
+  study_folds.csv: d92fac966dece9f797e0cf323100be1bfc35da698473c1d36016df8350b62edf
+  image_folds.csv: f043e61739d5e6a7384b2ef62e5568f2c6a574c963f14b32ee68a3eba16c164d

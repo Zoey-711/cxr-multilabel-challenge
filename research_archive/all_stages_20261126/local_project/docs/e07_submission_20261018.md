@@ -1,0 +1,9 @@
+# E07 submission candidate, generated 2026-10-18
+
+The fixed validation scheme is `E07 = 0.5 × E03 + 0.5 × T01`, with official validation Study Macro-AUC **0.8115193038**. The candidate is at `outputs/submissions/E07_20261018/submission.csv`. Its status in `submission_history.csv` is **generated**, and nothing was uploaded automatically.
+
+The generator reused the SHA-verified complete E03 test Study probability matrix, loaded the frozen T01 best checkpoint with SHA-256 `577262238fd75c915ed0fe2e4e90654b08cbc9ceb0405728c8131743f6ec67a9`, inferred all 2,218 official unlabeled test images using T01's deterministic 384-pixel black-pad preprocessing, averaged Sigmoid probabilities across each Study's images, then applied the fixed 0.5/0.5 formula. No hidden test labels were accessed. The five inference checkpoints total **307,175,113 bytes**, below 500,000,000 bytes.
+
+Independent read-only verification checked all frozen source hashes, 2,218 image keys, 1,414 aligned `(Subject_id, Study_id)` keys, T01 image-to-Study Mean values, E07 fusion values, every CSV class row, and the generated history state. All checks passed. The UTF-8 CSV has the exact columns `Subject_id,Study_id,Predict_class,Probability`, all original class IDs 1–10 for each Study, **14,140 data rows**, finite probabilities in [0,1], no duplicate Study/class pair, no Gate column and no threshold filtering. At a descriptive 0.5 threshold, 546 Studies have no positive class; all ten rows are still present for each of them as required by the organizer.
+
+`submission.csv` size: **689,401 bytes**. SHA-256: `9ba24843d7d3aa9248ddf7a402f7a19833cc7e0bcd4b34e759cb29ed3fffa422`. The probability matrix, per-image T01 output, T01 Study output, fusion configuration, checks and manifest are sealed in the same independent version directory. No prior E03 or frozen experiment file was changed.

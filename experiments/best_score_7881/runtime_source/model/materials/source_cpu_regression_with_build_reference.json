@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "scope": "Synthetic CPU FP32 export regression; not real Val/Test/T4 consistency",
+  "thresholds_fixed_before_test": {
+    "logits": 0.001,
+    "probabilities": 0.0001
+  },
+  "models": {
+    "B02": {
+      "tests": [
+        {
+          "input": "zero",
+          "logit_max_abs": 3.337860107421875e-06,
+          "probability_max_abs": 4.76837158203125e-07,
+          "pass": true
+        },
+        {
+          "input": "fixed_random",
+          "logit_max_abs": 2.384185791015625e-07,
+          "probability_max_abs": 5.960464477539063e-08,
+          "pass": true
+        }
+      ],
+      "status": "PASS",
+      "checkpoint_sha256": "c320179fce8cd72b4c95570a5cbb87ab85ef4366d9f059046d6bc64cd922c4b4",
+      "onnx_sha256": "66a4b70831dcbba7dbc35a7efc8415285abf14425b174fc87a14f10d6647c796",
+      "onnx_checker": "PASS",
+      "input_name": "image",
+      "output_name": "logits"
+    },
+    "M02": {
+      "tests": [
+        {
+          "input": "zero",
+          "logit_max_abs": 3.0994415283203125e-06,
+          "probability_max_abs": 4.023313522338867e-07,
+          "pass": true
+        },
+        {
+          "input": "fixed_random",
+          "logit_max_abs": 2.6226043701171875e-06,
+          "probability_max_abs": 4.172325134277344e-07,
+          "pass": true
+        }
+      ],
+      "status": "PASS",
+      "checkpoint_sha256": "e583e2c3b64b6185ac4090f37e67bbe8362f9e67ead2fb27e793861e95638bd2",
+      "onnx_sha256": "bbb0a4a7e76115ac430356e01ea834abe86f74a3a1fa5956478052a099725044",
+      "onnx_checker": "PASS",
+      "input_name": "image",
+      "output_name": "logits"
+    }
+  },
+  "environment": {
+    "torch": "2.10.0+cu128",
+    "ort": "1.23.2",
+    "onnx": "1.19.1"
+  },
+  "gpu_used": false
+}

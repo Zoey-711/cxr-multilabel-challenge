@@ -1,0 +1,100 @@
+{
+  "source_manifest_files_verified": 178,
+  "timing_records": 300,
+  "timing_recomputed": {
+    "mean_ms": 84.46236722169667,
+    "p50_ms": 83.62817019233333,
+    "p95_ms": 94.34345836453333,
+    "max_ms": 107.67524192733333
+  },
+  "internal_three_round_max_probability_difference": 0.0,
+  "submission_rows": 14140,
+  "submission_studies": 1414,
+  "historical_submission_sha256": "8e2d50c806da5e033f2f649f1186e0c9856740cb2ba720cd42fb26c54e02772c",
+  "inference_assets": {
+    "phase65_source/model/B01.pt": {
+      "bytes": 28463720,
+      "sha256": "aed81971bc066db8b84486dd27e4b15088af0917cfdd1a9aeed2c0a57ca125e1"
+    },
+    "phase65_source/model/B03.pt": {
+      "bytes": 28463720,
+      "sha256": "22de342d0b8f68016f5d8f69e413d50454a3e4675e1cce07e59fa896af0044fb"
+    },
+    "phase65_source/model/N01_EMA.pt": {
+      "bytes": 81666223,
+      "sha256": "8d8160638c45c1c6afec8d822b38ac1be337335c28b792022c46822e6481142a"
+    },
+    "phase65_source/model/S17_F3.pt": {
+      "bytes": 110405322,
+      "sha256": "ce96237beb19f58b1915ac343225cea1916bcadd156c0faac76232905bf44398"
+    },
+    "tensorrt_engines/B02_fp32.engine": {
+      "bytes": 31252580,
+      "sha256": "5188b6edd90dc56794531e0a219344a88df396da03fafd5d6825297a1d86b35d"
+    },
+    "tensorrt_engines/M02_fp32.engine": {
+      "bytes": 112836164,
+      "sha256": "ff7b6bb86085509ec112c0f029634f1158943bdae37c44964fde63ff8d174874"
+    }
+  },
+  "inference_weights_bytes": 393087729,
+  "environment": {
+    "system": "Linux",
+    "python": "3.12.16",
+    "python_minor": "3.12",
+    "cpu_count": 96,
+    "image_expected": "crpi-4leqgt7v1jo7rycf.cn-beijing.personal.cr.aliyuncs.com/coder02026/compete:3.0",
+    "import_errors": [],
+    "torch": "2.10.0+cu128",
+    "torch_base": "2.10.0",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "cuda_devices": 1,
+    "gpu": "Tesla T4",
+    "gpu_memory_bytes": 15637086208,
+    "compute_capability": [
+      7,
+      5
+    ],
+    "torchvision": "0.25.0+cu128",
+    "tensorrt": "10.9.0.34",
+    "tensorrt_base": "10.9.0",
+    "onnxruntime": "1.26.0",
+    "ort_providers": [
+      "TensorrtExecutionProvider",
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "numpy": "2.5.4",
+    "PIL": "13.0.0",
+    "driver": "580.82.07",
+    "host_ram_bytes": 540651106304,
+    "errors": [],
+    "status": "PASS",
+    "note": "Version check does not prove image identity, engine compatibility, accuracy or latency."
+  },
+  "historical_test_consistency": "NOT_TESTED",
+  "official_fixed_100_consistency": "NOT_TESTED",
+  "official_compliance": "UNVERIFIED",
+  "runtime_unchanged_after_relocation": true,
+  "conservative_runtime_and_adapter_bytes": 395873615,
+  "size_limit_bytes": 500000000,
+  "size_status": "PASS",
+  "return_archive_sha256": "5288f79562804d9a601d7d40b29885d9e5da879a25fee8f64991db5cba68a59c",
+  "package_status": "MATERIALS_SUPPLEMENTED_PENDING_ORGANIZER_ITEMS",
+  "full_test_required_by_supplied_rules": false,
+  "remaining_official_items": [
+    "F2: awaiting organizer 100 Test / 5 warmup images",
+    "Study/Gate interface clarification",
+    "A3: pretrained-weight redistribution applicability"
+  ],
+  "official_resource_quota_verified": false,
+  "notes": [
+    "Reported 96 CPUs and host RAM are not proof of allocated CPU/RAM quota.",
+    "No evidence of an 8-CPU/32GB constrained run or official container digest.",
+    "No full-Test precondition is introduced; optional full-Test tools are preserved.",
+    "Probability repeatability on Val is not historical Test submission consistency."
+  ],
+  "team_data_declaration_confirmed": true,
+  "public_source_files_archived": 11
+}

@@ -1,0 +1,7 @@
+{
+  "formula": "0.375 E03 + 0.375 N01_EMA + 0.25 S17_F3",
+  "historical_submission_sha256": "8e2d50c806da5e033f2f649f1186e0c9856740cb2ba720cd42fb26c54e02772c",
+  "precision": "B01/B03/N01_EMA/S17_F3 PyTorch FP16 CUDA Graph; B02/M02 TensorRT FP32",
+  "status": "T4_UNVERIFIED_FOR_SIX_MODELS",
+  "batch": 1
+}

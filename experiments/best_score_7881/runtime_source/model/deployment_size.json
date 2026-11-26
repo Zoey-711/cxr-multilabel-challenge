@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "files": {
+    "phase65_source/model/B01.pt": 28463720,
+    "phase65_source/model/B03.pt": 28463720,
+    "phase65_source/model/N01_EMA.pt": 81666223,
+    "phase65_source/model/S17_F3.pt": 110405322,
+    "tensorrt_engines/B02_fp32.engine": 31252580,
+    "tensorrt_engines/M02_fp32.engine": 112836164,
+    "config.json": 312,
+    "phase65_source/frozen_e08_manifest.json": 4090,
+    "engine_build_report.json": 3743
+  },
+  "missing": [],
+  "runtime_code_bytes": 79737,
+  "loaded_and_necessary_bytes": 395872208,
+  "limit_bytes": 500000000,
+  "conservative_package_bytes_excluding_build_sources": 395872208,
+  "build_sources_used_at_inference": false,
+  "note": "Conservatively counts all candidate files including audit materials. Build sources never enter compiled candidate."
+}

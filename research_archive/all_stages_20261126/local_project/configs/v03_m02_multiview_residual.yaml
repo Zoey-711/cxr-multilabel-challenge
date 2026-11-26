@@ -1,0 +1,29 @@
+source:
+  m02_run: outputs/experiments/m02_convnext_tiny_384_aug_20261016_elevated
+  checkpoint_sha256: e583e2c3b64b6185ac4090f37e67bbe8362f9e67ead2fb27e793861e95638bd2
+  feature_cache: outputs/features/m02_convnext_tiny_384_deterministic
+  phase12_run: outputs/experiments/v00_v01_v02_m02_frozen_features
+  internal_split: outputs/analysis/phase5_internal_split
+model:
+  feature_dim: 768
+  dropout: 0.1
+  max_logit_delta: 0.25
+  variance: population
+  single_view_delta: exactly_zero
+training:
+  seed: 42
+  epochs: 30
+  study_batch_size: 128
+  optimizer: adamw
+  learning_rate: 0.001
+  weight_decay: 0.001
+  scheduler: cosine
+  loss: bce_with_logits
+  residual_l2: 0.01
+  supervised_studies: multi_image_only
+  selection: official_val_study_macro_auc
+  initial_checkpoint_competes: true
+evaluation:
+  bootstrap_replicates: 2000
+  seed: 42
+  threshold: 0.5

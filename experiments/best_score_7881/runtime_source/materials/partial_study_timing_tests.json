@@ -1,0 +1,9 @@
+{
+  "complete_100_pass": true,
+  "partial_study_300_timings_pass": true,
+  "all_partial_300_timings_pass": true,
+  "ranking_change_detected": true,
+  "missing_study_average_not_emitted": true,
+  "gpu_test_performed": false,
+  "prediction_unchanged": true
+}

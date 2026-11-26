@@ -1,0 +1,30 @@
+{
+  "model": "efficientnet_v2_s",
+  "input_size": 384,
+  "seed": 42,
+  "micro_batch": 8,
+  "accumulation": 2,
+  "epochs": 4,
+  "warmup_epochs": 2,
+  "backbone_lr": 0.0001,
+  "head_lr": 0.0003,
+  "weight_decay": 0.0001,
+  "ema_decay": 0.999,
+  "hard_fraction": 0.5,
+  "temperature": 1.0,
+  "checkpoint_rule": "fixed_final_epoch_raw_and_ema",
+  "soft_weighting": "inverse_images_per_study",
+  "workers": 0,
+  "amp": "fp16",
+  "max_epoch_skips": 20,
+  "max_consecutive_skips": 4,
+  "experiment_id": "SKD_COMPLEMENT",
+  "teacher_formula": {
+    "D17": 0.125,
+    "C17": 0.125,
+    "S17": 0.25,
+    "N17_EMA": 0.5
+  },
+  "student_oof": "N/A",
+  "evaluation": "official_Val_development_only"
+}

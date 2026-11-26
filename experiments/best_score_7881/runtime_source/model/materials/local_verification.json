@@ -1,0 +1,12 @@
+{
+  "cpu_tests_passed": 20,
+  "mock_tests_not_gpu": true,
+  "source_checkpoint_onnx_cpu_regression": "PASS",
+  "prediction_arithmetic_ast_unchanged": true,
+  "docker_available": false,
+  "t4_available": false,
+  "gpu_inference_executed": false,
+  "status": "LOCAL_PREPARATION_PASS_TARGET_VALIDATION_PENDING",
+  "python_syntax_files": 105,
+  "official_environment_negative_test": "PASS: blocked Windows/4060/missing TensorRT"
+}

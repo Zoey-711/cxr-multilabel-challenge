@@ -1,0 +1,8 @@
+{
+  "train_help_pass": true,
+  "model_utils_import_pass": true,
+  "submission_hash_via_utils_pass": true,
+  "training_started": false,
+  "weights_downloaded": false,
+  "runtime_and_prediction_bytes_unchanged": true
+}

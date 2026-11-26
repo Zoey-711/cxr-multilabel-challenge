@@ -1,0 +1,40 @@
+{
+  "status": "SELF_REFERENCE_ONLY",
+  "official_compliance": "UNVERIFIED",
+  "reason": "Private selected Val images; rented environment may not be organizer image; no submitted Test CSV consistency test",
+  "gpu": "Tesla T4",
+  "batch": 1,
+  "warmup_images": 5,
+  "timed_images": 100,
+  "rounds": 3,
+  "timing_records": 300,
+  "mean_ms": 84.46236722171307,
+  "p50_ms": 83.62817019224167,
+  "p95_ms": 94.34345836440723,
+  "max_ms": 107.67524192730586,
+  "timer_scope": "one file read through six-model prediction, output CSV flush and CUDA synchronization",
+  "models": [
+    "B01",
+    "B02",
+    "B03",
+    "M02",
+    "N01_EMA",
+    "S17_F3"
+  ],
+  "precision": "B01/B03/N01_EMA/S17_F3 PyTorch FP16 CUDA Graph; B02/M02 TensorRT FP32",
+  "python": "3.12.16",
+  "torch": "2.10.0+cu128",
+  "cuda": "12.8",
+  "cudnn": 91002,
+  "tensorrt": "10.9.0.34",
+  "sample": {
+    "source_archive_sha256": "ff458640e9974d63aa3329ee7ae1248260b619223980218e3741aee4c6d6836f",
+    "sample_files_sha256": "26a75c92e03030326d1db8fc2aaa28280008f2888f363cca35e3f47633f7620a",
+    "images_verified": 105,
+    "studies_verified": 100
+  },
+  "source_package_manifest_sha256": "05a5c732d03a15ecf788211e25649e475a86baceab0ce3426d3fceee43bc2a20",
+  "prediction_code_sha256": "4d9b310ccc2118b856766b5771bc3eea5d4bf469385dff70ffb3f9b2a5853e48",
+  "timings_sha256": "f864aa0e90d8c0a197411ab336d91d56a7f180cb6b070354dcddc42193dcf6ce",
+  "predictions_sha256": "f75060e8106aaad07ee2c0e5a61a5b5759c2007e86443d031810ed39539f1d43"
+}

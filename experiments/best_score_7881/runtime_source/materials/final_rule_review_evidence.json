@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "关于比赛参赛规则若干事项的补充说明 (1).pdf": "836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44",
+    "关于比赛参赛规则若干事项的补充说明.pdf": "836c4f5d3202f2dc65830fd919ca195797c12b7507d750121786a21672dc7a44",
+    "模型核验材料与数据申明清单模板 (2).xlsx": "ad2af8f961faf34485471d21c438adfbcb690590409591dfe9bdd18bae2c2e23",
+    "比赛参赛规则.pdf": "ff6aa3adbfd3d000194253055a93dbce8a140031c8432f892046a49de8136fb6"
+  },
+  "runtime_sha256": "05a5c732d03a15ecf788211e25649e475a86baceab0ce3426d3fceee43bc2a20",
+  "prediction_sha256": "4d9b310ccc2118b856766b5771bc3eea5d4bf469385dff70ffb3f9b2a5853e48",
+  "three_requirements_identical": true,
+  "runtime_and_submission_unchanged": true
+}
